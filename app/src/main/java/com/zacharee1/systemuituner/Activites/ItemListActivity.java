@@ -1,4 +1,4 @@
-package com.zacharee1.systemuituner;
+package com.zacharee1.systemuituner.Activites;
 
 import android.content.Context;
 import android.content.Intent;
@@ -16,6 +16,10 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+
+import com.zacharee1.systemuituner.ItemDetailFragment;
+import com.zacharee1.systemuituner.R;
+import com.zacharee1.systemuituner.TweakItems;
 
 import java.util.List;
 

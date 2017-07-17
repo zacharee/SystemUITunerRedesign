@@ -2,8 +2,15 @@ package com.zacharee1.systemuituner;
 
 import android.app.Activity;
 import android.preference.PreferenceFragment;
-import android.support.design.widget.CollapsingToolbarLayout;
 import android.os.Bundle;
+
+import com.zacharee1.systemuituner.Activites.ItemDetailActivity;
+import com.zacharee1.systemuituner.Activites.ItemListActivity;
+import com.zacharee1.systemuituner.FragmentHelpers.DemoHelper;
+import com.zacharee1.systemuituner.FragmentHelpers.MiscHelper;
+import com.zacharee1.systemuituner.FragmentHelpers.QSHelper;
+import com.zacharee1.systemuituner.FragmentHelpers.StatbarHelper;
+import com.zacharee1.systemuituner.FragmentHelpers.TWHelper;
 
 /**
  * A fragment representing a single Item detail screen.
@@ -34,23 +41,37 @@ public class ItemDetailFragment extends PreferenceFragment
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
 
         if (getArguments().containsKey(ARG_ITEM_ID)) {
+            final String id = getArguments().getString(ARG_ITEM_ID);
+            assert id != null;
+
             // Load the dummy content specified by the fragment
             // arguments. In a real-world scenario, use a Loader
             // to load content from a content provider.
-            mItem = TweakItems.ITEM_MAP.get(getArguments().getString(ARG_ITEM_ID));
+            mItem = TweakItems.ITEM_MAP.get(id);
+            addPreferencesFromResource(mItem.layoutId);
 
-            Activity activity = this.getActivity();
-//            CollapsingToolbarLayout appBarLayout = activity.findViewById(R.id.toolbar_layout);
-//            if (appBarLayout != null) {
-//                appBarLayout.setTitle(mItem.content);
-//            }
+            switch (id) {
+                case "statbar":
+                    new StatbarHelper(this);
+                    break;
+                case "qs":
+                    new QSHelper(this);
+                    break;
+                case "demo":
+                    new DemoHelper(this);
+                    break;
+                case "touchwiz":
+                    new TWHelper(this);
+                    break;
+                case "misc":
+                    new MiscHelper(this);
+                    break;
+            }
+
             getActivity().setTitle(mItem.content);
         }
-
-        super.onCreate(savedInstanceState);
-        addPreferencesFromResource(mItem.layoutId);
-        setHasOptionsMenu(true);
     }
 }

@@ -4,12 +4,15 @@
     <PreferenceCategory
         android:title="@string/status_bar">
         <Preference
+            android:key="reset_blacklist"
             android:title="@string/reset_blacklist"
             android:icon="@drawable/ic_settings_backup_restore_black_24dp"/>
         <Preference
+            android:key="backup_blacklist"
             android:title="@string/back_up_blacklist"
             android:icon="@drawable/ic_backup_black_24dp"/>
         <Preference
+            android:key="restore_blacklist"
             android:title="@string/restore_blacklist"
             android:icon="@drawable/ic_restore_black_24dp"/>
     </PreferenceCategory>
@@ -17,6 +20,7 @@
     <PreferenceCategory
         android:title="@string/networking_data">
         <SwitchPreference
+            android:key="airplane"
             android:title="@string/airplane_icon"
             android:icon="@drawable/ic_airplanemode_active_black_24dp"/>
         <SwitchPreference

@@ -29,27 +29,27 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".ItemListActivity"
+            android:name=".Activites.ItemListActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.zacharee1.systemuituner.MainActivity" />
+                android:value="com.zacharee1.systemuituner.Activites.MainActivity" />
         </activity>
         <activity
-            android:name=".ItemDetailActivity"
+            android:name=".Activites.ItemDetailActivity"
             android:label="@string/title_item_detail"
-            android:parentActivityName=".ItemListActivity"
+            android:parentActivityName=".Activites.ItemListActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.zacharee1.systemuituner.ItemListActivity" />
+                android:value="com.zacharee1.systemuituner.Activites.ItemListActivity" />
         </activity>
         <activity
-            android:name=".SettingsActivity"
+            android:name=".Activites.SettingsActivity"
             android:label="@string/title_activity_settings"
             android:theme="@style/AppTheme" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".Activites.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
