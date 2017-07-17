@@ -6,14 +6,14 @@
     android:padding="16dp">
 
     <SeekBar
-        android:id="@+id/seekBar"
+        android:id="@+id/qqs_count_seekbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:max="10" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/qqs_count_text"
         android:layout_width="50dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"

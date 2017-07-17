@@ -1,10 +1,17 @@
 package com.zacharee1.systemuituner.FragmentHelpers;
 
-import com.zacharee1.systemuituner.ItemDetailFragment;
+import android.content.DialogInterface;
+import android.preference.Preference;
+import android.preference.SwitchPreference;
+import android.provider.Settings;
+import android.util.Log;
+import android.widget.SeekBar;
+import android.widget.Toast;
 
-/**
- * Created by Zacha on 7/16/2017.
- */
+import com.zacharee1.systemuituner.ItemDetailFragment;
+import com.zacharee1.systemuituner.R;
+import com.zacharee1.systemuituner.SliderPreference;
+import com.zacharee1.systemuituner.Utils.SettingsUtils;
 
 public class QSHelper
 {
@@ -12,5 +19,71 @@ public class QSHelper
 
     public QSHelper(ItemDetailFragment fragment) {
         mFragment = fragment;
+        setSwitchStates();
+        setSwitchListeners();
+        setSliderState();
+    }
+
+    private void setSwitchStates() {
+        for (int i = 0; i < mFragment.getPreferenceScreen().getRootAdapter().getCount(); i++) {
+            Object o = mFragment.getPreferenceScreen().getRootAdapter().getItem(i);
+
+            if (o instanceof SwitchPreference) {
+                SwitchPreference pref = (SwitchPreference) o;
+
+                pref.setChecked(Settings.Secure.getInt(mFragment.getContext().getContentResolver(), pref.getKey(), 1) == 1);
+            }
+        }
+    }
+
+    private void setSwitchListeners() {
+        for (int i = 0; i < mFragment.getPreferenceScreen().getRootAdapter().getCount(); i++) {
+            Object o = mFragment.getPreferenceScreen().getRootAdapter().getItem(i);
+
+            if (o instanceof SwitchPreference) {
+                final SwitchPreference pref = (SwitchPreference) o;
+
+                pref.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener()
+                {
+                    @Override
+                    public boolean onPreferenceChange(Preference preference, Object o)
+                    {
+                        if (Boolean.valueOf(o.toString())) {
+                            SettingsUtils.writeSecure(mFragment.getContext(), preference.getKey(), "1");
+                        } else {
+                            SettingsUtils.writeSecure(mFragment.getContext(), preference.getKey(), "0");
+                        }
+                        return true;
+                    }
+                });
+            }
+        }
+    }
+
+    private void setSliderState() {
+        SliderPreference preference = (SliderPreference) mFragment.findPreference("sysui_qqs_count");
+
+        preference.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener()
+        {
+            @Override
+            public boolean onPreferenceClick(Preference preference)
+            {
+                final SliderPreference pref = (SliderPreference) preference;
+                pref.setProgressState(Settings.Secure.getInt(mFragment.getContext().getContentResolver(), "sysui_qqs_count", 5));
+                pref.setOnDialogClosedListener(new SliderPreference.OnDialogClosedListener()
+                {
+                    @Override
+                    public void onDialogClosed(boolean positiveResult, int progress)
+                    {
+                        Log.e("Dialog", "CLOSED");
+                        if (positiveResult) {
+                            SettingsUtils.writeSecure(mFragment.getContext(), "sysui_qqs_count", progress + "");
+                        }
+                    }
+                });
+                return true;
+            }
+        });
+
     }
 }
