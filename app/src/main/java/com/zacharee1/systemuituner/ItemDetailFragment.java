@@ -64,6 +64,7 @@ public class ItemDetailFragment extends PreferenceFragment
                     new DemoHelper(this);
                     break;
                 case "touchwiz":
+                    new StatbarHelper(this);
                     new TWHelper(this);
                     break;
                 case "misc":

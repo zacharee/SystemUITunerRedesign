@@ -7,6 +7,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.zacharee1.systemuituner.ItemDetailFragment;
+import com.zacharee1.systemuituner.Utils.SettingsUtils;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -33,7 +34,8 @@ public class StatbarHelper
             @Override
             public boolean onPreferenceClick(Preference preference)
             {
-                Toast.makeText(mFragment.getContext(), "Reset", Toast.LENGTH_SHORT).show();
+                SettingsUtils.writeSecure(mFragment.getContext(), "icon_blacklist", "");
+                setSwitchPreferenceStates();
                 return true;
             }
         });
@@ -43,7 +45,9 @@ public class StatbarHelper
             @Override
             public boolean onPreferenceClick(Preference preference)
             {
-                Toast.makeText(mFragment.getContext(), "Backup", Toast.LENGTH_SHORT).show();
+                String currentBL = Settings.Secure.getString(mFragment.getContext().getContentResolver(), "icon_blacklist");
+                SettingsUtils.writeSecure(mFragment.getContext(), "icon_blacklist_backup", currentBL);
+                setSwitchPreferenceStates();
                 return true;
             }
         });
@@ -53,7 +57,9 @@ public class StatbarHelper
             @Override
             public boolean onPreferenceClick(Preference preference)
             {
-                Toast.makeText(mFragment.getContext(), "Restore", Toast.LENGTH_SHORT).show();
+                String backupBL = Settings.Secure.getString(mFragment.getContext().getContentResolver(), "icon_blacklist_backup");
+                SettingsUtils.writeSecure(mFragment.getContext(), "icon_blacklist", backupBL);
+                setSwitchPreferenceStates();
                 return true;
             }
         });
@@ -68,7 +74,7 @@ public class StatbarHelper
         for (int i = 0; i < mFragment.getPreferenceScreen().getRootAdapter().getCount(); i++) {
             Object o = mFragment.getPreferenceScreen().getRootAdapter().getItem(i);
 
-            if (o instanceof SwitchPreference) {
+            if (o instanceof SwitchPreference && !((SwitchPreference)o).getTitle().toString().toLowerCase().contains("high brightness warning")) {
                 SwitchPreference pref = (SwitchPreference) o;
 
                 pref.setChecked(true);
@@ -91,7 +97,52 @@ public class StatbarHelper
     }
 
     private void switchPreferenceListeners() {
+        for (int i = 0; i < mFragment.getPreferenceScreen().getRootAdapter().getCount(); i++) {
+            Object o = mFragment.getPreferenceScreen().getRootAdapter().getItem(i);
 
+            if (o instanceof SwitchPreference && !((SwitchPreference)o).getTitle().toString().toLowerCase().contains("high brightness warning")) {
+                final SwitchPreference pref = (SwitchPreference) o;
+
+                pref.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener()
+                {
+                    @Override
+                    public boolean onPreferenceChange(Preference preference, Object o)
+                    {
+                        String key = preference.getKey();
+
+                        if (key != null) {
+                            String currentBL = Settings.Secure.getString(mFragment.getContext().getContentResolver(), "icon_blacklist");
+                            if (currentBL == null) currentBL = "";
+
+                            if (!Boolean.valueOf(o.toString())) {
+                                if (currentBL.isEmpty()) {
+                                    currentBL = key;
+                                } else {
+                                    currentBL = currentBL.concat("," + key);
+                                }
+                            } else {
+                                ArrayList<String> blItems = new ArrayList<>(Arrays.asList(currentBL.split("[,]")));
+                                ArrayList<String> keyItems = new ArrayList<>(Arrays.asList(key.split("[,]")));
+
+                                for (String s : keyItems) {
+                                    if (blItems.contains(s)) {
+                                        blItems.remove(s);
+                                    }
+                                }
+
+                                currentBL = blItems.toString()
+                                        .replace("[", "")
+                                        .replace("]", "")
+                                        .replace(" ", "");
+                            }
+
+                            SettingsUtils.writeSecure(mFragment.getContext(), "icon_blacklist", currentBL);
+                        }
+                        return true;
+                    }
+                });
+            }
+        }
     }
 
 }
