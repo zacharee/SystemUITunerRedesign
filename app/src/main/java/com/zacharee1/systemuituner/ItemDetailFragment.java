@@ -47,9 +47,6 @@ public class ItemDetailFragment extends PreferenceFragment
             final String id = getArguments().getString(ARG_ITEM_ID);
             assert id != null;
 
-            // Load the dummy content specified by the fragment
-            // arguments. In a real-world scenario, use a Loader
-            // to load content from a content provider.
             mItem = TweakItems.ITEM_MAP.get(id);
             addPreferencesFromResource(mItem.layoutId);
 

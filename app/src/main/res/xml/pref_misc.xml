@@ -4,51 +4,66 @@
     <PreferenceCategory
         android:title="@string/general">
         <SwitchPreference
+            android:key="show_full_zen"
             android:title="@string/dnd_switch_in_vol_slider"/>
         <SwitchPreference
+            android:key="heads_up_notifications_enabled"
             android:title="@string/heads_up_notifications"/>
         <SwitchPreference
+            android:key="audio_safe_volume_state"
             android:title="@string/headphone_volume_warning"/>
         <SwitchPreference
+            android:key="status_bar_show_battery_percent"
             android:title="@string/battery_percentage"
             android:summary="@string/reboot_required"/>
         <SwitchPreference
+            android:key="clock_seconds"
             android:title="@string/show_clock_seconds"/>
     </PreferenceCategory>
 
     <PreferenceCategory
         android:title="@string/night_mode">
         <SwitchPreference
+            android:key="night_mode_auto"
             android:title="@string/night_mode_auto"/>
         <SwitchPreference
+            android:key="night_mode_override"
             android:title="@string/night_mode_override"/>
         <SwitchPreference
+            android:key="tuner_night_mode_adjust_tint"
             android:title="@string/night_mode_adjust_tint"/>
     </PreferenceCategory>
 
     <PreferenceCategory
         android:title="@string/animation_speeds">
         <EditTextPreference
+            android:key="animator_duration_scale"
             android:title="@string/animator_duration_scale"/>
         <EditTextPreference
+            android:key="transition_animation_scale"
             android:title="@string/transition_animation_scale"/>
         <EditTextPreference
+            android:key="window_animation_scale"
             android:title="@string/window_animation_scale"/>
     </PreferenceCategory>
 
     <PreferenceCategory
         android:title="@string/custom_settings_values">
         <EditTextPreference
+            android:key="global_settings"
             android:title="@string/global"/>
         <EditTextPreference
+            android:key="secure_settings"
             android:title="@string/secure"/>
         <EditTextPreference
+            android:key="system_settings"
             android:title="@string/system"/>
     </PreferenceCategory>
 
     <PreferenceCategory
         android:title="@string/power_notification_controls">
         <SwitchPreference
+            android:key="show_importance_slider"
             android:title="@string/power_notification_controls"/>
     </PreferenceCategory>
 
