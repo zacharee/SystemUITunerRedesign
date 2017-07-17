@@ -7,10 +7,6 @@ import android.provider.Settings;
 import com.zacharee1.systemuituner.ItemDetailFragment;
 import com.zacharee1.systemuituner.Utils.SettingsUtils;
 
-/**
- * Created by Zacha on 7/16/2017.
- */
-
 public class TWHelper
 {
     private ItemDetailFragment mFragment;

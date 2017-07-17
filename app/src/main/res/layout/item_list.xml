@@ -6,8 +6,6 @@
     android:name="com.zacharee1.systemuituner.ItemListFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginLeft="16dp"
-    android:layout_marginRight="16dp"
     app:layoutManager="LinearLayoutManager"
     tools:context="com.zacharee1.systemuituner.Activites.ItemListActivity"
     tools:listitem="@layout/item_list_content" />

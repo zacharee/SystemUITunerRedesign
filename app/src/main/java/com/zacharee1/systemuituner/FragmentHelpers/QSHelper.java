@@ -25,10 +25,10 @@ public class QSHelper
     }
 
     private void setSwitchStates() {
-        for (int i = 0; i < mFragment.getPreferenceScreen().getRootAdapter().getCount(); i++) {
+        for (int i = 0; i < mFragment.getPreferenceScreen().getRootAdapter().getCount(); i++) { //loop through every preference
             Object o = mFragment.getPreferenceScreen().getRootAdapter().getItem(i);
 
-            if (o instanceof SwitchPreference) {
+            if (o instanceof SwitchPreference) { //if current preference is a SwitchPreference
                 SwitchPreference pref = (SwitchPreference) o;
 
                 pref.setChecked(Settings.Secure.getInt(mFragment.getContext().getContentResolver(), pref.getKey(), 1) == 1);
@@ -37,10 +37,10 @@ public class QSHelper
     }
 
     private void setSwitchListeners() {
-        for (int i = 0; i < mFragment.getPreferenceScreen().getRootAdapter().getCount(); i++) {
+        for (int i = 0; i < mFragment.getPreferenceScreen().getRootAdapter().getCount(); i++) { //loop through every preference
             Object o = mFragment.getPreferenceScreen().getRootAdapter().getItem(i);
 
-            if (o instanceof SwitchPreference) {
+            if (o instanceof SwitchPreference) { //if current preference is a SwitchPreference
                 final SwitchPreference pref = (SwitchPreference) o;
 
                 pref.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener()
@@ -61,7 +61,7 @@ public class QSHelper
     }
 
     private void setSliderState() {
-        SliderPreference preference = (SliderPreference) mFragment.findPreference("sysui_qqs_count");
+        SliderPreference preference = (SliderPreference) mFragment.findPreference("sysui_qqs_count"); //find the SliderPreference
 
         preference.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener()
         {
@@ -69,15 +69,14 @@ public class QSHelper
             public boolean onPreferenceClick(Preference preference)
             {
                 final SliderPreference pref = (SliderPreference) preference;
-                pref.setProgressState(Settings.Secure.getInt(mFragment.getContext().getContentResolver(), "sysui_qqs_count", 5));
+                pref.setProgressState(Settings.Secure.getInt(mFragment.getContext().getContentResolver(), "sysui_qqs_count", 5)); //set the progress/value from Settings
                 pref.setOnDialogClosedListener(new SliderPreference.OnDialogClosedListener()
                 {
                     @Override
                     public void onDialogClosed(boolean positiveResult, int progress)
                     {
-                        Log.e("Dialog", "CLOSED");
                         if (positiveResult) {
-                            SettingsUtils.writeSecure(mFragment.getContext(), "sysui_qqs_count", progress + "");
+                            SettingsUtils.writeSecure(mFragment.getContext(), "sysui_qqs_count", progress + ""); //write new value to Settings if user presses OK
                         }
                     }
                 });
