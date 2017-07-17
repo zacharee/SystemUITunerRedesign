@@ -7,7 +7,7 @@
     android:divider="?android:attr/dividerHorizontal"
     android:orientation="horizontal"
     android:showDividers="middle"
-    tools:context="com.zacharee1.systemuituner.Activites.ItemListActivity">
+    tools:context="com.zacharee1.systemuituner.activites.ItemListActivity">
 
     <!--
     This layout is a two-pane layout for the Items
@@ -24,7 +24,7 @@
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         app:layoutManager="LinearLayoutManager"
-        tools:context="com.zacharee1.systemuituner.Activites.ItemListActivity"
+        tools:context="com.zacharee1.systemuituner.activites.ItemListActivity"
         tools:listitem="@layout/item_list_content" />
 
     <FrameLayout

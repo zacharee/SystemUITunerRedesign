@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name" translatable="false">SystemUI Tuner</string>
     <string name="to_the_tweaks">To The Tweaks!</string>
+    <string name="sorry_explain">Something went wrong while setting this toggle.</string>
+    <string name="sorry_option">Try executing the following command from a computer (it\'s one line):</string>
 </resources>

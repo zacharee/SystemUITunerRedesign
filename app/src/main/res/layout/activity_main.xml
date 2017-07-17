@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.zacharee1.systemuituner.Activites.MainActivity">
+    tools:context="com.zacharee1.systemuituner.activites.MainActivity">
 
     <ScrollView
         android:layout_width="match_parent"

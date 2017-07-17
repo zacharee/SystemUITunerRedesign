@@ -1,17 +1,12 @@
-package com.zacharee1.systemuituner.FragmentHelpers;
+package com.zacharee1.systemuituner.fragmenthelpers;
 
-import android.content.DialogInterface;
 import android.preference.Preference;
 import android.preference.SwitchPreference;
 import android.provider.Settings;
-import android.util.Log;
-import android.widget.SeekBar;
-import android.widget.Toast;
 
 import com.zacharee1.systemuituner.ItemDetailFragment;
-import com.zacharee1.systemuituner.R;
 import com.zacharee1.systemuituner.SliderPreference;
-import com.zacharee1.systemuituner.Utils.SettingsUtils;
+import com.zacharee1.systemuituner.utils.SettingsUtils;
 
 public class QSHelper
 {
@@ -69,6 +64,7 @@ public class QSHelper
             public boolean onPreferenceClick(Preference preference)
             {
                 final SliderPreference pref = (SliderPreference) preference;
+                pref.setMaxProgess(20);
                 pref.setProgressState(Settings.Secure.getInt(mFragment.getContext().getContentResolver(), "sysui_qqs_count", 5)); //set the progress/value from Settings
                 pref.setOnDialogClosedListener(new SliderPreference.OnDialogClosedListener()
                 {

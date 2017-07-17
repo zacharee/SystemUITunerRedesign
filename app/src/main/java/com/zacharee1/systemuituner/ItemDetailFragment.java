@@ -1,16 +1,15 @@
 package com.zacharee1.systemuituner;
 
-import android.app.Activity;
 import android.preference.PreferenceFragment;
 import android.os.Bundle;
 
-import com.zacharee1.systemuituner.Activites.ItemDetailActivity;
-import com.zacharee1.systemuituner.Activites.ItemListActivity;
-import com.zacharee1.systemuituner.FragmentHelpers.DemoHelper;
-import com.zacharee1.systemuituner.FragmentHelpers.MiscHelper;
-import com.zacharee1.systemuituner.FragmentHelpers.QSHelper;
-import com.zacharee1.systemuituner.FragmentHelpers.StatbarHelper;
-import com.zacharee1.systemuituner.FragmentHelpers.TWHelper;
+import com.zacharee1.systemuituner.activites.ItemDetailActivity;
+import com.zacharee1.systemuituner.activites.ItemListActivity;
+import com.zacharee1.systemuituner.fragmenthelpers.DemoHelper;
+import com.zacharee1.systemuituner.fragmenthelpers.MiscHelper;
+import com.zacharee1.systemuituner.fragmenthelpers.QSHelper;
+import com.zacharee1.systemuituner.fragmenthelpers.StatbarHelper;
+import com.zacharee1.systemuituner.fragmenthelpers.TWHelper;
 
 /**
  * A fragment representing a single Item detail screen.

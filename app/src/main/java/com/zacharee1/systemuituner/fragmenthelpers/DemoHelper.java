@@ -1,4 +1,4 @@
-package com.zacharee1.systemuituner.FragmentHelpers;
+package com.zacharee1.systemuituner.fragmenthelpers;
 
 import com.zacharee1.systemuituner.ItemDetailFragment;
 

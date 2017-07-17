@@ -1,11 +1,11 @@
-package com.zacharee1.systemuituner.FragmentHelpers;
+package com.zacharee1.systemuituner.fragmenthelpers;
 
 import android.preference.Preference;
 import android.preference.SwitchPreference;
 import android.provider.Settings;
 
 import com.zacharee1.systemuituner.ItemDetailFragment;
-import com.zacharee1.systemuituner.Utils.SettingsUtils;
+import com.zacharee1.systemuituner.utils.SettingsUtils;
 
 public class TWHelper
 {

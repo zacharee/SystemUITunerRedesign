@@ -1,4 +1,4 @@
-package com.zacharee1.systemuituner.Utils;
+package com.zacharee1.systemuituner.utils;
 
 import android.util.Log;
 

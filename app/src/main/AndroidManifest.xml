@@ -29,31 +29,34 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".Activites.ItemListActivity"
+            android:name=".activites.ItemListActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.zacharee1.systemuituner.Activites.MainActivity" />
+                android:value="com.zacharee1.systemuituner.activites.MainActivity" />
         </activity>
         <activity
-            android:name=".Activites.ItemDetailActivity"
-            android:parentActivityName=".Activites.ItemListActivity"
+            android:name=".activites.ItemDetailActivity"
+            android:parentActivityName=".activites.ItemListActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.zacharee1.systemuituner.Activites.ItemListActivity" />
+                android:value="com.zacharee1.systemuituner.activites.ItemListActivity" />
         </activity>
         <activity
-            android:name=".Activites.SettingsActivity"
+            android:name=".activites.SettingsActivity"
             android:label="@string/settings"
             android:theme="@style/AppTheme" />
-        <activity android:name=".Activites.MainActivity">
+        <activity android:name=".activites.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".activites.SettingWriteFailed">
+
         </activity>
     </application>
 

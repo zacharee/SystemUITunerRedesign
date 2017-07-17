@@ -7,5 +7,5 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layoutManager="LinearLayoutManager"
-    tools:context="com.zacharee1.systemuituner.Activites.ItemListActivity"
+    tools:context="com.zacharee1.systemuituner.activites.ItemListActivity"
     tools:listitem="@layout/item_list_content" />

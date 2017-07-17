@@ -5,12 +5,8 @@ import android.preference.DialogPreference;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.LinearLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import com.zacharee1.systemuituner.Utils.SettingsUtils;
 
 public class SliderPreference extends DialogPreference
 {
@@ -85,6 +81,13 @@ public class SliderPreference extends DialogPreference
 
         seekBar.setProgress(progress);
         textView.setText(String.valueOf(progress));
+    }
+
+    public void setMaxProgess(int maxProgess) {
+        if (view == null) onCreateDialogView();
+
+        SeekBar seekBar = view.findViewById(R.id.qqs_count_seekbar);
+        seekBar.setMax(maxProgess);
     }
 
     public View getView() {
