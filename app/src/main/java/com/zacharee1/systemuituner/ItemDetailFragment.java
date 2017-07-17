@@ -42,10 +42,10 @@ public class ItemDetailFragment extends PreferenceFragment
             mItem = TweakItems.ITEM_MAP.get(getArguments().getString(ARG_ITEM_ID));
 
             Activity activity = this.getActivity();
-            CollapsingToolbarLayout appBarLayout = activity.findViewById(R.id.toolbar_layout);
-            if (appBarLayout != null) {
-                appBarLayout.setTitle(mItem.content);
-            }
+//            CollapsingToolbarLayout appBarLayout = activity.findViewById(R.id.toolbar_layout);
+//            if (appBarLayout != null) {
+//                appBarLayout.setTitle(mItem.content);
+//            }
             getActivity().setTitle(mItem.content);
         }
 
