@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.zacharee1.systemuituner.R;
+import com.zacharee1.systemuituner.utils.SettingsUtils;
+import com.zacharee1.systemuituner.utils.SuUtils;
 
 public class MainActivity extends AppCompatActivity
 {
@@ -15,6 +17,16 @@ public class MainActivity extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        if (!SettingsUtils.hasPerms(this)) {
+            if (SuUtils.testSudo()) {
+                SuUtils.sudo("pm grant com.zacharee1.systemuituner android.permission.WRITE_SECURE_SETTINGS ; pm grant com.zacharee1.systemuituner android.permission.DUMP");
+            } else {
+                Intent intent = new Intent(this, SetupActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        }
     }
 
     public void launchList(View v) {

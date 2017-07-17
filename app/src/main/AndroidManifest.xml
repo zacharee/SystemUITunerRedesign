@@ -58,6 +58,10 @@
         <activity android:name=".activites.SettingWriteFailed">
 
         </activity>
+        <activity android:name=".activites.SetupActivity"
+            android:label="@string/setup">
+
+        </activity>
     </application>
 
 </manifest>

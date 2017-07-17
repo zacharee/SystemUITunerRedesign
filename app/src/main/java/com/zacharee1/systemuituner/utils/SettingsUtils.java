@@ -65,4 +65,13 @@ public class SettingsUtils
             }
         }
     }
+
+    public static boolean hasPerms(Context context) {
+        try {
+            Settings.Secure.putString(context.getContentResolver(), "systemui_tuner_setup", "1");
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
 }
