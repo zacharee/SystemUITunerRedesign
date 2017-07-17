@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:title="@string/general">
+        <Preference
+            android:title="@string/enable"/>
+        <SwitchPreference
+            android:title="@string/show"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/miscellaneous">
+        <EditTextPreference
+            android:title="@string/select_time"/>
+        <EditTextPreference
+            android:title="@string/select_battery_level"/>
+        <ListPreference
+            android:title="@string/wifi_strength"
+            android:entries="@array/signal_strength"
+            android:entryValues="@array/signal_strength"/>
+        <ListPreference
+            android:title="@string/mobile_strength"
+            android:entries="@array/signal_strength"
+            android:entryValues="@array/signal_strength"/>
+        <ListPreference
+            android:title="@string/mobile_type"
+            android:entries="@array/mobile_type_display"
+            android:entryValues="@array/mobile_type_vals"/>
+        <ListPreference
+            android:title="@string/status_bar_style"
+            android:entries="@array/statbar_style_display"
+            android:entryValues="@array/statbar_style_vals"/>
+        <SwitchPreference
+            android:title="@string/show_notifications"/>
+        <SwitchPreference
+            android:title="@string/battery_charging"/>
+        <SwitchPreference
+            android:title="@string/show_airplane_mode"/>
+    </PreferenceCategory>
+
+</PreferenceScreen>

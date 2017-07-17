@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:title="@string/general">
+        <SwitchPreference
+            android:title="@string/high_brightness_warning"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/status_bar">
+        <Preference
+            android:title="@string/reset_blacklist"/>
+        <Preference
+            android:title="@string/back_up_blacklist"/>
+        <Preference
+            android:title="@string/restore_blacklist"/>
+        <SwitchPreference
+            android:title="@string/face_icon"/>
+        <SwitchPreference
+            android:title="@string/femtocell_icon"/>
+        <SwitchPreference
+            android:title="@string/gesture_icon"/>
+        <SwitchPreference
+            android:title="@string/glove_icon"/>
+        <SwitchPreference
+            android:title="@string/gps_icon"/>
+        <SwitchPreference
+            android:title="@string/ims_volte_icon"/>
+        <SwitchPreference
+            android:title="@string/keyguard_wakeup_icon"/>
+        <SwitchPreference
+            android:title="@string/knox_icon"/>
+        <SwitchPreference
+            android:title="@string/lbs_icon"/>
+        <SwitchPreference
+            android:title="@string/phone_signal_second_stub"/>
+        <SwitchPreference
+            android:title="@string/private_mode_icon"/>
+        <SwitchPreference
+            android:title="@string/rcs_icon"/>
+        <SwitchPreference
+            android:title="@string/safezone_icon"/>
+        <SwitchPreference
+            android:title="@string/smart_bonding_icon"/>
+        <SwitchPreference
+            android:title="@string/smart_network_icon"/>
+        <SwitchPreference
+            android:title="@string/smart_scroll_icon"/>
+        <SwitchPreference
+            android:title="@string/toddler_icon"/>
+        <SwitchPreference
+            android:title="@string/wearable_icon"/>
+        <SwitchPreference
+            android:title="@string/wifi_ap_icon"/>
+        <SwitchPreference
+            android:title="@string/wifi_oxygen_icon"/>
+        <SwitchPreference
+            android:title="@string/wifi_p2p_icon"/>
+        <SwitchPreference
+            android:title="@string/wimax_icon"/>
+    </PreferenceCategory>
+
+</PreferenceScreen>

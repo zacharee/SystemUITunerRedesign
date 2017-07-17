@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:title="@string/general">
+        <SwitchPreference
+            android:title="@string/fancy_pulldown_animation"/>
+        <SwitchPreference
+            android:title="@string/move_full_rows"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/qs_header_tile_count">
+        <com.zacharee1.systemuituner.SliderPreference
+            android:title="@string/qs_header_tile_count"/>
+    </PreferenceCategory>
+
+</PreferenceScreen>

@@ -1,14 +1,9 @@
 package com.zacharee1.systemuituner;
 
 import android.app.Activity;
+import android.preference.PreferenceFragment;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
-import com.zacharee1.systemuituner.dummy.TweakItems;
 
 /**
  * A fragment representing a single Item detail screen.
@@ -16,7 +11,8 @@ import com.zacharee1.systemuituner.dummy.TweakItems;
  * in two-pane mode (on tablets) or a {@link ItemDetailActivity}
  * on handsets.
  */
-public class ItemDetailFragment extends Fragment {
+public class ItemDetailFragment extends PreferenceFragment
+{
     /**
      * The fragment argument representing the item ID that this fragment
      * represents.
@@ -50,14 +46,11 @@ public class ItemDetailFragment extends Fragment {
             if (appBarLayout != null) {
                 appBarLayout.setTitle(mItem.content);
             }
+            getActivity().setTitle(mItem.content);
         }
-    }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-            Bundle savedInstanceState) {
-        View rootView = inflater.inflate(mItem.layoutId, container, false);
-
-        return rootView;
+        super.onCreate(savedInstanceState);
+        addPreferencesFromResource(mItem.layoutId);
+        setHasOptionsMenu(true);
     }
 }

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="signal_strength">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+
+    <string-array name="mobile_type_display">
+        <item>1x</item>
+        <item>EDGE</item>
+        <item>GPRS</item>
+        <item>3G</item>
+        <item>HSPA</item>
+        <item>4G/HSPA+</item>
+        <item>LTE</item>
+        <item>Roaming</item>
+        <item>None</item>
+    </string-array>
+
+    <string-array name="mobile_type_vals">
+        <item>1x</item>
+        <item>e</item>
+        <item>g</item>
+        <item>3g</item>
+        <item>h</item>
+        <item>4g</item>
+        <item>lte</item>
+        <item>roam</item>
+        <item>none</item>
+    </string-array>
+
+    <string-array name="statbar_style_display">
+        <item>Opaque</item>
+        <item>Translucent</item>
+        <item>Semi-Transparent</item>
+        <item>Default</item>
+    </string-array>
+
+    <string-array name="statbar_style_vals">
+        <item>opaque</item>
+        <item>translucent</item>
+        <item>semi-transparent</item>
+        <item>default</item>
+    </string-array>
+</resources>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:title="@string/general">
+        <SwitchPreference
+            android:title="@string/dnd_switch_in_vol_slider"/>
+        <SwitchPreference
+            android:title="@string/heads_up_notifications"/>
+        <SwitchPreference
+            android:title="@string/headphone_volume_warning"/>
+        <SwitchPreference
+            android:title="@string/battery_percentage"
+            android:summary="@string/reboot_required"/>
+        <SwitchPreference
+            android:title="@string/show_clock_seconds"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/night_mode">
+        <SwitchPreference
+            android:title="@string/night_mode_auto"/>
+        <SwitchPreference
+            android:title="@string/night_mode_override"/>
+        <SwitchPreference
+            android:title="@string/night_mode_adjust_tint"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/animation_speeds">
+        <EditTextPreference
+            android:title="@string/animator_duration_scale"/>
+        <EditTextPreference
+            android:title="@string/transition_animation_scale"/>
+        <EditTextPreference
+            android:title="@string/window_animation_scale"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/custom_settings_values">
+        <EditTextPreference
+            android:title="@string/global"/>
+        <EditTextPreference
+            android:title="@string/secure"/>
+        <EditTextPreference
+            android:title="@string/system"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/power_notification_controls">
+        <SwitchPreference
+            android:title="@string/power_notification_controls"/>
+    </PreferenceCategory>
+
+</PreferenceScreen>
