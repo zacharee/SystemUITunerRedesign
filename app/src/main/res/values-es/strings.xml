@@ -242,4 +242,5 @@
     <string name="restore_blacklist">Restaurar Lista Negra</string>
     <string name="blacklist_backed_up">Lista Negra Guardado</string>
     <string name="blacklist_restored">Lista Negra Restaurado</string>
+    <string name="to_the_tweaks">A Los Toquecitos!</string>
 </resources>

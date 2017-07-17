@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string-array name="signal_strength">
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string-array name="signal_strength"
+        translatable="false">
         <item>0</item>
         <item>1</item>
         <item>2</item>
@@ -8,7 +9,8 @@
         <item>4</item>
     </string-array>
 
-    <string-array name="mobile_type_display">
+    <string-array name="mobile_type_display"
+        translatable="false">
         <item>1x</item>
         <item>EDGE</item>
         <item>GPRS</item>
@@ -20,7 +22,8 @@
         <item>None</item>
     </string-array>
 
-    <string-array name="mobile_type_vals">
+    <string-array name="mobile_type_vals"
+        translatable="false">
         <item>1x</item>
         <item>e</item>
         <item>g</item>
@@ -32,14 +35,16 @@
         <item>none</item>
     </string-array>
 
-    <string-array name="statbar_style_display">
+    <string-array name="statbar_style_display"
+        translatable="false">
         <item>Opaque</item>
         <item>Translucent</item>
         <item>Semi-Transparent</item>
         <item>Default</item>
     </string-array>
 
-    <string-array name="statbar_style_vals">
+    <string-array name="statbar_style_vals"
+        translatable="false">
         <item>opaque</item>
         <item>translucent</item>
         <item>semi-transparent</item>

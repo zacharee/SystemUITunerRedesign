@@ -38,7 +38,6 @@
         </activity>
         <activity
             android:name=".Activites.ItemDetailActivity"
-            android:label="@string/title_item_detail"
             android:parentActivityName=".Activites.ItemListActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
@@ -47,7 +46,7 @@
         </activity>
         <activity
             android:name=".Activites.SettingsActivity"
-            android:label="@string/title_activity_settings"
+            android:label="@string/settings"
             android:theme="@style/AppTheme" />
         <activity android:name=".Activites.MainActivity">
             <intent-filter>
