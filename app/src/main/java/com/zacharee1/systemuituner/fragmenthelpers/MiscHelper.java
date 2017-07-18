@@ -1,7 +1,9 @@
 package com.zacharee1.systemuituner.fragmenthelpers;
 
+import android.os.Build;
 import android.preference.EditTextPreference;
 import android.preference.Preference;
+import android.preference.PreferenceCategory;
 import android.preference.SwitchPreference;
 import android.provider.Settings;
 
@@ -54,7 +56,6 @@ public class MiscHelper
            add((SwitchPreference) mFragment.findPreference("show_full_zen"));
            add((SwitchPreference) mFragment.findPreference("clock_seconds"));
            add((SwitchPreference) mFragment.findPreference("show_importance_slider"));
-           add((SwitchPreference) mFragment.findPreference("tuner_night_mode_adjust_tint"));
         }};
 
         for (SwitchPreference preference : preferences) {
@@ -95,26 +96,50 @@ public class MiscHelper
     private void setNightModeSwitchStates() {
         final SwitchPreference auto = (SwitchPreference) mFragment.findPreference("night_mode_auto");
         final SwitchPreference override = (SwitchPreference) mFragment.findPreference("night_mode_override");
+        final SwitchPreference tint = (SwitchPreference) mFragment.findPreference("tuner_night_mode_adjust_tint");
 
-        int current = Settings.Secure.getInt(mFragment.getContext().getContentResolver(), "twilight_mode", 0);
+        if (Build.VERSION.SDK_INT == Build.VERSION_CODES.N)
+        {
+            tint.setChecked(Settings.Secure.getInt(mFragment.getContext().getContentResolver(), "night_mode_adjust_tint", 0) == 1);
 
-        switch (current) {
-            case TWILIGHT_MODE_INACTIVE:
-                auto.setChecked(false);
-                override.setChecked(false);
-                break;
-            case TWILIGHT_MODE_OVERRIDE:
-                auto.setChecked(false);
-                override.setChecked(true);
-                break;
-            case TWILIGHT_MODE_AUTO:
-                auto.setChecked(true);
-                override.setChecked(false);
-                break;
-            case TWILIGHT_MODE_AUTO_OVERRIDE:
-                auto.setChecked(true);
-                override.setChecked(true);
-                break;
+            int current = Settings.Secure.getInt(mFragment.getContext().getContentResolver(), "twilight_mode", 0);
+
+            switch (current)
+            {
+                case TWILIGHT_MODE_INACTIVE:
+                    auto.setChecked(false);
+                    override.setChecked(false);
+                    break;
+                case TWILIGHT_MODE_OVERRIDE:
+                    auto.setChecked(false);
+                    override.setChecked(true);
+                    break;
+                case TWILIGHT_MODE_AUTO:
+                    auto.setChecked(true);
+                    override.setChecked(false);
+                    break;
+                case TWILIGHT_MODE_AUTO_OVERRIDE:
+                    auto.setChecked(true);
+                    override.setChecked(true);
+                    break;
+            }
+
+            tint.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener()
+            {
+                @Override
+                public boolean onPreferenceChange(Preference preference, Object o)
+                {
+                    SettingsUtils.writeSecure(mFragment.getContext(), "night_mode_adjust_tint", Boolean.valueOf(o.toString()) ? "1" : "0");
+                    return true;
+                }
+            });
+
+        } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N_MR1) {
+            PreferenceCategory category = (PreferenceCategory) mFragment.findPreference("night_mode_settings");
+            category.removePreference(tint);
+
+            override.setChecked(Settings.Secure.getInt(mFragment.getContext().getContentResolver(), "night_display_activated", 0) == 1);
+            auto.setChecked(Settings.Secure.getInt(mFragment.getContext().getContentResolver(), "night_display_auto", 0) == 1);
         }
 
         auto.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener()
@@ -122,7 +147,8 @@ public class MiscHelper
             @Override
             public boolean onPreferenceChange(Preference preference, Object o)
             {
-                evalNightModeStates(Boolean.valueOf(o.toString()), override.isChecked());
+                if (Build.VERSION.SDK_INT == Build.VERSION_CODES.N) evalNightModeStates(Boolean.valueOf(o.toString()), override.isChecked());
+                else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N_MR1) SettingsUtils.writeSecure(mFragment.getContext(), "night_display_auto", Boolean.valueOf(o.toString()) ? "1" : "0");
                 return true;
             }
         });
@@ -132,7 +158,8 @@ public class MiscHelper
             @Override
             public boolean onPreferenceChange(Preference preference, Object o)
             {
-                evalNightModeStates(auto.isChecked(), Boolean.valueOf(o.toString()));
+                if (Build.VERSION.SDK_INT == Build.VERSION_CODES.N) evalNightModeStates(auto.isChecked(), Boolean.valueOf(o.toString()));
+                else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N_MR1) SettingsUtils.writeSecure(mFragment.getContext(), "night_display_activated", Boolean.valueOf(o.toString()) ? "1" : "0");
                 return true;
             }
         });

@@ -1,5 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:title="Item" />
+    <item android:id="@+id/action_settings"
+        android:title="@string/settings"/>
+
+    <item android:id="@+id/action_about"
+        android:title="@string/about"/>
+
+    <item android:id="@+id/action_more"
+        android:title="@string/more" >
+        <menu>
+            <group>
+                <item
+                    android:id="@+id/action_github"
+                    android:title="@string/github" />
+                <item
+                    android:id="@+id/action_telegram"
+                    android:title="@string/telegram" />
+                <item
+                    android:id="@+id/action_g_plus"
+                    android:title="@string/google" />
+                <item
+                    android:id="@+id/action_xda_thread"
+                    android:title="@string/xda_thread" />
+            </group>
+        </menu>
+    </item>
+
 </menu>

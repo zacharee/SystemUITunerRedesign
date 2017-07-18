@@ -55,13 +55,33 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activites.SettingWriteFailed">
+        <activity android:name=".activites.SettingWriteFailed"></activity>
+        <activity
+            android:name=".activites.SetupActivity"
+            android:label="@string/setup"></activity>
 
-        </activity>
-        <activity android:name=".activites.SetupActivity"
-            android:label="@string/setup">
+        <service
+            android:name=".qstiles.NightModeTile"
+            android:icon="@drawable/ic_visibility_black_24dp"
+            android:label="@string/night_mode"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".qstiles.BatteryTile"
+            android:icon="@drawable/ic_battery_std_black_24dp"
+            android:label="@string/battery"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE" />
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
+            </intent-filter>
+        </service>
 
-        </activity>
+        <activity android:name=".activites.AboutActivity"></activity>
     </application>
 
 </manifest>

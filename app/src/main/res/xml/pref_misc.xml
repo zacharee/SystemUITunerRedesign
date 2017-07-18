@@ -22,6 +22,7 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+        android:key="night_mode_settings"
         android:title="@string/night_mode">
         <SwitchPreference
             android:key="night_mode_auto"

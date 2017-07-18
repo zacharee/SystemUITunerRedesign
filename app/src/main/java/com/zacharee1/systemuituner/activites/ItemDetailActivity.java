@@ -10,6 +10,7 @@ import android.view.MenuItem;
 
 import com.zacharee1.systemuituner.ItemDetailFragment;
 import com.zacharee1.systemuituner.R;
+import com.zacharee1.systemuituner.utils.OptionSelected;
 
 /**
  * An activity representing a single Item detail screen. This
@@ -66,16 +67,12 @@ public class ItemDetailActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
+
         if (id == android.R.id.home) {
-            // This ID represents the Home or Up button. In the case of this
-            // activity, the Up button is shown. For
-            // more details, see the Navigation pattern on Android Design:
-            //
-            // http://developer.android.com/design/patterns/navigation.html#up-vs-back
-            //
             navigateUpTo(new Intent(this, ItemListActivity.class));
             return true;
         }
-        return super.onOptionsItemSelected(item);
+
+        return OptionSelected.doAction(item, this);
     }
 }
