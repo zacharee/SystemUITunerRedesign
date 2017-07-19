@@ -187,6 +187,8 @@ public class ItemListActivity extends AppCompatActivity {
             if (DARK)
             {
                 holder.mIconView.getDrawable().setTintList(ColorStateList.valueOf(Color.WHITE));
+            } else {
+                holder.mIconView.getDrawable().setTintList(ColorStateList.valueOf(Color.BLACK));
             }
         }
     }
