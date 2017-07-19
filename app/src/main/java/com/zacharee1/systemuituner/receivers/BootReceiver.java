@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.provider.Settings;
 
+import com.zacharee1.systemuituner.services.ShutdownService;
 import com.zacharee1.systemuituner.utils.SettingsUtils;
 
 public class BootReceiver extends BroadcastReceiver
@@ -28,6 +29,8 @@ public class BootReceiver extends BroadcastReceiver
             String backupBL = Settings.Global.getString(context.getContentResolver(), "icon_blacklist_backup");
             SettingsUtils.writeSecure(context, "icon_blacklist", backupBL);
             SettingsUtils.writeGlobal(context, "system_booted", "1");
+
+            context.startService(new Intent(context, ShutdownService.class));
         }
     }
 }
