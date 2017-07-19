@@ -147,7 +147,7 @@
     <string name="show_at_top_of_notification_list">- Mostrar en parte superior de lista de notificaciones</string>
     <string name="danger_zone">Zona Peligrosa</string>
     <string name="enable_custom_settings_input">Permitir Input para Preferencias a Medidas</string>
-    <string name="use_safer_statusbar_hide">Modo Seguro</string>
+    <string name="safe_mode">Modo Seguro</string>
     <string name="root_test_failed">No se pudo obtener root.</string>
     <string name="permissions_failed">Hmm. No se pudo completar. Los permisos están correctos? (SystemUI Tuner)</string>
     <string name="enable">Permitir</string>
@@ -243,4 +243,7 @@
     <string name="blacklist_backed_up">Lista Negra Guardado</string>
     <string name="blacklist_restored">Lista Negra Restaurado</string>
     <string name="to_the_tweaks">A Los Toquecitos!</string>
+    <string name="sorry_explain">Algo malo ocurró.</string>
+    <string name="sorry_option">Trata de ejecutar esto comando en una computadora (en una linea):</string>
+    <string name="more">Más</string>
 </resources>

@@ -49,7 +49,8 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:title="@string/custom_settings_values">
+        android:title="@string/custom_settings_values"
+        android:key="custom_settings_values">
         <EditTextPreference
             android:key="global_settings"
             android:title="@string/global"/>

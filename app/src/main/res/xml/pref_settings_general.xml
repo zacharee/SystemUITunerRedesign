@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:title="@string/general">
+
+        <SwitchPreference
+            android:title="@string/dark_mode"
+            android:key="dark_mode" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/danger_zone">
+
+        <SwitchPreference
+            android:title="@string/safe_mode"
+            android:key="safe_mode" />
+
+        <SwitchPreference
+            android:title="@string/enable_custom_settings_input"
+            android:key="allow_custom_settings_input" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

@@ -1,7 +1,9 @@
 package com.zacharee1.systemuituner.activites;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.support.v7.app.AppCompatActivity;
@@ -11,6 +13,7 @@ import android.view.MenuItem;
 import com.zacharee1.systemuituner.ItemDetailFragment;
 import com.zacharee1.systemuituner.R;
 import com.zacharee1.systemuituner.utils.OptionSelected;
+import com.zacharee1.systemuituner.utils.RecreateHandler;
 
 /**
  * An activity representing a single Item detail screen. This
@@ -20,9 +23,19 @@ import com.zacharee1.systemuituner.utils.OptionSelected;
  */
 public class ItemDetailActivity extends AppCompatActivity {
 
+    private static boolean DARK = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        DARK = sharedPreferences.getBoolean("dark_mode", false);
+
+        setTheme(DARK ? R.style.AppTheme_Dark_NoActionBar : R.style.AppTheme_NoActionBar);
+
+        RecreateHandler.onCreate(this);
+
         setContentView(R.layout.activity_item_detail);
         Toolbar toolbar = (Toolbar) findViewById(R.id.detail_toolbar);
         setSupportActionBar(toolbar);
@@ -74,5 +87,12 @@ public class ItemDetailActivity extends AppCompatActivity {
         }
 
         return OptionSelected.doAction(item, this);
+    }
+
+    @Override
+    protected void onDestroy()
+    {
+        RecreateHandler.onDestroy(this);
+        super.onDestroy();
     }
 }

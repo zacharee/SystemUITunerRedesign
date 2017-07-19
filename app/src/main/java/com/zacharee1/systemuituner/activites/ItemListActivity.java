@@ -2,10 +2,16 @@ package com.zacharee1.systemuituner.activites;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.os.Parcel;
 import android.os.RemoteException;
+import android.preference.Preference;
+import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DividerItemDecoration;
@@ -25,6 +31,7 @@ import com.zacharee1.systemuituner.ItemDetailFragment;
 import com.zacharee1.systemuituner.R;
 import com.zacharee1.systemuituner.TweakItems;
 import com.zacharee1.systemuituner.utils.OptionSelected;
+import com.zacharee1.systemuituner.utils.RecreateHandler;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -46,10 +53,20 @@ public class ItemListActivity extends AppCompatActivity {
      */
     private boolean mTwoPane;
     private List<TweakItems.TweakItem> mItems = TweakItems.ITEMS;
+    private static boolean DARK = false;
+    private static SharedPreferences mSharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        DARK = mSharedPreferences.getBoolean("dark_mode", false);
+
+        setTheme(DARK ? R.style.AppTheme_Dark_NoActionBar : R.style.AppTheme_NoActionBar);
+
+        RecreateHandler.onCreate(this);
+
         setContentView(R.layout.activity_item_list);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -80,14 +97,20 @@ public class ItemListActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        OptionSelected.doAction(item, this);
-        return super.onOptionsItemSelected(item);
+        return OptionSelected.doAction(item, this);
     }
 
     private void setupRecyclerView(@NonNull RecyclerView recyclerView) {
         recyclerView.addItemDecoration(new DividerItemDecoration(this,
                 DividerItemDecoration.VERTICAL));
         recyclerView.setAdapter(new SimpleItemRecyclerViewAdapter(mItems));
+    }
+
+    @Override
+    protected void onDestroy()
+    {
+        RecreateHandler.onDestroy(this);
+        super.onDestroy();
     }
 
     public class SimpleItemRecyclerViewAdapter
@@ -110,6 +133,7 @@ public class ItemListActivity extends AppCompatActivity {
         public void onBindViewHolder(final ViewHolder holder, int position) {
             holder.mItem = mValues.get(position);
             holder.mIconView.setImageDrawable(getResources().getDrawable(holder.mItem.drawableId, null));
+            setIconTint(holder);
             holder.mContentView.setText(mValues.get(position).content);
 
             holder.mView.setOnClickListener(new View.OnClickListener() {
@@ -155,6 +179,14 @@ public class ItemListActivity extends AppCompatActivity {
             @Override
             public String toString() {
                 return super.toString() + " '" + mContentView.getText() + "'";
+            }
+        }
+
+        private void setIconTint(ViewHolder holder) {
+            boolean DARK = mSharedPreferences.getBoolean("dark_mode", false);
+            if (DARK)
+            {
+                holder.mIconView.getDrawable().setTintList(ColorStateList.valueOf(Color.WHITE));
             }
         }
     }

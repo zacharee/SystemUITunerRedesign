@@ -1,8 +1,15 @@
 package com.zacharee1.systemuituner.fragmenthelpers;
 
+import android.content.SharedPreferences;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 import android.preference.Preference;
+import android.preference.PreferenceManager;
 import android.preference.SwitchPreference;
 import android.provider.Settings;
+import android.util.Log;
 
 import com.zacharee1.systemuituner.ItemDetailFragment;
 import com.zacharee1.systemuituner.utils.SettingsUtils;
@@ -13,13 +20,37 @@ import java.util.Arrays;
 public class StatbarHelper
 {
     private ItemDetailFragment mFragment;
+    private final SharedPreferences mSharedPreferences;
 
     public StatbarHelper(ItemDetailFragment fragment) {
         mFragment = fragment;
+        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(mFragment.getContext());
 
+        setIconTints();
         preferenceListeners();
         setSwitchPreferenceStates();
         switchPreferenceListeners();
+    }
+
+    private void setIconTints() {
+        for (int i = 0; i < mFragment.getPreferenceScreen().getRootAdapter().getCount(); i++) {
+            Object pref = mFragment.getPreferenceScreen().getRootAdapter().getItem(i);
+
+            if (pref instanceof Preference)
+            {
+                Preference preference = (Preference) pref;
+                Drawable icon = preference.getIcon();
+
+                if (icon != null)
+                {
+                    boolean DARK = mSharedPreferences.getBoolean("dark_mode", false);
+                    if (DARK)
+                    {
+                        icon.setTintList(ColorStateList.valueOf(Color.WHITE));
+                    }
+                }
+            }
+        }
     }
 
     private void preferenceListeners() {
@@ -44,7 +75,7 @@ public class StatbarHelper
             public boolean onPreferenceClick(Preference preference)
             {
                 String currentBL = Settings.Secure.getString(mFragment.getContext().getContentResolver(), "icon_blacklist");
-                SettingsUtils.writeSecure(mFragment.getContext(), "icon_blacklist_backup", currentBL);
+                SettingsUtils.writeGlobal(mFragment.getContext(), "icon_blacklist_backup", currentBL);
                 setSwitchPreferenceStates();
                 return true;
             }
@@ -55,7 +86,7 @@ public class StatbarHelper
             @Override
             public boolean onPreferenceClick(Preference preference)
             {
-                String backupBL = Settings.Secure.getString(mFragment.getContext().getContentResolver(), "icon_blacklist_backup");
+                String backupBL = Settings.Global.getString(mFragment.getContext().getContentResolver(), "icon_blacklist_backup");
                 SettingsUtils.writeSecure(mFragment.getContext(), "icon_blacklist", backupBL);
                 setSwitchPreferenceStates();
                 return true;

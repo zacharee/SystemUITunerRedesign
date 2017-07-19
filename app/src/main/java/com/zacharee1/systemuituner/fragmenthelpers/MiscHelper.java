@@ -1,13 +1,21 @@
 package com.zacharee1.systemuituner.fragmenthelpers;
 
+import android.content.SharedPreferences;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.preference.EditTextPreference;
 import android.preference.Preference;
 import android.preference.PreferenceCategory;
+import android.preference.PreferenceManager;
+import android.preference.PreferenceScreen;
 import android.preference.SwitchPreference;
 import android.provider.Settings;
 
 import com.zacharee1.systemuituner.ItemDetailFragment;
+import com.zacharee1.systemuituner.R;
 import com.zacharee1.systemuituner.utils.SettingsUtils;
 
 import java.util.ArrayList;
@@ -19,15 +27,54 @@ public class MiscHelper
     private static final int TWILIGHT_MODE_AUTO = 2;
     private static final int TWILIGHT_MODE_AUTO_OVERRIDE = 4;
 
+    private final SharedPreferences mSharedPreferences;
+
     private ItemDetailFragment mFragment;
 
     public MiscHelper(ItemDetailFragment fragment) {
         mFragment = fragment;
+        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(mFragment.getContext());
+
+        setIconTints();
+        showCustomSettings();
         setGlobalSwitchStates();
         setSecureSwitchStates();
         setSystemSwitchStates();
         setNightModeSwitchStates();
         setEditTextStates();
+    }
+
+    private boolean showingCustomSettings() {
+        return mSharedPreferences.getBoolean("allow_custom_settings_input", false);
+    }
+
+    private void setIconTints() {
+        for (int i = 0; i < mFragment.getPreferenceScreen().getRootAdapter().getCount(); i++) {
+            Object pref = mFragment.getPreferenceScreen().getRootAdapter().getItem(i);
+
+            if (pref instanceof Preference)
+            {
+                Preference preference = (Preference) pref;
+                Drawable icon = preference.getIcon();
+
+                if (icon != null)
+                {
+                    boolean DARK = mSharedPreferences.getBoolean("dark_mode", false);
+                    if (DARK)
+                    {
+                        icon.setTintList(ColorStateList.valueOf(Color.WHITE));
+                    }
+                }
+            }
+        }
+    }
+
+    private void showCustomSettings() {
+        PreferenceScreen preferenceScreen = mFragment.getPreferenceScreen();
+        PreferenceCategory customSettings = (PreferenceCategory) mFragment.findPreference("custom_settings_values");
+        if (!mSharedPreferences.getBoolean("allow_custom_settings_input", false)) {
+            preferenceScreen.removePreference(customSettings);
+        }
     }
 
     private void setGlobalSwitchStates() {
@@ -136,10 +183,13 @@ public class MiscHelper
 
         } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N_MR1) {
             PreferenceCategory category = (PreferenceCategory) mFragment.findPreference("night_mode_settings");
+            category.setTitle(R.string.night_display);
             category.removePreference(tint);
 
             override.setChecked(Settings.Secure.getInt(mFragment.getContext().getContentResolver(), "night_display_activated", 0) == 1);
+            override.setTitle(R.string.night_display_activated);
             auto.setChecked(Settings.Secure.getInt(mFragment.getContext().getContentResolver(), "night_display_auto", 0) == 1);
+            auto.setTitle(R.string.night_display_auto);
         }
 
         auto.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener()
@@ -180,9 +230,12 @@ public class MiscHelper
             add((EditTextPreference) mFragment.findPreference("animator_duration_scale"));
             add((EditTextPreference) mFragment.findPreference("transition_animation_scale"));
             add((EditTextPreference) mFragment.findPreference("window_animation_scale"));
-            add((EditTextPreference) mFragment.findPreference("global_settings"));
-            add((EditTextPreference) mFragment.findPreference("secure_settings"));
-            add((EditTextPreference) mFragment.findPreference("system_settings"));
+            if (showingCustomSettings())
+            {
+                add((EditTextPreference) mFragment.findPreference("global_settings"));
+                add((EditTextPreference) mFragment.findPreference("secure_settings"));
+                add((EditTextPreference) mFragment.findPreference("system_settings"));
+            }
         }};
 
         for (EditTextPreference preference : preferences) {

@@ -185,7 +185,7 @@
     <string name="level_2">Level 2</string>
     <string name="level_3">Level 3</string>
     <string name="danger_zone">Danger Zone</string>
-    <string name="use_safer_statusbar_hide">Safe Mode</string>
+    <string name="safe_mode">Safe Mode</string>
     <string name="enable_custom_settings_input">Enable Custom Settings Input</string>
     <string name="sharedprefs_id" translatable="false">com.zacharee1.sysuituner</string>
     <string name="root_test_failed">Root test failed.</string>
