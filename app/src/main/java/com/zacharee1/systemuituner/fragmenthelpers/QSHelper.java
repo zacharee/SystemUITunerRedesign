@@ -65,25 +65,16 @@ public class QSHelper
     }
 
     private void setSliderState() {
-        SliderPreference preference = (SliderPreference) mFragment.findPreference("sysui_qqs_count"); //find the SliderPreference
+        SliderPreference pref = (SliderPreference) mFragment.findPreference("sysui_qqs_count"); //find the SliderPreference
 
-        preference.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener()
+        pref.setMaxProgess(20);
+        pref.setProgressState(Settings.Secure.getInt(mFragment.getContext().getContentResolver(), "sysui_qqs_count", 5)); //set the progress/value from Settings
+        pref.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener()
         {
             @Override
-            public boolean onPreferenceClick(Preference preference)
+            public boolean onPreferenceChange(Preference preference, Object o)
             {
-                final SliderPreference pref = (SliderPreference) preference;
-                pref.setMaxProgess(20);
-                pref.setProgressState(Settings.Secure.getInt(mFragment.getContext().getContentResolver(), "sysui_qqs_count", 5)); //set the progress/value from Settings
-                pref.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener()
-                {
-                    @Override
-                    public boolean onPreferenceChange(Preference preference, Object o)
-                    {
-                        SettingsUtils.writeSecure(mFragment.getContext(), "sysui_qqs_count", o.toString()); //write new value to Settings if user presses OK
-                        return true;
-                    }
-                });
+                SettingsUtils.writeSecure(mFragment.getContext(), "sysui_qqs_count", o.toString()); //write new value to Settings if user presses OK
                 return true;
             }
         });

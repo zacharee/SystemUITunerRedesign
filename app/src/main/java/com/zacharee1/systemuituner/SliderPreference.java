@@ -13,6 +13,8 @@ public class SliderPreference extends DialogPreference
 {
     private View view;
     private OnPreferenceChangeListener mListener;
+    private int mProgress = -1;
+    private int mMaxProgress = -1;
 
     public SliderPreference(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
@@ -36,13 +38,22 @@ public class SliderPreference extends DialogPreference
         final View view = LayoutInflater.from(getContext()).inflate(R.layout.slider_pref_view, null, true);
         this.view = view;
 
+        mProgress = (mProgress == -1 ? getSharedPreferences().getInt(getKey(), 0) : mProgress);
+        mMaxProgress = (mMaxProgress == -1 ? 100 : mMaxProgress);
+
         SeekBar seekBar = view.findViewById(R.id.slider_pref_seekbar);
+        final TextView textView = view.findViewById(R.id.slider_pref_text);
+
+        seekBar.setMax(mMaxProgress);
+        seekBar.setProgress(mProgress);
+
+        textView.setText(String.valueOf(mProgress));
+
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener()
         {
             @Override
             public void onProgressChanged(SeekBar seekBar, int i, boolean b)
             {
-                TextView textView = view.findViewById(R.id.slider_pref_text);
                 textView.setText(String.valueOf(i));
             }
 
@@ -60,9 +71,6 @@ public class SliderPreference extends DialogPreference
         });
 
         Log.e("KEY", getKey());
-
-        int progress = getSharedPreferences().getInt(getKey(), 0);
-        setProgressState(progress);
 
         return view;
     }
@@ -83,20 +91,13 @@ public class SliderPreference extends DialogPreference
     }
 
     public void setProgressState(int progress) {
-        if (view == null) onCreateDialogView();
-
-        SeekBar seekBar = view.findViewById(R.id.slider_pref_seekbar);
-        TextView textView = view.findViewById(R.id.slider_pref_text);
-
-        seekBar.setProgress(progress);
-        textView.setText(String.valueOf(progress));
+        mProgress = progress;
     }
 
     public void setMaxProgess(int maxProgess) {
         if (view == null) onCreateDialogView();
 
-        SeekBar seekBar = view.findViewById(R.id.slider_pref_seekbar);
-        seekBar.setMax(maxProgess);
+        mMaxProgress = maxProgess;
     }
 
     public View getView() {
