@@ -12,9 +12,9 @@
         android:name="android.permission.DUMP"
         tools:ignore="ProtectedPermissions" />
     <uses-permission android:name="android.permission.ACCESS_CONTENT_PROVIDERS_EXTERNALLY" />
-    <uses-permission
-        android:name="android.permission.DEVICE_POWER"
-        tools:ignore="ProtectedPermissions" />
+    <!--<uses-permission-->
+        <!--android:name="android.permission.DEVICE_POWER"-->
+        <!--tools:ignore="ProtectedPermissions" />-->
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="com.android.vending.BILLING" />
@@ -86,19 +86,19 @@
             android:name=".receivers.ShutdownReceiver"
             android:enabled="true"
             android:exported="true">
-            <intent-filter>
-                <category android:name="android.intent.category.DEFAULT" />
-
+            <intent-filter android:priority="500">
                 <action android:name="android.intent.action.ACTION_SHUTDOWN" />
+                <action android:name="android.intent.action.QUICKBOOT_POWEROFF" />
+                <action android:name="android.intent.action.REBOOT" />
+                <action android:name="com.htc.intent.action.QUICKBOOT_POWEROFF" />
             </intent-filter>
         </receiver>
         <receiver
             android:name=".receivers.BootReceiver"
             android:enabled="true"
-            android:exported="true">
-            <intent-filter>
-                <category android:name="android.intent.category.DEFAULT" />
-
+            android:exported="true"
+            android:permission="android.permission.RECEIVE_BOOT_COMPLETED">
+            <intent-filter android:priority="500">
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <action android:name="android.intent.action.REBOOT" />
                 <action android:name="android.intent.action.QUICKBOOT_POWERON" />
@@ -106,10 +106,6 @@
             </intent-filter>
         </receiver>
 
-        <service
-            android:name=".services.ShutdownService"
-            android:enabled="true"
-            android:exported="true"></service>
     </application>
 
 </manifest>

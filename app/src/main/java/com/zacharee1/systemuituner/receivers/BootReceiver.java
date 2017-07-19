@@ -6,8 +6,8 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.provider.Settings;
+import android.util.Log;
 
-import com.zacharee1.systemuituner.services.ShutdownService;
 import com.zacharee1.systemuituner.utils.SettingsUtils;
 
 public class BootReceiver extends BroadcastReceiver
@@ -30,7 +30,16 @@ public class BootReceiver extends BroadcastReceiver
             SettingsUtils.writeSecure(context, "icon_blacklist", backupBL);
             SettingsUtils.writeGlobal(context, "system_booted", "1");
 
-            context.startService(new Intent(context, ShutdownService.class));
+            Log.e("BOOTED", "BOOTED");
+
+//            JobScheduler jobScheduler = (JobScheduler)
+//                    context.getSystemService(Context.JOB_SCHEDULER_SERVICE);
+//
+//            JobInfo.Builder builder = new JobInfo.Builder(1,
+//                    new ComponentName( context.getPackageName(),
+//                            ShutdownService.class.getName()));
+//
+//            jobScheduler.schedule(builder.build());
         }
     }
 }
