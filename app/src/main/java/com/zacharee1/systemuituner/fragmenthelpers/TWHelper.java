@@ -23,30 +23,8 @@ public class TWHelper
         mFragment = fragment;
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(mFragment.getContext());
 
-        setIconTints();
         setHBWState();
         setHBWListener();
-    }
-
-    private void setIconTints() {
-        for (int i = 0; i < mFragment.getPreferenceScreen().getRootAdapter().getCount(); i++) {
-            Object pref = mFragment.getPreferenceScreen().getRootAdapter().getItem(i);
-
-            if (pref instanceof Preference)
-            {
-                Preference preference = (Preference) pref;
-                Drawable icon = preference.getIcon();
-
-                if (icon != null)
-                {
-                    boolean DARK = mSharedPreferences.getBoolean("dark_mode", false);
-                    if (DARK)
-                    {
-                        icon.setTintList(ColorStateList.valueOf(Color.WHITE));
-                    }
-                }
-            }
-        }
     }
 
     private void setHBWState() {

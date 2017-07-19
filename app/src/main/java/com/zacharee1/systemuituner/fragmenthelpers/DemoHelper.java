@@ -48,34 +48,12 @@ public class DemoHelper
         mFragment = fragment;
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(mFragment.getContext());
 
-        setIconTints();
         setSwitchListeners();
         setSliderListeners();
         setPrefListeners();
         setListListeners();
         setDemoSwitchListener();
         setTimeListeners();
-    }
-
-    private void setIconTints() {
-        for (int i = 0; i < mFragment.getPreferenceScreen().getRootAdapter().getCount(); i++) {
-            Object pref = mFragment.getPreferenceScreen().getRootAdapter().getItem(i);
-
-            if (pref instanceof Preference)
-            {
-                Preference preference = (Preference) pref;
-                Drawable icon = preference.getIcon();
-
-                if (icon != null)
-                {
-                    boolean DARK = mSharedPreferences.getBoolean("dark_mode", false);
-                    if (DARK)
-                    {
-                        icon.setTintList(ColorStateList.valueOf(Color.WHITE));
-                    }
-                }
-            }
-        }
     }
 
     private void setSwitchListeners() {
@@ -265,7 +243,7 @@ public class DemoHelper
             mFragment.getActivity().sendBroadcast(intent);
 
             intent.putExtra("command", "network");
-            intent.putExtra("mobile", "true");
+            intent.putExtra("mobile", "show");
             intent.putExtra("fully", "true");
             intent.putExtra("level", mMobileStrength + "");
             intent.putExtra("datatype", mMobileType);
@@ -273,12 +251,12 @@ public class DemoHelper
 
             intent.removeExtra("mobile");
             intent.removeExtra("datatype");
-            intent.putExtra("wifi", "true");
+            intent.putExtra("wifi", "show");
             intent.putExtra("fully", "true");
             intent.putExtra("level", mWifiStrength + "");
             mFragment.getActivity().sendBroadcast(intent);
 
-            intent.putExtra("airplane", mShowAirplane + "");
+            intent.putExtra("airplane", mShowAirplane ? "show" : "hide");
             mFragment.getActivity().sendBroadcast(intent);
 
             intent.putExtra("command", "battery");

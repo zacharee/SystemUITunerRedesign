@@ -36,13 +36,13 @@ public class SliderPreference extends DialogPreference
         final View view = LayoutInflater.from(getContext()).inflate(R.layout.slider_pref_view, null, true);
         this.view = view;
 
-        SeekBar seekBar = view.findViewById(R.id.qqs_count_seekbar);
+        SeekBar seekBar = view.findViewById(R.id.slider_pref_seekbar);
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener()
         {
             @Override
             public void onProgressChanged(SeekBar seekBar, int i, boolean b)
             {
-                TextView textView = view.findViewById(R.id.qqs_count_text);
+                TextView textView = view.findViewById(R.id.slider_pref_text);
                 textView.setText(String.valueOf(i));
             }
 
@@ -85,8 +85,8 @@ public class SliderPreference extends DialogPreference
     public void setProgressState(int progress) {
         if (view == null) onCreateDialogView();
 
-        SeekBar seekBar = view.findViewById(R.id.qqs_count_seekbar);
-        TextView textView = view.findViewById(R.id.qqs_count_text);
+        SeekBar seekBar = view.findViewById(R.id.slider_pref_seekbar);
+        TextView textView = view.findViewById(R.id.slider_pref_text);
 
         seekBar.setProgress(progress);
         textView.setText(String.valueOf(progress));
@@ -95,7 +95,7 @@ public class SliderPreference extends DialogPreference
     public void setMaxProgess(int maxProgess) {
         if (view == null) onCreateDialogView();
 
-        SeekBar seekBar = view.findViewById(R.id.qqs_count_seekbar);
+        SeekBar seekBar = view.findViewById(R.id.slider_pref_seekbar);
         seekBar.setMax(maxProgess);
     }
 
@@ -111,6 +111,6 @@ public class SliderPreference extends DialogPreference
 
     public int getCurrentProgress() {
         if (view == null) onCreateDialogView();
-        return ((SeekBar) view.findViewById(R.id.qqs_count_seekbar)).getProgress();
+        return ((SeekBar) view.findViewById(R.id.slider_pref_seekbar)).getProgress();
     }
 }

@@ -4,7 +4,7 @@
     <PreferenceCategory
         android:title="@string/general">
         <SwitchPreference
-            android:key="show_full_zen"
+            android:key="sysui_show_full_zen"
             android:title="@string/dnd_switch_in_vol_slider"/>
         <SwitchPreference
             android:key="heads_up_notifications_enabled"

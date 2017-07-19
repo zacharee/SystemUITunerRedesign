@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
+import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -12,12 +13,14 @@ import android.os.Parcel;
 import android.os.RemoteException;
 import android.preference.Preference;
 import android.preference.PreferenceManager;
+import android.support.annotation.ColorInt;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -186,7 +189,12 @@ public class ItemListActivity extends AppCompatActivity {
             boolean DARK = mSharedPreferences.getBoolean("dark_mode", false);
             if (DARK)
             {
-                holder.mIconView.getDrawable().setTintList(ColorStateList.valueOf(Color.WHITE));
+                TypedValue typedValue = new TypedValue();
+                Resources.Theme theme = getTheme();
+                theme.resolveAttribute(R.attr.colorAccent, typedValue, true);
+                @ColorInt int color = typedValue.data;
+
+                holder.mIconView.getDrawable().setTintList(ColorStateList.valueOf(color));
             } else {
                 holder.mIconView.getDrawable().setTintList(ColorStateList.valueOf(Color.BLACK));
             }

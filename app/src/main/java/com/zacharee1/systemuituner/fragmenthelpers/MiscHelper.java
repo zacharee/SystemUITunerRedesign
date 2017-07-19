@@ -35,7 +35,6 @@ public class MiscHelper
         mFragment = fragment;
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(mFragment.getContext());
 
-        setIconTints();
         showCustomSettings();
         setGlobalSwitchStates();
         setSecureSwitchStates();
@@ -46,27 +45,6 @@ public class MiscHelper
 
     private boolean showingCustomSettings() {
         return mSharedPreferences.getBoolean("allow_custom_settings_input", false);
-    }
-
-    private void setIconTints() {
-        for (int i = 0; i < mFragment.getPreferenceScreen().getRootAdapter().getCount(); i++) {
-            Object pref = mFragment.getPreferenceScreen().getRootAdapter().getItem(i);
-
-            if (pref instanceof Preference)
-            {
-                Preference preference = (Preference) pref;
-                Drawable icon = preference.getIcon();
-
-                if (icon != null)
-                {
-                    boolean DARK = mSharedPreferences.getBoolean("dark_mode", false);
-                    if (DARK)
-                    {
-                        icon.setTintList(ColorStateList.valueOf(Color.WHITE));
-                    }
-                }
-            }
-        }
     }
 
     private void showCustomSettings() {
@@ -100,7 +78,7 @@ public class MiscHelper
 
     private void setSecureSwitchStates() {
         ArrayList<SwitchPreference> preferences = new ArrayList<SwitchPreference>() {{
-           add((SwitchPreference) mFragment.findPreference("show_full_zen"));
+           add((SwitchPreference) mFragment.findPreference("sysui_show_full_zen"));
            add((SwitchPreference) mFragment.findPreference("clock_seconds"));
            add((SwitchPreference) mFragment.findPreference("show_importance_slider"));
         }};

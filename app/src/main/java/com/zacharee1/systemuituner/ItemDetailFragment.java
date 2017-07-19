@@ -1,7 +1,22 @@
 package com.zacharee1.systemuituner;
 
+import android.content.Context;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
+import android.os.Handler;
+import android.preference.Preference;
+import android.preference.PreferenceCategory;
 import android.preference.PreferenceFragment;
 import android.os.Bundle;
+import android.preference.PreferenceGroup;
+import android.preference.PreferenceScreen;
+import android.support.annotation.Nullable;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ListView;
 
 import com.zacharee1.systemuituner.activites.ItemDetailActivity;
 import com.zacharee1.systemuituner.activites.ItemListActivity;
@@ -10,6 +25,11 @@ import com.zacharee1.systemuituner.fragmenthelpers.MiscHelper;
 import com.zacharee1.systemuituner.fragmenthelpers.QSHelper;
 import com.zacharee1.systemuituner.fragmenthelpers.StatbarHelper;
 import com.zacharee1.systemuituner.fragmenthelpers.TWHelper;
+
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.Hashtable;
 
 /**
  * A fragment representing a single Item detail screen.
@@ -47,6 +67,7 @@ public class ItemDetailFragment extends PreferenceFragment
             assert id != null;
 
             mItem = TweakItems.ITEM_MAP.get(id);
+
             addPreferencesFromResource(mItem.layoutId);
 
             switch (id) {
@@ -69,6 +90,54 @@ public class ItemDetailFragment extends PreferenceFragment
             }
 
             getActivity().setTitle(mItem.content);
+
+//            new Thread(new Runnable()
+//            {
+//                @Override
+//                public void run()
+//                {
+//                    try
+//                    {
+//                        Field f = PreferenceFragment.class.getDeclaredField("mHavePrefs"); //NoSuchFieldException
+//                        f.setAccessible(true);
+//
+//                        while (!((boolean) f.get(PreferenceFragment.class.cast(ItemDetailFragment.this))));
+//
+//                        getActivity().runOnUiThread(new Runnable()
+//                        {
+//                            @Override
+//                            public void run()
+//                            {
+//                                setIconTints();
+//                            }
+//                        });
+//                    } catch (Exception e) {
+//                        e.printStackTrace();
+//                    }
+//                }
+//            }).start();
+        }
+    }
+
+    private void setIconTints() {
+
+        Log.e("PREF", getPreferenceScreen().getRootAdapter().getCount() + "");
+
+        for (int i = 0; i < getPreferenceScreen().getRootAdapter().getCount(); i++) {
+            Preference preference = (Preference) getPreferenceScreen().getRootAdapter().getItem(i);
+
+            Drawable icon = preference.getIcon();
+
+            if (icon != null)
+            {
+                boolean DARK = getPreferenceManager().getSharedPreferences().getBoolean("dark_mode", false);
+                if (DARK)
+                {
+                    icon.setTintList(ColorStateList.valueOf(Color.WHITE));
+                } else {
+                    icon.setTintList(ColorStateList.valueOf(Color.BLACK));
+                }
+            }
         }
     }
 }
