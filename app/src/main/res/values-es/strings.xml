@@ -244,6 +244,7 @@
     <string name="blacklist_restored">Lista Negra Restaurado</string>
     <string name="to_the_tweaks">A Los Toquecitos!</string>
     <string name="sorry_explain">Algo malo ocurró.</string>
-    <string name="sorry_option">Trata de ejecutar esto comando en una computadora (en una linea):</string>
+    <string name="sorry_option">Trata de ejecutar esto comando en una computadora (en una línea):</string>
     <string name="more">Más</string>
+    <string name="grant_dump_perm">Necesitas conceder el permiso \"android.permission.DUMP\" a usar esta característica.</string>
 </resources>
