@@ -97,14 +97,13 @@ public class QSHelper
                 final SliderPreference pref = (SliderPreference) preference;
                 pref.setMaxProgess(20);
                 pref.setProgressState(Settings.Secure.getInt(mFragment.getContext().getContentResolver(), "sysui_qqs_count", 5)); //set the progress/value from Settings
-                pref.setOnDialogClosedListener(new SliderPreference.OnDialogClosedListener()
+                pref.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener()
                 {
                     @Override
-                    public void onDialogClosed(boolean positiveResult, int progress)
+                    public boolean onPreferenceChange(Preference preference, Object o)
                     {
-                        if (positiveResult) {
-                            SettingsUtils.writeSecure(mFragment.getContext(), "sysui_qqs_count", progress + ""); //write new value to Settings if user presses OK
-                        }
+                        SettingsUtils.writeSecure(mFragment.getContext(), "sysui_qqs_count", o.toString()); //write new value to Settings if user presses OK
+                        return true;
                     }
                 });
                 return true;

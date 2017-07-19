@@ -3,6 +3,7 @@ package com.zacharee1.systemuituner;
 import android.content.Context;
 import android.preference.DialogPreference;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.SeekBar;
@@ -11,7 +12,7 @@ import android.widget.TextView;
 public class SliderPreference extends DialogPreference
 {
     private View view;
-    private OnDialogClosedListener listener;
+    private OnPreferenceChangeListener mListener;
 
     public SliderPreference(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
@@ -32,7 +33,8 @@ public class SliderPreference extends DialogPreference
     @Override
     protected View onCreateDialogView()
     {
-        final View view = LayoutInflater.from(getContext()).inflate(R.layout.qs_header_count_view, null, true);
+        final View view = LayoutInflater.from(getContext()).inflate(R.layout.slider_pref_view, null, true);
+        this.view = view;
 
         SeekBar seekBar = view.findViewById(R.id.qqs_count_seekbar);
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener()
@@ -57,7 +59,11 @@ public class SliderPreference extends DialogPreference
             }
         });
 
-        this.view = view;
+        Log.e("KEY", getKey());
+
+        int progress = getSharedPreferences().getInt(getKey(), 0);
+        setProgressState(progress);
+
         return view;
     }
 
@@ -66,11 +72,14 @@ public class SliderPreference extends DialogPreference
     {
         super.onDialogClosed(positiveResult);
 
-        if (listener != null) listener.onDialogClosed(positiveResult, ((SeekBar)view.findViewById(R.id.qqs_count_seekbar)).getProgress());
+        if (mListener != null && positiveResult) mListener.onPreferenceChange(this, getCurrentProgress());
+        if (positiveResult) getSharedPreferences().edit().putInt(getKey(), getCurrentProgress()).apply();
     }
 
-    public void setOnDialogClosedListener(OnDialogClosedListener listener) {
-        this.listener = listener;
+    @Override
+    public void setOnPreferenceChangeListener(OnPreferenceChangeListener onPreferenceChangeListener)
+    {
+        mListener = onPreferenceChangeListener;
     }
 
     public void setProgressState(int progress) {
@@ -96,7 +105,12 @@ public class SliderPreference extends DialogPreference
         return view;
     }
 
-    public interface OnDialogClosedListener {
-        void onDialogClosed(boolean positiveResult, int progress);
+    public int getSavedProgress() {
+        return getSharedPreferences().getInt(getKey(), 0);
+    }
+
+    public int getCurrentProgress() {
+        if (view == null) onCreateDialogView();
+        return ((SeekBar) view.findViewById(R.id.qqs_count_seekbar)).getProgress();
     }
 }

@@ -4,39 +4,46 @@
     <PreferenceCategory
         android:title="@string/general">
         <Preference
-            android:title="@string/enable"/>
+            android:title="@string/enable"
+            android:key="sysui_demo_allowed"/>
         <SwitchPreference
-            android:title="@string/show"/>
+            android:title="@string/show"
+            android:key="show_demo"/>
     </PreferenceCategory>
 
     <PreferenceCategory
         android:title="@string/miscellaneous">
-        <EditTextPreference
-            android:title="@string/select_time"/>
-        <EditTextPreference
-            android:title="@string/select_battery_level"/>
-        <ListPreference
+        <com.zacharee1.systemuituner.TimePreference
+            android:title="@string/select_time"
+            android:key="selected_time"/>
+        <com.zacharee1.systemuituner.SliderPreference
+            android:title="@string/select_battery_level"
+            android:key="selected_battery_level"/>
+        <com.zacharee1.systemuituner.SliderPreference
             android:title="@string/wifi_strength"
-            android:entries="@array/signal_strength"
-            android:entryValues="@array/signal_strength"/>
-        <ListPreference
+            android:key="wifi_strength"/>
+        <com.zacharee1.systemuituner.SliderPreference
             android:title="@string/mobile_strength"
-            android:entries="@array/signal_strength"
-            android:entryValues="@array/signal_strength"/>
+            android:key="mobile_strength"/>
         <ListPreference
             android:title="@string/mobile_type"
             android:entries="@array/mobile_type_display"
-            android:entryValues="@array/mobile_type_vals"/>
+            android:entryValues="@array/mobile_type_vals"
+            android:key="mobile_type"/>
         <ListPreference
             android:title="@string/status_bar_style"
             android:entries="@array/statbar_style_display"
-            android:entryValues="@array/statbar_style_vals"/>
+            android:entryValues="@array/statbar_style_vals"
+            android:key="status_bar_style"/>
         <SwitchPreference
-            android:title="@string/show_notifications"/>
+            android:title="@string/show_notifications"
+            android:key="show_notifications"/>
         <SwitchPreference
-            android:title="@string/battery_charging"/>
+            android:title="@string/battery_charging"
+            android:key="battery_charging"/>
         <SwitchPreference
-            android:title="@string/show_airplane_mode"/>
+            android:title="@string/show_airplane_mode"
+            android:key="show_airplane"/>
     </PreferenceCategory>
 
 </PreferenceScreen>
