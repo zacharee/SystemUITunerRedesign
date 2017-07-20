@@ -1,4 +1,4 @@
-package com.zacharee1.systemuituner.utils;
+package com.zacharee1.systemuituner.misc;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -11,17 +11,13 @@ import android.widget.TextView;
 import com.android.billingclient.api.BillingClient;
 import com.android.billingclient.api.BillingClientStateListener;
 import com.android.billingclient.api.BillingFlowParams;
-import com.android.billingclient.api.ConsumeResponseListener;
 import com.android.billingclient.api.Purchase;
 import com.android.billingclient.api.PurchasesUpdatedListener;
-import com.android.billingclient.api.SkuDetails;
-import com.android.billingclient.api.SkuDetailsResponseListener;
 import com.zacharee1.systemuituner.R;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import static com.zacharee1.systemuituner.utils.Utils.isPackageInstalled;
+import static com.zacharee1.systemuituner.misc.Utils.isPackageInstalled;
 
 
 public class BillingUtil

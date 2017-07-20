@@ -1,4 +1,4 @@
-package com.zacharee1.systemuituner.utils;
+package com.zacharee1.systemuituner.misc;
 
 import android.content.Context;
 import android.content.Intent;
@@ -6,8 +6,8 @@ import android.provider.Settings;
 
 import com.zacharee1.systemuituner.activites.SettingWriteFailed;
 
-import static com.zacharee1.systemuituner.utils.SuUtils.testSudo;
-import static com.zacharee1.systemuituner.utils.SuUtils.sudo;
+import static com.zacharee1.systemuituner.misc.SuUtils.testSudo;
+import static com.zacharee1.systemuituner.misc.SuUtils.sudo;
 
 /**
  * Created by Zacha on 7/17/2017.

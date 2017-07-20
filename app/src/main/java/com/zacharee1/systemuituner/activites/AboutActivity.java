@@ -10,8 +10,8 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.zacharee1.systemuituner.R;
-import com.zacharee1.systemuituner.utils.BillingUtil;
-import com.zacharee1.systemuituner.utils.RecreateHandler;
+import com.zacharee1.systemuituner.misc.BillingUtil;
+import com.zacharee1.systemuituner.misc.RecreateHandler;
 
 public class AboutActivity extends AppCompatActivity
 {

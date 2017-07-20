@@ -18,7 +18,7 @@ import android.util.Log;
 import android.view.MenuItem;
 
 import com.zacharee1.systemuituner.R;
-import com.zacharee1.systemuituner.utils.RecreateHandler;
+import com.zacharee1.systemuituner.misc.RecreateHandler;
 
 import java.util.List;
 

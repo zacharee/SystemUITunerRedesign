@@ -8,7 +8,7 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.zacharee1.systemuituner.R;
-import com.zacharee1.systemuituner.utils.RecreateHandler;
+import com.zacharee1.systemuituner.misc.RecreateHandler;
 
 public class SettingWriteFailed extends AppCompatActivity
 {

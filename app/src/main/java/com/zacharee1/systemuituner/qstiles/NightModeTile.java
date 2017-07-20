@@ -6,7 +6,7 @@ import android.provider.Settings;
 import android.service.quicksettings.Tile;
 import android.service.quicksettings.TileService;
 
-import com.zacharee1.systemuituner.utils.SettingsUtils;
+import com.zacharee1.systemuituner.misc.SettingsUtils;
 
 @TargetApi(24)
 public class NightModeTile extends TileService

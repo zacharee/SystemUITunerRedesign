@@ -1,6 +1,5 @@
 package com.zacharee1.systemuituner.activites;
 
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -10,10 +9,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.ActionBar;
 import android.view.MenuItem;
 
-import com.zacharee1.systemuituner.ItemDetailFragment;
+import com.zacharee1.systemuituner.fragments.ItemDetailFragment;
 import com.zacharee1.systemuituner.R;
-import com.zacharee1.systemuituner.utils.OptionSelected;
-import com.zacharee1.systemuituner.utils.RecreateHandler;
+import com.zacharee1.systemuituner.misc.OptionSelected;
+import com.zacharee1.systemuituner.misc.RecreateHandler;
 
 /**
  * An activity representing a single Item detail screen. This

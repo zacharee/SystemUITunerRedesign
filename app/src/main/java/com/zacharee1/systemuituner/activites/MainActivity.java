@@ -7,12 +7,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-import com.android.billingclient.api.BillingClient;
 import com.zacharee1.systemuituner.R;
-import com.zacharee1.systemuituner.utils.BillingUtil;
-import com.zacharee1.systemuituner.utils.RecreateHandler;
-import com.zacharee1.systemuituner.utils.SettingsUtils;
-import com.zacharee1.systemuituner.utils.SuUtils;
+import com.zacharee1.systemuituner.misc.BillingUtil;
+import com.zacharee1.systemuituner.misc.RecreateHandler;
+import com.zacharee1.systemuituner.misc.SettingsUtils;
+import com.zacharee1.systemuituner.misc.SuUtils;
 
 public class MainActivity extends AppCompatActivity
 {

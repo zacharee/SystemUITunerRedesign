@@ -1,7 +1,6 @@
-package com.zacharee1.systemuituner;
+package com.zacharee1.systemuituner.misc;
 
 import android.support.annotation.DrawableRes;
-import android.support.annotation.LayoutRes;
 import android.support.annotation.XmlRes;
 
 import com.zacharee1.systemuituner.R;

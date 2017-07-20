@@ -6,12 +6,7 @@ import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
 import android.content.res.Resources;
 import android.graphics.Color;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.os.IBinder;
-import android.os.Parcel;
-import android.os.RemoteException;
-import android.preference.Preference;
 import android.preference.PreferenceManager;
 import android.support.annotation.ColorInt;
 import android.support.annotation.NonNull;
@@ -19,7 +14,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -30,14 +24,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 
-import com.zacharee1.systemuituner.ItemDetailFragment;
+import com.zacharee1.systemuituner.fragments.ItemDetailFragment;
 import com.zacharee1.systemuituner.R;
-import com.zacharee1.systemuituner.TweakItems;
-import com.zacharee1.systemuituner.utils.OptionSelected;
-import com.zacharee1.systemuituner.utils.RecreateHandler;
+import com.zacharee1.systemuituner.misc.TweakItems;
+import com.zacharee1.systemuituner.misc.OptionSelected;
+import com.zacharee1.systemuituner.misc.RecreateHandler;
 
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import java.util.List;
 
 /**

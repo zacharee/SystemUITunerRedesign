@@ -1,4 +1,4 @@
-package com.zacharee1.systemuituner;
+package com.zacharee1.systemuituner.prefs;
 
 import android.content.Context;
 import android.preference.DialogPreference;
@@ -8,6 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.SeekBar;
 import android.widget.TextView;
+
+import com.zacharee1.systemuituner.R;
 
 public class SliderPreference extends DialogPreference
 {

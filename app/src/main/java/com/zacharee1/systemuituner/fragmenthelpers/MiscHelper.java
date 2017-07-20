@@ -1,22 +1,17 @@
 package com.zacharee1.systemuituner.fragmenthelpers;
 
 import android.content.SharedPreferences;
-import android.content.res.ColorStateList;
-import android.graphics.Color;
-import android.graphics.PorterDuff;
-import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.preference.EditTextPreference;
 import android.preference.Preference;
 import android.preference.PreferenceCategory;
-import android.preference.PreferenceManager;
 import android.preference.PreferenceScreen;
 import android.preference.SwitchPreference;
 import android.provider.Settings;
 
-import com.zacharee1.systemuituner.ItemDetailFragment;
+import com.zacharee1.systemuituner.fragments.ItemDetailFragment;
 import com.zacharee1.systemuituner.R;
-import com.zacharee1.systemuituner.utils.SettingsUtils;
+import com.zacharee1.systemuituner.misc.SettingsUtils;
 
 import java.util.ArrayList;
 

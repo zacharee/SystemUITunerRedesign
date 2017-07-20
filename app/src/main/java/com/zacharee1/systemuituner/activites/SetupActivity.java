@@ -9,9 +9,8 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.zacharee1.systemuituner.R;
-import com.zacharee1.systemuituner.utils.RecreateHandler;
-import com.zacharee1.systemuituner.utils.SettingsUtils;
-import com.zacharee1.systemuituner.utils.SuUtils;
+import com.zacharee1.systemuituner.misc.RecreateHandler;
+import com.zacharee1.systemuituner.misc.SettingsUtils;
 
 public class SetupActivity extends AppCompatActivity
 {

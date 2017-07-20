@@ -1,23 +1,14 @@
-package com.zacharee1.systemuituner;
+package com.zacharee1.systemuituner.fragments;
 
-import android.content.Context;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
-import android.os.Handler;
 import android.preference.Preference;
-import android.preference.PreferenceCategory;
 import android.preference.PreferenceFragment;
 import android.os.Bundle;
-import android.preference.PreferenceGroup;
-import android.preference.PreferenceScreen;
-import android.support.annotation.Nullable;
 import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ListView;
 
+import com.zacharee1.systemuituner.misc.TweakItems;
 import com.zacharee1.systemuituner.activites.ItemDetailActivity;
 import com.zacharee1.systemuituner.activites.ItemListActivity;
 import com.zacharee1.systemuituner.fragmenthelpers.DemoHelper;
@@ -25,11 +16,6 @@ import com.zacharee1.systemuituner.fragmenthelpers.MiscHelper;
 import com.zacharee1.systemuituner.fragmenthelpers.QSHelper;
 import com.zacharee1.systemuituner.fragmenthelpers.StatbarHelper;
 import com.zacharee1.systemuituner.fragmenthelpers.TWHelper;
-
-import java.lang.reflect.Field;
-import java.lang.reflect.Method;
-import java.util.ArrayList;
-import java.util.Hashtable;
 
 /**
  * A fragment representing a single Item detail screen.
