@@ -183,18 +183,13 @@ public class ItemListActivity extends AppCompatActivity {
         }
 
         private void setIconTint(ViewHolder holder) {
-            boolean DARK = mSharedPreferences.getBoolean("dark_mode", false);
-            if (DARK)
-            {
-                TypedValue typedValue = new TypedValue();
-                Resources.Theme theme = getTheme();
-                theme.resolveAttribute(R.attr.colorAccent, typedValue, true);
-                @ColorInt int color = typedValue.data;
 
-                holder.mIconView.getDrawable().setTintList(ColorStateList.valueOf(color));
-            } else {
-                holder.mIconView.getDrawable().setTintList(ColorStateList.valueOf(Color.BLACK));
-            }
+            TypedValue typedValue = new TypedValue();
+            Resources.Theme theme = getTheme();
+            theme.resolveAttribute(R.attr.colorAccent, typedValue, true);
+            @ColorInt int color = typedValue.data;
+
+            holder.mIconView.getDrawable().setTintList(ColorStateList.valueOf(color));
         }
     }
 }
