@@ -247,4 +247,12 @@
     <string name="sorry_option">Trata de ejecutar esto comando en una computadora (en una línea):</string>
     <string name="more">Más</string>
     <string name="grant_dump_perm">Necesitas conceder el permiso \"android.permission.DUMP\" a usar esta característica.</string>
+    <string name="safe_mode_auto_enabled">Samsung detectado! Modo Seguro ha sido encendiendo para tu seguridad.</string>
+    <string name="notice">ATENCIÓN</string>
+    <string name="fancy_pulldown_notice">Apagar esta opción puede causar problemas después de un reboot. Encienda Modo Seguro o encender y apagar esta después de un reboot.</string>
+    <string name="safe_mode_summary">USUARIOS SAMSUNG NO APAGAN ESTA OPCIÓN A MENUS QUE TENGAN AOSP! \n\n
+        Borra cambios en el barro de estado en reboot/apagado NORMAL y los reestablece después de la completación del boot. \n
+        Reajusta \"Animación elaborado desplegable\" al valor por defecto en reboot/apagado NORMAL y lo reestablece después de la completación del boot.
+    </string>
+    <string name="hide_welcome_screen">Oscurar Pantalla de Bienvenidos</string>
 </resources>
