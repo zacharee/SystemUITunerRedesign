@@ -4,13 +4,17 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.preference.PreferenceManager;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 
 import com.zacharee1.systemuituner.R;
 import com.zacharee1.systemuituner.misc.BillingUtil;
+import com.zacharee1.systemuituner.misc.OptionSelected;
 import com.zacharee1.systemuituner.misc.RecreateHandler;
 import com.zacharee1.systemuituner.misc.SettingsUtils;
 import com.zacharee1.systemuituner.misc.SuUtils;
@@ -57,6 +61,11 @@ public class MainActivity extends AppCompatActivity
                     .show();
         }
 
+        if (sharedPreferences.getBoolean("hide_welcome_screen", false)) {
+            launchList(null);
+            finish();
+        }
+
         sharedPreferences.edit().putBoolean("first_start", false).apply();
     }
 
@@ -67,7 +76,20 @@ public class MainActivity extends AppCompatActivity
         super.onDestroy();
     }
 
-    public void launchList(View v) {
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
+        return OptionSelected.doAction(item, this);
+    }
+
+    public void launchList(@Nullable View v) {
         startActivity(new Intent(this, ItemListActivity.class));
     }
 

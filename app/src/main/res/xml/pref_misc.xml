@@ -63,7 +63,8 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:title="@string/power_notification_controls">
+        android:title="@string/power_notification_controls"
+        android:key="power_notification_controls">
         <SwitchPreference
             android:key="show_importance_slider"
             android:title="@string/power_notification_controls"/>

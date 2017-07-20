@@ -30,6 +30,9 @@ public class BootReceiver extends BroadcastReceiver
             SettingsUtils.writeSecure(context, "icon_blacklist", backupBL);
             SettingsUtils.writeGlobal(context, "system_booted", "1");
 
+            String backupQSVal = Settings.Global.getString(context.getContentResolver(), "sysui_qs_fancy_anim_backup");
+            SettingsUtils.writeSecure(context, "sysui_qs_fancy_anim", backupQSVal);
+
             Log.e("BOOTED", "BOOTED");
 
 //            JobScheduler jobScheduler = (JobScheduler)

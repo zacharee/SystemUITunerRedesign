@@ -8,6 +8,10 @@
             android:title="@string/dark_mode"
             android:key="dark_mode" />
 
+        <SwitchPreference
+            android:title="@string/hide_welcome_screen"
+            android:key="hide_welcome_screen" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -15,7 +19,8 @@
 
         <SwitchPreference
             android:title="@string/safe_mode"
-            android:key="safe_mode" />
+            android:key="safe_mode"
+            android:summary="@string/safe_mode_summary"/>
 
         <SwitchPreference
             android:title="@string/enable_custom_settings_input"

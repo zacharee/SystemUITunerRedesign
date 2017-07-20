@@ -8,6 +8,7 @@ import android.preference.PreferenceManager;
 import android.provider.Settings;
 import android.util.Log;
 
+import com.zacharee1.systemuituner.activites.SettingsActivity;
 import com.zacharee1.systemuituner.misc.SettingsUtils;
 
 public class ShutdownReceiver extends BroadcastReceiver
@@ -27,6 +28,10 @@ public class ShutdownReceiver extends BroadcastReceiver
             SettingsUtils.writeSecure(context, "icon_blacklist", "");
             SettingsUtils.writeGlobal(context, "icon_blacklist_backup", currentBL);
             SettingsUtils.writeGlobal(context, "system_booted", "0");
+
+            String currentQSVal = Settings.Secure.getString(context.getContentResolver(), "sysui_qs_fancy_anim");
+            SettingsUtils.writeGlobal(context, "sysui_qs_fancy_anim_backup", currentQSVal);
+            SettingsUtils.writeSecure(context, "sysui_qs_fancy_anim", "1");
         }
     }
 }

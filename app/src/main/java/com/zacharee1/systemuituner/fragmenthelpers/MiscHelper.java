@@ -72,10 +72,15 @@ public class MiscHelper
     }
 
     private void setSecureSwitchStates() {
+        if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.M) {
+            PreferenceCategory category = (PreferenceCategory) mFragment.findPreference("power_notification_controls");
+            mFragment.getPreferenceScreen().removePreference(category);
+        }
+
         ArrayList<SwitchPreference> preferences = new ArrayList<SwitchPreference>() {{
            add((SwitchPreference) mFragment.findPreference("sysui_show_full_zen"));
            add((SwitchPreference) mFragment.findPreference("clock_seconds"));
-           add((SwitchPreference) mFragment.findPreference("show_importance_slider"));
+           if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M) add((SwitchPreference) mFragment.findPreference("show_importance_slider"));
         }};
 
         for (SwitchPreference preference : preferences) {
@@ -163,6 +168,9 @@ public class MiscHelper
             override.setTitle(R.string.night_display_activated);
             auto.setChecked(Settings.Secure.getInt(mFragment.getContext().getContentResolver(), "night_display_auto", 0) == 1);
             auto.setTitle(R.string.night_display_auto);
+        } else {
+            PreferenceCategory category = (PreferenceCategory) mFragment.findPreference("night_mode_settings");
+            mFragment.getPreferenceScreen().removePreference(category);
         }
 
         auto.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener()

@@ -1,6 +1,8 @@
 package com.zacharee1.systemuituner.fragmenthelpers;
 
+import android.os.Build;
 import android.preference.Preference;
+import android.preference.PreferenceCategory;
 import android.preference.SwitchPreference;
 import android.provider.Settings;
 
@@ -57,19 +59,26 @@ public class QSHelper
     }
 
     private void setSliderState() {
-        SliderPreference pref = (SliderPreference) mFragment.findPreference("sysui_qqs_count"); //find the SliderPreference
-
-        pref.setMaxProgess(20);
-        pref.setProgressState(Settings.Secure.getInt(mFragment.getContext().getContentResolver(), "sysui_qqs_count", 5)); //set the progress/value from Settings
-        pref.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener()
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N)
         {
-            @Override
-            public boolean onPreferenceChange(Preference preference, Object o)
+
+            SliderPreference pref = (SliderPreference) mFragment.findPreference("sysui_qqs_count"); //find the SliderPreference
+
+            pref.setMaxProgess(20);
+            pref.setProgressState(Settings.Secure.getInt(mFragment.getContext().getContentResolver(), "sysui_qqs_count", 5)); //set the progress/value from Settings
+            pref.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener()
             {
-                SettingsUtils.writeSecure(mFragment.getContext(), "sysui_qqs_count", o.toString()); //write new value to Settings if user presses OK
-                return true;
-            }
-        });
+                @Override
+                public boolean onPreferenceChange(Preference preference, Object o)
+                {
+                    SettingsUtils.writeSecure(mFragment.getContext(), "sysui_qqs_count", o.toString()); //write new value to Settings if user presses OK
+                    return true;
+                }
+            });
+        } else {
+            PreferenceCategory category = (PreferenceCategory) mFragment.findPreference("qqs_count_category");
+            mFragment.getPreferenceScreen().removePreference(category);
+        }
 
     }
 }

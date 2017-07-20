@@ -68,7 +68,7 @@ public class ItemListActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         toolbar.setTitle(getTitle());
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        if (!mSharedPreferences.getBoolean("hide_welcome_screen", false)) getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         View recyclerView = findViewById(R.id.item_list);
         assert recyclerView != null;
