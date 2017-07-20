@@ -80,7 +80,8 @@
             </intent-filter>
         </service>
 
-        <activity android:name=".activites.AboutActivity" />
+        <activity android:name=".activites.AboutActivity"
+            android:label="@string/about"/>
 
         <receiver
             android:name=".receivers.ShutdownReceiver"

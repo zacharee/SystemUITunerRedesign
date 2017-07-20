@@ -45,7 +45,11 @@ public class SettingWriteFailed extends AppCompatActivity
     @Override
     public boolean onOptionsItemSelected(MenuItem item)
     {
-        finish();
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                return true;
+        }
         return true;
     }
 

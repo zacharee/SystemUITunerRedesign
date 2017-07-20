@@ -82,7 +82,7 @@ public class ItemDetailActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         if (id == android.R.id.home) {
-            navigateUpTo(new Intent(this, ItemListActivity.class));
+            finish();
             return true;
         }
 
