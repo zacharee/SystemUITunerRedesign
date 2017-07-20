@@ -40,7 +40,7 @@ public class SliderPreference extends DialogPreference
         final View view = LayoutInflater.from(getContext()).inflate(R.layout.slider_pref_view, null, true);
         this.view = view;
 
-        mProgress = (mProgress == -1 ? getSharedPreferences().getInt(getKey(), 0) : mProgress);
+        mProgress = (mProgress == -1 ? getSavedProgress() : mProgress);
         mMaxProgress = (mMaxProgress == -1 ? 100 : mMaxProgress);
 
         SeekBar seekBar = view.findViewById(R.id.slider_pref_seekbar);
@@ -80,10 +80,10 @@ public class SliderPreference extends DialogPreference
     @Override
     protected void onDialogClosed(boolean positiveResult)
     {
-        super.onDialogClosed(positiveResult);
-
         if (mListener != null && positiveResult) mListener.onPreferenceChange(this, getCurrentProgress());
         if (positiveResult) getSharedPreferences().edit().putInt(getKey(), getCurrentProgress()).apply();
+
+        super.onDialogClosed(positiveResult);
     }
 
     @Override
