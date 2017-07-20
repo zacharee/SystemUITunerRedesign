@@ -1,10 +1,8 @@
 package com.zacharee1.systemuituner.activites;
 
 import android.annotation.TargetApi;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.Preference;
@@ -37,16 +35,6 @@ public class SettingsActivity extends AppCompatPreferenceActivity
 {
 
     public final static String RECREATE_ACTIVITY = "recreate_activity";
-
-    /**
-     * Helper method to determine if the device has an extra-large screen. For
-     * example, 10" tablets are extra-large.
-     */
-    private static boolean isXLargeTablet(Context context)
-    {
-        return (context.getResources().getConfiguration().screenLayout
-                & Configuration.SCREENLAYOUT_SIZE_MASK) >= Configuration.SCREENLAYOUT_SIZE_XLARGE;
-    }
 
     private static boolean DARK = false;
 
@@ -123,7 +111,7 @@ public class SettingsActivity extends AppCompatPreferenceActivity
         public void onCreate(Bundle savedInstanceState)
         {
             super.onCreate(savedInstanceState);
-            addPreferencesFromResource(R.xml.pref_settings_general);
+            addPreferencesFromResource(R.xml.settings_general);
             setHasOptionsMenu(true);
             setSwitchListeners();
         }

@@ -2,7 +2,9 @@ package com.zacharee1.systemuituner.activites;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.preference.PreferenceManager;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -17,6 +19,7 @@ public class MainActivity extends AppCompatActivity
 {
     private static boolean DARK = false;
     private static BillingUtil mBilling;
+    private static boolean mFirstStart = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -25,6 +28,7 @@ public class MainActivity extends AppCompatActivity
 
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         DARK = sharedPreferences.getBoolean("dark_mode", false);
+        mFirstStart = sharedPreferences.getBoolean("first_start", true);
 
         setTheme(DARK ? R.style.AppTheme_Dark : R.style.AppTheme);
 
@@ -43,6 +47,17 @@ public class MainActivity extends AppCompatActivity
                 finish();
             }
         }
+
+        if (mFirstStart && Build.MANUFACTURER.toLowerCase().contains("samsung")) {
+            sharedPreferences.edit().putBoolean("safe_mode", true).apply();
+            new AlertDialog.Builder(this)
+                    .setTitle(getResources().getString(R.string.notice))
+                    .setMessage(getResources().getString(R.string.safe_mode_auto_enabled))
+                    .setPositiveButton(getResources().getString(R.string.ok), null)
+                    .show();
+        }
+
+        sharedPreferences.edit().putBoolean("first_start", false).apply();
     }
 
     @Override

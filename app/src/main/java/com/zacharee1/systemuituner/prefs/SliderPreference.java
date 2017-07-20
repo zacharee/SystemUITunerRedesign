@@ -43,6 +43,9 @@ public class SliderPreference extends DialogPreference
         mProgress = (mProgress == -1 ? getSavedProgress() : mProgress);
         mMaxProgress = (mMaxProgress == -1 ? 100 : mMaxProgress);
 
+        Log.e("MAXPROG", mMaxProgress + "");
+        Log.e("PROG", mProgress + "");
+
         SeekBar seekBar = view.findViewById(R.id.slider_pref_seekbar);
         final TextView textView = view.findViewById(R.id.slider_pref_text);
 

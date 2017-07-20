@@ -91,7 +91,7 @@ public class DemoHelper
     private void setSliderListeners() {
         SliderPreference batteryLevel = (SliderPreference) mFragment.findPreference("selected_battery_level");
         SliderPreference wifiStrength = (SliderPreference) mFragment.findPreference("wifi_strength");
-        SliderPreference mobileStrength = (SliderPreference) mFragment.findPreference("mobile_strength");
+        SliderPreference mobileStrength = (SliderPreference) mFragment.findPreference("selected_mobile_strength");
 
         mBatteryLevel = batteryLevel.getSavedProgress();
         mWifiStrength = wifiStrength.getSavedProgress();

@@ -24,7 +24,7 @@
             android:key="wifi_strength"/>
         <com.zacharee1.systemuituner.prefs.SliderPreference
             android:title="@string/mobile_strength"
-            android:key="mobile_strength"/>
+            android:key="selected_mobile_strength"/>
         <ListPreference
             android:title="@string/mobile_type"
             android:entries="@array/mobile_type_display"
