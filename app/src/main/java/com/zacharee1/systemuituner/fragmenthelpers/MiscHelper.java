@@ -33,7 +33,7 @@ public class MiscHelper
 
     public MiscHelper(ItemDetailFragment fragment) {
         mFragment = fragment;
-        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(mFragment.getContext());
+        mSharedPreferences = mFragment.getPreferenceManager().getSharedPreferences();
 
         showCustomSettings();
         setGlobalSwitchStates();

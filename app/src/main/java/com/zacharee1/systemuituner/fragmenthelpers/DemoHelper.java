@@ -28,7 +28,6 @@ import com.zacharee1.systemuituner.utils.SettingsUtils;
 public class DemoHelper
 {
     private ItemDetailFragment mFragment;
-    private final SharedPreferences mSharedPreferences;
 
     private boolean mShowNotifs;
     private boolean mBatteryCharging;
@@ -46,7 +45,6 @@ public class DemoHelper
 
     public DemoHelper(ItemDetailFragment fragment) {
         mFragment = fragment;
-        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(mFragment.getContext());
 
         setSwitchListeners();
         setSliderListeners();

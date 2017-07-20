@@ -17,11 +17,9 @@ import com.zacharee1.systemuituner.utils.SettingsUtils;
 public class TWHelper
 {
     private ItemDetailFragment mFragment;
-    private final SharedPreferences mSharedPreferences;
 
     public TWHelper(ItemDetailFragment fragment) {
         mFragment = fragment;
-        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(mFragment.getContext());
 
         setHBWState();
         setHBWListener();

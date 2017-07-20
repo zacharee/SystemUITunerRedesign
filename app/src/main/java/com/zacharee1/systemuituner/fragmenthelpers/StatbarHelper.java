@@ -20,11 +20,9 @@ import java.util.Arrays;
 public class StatbarHelper
 {
     private ItemDetailFragment mFragment;
-    private final SharedPreferences mSharedPreferences;
 
     public StatbarHelper(ItemDetailFragment fragment) {
         mFragment = fragment;
-        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(mFragment.getContext());
 
         preferenceListeners();
         setSwitchPreferenceStates();

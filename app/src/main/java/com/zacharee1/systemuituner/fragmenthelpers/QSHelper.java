@@ -17,11 +17,9 @@ import com.zacharee1.systemuituner.utils.SettingsUtils;
 public class QSHelper
 {
     private ItemDetailFragment mFragment;
-    private final SharedPreferences mSharedPreferences;
 
     public QSHelper(ItemDetailFragment fragment) {
         mFragment = fragment;
-        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(mFragment.getContext());
 
         setSwitchStates();
         setSwitchListeners();
