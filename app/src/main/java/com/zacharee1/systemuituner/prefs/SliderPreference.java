@@ -1,11 +1,15 @@
 package com.zacharee1.systemuituner.prefs;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.os.Parcelable;
 import android.preference.DialogPreference;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
@@ -43,8 +47,8 @@ public class SliderPreference extends DialogPreference
         mProgress = (mProgress == -1 ? getSavedProgress() : mProgress);
         mMaxProgress = (mMaxProgress == -1 ? 100 : mMaxProgress);
 
-        Log.e("MAXPROG", mMaxProgress + "");
-        Log.e("PROG", mProgress + "");
+        Log.e("Prog", mProgress + "");
+        Log.e("mProg", mMaxProgress + "");
 
         SeekBar seekBar = view.findViewById(R.id.slider_pref_seekbar);
         final TextView textView = view.findViewById(R.id.slider_pref_text);
@@ -75,8 +79,6 @@ public class SliderPreference extends DialogPreference
             }
         });
 
-        Log.e("KEY", getKey());
-
         return view;
     }
 
@@ -85,6 +87,8 @@ public class SliderPreference extends DialogPreference
     {
         if (mListener != null && positiveResult) mListener.onPreferenceChange(this, getCurrentProgress());
         if (positiveResult) getSharedPreferences().edit().putInt(getKey(), getCurrentProgress()).apply();
+
+        mProgress = getCurrentProgress();
 
         super.onDialogClosed(positiveResult);
     }
@@ -100,8 +104,6 @@ public class SliderPreference extends DialogPreference
     }
 
     public void setMaxProgess(int maxProgess) {
-        if (view == null) onCreateDialogView();
-
         mMaxProgress = maxProgess;
     }
 
