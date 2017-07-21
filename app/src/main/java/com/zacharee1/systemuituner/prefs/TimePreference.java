@@ -1,6 +1,7 @@
 package com.zacharee1.systemuituner.prefs;
 
 import android.content.Context;
+import android.os.Bundle;
 import android.preference.DialogPreference;
 import android.preference.Preference;
 import android.util.AttributeSet;
@@ -17,7 +18,7 @@ import com.zacharee1.systemuituner.R;
 public class TimePreference extends DialogPreference
 {
     private View view;
-    private OnTimePreferenceChangedListener mListener;
+    private OnPreferenceChangeListener mListener;
 
     public TimePreference(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
@@ -43,8 +44,6 @@ public class TimePreference extends DialogPreference
 
         setCurrentTime(getSavedHour(), getSavedMinute());
 
-        TimePicker picker = view.findViewById(R.id.time_picker);
-
         return view;
     }
 
@@ -53,11 +52,18 @@ public class TimePreference extends DialogPreference
     {
         super.onDialogClosed(positiveResult);
 
-        if (mListener != null && positiveResult) mListener.onTimeChanged(this, getCurrentHour(), getCurrentMinute());
+        if (mListener != null && positiveResult) {
+            Bundle bundle = new Bundle();
+            bundle.putInt("hour", getCurrentHour());
+            bundle.putInt("minute", getCurrentMinute());
+
+            mListener.onPreferenceChange(this, bundle);
+        }
         if (positiveResult) setSavedTime(getCurrentHour(), getCurrentMinute());
     }
 
-    public void setOnTimePreferenceChangedListener(OnTimePreferenceChangedListener onPreferenceChangeListener)
+    @Override
+    public void setOnPreferenceChangeListener(OnPreferenceChangeListener onPreferenceChangeListener)
     {
         mListener = onPreferenceChangeListener;
     }
@@ -96,9 +102,5 @@ public class TimePreference extends DialogPreference
 
     public int getSavedMinute() {
         return getSharedPreferences().getInt(getKey() + "minute", 0);
-    }
-
-    public interface OnTimePreferenceChangedListener {
-        void onTimeChanged(Preference preference, int hour, int minute);
     }
 }

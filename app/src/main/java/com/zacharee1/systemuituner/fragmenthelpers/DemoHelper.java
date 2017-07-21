@@ -2,6 +2,8 @@ package com.zacharee1.systemuituner.fragmenthelpers;
 
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.os.Build;
+import android.os.Bundle;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.SwitchPreference;
@@ -208,13 +210,15 @@ public class DemoHelper
         mHour = time.getSavedHour();
         mMinute = time.getSavedMinute();
 
-        time.setOnTimePreferenceChangedListener(new TimePreference.OnTimePreferenceChangedListener()
+        time.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener()
         {
             @Override
-            public void onTimeChanged(Preference preference, int hour, int minute)
+            public boolean onPreferenceChange(Preference preference, Object o)
             {
-                mHour = hour;
-                mMinute = minute;
+                Bundle bundle = (Bundle) o;
+                mHour = bundle.getInt("hour");
+                mMinute = bundle.getInt("minute");
+                return true;
             }
         });
 
