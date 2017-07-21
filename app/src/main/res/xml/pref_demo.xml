@@ -44,6 +44,12 @@
         <SwitchPreference
             android:title="@string/show_airplane_mode"
             android:key="show_airplane"/>
+        <SwitchPreference
+            android:title="Show Mobile Icon"
+            android:key="show_mobile"/>
+        <SwitchPreference
+            android:title="Mobile Fully Connected"
+            android:key="mobile_fully_connected"/>
     </PreferenceCategory>
 
 </PreferenceScreen>
