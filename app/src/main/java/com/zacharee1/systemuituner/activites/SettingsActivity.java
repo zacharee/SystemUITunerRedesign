@@ -114,6 +114,7 @@ public class SettingsActivity extends AppCompatPreferenceActivity
             addPreferencesFromResource(R.xml.settings_general);
             setHasOptionsMenu(true);
             setSwitchListeners();
+            setPreferenceListeners();
         }
 
         @Override
@@ -130,6 +131,7 @@ public class SettingsActivity extends AppCompatPreferenceActivity
 
         private void setSwitchListeners() {
             SwitchPreference darkMode = (SwitchPreference) findPreference("dark_mode");
+            SwitchPreference taskerEnabled = (SwitchPreference) findPreference("tasker_support_enabled");
 
             darkMode.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener()
             {
@@ -141,6 +143,33 @@ public class SettingsActivity extends AppCompatPreferenceActivity
                     return true;
                 }
             });
+
+            taskerEnabled.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener()
+            {
+                @Override
+                public boolean onPreferenceChange(Preference preference, Object o)
+                {
+                    boolean enabled = Boolean.valueOf(o.toString());
+                    findPreference("tasker_instructions").setEnabled(enabled);
+                    return true;
+                }
+            });
+        }
+
+        private void setPreferenceListeners() {
+            Preference tasker = findPreference("tasker_instructions");
+
+            tasker.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener()
+            {
+                @Override
+                public boolean onPreferenceClick(Preference preference)
+                {
+                    startActivity(new Intent(getContext(), TaskerInstructionActivity.class));
+                    return true;
+                }
+            });
+
+            tasker.setEnabled(getPreferenceManager().getSharedPreferences().getBoolean("tasker_support_enabled", false));
         }
     }
 }

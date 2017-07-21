@@ -282,11 +282,11 @@
     <string name="tasker_defs">This is what everything means:</string>
     <string name="type" translatable="false"><![CDATA[<TYPE>]]></string>
     <string name="replace_with">Replace with:</string>
-    <string name="custom_settings_global" translatable="false">CUSTOM_SETTINGS_GLOBAL</string>
+    <string name="custom_settings_global" translatable="false">com.zacharee1.intent.action.WRITE_GLOBAL</string>
     <string name="for_settings_global">(for Settings.Global)</string>
-    <string name="custom_settings_secure" translatable="false">CUSTOM_SETTINGS_SECURE</string>
+    <string name="custom_settings_secure" translatable="false">com.zacharee1.intent.action.WRITE_SECURE</string>
     <string name="for_settings_secure">(for Settings.Secure)</string>
-    <string name="custom_settings_system" translatable="false">CUSTOM_SETTINGS_SYSTEM</string>
+    <string name="custom_settings_system" translatable="false">com.zacharee1.intent.action.WRITE_SYSTEM</string>
     <string name="for_settings_system">(for Settings.System)</string>
     <string name="key" translatable="false">key</string>
     <string name="desired_setting_key">Desired setting key</string>

@@ -13,4 +13,6 @@
         Resets \"QS Fancy Pulldown Animation\" to default on NORMAL reboot/shutdown and restores saved option after boot completes.
     </string>
     <string name="hide_welcome_screen">Hide Welcome Screen</string>
+    <string name="tasker_support">Tasker Support</string>
+    <string name="instructions">Instructions</string>
 </resources>

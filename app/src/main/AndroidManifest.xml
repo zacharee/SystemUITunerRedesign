@@ -12,9 +12,9 @@
         android:name="android.permission.DUMP"
         tools:ignore="ProtectedPermissions" />
     <uses-permission android:name="android.permission.ACCESS_CONTENT_PROVIDERS_EXTERNALLY" />
-    <!--<uses-permission-->
-        <!--android:name="android.permission.DEVICE_POWER"-->
-        <!--tools:ignore="ProtectedPermissions" />-->
+    <!-- <uses-permission -->
+    <!-- android:name="android.permission.DEVICE_POWER" -->
+    <!-- tools:ignore="ProtectedPermissions" /> -->
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="com.android.vending.BILLING" />
@@ -80,8 +80,9 @@
             </intent-filter>
         </service>
 
-        <activity android:name=".activites.AboutActivity"
-            android:label="@string/about"/>
+        <activity
+            android:name=".activites.AboutActivity"
+            android:label="@string/about" />
 
         <receiver
             android:name=".receivers.ShutdownReceiver"
@@ -97,8 +98,7 @@
         <receiver
             android:name=".receivers.BootReceiver"
             android:enabled="true"
-            android:exported="true"
-            android:permission="android.permission.RECEIVE_BOOT_COMPLETED">
+            android:exported="true">
             <intent-filter android:priority="500">
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <action android:name="android.intent.action.REBOOT" />
@@ -106,7 +106,23 @@
                 <action android:name="com.htc.intent.action.QUICKBOOT_POWERON" />
             </intent-filter>
         </receiver>
+        <receiver
+            android:name=".receivers.TaskerReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter android:priority="500">
+                <action android:name="com.zacharee1.intent.action.WRITE_GLOBAL" />
+                <action android:name="com.zacharee1.intent.action.WRITE_SECURE" />
+                <action android:name="com.zacharee1.intent.action.WRITE_SYSTEM" />
 
+                <data android:scheme="value" />
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".activites.TaskerInstructionActivity"
+            android:label="@string/tasker_how_to">
+
+        </activity>
     </application>
 
 </manifest>

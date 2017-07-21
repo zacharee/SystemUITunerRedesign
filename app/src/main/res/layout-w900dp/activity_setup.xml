@@ -32,7 +32,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/no_root_no_problem"
+            android:id="@+id/tasker_info"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginEnd="32dp"
@@ -48,7 +48,7 @@
             app:layout_constraintTop_toBottomOf="@id/no_root_title" />
 
         <TextView
-            android:id="@+id/no_root_instructions"
+            android:id="@+id/base_command"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginEnd="32dp"
@@ -61,10 +61,10 @@
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/no_root_no_problem" />
+            app:layout_constraintTop_toBottomOf="@id/tasker_info" />
 
         <TextView
-            android:id="@+id/no_root_instructions_1"
+            android:id="@+id/tasker_command"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginEnd="32dp"
@@ -77,10 +77,10 @@
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/no_root_instructions" />
+            app:layout_constraintTop_toBottomOf="@id/base_command" />
 
         <TextView
-            android:id="@+id/no_root_instructions_2"
+            android:id="@+id/tasker_defs_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginEnd="32dp"
@@ -93,7 +93,7 @@
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/no_root_instructions_1" />
+            app:layout_constraintTop_toBottomOf="@id/tasker_command" />
 
         <TextView
             tools:ignore="HardcodedText"
@@ -112,7 +112,7 @@
             android:typeface="monospace"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/no_root_instructions_2" />
+            app:layout_constraintTop_toBottomOf="@id/tasker_defs_title" />
 
         <TextView
             tools:ignore="HardcodedText"
