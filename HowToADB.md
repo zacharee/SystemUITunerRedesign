@@ -12,9 +12,13 @@
  - Open CMD.
  - Enter `cd C:\path\to\extracted\folder\` to get to the folder you extracted ADB into. For instance, `C:\Users\Zachary\Desktop\platform-tools\`.
  
-# Linux (Ubuntu/Debian) Setup
+# Linux (Debian-based) Setup
  - Make sure `adb` is installed:
      - `sudo apt-get install adb`
+
+# Linux (Fedora-based/openSUSE-based) Setup
+ - Make sure `android-tools` is installed:
+     - `sudo yum install android-tools`
 
 # Linux (Other) Setup
  - Download the ADB ZIP for Linux: https://dl.google.com/android/repository/platform-tools-latest-linux.zip
