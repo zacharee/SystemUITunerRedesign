@@ -43,10 +43,14 @@ public class MiscHelper
     }
 
     private void showCustomSettings() {
-        PreferenceScreen preferenceScreen = mFragment.getPreferenceScreen();
         PreferenceCategory customSettings = (PreferenceCategory) mFragment.findPreference("custom_settings_values");
         if (!mSharedPreferences.getBoolean("allow_custom_settings_input", false)) {
-            preferenceScreen.removePreference(customSettings);
+            customSettings.setEnabled(false);
+
+            for (int i = 0; i < customSettings.getPreferenceCount(); i++) {
+                Preference preference = customSettings.getPreference(i);
+                preference.setSummary(R.string.enable_in_settings);
+            }
         }
     }
 
@@ -74,14 +78,32 @@ public class MiscHelper
     private void setSecureSwitchStates() {
         if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.M) {
             PreferenceCategory category = (PreferenceCategory) mFragment.findPreference("power_notification_controls");
-            mFragment.getPreferenceScreen().removePreference(category);
+            category.setEnabled(false);
+
+            for (int i = 0; i < category.getPreferenceCount(); i++) {
+                SwitchPreference preference = (SwitchPreference) category.getPreference(i);
+                preference.setChecked(false);
+                preference.setSummary(R.string.requires_nougat);
+            }
         }
 
         ArrayList<SwitchPreference> preferences = new ArrayList<SwitchPreference>() {{
-           add((SwitchPreference) mFragment.findPreference("sysui_show_full_zen"));
-           add((SwitchPreference) mFragment.findPreference("clock_seconds"));
+           if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M) add((SwitchPreference) mFragment.findPreference("sysui_show_full_zen"));
+           if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M) add((SwitchPreference) mFragment.findPreference("clock_seconds"));
            if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M) add((SwitchPreference) mFragment.findPreference("show_importance_slider"));
         }};
+
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.N) {
+            SwitchPreference preference = (SwitchPreference) mFragment.findPreference("clock_seconds");
+            preference.setEnabled(false);
+            preference.setChecked(false);
+            preference.setSummary(R.string.requires_nougat);
+
+            preference = (SwitchPreference) mFragment.findPreference("sysui_show_full_zen");
+            preference.setEnabled(false);
+            preference.setChecked(false);
+            preference.setSummary(R.string.requires_nougat);
+        }
 
         for (SwitchPreference preference : preferences) {
             final String key = preference.getKey();
@@ -170,7 +192,13 @@ public class MiscHelper
             auto.setTitle(R.string.night_display_auto);
         } else {
             PreferenceCategory category = (PreferenceCategory) mFragment.findPreference("night_mode_settings");
-            mFragment.getPreferenceScreen().removePreference(category);
+            category.setEnabled(false);
+
+            for (int i = 0; i < category.getPreferenceCount(); i++) {
+                SwitchPreference preference = (SwitchPreference) category.getPreference(i);
+                preference.setChecked(false);
+                preference.setSummary(R.string.requires_nougat);
+            }
         }
 
         auto.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener()

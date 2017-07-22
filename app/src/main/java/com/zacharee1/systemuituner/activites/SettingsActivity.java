@@ -132,6 +132,7 @@ public class SettingsActivity extends AppCompatPreferenceActivity
         private void setSwitchListeners() {
             SwitchPreference darkMode = (SwitchPreference) findPreference("dark_mode");
             SwitchPreference taskerEnabled = (SwitchPreference) findPreference("tasker_support_enabled");
+            SwitchPreference safeMode = (SwitchPreference) findPreference("safe_mode");
 
             darkMode.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener()
             {
@@ -154,6 +155,12 @@ public class SettingsActivity extends AppCompatPreferenceActivity
                     return true;
                 }
             });
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                safeMode.setChecked(false);
+                safeMode.setEnabled(false);
+                safeMode.setSummary(getResources().getString(R.string.safe_mode_android_o));
+            }
         }
 
         private void setPreferenceListeners() {

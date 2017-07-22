@@ -2,7 +2,8 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
     <PreferenceCategory
-        android:title="@string/general">
+        android:title="@string/general"
+        android:key="general_qs">
         <SwitchPreference
             android:key="sysui_qs_fancy_anim"
             android:title="@string/fancy_pulldown_animation"

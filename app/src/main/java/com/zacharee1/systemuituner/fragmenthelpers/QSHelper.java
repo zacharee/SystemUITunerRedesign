@@ -6,6 +6,7 @@ import android.preference.PreferenceCategory;
 import android.preference.SwitchPreference;
 import android.provider.Settings;
 
+import com.zacharee1.systemuituner.R;
 import com.zacharee1.systemuituner.fragments.ItemDetailFragment;
 import com.zacharee1.systemuituner.prefs.SliderPreference;
 import com.zacharee1.systemuituner.misc.SettingsUtils;
@@ -35,25 +36,41 @@ public class QSHelper
     }
 
     private void setSwitchListeners() {
-        for (int i = 0; i < mFragment.getPreferenceScreen().getRootAdapter().getCount(); i++) { //loop through every preference
-            Object o = mFragment.getPreferenceScreen().getRootAdapter().getItem(i);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N)
+        {
+            for (int i = 0; i < mFragment.getPreferenceScreen().getRootAdapter().getCount(); i++)
+            { //loop through every preference
+                Object o = mFragment.getPreferenceScreen().getRootAdapter().getItem(i);
 
-            if (o instanceof SwitchPreference) { //if current preference is a SwitchPreference
-                final SwitchPreference pref = (SwitchPreference) o;
+                if (o instanceof SwitchPreference)
+                { //if current preference is a SwitchPreference
+                    final SwitchPreference pref = (SwitchPreference) o;
 
-                pref.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener()
-                {
-                    @Override
-                    public boolean onPreferenceChange(Preference preference, Object o)
+                    pref.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener()
                     {
-                        if (Boolean.valueOf(o.toString())) {
-                            SettingsUtils.writeSecure(mFragment.getContext(), preference.getKey(), "1");
-                        } else {
-                            SettingsUtils.writeSecure(mFragment.getContext(), preference.getKey(), "0");
+                        @Override
+                        public boolean onPreferenceChange(Preference preference, Object o)
+                        {
+                            if (Boolean.valueOf(o.toString()))
+                            {
+                                SettingsUtils.writeSecure(mFragment.getContext(), preference.getKey(), "1");
+                            } else
+                            {
+                                SettingsUtils.writeSecure(mFragment.getContext(), preference.getKey(), "0");
+                            }
+                            return true;
                         }
-                        return true;
-                    }
-                });
+                    });
+                }
+            }
+        } else {
+            PreferenceCategory category = (PreferenceCategory) mFragment.findPreference("general_qs");
+            category.setEnabled(false);
+
+            for (int i = 0; i < category.getPreferenceCount(); i++) {
+                SwitchPreference preference = (SwitchPreference) category.getPreference(i);
+                preference.setChecked(false);
+                preference.setSummary(R.string.requires_nougat);
             }
         }
     }
@@ -77,7 +94,12 @@ public class QSHelper
             });
         } else {
             PreferenceCategory category = (PreferenceCategory) mFragment.findPreference("qqs_count_category");
-            mFragment.getPreferenceScreen().removePreference(category);
+            category.setEnabled(false);
+
+            for (int i = 0; i < category.getPreferenceCount(); i++) {
+                Preference preference = category.getPreference(i);
+                preference.setSummary(R.string.requires_nougat);
+            }
         }
 
     }
