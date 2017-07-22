@@ -1,20 +1,14 @@
 package com.zacharee1.systemuituner.activites;
 
-import android.app.ActivityManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.pm.ApplicationInfo;
-import android.content.pm.PackageManager;
-import android.content.pm.PermissionInfo;
 import android.content.res.ColorStateList;
 import android.content.res.Resources;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.annotation.ColorInt;
 import android.support.annotation.NonNull;
-import android.support.v4.content.PermissionChecker;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.RecyclerView;
@@ -32,8 +26,6 @@ import android.widget.TextView;
 
 import com.zacharee1.systemuituner.fragments.ItemDetailFragment;
 import com.zacharee1.systemuituner.R;
-import com.zacharee1.systemuituner.misc.MiscStrings;
-import com.zacharee1.systemuituner.misc.Reflectors;
 import com.zacharee1.systemuituner.misc.TweakItems;
 import com.zacharee1.systemuituner.misc.OptionSelected;
 import com.zacharee1.systemuituner.misc.RecreateHandler;
@@ -72,7 +64,7 @@ public class ItemListActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_item_list);
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
+        final Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         toolbar.setTitle(getTitle());
 
@@ -97,40 +89,6 @@ public class ItemListActivity extends AppCompatActivity {
                     .replace(R.id.item_detail_container, fragment)
                     .commit();
         }
-
-        int hasPerm = checkSelfPermission("android.permission.UPDATE_APP_OPS_STATS");
-
-        Log.e("PERM", hasPerm + "");
-
-        if (hasPerm == PackageManager.PERMISSION_DENIED) {
-            requestPermissions(new String[] { "android.permission.UPDATE_APP_OPS_STATS" }, 100);
-        }
-
-        PackageManager manager = getPackageManager();
-        List<ApplicationInfo> packages = manager.getInstalledApplications(
-                PackageManager.GET_META_DATA);
-        Integer UID = 0;
-        //loop through the list of installed packages and see if the selected
-        //app is in the list
-        for (ApplicationInfo packageInfo : packages) {
-            if(packageInfo.packageName.equals("android")){
-                //get the UID for the selected app
-                UID = packageInfo.uid;
-                break; //found a match, don't need to search anymore
-            }
-
-        }
-
-        final Integer UID2 = UID;
-
-        runOnUiThread(new Runnable()
-        {
-            @Override
-            public void run()
-            {
-//                Reflectors.checkOpNoThrow(MiscStrings.OP_POST_NOTIFICATION, UID2, "android", ItemListActivity.this);
-            }
-        });
     }
 
     @Override

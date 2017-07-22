@@ -1,12 +1,8 @@
 package com.zacharee1.systemuituner.activites;
 
 import android.annotation.TargetApi;
-import android.app.AppOpsManager;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.pm.ApplicationInfo;
-import android.content.pm.PackageManager;
-import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.Preference;
@@ -20,9 +16,7 @@ import android.util.Log;
 import android.view.MenuItem;
 
 import com.zacharee1.systemuituner.R;
-import com.zacharee1.systemuituner.misc.MiscStrings;
 import com.zacharee1.systemuituner.misc.RecreateHandler;
-import com.zacharee1.systemuituner.misc.Reflectors;
 
 import java.util.List;
 
