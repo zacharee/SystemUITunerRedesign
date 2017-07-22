@@ -17,16 +17,22 @@ public class TaskerReceiver extends BroadcastReceiver
     @Override
     public void onReceive(Context context, Intent intent)
     {
+        Log.e("DATA", "RECEIVED");
+        Log.e("DATA", intent.getDataString());
+
         if ((intent.getAction().equals(MiscStrings.ACTION_SETTINGS_GLOBAL) ||
                 intent.getAction().equals(MiscStrings.ACTION_SETTINGS_SECURE) ||
                 intent.getAction().equals(MiscStrings.ACTION_SETTINGS_SYSTEM)) &&
                 PreferenceManager.getDefaultSharedPreferences(context).getBoolean("tasker_support_enabled", false)) {
 
-            Log.e("DATA", intent.getDataString() + " H");
-
             String dataString = intent.getDataString();
 
-            ArrayList<String> keyValPair = new ArrayList<>(Arrays.asList(dataString.split("[:]")));
+            //expecting dataString with format "SETTING:key/value"
+            String[] nameVal = dataString.split("[:]");
+            if (nameVal[1] == null) nameVal[1] = "";
+            String keyVal = nameVal[1];
+
+            ArrayList<String> keyValPair = new ArrayList<>(Arrays.asList(keyVal.split("[/]")));
             if (keyValPair.size() < 2) keyValPair.set(1, "");
 
             switch (intent.getAction()) {

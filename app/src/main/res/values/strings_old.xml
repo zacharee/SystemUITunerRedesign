@@ -278,7 +278,7 @@
     <string name="start_app_anyway">Start App Anyway</string>
     <string name="tasker_how_to">Tasker How-To</string>
     <string name="base_command_tasker">This is the base command:</string>
-    <string name="tasker_command" translatable="false"><![CDATA[am broadcast -n com.zacharee1.systemuituner/.receivers.SettingsReceiver -a <TYPE> -d key:value]]></string>
+    <string name="tasker_command" translatable="false"><![CDATA[am broadcast -a <TYPE> -d SETTING:<KEY>/<VALUE>]]></string>
     <string name="tasker_defs">This is what everything means:</string>
     <string name="type" translatable="false"><![CDATA[<TYPE>]]></string>
     <string name="replace_with">Replace with:</string>
@@ -288,10 +288,10 @@
     <string name="for_settings_secure">(for Settings.Secure)</string>
     <string name="custom_settings_system" translatable="false">com.zacharee1.intent.action.WRITE_SYSTEM</string>
     <string name="for_settings_system">(for Settings.System)</string>
-    <string name="key" translatable="false">key</string>
+    <string name="key" translatable="false"><![CDATA[<KEY>]]></string>
     <string name="desired_setting_key">Desired setting key</string>
     <string name="desired_setting_value">Desired setting value</string>
-    <string name="value" translatable="false">value</string>
+    <string name="value" translatable="false"><![CDATA[<VALUE>]]></string>
     <string name="tasker_intro">Here\'s a quick set of instructions for Tasker. Since I don\'t know how to use Tasker, I can only build in support for intent broadcasts.</string>
     <string name="back_up_blacklist">Back Up Blacklist</string>
     <string name="restore_blacklist">Restore Blacklist</string>
