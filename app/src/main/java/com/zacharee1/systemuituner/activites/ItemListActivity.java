@@ -52,7 +52,8 @@ public class ItemListActivity extends AppCompatActivity {
     private static SharedPreferences mSharedPreferences;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
 
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
@@ -65,16 +66,19 @@ public class ItemListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_item_list);
 
         final Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar.setPopupTheme(DARK ? R.style.AppTheme_Dark_PopupOverlay : R.style.AppTheme_PopupOverlay);
         setSupportActionBar(toolbar);
         toolbar.setTitle(getTitle());
 
-        if (!mSharedPreferences.getBoolean("hide_welcome_screen", false)) getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        if (!mSharedPreferences.getBoolean("hide_welcome_screen", false))
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         View recyclerView = findViewById(R.id.item_list);
         assert recyclerView != null;
         setupRecyclerView((RecyclerView) recyclerView);
 
-        if (findViewById(R.id.item_detail_container) != null) {
+        if (findViewById(R.id.item_detail_container) != null)
+        {
             // The detail container view will be present only in the
             // large-screen layouts (res/values-w900dp).
             // If this view is present, then the
@@ -89,14 +93,6 @@ public class ItemListActivity extends AppCompatActivity {
                     .replace(R.id.item_detail_container, fragment)
                     .commit();
         }
-    }
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults)
-    {
-        Log.e("RESULT", grantResults[0] + "");
-
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
     }
 
     @Override

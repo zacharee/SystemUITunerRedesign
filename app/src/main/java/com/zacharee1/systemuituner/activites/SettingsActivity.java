@@ -139,7 +139,8 @@ public class SettingsActivity extends AppCompatPreferenceActivity
                 @Override
                 public boolean onPreferenceChange(Preference preference, Object o)
                 {
-                    Intent intent = new Intent(RECREATE_ACTIVITY);
+                    Intent intent = new Intent();
+                    intent.setAction(RECREATE_ACTIVITY);
                     LocalBroadcastManager.getInstance(getContext()).sendBroadcast(intent);
                     return true;
                 }

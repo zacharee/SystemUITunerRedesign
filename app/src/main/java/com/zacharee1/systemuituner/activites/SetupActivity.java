@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import com.zacharee1.systemuituner.LauncherActivity;
 import com.zacharee1.systemuituner.R;
 import com.zacharee1.systemuituner.misc.RecreateHandler;
 import com.zacharee1.systemuituner.misc.SettingsUtils;
@@ -40,7 +41,7 @@ public class SetupActivity extends AppCompatActivity
 
     public void checkSetup(View v) {
         if (SettingsUtils.hasPerms(this)) {
-            Intent intent = new Intent(this, MainActivity.class);
+            Intent intent = new Intent(this, LauncherActivity.class);
             startActivity(intent);
             finish();
         } else {

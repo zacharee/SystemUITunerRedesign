@@ -36,7 +36,8 @@ public class ItemDetailActivity extends AppCompatActivity {
         RecreateHandler.onCreate(this);
 
         setContentView(R.layout.activity_item_detail);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.detail_toolbar);
+        Toolbar toolbar = findViewById(R.id.detail_toolbar);
+        toolbar.setPopupTheme(DARK ? R.style.AppTheme_Dark_PopupOverlay : R.style.AppTheme_PopupOverlay);
         setSupportActionBar(toolbar);
 
         // Show the Up button in the action bar.
