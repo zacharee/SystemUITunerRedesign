@@ -255,4 +255,9 @@
         Reajusta \"Animación elaborado desplegable\" al valor por defecto en reboot/apagado NORMAL y lo reestablece después de la completación del boot.
     </string>
     <string name="hide_welcome_screen">Oscurar Pantalla de Bienvenidos</string>
+    <string name="tasker_support">Compatibilidad Tasker</string>
+    <string name="instructions">Instrucciones</string>
+    <string name="safe_mode_android_o">Por limitaciones en Android O, esta característica no funcionará en tu aparato.</string>
+    <string name="requires_nougat">Necesita Nougat o superior.</string>
+    <string name="enable_in_settings">Activar en Configuración.</string>
 </resources>
