@@ -13,7 +13,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -47,8 +46,10 @@ public class ItemListActivity extends AppCompatActivity {
      * device.
      */
     private boolean mTwoPane;
-    private List<TweakItems.TweakItem> mItems = TweakItems.ITEMS;
+    private final List<TweakItems.TweakItem> mItems = TweakItems.ITEMS;
+    @SuppressWarnings("FieldCanBeLocal")
     private static boolean DARK = false;
+    @SuppressWarnings("FieldCanBeLocal")
     private static SharedPreferences mSharedPreferences;
 
     @Override
@@ -70,6 +71,7 @@ public class ItemListActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         toolbar.setTitle(getTitle());
 
+        assert getSupportActionBar() != null;
         if (!mSharedPreferences.getBoolean("hide_welcome_screen", false))
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 

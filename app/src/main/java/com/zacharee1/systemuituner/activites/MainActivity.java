@@ -2,10 +2,8 @@ package com.zacharee1.systemuituner.activites;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.Build;
 import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -17,14 +15,15 @@ import com.zacharee1.systemuituner.R;
 import com.zacharee1.systemuituner.misc.BillingUtil;
 import com.zacharee1.systemuituner.misc.OptionSelected;
 import com.zacharee1.systemuituner.misc.RecreateHandler;
-import com.zacharee1.systemuituner.misc.SettingsUtils;
-import com.zacharee1.systemuituner.misc.SuUtils;
+
 import io.fabric.sdk.android.Fabric;
 
+@SuppressWarnings("unused")
 public class MainActivity extends AppCompatActivity
 {
+    @SuppressWarnings("FieldCanBeLocal")
     private static boolean DARK = false;
-    private static BillingUtil mBilling;
+    private BillingUtil mBilling;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)

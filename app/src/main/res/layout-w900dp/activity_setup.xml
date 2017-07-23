@@ -116,7 +116,6 @@
 
         <TextView
             tools:ignore="HardcodedText"
-            android:id="@+id/no_root_comm_2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginEnd="32dp"
@@ -135,7 +134,6 @@
     </LinearLayout>
 
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/finished_fab"
         android:layout_width="72dp"
         android:layout_height="72dp"
         android:layout_marginBottom="16dp"

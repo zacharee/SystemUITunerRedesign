@@ -13,7 +13,7 @@ import com.zacharee1.systemuituner.misc.SettingsUtils;
 
 public class QSHelper
 {
-    private ItemDetailFragment mFragment;
+    private final ItemDetailFragment mFragment;
 
     public QSHelper(ItemDetailFragment fragment) {
         mFragment = fragment;

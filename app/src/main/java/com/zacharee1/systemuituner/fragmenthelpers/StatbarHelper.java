@@ -12,7 +12,7 @@ import java.util.Arrays;
 
 public class StatbarHelper
 {
-    private ItemDetailFragment mFragment;
+    private final ItemDetailFragment mFragment;
 
     public StatbarHelper(ItemDetailFragment fragment) {
         mFragment = fragment;

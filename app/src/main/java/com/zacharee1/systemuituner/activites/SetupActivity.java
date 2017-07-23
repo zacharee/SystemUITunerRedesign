@@ -13,8 +13,10 @@ import com.zacharee1.systemuituner.R;
 import com.zacharee1.systemuituner.misc.RecreateHandler;
 import com.zacharee1.systemuituner.misc.SettingsUtils;
 
+@SuppressWarnings("unused")
 public class SetupActivity extends AppCompatActivity
 {
+    @SuppressWarnings("FieldCanBeLocal")
     private static boolean DARK = false;
 
     @Override

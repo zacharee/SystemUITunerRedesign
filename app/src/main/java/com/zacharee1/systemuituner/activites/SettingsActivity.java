@@ -36,6 +36,7 @@ public class SettingsActivity extends AppCompatPreferenceActivity
 
     public final static String RECREATE_ACTIVITY = "recreate_activity";
 
+    @SuppressWarnings("FieldCanBeLocal")
     private static boolean DARK = false;
 
     @Override
@@ -71,12 +72,6 @@ public class SettingsActivity extends AppCompatPreferenceActivity
             // Show the Up button in the action bar.
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
-    }
-
-    @Override
-    public void onBuildHeaders(List<Header> target)
-    {
-        super.onBuildHeaders(target);
     }
 
     /**

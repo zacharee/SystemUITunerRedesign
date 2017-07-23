@@ -22,7 +22,7 @@ import static com.zacharee1.systemuituner.misc.Utils.isPackageInstalled;
 
 public class BillingUtil
 {
-    private Activity mActivity;
+    private final Activity mActivity;
     private BillingClient mBillingClient;
 //    private final List<String> mSkuList;
 
@@ -46,6 +46,7 @@ public class BillingUtil
             public void onBillingSetupFinished(@BillingClient.BillingResponse int billingResponseCode) {
                 Log.e("BillingResult", billingResponseCode + "");
 
+                //noinspection StatementWithEmptyBody
                 if (billingResponseCode == BillingClient.BillingResponse.OK) {
                     //        mSkuList = new ArrayList<>();
                     //        mSkuList.add("donate_1");
@@ -80,6 +81,7 @@ public class BillingUtil
         });
     }
 
+    @SuppressWarnings("UnusedReturnValue")
     public int onDonateClicked(String skuId) {
         BillingFlowParams.Builder builder = new BillingFlowParams.Builder()
                 .setSku(skuId).setType(BillingClient.SkuType.INAPP);

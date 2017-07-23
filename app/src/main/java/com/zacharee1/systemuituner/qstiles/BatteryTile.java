@@ -36,7 +36,7 @@ public class BatteryTile extends TileService
             @Override
             public void onReceive(Context context, Intent intent)
             {
-                setLevel(context, intent);
+                setLevel(intent);
             }
         };
 
@@ -67,7 +67,7 @@ public class BatteryTile extends TileService
         super.onDestroy();
     }
 
-    private void setLevel(Context context, Intent intent) {
+    private void setLevel(Intent intent) {
         Tile batteryTile = getQsTile();
         int batteryStatus = intent.getIntExtra(BatteryManager.EXTRA_STATUS, -1);
         boolean batteryCharging = batteryStatus == BatteryManager.BATTERY_STATUS_CHARGING ||

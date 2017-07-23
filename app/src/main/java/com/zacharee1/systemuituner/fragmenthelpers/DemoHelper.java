@@ -2,7 +2,6 @@ package com.zacharee1.systemuituner.fragmenthelpers;
 
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.os.Build;
 import android.os.Bundle;
 import android.preference.ListPreference;
 import android.preference.Preference;
@@ -17,13 +16,9 @@ import com.zacharee1.systemuituner.prefs.SliderPreference;
 import com.zacharee1.systemuituner.prefs.TimePreference;
 import com.zacharee1.systemuituner.misc.SettingsUtils;
 
-/**
- * Created by Zacha on 7/16/2017.
- */
-
 public class DemoHelper
 {
-    private ItemDetailFragment mFragment;
+    private final ItemDetailFragment mFragment;
 
     private boolean mShowNotifs;
     private boolean mBatteryCharging;

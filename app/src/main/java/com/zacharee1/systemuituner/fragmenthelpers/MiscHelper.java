@@ -5,7 +5,6 @@ import android.os.Build;
 import android.preference.EditTextPreference;
 import android.preference.Preference;
 import android.preference.PreferenceCategory;
-import android.preference.PreferenceScreen;
 import android.preference.SwitchPreference;
 import android.provider.Settings;
 
@@ -24,7 +23,7 @@ public class MiscHelper
 
     private final SharedPreferences mSharedPreferences;
 
-    private ItemDetailFragment mFragment;
+    private final ItemDetailFragment mFragment;
 
     public MiscHelper(ItemDetailFragment fragment) {
         mFragment = fragment;

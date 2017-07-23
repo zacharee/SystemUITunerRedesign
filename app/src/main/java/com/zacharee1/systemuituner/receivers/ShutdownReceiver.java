@@ -8,7 +8,6 @@ import android.preference.PreferenceManager;
 import android.provider.Settings;
 import android.util.Log;
 
-import com.zacharee1.systemuituner.activites.SettingsActivity;
 import com.zacharee1.systemuituner.misc.SettingsUtils;
 
 public class ShutdownReceiver extends BroadcastReceiver

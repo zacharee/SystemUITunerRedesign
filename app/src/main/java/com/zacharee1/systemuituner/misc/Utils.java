@@ -5,13 +5,10 @@ import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.util.TypedValue;
 
-/**
- * Created by Zacha on 7/19/2017.
- */
-
+@SuppressWarnings({"WeakerAccess", "unused"})
 public class Utils
 {
-    public static boolean isPackageInstalled(String packagename, PackageManager packageManager) {
+    public static boolean isPackageInstalled(@SuppressWarnings("SameParameterValue") String packagename, PackageManager packageManager) {
         try {
             packageManager.getPackageInfo(packagename, 0);
             return true;

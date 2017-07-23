@@ -13,8 +13,10 @@ import com.zacharee1.systemuituner.R;
 import com.zacharee1.systemuituner.misc.BillingUtil;
 import com.zacharee1.systemuituner.misc.RecreateHandler;
 
+@SuppressWarnings("unused")
 public class AboutActivity extends AppCompatActivity
 {
+    @SuppressWarnings("FieldCanBeLocal")
     private static boolean DARK = false;
     private BillingUtil mBilling;
 
@@ -34,6 +36,7 @@ public class AboutActivity extends AppCompatActivity
 
         mBilling = new BillingUtil(this);
 
+        assert getSupportActionBar() != null;
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         TextView appCred = findViewById(R.id.app_credit);

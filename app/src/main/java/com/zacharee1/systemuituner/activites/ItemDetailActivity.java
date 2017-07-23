@@ -22,6 +22,7 @@ import com.zacharee1.systemuituner.misc.RecreateHandler;
  */
 public class ItemDetailActivity extends AppCompatActivity {
 
+    @SuppressWarnings("FieldCanBeLocal")
     private static boolean DARK = false;
 
     @Override

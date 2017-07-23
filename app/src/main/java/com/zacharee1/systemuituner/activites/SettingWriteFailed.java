@@ -13,6 +13,7 @@ import com.zacharee1.systemuituner.misc.RecreateHandler;
 public class SettingWriteFailed extends AppCompatActivity
 {
 
+    @SuppressWarnings("FieldCanBeLocal")
     private static boolean DARK = false;
 
     @Override
@@ -39,6 +40,7 @@ public class SettingWriteFailed extends AppCompatActivity
             }
         }
 
+        assert getSupportActionBar() != null;
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 

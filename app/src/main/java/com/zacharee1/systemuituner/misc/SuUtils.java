@@ -8,10 +8,6 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-/**
- * Created by Zacha on 7/17/2017.
- */
-
 public class SuUtils
 {
     public static void sudo(String... strings) {

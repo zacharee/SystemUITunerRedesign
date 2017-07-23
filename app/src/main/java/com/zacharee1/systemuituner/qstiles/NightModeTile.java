@@ -45,9 +45,4 @@ public class NightModeTile extends TileService
         super.onClick();
     }
 
-    @Override
-    public void onDestroy()
-    {
-        super.onDestroy();
-    }
 }

@@ -1,83 +1,18 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-
-    <string-array name="wifi_strength">
-        <item>0</item>
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-    </string-array>
-
-    <string-array name="mobile_strength">
-        <item>0</item>
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-    </string-array>
-
-    <string-array name="mobile_type">
-        <item>1x</item>
-        <item>3g</item>
-        <item>4g</item>
-        <item>e</item>
-        <item>g</item>
-        <item>h</item>
-        <item>lte</item>
-        <item>roam</item>
-        <item>none</item>
-    </string-array>
-
-    <string-array name="stat_bar_style">
-        <item>opaque</item>
-        <item>translucent</item>
-        <item>semi-transparent</item>
-        <item>default</item>
-    </string-array>
-
     <string name="about">About</string>
-    <string name="demo_mode">Demo Mode</string>
-    <string name="exit_app">Exit App</string>
-    <string name="home">Home</string>
     <string name="miscellaneous">Miscellaneous</string>
-    <string name="quick_settings">Quick Settings</string>
     <string name="settings">Settings</string>
     <string name="status_bar">Status Bar</string>
-    <string name="go">GO</string>
     <string name="reboot_required">(Reboot Required)</string>
-    <string name="adb_workaround">However, just like in the setup, you can use ADB to work around it.</string>
-    <string name="non_lp_bypass">If you aren\'t on Lollipop, but want to give it a shot anyway, first press the \"Grant Perms\" button, then press the \"GO\" Button.</string>
-    <string name="lp_info">On Lollipop, it may be possible to do this without a computer or root.</string>
-    <string name="adb_switch_replacement">Run the command below in an ADB shell to do what the switch would:</string>
-    <string name="set_perms">Set Perms</string>
-    <string name="sorry">Sorry...</string>
-    <string name="android_issue">This is an issue in Android itself, and I can\'t do anything about it.</string>
-    <string name="root_needed_toggle">To use this toggle from the phone, you need root.</string>
-    <string name="example_settings_adb" translatable="false" tools:ignore="Typos">adb shell settings put system SETTINGS_VALUE VALUE</string>
+    <string name="sorry">Sorry…</string>
     <string name="non_root_info">Don\'t worry. It\'s fine if you aren\'t. There are just some extra things you need to do in that case.</string>
-    <string name="i_am_rooted">I am rooted</string>
-    <string name="necessary_steps">Just need to do a few things.....</string>
-    <string name="getting_started">Let\'s Get This Party Started!</string>
-    <string name="are_you_rooted">So I need to know… Are you rooted?</string>
-    <string name="cancel">Cancel</string>
-    <string name="set">Set</string>
     <string name="not_rooted_huh">Not rooted, huh?</string>
     <string name="adb_set_up">ADB all set up? Good. Now, let\'s get started.</string>
-    <string name="bummer">Bummer…</string>
     <string name="adb_instructions">For this to work, you\'ll need a computer, a USB cable and ADB.</string>
-    <string name="workaround">I guess it\'s a good thing that there\'s a workaround, then.</string>
-    <string name="adb_reminder">Remember to also enable \"USB Debugging\" in Developer Options, and authorize your computer.</string>
     <string name="adb_perm_grant">Run the following commands (with your device connected) in CMD or Terminal:</string>
     <string name="created_by">App created by <a href='https://forum.xda-developers.com/member.php?u=7055541'>Zacharee1</a></string>
-    <string name="images_from">Launcher icon made by <a href='https://forum.xda-developers.com/member.php?u=7385240'>immarcel</a></string>
     <string name="spanish_from">Spanish translation by <a href='https://es.stackoverflow.com/users/28567/aaron-romero'>Aaron Romero</a> and <a href='https://forum.xda-developers.com/member.php?u=7055541'>Zacharee1</a></string>
-    <string name="abt_desc">The main screen already explained what this app does, so I\'m not exactly sure what else to say.</string>
-    <string name="abt_warn">This app isn\'t going to work on every device, though, because manufacturers are annoying. Just keep that in mind when a toggle has no effect.</string>
-    <string name="debug_info">Debug Info</string>
-    <string name="demo_warn">The options here are experimental! They may not work correctly, so please be careful.</string>
     <string name="enabled">Enabled</string>
     <string name="show">Show</string>
     <string name="select_time">Select Time</string>
@@ -89,20 +24,10 @@
     <string name="show_airplane_mode">Show Airplane Mode</string>
     <string name="show_notifications">Show Notifications</string>
     <string name="status_bar_style">Status Bar Style</string>
-    <string name="systemui_tuner" translatable="false">SystemUI Tuner</string>
-    <string name="system_settings">System Settings</string>
-    <string name="no_root_setup">No-Root Setup</string>
     <string name="home_desc">For Devices without this Activity</string>
     <string name="home_joke">Or for devices with it, I\'m not your boss.</string>
     <string name="home_extra">(If you do have the stock SystemUI Tuner, this one provides some extra goodies.)</string>
-    <string name="setup_ask">You followed the setup, right? This app won\'t work unless you do.</string>
-    <string name="resetup_instruction">If you skipped it, or forgot, or your root status changed, here\'s a button:</string>
     <string name="setup">Setup</string>
-    <string name="misc_desc">Some random things that didn\'t fit anywhere else, but are probably useful.</string>
-    <string name="misc_warn">I don\'t know if every device supports these.</string>
-    <string name="stat_bar_warn">ATTENTION: Not everything here will work on your device! Manufacturers, especially Samsung and LG, tend to remove the ability to hide certain icons.</string>
-    <string name="email" translatable="false">zachary.wander@gmail.com</string>
-    <string name="launcher_image">Launcher Image</string>
     <string name="dnd_switch_in_vol_slider">DND Switch in Vol Slider</string>
     <string name="dark_mode">Dark Mode</string>
     <string name="managed_profile_icon">Managed Profile Icon</string>
@@ -136,12 +61,9 @@
     <string name="donate">Donate</string>
     <string name="google_play" translatable="false">Google Play</string>
     <string name="google" translatable="false">Google+</string>
-    <string name="my_other_apps">My Other Apps</string>
     <string name="telegram" translatable="false">Telegram</string>
-    <string name="xda_labs" translatable="false">XDA Labs</string>
     <string name="xda_thread" translatable="false">XDA Thread</string>
     <string name="reset_blacklist">Reset Blacklist</string>
-    <string name="apply">Apply</string>
     <string name="animator_duration_scale">Animator Duration Scale</string>
     <string name="transition_animation_scale">Transition Animation Scale</string>
     <string name="window_animation_scale">Window Animation Scale</string>
@@ -153,42 +75,11 @@
     <string name="global">Global</string>
     <string name="secure">Secure</string>
     <string name="system">System</string>
-    <string name="version_name">Version Name:</string>
-    <string name="version_code">Version Code:</string>
-    <string name="build_date">Build Date:</string>
-    <string name="error">ERROR</string>
-    <string name="warning">WARNING</string>
-    <string name="perms_not_set">Looks like you may not have set up permissions correctly. For reference, here\'s the error:</string>
-    <string name="prompt_setup">Would you like to enter setup now?</string>
-    <string name="system_settings_failed">Didn\'t work :/. For reference, here\'s the error:</string>
     <string name="ok">OK</string>
-    <string name="yes">Yes</string>
-    <string name="no">No</string>
-    <string name="samsung_warning_message">It seems you are using a Samsung or Vivo device. If you are on Stock Firmware, SystemUI may break after a reboot! I have built in a workaround that should avoid problems, but I can\'t guarantee its effectiveness! Continue?</string>
-    <string name="select_time_title">Choose Time to Display</string>
-    <string name="custom_settings_warning">What lies ahead holds many dangers. I take no responsibility if you mess your device up using this feature. Please be cautious! Continue?</string>
-    <string name="boot_message_icon_blacklist">SystemUI Tuner has restored proper Status Bar state.</string>
     <string name="power_notification_controls">Power Notification Controls</string>
-    <string name="level_5">Level 5</string>
-    <string name="allow_full_screen_interruption">- Allow full screen interruption</string>
-    <string name="always_peek">- Always peek</string>
-    <string name="level_4">Level 4</string>
-    <string name="block_all_app_notifications">- Block all app notifications</string>
-    <string name="never_peek">- Never peek</string>
-    <string name="no_full_screen_interruption">- No full screen interruption</string>
-    <string name="level_1">Level 1</string>
-    <string name="no_sound_or_vibration">- No sound or vibration</string>
-    <string name="not_on_lockscreen_or_in_status_bar">- Not on lockscreen or in status bar</string>
-    <string name="show_at_bottom_of_notification_list">- Show at bottom of notification list</string>
-    <string name="show_at_top_of_notification_list">- Show at top of notification list</string>
-    <string name="level_0">Level 0</string>
-    <string name="level_2">Level 2</string>
-    <string name="level_3">Level 3</string>
     <string name="danger_zone">Danger Zone</string>
     <string name="safe_mode">Safe Mode</string>
     <string name="enable_custom_settings_input">Enable Custom Settings Input</string>
-    <string name="sharedprefs_id" translatable="false">com.zacharee1.sysuituner</string>
-    <string name="root_test_failed">Root test failed.</string>
     <string name="permissions_failed">Hmm. Something went wrong. Make sure you set the permissions correctly. (SystemUI Tuner)</string>
     <string name="enable">Enable</string>
     <string name="samsung" translatable="false" tools:ignore="UnusedResources">Samsung</string>
@@ -214,7 +105,6 @@
     <string name="wifi_oxygen_icon">WiFi Oxygen Icon</string>
     <string name="wifi_p2p_icon">WiFi P2P Icon</string>
     <string name="wimax_icon">WiMax Icon</string>
-    <string name="scroll_hint">(Psst. ^ That box up there scrolls.)</string>
     <string name="remote_call_icon">Remote Call Icon</string>
     <string name="tty_icon">TTY Icon</string>
     <string name="cdma_eri_icon">CDMA ERI Icon</string>
@@ -235,53 +125,33 @@
     <string name="secure_icon">Secure Icon</string>
     <string name="sync_active_icon">Sync Active Icon</string>
     <string name="sync_failing_icon">Sync Failing Icon</string>
-    <string name="please_wait">Please Wait</string>
-    <string name="android_hasn_t_finished_booting_yet_which_means_this_app_won_t_work_properly">Android hasn\'t finished booting yet, which means this app won\'t work properly.</string>
-    <string name="in_the_meantime_though_you_can_press_this_refresh_button_if_you_want">In the meantime, though, you can press this refresh button, if you want.</string>
-    <string name="once_everything_is_ready_for_use_you_ll_see_a_toast_notification_telling_you">Once everything is ready for use, you\'ll see a toast notification telling you.</string>
-    <string name="refresh">Refresh</string>
-    <string name="not_booted_yet">Boot still hasn\'t finished.</string>
     <string name="night_mode">Night Mode</string>
     <string name="night_mode_auto">Night Mode Auto</string>
     <string name="night_mode_override">Night Mode Override</string>
     <string name="night_mode_adjust_tint">Night Mode Adjust Tint</string>
     <string name="night_display_auto">Night Display Auto</string>
-    <string name="custom_times">Custom Times</string>
     <string name="night_display_activated">Night Display Activated</string>
     <string name="night_display">Night Display</string>
-    <string name="custom_start_title">Select Start Time</string>
-    <string name="custom_end_title">Select End Time</string>
-    <string name="to">TO</string>
-    <string name="applied">Applied</string>
     <string name="donate_hook">Hey, I see you\'re using my app.</string>
     <string name="donate_joke">How, you ask? Magic.</string>
     <string name="donate_request">If you\'re enjoying your time here, it\'d be absolutely amazing if you could spare a dollar or two.</string>
     <string name="donate_dont_worry">There\'s absolutely no obligation. This app is free and always will be.</string>
-    <string name="setup_note">NOTE: There is no need to do this again unless you need to!</string>
     <string name="donate_1" translatable="false">$1</string>
     <string name="donate_10" translatable="false">$10</string>
     <string name="donate_2" translatable="false">$2</string>
     <string name="donate_5" translatable="false">$5</string>
-    <string name="welcome">Welcome!</string>
-    <string name="root_mode">Root Mode</string>
     <string name="paypal" translatable="false">PayPal</string>
-    <string name="iap_fail">Could not connect to Google Play billing.</string>
-    <string name="i_am_not_rooted">I am not rooted</string>
-    <string name="adb_instructions_button">ADB Instructions</string>
     <string name="high_brightness_warning">High brightness warning</string>
     <string name="qs_header_tile_count">QS Header Tile Count</string>
     <string name="fancy_pulldown_animation">Fancy Pulldown Animation</string>
     <string name="move_full_rows">Move Full Rows</string>
-    <string name="touchwiz" translatable="false">TouchWiz</string>
     <string name="battery">Battery</string>
     <string name="enable_fabric_io_analytics">Fabric.io Analytics</string>
-    <string name="start_app_anyway">Start App Anyway</string>
     <string name="tasker_how_to">Tasker How-To</string>
     <string name="base_command_tasker">This is the base command:</string>
     <string name="tasker_command" translatable="false"><![CDATA[am broadcast -a <TYPE> -d SETTING:<KEY>/<VALUE>]]></string>
     <string name="tasker_defs">This is what everything means:</string>
     <string name="type" translatable="false"><![CDATA[<TYPE>]]></string>
-    <string name="replace_with">Replace with:</string>
     <string name="custom_settings_global" translatable="false">com.zacharee1.intent.action.WRITE_GLOBAL</string>
     <string name="for_settings_global">(for Settings.Global)</string>
     <string name="custom_settings_secure" translatable="false">com.zacharee1.intent.action.WRITE_SECURE</string>
@@ -295,6 +165,4 @@
     <string name="tasker_intro">Here\'s a quick set of instructions for Tasker. Since I don\'t know how to use Tasker, I can only build in support for intent broadcasts.</string>
     <string name="back_up_blacklist">Back Up Blacklist</string>
     <string name="restore_blacklist">Restore Blacklist</string>
-    <string name="blacklist_backed_up">Blacklist Backed Up</string>
-    <string name="blacklist_restored">Blacklist Restored</string>
 </resources>

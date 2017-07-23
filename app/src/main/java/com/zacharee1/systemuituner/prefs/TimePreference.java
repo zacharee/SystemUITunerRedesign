@@ -3,7 +3,6 @@ package com.zacharee1.systemuituner.prefs;
 import android.content.Context;
 import android.os.Bundle;
 import android.preference.DialogPreference;
-import android.preference.Preference;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,10 +10,7 @@ import android.widget.TimePicker;
 
 import com.zacharee1.systemuituner.R;
 
-/**
- * Created by Zacha on 7/19/2017.
- */
-
+@SuppressWarnings("unused")
 public class TimePreference extends DialogPreference
 {
     private View view;

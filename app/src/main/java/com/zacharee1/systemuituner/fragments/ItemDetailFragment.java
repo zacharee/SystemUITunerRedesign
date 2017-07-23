@@ -34,6 +34,7 @@ public class ItemDetailFragment extends PreferenceFragment
     /**
      * The dummy content this fragment is presenting.
      */
+    @SuppressWarnings("FieldCanBeLocal")
     private TweakItems.TweakItem mItem;
 
     /**
@@ -48,7 +49,8 @@ public class ItemDetailFragment extends PreferenceFragment
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
 
-        if (getArguments().containsKey(ARG_ITEM_ID)) {
+        if (getArguments().containsKey(ARG_ITEM_ID))
+        {
             final String id = getArguments().getString(ARG_ITEM_ID);
             assert id != null;
 
@@ -56,7 +58,8 @@ public class ItemDetailFragment extends PreferenceFragment
 
             addPreferencesFromResource(mItem.layoutId);
 
-            switch (id) {
+            switch (id)
+            {
                 case "statbar":
                     new StatbarHelper(this);
                     break;
@@ -76,54 +79,6 @@ public class ItemDetailFragment extends PreferenceFragment
             }
 
             getActivity().setTitle(mItem.content);
-
-//            new Thread(new Runnable()
-//            {
-//                @Override
-//                public void run()
-//                {
-//                    try
-//                    {
-//                        Field f = PreferenceFragment.class.getDeclaredField("mHavePrefs"); //NoSuchFieldException
-//                        f.setAccessible(true);
-//
-//                        while (!((boolean) f.get(PreferenceFragment.class.cast(ItemDetailFragment.this))));
-//
-//                        getActivity().runOnUiThread(new Runnable()
-//                        {
-//                            @Override
-//                            public void run()
-//                            {
-//                                setIconTints();
-//                            }
-//                        });
-//                    } catch (Exception e) {
-//                        e.printStackTrace();
-//                    }
-//                }
-//            }).start();
-        }
-    }
-
-    private void setIconTints() {
-
-        Log.e("PREF", getPreferenceScreen().getRootAdapter().getCount() + "");
-
-        for (int i = 0; i < getPreferenceScreen().getRootAdapter().getCount(); i++) {
-            Preference preference = (Preference) getPreferenceScreen().getRootAdapter().getItem(i);
-
-            Drawable icon = preference.getIcon();
-
-            if (icon != null)
-            {
-                boolean DARK = getPreferenceManager().getSharedPreferences().getBoolean("dark_mode", false);
-                if (DARK)
-                {
-                    icon.setTintList(ColorStateList.valueOf(Color.WHITE));
-                } else {
-                    icon.setTintList(ColorStateList.valueOf(Color.BLACK));
-                }
-            }
         }
     }
 }

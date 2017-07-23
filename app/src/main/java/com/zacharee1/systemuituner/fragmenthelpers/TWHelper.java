@@ -9,7 +9,7 @@ import com.zacharee1.systemuituner.misc.SettingsUtils;
 
 public class TWHelper
 {
-    private ItemDetailFragment mFragment;
+    private final ItemDetailFragment mFragment;
 
     public TWHelper(ItemDetailFragment fragment) {
         mFragment = fragment;

@@ -9,10 +9,6 @@ import android.support.v4.content.LocalBroadcastManager;
 
 import com.zacharee1.systemuituner.activites.SettingsActivity;
 
-/**
- * Created by Zacha on 7/18/2017.
- */
-
 public class RecreateHandler
 {
     private static BroadcastReceiver mMessageReceiver;

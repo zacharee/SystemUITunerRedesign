@@ -1,20 +1,17 @@
 package com.zacharee1.systemuituner.prefs;
 
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
-import android.os.Parcelable;
 import android.preference.DialogPreference;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
 import com.zacharee1.systemuituner.R;
 
+@SuppressWarnings("unused")
 public class SliderPreference extends DialogPreference
 {
     private View view;
@@ -117,6 +114,7 @@ public class SliderPreference extends DialogPreference
         return getSharedPreferences().getInt(getKey(), 0);
     }
 
+    @SuppressWarnings("WeakerAccess")
     public int getCurrentProgress() {
         if (view == null) onCreateDialogView();
         return ((SeekBar) view.findViewById(R.id.slider_pref_seekbar)).getProgress();

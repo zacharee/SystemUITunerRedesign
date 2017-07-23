@@ -10,6 +10,7 @@ import com.zacharee1.systemuituner.activites.SettingWriteFailed;
 import static com.zacharee1.systemuituner.misc.SuUtils.testSudo;
 import static com.zacharee1.systemuituner.misc.SuUtils.sudo;
 
+@SuppressWarnings("UnusedReturnValue")
 public class SettingsUtils
 {
     public static boolean writeGlobal(Context context, String key, String value) {

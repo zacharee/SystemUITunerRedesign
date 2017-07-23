@@ -46,7 +46,6 @@
         android:textSize="16sp" />
 
     <Button
-        android:id="@+id/donate_paypal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"

@@ -82,7 +82,6 @@
         app:layout_constraintTop_toBottomOf="@id/tasker_command" />
 
     <TableLayout
-        android:id="@+id/tasker_defs"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
@@ -100,7 +99,6 @@
             android:showDividers="middle">
 
             <TextView
-                android:id="@+id/setting_type_val"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="start"
@@ -132,7 +130,6 @@
                         android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/custom_global"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="end"
@@ -146,7 +143,6 @@
                 </HorizontalScrollView>
 
                 <TextView
-                    android:id="@+id/for_global"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
@@ -167,7 +163,6 @@
                         android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/custom_secure"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="end"
@@ -181,7 +176,6 @@
                 </HorizontalScrollView>
 
                 <TextView
-                    android:id="@+id/for_secure"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
@@ -202,7 +196,6 @@
                         android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/custom_system"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="end"
@@ -216,7 +209,6 @@
                 </HorizontalScrollView>
 
                 <TextView
-                    android:id="@+id/for_system"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
@@ -238,7 +230,6 @@
             android:showDividers="middle">
 
             <TextView
-                android:id="@+id/desired_key"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="start"
@@ -259,7 +250,6 @@
                 android:paddingStart="10dp">
 
                 <TextView
-                    android:id="@+id/desired_key_expl"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
@@ -281,7 +271,6 @@
             android:divider="@drawable/divider_vertical">
 
             <TextView
-                android:id="@+id/desired_value"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="start"
@@ -302,7 +291,6 @@
                 android:paddingStart="10dp">
 
                 <TextView
-                    android:id="@+id/desired_value_expl"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
