@@ -40,7 +40,7 @@ public class AboutActivity extends AppCompatActivity
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         TextView appCred = findViewById(R.id.app_credit);
-        TextView appLangCred = findViewById(R.id.app_lang_credit);
+        TextView appLangCred = findViewById(R.id.spanish_lang_credit);
 
         appCred.setMovementMethod(LinkMovementMethod.getInstance());
         appLangCred.setMovementMethod(LinkMovementMethod.getInstance());

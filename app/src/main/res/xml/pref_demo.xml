@@ -16,13 +16,19 @@
         <com.zacharee1.systemuituner.prefs.TimePreference
             android:title="@string/select_time"
             android:key="selected_time"/>
-        <com.zacharee1.systemuituner.prefs.SliderPreference
+        <com.zacharee1.systemuituner.prefs.SliderPreferenceEmbedded
+            android:layout="@layout/pref_view_embedded"
+            android:widgetLayout="@layout/slider_pref_view"
             android:title="@string/select_battery_level"
             android:key="selected_battery_level"/>
-        <com.zacharee1.systemuituner.prefs.SliderPreference
+        <com.zacharee1.systemuituner.prefs.SliderPreferenceEmbedded
+            android:layout="@layout/pref_view_embedded"
+            android:widgetLayout="@layout/slider_pref_view"
             android:title="@string/wifi_strength"
             android:key="wifi_strength"/>
-        <com.zacharee1.systemuituner.prefs.SliderPreference
+        <com.zacharee1.systemuituner.prefs.SliderPreferenceEmbedded
+            android:layout="@layout/pref_view_embedded"
+            android:widgetLayout="@layout/slider_pref_view"
             android:title="@string/mobile_strength"
             android:key="selected_mobile_strength"/>
         <ListPreference

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name" translatable="false">SystemUI Tuner</string>
+    <string name="app_name">SystemUI Tuner</string>
     <string name="to_the_tweaks">To The Tweaks!</string>
     <string name="sorry_explain">Something went wrong while setting this toggle.</string>
     <string name="sorry_option">Try executing the following command from a computer (it\'s one line):</string>
@@ -100,7 +100,7 @@
     <string name="enable_custom_settings_input">Enable Custom Settings Input</string>
     <string name="permissions_failed">Hmm. Something went wrong. Make sure you set the permissions correctly. (SystemUI Tuner)</string>
     <string name="enable">Enable</string>
-    <string name="samsung" translatable="false" tools:ignore="UnusedResources">Samsung</string>
+    <string name="samsung" translatable="false">Samsung</string>
     <string name="knox_icon">KNOX Icon</string>
     <string name="smart_network_icon">Smart Network Icon</string>
     <string name="glove_icon">Glove Icon</string>
@@ -183,4 +183,5 @@
     <string name="tasker_intro">Here\'s a quick set of instructions for Tasker. Since I don\'t know how to use Tasker, I can only build in support for intent broadcasts.</string>
     <string name="back_up_blacklist">Back Up Blacklist</string>
     <string name="restore_blacklist">Restore Blacklist</string>
+    <string name="chinese_from">Chinese translation by <a href="https://twitter.com/NCXR188?s=09">NCXR188</a></string>
 </resources>

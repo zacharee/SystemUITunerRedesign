@@ -166,4 +166,6 @@
     <string name="safe_mode_android_o">Por limitaciones en Android O, esta característica no funcionará en tu aparato.</string>
     <string name="requires_nougat">Necesita Nougat o superior.</string>
     <string name="enable_in_settings">Activar en Configuración.</string>
+    <string name="app_name">SystemUI Tuner</string>
+    <string name="chinese_from">Traducción chino por <a href="https://twitter.com/NCXR188?s=09">NCXR188</a></string>
 </resources>

@@ -13,6 +13,7 @@ import android.widget.Toast;
 import com.zacharee1.systemuituner.fragments.ItemDetailFragment;
 import com.zacharee1.systemuituner.R;
 import com.zacharee1.systemuituner.prefs.SliderPreference;
+import com.zacharee1.systemuituner.prefs.SliderPreferenceEmbedded;
 import com.zacharee1.systemuituner.prefs.TimePreference;
 import com.zacharee1.systemuituner.misc.SettingsUtils;
 
@@ -86,9 +87,9 @@ public class DemoHelper
     }
 
     private void setSliderListeners() {
-        SliderPreference batteryLevel = (SliderPreference) mFragment.findPreference("selected_battery_level");
-        SliderPreference wifiStrength = (SliderPreference) mFragment.findPreference("wifi_strength");
-        SliderPreference mobileStrength = (SliderPreference) mFragment.findPreference("selected_mobile_strength");
+        SliderPreferenceEmbedded batteryLevel = (SliderPreferenceEmbedded) mFragment.findPreference("selected_battery_level");
+        SliderPreferenceEmbedded wifiStrength = (SliderPreferenceEmbedded) mFragment.findPreference("wifi_strength");
+        SliderPreferenceEmbedded mobileStrength = (SliderPreferenceEmbedded) mFragment.findPreference("selected_mobile_strength");
 
         mBatteryLevel = batteryLevel.getSavedProgress();
         mWifiStrength = wifiStrength.getSavedProgress();
@@ -131,6 +132,7 @@ public class DemoHelper
 
     private void setPrefListeners() {
         final Preference enableDemo = mFragment.findPreference("sysui_demo_allowed");
+        enableDemo.setEnabled(Settings.Global.getInt(mFragment.getContext().getContentResolver(), "sysui_demo_allowed", 0) == 0);
         enableDemo.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener()
         {
             @Override

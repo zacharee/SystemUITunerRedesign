@@ -10,6 +10,7 @@ import com.zacharee1.systemuituner.R;
 import com.zacharee1.systemuituner.fragments.ItemDetailFragment;
 import com.zacharee1.systemuituner.prefs.SliderPreference;
 import com.zacharee1.systemuituner.misc.SettingsUtils;
+import com.zacharee1.systemuituner.prefs.SliderPreferenceEmbedded;
 
 public class QSHelper
 {
@@ -79,7 +80,7 @@ public class QSHelper
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N)
         {
 
-            SliderPreference pref = (SliderPreference) mFragment.findPreference("sysui_qqs_count"); //find the SliderPreference
+            SliderPreferenceEmbedded pref = (SliderPreferenceEmbedded) mFragment.findPreference("sysui_qqs_count"); //find the SliderPreference
 
             pref.setMaxProgess(20);
             pref.setProgressState(Settings.Secure.getInt(mFragment.getContext().getContentResolver(), "sysui_qqs_count", 5)); //set the progress/value from Settings
