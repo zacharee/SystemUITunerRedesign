@@ -1,172 +1,173 @@
 <resources>
-    <string name="app_name" translatable="false">ϵͳ�����г��</string>
-    <string name="to_the_tweaks">��ʼ��</string>
-    <string name="sorry_explain">�����л���ʱ�����һЩ����</string>
-    <string name="sorry_option">���Դӵ���ִ����������:</string>
-    <string name="more">����</string>
-    <string name="grant_dump_perm">����Ҫ�������֤ \"android.permission.DUMP\" ʹ���������.</string>
-    <string name="safe_mode_auto_enabled">��⵽�����豸Ϊ���ǣ����Զ�������ȫģʽ.</string>
-    <string name="notice">ע��</string>
-    <string name="fancy_pulldown_notice">�л���ѡ����ܵ������Ⲣ��������.�����ð�ȫģʽ���������������ֶ��л���ѡ��.</string>
-    <string name="safe_mode_summary">�����û��뱣�ִ����,��������ʹ��AOSP! \n\n
-        ��ƽ����������ػ����������״̬�����ò���������ɺ�ָ�����. \n
-        ��ƽ����������ػ������� \"QS Fancy Pulldown Animation\" ΪĬ�ϲ���������ɺ�ָ��ѱ����ѡ��.</string>
-    <string name="hide_welcome_screen">���ػ�ӭ����</string>
-    <string name="tasker_support">����</string>
-    <string name="instructions">ָ��</string>
-    <string name="safe_mode_android_o">��׿8.0���������,������������������豸�ϲ���֧��</string>
-    <string name="requires_nougat">��Ҫ��׿7.0��֮����豸.</string>
-    <string name="enable_in_settings">������������.</string>
-    <string name="about">����</string>
-    <string name="miscellaneous">����</string>
-    <string name="settings">����</string>
-    <string name="status_bar">״̬��</string>
-    <string name="reboot_required">(��Ҫ��������)</string>
-    <string name="sorry">��Ǹ��</string>
-    <string name="non_root_info">����,���������������Ҫ��һЩ���������.</string>
-    <string name="not_rooted_huh">Ŷ?û��ROOT?</string>
-    <string name="adb_set_up">ADB������ɣ��������ǿ�ʼ�ɣ�</string>
-    <string name="adb_instructions">�����ģʽ������Ҫһ̨���ԣ�һ�������ߺ�ADB����.</string>
-    <string name="adb_perm_grant">��ADB��������ʾ��(Windows�¿��Խ���ADB�ļ���,��סShfit������Ҽ��հ״���Ȼ��ѡ���CMD)��</string>
-    <string name="created_by">APP����: <a href='https://forum.xda-developers.com/member.php?u=7055541'>Zacharee1</a></string>
-    <string name="spanish_from">�������ķ��� by <a href='https://es.stackoverflow.com/users/28567/aaron-romero'>Aaron Romero</a> �� <a href='https://forum.xda-developers.com/member.php?u=7055541'>Zacharee1</a></string>
-    <string name="enabled">����</string>
-    <string name="show">��ʾ</string>
-    <string name="select_time">ѡ��ʱ��</string>
-    <string name="select_battery_level">���õ�ص���</string>
-    <string name="wifi_strength">WIFI�ź�ǿ��</string>
-    <string name="battery_charging">�Ƿ���</string>
-    <string name="mobile_strength">�ƶ������ź�ǿ��</string>
-    <string name="mobile_type">�ƶ�������ʽ</string>
-    <string name="show_airplane_mode">��ʾ����ģʽ</string>
-    <string name="show_notifications">��ʾ֪ͨ</string>
-    <string name="status_bar_style">״̬�����</string>
-    <string name="home_desc">�������Ӧ��</string>
-    <string name="home_joke">����һֱʹ��,�����Լ�ѡ��</string>
-    <string name="home_extra">(��������޸��Լ���ϵͳ����,��ô���Ӧ��һ����һ�������ѡ��)</string>
-    <string name="setup">��ʼ����</string>
-    <string name="dnd_switch_in_vol_slider">���������������ʾ���ſ���</string>
-    <string name="dark_mode">ҹ��ģʽ</string>
-    <string name="managed_profile_icon">��������ͼ��</string>
-    <string name="battery_icon">���</string>
-    <string name="battery_percentage">��ذٷֱ�</string>
-    <string name="cast_icon">Ͷ��</string>
-    <string name="rotation_lock_icon">��ת����</string>
+    <string name="app_name" translatable="false">系统界面调谐器</string>
+    <string name="to_the_tweaks">开始吧</string>
+    <string name="sorry_explain">设置切换的时候出了一些问题</string>
+    <string name="sorry_option">尝试从电脑执行以下命令:</string>
+    <string name="more">更多</string>
+    <string name="grant_dump_perm">您需要授予许可证 \"android.permission.DUMP\" 使用这个特性.</string>
+    <string name="safe_mode_auto_enabled">检测到您此设备为三星！已自动启动安全模式.</string>
+    <string name="notice">注意</string>
+    <string name="fancy_pulldown_notice">切换此选项可能导致问题并出错重启.请启用安全模式或在重新启动后手动切换此选项.</string>
+    <string name="safe_mode_summary">三星用户请保持此项开启,除非你在使用AOSP! \n\n
+        在平常的重启或关机中清除所有状态栏设置并在启动完成后恢复他们. \n
+        在平常的重启或关机中重置 \"QS Fancy Pulldown Animation\" 为默认并在启动完成后恢复已保存的选项.</string>
+    <string name="hide_welcome_screen">隐藏欢迎界面</string>
+    <string name="tasker_support">帮助</string>
+    <string name="instructions">指令</string>
+    <string name="safe_mode_android_o">安卓8.0添加了限制,所以这个程序在您的设备上不被支持</string>
+    <string name="requires_nougat">需要安卓7.0或之后的设备.</string>
+    <string name="enable_in_settings">在设置中启用.</string>
+    <string name="about">关于</string>
+    <string name="miscellaneous">其他</string>
+    <string name="settings">设置</string>
+    <string name="status_bar">状态栏</string>
+    <string name="reboot_required">(需要重新启动)</string>
+    <string name="sorry">抱歉…</string>
+    <string name="non_root_info">别担心,在这种情况下你需要做一些额外的事情.</string>
+    <string name="not_rooted_huh">哦?没有ROOT?</string>
+    <string name="adb_set_up">ADB设置完成？那让我们开始吧！</string>
+    <string name="adb_instructions">在这个模式，你需要一台电脑，一根数据线和ADB程序.</string>
+    <string name="adb_perm_grant">打开ADB的命令提示符(Windows下可以进入ADB文件夹,按住Shfit并鼠标右键空白处，然后选择打开CMD)：</string>
+    <string name="created_by">APP制作: <a href='https://forum.xda-developers.com/member.php?u=7055541'>Zacharee1</a></string>
+    <string name="spanish_from">西班牙文翻译 by <a href='https://es.stackoverflow.com/users/28567/aaron-romero'>Aaron Romero</a> 和 <a href='https://forum.xda-developers.com/member.php?u=7055541'>Zacharee1</a></string>
+    <string name="enabled">启用</string>
+    <string name="show">显示</string>
+    <string name="select_time">选择时间</string>
+    <string name="select_battery_level">设置电池电量</string>
+    <string name="wifi_strength">WIFI信号强度</string>
+    <string name="battery_charging">是否充电</string>
+    <string name="mobile_strength">移动网络信号强度</string>
+    <string name="mobile_type">移动网络制式</string>
+    <string name="show_airplane_mode">显示飞行模式</string>
+    <string name="show_notifications">显示通知</string>
+    <string name="status_bar_style">状态栏风格</string>
+    <string name="home_desc">不用这个应用</string>
+    <string name="home_joke">或者一直使用,由你自己选择</string>
+    <string name="home_extra">(如果你想修改自己的系统界面,那么这个应用一定是一个不错的选择)</string>
+    <string name="setup">开始设置</string>
+    <string name="dnd_switch_in_vol_slider">在音量调节面板显示勿扰开关<string>
+    <string name="dark_mode">夜间模式</string>
+    <string name="managed_profile_icon">工作资料图标</string>
+    <string name="battery_icon">电池</string>
+    <string name="battery_percentage">电池百分比</string>
+    <string name="cast_icon">投射</string>
+    <string name="rotation_lock_icon">旋转锁定/string>
     <string name="nfc_icon">NFC</string>
     <string name="location_icon">GPS</string>
-    <string name="su_icon">SU(����ROOT���Ǹ�)</string>
-    <string name="networking_data"><![CDATA[��������]]></string>
-    <string name="bluetooth_icon">����</string>
-    <string name="data_saver_icon">�ƶ�����</string>
-    <string name="ethernet_icon">��̫��</string>
-    <string name="hotspot_icon">�ȵ�</string>
-    <string name="mobile_icon">�ƶ��ź�</string>
-    <string name="airplane_icon">����ģʽ</string>
+    <string name="su_icon">SU(就是ROOT的那个)</string>
+    <string name="networking_data"><![CDATA[数据网络]]></string>
+    <string name="bluetooth_icon">蓝牙</string>
+    <string name="data_saver_icon">移动网络</string>
+    <string name="ethernet_icon">以太网</string>
+    <string name="hotspot_icon">热点</string>
+    <string name="mobile_icon">移动信号</string>
+    <string name="airplane_icon">飞行模式</string>
     <string name="wifi_icon">WIFI</string>
     <string name="vpn_icon">VPN</string>
-    <string name="sounds_alerts"><![CDATA[����������]]></string>
-    <string name="volume">����/��/����ͼ��</string>
-    <string name="headset_icon">����</string>
-    <string name="speakerphone_icon">������</string>
-    <string name="time_such"><![CDATA[��ʱ���йص�]]></string>
-    <string name="clock">�Ƿ���ʾʱ��</string>
-    <string name="show_clock_seconds">ʱ����ʾ��</string>
-    <string name="alarm_clock_icon">����</string>
-    <string name="zen_icon">�������ӻ��Զ��������</string>
-    <string name="do_not_disturb">�������</string>
+    <string name="sounds_alerts"><![CDATA[声音和闹钟]]></string>
+    <string name="volume">声音/震动/静音图标</string>
+    <string name="headset_icon">耳机</string>
+    <string name="speakerphone_icon">扬声器/string>
+    <string name="time_such"><![CDATA[和时间有关的]]></string>
+    <string name="clock">是否显示时钟</string>
+    <string name="show_clock_seconds">时钟显示秒</string>
+    <string name="alarm_clock_icon">闹钟</string>
+    <string name="zen_icon">仅限闹钟或自定义免打扰</string>
+    <string name="do_not_disturb">请勿打扰</string>
     <string name="github" translatable="false">Github</string>
-    <string name="donate">����</string>
+    <string name="donate">捐赠</string>
     <string name="google_play" translatable="false">Google Play</string>
     <string name="google" translatable="false">Google+</string>
     <string name="telegram" translatable="false">Telegram</string>
     <string name="xda_thread" translatable="false">XDA Thread</string>
-    <string name="reset_blacklist">����ѡ������</string>
-    <string name="animator_duration_scale">����ʱ��</string>
-    <string name="transition_animation_scale">���ɶ�������ʱ��</string>
-    <string name="window_animation_scale">���ڶ���ʱ��</string>
-    <string name="animation_speeds">�����ٶ�</string>
-    <string name="general">����(���ֹ�����Ҫ�����Գ���)</string>
-    <string name="heads_up_notifications">����֪ͨ</string>
-    <string name="headphone_volume_warning">������������</string>
-    <string name="custom_settings_values">�Զ�������ֵ(��ʾ��������Ǹ�ʲô�õ�ss)</string>
-    <string name="global">ȫ��</string>
-    <string name="secure">��ȫ</string>
-    <string name="system">ϵͳ</string>
-    <string name="ok">ȷ��</string>
-    <string name="power_notification_controls">������Ϣ����</string>
-    <string name="danger_zone">ʵ����</string>
-    <string name="safe_mode">��ȫģʽ</string>
-    <string name="enable_custom_settings_input">�����Զ�������</string>
-    <string name="permissions_failed">Hmm...������һЩ����!��ȷ��������Ȩ��(SystemUI Tuner)</string>
-    <string name="enable">����</string>
+    <string name="reset_blacklist">重置选项配置</string>
+    <string name="animator_duration_scale">动画时长</string>
+    <string name="transition_animation_scale">过渡动画缩放时长</string>
+    <string name="window_animation_scale">窗口动画时长</string>
+    <string name="animation_speeds">动画速度</string>
+    <string name="general">常规(部分功能需要你亲自尝试)</string>
+    <string name="heads_up_notifications">浮动通知</string>
+    <string name="headphone_volume_warning">耳机音量警告</string>
+    <string name="custom_settings_values">自定义设置值(表示不懂这个是干什么用的ss)</string>
+    <string name="global">全部</string>
+    <string name="secure">安全</string>
+    <string name="system">系统</string>
+    <string name="ok">确定</string>
+    <string name="power_notification_controls">电量信息控制</string>
+    <string name="danger_zone">实验室</string>
+    <string name="safe_mode">安全模式</string>
+    <string name="enable_custom_settings_input">启用自定义设置</string>
+    <string name="permissions_failed">Hmm...出现了一些问题!请确保给予了权限(SystemUI Tuner)</string>
+    <string name="enable">启用</string>
+    <string name="samsung" translatable="false" tools:ignore="UnusedResources">三星</string>
     <string name="knox_icon">KNOX</string>
-    <string name="smart_network_icon">��������</string>
-    <string name="glove_icon">����ģʽ</string>
-    <string name="private_mode_icon">˽��ģʽ</string>
-    <string name="phone_signal_second_stub" translatable="false">\"��2\"</string>
-    <string name="face_icon">Face Icon(��֪�������ʲô)</string>
-    <string name="femtocell_icon">��������</string>
+    <string name="smart_network_icon">智能网络</string>
+    <string name="glove_icon">手套模式</string>
+    <string name="private_mode_icon">私人模式</string>
+    <string name="phone_signal_second_stub" translatable="false">\"卡2\"</string>
+    <string name="face_icon">Face Icon(不知道这个是什么)</string>
+    <string name="femtocell_icon">数据网络</string>
     <string name="gps_icon">GPS</string>
-    <string name="gesture_icon">Gesture Icon(ֱ�ӷ���������)</string>
+    <string name="gesture_icon">Gesture Icon(直接翻译是手势)</string>
     <string name="ims_volte_icon">VoLTE</string>
-    <string name="keyguard_wakeup_icon">��Ļ����</string>
-    <string name="lbs_icon">�ƶ�λ�÷���</string>
-    <string name="rcs_icon">�ں�ͨ��</string>
-    <string name="safezone_icon">��ȫ����</string>
-    <string name="smart_bonding_icon">��������</string>
-    <string name="smart_scroll_icon">���ܹ���</string>
+    <string name="keyguard_wakeup_icon">屏幕解锁</string>
+    <string name="lbs_icon">移动位置服务</string>
+    <string name="rcs_icon">融合通信</string>
+    <string name="safezone_icon">安全区域</string>
+    <string name="smart_bonding_icon">智能连接</string>
+    <string name="smart_scroll_icon">智能滚动</string>
     <string name="toddler_icon">Toddler</string>
-    <string name="wearable_icon">�ɴ����豸</string>
-    <string name="wifi_ap_icon">WIFI������</string>
+    <string name="wearable_icon">可穿戴设备</string>
+    <string name="wifi_ap_icon">WIFI交换机</string>
     <string name="wifi_oxygen_icon">WiFi Oxygen</string>
     <string name="wifi_p2p_icon">WiFi P2P</string>
     <string name="wimax_icon">WiMax Icon</string>
-    <string name="remote_call_icon">Զ�̺���</string>
+    <string name="remote_call_icon">远程呼叫</string>
     <string name="tty_icon">TTY</string>
-    <string name="cdma_eri_icon">����</string>
+    <string name="cdma_eri_icon">漫游</string>
     <string name="dmb">DMB</string>
-    <string name="data_connection_icon">��������</string>
-    <string name="evdo_signal_icon">3G����(Evdo)</string>
-    <string name="phone_signal_icon">�ֻ��ź�</string>
+    <string name="data_connection_icon">数据连接</string>
+    <string name="evdo_signal_icon">3G网络(Evdo)</string>
+    <string name="phone_signal_icon">手机信号</string>
     <string name="volte">VoLTE</string>
     <string name="vowifi">VoWiFi</string>
-    <string name="wifi_calling_icon">����ͨ��</string>
-    <string name="answering_memo_icon">��������¼</string>
-    <string name="felica_lock_icon">����</string>
+    <string name="wifi_calling_icon">网络通话</string>
+    <string name="answering_memo_icon">语音备忘录</string>
+    <string name="felica_lock_icon">卡锁</string>
     <string name="ime_icon">IME</string>
-    <string name="nfc_lock_icon">NFC��</string>
-    <string name="otg_keyboard_icon">OTG����</string>
-    <string name="otg_mouse_icon">OTG���</string>
-    <string name="power_saver_icon">ʡ��ģʽ</string>
-    <string name="secure_icon">��ȫģʽ</string>
-    <string name="sync_active_icon">����ͬ��</string>
-    <string name="sync_failing_icon">ͬ������</string>
-    <string name="night_mode">ҹ��ģʽ</string>
-    <string name="night_mode_auto">�Զ�����ҹ��ģʽ</string>
-    <string name="night_mode_override">��������ҹ��ģʽ����</string>
-    <string name="night_mode_adjust_tint">ҹ��ģʽ��ɫ����</string>
-    <string name="night_display_auto">ҹ����ʾ�Զ�����</string>
-    <string name="night_display_activated">����ҹ����ʾ</string>
-    <string name="night_display">ҹ����ʾ</string>
-    <string name="donate_hook">��_����,�ҷ���������ʹ�����App.</string>
-    <string name="donate_joke">����ô���ֵ�?����ħ��,������!</string>
-    <string name="donate_request">�����������App�Ĺ��ܲ���, ��ôϣ�������õ�Ǯ����������һ��.</string>
-    <string name="donate_dont_worry">������ע��,�������������,���Ӧ����Զ������ѵ�!</string>
+    <string name="nfc_lock_icon">NFC锁</string>
+    <string name="otg_keyboard_icon">OTG键盘</string>
+    <string name="otg_mouse_icon">OTG鼠标</string>
+    <string name="power_saver_icon">省电模式</string>
+    <string name="secure_icon">安全模式</string>
+    <string name="sync_active_icon">正在同步</string>
+    <string name="sync_failing_icon">同步出错</string>
+    <string name="night_mode">夜间模式</string>
+    <string name="night_mode_auto">自动开启夜间模式</string>
+    <string name="night_mode_override">覆盖现有夜间模式配置</string>
+    <string name="night_mode_adjust_tint">夜间模式颜色调整string>
+    <string name="night_display_auto">夜间显示自动开启</string>
+    <string name="night_display_activated">启动夜间显示</string>
+    <string name="night_display">夜间显示</string>
+    <string name="donate_hook">→_→嗨,我发现你正在使用这个App.</string>
+    <string name="donate_joke">我怎么发现的?这是魔法,懂不懂!</string>
+    <string name="donate_request">如果你觉得这个App的功能不错, 那么希望你能拿点钱来赞助我们一下.</string>
+    <string name="donate_dont_worry">但是请注意,捐赠不是义务的,这个应用永远都是免费的!</string>
     <string name="donate_1" translatable="false">$1</string>
     <string name="donate_10" translatable="false">$10</string>
     <string name="donate_2" translatable="false">$2</string>
     <string name="donate_5" translatable="false">$5</string>
     <string name="paypal" translatable="false">PayPal</string>
-    <string name="high_brightness_warning">�����Ⱦ���</string>
-    <string name="qs_header_tile_count">һ���˵���ʾ��ť����</string>
-    <string name="fancy_pulldown_animation">�����˵���������</string>
-    <string name="move_full_rows">�����ƶ����������˵�</string>
-    <string name="battery">���</string>
-    <string name="enable_fabric_io_analytics">Fabric.io����</string>
-    <string name="tasker_how_to">Tasker��������</string>
-    <string name="base_command_tasker">����ǻ���ָ��:</string>
+    <string name="high_brightness_warning">高亮度警告</string>
+    <string name="qs_header_tile_count">一级菜单显示按钮数量</string>
+    <string name="fancy_pulldown_animation">二级菜单下拉动画</string>
+    <string name="move_full_rows">完整移动整个二级菜单</string>
+    <string name="battery">电池</string>
+    <string name="enable_fabric_io_analytics">Fabric.io分析</string>
+    <string name="tasker_how_to">Tasker操作方法</string>
+    <string name="base_command_tasker">这个是基础指令:</string>
     <string name="tasker_command" translatable="false"><![CDATA[am broadcast -a <TYPE> -d SETTING:<KEY>/<VALUE>]]></string>
-    <string name="tasker_defs">����һЩ���뽲��(�������ݲ��跭��):</string>
+    <string name="tasker_defs">这是一些代码讲解(以下内容不予翻译):</string>
     <string name="type" translatable="false"><![CDATA[<TYPE>]]></string>
     <string name="custom_settings_global" translatable="false">com.zacharee1.intent.action.WRITE_GLOBAL</string>
     <string name="for_settings_global">(for Settings.Global)</string>
@@ -178,10 +179,10 @@
     <string name="desired_setting_key">Desired setting key</string>
     <string name="desired_setting_value">Desired setting value</string>
     <string name="value" translatable="false"><![CDATA[<VALUE>]]></string>
-    <string name="tasker_intro">������Tasker�Ŀ���ָ�,�Ҳ�֪�����ʹ�ã���ֻ��д����������ʹ�ò����������֧��</string>
-    <string name="back_up_blacklist">����ѡ������</string>
-    <string name="restore_blacklist">�ָ�ѡ������</string>
+    <string name="tasker_intro">这里是Tasker的快速指令集,我不知道如何使用，便只好写出来方便大家使用并给予帮助与支持</string>
+    <string name="back_up_blacklist">备份选项配置</string>
+    <string name="restore_blacklist">恢复选项配置</string>
 	#My contact information
-	<string name="chinese_from">���ķ��� by <a href='https://twitter.com/NCXR188?s=09'>NCXR188</a></string>
+	<string name="chinese_from">中文翻译 by <a href='https://twitter.com/NCXR188?s=09'>NCXR188</a></string>
 
 </resources>
