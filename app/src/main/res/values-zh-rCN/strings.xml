@@ -45,13 +45,13 @@
     <string name="home_joke">或者一直使用,由你自己选择</string>
     <string name="home_extra">(如果你想修改自己的系统界面,那么这个应用一定是一个不错的选择)</string>
     <string name="setup">开始设置</string>
-    <string name="dnd_switch_in_vol_slider">在音量调节面板显示勿扰开关<string>
+    <string name="dnd_switch_in_vol_slider">在音量调节面板显示勿扰开关</string>
     <string name="dark_mode">夜间模式</string>
     <string name="managed_profile_icon">工作资料图标</string>
     <string name="battery_icon">电池</string>
     <string name="battery_percentage">电池百分比</string>
     <string name="cast_icon">投射</string>
-    <string name="rotation_lock_icon">旋转锁定/string>
+    <string name="rotation_lock_icon">旋转锁定</string>
     <string name="nfc_icon">NFC</string>
     <string name="location_icon">GPS</string>
     <string name="su_icon">SU(就是ROOT的那个)</string>
@@ -67,7 +67,7 @@
     <string name="sounds_alerts"><![CDATA[声音和闹钟]]></string>
     <string name="volume">声音/震动/静音图标</string>
     <string name="headset_icon">耳机</string>
-    <string name="speakerphone_icon">扬声器/string>
+    <string name="speakerphone_icon">扬声器</string>
     <string name="time_such"><![CDATA[和时间有关的]]></string>
     <string name="clock">是否显示时钟</string>
     <string name="show_clock_seconds">时钟显示秒</string>
@@ -97,9 +97,8 @@
     <string name="danger_zone">实验室</string>
     <string name="safe_mode">安全模式</string>
     <string name="enable_custom_settings_input">启用自定义设置</string>
-    <string name="permissions_failed">Hmm...出现了一些问题!请确保给予了权限(SystemUI Tuner)</string>
+    <string name="permissions_failed">Hmm&#8230;出现了一些问题!请确保给予了权限(SystemUI Tuner)</string>
     <string name="enable">启用</string>
-    <string name="samsung" translatable="false" tools:ignore="UnusedResources">三星</string>
     <string name="knox_icon">KNOX</string>
     <string name="smart_network_icon">智能网络</string>
     <string name="glove_icon">手套模式</string>
@@ -145,7 +144,7 @@
     <string name="night_mode">夜间模式</string>
     <string name="night_mode_auto">自动开启夜间模式</string>
     <string name="night_mode_override">覆盖现有夜间模式配置</string>
-    <string name="night_mode_adjust_tint">夜间模式颜色调整string>
+    <string name="night_mode_adjust_tint">夜间模式颜色调整</string>
     <string name="night_display_auto">夜间显示自动开启</string>
     <string name="night_display_activated">启动夜间显示</string>
     <string name="night_display">夜间显示</string>
