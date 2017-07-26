@@ -27,6 +27,9 @@ public class TWHelper
         } else {
             hbwSwitch.setChecked(true);
         }
+
+        hbwSwitch.setChecked(false);
+        hbwSwitch.setEnabled(false);
     }
 
     private void setHBWListener() {
