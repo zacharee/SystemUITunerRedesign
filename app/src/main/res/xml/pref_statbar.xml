@@ -29,7 +29,8 @@
             android:icon="@drawable/ic_bluetooth_black_24dp"/>
         <SwitchPreference
             android:key="cdma_eri"
-            android:title="@string/cdma_eri_icon"/>
+            android:title="@string/cdma_eri_icon"
+            android:icon="@drawable/ic_blank"/>
         <SwitchPreference
             android:key="data_connection"
             android:title="@string/data_connection_icon"
@@ -40,7 +41,8 @@
             android:icon="@drawable/ic_data_usage_black_24dp"/>
         <SwitchPreference
             android:key="dmb"
-            android:title="@string/dmb"/>
+            android:title="@string/dmb"
+            android:icon="@drawable/ic_blank"/>
         <SwitchPreference
             android:key="ethernet"
             android:title="@string/ethernet_icon"
@@ -55,24 +57,28 @@
             android:icon="@drawable/ic_signal_cellular_4_bar_black_24dp"/>
         <SwitchPreference
             android:key="phone_evdo_signal"
-            android:title="@string/evdo_signal_icon"/>
+            android:title="@string/evdo_signal_icon"
+            android:icon="@drawable/ic_blank"/>
         <SwitchPreference
             android:key="phone_signal"
             android:title="@string/phone_signal_icon"
             android:icon="@drawable/ic_signal_cellular_4_bar_black_24dp"/>
         <SwitchPreference
             android:key="volte"
-            android:title="@string/volte"/>
+            android:title="@string/volte"
+            android:icon="@drawable/ic_blank"/>
         <SwitchPreference
             android:key="vowifi"
-            android:title="@string/vowifi"/>
+            android:title="@string/vowifi"
+            android:icon="@drawable/ic_blank"/>
         <SwitchPreference
             android:key="vpn"
             android:title="@string/vpn_icon"
             android:icon="@drawable/ic_vpn_key_black_24dp"/>
         <SwitchPreference
             android:key="wifi_calling"
-            android:title="@string/wifi_calling_icon"/>
+            android:title="@string/wifi_calling_icon"
+            android:icon="@drawable/ic_blank"/>
         <SwitchPreference
             android:key="wifi"
             android:title="@string/wifi_icon"
@@ -87,14 +93,16 @@
             android:icon="@drawable/ic_headset_black_24dp"/>
         <SwitchPreference
             android:key="remote_call"
-            android:title="@string/remote_call_icon"/>
+            android:title="@string/remote_call_icon"
+            android:icon="@drawable/ic_blank"/>
         <SwitchPreference
             android:key="speakerphone"
             android:title="@string/speakerphone_icon"
             android:icon="@drawable/ic_speaker_phone_black_24dp"/>
         <SwitchPreference
             android:key="tty"
-            android:title="@string/tty_icon"/>
+            android:title="@string/tty_icon"
+            android:icon="@drawable/ic_blank"/>
         <SwitchPreference
             android:key="volume"
             android:title="@string/volume"
@@ -125,7 +133,8 @@
         android:title="@string/miscellaneous">
         <SwitchPreference
             android:key="answering_memo"
-            android:title="@string/answering_memo_icon"/>
+            android:title="@string/answering_memo_icon"
+            android:icon="@drawable/ic_blank"/>
         <SwitchPreference
             android:key="battery"
             android:title="@string/battery_icon"
@@ -136,24 +145,28 @@
             android:icon="@drawable/ic_cast_black_24dp"/>
         <SwitchPreference
             android:key="felica_lock"
-            android:title="@string/felica_lock_icon"/>
+            android:title="@string/felica_lock_icon"
+            android:icon="@drawable/ic_blank"/>
         <SwitchPreference
             android:key="ime"
-            android:title="@string/ime_icon"/>
+            android:title="@string/ime_icon"
+            android:icon="@drawable/ic_blank"/>
         <SwitchPreference
             android:key="location"
             android:title="@string/location_icon"
             android:icon="@drawable/ic_location_on_black_24dp"/>
         <SwitchPreference
             android:key="managed_profile"
-            android:title="@string/managed_profile_icon"/>
+            android:title="@string/managed_profile_icon"
+            android:icon="@drawable/ic_blank"/>
         <SwitchPreference
             android:key="nfc"
             android:title="@string/nfc_icon"
             android:icon="@drawable/ic_nfc_black_24dp"/>
         <SwitchPreference
             android:key="nfclock"
-            android:title="@string/nfc_lock_icon"/>
+            android:title="@string/nfc_lock_icon"
+            android:icon="@drawable/ic_blank"/>
         <SwitchPreference
             android:key="otg_keyboard"
             android:title="@string/otg_keyboard_icon"
@@ -164,7 +177,8 @@
             android:icon="@drawable/ic_mouse_black_24dp"/>
         <SwitchPreference
             android:key="power_saver"
-            android:title="@string/power_saver_icon"/>
+            android:title="@string/power_saver_icon"
+            android:icon="@drawable/ic_blank"/>
         <SwitchPreference
             android:key="rotate"
             android:title="@string/rotation_lock_icon"
@@ -175,7 +189,8 @@
             android:icon="@drawable/ic_security_black_24dp"/>
         <SwitchPreference
             android:key="su"
-            android:title="@string/su_icon"/>
+            android:title="@string/su_icon"
+            android:icon="@drawable/ic_blank"/>
         <SwitchPreference
             android:key="sync_active"
             android:title="@string/sync_active_icon"

@@ -23,7 +23,6 @@
             android:key="restore_blacklist"
             android:title="@string/restore_blacklist"/>
         <SwitchPreference
-            android:icon="@drawable/ic_face_black_24dp"
             android:key="face"
             android:title="@string/face_icon"/>
         <SwitchPreference
@@ -69,7 +68,6 @@
             android:key="smart_network"
             android:title="@string/smart_network_icon"/>
         <SwitchPreference
-            android:icon="@drawable/ic_visibility_black_24dp"
             android:key="smart_scroll"
             android:title="@string/smart_scroll_icon"/>
         <SwitchPreference
