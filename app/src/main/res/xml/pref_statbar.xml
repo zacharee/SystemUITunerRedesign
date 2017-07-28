@@ -160,7 +160,7 @@
             android:title="@string/managed_profile_icon"
             android:icon="@drawable/ic_blank"/>
         <SwitchPreference
-            android:key="nfc"
+            android:key="nfc,nfc_on"
             android:title="@string/nfc_icon"
             android:icon="@drawable/ic_nfc_black_24dp"/>
         <SwitchPreference
