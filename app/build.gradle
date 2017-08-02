@@ -22,8 +22,8 @@ android {
         applicationId "com.zacharee1.systemuituner"
         minSdkVersion 23
         targetSdkVersion 26
-        versionCode 212
-        versionName "212"
+        versionCode 213
+        versionName "213"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
