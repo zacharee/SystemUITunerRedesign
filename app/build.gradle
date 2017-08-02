@@ -17,13 +17,13 @@ repositories {
 
 android {
     compileSdkVersion 26
-    buildToolsVersion "26.0.0"
+    buildToolsVersion "26.0.1"
     defaultConfig {
         applicationId "com.zacharee1.systemuituner"
         minSdkVersion 23
         targetSdkVersion 26
-        versionCode 211
-        versionName "2.1.1"
+        versionCode 212
+        versionName "212"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {

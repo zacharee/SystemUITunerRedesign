@@ -9,6 +9,7 @@ import com.zacharee1.systemuituner.misc.SettingsUtils;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Set;
 
 public class StatbarHelper
 {
@@ -64,34 +65,7 @@ public class StatbarHelper
     }
 
     private void setSwitchPreferenceStates() {
-        String blString = Settings.Secure.getString(mFragment.getActivity().getContentResolver(), "icon_blacklist");
-        if (blString == null) blString = "";
-
-        ArrayList<String> blItems = new ArrayList<>(Arrays.asList(blString.split("[,]")));
-
-        for (int i = 0; i < mFragment.getPreferenceScreen().getRootAdapter().getCount(); i++) {
-            Object o = mFragment.getPreferenceScreen().getRootAdapter().getItem(i);
-
-            if (o instanceof SwitchPreference && !((SwitchPreference)o).getTitle().toString().toLowerCase().contains("high brightness warning")) {
-                SwitchPreference pref = (SwitchPreference) o;
-
-                pref.setChecked(true);
-
-                if (!blString.isEmpty()) {
-                    String key = pref.getKey();
-
-                    if (key != null) {
-                        ArrayList<String> keyItems = new ArrayList<>(Arrays.asList(key.split("[,]")));
-
-                        for (String s : keyItems) {
-                            if (blItems.contains(s)) {
-                                pref.setChecked(false);
-                            }
-                        }
-                    }
-                }
-            }
-        }
+        SettingsUtils.shouldSetSwitchChecked(mFragment);
     }
 
     private void switchPreferenceListeners() {
@@ -107,35 +81,9 @@ public class StatbarHelper
                     public boolean onPreferenceChange(Preference preference, Object o)
                     {
                         String key = preference.getKey();
+                        boolean value = Boolean.valueOf(o.toString());
 
-                        if (key != null) {
-                            String currentBL = Settings.Secure.getString(mFragment.getContext().getContentResolver(), "icon_blacklist");
-                            if (currentBL == null) currentBL = "";
-
-                            if (!Boolean.valueOf(o.toString())) {
-                                if (currentBL.isEmpty()) {
-                                    currentBL = key;
-                                } else {
-                                    currentBL = currentBL.concat("," + key);
-                                }
-                            } else {
-                                ArrayList<String> blItems = new ArrayList<>(Arrays.asList(currentBL.split("[,]")));
-                                ArrayList<String> keyItems = new ArrayList<>(Arrays.asList(key.split("[,]")));
-
-                                for (String s : keyItems) {
-                                    if (blItems.contains(s)) {
-                                        blItems.remove(s);
-                                    }
-                                }
-
-                                currentBL = blItems.toString()
-                                        .replace("[", "")
-                                        .replace("]", "")
-                                        .replace(" ", "");
-                            }
-
-                            SettingsUtils.writeSecure(mFragment.getContext(), "icon_blacklist", currentBL);
-                        }
+                        SettingsUtils.changeBlacklist(key, value, mFragment.getContext());
                         return true;
                     }
                 });

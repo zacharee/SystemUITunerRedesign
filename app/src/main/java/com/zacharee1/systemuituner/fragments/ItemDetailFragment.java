@@ -8,6 +8,7 @@ import android.preference.PreferenceFragment;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.zacharee1.systemuituner.fragmenthelpers.AutoHelper;
 import com.zacharee1.systemuituner.misc.TweakItems;
 import com.zacharee1.systemuituner.activites.ItemDetailActivity;
 import com.zacharee1.systemuituner.activites.ItemListActivity;
@@ -75,6 +76,9 @@ public class ItemDetailFragment extends PreferenceFragment
                     break;
                 case "misc":
                     new MiscHelper(this);
+                    break;
+                case "auto":
+                    new AutoHelper(this);
                     break;
             }
 

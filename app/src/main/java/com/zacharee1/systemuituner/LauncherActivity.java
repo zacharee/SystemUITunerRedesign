@@ -25,7 +25,9 @@ public class LauncherActivity extends AppCompatActivity
 
         if (!SettingsUtils.hasPerms(this)) {
             if (SuUtils.testSudo()) {
-                SuUtils.sudo("pm grant com.zacharee1.systemuituner android.permission.WRITE_SECURE_SETTINGS ; pm grant com.zacharee1.systemuituner android.permission.DUMP");
+                SuUtils.sudo("pm grant com.zacharee1.systemuituner android.permission.WRITE_SECURE_SETTINGS ; " +
+                        "pm grant com.zacharee1.systemuituner android.permission.DUMP ; " +
+                        "pm grant com.zacharee1.systemuituner android.permission.PACKAGE_USAGE_STATS");
                 startUp();
             } else {
                 Intent intent = new Intent(this, SetupActivity.class);

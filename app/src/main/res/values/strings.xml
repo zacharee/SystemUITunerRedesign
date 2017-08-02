@@ -184,4 +184,8 @@
     <string name="back_up_blacklist">Back Up Blacklist</string>
     <string name="restore_blacklist">Restore Blacklist</string>
     <string name="chinese_from">Chinese translation by <a href="https://twitter.com/NCXR188?s=09">NCXR188</a></string>
+    <string name="quick_settings" translatable="false">Quick Settings</string>
+    <string name="demo_mode" translatable="false">Demo Mode</string>
+    <string name="touchwiz" translatable="false">TouchWiz</string>
+    <string name="auto_detect" translatable="false">Auto Detect</string>
 </resources>

@@ -115,6 +115,7 @@
             app:layout_constraintTop_toBottomOf="@id/tasker_defs_title" />
 
         <TextView
+            android:id="@+id/no_root_comm_2"
             tools:ignore="HardcodedText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -131,6 +132,25 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/no_root_comm_1" />
+
+        <TextView
+            android:id="@+id/no_root_comm_3"
+            tools:ignore="HardcodedText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="32dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:gravity="center_horizontal"
+            android:text="adb shell pm grant com.zacharee1.systemuituner android.permission.PACKAGE_USAGE_STATS"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textIsSelectable="true"
+            android:textSize="18sp"
+            android:typeface="monospace"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/no_root_comm_2" />
     </LinearLayout>
 
     <android.support.design.widget.FloatingActionButton

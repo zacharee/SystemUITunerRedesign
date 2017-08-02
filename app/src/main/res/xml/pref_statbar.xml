@@ -64,7 +64,7 @@
             android:title="@string/phone_signal_icon"
             android:icon="@drawable/ic_signal_cellular_4_bar_black_24dp"/>
         <SwitchPreference
-            android:key="volte"
+            android:key="volte,ims_indicator"
             android:title="@string/volte"
             android:icon="@drawable/ic_blank"/>
         <SwitchPreference
