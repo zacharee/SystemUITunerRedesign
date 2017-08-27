@@ -168,4 +168,15 @@
     <string name="enable_in_settings">Activar en Configuración.</string>
     <string name="app_name">SystemUI Tuner</string>
     <string name="chinese_from">Traducción chino por <a href="https://twitter.com/NCXR188?s=09">NCXR188</a></string>
+    <string name="sim_count">Cuenta de SIM</string>
+    <string name="volume_icon_style">Estilo del Icono Volumen</string>
+    <string name="bluetooth_icon_style">Estilo del Icono Bluetooth</string>
+    <string name="mobile_fully">Móvil Conectado Completamente</string>
+    <string name="wifi_fully">WiFi Conectado Completamente</string>
+    <string name="auto_detect">Detección Auto</string>
+    <string name="no_sim_icon">Icono de No SIM</string>
+    <string name="sync_icon">Icono Sync</string>
+    <string name="microphone_mute">Icono Micrófono Apagado</string>
+    <string name="quick_settings">Configuraciones Rápidos</string>
+    <string name="demo_mode">Modo Demo</string>
 </resources>

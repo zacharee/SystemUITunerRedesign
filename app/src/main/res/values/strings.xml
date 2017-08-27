@@ -184,8 +184,16 @@
     <string name="back_up_blacklist">Back Up Blacklist</string>
     <string name="restore_blacklist">Restore Blacklist</string>
     <string name="chinese_from">Chinese translation by <a href="https://twitter.com/NCXR188?s=09">NCXR188</a></string>
-    <string name="quick_settings" translatable="false">Quick Settings</string>
-    <string name="demo_mode" translatable="false">Demo Mode</string>
+    <string name="quick_settings">Quick Settings</string>
+    <string name="demo_mode">Demo Mode</string>
     <string name="touchwiz" translatable="false">TouchWiz</string>
-    <string name="auto_detect" translatable="false">Auto Detect</string>
+    <string name="auto_detect">Auto Detect</string>
+    <string name="sim_count">SIM Count</string>
+    <string name="volume_icon_style">Volume Icon Style</string>
+    <string name="bluetooth_icon_style">Bluetooth Icon Style</string>
+    <string name="mobile_fully">Mobile Fully Connected</string>
+    <string name="wifi_fully">WiFi Fully Connected</string>
+    <string name="no_sim_icon">No SIM Icon</string>
+    <string name="sync_icon">Sync Icon</string>
+    <string name="microphone_mute">Microphone Muted Icon</string>
 </resources>
