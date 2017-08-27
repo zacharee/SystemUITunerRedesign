@@ -165,5 +165,16 @@
     <string name="restore_blacklist">恢复选项配置</string>
 	#My contact information
 	<string name="chinese_from">中文翻译 by <a href='https://twitter.com/NCXR188?s=09'>NCXR188</a></string>
+    <string name="quick_settings">快速设置</string>
+    <string name="demo_mode">演示模式</string>
+    <string name="auto_detect">自动检测</string>
+    <string name="sim_count">SIM 计数</string>
+    <string name="volume_icon_style">音量图标样式</string>
+    <string name="bluetooth_icon_style">蓝牙图标样式</string>
+    <string name="mobile_fully">移动完全连接</string>
+    <string name="wifi_fully">WiFi 完全连接</string>
+    <string name="no_sim_icon">没有 SIM 卡图标</string>
+    <string name="sync_icon">同步图标</string>
+    <string name="microphone_mute">麦克风静音图标</string>
 
 </resources>
