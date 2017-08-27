@@ -82,37 +82,37 @@ public class DemoHelper
     }
 
     private boolean location() {
-        SwitchPreference location = (SwitchPreference) mFragment.findPreference("location");
+        SwitchPreference location = (SwitchPreference) mFragment.findPreference("location_demo");
         return location.isChecked();
     }
 
     private boolean alarm() {
-        SwitchPreference alarm = (SwitchPreference) mFragment.findPreference("alarm");
+        SwitchPreference alarm = (SwitchPreference) mFragment.findPreference("alarm_demo");
         return alarm.isChecked();
     }
 
     private boolean sync() {
-        SwitchPreference sync = (SwitchPreference) mFragment.findPreference("sync");
+        SwitchPreference sync = (SwitchPreference) mFragment.findPreference("sync_demo");
         return sync.isChecked();
     }
 
     private boolean tty() {
-        SwitchPreference tty = (SwitchPreference) mFragment.findPreference("tty");
+        SwitchPreference tty = (SwitchPreference) mFragment.findPreference("tty_demo");
         return tty.isChecked();
     }
 
     private boolean eri() {
-        SwitchPreference eri = (SwitchPreference) mFragment.findPreference("eri");
+        SwitchPreference eri = (SwitchPreference) mFragment.findPreference("eri_demo");
         return eri.isChecked();
     }
 
     private boolean mute() {
-        SwitchPreference mute = (SwitchPreference) mFragment.findPreference("mute");
+        SwitchPreference mute = (SwitchPreference) mFragment.findPreference("mute_demo");
         return mute.isChecked();
     }
 
     private boolean spkphone() {
-        SwitchPreference spkphone = (SwitchPreference) mFragment.findPreference("speakerphone");
+        SwitchPreference spkphone = (SwitchPreference) mFragment.findPreference("speakerphone_demo");
         return spkphone.isChecked();
     }
 

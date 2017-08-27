@@ -93,25 +93,25 @@
             android:key="no_sim" />
         <SwitchPreference
             android:title="@string/location_icon"
-            android:key="location" />
+            android:key="location_demo" />
         <SwitchPreference
             android:title="@string/alarm_clock_icon"
-            android:key="alarm" />
+            android:key="alarm_demo" />
         <SwitchPreference
             android:title="@string/sync_icon"
-            android:key="sync" />
+            android:key="sync_demo" />
         <SwitchPreference
             android:title="@string/tty_icon"
-            android:key="tty" />
+            android:key="tty_demo" />
         <SwitchPreference
             android:title="@string/cdma_eri_icon"
-            android:key="eri" />
+            android:key="eri_demo" />
         <SwitchPreference
             android:title="@string/microphone_mute"
-            android:key="mute" />
+            android:key="mute_demo" />
         <SwitchPreference
             android:title="@string/speakerphone_icon"
-            android:key="speakerphone" />
+            android:key="speakerphone_demo" />
     </PreferenceCategory>
 
 </PreferenceScreen>
