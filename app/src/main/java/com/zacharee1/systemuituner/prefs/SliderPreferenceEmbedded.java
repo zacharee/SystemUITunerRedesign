@@ -1,6 +1,7 @@
 package com.zacharee1.systemuituner.prefs;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.preference.Preference;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -32,6 +33,17 @@ public class SliderPreferenceEmbedded extends Preference
 
     public SliderPreferenceEmbedded(Context context, AttributeSet attrs) {
         super(context, attrs);
+
+        TypedArray a = context.getTheme().obtainStyledAttributes(
+                attrs,
+                R.styleable.SliderPreferenceEmbedded,
+                0, 0);
+
+        try {
+            mMaxProgress = a.getInteger(R.styleable.SliderPreferenceEmbedded_max, -1);
+        } finally {
+            a.recycle();
+        }
     }
 
     public SliderPreferenceEmbedded(Context context) {
@@ -65,6 +77,8 @@ public class SliderPreferenceEmbedded extends Preference
             public void onProgressChanged(SeekBar seekBar, int i, boolean b)
             {
                 textView.setText(String.valueOf(i));
+                setProgressState(i);
+                saveProgress(i);
                 if (mListener != null) mListener.onPreferenceChange(SliderPreferenceEmbedded.this, i);
             }
 
@@ -102,6 +116,7 @@ public class SliderPreferenceEmbedded extends Preference
         return view;
     }
 
+    @SuppressWarnings("WeakerAccess")
     public int getSavedProgress() {
         return getSharedPreferences().getInt(getKey(), 0);
     }
@@ -109,5 +124,9 @@ public class SliderPreferenceEmbedded extends Preference
     @SuppressWarnings("WeakerAccess")
     public int getCurrentProgress() {
         return ((SeekBar) view.findViewById(R.id.slider_pref_seekbar)).getProgress();
+    }
+
+    public void saveProgress(int progress) {
+        getSharedPreferences().edit().putInt(getKey(), progress).apply();
     }
 }

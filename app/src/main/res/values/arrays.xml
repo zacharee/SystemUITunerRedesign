@@ -42,4 +42,32 @@
         <item>semi-transparent</item>
         <item>default</item>
     </string-array>
+
+    <string-array name="volume_icon_display"
+        translatable="false">
+        <item>Silent</item>
+        <item>Vibrate</item>
+        <item>Hide</item>
+    </string-array>
+
+    <string-array name="volume_icon_values"
+        translatable="false">
+        <item>silent</item>
+        <item>vibrate</item>
+        <item>hide</item>
+    </string-array>
+
+    <string-array name="bluetooth_icon_display"
+        translatable="false">
+        <item>Connected</item>
+        <item>Disconnected</item>
+        <item>Hidden</item>
+    </string-array>
+
+    <string-array name="bluetooth_icon_values"
+        translatable="false">
+        <item>connected</item>
+        <item>disconnected</item>
+        <item>hidden</item>
+    </string-array>
 </resources>

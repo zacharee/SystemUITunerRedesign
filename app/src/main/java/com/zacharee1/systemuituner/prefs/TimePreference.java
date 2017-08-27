@@ -10,6 +10,9 @@ import android.widget.TimePicker;
 
 import com.zacharee1.systemuituner.R;
 
+import java.util.Calendar;
+import java.util.Date;
+
 @SuppressWarnings("unused")
 public class TimePreference extends DialogPreference
 {
@@ -52,6 +55,7 @@ public class TimePreference extends DialogPreference
             Bundle bundle = new Bundle();
             bundle.putInt("hour", getCurrentHour());
             bundle.putInt("minute", getCurrentMinute());
+            bundle.putLong("millis", getCurrentTimeMillis());
 
             mListener.onPreferenceChange(this, bundle);
         }
@@ -92,11 +96,23 @@ public class TimePreference extends DialogPreference
         return picker.getMinute();
     }
 
+    private long getCurrentTimeMillis() {
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(new Date().getYear(), new Date().getMonth(), new Date().getDay(), getCurrentHour(), getCurrentMinute(), 0);
+        return calendar.getTimeInMillis();
+    }
+
     public int getSavedHour() {
         return getSharedPreferences().getInt(getKey() + "hour", 12);
     }
 
     public int getSavedMinute() {
         return getSharedPreferences().getInt(getKey() + "minute", 0);
+    }
+
+    public long getSavedTimeMillis() {
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(new Date().getYear(), new Date().getMonth(), new Date().getDay(), getSavedHour(), getSavedMinute(), 0);
+        return calendar.getTimeInMillis();
     }
 }
