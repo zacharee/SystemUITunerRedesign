@@ -218,7 +218,7 @@ public class DemoHelper
             intent.putExtra("command", "enter");
             mFragment.getActivity().sendBroadcast(intent);
 
-            logIntent(intent);
+//            logIntent(intent);
 
             intent = new Intent("com.android.systemui.demo");
             intent.putExtra("command", "clock");
@@ -226,7 +226,7 @@ public class DemoHelper
             intent.putExtra("millis", time() + "");
             mFragment.getActivity().sendBroadcast(intent);
 
-            logIntent(intent);
+//            logIntent(intent);
 
             intent = new Intent("com.android.systemui.demo");
             intent.putExtra("command", "network");
@@ -236,7 +236,7 @@ public class DemoHelper
             intent.putExtra("datatype", mobileType());
             mFragment.getActivity().sendBroadcast(intent);
 
-            logIntent(intent);
+//            logIntent(intent);
 
             intent = new Intent("com.android.systemuui.demo");
             intent.putExtra("command", "network");
@@ -244,7 +244,7 @@ public class DemoHelper
             intent.putExtra("nosim", noSim() ? "show" : "hide");
             mFragment.getActivity().sendBroadcast(intent);
 
-            logIntent(intent);
+//            logIntent(intent);
 
             intent = new Intent("com.android.systemui.demo");
             intent.putExtra("command", "network");
@@ -253,14 +253,14 @@ public class DemoHelper
             intent.putExtra("level", wifiLevel() + "");
             mFragment.getActivity().sendBroadcast(intent);
 
-            logIntent(intent);
+//            logIntent(intent);
 
             intent = new Intent("com.android.systemui.demo");
             intent.putExtra("command", "network");
             intent.putExtra("airplane", showAirplane() ? "show" : "hide");
             mFragment.getActivity().sendBroadcast(intent);
 
-            logIntent(intent);
+//            logIntent(intent);
 
             intent = new Intent("com.android.systemui.demo");
             intent.putExtra("command", "battery");
@@ -268,21 +268,21 @@ public class DemoHelper
             intent.putExtra("plugged", batteryCharging() + "");
             mFragment.getActivity().sendBroadcast(intent);
 
-            logIntent(intent);
+//            logIntent(intent);
 
             intent = new Intent("com.android.systemui.demo");
             intent.putExtra("command", "notifications");
             intent.putExtra("visible", showNotifs() + "");
             mFragment.getActivity().sendBroadcast(intent);
 
-            logIntent(intent);
+//            logIntent(intent);
 
             intent = new Intent("com.android.systemui.demo");
             intent.putExtra("command", "bars");
             intent.putExtra("mode", statStyle());
             mFragment.getActivity().sendBroadcast(intent);
 
-            logIntent(intent);
+//            logIntent(intent);
 
             intent = new Intent("com.android.systemui.demo");
             intent.putExtra("command", "status");
@@ -297,7 +297,7 @@ public class DemoHelper
             intent.putExtra("speakerphone", spkphone() ? "show" : "hide");
             mFragment.getActivity().sendBroadcast(intent);
 
-            logIntent(intent);
+//            logIntent(intent);
 
             disableOtherPreferences(true);
         } catch (Exception e) {

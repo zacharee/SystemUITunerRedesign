@@ -60,9 +60,6 @@ public class SliderPreferenceEmbedded extends Preference
         mProgress = (mProgress == -1 ? getSavedProgress() : mProgress);
         mMaxProgress = (mMaxProgress == -1 ? 100 : mMaxProgress);
 
-        Log.e("Prog", mProgress + "");
-        Log.e("mProg", mMaxProgress + "");
-
         SeekBar seekBar = view.findViewById(R.id.slider_pref_seekbar);
         final TextView textView = view.findViewById(R.id.slider_pref_text);
 
