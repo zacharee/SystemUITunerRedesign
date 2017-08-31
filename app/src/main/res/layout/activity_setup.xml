@@ -10,14 +10,14 @@
         android:id="@+id/no_root_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
         android:text="@string/not_rooted_huh"
         android:textAppearance="@style/TextAppearance.AppCompat.Title"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="16dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tasker_info"
@@ -75,6 +75,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tasker_command" />
 
+    <Button
+        android:id="@+id/adb_instructions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:onClick="launchInstructions"
+        android:text="@string/instructions"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tasker_defs_title" />
+
     <TextView
         android:id="@+id/no_root_comm_1"
         android:layout_width="wrap_content"
@@ -85,11 +97,11 @@
         android:text="adb shell pm grant com.zacharee1.systemuituner android.permission.WRITE_SECURE_SETTINGS"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:typeface="monospace"
         android:textIsSelectable="true"
+        android:typeface="monospace"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tasker_defs_title" />
+        app:layout_constraintTop_toBottomOf="@id/adb_instructions" />
 
     <TextView
         android:id="@+id/no_root_comm_2"
@@ -100,8 +112,8 @@
         android:layout_marginTop="8dp"
         android:text="adb shell pm grant com.zacharee1.systemuituner android.permission.DUMP"
         android:textAlignment="center"
-        android:textIsSelectable="true"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textIsSelectable="true"
         android:typeface="monospace"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -116,8 +128,8 @@
         android:layout_marginTop="8dp"
         android:text="adb shell pm grant com.zacharee1.systemuituner android.permission.PACKAGE_USAGE_STATS"
         android:textAlignment="center"
-        android:textIsSelectable="true"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textIsSelectable="true"
         android:typeface="monospace"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -131,6 +143,7 @@
         android:clickable="true"
         android:focusable="true"
         android:foregroundGravity="right"
+        android:onClick="checkSetup"
         android:tint="#fff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -138,6 +151,5 @@
         app:layout_constraintStart_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="parent"
         app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/ic_check_black_24dp"
-        android:onClick="checkSetup"/>
+        app:srcCompat="@drawable/ic_check_black_24dp" />
 </android.support.constraint.ConstraintLayout>
