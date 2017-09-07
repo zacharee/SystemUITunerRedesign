@@ -179,4 +179,5 @@
     <string name="microphone_mute">Icono Micrófono Apagado</string>
     <string name="quick_settings">Configuraciones Rápidos</string>
     <string name="demo_mode">Modo Demo</string>
+    <string name="night_display_not_avail">Visualidor Noche no disponsible en este aparato.</string>
 </resources>

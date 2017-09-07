@@ -176,5 +176,6 @@
     <string name="no_sim_icon">没有 SIM 卡图标</string>
     <string name="sync_icon">同步图标</string>
     <string name="microphone_mute">麦克风静音图标</string>
+    <string name="night_display_not_avail">此设备上未提供夜间显示。</string>
 
 </resources>

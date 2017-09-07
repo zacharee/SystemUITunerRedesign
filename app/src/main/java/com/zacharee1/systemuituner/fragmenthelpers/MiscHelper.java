@@ -1,6 +1,7 @@
 package com.zacharee1.systemuituner.fragmenthelpers;
 
 import android.content.SharedPreferences;
+import android.content.res.Resources;
 import android.os.Build;
 import android.preference.EditTextPreference;
 import android.preference.Preference;
@@ -12,6 +13,7 @@ import com.zacharee1.systemuituner.fragments.ItemDetailFragment;
 import com.zacharee1.systemuituner.R;
 import com.zacharee1.systemuituner.misc.SettingsUtils;
 
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 
 public class MiscHelper
@@ -189,6 +191,25 @@ public class MiscHelper
             override.setTitle(R.string.night_display_activated);
             auto.setChecked(Settings.Secure.getInt(mFragment.getContext().getContentResolver(), "night_display_auto", 0) == 1);
             auto.setTitle(R.string.night_display_auto);
+
+            try {
+                Class<?> InternalBool = Class.forName("com.android.internal.R$bool");
+
+                Field nightDisplayAvailable = InternalBool.getField("config_nightDisplayAvailable");
+                int id = nightDisplayAvailable.getInt(null);
+
+                if (!Resources.getSystem().getBoolean(id)) {
+                    category.setEnabled(false);
+
+                    for (int i = 0; i < category.getPreferenceCount(); i++) {
+                        SwitchPreference preference = (SwitchPreference) category.getPreference(i);
+                        preference.setChecked(false);
+                        preference.setSummary(R.string.night_display_not_avail);
+                    }
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         } else {
             PreferenceCategory category = (PreferenceCategory) mFragment.findPreference("night_mode_settings");
             category.setEnabled(false);
