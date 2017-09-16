@@ -12,7 +12,7 @@ import com.zacharee1.systemuituner.prefs.SliderPreference;
 import com.zacharee1.systemuituner.misc.SettingsUtils;
 import com.zacharee1.systemuituner.prefs.SliderPreferenceEmbedded;
 
-public class QSHelper
+public class QSHelper extends BaseHelper
 {
     private final ItemDetailFragment mFragment;
 
@@ -102,6 +102,11 @@ public class QSHelper
                 preference.setSummary(R.string.requires_nougat);
             }
         }
+
+    }
+
+    @Override
+    public void onDestroy() {
 
     }
 }

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.zacharee1.systemuituner">
+    package="com.zacharee1.systemuituner"
+    android:installLocation="auto">
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
@@ -83,6 +84,16 @@
                 <action android:name="android.service.quicksettings.action.QS_TILE" />
                 <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
                 <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".qstiles.DemoTile"
+            android:icon="@drawable/ic_tv_black_24dp"
+            android:label="@string/demo_mode"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE" />
+                <action android:name="com.android.systemui.demo" />
             </intent-filter>
         </service>
 

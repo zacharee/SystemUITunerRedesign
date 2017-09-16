@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.util.Log;
 
 import com.zacharee1.systemuituner.fragmenthelpers.AutoHelper;
+import com.zacharee1.systemuituner.fragmenthelpers.BaseHelper;
 import com.zacharee1.systemuituner.misc.TweakItems;
 import com.zacharee1.systemuituner.activites.ItemDetailActivity;
 import com.zacharee1.systemuituner.activites.ItemListActivity;
@@ -26,6 +27,9 @@ import com.zacharee1.systemuituner.fragmenthelpers.TWHelper;
  */
 public class ItemDetailFragment extends PreferenceFragment
 {
+    private BaseHelper helper;
+    private BaseHelper helper2;
+
     /**
      * The fragment argument representing the item ID that this fragment
      * represents.
@@ -62,27 +66,40 @@ public class ItemDetailFragment extends PreferenceFragment
             switch (id)
             {
                 case "statbar":
-                    new StatbarHelper(this);
+                    helper = new StatbarHelper(this);
                     break;
                 case "qs":
-                    new QSHelper(this);
+                    helper = new QSHelper(this);
                     break;
                 case "demo":
-                    new DemoHelper(this);
+                    helper = new DemoHelper(this);
                     break;
                 case "touchwiz":
-                    new StatbarHelper(this);
-                    new TWHelper(this);
+                    helper = new StatbarHelper(this);
+                    helper2 = new TWHelper(this);
                     break;
                 case "misc":
-                    new MiscHelper(this);
+                    helper = new MiscHelper(this);
                     break;
                 case "auto":
-                    new AutoHelper(this);
+                    helper = new AutoHelper(this);
                     break;
             }
 
             getActivity().setTitle(mItem.content);
+        }
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+
+        if (helper != null) {
+            helper.onDestroy();
+        }
+
+        if (helper2 != null) {
+            helper2.onDestroy();
         }
     }
 }

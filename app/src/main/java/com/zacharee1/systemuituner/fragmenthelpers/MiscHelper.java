@@ -16,7 +16,7 @@ import com.zacharee1.systemuituner.misc.SettingsUtils;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 
-public class MiscHelper
+public class MiscHelper extends BaseHelper
 {
     private static final int TWILIGHT_MODE_INACTIVE = 0;
     private static final int TWILIGHT_MODE_OVERRIDE = 1;
@@ -320,5 +320,10 @@ public class MiscHelper
                 });
             }
         }
+    }
+
+    @Override
+    public void onDestroy() {
+
     }
 }

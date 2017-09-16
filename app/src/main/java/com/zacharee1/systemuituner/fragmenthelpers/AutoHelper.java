@@ -16,7 +16,7 @@ import java.util.TreeMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class AutoHelper
+public class AutoHelper extends BaseHelper
 {
     private ItemDetailFragment mFragment;
     private Map<String, Preference> mPrefs = new TreeMap<>();
@@ -100,5 +100,10 @@ public class AutoHelper
         }
 
         SettingsUtils.shouldSetSwitchChecked(mFragment);
+    }
+
+    @Override
+    public void onDestroy() {
+
     }
 }

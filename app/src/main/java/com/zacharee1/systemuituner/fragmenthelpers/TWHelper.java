@@ -7,7 +7,7 @@ import android.provider.Settings;
 import com.zacharee1.systemuituner.fragments.ItemDetailFragment;
 import com.zacharee1.systemuituner.misc.SettingsUtils;
 
-public class TWHelper
+public class TWHelper extends BaseHelper
 {
     private final ItemDetailFragment mFragment;
 
@@ -48,5 +48,10 @@ public class TWHelper
                 return true;
             }
         });
+    }
+
+    @Override
+    public void onDestroy() {
+
     }
 }
