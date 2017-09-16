@@ -1,12 +1,17 @@
 package com.zacharee1.systemuituner.qstiles;
 
 import android.annotation.TargetApi;
+import android.content.res.Resources;
 import android.os.Build;
+import android.preference.SwitchPreference;
 import android.provider.Settings;
 import android.service.quicksettings.Tile;
 import android.service.quicksettings.TileService;
 
+import com.zacharee1.systemuituner.R;
 import com.zacharee1.systemuituner.misc.SettingsUtils;
+
+import java.lang.reflect.Field;
 
 @TargetApi(24)
 public class NightModeTile extends TileService
@@ -20,8 +25,30 @@ public class NightModeTile extends TileService
         if (Build.VERSION.SDK_INT == Build.VERSION_CODES.N) isActive = Settings.Secure.getInt(getContentResolver(), "twilight_mode", 0) != 0;
         else isActive = Settings.Secure.getInt(getContentResolver(), "night_display_activated", 0) == 1;
 
-        nightMode.setState(isActive ? Tile.STATE_ACTIVE : Tile.STATE_INACTIVE);
-        nightMode.updateTile();
+        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.N) {
+            try {
+                Class<?> InternalBool = Class.forName("com.android.internal.R$bool");
+
+                Field nightDisplayAvailable = InternalBool.getField("config_nightDisplayAvailable");
+                int id = nightDisplayAvailable.getInt(null);
+
+                if (!Resources.getSystem().getBoolean(id)) {
+                    nightMode.setState(Tile.STATE_UNAVAILABLE);
+                    nightMode.updateTile();
+                } else {
+                    nightMode.setState(isActive ? Tile.STATE_ACTIVE : Tile.STATE_INACTIVE);
+                    nightMode.updateTile();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+
+                nightMode.setState(isActive ? Tile.STATE_ACTIVE : Tile.STATE_INACTIVE);
+                nightMode.updateTile();
+            }
+        } else {
+            nightMode.setState(isActive ? Tile.STATE_ACTIVE : Tile.STATE_INACTIVE);
+            nightMode.updateTile();
+        }
     }
 
     @Override
@@ -44,5 +71,4 @@ public class NightModeTile extends TileService
 
         super.onClick();
     }
-
 }
