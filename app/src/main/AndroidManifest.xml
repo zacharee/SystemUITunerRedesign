@@ -96,6 +96,15 @@
                 <action android:name="com.android.systemui.demo" />
             </intent-filter>
         </service>
+        <service
+            android:name=".qstiles.ImmersiveTile"
+            android:icon="@drawable/ic_fullscreen_black_24dp"
+            android:label="@string/immersive_mode"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE" />
+            </intent-filter>
+        </service>
 
         <activity
             android:name=".activites.AboutActivity"
