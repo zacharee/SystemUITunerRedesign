@@ -27,7 +27,8 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:title="@string/config_qs">
+        android:title="@string/config_qs"
+        android:key="config_qs">
 
         <ListPreference
             android:title="@string/mode"

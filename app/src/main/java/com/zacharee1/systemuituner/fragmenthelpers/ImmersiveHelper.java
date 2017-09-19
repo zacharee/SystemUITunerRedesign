@@ -2,14 +2,17 @@ package com.zacharee1.systemuituner.fragmenthelpers;
 
 import android.database.ContentObserver;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
 import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
+import android.preference.PreferenceCategory;
 import android.provider.Settings;
 import android.util.Log;
 
+import com.zacharee1.systemuituner.R;
 import com.zacharee1.systemuituner.fragments.ItemDetailFragment;
 import com.zacharee1.systemuituner.misc.ImmersiveHandler;
 
@@ -41,6 +44,7 @@ public class ImmersiveHelper extends BaseHelper implements Preference.OnPreferen
 
         setContentObserver();
         setProperBoxChecked();
+        disableQSSettingIfBelowNougat();
     }
 
     private void setContentObserver() {
@@ -72,6 +76,18 @@ public class ImmersiveHelper extends BaseHelper implements Preference.OnPreferen
         status.setChecked(status.getKey().equals(keyToNotDisable));
         navi.setChecked(navi.getKey().equals(keyToNotDisable));
         preconf.setChecked(preconf.getKey().equals(keyToNotDisable));
+    }
+
+    private void disableQSSettingIfBelowNougat() {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.N) {
+            PreferenceCategory category = (PreferenceCategory) mFragment.findPreference("config_qs");
+
+            for (int i = 0; i < category.getPreferenceCount(); i++) {
+                Preference preference = category.getPreference(i);
+                preference.setEnabled(false);
+                preference.setSummary(R.string.requires_nougat);
+            }
+        }
     }
 
     @Override
