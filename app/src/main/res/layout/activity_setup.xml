@@ -7,73 +7,18 @@
     tools:context="com.zacharee1.systemuituner.activites.SetupActivity">
 
     <TextView
-        android:id="@+id/no_root_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
-        android:text="@string/not_rooted_huh"
-        android:textAppearance="@style/TextAppearance.AppCompat.Title"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/tasker_info"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="0dp"
-        android:text="@string/non_root_info"
-        android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/no_root_title" />
-
-    <TextView
-        android:id="@+id/base_command"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="0dp"
-        android:text="@string/adb_instructions"
-        android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tasker_info" />
-
-    <TextView
-        android:id="@+id/tasker_command"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="0dp"
-        android:text="@string/adb_set_up"
-        android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/base_command" />
-
-    <TextView
         android:id="@+id/tasker_defs_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="32dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="0dp"
+        android:layout_marginTop="16dp"
         android:text="@string/adb_perm_grant"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tasker_command" />
+        app:layout_constraintTop_toBottomOf="parent" />
 
     <Button
         android:id="@+id/adb_instructions"
@@ -104,6 +49,7 @@
         app:layout_constraintTop_toBottomOf="@id/adb_instructions" />
 
     <TextView
+        android:visibility="gone"
         android:id="@+id/no_root_comm_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -120,6 +66,7 @@
         app:layout_constraintTop_toBottomOf="@id/no_root_comm_1" />
 
     <TextView
+        android:visibility="gone"
         android:id="@+id/no_root_comm_3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

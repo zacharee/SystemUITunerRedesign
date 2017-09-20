@@ -1,5 +1,6 @@
 package com.zacharee1.systemuituner.fragmenthelpers;
 
+import android.Manifest;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -15,6 +16,7 @@ import android.util.Log;
 import android.widget.Switch;
 import android.widget.Toast;
 
+import com.zacharee1.systemuituner.activites.SetupActivity;
 import com.zacharee1.systemuituner.fragments.ItemDetailFragment;
 import com.zacharee1.systemuituner.R;
 import com.zacharee1.systemuituner.misc.DemoHandler;
@@ -35,18 +37,16 @@ public class DemoHelper extends BaseHelper
         mFragment = fragment;
         mDemoHandler = new DemoHandler(mFragment.getContext());
 
-//        SliderPreferenceEmbedded batteryLevel = (SliderPreferenceEmbedded) mFragment.findPreference("selected_battery_level");
-//        SliderPreferenceEmbedded wifiStrength = (SliderPreferenceEmbedded) mFragment.findPreference("wifi_strength");
-//        SliderPreferenceEmbedded mobileStrength = (SliderPreferenceEmbedded) mFragment.findPreference("selected_mobile_strength");
-//        SliderPreferenceEmbedded simCount = (SliderPreferenceEmbedded) mFragment.findPreference("sim_count");
-//
-//        batteryLevel.setMaxProgess(100);
-//        wifiStrength.setMaxProgess(4);
-//        mobileStrength.setMaxProgess(4);
-//        simCount.setMaxProgess(7);
+        if (SettingsUtils.hasSpecificPerm(mFragment.getContext(), Manifest.permission.DUMP)) {
+            setPrefListeners();
+            setDemoSwitchListener();
+        } else {
+            Intent intent = new Intent(mFragment.getContext(), SetupActivity.class);
+            intent.putExtra("permission_needed", new String[] { Manifest.permission.DUMP });
+            mFragment.getActivity().startActivity(intent);
 
-        setPrefListeners();
-        setDemoSwitchListener();
+            mFragment.getActivity().finish();
+        }
     }
 
     private void setPrefListeners() {
@@ -132,6 +132,8 @@ public class DemoHelper extends BaseHelper
     }
 
     public void onDestroy() {
-        mFragment.getActivity().unregisterReceiver(switchReceiver);
+        try {
+            mFragment.getActivity().unregisterReceiver(switchReceiver);
+        } catch (Exception e) {}
     }
 }

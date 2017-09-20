@@ -1,5 +1,6 @@
 package com.zacharee1.systemuituner;
 
+import android.Manifest;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Build;
@@ -23,7 +24,7 @@ public class LauncherActivity extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
 
-        if (!SettingsUtils.hasPerms(this)) {
+        if (!SettingsUtils.hasSpecificPerm(this, Manifest.permission.WRITE_SECURE_SETTINGS)) {
             if (SuUtils.testSudo()) {
                 SuUtils.sudo("pm grant com.zacharee1.systemuituner android.permission.WRITE_SECURE_SETTINGS ; " +
                         "pm grant com.zacharee1.systemuituner android.permission.DUMP ; " +
@@ -31,6 +32,7 @@ public class LauncherActivity extends AppCompatActivity
                 startUp();
             } else {
                 Intent intent = new Intent(this, SetupActivity.class);
+                intent.putExtra("permission_needed", new String[] { Manifest.permission.WRITE_SECURE_SETTINGS });
                 startActivity(intent);
                 finish();
             }
