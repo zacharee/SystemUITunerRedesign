@@ -17,6 +17,7 @@ import android.view.MenuItem;
 
 import com.zacharee1.systemuituner.R;
 import com.zacharee1.systemuituner.misc.RecreateHandler;
+import com.zacharee1.systemuituner.services.SafeModeService;
 
 import java.util.List;
 
@@ -156,6 +157,20 @@ public class SettingsActivity extends AppCompatPreferenceActivity
                 safeMode.setChecked(false);
                 safeMode.setEnabled(false);
                 safeMode.setSummary(getResources().getString(R.string.safe_mode_android_o));
+            } else {
+                safeMode.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
+                    @Override
+                    public boolean onPreferenceChange(Preference preference, Object newValue) {
+                        if (Boolean.valueOf(newValue.toString())) {
+                            getActivity().stopService(new Intent(getActivity(), SafeModeService.class));
+                            getActivity().startService(new Intent(getActivity(), SafeModeService.class));
+                        } else {
+                            getActivity().stopService(new Intent(getActivity(), SafeModeService.class));
+                        }
+
+                            return true;
+                    }
+                });
             }
         }
 

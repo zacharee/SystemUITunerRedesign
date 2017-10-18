@@ -29,7 +29,7 @@ public class BillingUtil
     public BillingUtil(Activity activity) {
         mActivity = activity;
 
-        mBillingClient = new BillingClient.Builder(mActivity).setListener(new PurchasesUpdatedListener()
+        mBillingClient = BillingClient.newBuilder(mActivity).setListener(new PurchasesUpdatedListener()
         {
             @Override
             public void onPurchasesUpdated(int responseCode, List<Purchase> purchases)
@@ -41,6 +41,7 @@ public class BillingUtil
                 }
             }
         }).build();
+
         mBillingClient.startConnection(new BillingClientStateListener() {
             @Override
             public void onBillingSetupFinished(@BillingClient.BillingResponse int billingResponseCode) {
@@ -83,7 +84,7 @@ public class BillingUtil
 
     @SuppressWarnings("UnusedReturnValue")
     public int onDonateClicked(String skuId) {
-        BillingFlowParams.Builder builder = new BillingFlowParams.Builder()
+        BillingFlowParams.Builder builder = BillingFlowParams.newBuilder()
                 .setSku(skuId).setType(BillingClient.SkuType.INAPP);
         return mBillingClient.launchBillingFlow(mActivity, builder.build());
     }
