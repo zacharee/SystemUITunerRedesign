@@ -21,9 +21,6 @@ public class BatteryTile extends TileService
     public void onTileAdded()
     {
         super.onTileAdded();
-
-        getQsTile().setState(Tile.STATE_ACTIVE);
-        getQsTile().updateTile();
     }
 
     @Override

@@ -30,9 +30,6 @@ public class ImmersiveTile extends TileService
     public void onTileAdded()
     {
         super.onTileAdded();
-
-        getQsTile().setState(Tile.STATE_INACTIVE);
-        setTileState();
     }
 
     @Override
