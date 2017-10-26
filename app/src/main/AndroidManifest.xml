@@ -24,14 +24,14 @@
     <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS" />
 
     <application
+        android:name=".App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:name=".App"
         android:theme="@style/AppTheme.Dark">
-
-        <activity android:name=".LauncherActivity"
+        <activity
+            android:name=".LauncherActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -39,7 +39,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".activites.ItemListActivity"
             android:label="@string/app_name"
@@ -59,8 +58,7 @@
         <activity
             android:name=".activites.SettingsActivity"
             android:label="@string/settings" />
-        <activity android:name=".activites.MainActivity">
-        </activity>
+        <activity android:name=".activites.MainActivity" />
         <activity android:name=".activites.SettingWriteFailed" />
         <activity
             android:name=".activites.SetupActivity"
@@ -96,28 +94,27 @@
                 <action android:name="com.android.systemui.demo" />
             </intent-filter>
         </service>
+        <service
+            android:name=".qstiles.ImmersiveTile"
+            android:icon="@drawable/ic_fullscreen_black_24dp"
+            android:label="@string/immersive_mode"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE" />
+            </intent-filter>
+        </service>
 
         <activity
             android:name=".activites.AboutActivity"
             android:label="@string/about" />
 
         <receiver
-            android:name=".receivers.ShutdownReceiver"
-            android:enabled="true"
-            android:exported="true">
-            <intent-filter android:priority="500">
-                <action android:name="android.intent.action.ACTION_SHUTDOWN" />
-                <action android:name="android.intent.action.QUICKBOOT_POWEROFF" />
-                <action android:name="android.intent.action.REBOOT" />
-                <action android:name="com.htc.intent.action.QUICKBOOT_POWEROFF" />
-            </intent-filter>
-        </receiver>
-        <receiver
             android:name=".receivers.BootReceiver"
             android:enabled="true"
             android:exported="true">
             <intent-filter android:priority="500">
                 <category android:name="android.intent.category.DEFAULT" />
+
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <action android:name="android.intent.action.REBOOT" />
                 <action android:name="android.intent.action.QUICKBOOT_POWERON" />
@@ -137,13 +134,27 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name=".activites.TaskerInstructionActivity"
-            android:label="@string/tasker_how_to">
+        <activity
+            android:name=".activites.TaskerInstructionActivity"
+            android:label="@string/tasker_how_to" />
 
-        </activity>
         <meta-data
             android:name="io.fabric.ApiKey"
             android:value="96d80cfeac7fcf7aec8fc104086331c45258ab0e" />
+
+        <service
+            android:name=".services.SafeModeService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <receiver
+            android:name=".receivers.PackageReplaceReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

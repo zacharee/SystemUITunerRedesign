@@ -177,5 +177,12 @@
     <string name="sync_icon">同步图标</string>
     <string name="microphone_mute">麦克风静音图标</string>
     <string name="night_display_not_avail">此设备上未提供夜间显示。</string>
+    <string name="immersive_mode">沉浸式模式</string>
+    <string name="none">没有</string>
+    <string name="full">完成</string>
+    <string name="navigation_bar">导航栏</string>
+    <string name="pre_confirms">前确认</string>
+    <string name="config_qs">配置快速瓷砖</string>
+    <string name="mode">模式</string>
 
 </resources>

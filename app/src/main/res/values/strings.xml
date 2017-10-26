@@ -197,4 +197,11 @@
     <string name="sync_icon">Sync Icon</string>
     <string name="microphone_mute">Microphone Muted Icon</string>
     <string name="night_display_not_avail">Night Display is not available on this device.</string>
+    <string name="immersive_mode">Immersive Mode</string>
+    <string name="none">None</string>
+    <string name="full">Full</string>
+    <string name="navigation_bar">Navigation Bar</string>
+    <string name="pre_confirms">Pre-Confirms</string>
+    <string name="config_qs">Configure Quick Tile</string>
+    <string name="mode">Mode</string>
 </resources>

@@ -180,4 +180,11 @@
     <string name="quick_settings">Configuraciones Rápidos</string>
     <string name="demo_mode">Modo Demo</string>
     <string name="night_display_not_avail">Visualidor Noche no disponsible en este aparato.</string>
+    <string name="immersive_mode">Modo Inmersivo</string>
+    <string name="none">Nada</string>
+    <string name="full">Completo</string>
+    <string name="navigation_bar">Barro de Navigación</string>
+    <string name="pre_confirms">Pre-Confirms</string>
+    <string name="config_qs">Configurar Quick Tile</string>
+    <string name="mode">Modo</string>
 </resources>

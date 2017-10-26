@@ -9,6 +9,7 @@ import android.provider.Settings;
 import android.util.Log;
 
 import com.zacharee1.systemuituner.misc.SettingsUtils;
+import com.zacharee1.systemuituner.services.SafeModeService;
 
 public class BootReceiver extends BroadcastReceiver
 {
@@ -26,12 +27,14 @@ public class BootReceiver extends BroadcastReceiver
                 action.equals("android.intent.action.QUICKBOOT_POWERON") ||
                 action.equals("com.htc.intent.action.QUICKBOOT_POWERON")
         )) {
-            String backupBL = Settings.Global.getString(context.getContentResolver(), "icon_blacklist_backup");
-            SettingsUtils.writeSecure(context, "icon_blacklist", backupBL);
-            SettingsUtils.writeGlobal(context, "system_booted", "1");
+//            String backupBL = Settings.Global.getString(context.getContentResolver(), "icon_blacklist_backup");
+//            SettingsUtils.writeSecure(context, "icon_blacklist", backupBL);
+//            SettingsUtils.writeGlobal(context, "system_booted", "1");
+//
+//            String backupQSVal = Settings.Global.getString(context.getContentResolver(), "sysui_qs_fancy_anim_backup");
+//            SettingsUtils.writeSecure(context, "sysui_qs_fancy_anim", backupQSVal);
 
-            String backupQSVal = Settings.Global.getString(context.getContentResolver(), "sysui_qs_fancy_anim_backup");
-            SettingsUtils.writeSecure(context, "sysui_qs_fancy_anim", backupQSVal);
+            context.startService(new Intent(context, SafeModeService.class));
 
             Log.e("BOOTED", "BOOTED");
 

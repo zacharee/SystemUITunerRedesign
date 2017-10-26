@@ -24,9 +24,6 @@ public class DemoTile extends TileService
     public void onTileAdded()
     {
         super.onTileAdded();
-
-        getQsTile().setState(Tile.STATE_INACTIVE);
-        getQsTile().updateTile();
     }
 
     @Override

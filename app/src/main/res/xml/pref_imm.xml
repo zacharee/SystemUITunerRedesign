@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory
+        android:title="@string/immersive_mode"
+        android:key="imm_boxes">
+
+        <CheckBoxPreference
+            android:title="@string/none"
+            android:key="immersive.none" />
+
+        <CheckBoxPreference
+            android:title="@string/full"
+            android:key="immersive.full" />
+
+        <CheckBoxPreference
+            android:title="@string/status_bar"
+            android:key="immersive.status" />
+
+        <CheckBoxPreference
+            android:title="@string/navigation_bar"
+            android:key="immersive.navigation" />
+
+        <CheckBoxPreference
+            android:title="@string/pre_confirms"
+            android:key="immersive.preconfirms" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/config_qs"
+        android:key="config_qs">
+
+        <ListPreference
+            android:title="@string/mode"
+            android:key="immersive_tile_mode"
+            android:persistent="true"
+            android:entries="@array/immersive_names"
+            android:entryValues="@array/immersive_values"
+            android:defaultValue="immersive.full" />
+
+    </PreferenceCategory>
+</PreferenceScreen>

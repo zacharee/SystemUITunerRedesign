@@ -10,6 +10,7 @@ import android.util.Log;
 
 import com.zacharee1.systemuituner.fragmenthelpers.AutoHelper;
 import com.zacharee1.systemuituner.fragmenthelpers.BaseHelper;
+import com.zacharee1.systemuituner.fragmenthelpers.ImmersiveHelper;
 import com.zacharee1.systemuituner.misc.TweakItems;
 import com.zacharee1.systemuituner.activites.ItemDetailActivity;
 import com.zacharee1.systemuituner.activites.ItemListActivity;
@@ -83,6 +84,9 @@ public class ItemDetailFragment extends PreferenceFragment
                     break;
                 case "auto":
                     helper = new AutoHelper(this);
+                    break;
+                case "immersive":
+                    helper = new ImmersiveHelper(this);
                     break;
             }
 

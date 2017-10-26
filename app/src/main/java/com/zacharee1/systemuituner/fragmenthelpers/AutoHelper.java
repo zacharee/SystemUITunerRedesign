@@ -1,10 +1,13 @@
 package com.zacharee1.systemuituner.fragmenthelpers;
 
+import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.preference.Preference;
 import android.preference.SwitchPreference;
 import android.util.Log;
 
+import com.zacharee1.systemuituner.activites.SetupActivity;
 import com.zacharee1.systemuituner.fragments.ItemDetailFragment;
 import com.zacharee1.systemuituner.misc.SettingsUtils;
 import com.zacharee1.systemuituner.misc.Utils;
@@ -24,82 +27,90 @@ public class AutoHelper extends BaseHelper
     public AutoHelper(ItemDetailFragment fragment) {
         mFragment = fragment;
 
-        String dump = Utils.runCommand("dumpsys activity service com.android.systemui/.SystemUIService");
-        assert dump != null;
+        if (SettingsUtils.hasSpecificPerm(mFragment.getContext(), Manifest.permission.PACKAGE_USAGE_STATS) && SettingsUtils.hasSpecificPerm(mFragment.getContext(), Manifest.permission.DUMP)) {
+            String dump = Utils.runCommand("dumpsys activity service com.android.systemui/.SystemUIService");
+            assert dump != null;
 
-        int index = dump.indexOf("icon slots");
-        if (index != -1)
-        {
-            String icons = dump.substring(index);
-            ArrayList<String> ico = new ArrayList<>(Arrays.asList(icons.split("[\\n]")));
-            ico.remove(0);
-            for (String slot : ico)
+            int index = dump.indexOf("icon slots");
+            if (index != -1)
             {
-                if (slot.startsWith("         ") || slot.startsWith("        "))
+                String icons = dump.substring(index);
+                ArrayList<String> ico = new ArrayList<>(Arrays.asList(icons.split("[\\n]")));
+                ico.remove(0);
+                for (String slot : ico)
                 {
-                    Pattern p = Pattern.compile("\\((.*?)\\)");
-                    Matcher m = p.matcher(slot);
-
-                    while (!m.hitEnd())
+                    if (slot.startsWith("         ") || slot.startsWith("        "))
                     {
-                        if (m.find())
+                        Pattern p = Pattern.compile("\\((.*?)\\)");
+                        Matcher m = p.matcher(slot);
+
+                        while (!m.hitEnd())
                         {
-                            String result = m.group().replace("(", "").replace(")", "");
-                            Log.e("SLOT", result);
-
-                            SwitchPreference preference = new SwitchPreference(mFragment.getContext());
-                            preference.setTitle(result);
-                            preference.setKey(result);
-                            preference.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener()
+                            if (m.find())
                             {
-                                @Override
-                                public boolean onPreferenceChange(Preference preference, Object o)
+                                String result = m.group().replace("(", "").replace(")", "");
+                                Log.e("SLOT", result);
+
+                                SwitchPreference preference = new SwitchPreference(mFragment.getContext());
+                                preference.setTitle(result);
+                                preference.setKey(result);
+                                preference.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener()
                                 {
-                                    SettingsUtils.changeBlacklist(preference.getKey(), Boolean.valueOf(o.toString()), mFragment.getContext());
-                                    return true;
-                                }
-                            });
+                                    @Override
+                                    public boolean onPreferenceChange(Preference preference, Object o)
+                                    {
+                                        SettingsUtils.changeBlacklist(preference.getKey(), Boolean.valueOf(o.toString()), mFragment.getContext());
+                                        return true;
+                                    }
+                                });
 
-                            mPrefs.put(preference.getKey(), preference);
-                            break;
+                                mPrefs.put(preference.getKey(), preference);
+                                break;
+                            }
                         }
-                    }
-                } else break;
-            }
-        }
-
-        Pattern p = Pattern.compile("slot=(.+?)\\s");
-        Matcher m = p.matcher(dump);
-        String find = "";
-
-        while (!m.hitEnd()) if (m.find()) find = find.concat(m.group()).concat("\n");
-
-        ArrayList<String> slots = new ArrayList<>(Arrays.asList(find.split("[\\n]")));
-        for (String slot : slots) {
-            slot = slot.replace("slot=", "").replaceAll(" ", "");
-            Log.e("SLOT", slot);
-
-            SwitchPreference preference = new SwitchPreference(mFragment.getContext());
-            preference.setTitle(slot);
-            preference.setKey(slot);
-            preference.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener()
-            {
-                @Override
-                public boolean onPreferenceChange(Preference preference, Object o)
-                {
-                    SettingsUtils.changeBlacklist(preference.getKey(), Boolean.valueOf(o.toString()), mFragment.getContext());
-                    return true;
+                    } else break;
                 }
-            });
+            }
 
-            mPrefs.put(preference.getKey(), preference);
+            Pattern p = Pattern.compile("slot=(.+?)\\s");
+            Matcher m = p.matcher(dump);
+            String find = "";
+
+            while (!m.hitEnd()) if (m.find()) find = find.concat(m.group()).concat("\n");
+
+            ArrayList<String> slots = new ArrayList<>(Arrays.asList(find.split("[\\n]")));
+            for (String slot : slots) {
+                slot = slot.replace("slot=", "").replaceAll(" ", "");
+                Log.e("SLOT", slot);
+
+                SwitchPreference preference = new SwitchPreference(mFragment.getContext());
+                preference.setTitle(slot);
+                preference.setKey(slot);
+                preference.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener()
+                {
+                    @Override
+                    public boolean onPreferenceChange(Preference preference, Object o)
+                    {
+                        SettingsUtils.changeBlacklist(preference.getKey(), Boolean.valueOf(o.toString()), mFragment.getContext());
+                        return true;
+                    }
+                });
+
+                mPrefs.put(preference.getKey(), preference);
+            }
+
+            for (Preference preference : mPrefs.values()) {
+                mFragment.getPreferenceScreen().addPreference(preference);
+            }
+
+            SettingsUtils.shouldSetSwitchChecked(mFragment);
+        } else {
+            Intent intent = new Intent(mFragment.getContext(), SetupActivity.class);
+            intent.putExtra("permission_needed", new String[] {Manifest.permission.PACKAGE_USAGE_STATS, Manifest.permission.DUMP});
+            mFragment.getActivity().startActivity(intent);
+
+            mFragment.getActivity().finish();
         }
-
-        for (Preference preference : mPrefs.values()) {
-            mFragment.getPreferenceScreen().addPreference(preference);
-        }
-
-        SettingsUtils.shouldSetSwitchChecked(mFragment);
     }
 
     @Override

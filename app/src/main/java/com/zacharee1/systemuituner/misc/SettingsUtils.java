@@ -1,7 +1,9 @@
 package com.zacharee1.systemuituner.misc;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.preference.PreferenceManager;
 import android.preference.SwitchPreference;
@@ -81,22 +83,27 @@ public class SettingsUtils
     }
 
     public static boolean hasPerms(Context context) {
-        String secureSettings = "android.permission.WRITE_SECURE_SETTINGS";
-        int secureVal = context.checkCallingOrSelfPermission(secureSettings);
-        if (secureVal != PackageManager.PERMISSION_GRANTED) {
+        try {
+            PackageInfo packageInfo = context.getPackageManager().getPackageInfo(context.getPackageName(), PackageManager.GET_PERMISSIONS);
+            ArrayList<String> perms = new ArrayList<>(Arrays.asList(packageInfo.requestedPermissions));
+
+            for (String permission : perms) {
+                if (!hasSpecificPerm(context, permission)) return false;
+            }
+        } catch (Exception e) {
             return false;
         }
 
-        String dump = "android.permission.DUMP";
-        int dumpVal = context.checkCallingOrSelfPermission(dump);
-        if (dumpVal != PackageManager.PERMISSION_GRANTED) {
-            return false;
-        }
+        return true;
+    }
 
-        String usageStats = "android.permission.PACKAGE_USAGE_STATS";
-        int statsVal = context.checkCallingOrSelfPermission(usageStats);
-        if (statsVal != PackageManager.PERMISSION_GRANTED) {
-            return false;
+    public static boolean hasSpecificPerm(Context context, String permission) {
+        return context.checkCallingOrSelfPermission(permission) == PackageManager.PERMISSION_GRANTED;
+    }
+
+    public static boolean hasSpecificPerms(Context context, String[] permissions) {
+        for (String perm : permissions) {
+            if (context.checkCallingOrSelfPermission(perm) == PackageManager.PERMISSION_DENIED) return false;
         }
 
         return true;

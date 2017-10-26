@@ -70,4 +70,20 @@
         <item>disconnected</item>
         <item>hidden</item>
     </string-array>
+
+    <string-array name="immersive_names"
+        translatable="false">
+        <item>Full</item>
+        <item>Status Bar</item>
+        <item>Navigation Bar</item>
+        <item>Pre-Confirms</item>
+    </string-array>
+
+    <string-array name="immersive_values"
+        translatable="false">
+        <item>immersive.full</item>
+        <item>immersive.status</item>
+        <item>immersive.navigation</item>
+        <item>immersive.preconfirms</item>
+    </string-array>
 </resources>
