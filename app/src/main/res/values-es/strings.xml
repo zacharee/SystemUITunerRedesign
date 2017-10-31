@@ -187,4 +187,6 @@
     <string name="pre_confirms">Pre-Confirms</string>
     <string name="config_qs">Configurar Quick Tile</string>
     <string name="mode">Modo</string>
+    <string name="qs_column_count">Cuenta de Columnas QS</string>
+    <string name="qs_row_count">Cuenta de Filas QS</string>
 </resources>

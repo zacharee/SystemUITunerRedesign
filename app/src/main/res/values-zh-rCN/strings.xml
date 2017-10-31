@@ -184,5 +184,7 @@
     <string name="pre_confirms">前确认</string>
     <string name="config_qs">配置快速瓷砖</string>
     <string name="mode">模式</string>
+    <string name="qs_row_count">QS 行计数</string>
+    <string name="qs_column_count">QS 列计数</string>
 
 </resources>
