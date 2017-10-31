@@ -10,10 +10,14 @@
         <com.zacharee1.systemuituner.prefs.SliderPreferenceEmbedded
             android:title="@string/qs_row_count"
             android:key="qs_tile_row"
+            android:layout="@layout/pref_view_embedded"
+            android:widgetLayout="@layout/slider_pref_view"
             app:max="10"/>
         <com.zacharee1.systemuituner.prefs.SliderPreferenceEmbedded
             android:title="@string/qs_column_count"
             android:key="qs_tile_column"
+            android:layout="@layout/pref_view_embedded"
+            android:widgetLayout="@layout/slider_pref_view"
             app:max="10"/>
     </PreferenceCategory>
 
