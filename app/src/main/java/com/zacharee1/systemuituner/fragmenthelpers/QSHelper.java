@@ -83,6 +83,7 @@ public class QSHelper extends BaseHelper
             SliderPreferenceEmbedded pref = (SliderPreferenceEmbedded) mFragment.findPreference("sysui_qqs_count"); //find the SliderPreference
 
             pref.setMaxProgess(20);
+            pref.setMinProgress(1);
             pref.setProgressState(Settings.Secure.getInt(mFragment.getContext().getContentResolver(), "sysui_qqs_count", 5)); //set the progress/value from Settings
             pref.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener()
             {

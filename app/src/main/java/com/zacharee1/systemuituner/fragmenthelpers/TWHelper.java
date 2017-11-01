@@ -1,5 +1,6 @@
 package com.zacharee1.systemuituner.fragmenthelpers;
 
+import android.os.Build;
 import android.preference.Preference;
 import android.preference.SwitchPreference;
 import android.provider.Settings;
@@ -21,18 +22,30 @@ public class TWHelper extends BaseHelper
     }
 
     private void setUpQSStuff() {
-        SliderPreferenceEmbedded rows = (SliderPreferenceEmbedded) mFragment.findPreference("qs_tile_row");
-        SliderPreferenceEmbedded columns = (SliderPreferenceEmbedded) mFragment.findPreference("qs_tile_column");
+        final SliderPreferenceEmbedded rows = (SliderPreferenceEmbedded) mFragment.findPreference("qs_tile_row");
+        final SliderPreferenceEmbedded columns = (SliderPreferenceEmbedded) mFragment.findPreference("qs_tile_column");
         int defVal = 3;
         int savedRowVal = Settings.Secure.getInt(mFragment.getActivity().getContentResolver(), rows.getKey(), defVal);
         int savedColVal = Settings.Secure.getInt(mFragment.getActivity().getContentResolver(), columns.getKey(), defVal);
 
-        rows.setProgressState(savedRowVal);
-        columns.setProgressState(savedColVal);
+//        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.N_MR1) {
+//            rows.setMinProgress(1);
+//            columns.setMinProgress(1);
+//        }
+
+        rows.setMinProgress(1);
+        columns.setMinProgress(1);
+
+        rows.setProgress(savedRowVal);
+        columns.setProgress(savedColVal);
 
         rows.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
             @Override
             public boolean onPreferenceChange(Preference preference, Object newValue) {
+                if (Integer.valueOf(newValue.toString()) < 1) {
+                    newValue = 1;
+                    rows.setProgress(1);
+                }
                 SettingsUtils.writeSecure(mFragment.getActivity(), preference.getKey(), newValue.toString());
                 return true;
             }
@@ -40,6 +53,10 @@ public class TWHelper extends BaseHelper
         columns.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
             @Override
             public boolean onPreferenceChange(Preference preference, Object newValue) {
+                if (Integer.valueOf(newValue.toString()) < 1) {
+                    newValue = 1;
+                    columns.setProgress(1);
+                }
                 SettingsUtils.writeSecure(mFragment.getActivity(), preference.getKey(), newValue.toString());
                 return true;
             }
