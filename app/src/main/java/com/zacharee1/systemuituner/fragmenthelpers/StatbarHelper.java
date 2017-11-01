@@ -13,10 +13,9 @@ import java.util.Set;
 
 public class StatbarHelper extends BaseHelper
 {
-    private final ItemDetailFragment mFragment;
 
     public StatbarHelper(ItemDetailFragment fragment) {
-        mFragment = fragment;
+        super(fragment);
 
         preferenceListeners();
         setSwitchPreferenceStates();
@@ -24,16 +23,16 @@ public class StatbarHelper extends BaseHelper
     }
 
     private void preferenceListeners() {
-        Preference resetBL = mFragment.findPreference("reset_blacklist");
-        Preference backupBL = mFragment.findPreference("backup_blacklist");
-        Preference restoreBL = mFragment.findPreference("restore_blacklist");
+        Preference resetBL = findPreference("reset_blacklist");
+        Preference backupBL = findPreference("backup_blacklist");
+        Preference restoreBL = findPreference("restore_blacklist");
 
         resetBL.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener()
         {
             @Override
             public boolean onPreferenceClick(Preference preference)
             {
-                SettingsUtils.writeSecure(mFragment.getContext(), "icon_blacklist", "");
+                SettingsUtils.writeSecure(getContext(), "icon_blacklist", "");
                 setSwitchPreferenceStates();
                 return true;
             }
@@ -44,8 +43,8 @@ public class StatbarHelper extends BaseHelper
             @Override
             public boolean onPreferenceClick(Preference preference)
             {
-                String currentBL = Settings.Secure.getString(mFragment.getContext().getContentResolver(), "icon_blacklist");
-                SettingsUtils.writeGlobal(mFragment.getContext(), "icon_blacklist_backup", currentBL);
+                String currentBL = Settings.Secure.getString(getContext().getContentResolver(), "icon_blacklist");
+                SettingsUtils.writeGlobal(getContext(), "icon_blacklist_backup", currentBL);
                 setSwitchPreferenceStates();
                 return true;
             }
@@ -56,8 +55,8 @@ public class StatbarHelper extends BaseHelper
             @Override
             public boolean onPreferenceClick(Preference preference)
             {
-                String backupBL = Settings.Global.getString(mFragment.getContext().getContentResolver(), "icon_blacklist_backup");
-                SettingsUtils.writeSecure(mFragment.getContext(), "icon_blacklist", backupBL);
+                String backupBL = Settings.Global.getString(getContext().getContentResolver(), "icon_blacklist_backup");
+                SettingsUtils.writeSecure(getContext(), "icon_blacklist", backupBL);
                 setSwitchPreferenceStates();
                 return true;
             }
@@ -65,12 +64,12 @@ public class StatbarHelper extends BaseHelper
     }
 
     private void setSwitchPreferenceStates() {
-        SettingsUtils.shouldSetSwitchChecked(mFragment);
+        SettingsUtils.shouldSetSwitchChecked(getFragment());
     }
 
     private void switchPreferenceListeners() {
-        for (int i = 0; i < mFragment.getPreferenceScreen().getRootAdapter().getCount(); i++) {
-            Object o = mFragment.getPreferenceScreen().getRootAdapter().getItem(i);
+        for (int i = 0; i < getPreferenceScreen().getRootAdapter().getCount(); i++) {
+            Object o = getPreferenceScreen().getRootAdapter().getItem(i);
 
             if (o instanceof SwitchPreference && !((SwitchPreference)o).getTitle().toString().toLowerCase().contains("high brightness warning")) {
                 final SwitchPreference pref = (SwitchPreference) o;
@@ -83,7 +82,7 @@ public class StatbarHelper extends BaseHelper
                         String key = preference.getKey();
                         boolean value = Boolean.valueOf(o.toString());
 
-                        SettingsUtils.changeBlacklist(key, value, mFragment.getContext());
+                        SettingsUtils.changeBlacklist(key, value, getContext());
                         return true;
                     }
                 });

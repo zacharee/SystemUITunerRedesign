@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:orientation="horizontal"
+    android:background="?android:attr/selectableItemBackground"
+    android:clickable="true"
+    android:focusable="true"
+    android:padding="8dp">
+
+    <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/app_icon"
+        android:layout_width="60dp"
+        android:layout_height="match_parent" />
+
+    <TextView
+        android:id="@+id/app_name"
+        android:layout_gravity="center_vertical"
+        android:gravity="center_vertical"
+        android:textSize="18sp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="8dp" />
+
+</LinearLayout>

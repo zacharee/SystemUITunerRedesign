@@ -24,12 +24,11 @@ public class MiscHelper extends BaseHelper
     private static final int TWILIGHT_MODE_AUTO_OVERRIDE = 4;
 
     private final SharedPreferences mSharedPreferences;
-
-    private final ItemDetailFragment mFragment;
-
+    
     public MiscHelper(ItemDetailFragment fragment) {
-        mFragment = fragment;
-        mSharedPreferences = mFragment.getPreferenceManager().getSharedPreferences();
+        super(fragment);
+        
+        mSharedPreferences = getPreferenceManager().getSharedPreferences();
 
         showCustomSettings();
         setGlobalSwitchStates();
@@ -44,7 +43,7 @@ public class MiscHelper extends BaseHelper
     }
 
     private void showCustomSettings() {
-        PreferenceCategory customSettings = (PreferenceCategory) mFragment.findPreference("custom_settings_values");
+        PreferenceCategory customSettings = (PreferenceCategory) findPreference("custom_settings_values");
         if (!mSharedPreferences.getBoolean("allow_custom_settings_input", false)) {
             customSettings.setEnabled(false);
 
@@ -57,19 +56,19 @@ public class MiscHelper extends BaseHelper
 
     private void setGlobalSwitchStates() {
         ArrayList<SwitchPreference> preferences = new ArrayList<SwitchPreference>() {{
-            add((SwitchPreference) mFragment.findPreference("heads_up_notifications_enabled"));
-            add((SwitchPreference) mFragment.findPreference("audio_safe_volume_state"));
+            add((SwitchPreference) findPreference("heads_up_notifications_enabled"));
+            add((SwitchPreference) findPreference("audio_safe_volume_state"));
         }};
 
         for (SwitchPreference preference : preferences) {
             final String key = preference.getKey();
-            preference.setChecked(Settings.Global.getInt(mFragment.getContext().getContentResolver(), key, 1) == 1);
+            preference.setChecked(Settings.Global.getInt(getContext().getContentResolver(), key, 1) == 1);
             preference.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener()
             {
                 @Override
                 public boolean onPreferenceChange(Preference preference, Object o)
                 {
-                    SettingsUtils.writeGlobal(mFragment.getContext(), key, Boolean.valueOf(o.toString()) ? "1" : "0");
+                    SettingsUtils.writeGlobal(getContext(), key, Boolean.valueOf(o.toString()) ? "1" : "0");
                     return true;
                 }
             });
@@ -78,7 +77,7 @@ public class MiscHelper extends BaseHelper
 
     private void setSecureSwitchStates() {
         if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.M) {
-            PreferenceCategory category = (PreferenceCategory) mFragment.findPreference("power_notification_controls");
+            PreferenceCategory category = (PreferenceCategory) findPreference("power_notification_controls");
             category.setEnabled(false);
 
             for (int i = 0; i < category.getPreferenceCount(); i++) {
@@ -89,18 +88,18 @@ public class MiscHelper extends BaseHelper
         }
 
         ArrayList<SwitchPreference> preferences = new ArrayList<SwitchPreference>() {{
-           if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M) add((SwitchPreference) mFragment.findPreference("sysui_show_full_zen"));
-           if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M) add((SwitchPreference) mFragment.findPreference("clock_seconds"));
-           if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M) add((SwitchPreference) mFragment.findPreference("show_importance_slider"));
+           if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M) add((SwitchPreference) findPreference("sysui_show_full_zen"));
+           if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M) add((SwitchPreference) findPreference("clock_seconds"));
+           if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M) add((SwitchPreference) findPreference("show_importance_slider"));
         }};
 
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.N) {
-            SwitchPreference preference = (SwitchPreference) mFragment.findPreference("clock_seconds");
+            SwitchPreference preference = (SwitchPreference) findPreference("clock_seconds");
             preference.setEnabled(false);
             preference.setChecked(false);
             preference.setSummary(R.string.requires_nougat);
 
-            preference = (SwitchPreference) mFragment.findPreference("sysui_show_full_zen");
+            preference = (SwitchPreference) findPreference("sysui_show_full_zen");
             preference.setEnabled(false);
             preference.setChecked(false);
             preference.setSummary(R.string.requires_nougat);
@@ -108,13 +107,13 @@ public class MiscHelper extends BaseHelper
 
         for (SwitchPreference preference : preferences) {
             final String key = preference.getKey();
-            preference.setChecked(Settings.Secure.getInt(mFragment.getContext().getContentResolver(), key, 0) == 1);
+            preference.setChecked(Settings.Secure.getInt(getContext().getContentResolver(), key, 0) == 1);
             preference.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener()
             {
                 @Override
                 public boolean onPreferenceChange(Preference preference, Object o)
                 {
-                    SettingsUtils.writeSecure(mFragment.getContext(), key, Boolean.valueOf(o.toString()) ? "1" : "0");
+                    SettingsUtils.writeSecure(getContext(), key, Boolean.valueOf(o.toString()) ? "1" : "0");
                     return true;
                 }
             });
@@ -123,18 +122,18 @@ public class MiscHelper extends BaseHelper
 
     private void setSystemSwitchStates() {
         ArrayList<SwitchPreference> preferences = new ArrayList<SwitchPreference>() {{
-            add((SwitchPreference) mFragment.findPreference("status_bar_show_battery_percent"));
+            add((SwitchPreference) findPreference("status_bar_show_battery_percent"));
         }};
 
         for (SwitchPreference preference : preferences) {
             final String key = preference.getKey();
-            preference.setChecked(Settings.System.getInt(mFragment.getContext().getContentResolver(), key, 0) == 1);
+            preference.setChecked(Settings.System.getInt(getContext().getContentResolver(), key, 0) == 1);
             preference.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener()
             {
                 @Override
                 public boolean onPreferenceChange(Preference preference, Object o)
                 {
-                    SettingsUtils.writeSystem(mFragment.getContext(), key, Boolean.valueOf(o.toString()) ? "1" : "0");
+                    SettingsUtils.writeSystem(getContext(), key, Boolean.valueOf(o.toString()) ? "1" : "0");
                     return true;
                 }
             });
@@ -142,15 +141,15 @@ public class MiscHelper extends BaseHelper
     }
 
     private void setNightModeSwitchStates() {
-        final SwitchPreference auto = (SwitchPreference) mFragment.findPreference("night_mode_auto");
-        final SwitchPreference override = (SwitchPreference) mFragment.findPreference("night_mode_override");
-        final SwitchPreference tint = (SwitchPreference) mFragment.findPreference("tuner_night_mode_adjust_tint");
+        final SwitchPreference auto = (SwitchPreference) findPreference("night_mode_auto");
+        final SwitchPreference override = (SwitchPreference) findPreference("night_mode_override");
+        final SwitchPreference tint = (SwitchPreference) findPreference("tuner_night_mode_adjust_tint");
 
         if (Build.VERSION.SDK_INT == Build.VERSION_CODES.N)
         {
-            tint.setChecked(Settings.Secure.getInt(mFragment.getContext().getContentResolver(), "night_mode_adjust_tint", 0) == 1);
+            tint.setChecked(Settings.Secure.getInt(getContext().getContentResolver(), "night_mode_adjust_tint", 0) == 1);
 
-            int current = Settings.Secure.getInt(mFragment.getContext().getContentResolver(), "twilight_mode", 0);
+            int current = Settings.Secure.getInt(getContext().getContentResolver(), "twilight_mode", 0);
 
             switch (current)
             {
@@ -177,19 +176,19 @@ public class MiscHelper extends BaseHelper
                 @Override
                 public boolean onPreferenceChange(Preference preference, Object o)
                 {
-                    SettingsUtils.writeSecure(mFragment.getContext(), "night_mode_adjust_tint", Boolean.valueOf(o.toString()) ? "1" : "0");
+                    SettingsUtils.writeSecure(getContext(), "night_mode_adjust_tint", Boolean.valueOf(o.toString()) ? "1" : "0");
                     return true;
                 }
             });
 
         } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N_MR1) {
-            PreferenceCategory category = (PreferenceCategory) mFragment.findPreference("night_mode_settings");
+            PreferenceCategory category = (PreferenceCategory) findPreference("night_mode_settings");
             category.setTitle(R.string.night_display);
             category.removePreference(tint);
 
-            override.setChecked(Settings.Secure.getInt(mFragment.getContext().getContentResolver(), "night_display_activated", 0) == 1);
+            override.setChecked(Settings.Secure.getInt(getContext().getContentResolver(), "night_display_activated", 0) == 1);
             override.setTitle(R.string.night_display_activated);
-            auto.setChecked(Settings.Secure.getInt(mFragment.getContext().getContentResolver(), "night_display_auto", 0) == 1);
+            auto.setChecked(Settings.Secure.getInt(getContext().getContentResolver(), "night_display_auto", 0) == 1);
             auto.setTitle(R.string.night_display_auto);
 
             try {
@@ -211,7 +210,7 @@ public class MiscHelper extends BaseHelper
                 e.printStackTrace();
             }
         } else {
-            PreferenceCategory category = (PreferenceCategory) mFragment.findPreference("night_mode_settings");
+            PreferenceCategory category = (PreferenceCategory) findPreference("night_mode_settings");
             category.setEnabled(false);
 
             for (int i = 0; i < category.getPreferenceCount(); i++) {
@@ -227,7 +226,7 @@ public class MiscHelper extends BaseHelper
             public boolean onPreferenceChange(Preference preference, Object o)
             {
                 if (Build.VERSION.SDK_INT == Build.VERSION_CODES.N) evalNightModeStates(Boolean.valueOf(o.toString()), override.isChecked());
-                else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N_MR1) SettingsUtils.writeSecure(mFragment.getContext(), "night_display_auto", Boolean.valueOf(o.toString()) ? "1" : "0");
+                else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N_MR1) SettingsUtils.writeSecure(getContext(), "night_display_auto", Boolean.valueOf(o.toString()) ? "1" : "0");
                 return true;
             }
         });
@@ -238,7 +237,7 @@ public class MiscHelper extends BaseHelper
             public boolean onPreferenceChange(Preference preference, Object o)
             {
                 if (Build.VERSION.SDK_INT == Build.VERSION_CODES.N) evalNightModeStates(auto.isChecked(), Boolean.valueOf(o.toString()));
-                else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N_MR1) SettingsUtils.writeSecure(mFragment.getContext(), "night_display_activated", Boolean.valueOf(o.toString()) ? "1" : "0");
+                else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N_MR1) SettingsUtils.writeSecure(getContext(), "night_display_activated", Boolean.valueOf(o.toString()) ? "1" : "0");
                 return true;
             }
         });
@@ -251,19 +250,19 @@ public class MiscHelper extends BaseHelper
         else if (!override && auto) val = 2;
         else if (override) val = 4;
 
-        SettingsUtils.writeSecure(mFragment.getContext(), "twilight_mode", val + "");
+        SettingsUtils.writeSecure(getContext(), "twilight_mode", val + "");
     }
 
     private void setEditTextStates() {
         ArrayList<EditTextPreference> preferences = new ArrayList<EditTextPreference>() {{
-            add((EditTextPreference) mFragment.findPreference("animator_duration_scale"));
-            add((EditTextPreference) mFragment.findPreference("transition_animation_scale"));
-            add((EditTextPreference) mFragment.findPreference("window_animation_scale"));
+            add((EditTextPreference) findPreference("animator_duration_scale"));
+            add((EditTextPreference) findPreference("transition_animation_scale"));
+            add((EditTextPreference) findPreference("window_animation_scale"));
             if (showingCustomSettings())
             {
-                add((EditTextPreference) mFragment.findPreference("global_settings"));
-                add((EditTextPreference) mFragment.findPreference("secure_settings"));
-                add((EditTextPreference) mFragment.findPreference("system_settings"));
+                add((EditTextPreference) findPreference("global_settings"));
+                add((EditTextPreference) findPreference("secure_settings"));
+                add((EditTextPreference) findPreference("system_settings"));
             }
         }};
 
@@ -272,13 +271,13 @@ public class MiscHelper extends BaseHelper
             preference.setPersistent(false);
 
             if (key.contains("anim")) {
-                preference.setSummary(Settings.Global.getFloat(mFragment.getContext().getContentResolver(), key, 1.0f) + "");
+                preference.setSummary(Settings.Global.getFloat(getContext().getContentResolver(), key, 1.0f) + "");
                 preference.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener()
                 {
                     @Override
                     public boolean onPreferenceChange(Preference preference, Object o)
                     {
-                        SettingsUtils.writeGlobal(mFragment.getContext(), key, o.toString());
+                        SettingsUtils.writeGlobal(getContext(), key, o.toString());
                         preference.setSummary(o.toString());
                         return true;
                     }
@@ -305,13 +304,13 @@ public class MiscHelper extends BaseHelper
 
                         switch (key) {
                             case "global_settings":
-                                SettingsUtils.writeGlobal(mFragment.getContext(), putKey, putVal);
+                                SettingsUtils.writeGlobal(getContext(), putKey, putVal);
                                 break;
                             case "secure_settings":
-                                SettingsUtils.writeSecure(mFragment.getContext(), putKey, putVal);
+                                SettingsUtils.writeSecure(getContext(), putKey, putVal);
                                 break;
                             case "system_settings":
-                                SettingsUtils.writeSystem(mFragment.getContext(), putKey, putVal);
+                                SettingsUtils.writeSystem(getContext(), putKey, putVal);
                                 break;
                         }
 

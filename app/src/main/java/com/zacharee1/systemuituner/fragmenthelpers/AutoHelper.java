@@ -21,13 +21,12 @@ import java.util.regex.Pattern;
 
 public class AutoHelper extends BaseHelper
 {
-    private ItemDetailFragment mFragment;
     private Map<String, Preference> mPrefs = new TreeMap<>();
 
     public AutoHelper(ItemDetailFragment fragment) {
-        mFragment = fragment;
+        super(fragment);
 
-        if (SettingsUtils.hasSpecificPerm(mFragment.getContext(), Manifest.permission.PACKAGE_USAGE_STATS) && SettingsUtils.hasSpecificPerm(mFragment.getContext(), Manifest.permission.DUMP)) {
+        if (SettingsUtils.hasSpecificPerm(getContext(), Manifest.permission.PACKAGE_USAGE_STATS) && SettingsUtils.hasSpecificPerm(getContext(), Manifest.permission.DUMP)) {
             String dump = Utils.runCommand("dumpsys activity service com.android.systemui/.SystemUIService");
             assert dump != null;
 
@@ -51,7 +50,7 @@ public class AutoHelper extends BaseHelper
                                 String result = m.group().replace("(", "").replace(")", "");
                                 Log.e("SLOT", result);
 
-                                SwitchPreference preference = new SwitchPreference(mFragment.getContext());
+                                SwitchPreference preference = new SwitchPreference(getContext());
                                 preference.setTitle(result);
                                 preference.setKey(result);
                                 preference.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener()
@@ -59,7 +58,7 @@ public class AutoHelper extends BaseHelper
                                     @Override
                                     public boolean onPreferenceChange(Preference preference, Object o)
                                     {
-                                        SettingsUtils.changeBlacklist(preference.getKey(), Boolean.valueOf(o.toString()), mFragment.getContext());
+                                        SettingsUtils.changeBlacklist(preference.getKey(), Boolean.valueOf(o.toString()), getContext());
                                         return true;
                                     }
                                 });
@@ -83,7 +82,7 @@ public class AutoHelper extends BaseHelper
                 slot = slot.replace("slot=", "").replaceAll(" ", "");
                 Log.e("SLOT", slot);
 
-                SwitchPreference preference = new SwitchPreference(mFragment.getContext());
+                SwitchPreference preference = new SwitchPreference(getContext());
                 preference.setTitle(slot);
                 preference.setKey(slot);
                 preference.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener()
@@ -91,7 +90,7 @@ public class AutoHelper extends BaseHelper
                     @Override
                     public boolean onPreferenceChange(Preference preference, Object o)
                     {
-                        SettingsUtils.changeBlacklist(preference.getKey(), Boolean.valueOf(o.toString()), mFragment.getContext());
+                        SettingsUtils.changeBlacklist(preference.getKey(), Boolean.valueOf(o.toString()), getContext());
                         return true;
                     }
                 });
@@ -100,16 +99,16 @@ public class AutoHelper extends BaseHelper
             }
 
             for (Preference preference : mPrefs.values()) {
-                mFragment.getPreferenceScreen().addPreference(preference);
+                getPreferenceScreen().addPreference(preference);
             }
 
-            SettingsUtils.shouldSetSwitchChecked(mFragment);
+            SettingsUtils.shouldSetSwitchChecked(getFragment());
         } else {
-            Intent intent = new Intent(mFragment.getContext(), SetupActivity.class);
+            Intent intent = new Intent(getContext(), SetupActivity.class);
             intent.putExtra("permission_needed", new String[] {Manifest.permission.PACKAGE_USAGE_STATS, Manifest.permission.DUMP});
-            mFragment.getActivity().startActivity(intent);
+            getActivity().startActivity(intent);
 
-            mFragment.getActivity().finish();
+            getActivity().finish();
         }
     }
 

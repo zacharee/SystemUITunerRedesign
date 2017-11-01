@@ -29,39 +29,38 @@ import java.util.List;
 
 public class DemoHelper extends BaseHelper
 {
-    private final ItemDetailFragment mFragment;
     private DemoHandler mDemoHandler;
     private BroadcastReceiver switchReceiver;
 
     public DemoHelper(ItemDetailFragment fragment) {
-        mFragment = fragment;
-        mDemoHandler = new DemoHandler(mFragment.getContext());
+        super(fragment);
+        mDemoHandler = new DemoHandler(getContext());
 
-        if (SettingsUtils.hasSpecificPerm(mFragment.getContext(), Manifest.permission.DUMP)) {
+        if (SettingsUtils.hasSpecificPerm(getContext(), Manifest.permission.DUMP)) {
             setPrefListeners();
             setDemoSwitchListener();
         } else {
-            Intent intent = new Intent(mFragment.getContext(), SetupActivity.class);
+            Intent intent = new Intent(getContext(), SetupActivity.class);
             intent.putExtra("permission_needed", new String[] { Manifest.permission.DUMP });
-            mFragment.getActivity().startActivity(intent);
+            getActivity().startActivity(intent);
 
-            mFragment.getActivity().finish();
+            getActivity().finish();
         }
     }
 
     private void setPrefListeners() {
-        final Preference enableDemo = mFragment.findPreference("sysui_demo_allowed");
-        enableDemo.setEnabled(Settings.Global.getInt(mFragment.getContext().getContentResolver(), "sysui_demo_allowed", 0) == 0);
+        final Preference enableDemo = findPreference("sysui_demo_allowed");
+        enableDemo.setEnabled(Settings.Global.getInt(getContext().getContentResolver(), "sysui_demo_allowed", 0) == 0);
         enableDemo.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener()
         {
             @Override
             public boolean onPreferenceClick(Preference preference)
             {
-                if (mFragment.getActivity().checkCallingOrSelfPermission("android.permission.DUMP") == PackageManager.PERMISSION_GRANTED) {
-                    SettingsUtils.writeGlobal(mFragment.getContext(), preference.getKey(), "1");
-                    mFragment.findPreference("show_demo").setEnabled(true);
+                if (getActivity().checkCallingOrSelfPermission("android.permission.DUMP") == PackageManager.PERMISSION_GRANTED) {
+                    SettingsUtils.writeGlobal(getContext(), preference.getKey(), "1");
+                    findPreference("show_demo").setEnabled(true);
                 } else {
-                    Toast.makeText(mFragment.getContext(), mFragment.getResources().getString(R.string.grant_dump_perm), Toast.LENGTH_LONG).show();
+                    Toast.makeText(getContext(), getActivity().getResources().getString(R.string.grant_dump_perm), Toast.LENGTH_LONG).show();
                 }
                 return true;
             }
@@ -69,7 +68,7 @@ public class DemoHelper extends BaseHelper
     }
 
     private void setDemoSwitchListener() {
-        final SwitchPreference demo = (SwitchPreference) mFragment.findPreference("show_demo");
+        final SwitchPreference demo = (SwitchPreference) findPreference("show_demo");
 
         switchReceiver = new BroadcastReceiver() {
             @Override
@@ -83,7 +82,7 @@ public class DemoHelper extends BaseHelper
 
         IntentFilter filter = new IntentFilter("com.android.systemui.demo");
 
-        mFragment.getActivity().registerReceiver(switchReceiver, filter);
+        getActivity().registerReceiver(switchReceiver, filter);
 
         demo.setEnabled(mDemoHandler.isAllowed());
 
@@ -118,8 +117,8 @@ public class DemoHelper extends BaseHelper
     }
 
     private void disableOtherPreferences(boolean disable) {
-        for (int i = 0; i < mFragment.getPreferenceScreen().getRootAdapter().getCount(); i++) {
-            Object item = mFragment.getPreferenceScreen().getRootAdapter().getItem(i);
+        for (int i = 0; i < getPreferenceScreen().getRootAdapter().getCount(); i++) {
+            Object item = getPreferenceScreen().getRootAdapter().getItem(i);
 
             if (item instanceof Preference) {
                 Preference preference = (Preference) item;
@@ -133,7 +132,7 @@ public class DemoHelper extends BaseHelper
 
     public void onDestroy() {
         try {
-            mFragment.getActivity().unregisterReceiver(switchReceiver);
+            getActivity().unregisterReceiver(switchReceiver);
         } catch (Exception e) {}
     }
 }

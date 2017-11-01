@@ -3,4 +3,10 @@
     <declare-styleable name="SliderPreferenceEmbedded">
         <attr name="max" format="integer" />
     </declare-styleable>
+
+    <declare-styleable name="IconPreference">
+        <attr name="pref_title"/>
+        <attr name="pref_summary"/>
+        <attr name="pref_icon"/>
+    </declare-styleable>
 </resources>

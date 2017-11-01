@@ -14,24 +14,22 @@ import com.zacharee1.systemuituner.prefs.SliderPreferenceEmbedded;
 
 public class QSHelper extends BaseHelper
 {
-    private final ItemDetailFragment mFragment;
-
     public QSHelper(ItemDetailFragment fragment) {
-        mFragment = fragment;
-
+        super(fragment);
+        
         setSwitchStates();
         setSwitchListeners();
         setSliderState();
     }
 
     private void setSwitchStates() {
-        for (int i = 0; i < mFragment.getPreferenceScreen().getRootAdapter().getCount(); i++) { //loop through every preference
-            Object o = mFragment.getPreferenceScreen().getRootAdapter().getItem(i);
+        for (int i = 0; i < getPreferenceScreen().getRootAdapter().getCount(); i++) { //loop through every preference
+            Object o = getPreferenceScreen().getRootAdapter().getItem(i);
 
             if (o instanceof SwitchPreference) { //if current preference is a SwitchPreference
                 SwitchPreference pref = (SwitchPreference) o;
 
-                pref.setChecked(Settings.Secure.getInt(mFragment.getContext().getContentResolver(), pref.getKey(), 1) == 1);
+                pref.setChecked(Settings.Secure.getInt(getContext().getContentResolver(), pref.getKey(), 1) == 1);
             }
         }
     }
@@ -39,9 +37,9 @@ public class QSHelper extends BaseHelper
     private void setSwitchListeners() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N)
         {
-            for (int i = 0; i < mFragment.getPreferenceScreen().getRootAdapter().getCount(); i++)
+            for (int i = 0; i < getPreferenceScreen().getRootAdapter().getCount(); i++)
             { //loop through every preference
-                Object o = mFragment.getPreferenceScreen().getRootAdapter().getItem(i);
+                Object o = getPreferenceScreen().getRootAdapter().getItem(i);
 
                 if (o instanceof SwitchPreference)
                 { //if current preference is a SwitchPreference
@@ -54,10 +52,10 @@ public class QSHelper extends BaseHelper
                         {
                             if (Boolean.valueOf(o.toString()))
                             {
-                                SettingsUtils.writeSecure(mFragment.getContext(), preference.getKey(), "1");
+                                SettingsUtils.writeSecure(getContext(), preference.getKey(), "1");
                             } else
                             {
-                                SettingsUtils.writeSecure(mFragment.getContext(), preference.getKey(), "0");
+                                SettingsUtils.writeSecure(getContext(), preference.getKey(), "0");
                             }
                             return true;
                         }
@@ -65,7 +63,7 @@ public class QSHelper extends BaseHelper
                 }
             }
         } else {
-            PreferenceCategory category = (PreferenceCategory) mFragment.findPreference("general_qs");
+            PreferenceCategory category = (PreferenceCategory) findPreference("general_qs");
             category.setEnabled(false);
 
             for (int i = 0; i < category.getPreferenceCount(); i++) {
@@ -80,22 +78,22 @@ public class QSHelper extends BaseHelper
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N)
         {
 
-            SliderPreferenceEmbedded pref = (SliderPreferenceEmbedded) mFragment.findPreference("sysui_qqs_count"); //find the SliderPreference
+            SliderPreferenceEmbedded pref = (SliderPreferenceEmbedded) findPreference("sysui_qqs_count"); //find the SliderPreference
 
             pref.setMaxProgess(20);
             pref.setMinProgress(1);
-            pref.setProgressState(Settings.Secure.getInt(mFragment.getContext().getContentResolver(), "sysui_qqs_count", 5)); //set the progress/value from Settings
+            pref.setProgressState(Settings.Secure.getInt(getContext().getContentResolver(), "sysui_qqs_count", 5)); //set the progress/value from Settings
             pref.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener()
             {
                 @Override
                 public boolean onPreferenceChange(Preference preference, Object o)
                 {
-                    SettingsUtils.writeSecure(mFragment.getContext(), "sysui_qqs_count", o.toString()); //write new value to Settings if user presses OK
+                    SettingsUtils.writeSecure(getContext(), "sysui_qqs_count", o.toString()); //write new value to Settings if user presses OK
                     return true;
                 }
             });
         } else {
-            PreferenceCategory category = (PreferenceCategory) mFragment.findPreference("qqs_count_category");
+            PreferenceCategory category = (PreferenceCategory) findPreference("qqs_count_category");
             category.setEnabled(false);
 
             for (int i = 0; i < category.getPreferenceCount(); i++) {

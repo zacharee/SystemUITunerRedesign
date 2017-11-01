@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory
+        android:title="Shortcuts"
+        android:enabled="false"
+        android:key="lockscreen_shortcuts" >
+
+        <com.zacharee1.systemuituner.prefs.IconPreference
+            app:pref_title="Choose Left"
+            android:key="choose_left" />
+
+        <SwitchPreference
+            android:title="Unlock Device"
+            android:key="sysui_keyguard_left_unlock" />
+
+        <Preference
+            android:enabled="false"
+            android:selectable="false" />
+
+        <com.zacharee1.systemuituner.prefs.IconPreference
+            app:pref_title="Choose Right"
+            android:key="choose_right" />
+
+        <SwitchPreference
+            android:title="Unlock Device"
+            android:key="sysui_keyguard_right_unlock" />
+
+        <Preference
+            android:key="oreo_needed"
+            android:title="@string/requires_oreo"
+            android:selectable="false" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

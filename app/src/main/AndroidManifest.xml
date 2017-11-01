@@ -155,6 +155,9 @@
                 <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
             </intent-filter>
         </receiver>
+
+        <activity android:name=".activites.AppsListActivity" />
+        <activity android:name=".activites.ComponentsListActivity"></activity>
     </application>
 
 </manifest>

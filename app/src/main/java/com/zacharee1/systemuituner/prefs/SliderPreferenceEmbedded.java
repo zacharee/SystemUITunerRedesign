@@ -118,6 +118,7 @@ public class SliderPreferenceEmbedded extends Preference
         }
         setProgressState(progress);
         saveProgress(progress);
+        notifyChanged();
     }
 
     public void setProgressState(int progress) {

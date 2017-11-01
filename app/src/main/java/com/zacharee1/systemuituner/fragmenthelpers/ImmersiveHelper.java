@@ -17,7 +17,6 @@ import com.zacharee1.systemuituner.fragments.ItemDetailFragment;
 import com.zacharee1.systemuituner.misc.ImmersiveHandler;
 
 public class ImmersiveHelper extends BaseHelper implements Preference.OnPreferenceChangeListener {
-    private ItemDetailFragment mFragment;
 
     private CheckBoxPreference none;
     private CheckBoxPreference full;
@@ -27,14 +26,15 @@ public class ImmersiveHelper extends BaseHelper implements Preference.OnPreferen
     private ContentObserver mObserver;
 
     public ImmersiveHelper(ItemDetailFragment fragment) {
-        mFragment = fragment;
-        none = (CheckBoxPreference) mFragment.findPreference(ImmersiveHandler.DISABLED);
-        full = (CheckBoxPreference) mFragment.findPreference(ImmersiveHandler.FULL);
-        status = (CheckBoxPreference) mFragment.findPreference(ImmersiveHandler.STATUS);
-        navi = (CheckBoxPreference) mFragment.findPreference(ImmersiveHandler.NAV);
-        preconf = (CheckBoxPreference) mFragment.findPreference(ImmersiveHandler.PRECONF);
+        super(fragment);
 
-        mFragment.findPreference("immersive_tile_mode").setOnPreferenceChangeListener(this);
+        none = (CheckBoxPreference) findPreference(ImmersiveHandler.DISABLED);
+        full = (CheckBoxPreference) findPreference(ImmersiveHandler.FULL);
+        status = (CheckBoxPreference) findPreference(ImmersiveHandler.STATUS);
+        navi = (CheckBoxPreference) findPreference(ImmersiveHandler.NAV);
+        preconf = (CheckBoxPreference) findPreference(ImmersiveHandler.PRECONF);
+
+        findPreference("immersive_tile_mode").setOnPreferenceChangeListener(this);
 
         none.setOnPreferenceChangeListener(this);
         full.setOnPreferenceChangeListener(this);
@@ -57,11 +57,11 @@ public class ImmersiveHelper extends BaseHelper implements Preference.OnPreferen
             }
         };
 
-        mFragment.getActivity().getContentResolver().registerContentObserver(Settings.Global.CONTENT_URI, true, mObserver);
+        getActivity().getContentResolver().registerContentObserver(Settings.Global.CONTENT_URI, true, mObserver);
     }
 
     private void setProperBoxChecked() {
-        String currentMode = ImmersiveHandler.getMode(mFragment.getContext(), false);
+        String currentMode = ImmersiveHandler.getMode(getContext(), false);
 
         if (currentMode == null || currentMode.isEmpty()) {
             currentMode = ImmersiveHandler.DISABLED;
@@ -80,7 +80,7 @@ public class ImmersiveHelper extends BaseHelper implements Preference.OnPreferen
 
     private void disableQSSettingIfBelowNougat() {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.N) {
-            PreferenceCategory category = (PreferenceCategory) mFragment.findPreference("config_qs");
+            PreferenceCategory category = (PreferenceCategory) findPreference("config_qs");
 
             for (int i = 0; i < category.getPreferenceCount(); i++) {
                 Preference preference = category.getPreference(i);
@@ -93,7 +93,7 @@ public class ImmersiveHelper extends BaseHelper implements Preference.OnPreferen
     @Override
     public void onDestroy() {
         try {
-            mFragment.getActivity().getContentResolver().unregisterContentObserver(mObserver);
+            getActivity().getContentResolver().unregisterContentObserver(mObserver);
         } catch (Exception e) {}
     }
 
@@ -107,14 +107,14 @@ public class ImmersiveHelper extends BaseHelper implements Preference.OnPreferen
             if (!isChecked) boxPreference.setChecked(true);
             else {
                 setAllOthersDisabled(boxPreference.getKey());
-                ImmersiveHandler.setMode(mFragment.getActivity(), boxPreference.getKey());
+                ImmersiveHandler.setMode(getActivity(), boxPreference.getKey());
             }
         }
 
         if (preference instanceof ListPreference) {
             String which = o.toString();
 
-            if (ImmersiveHandler.isInImmersive(mFragment.getContext())) ImmersiveHandler.setMode(mFragment.getContext(), which);
+            if (ImmersiveHandler.isInImmersive(getContext())) ImmersiveHandler.setMode(getContext(), which);
         }
 
         return true;

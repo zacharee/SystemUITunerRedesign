@@ -189,4 +189,6 @@
     <string name="mode">Modo</string>
     <string name="qs_column_count">Cuenta de Columnas QS</string>
     <string name="qs_row_count">Cuenta de Filas QS</string>
+    <string name="lockscreen">Pantalla de Bloqueo</string>
+    <string name="requires_oreo">Necesita Oreo o superior.</string>
 </resources>

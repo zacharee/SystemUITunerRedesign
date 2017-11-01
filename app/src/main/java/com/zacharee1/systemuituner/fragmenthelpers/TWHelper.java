@@ -11,22 +11,20 @@ import com.zacharee1.systemuituner.prefs.SliderPreferenceEmbedded;
 
 public class TWHelper extends BaseHelper
 {
-    private final ItemDetailFragment mFragment;
 
     public TWHelper(ItemDetailFragment fragment) {
-        mFragment = fragment;
-
+        super(fragment);
 //        setHBWState();
 //        setHBWListener();
         setUpQSStuff();
     }
 
     private void setUpQSStuff() {
-        final SliderPreferenceEmbedded rows = (SliderPreferenceEmbedded) mFragment.findPreference("qs_tile_row");
-        final SliderPreferenceEmbedded columns = (SliderPreferenceEmbedded) mFragment.findPreference("qs_tile_column");
+        final SliderPreferenceEmbedded rows = (SliderPreferenceEmbedded) findPreference("qs_tile_row");
+        final SliderPreferenceEmbedded columns = (SliderPreferenceEmbedded) findPreference("qs_tile_column");
         int defVal = 3;
-        int savedRowVal = Settings.Secure.getInt(mFragment.getActivity().getContentResolver(), rows.getKey(), defVal);
-        int savedColVal = Settings.Secure.getInt(mFragment.getActivity().getContentResolver(), columns.getKey(), defVal);
+        int savedRowVal = Settings.Secure.getInt(getActivity().getContentResolver(), rows.getKey(), defVal);
+        int savedColVal = Settings.Secure.getInt(getActivity().getContentResolver(), columns.getKey(), defVal);
 
 //        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.N_MR1) {
 //            rows.setMinProgress(1);
@@ -34,7 +32,7 @@ public class TWHelper extends BaseHelper
 //        }
 
         rows.setMinProgress(1);
-        columns.setMinProgress(1);
+        columns.setMinProgress(2);
 
         rows.setProgress(savedRowVal);
         columns.setProgress(savedColVal);
@@ -46,7 +44,7 @@ public class TWHelper extends BaseHelper
                     newValue = 1;
                     rows.setProgress(1);
                 }
-                SettingsUtils.writeSecure(mFragment.getActivity(), preference.getKey(), newValue.toString());
+                SettingsUtils.writeSecure(getActivity(), preference.getKey(), newValue.toString());
                 return true;
             }
         });
@@ -57,15 +55,15 @@ public class TWHelper extends BaseHelper
                     newValue = 1;
                     columns.setProgress(1);
                 }
-                SettingsUtils.writeSecure(mFragment.getActivity(), preference.getKey(), newValue.toString());
+                SettingsUtils.writeSecure(getActivity(), preference.getKey(), newValue.toString());
                 return true;
             }
         });
     }
 
 //    private void setHBWState() {
-//        String hbw = Settings.Global.getString(mFragment.getContext().getContentResolver(), "limit_brightness_state");
-//        SwitchPreference hbwSwitch = (SwitchPreference) mFragment.findPreference("high_bright_warning");
+//        String hbw = Settings.Global.getString(getContext().getContentResolver(), "limit_brightness_state");
+//        SwitchPreference hbwSwitch = (SwitchPreference) findPreference("high_bright_warning");
 //
 //        if (hbw == null || hbw.isEmpty()) {
 //            hbwSwitch.setChecked(false);
@@ -78,7 +76,7 @@ public class TWHelper extends BaseHelper
 //    }
 
 //    private void setHBWListener() {
-//        SwitchPreference hbwSwitch = (SwitchPreference) mFragment.findPreference("high_bright_warning");
+//        SwitchPreference hbwSwitch = (SwitchPreference) findPreference("high_bright_warning");
 //
 //        hbwSwitch.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener()
 //        {
@@ -86,9 +84,9 @@ public class TWHelper extends BaseHelper
 //            public boolean onPreferenceChange(Preference preference, Object o)
 //            {
 //                if (Boolean.valueOf(o.toString())) {
-//                    SettingsUtils.writeGlobal(mFragment.getContext(), "limit_brightness_state", "80,80");
+//                    SettingsUtils.writeGlobal(getContext(), "limit_brightness_state", "80,80");
 //                } else {
-//                    SettingsUtils.writeGlobal(mFragment.getContext(), "limit_brightness_state", "");
+//                    SettingsUtils.writeGlobal(getContext(), "limit_brightness_state", "");
 //                }
 //                return true;
 //            }

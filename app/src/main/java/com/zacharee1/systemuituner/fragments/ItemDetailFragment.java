@@ -1,5 +1,7 @@
 package com.zacharee1.systemuituner.fragments;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
@@ -11,6 +13,7 @@ import android.util.Log;
 import com.zacharee1.systemuituner.fragmenthelpers.AutoHelper;
 import com.zacharee1.systemuituner.fragmenthelpers.BaseHelper;
 import com.zacharee1.systemuituner.fragmenthelpers.ImmersiveHelper;
+import com.zacharee1.systemuituner.fragmenthelpers.LockHelper;
 import com.zacharee1.systemuituner.misc.TweakItems;
 import com.zacharee1.systemuituner.activites.ItemDetailActivity;
 import com.zacharee1.systemuituner.activites.ItemListActivity;
@@ -19,6 +22,8 @@ import com.zacharee1.systemuituner.fragmenthelpers.MiscHelper;
 import com.zacharee1.systemuituner.fragmenthelpers.QSHelper;
 import com.zacharee1.systemuituner.fragmenthelpers.StatbarHelper;
 import com.zacharee1.systemuituner.fragmenthelpers.TWHelper;
+
+import java.util.concurrent.locks.Lock;
 
 /**
  * A fragment representing a single Item detail screen.
@@ -88,6 +93,8 @@ public class ItemDetailFragment extends PreferenceFragment
                 case "immersive":
                     helper = new ImmersiveHelper(this);
                     break;
+                case "lockscreen":
+                    helper = new LockHelper(this);
             }
 
             getActivity().setTitle(mItem.content);
@@ -105,5 +112,12 @@ public class ItemDetailFragment extends PreferenceFragment
         if (helper2 != null) {
             helper2.onDestroy();
         }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (helper != null) helper.onResume();
+        if (helper2 != null) helper2.onResume();
     }
 }

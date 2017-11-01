@@ -37,7 +37,8 @@ public class TweakItems
         addItem(new TweakItem("demo", R.drawable.ic_tv_black_24dp, App.getContext().getResources().getString(R.string.demo_mode), R.xml.pref_demo));
         addItem(new TweakItem("touchwiz", R.drawable.ic_phone_android_black_24dp, App.getContext().getResources().getString(R.string.touchwiz), R.xml.pref_tw));
         addItem(new TweakItem("misc", R.drawable.ic_brush_black_24dp, App.getContext().getResources().getString(R.string.miscellaneous), R.xml.pref_misc));
-        addItem(new TweakItem("immersive", R.drawable.ic_fullscreen_black_24dp, "Immersive Mode", R.xml.pref_imm));
+        addItem(new TweakItem("immersive", R.drawable.ic_fullscreen_black_24dp, App.getContext().getResources().getString(R.string.immersive_mode), R.xml.pref_imm));
+        addItem(new TweakItem("lockscreen", R.drawable.ic_lock_outline_black_24dp, App.getContext().getResources().getString(R.string.lockscreen), R.xml.pref_lock));
     }
 
     private static void addItem(TweakItem item) {
