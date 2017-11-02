@@ -2,8 +2,12 @@ package com.zacharee1.systemuituner.prefs;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.preference.Preference;
+import android.support.annotation.ColorInt;
+import android.support.annotation.ColorRes;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -22,9 +26,7 @@ public class IconPreference extends Preference {
     private CharSequence mTitleString;
     private CharSequence mSummaryString;
 
-    private int mTitleRes;
-    private int mSummaryRes;
-    private int mDrawableRes;
+    private int mDrawableColor;
 
     private Drawable mDrawable;
 
@@ -45,17 +47,12 @@ public class IconPreference extends Preference {
                 0, 0);
 
         try {
-            try {
-                mTitleRes = a.getInt(R.styleable.IconPreference_pref_title, 0);
-            } catch (NumberFormatException e) {
-                mTitleString = a.getString(R.styleable.IconPreference_pref_title);
-            }
-            try {
-                mSummaryRes = a.getInt(R.styleable.IconPreference_pref_summary, 0);
-            } catch (NumberFormatException e) {
-                mSummaryString = a.getString(R.styleable.IconPreference_pref_summary);
-            }
-            mDrawableRes = a.getInt(R.styleable.IconPreference_pref_icon, 0);
+            mTitleString = a.getString(R.styleable.IconPreference_pref_title);
+            mSummaryString = a.getString(R.styleable.IconPreference_pref_summary);
+            mDrawable = a.getDrawable(R.styleable.IconPreference_pref_icon);
+            mDrawableColor = a.getColor(R.styleable.IconPreference_pref_icon_tint, Color.TRANSPARENT);
+
+            if (mDrawable != null) mDrawable.setColorFilter(mDrawableColor, PorterDuff.Mode.SRC_ATOP);
         } finally {
             a.recycle();
         }
@@ -72,14 +69,7 @@ public class IconPreference extends Preference {
         View view = super.onCreateView(parent);
         mView = view;
 
-        setIconInternal(mDrawableRes);
-        setIconInternal(mDrawable);
-
-        setTitleInternal(mTitleRes);
-        setTitleInternal(mTitleString);
-
-        setSummaryInternal(mSummaryRes);
-        setSummaryInternal(mSummaryString);
+        setInternal();
 
         return view;
     }
@@ -90,18 +80,16 @@ public class IconPreference extends Preference {
 
         mView = view;
 
-        setIconInternal(mDrawableRes);
-        setIconInternal(mDrawable);
+        setInternal();
+    }
 
-        setTitleInternal(mTitleRes);
-        setTitleInternal(mTitleString);
-
-        setSummaryInternal(mSummaryRes);
-        setSummaryInternal(mSummaryString);
+    @Nullable
+    public View getView() {
+        return mView;
     }
 
     public void setIcon(int drawableResId) {
-        mDrawableRes = drawableResId;
+        mDrawable = getContext().getResources().getDrawable(drawableResId, null);
         notifyChanged();
     }
 
@@ -110,14 +98,14 @@ public class IconPreference extends Preference {
         notifyChanged();
     }
 
-    @Nullable
-    public View getView() {
-        return mView;
+    public void setIconColor(@ColorInt int color) {
+        mDrawableColor = color;
+        notifyChanged();
     }
 
     @Override
     public void setTitle(int titleResId) {
-        mTitleRes = titleResId;
+        mTitleString = getContext().getResources().getString(titleResId);
         notifyChanged();
     }
 
@@ -129,7 +117,7 @@ public class IconPreference extends Preference {
 
     @Override
     public void setSummary(int summaryResId) {
-        mSummaryRes = summaryResId;
+        mSummaryString = getContext().getResources().getString(summaryResId);
         notifyChanged();
     }
 
@@ -141,23 +129,18 @@ public class IconPreference extends Preference {
 
     @Override
     protected void notifyChanged() {
-        setIconInternal(mDrawableRes);
-        setIconInternal(mDrawable);
-
-        setTitleInternal(mTitleRes);
-        setTitleInternal(mTitleString);
-
-        setSummaryInternal(mSummaryRes);
-        setSummaryInternal(mSummaryString);
-
+        setInternal();
         super.notifyChanged();
     }
 
-    private void setIconInternal(int res) {
-        if (mView != null && res != 0) {
-            ((ImageView) mView.findViewById(R.id.icon)).setImageResource(res);
-            mView.invalidate();
-        }
+    private void setInternal() {
+        setIconColorInternal(mDrawableColor);
+
+        setIconInternal(mDrawable);
+
+        setTitleInternal(mTitleString);
+
+        setSummaryInternal(mSummaryString);
     }
 
     private void setIconInternal(Drawable drawable) {
@@ -167,9 +150,10 @@ public class IconPreference extends Preference {
         }
     }
 
-    private void setTitleInternal(int res) {
-        if (mView != null && res != 0) {
-            ((TextView) mView.findViewById(R.id.title)).setText(res);
+    private void setIconColorInternal(@ColorInt int color) {
+        if (mView != null && mDrawable != null && color != -1) {
+            mDrawable.setColorFilter(color, PorterDuff.Mode.SRC_ATOP);
+            setIconInternal(mDrawable);
             mView.invalidate();
         }
     }
@@ -177,13 +161,6 @@ public class IconPreference extends Preference {
     private void setTitleInternal(CharSequence string) {
         if (mView != null && string != null) {
             ((TextView) mView.findViewById(R.id.title)).setText(string);
-            mView.invalidate();
-        }
-    }
-
-    private void setSummaryInternal(int res) {
-        if (mView != null && res != 0) {
-            ((TextView) mView.findViewById(R.id.summary)).setText(res);
             mView.invalidate();
         }
     }

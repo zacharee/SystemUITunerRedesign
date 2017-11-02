@@ -3,16 +3,24 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <PreferenceCategory
-        android:title="Shortcuts"
+        android:title="@string/shortcuts"
         android:enabled="false"
         android:key="lockscreen_shortcuts" >
 
+        <Preference
+            android:key="oreo_needed"
+            android:title="@string/requires_oreo"
+            android:selectable="false" />
+
         <com.zacharee1.systemuituner.prefs.IconPreference
-            app:pref_title="Choose Left"
+            app:pref_title="@string/choose_left"
+            app:pref_summary="@string/not_set"
+            app:pref_icon="@drawable/ic_help_outline_black_24dp"
+            app:pref_icon_tint="#fff"
             android:key="choose_left" />
 
         <SwitchPreference
-            android:title="Unlock Device"
+            android:title="@string/unlock_device"
             android:key="sysui_keyguard_left_unlock" />
 
         <Preference
@@ -20,17 +28,15 @@
             android:selectable="false" />
 
         <com.zacharee1.systemuituner.prefs.IconPreference
-            app:pref_title="Choose Right"
+            app:pref_title="@string/choose_right"
+            app:pref_summary="@string/not_set"
+            app:pref_icon="@drawable/ic_help_outline_black_24dp"
+            app:pref_icon_tint="#fff"
             android:key="choose_right" />
 
         <SwitchPreference
-            android:title="Unlock Device"
+            android:title="@string/unlock_device"
             android:key="sysui_keyguard_right_unlock" />
-
-        <Preference
-            android:key="oreo_needed"
-            android:title="@string/requires_oreo"
-            android:selectable="false" />
 
     </PreferenceCategory>
 
