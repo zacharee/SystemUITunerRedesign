@@ -3,17 +3,11 @@ package com.zacharee1.systemuituner.prefs;
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.os.Build;
 import android.preference.Preference;
 import android.util.AttributeSet;
-import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.SeekBar;
-import android.widget.TableLayout;
 import android.widget.TextView;
 
 import com.zacharee1.systemuituner.R;
@@ -26,6 +20,11 @@ public class SliderPreferenceEmbedded extends Preference
     private int mMaxProgress = -1;
     private int mMinProgress = -1;
 
+    private int mXmlProgress = 0;
+
+    private boolean isPercentage = false;
+
+    @TargetApi(21)
     public SliderPreferenceEmbedded(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
     }
@@ -44,6 +43,10 @@ public class SliderPreferenceEmbedded extends Preference
 
         try {
             mMaxProgress = a.getInteger(R.styleable.SliderPreferenceEmbedded_max, -1);
+            mMinProgress = a.getInteger(R.styleable.SliderPreferenceEmbedded_min, -1);
+            mXmlProgress = a.getInteger(R.styleable.SliderPreferenceEmbedded_default_progress, -1);
+
+            isPercentage = a.getBoolean(R.styleable.SliderPreferenceEmbedded_percentage, false);
         } finally {
             a.recycle();
         }
@@ -56,6 +59,9 @@ public class SliderPreferenceEmbedded extends Preference
     @Override
     protected View onCreateView(ViewGroup parent)
     {
+        setLayoutResource(R.layout.pref_view_embedded);
+        setWidgetLayoutResource(R.layout.slider_pref_view);
+
         final View view = super.onCreateView(parent);
 
         this.view = view;
@@ -72,14 +78,21 @@ public class SliderPreferenceEmbedded extends Preference
 
         textView.setText(String.valueOf(mProgress));
 
+        addPercentageIfTrue();
+
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener()
         {
             @Override
             public void onProgressChanged(SeekBar seekBar, int i, boolean b)
             {
-                textView.setText(String.valueOf(i));
-                setProgressState(i);
-                saveProgress(i);
+                if (seekBar.getProgress() < mMinProgress) {
+                    seekBar.setProgress(mMinProgress);
+                } else {
+                    textView.setText(String.valueOf(i));
+                    setProgressState(i);
+                    saveProgress(i);
+                    addPercentageIfTrue();
+                }
                 if (mListener != null) mListener.onPreferenceChange(SliderPreferenceEmbedded.this, i);
             }
 
@@ -118,6 +131,7 @@ public class SliderPreferenceEmbedded extends Preference
         }
         setProgressState(progress);
         saveProgress(progress);
+        addPercentageIfTrue();
         notifyChanged();
     }
 
@@ -137,13 +151,30 @@ public class SliderPreferenceEmbedded extends Preference
         mMinProgress = minProgress;
     }
 
+    public void setIsPercentage(boolean isPercentage) {
+        this.isPercentage = isPercentage;
+
+        addPercentageIfTrue();
+    }
+
+    public boolean getIsPercentage() {
+        return isPercentage;
+    }
+
+    private void addPercentageIfTrue() {
+        if (isPercentage && view != null) {
+            TextView textView = view.findViewById(R.id.slider_pref_text);
+            textView.setText(textView.getText().toString().concat("%"));
+        }
+    }
+
     public View getView() {
         return view;
     }
 
     @SuppressWarnings("WeakerAccess")
     public int getSavedProgress() {
-        return getSharedPreferences().getInt(getKey(), 0);
+        return getSharedPreferences().getInt(getKey(), mXmlProgress);
     }
 
     @SuppressWarnings("WeakerAccess")

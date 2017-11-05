@@ -1,16 +1,27 @@
 package com.zacharee1.systemuituner.misc;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
+import android.os.Build;
+import android.preference.PreferenceManager;
+import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.util.TypedValue;
+
+import com.zacharee1.systemuituner.R;
+import com.zacharee1.systemuituner.activites.ItemListActivity;
+import com.zacharee1.systemuituner.activites.MainActivity;
 
 import java.io.BufferedReader;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 
 @SuppressWarnings({"WeakerAccess", "unused"})
 public class Utils
@@ -73,6 +84,37 @@ public class Utils
         } catch(IOException e){
             e.printStackTrace();
             return null;
+        }
+    }
+
+    public static String[] checkPermissions(Context context, String[] permissions) {
+        ArrayList<String> notPerms = new ArrayList<>();
+
+        for (String permission : permissions) {
+            if (context.checkCallingOrSelfPermission(permission) != PackageManager.PERMISSION_GRANTED) notPerms.add(permission);
+        }
+
+        return notPerms.toArray(new String[] {});
+    }
+
+    public static void startUp(Activity context) {
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
+
+        boolean firstStart = sharedPreferences.getBoolean("first_start", true);
+        if (firstStart && Build.MANUFACTURER.toLowerCase().contains("samsung") && Build.VERSION.SDK_INT < Build.VERSION_CODES.O) {
+            sharedPreferences.edit().putBoolean("safe_mode", true).apply();
+            new AlertDialog.Builder(context)
+                    .setTitle(context.getResources().getString(R.string.notice))
+                    .setMessage(context.getResources().getString(R.string.safe_mode_auto_enabled))
+                    .setPositiveButton(context.getResources().getString(R.string.ok), null)
+                    .show();
+        }
+        sharedPreferences.edit().putBoolean("first_start", false).apply();
+
+        if (sharedPreferences.getBoolean("hide_welcome_screen", false)) {
+            context.startActivity(new Intent(context, ItemListActivity.class));
+        } else {
+            context.startActivity(new Intent(context, MainActivity.class));
         }
     }
 }

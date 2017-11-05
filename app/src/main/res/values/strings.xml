@@ -25,11 +25,6 @@
     <string name="status_bar">Status Bar</string>
     <string name="reboot_required">(Reboot Required)</string>
     <string name="sorry">Sorry…</string>
-    <string name="non_root_info">Don\'t worry. It\'s fine if you aren\'t. There are just some extra things you need to do in that case.</string>
-    <string name="not_rooted_huh">Not rooted, huh?</string>
-    <string name="adb_set_up">ADB all set up? Good. Now, let\'s get started.</string>
-    <string name="adb_instructions">For this to work, you\'ll need a computer, a USB cable and ADB.</string>
-    <string name="adb_perm_grant">Run the following commands (with your device connected) in CMD or Terminal:</string>
     <string name="created_by">App created by <a href='https://forum.xda-developers.com/member.php?u=7055541'>Zacharee1</a></string>
     <string name="spanish_from">Spanish translation by <a href='https://es.stackoverflow.com/users/28567/aaron-romero'>Aaron Romero</a> and <a href='https://forum.xda-developers.com/member.php?u=7055541'>Zacharee1</a></string>
     <string name="enabled">Enabled</string>
@@ -99,9 +94,7 @@
     <string name="danger_zone">Danger Zone</string>
     <string name="safe_mode">Safe Mode</string>
     <string name="enable_custom_settings_input">Enable Custom Settings Input</string>
-    <string name="permissions_failed">Hmm. Something went wrong. Make sure you set the permissions correctly. (SystemUI Tuner)</string>
     <string name="enable">Enable</string>
-    <string name="samsung" translatable="false">Samsung</string>
     <string name="knox_icon">KNOX Icon</string>
     <string name="smart_network_icon">Smart Network Icon</string>
     <string name="glove_icon">Glove Icon</string>
@@ -160,7 +153,6 @@
     <string name="donate_2" translatable="false">$2</string>
     <string name="donate_5" translatable="false">$5</string>
     <string name="paypal" translatable="false">PayPal</string>
-    <string name="high_brightness_warning">High brightness warning</string>
     <string name="qs_header_tile_count">QS Header Tile Count</string>
     <string name="fancy_pulldown_animation">Fancy Pulldown Animation</string>
     <string name="move_full_rows">Move Full Rows</string>
@@ -213,4 +205,18 @@
     <string name="unlock_device">Unlock Device</string>
     <string name="shortcuts">Shortcuts</string>
     <string name="not_set">Not Set</string>
+
+    <string name="welcome">Welcome!</string>
+    <string name="some_things">Examples</string>
+    <string name="no_root">No Root is Needed</string>
+    <string name="permissions">Permissions</string>
+
+    <string name="intro_1">Thanks for downloading my app! SystemUI Tuner is meant to replace/supplement the built-in System UI Tuner seen in AOSP. Both users with and without System UI Tuner can benefit from this app.</string>
+    <string name="intro_2">Like in AOSP, SystemUI Tuner allows you to hide certain status bar icons that you don\'t want shown. However, you also can do many other things, like turn off heads-up notifications or even toggle immersive mode.</string>
+    <string name="intro_3">There is a plethora of pre-defined options for the status bar, but if you don\'t see an icon you want to hide, you can try the Auto-Detect feature, which will attempt to detect icons that can be hidden.</string>
+    <string name="intro_4">And the best part about this app? It doesn\'t need root! It will attempt to get root privileges, but if it can\'t you will have to use ADB. USING ADB IS NOT ROOTING!</string>
+    <string name="intro_5">Once you tap the finish button, SystemUI Tuner will attempt to gain root access. If it can, it will grant all needed permissions for you. Otherwise, instructions will appear to guide you.</string>
+
+    <string name="adb_setup">The permissions above must be granted to continue. Root access was either denied or unavailable, which means you\'ll have to grant these permissions using ADB.</string>
+    <string name="missing_perms">Missing Permissions!</string>
 </resources>

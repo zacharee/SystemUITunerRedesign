@@ -10,11 +10,13 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 
+import com.zacharee1.systemuituner.activites.IntroActivity;
 import com.zacharee1.systemuituner.activites.ItemListActivity;
 import com.zacharee1.systemuituner.activites.MainActivity;
 import com.zacharee1.systemuituner.activites.SetupActivity;
 import com.zacharee1.systemuituner.misc.SettingsUtils;
 import com.zacharee1.systemuituner.misc.SuUtils;
+import com.zacharee1.systemuituner.misc.Utils;
 
 public class LauncherActivity extends AppCompatActivity
 {
@@ -24,43 +26,36 @@ public class LauncherActivity extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
 
-        if (!SettingsUtils.hasSpecificPerm(this, Manifest.permission.WRITE_SECURE_SETTINGS)) {
-            if (SuUtils.testSudo()) {
-                SuUtils.sudo("pm grant com.zacharee1.systemuituner android.permission.WRITE_SECURE_SETTINGS ; " +
-                        "pm grant com.zacharee1.systemuituner android.permission.DUMP ; " +
-                        "pm grant com.zacharee1.systemuituner android.permission.PACKAGE_USAGE_STATS");
-                startUp();
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+
+        if (preferences.getBoolean("show_intro", true)) {
+            startActivity(new Intent(this, IntroActivity.class));
+        } else {
+            String[] perms = new String[]{
+                    Manifest.permission.WRITE_SECURE_SETTINGS
+            };
+
+            String[] ret;
+
+            if ((ret = Utils.checkPermissions(this, perms)).length > 0) {
+                if (SuUtils.testSudo()) {
+                    SuUtils.sudo("pm grant com.zacharee1.systemuituner android.permission.WRITE_SECURE_SETTINGS ; " +
+                            "pm grant com.zacharee1.systemuituner android.permission.DUMP ; " +
+                            "pm grant com.zacharee1.systemuituner android.permission.PACKAGE_USAGE_STATS");
+                    Utils.startUp(this);
+                    finish();
+                } else {
+                    Intent intent = new Intent(this, SetupActivity.class);
+                    intent.putExtra("permission_needed", ret);
+                    startActivity(intent);
+                    finish();
+                }
             } else {
-                Intent intent = new Intent(this, SetupActivity.class);
-                intent.putExtra("permission_needed", new String[] { Manifest.permission.WRITE_SECURE_SETTINGS });
-                startActivity(intent);
+                Utils.startUp(this);
                 finish();
             }
-        } else {
-            startUp();
         }
-    }
 
-    private void startUp() {
-        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-
-
-        boolean firstStart = sharedPreferences.getBoolean("first_start", true);
-        if (firstStart && Build.MANUFACTURER.toLowerCase().contains("samsung") && Build.VERSION.SDK_INT < Build.VERSION_CODES.O) {
-            sharedPreferences.edit().putBoolean("safe_mode", true).apply();
-            new AlertDialog.Builder(this)
-                    .setTitle(getResources().getString(R.string.notice))
-                    .setMessage(getResources().getString(R.string.safe_mode_auto_enabled))
-                    .setPositiveButton(getResources().getString(R.string.ok), null)
-                    .show();
-        }
-        sharedPreferences.edit().putBoolean("first_start", false).apply();
-
-        if (sharedPreferences.getBoolean("hide_welcome_screen", false)) {
-            startActivity(new Intent(this, ItemListActivity.class));
-        } else {
-            startActivity(new Intent(this, MainActivity.class));
-        }
         finish();
     }
 }

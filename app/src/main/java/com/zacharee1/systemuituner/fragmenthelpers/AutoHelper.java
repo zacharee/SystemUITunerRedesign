@@ -1,6 +1,7 @@
 package com.zacharee1.systemuituner.fragmenthelpers;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.preference.Preference;
@@ -12,6 +13,7 @@ import com.zacharee1.systemuituner.fragments.ItemDetailFragment;
 import com.zacharee1.systemuituner.misc.SettingsUtils;
 import com.zacharee1.systemuituner.misc.Utils;
 
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Map;

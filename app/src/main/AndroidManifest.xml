@@ -157,7 +157,8 @@
         </receiver>
 
         <activity android:name=".activites.AppsListActivity" />
-        <activity android:name=".activites.ComponentsListActivity"></activity>
+        <activity android:name=".activites.ComponentsListActivity" />
+        <activity android:name=".activites.IntroActivity"></activity>
     </application>
 
 </manifest>
