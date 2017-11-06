@@ -194,8 +194,8 @@
   <string name="intro_1">Grazie per aver scaricato la mia app! SystemUI Tuner vuole rimpiazzare/integrare il sintetizzatore di interfaccia utente visto nelle rom AOSP. Entrambi gli utenti con e senza sintetizzatore di interfaccia utente possono beneficiare di questa app.</string>
   <string name="intro_2">Come nelle rom AOSP, SystemUI Tuner ti permette di nascondere alcune icone della barra di stato che non desideri vedere. Tuttavia, puoi fare anche molte altre cose, come disattivare le notifiche di Heads-UP o attivare/disattivare la modalità immersiva.</string>
   <string name="intro_3">C\'è una pletora di opzioni pre-definite per la barra di stato, ma se non vedi un icona che vuoi nascondere, puoi provare la modalità Auto-Detect, che proverà a rilevare le icone che possono essere nascoste.</string>
-  <string name="intro_4">And the best part about this app? It doesn\'t need root! It will attempt to get root privileges, but if it can\'t you will have to use ADB. USING ADB IS NOT ROOTING!</string>
-  <string name="intro_5">Once you tap the finish button, SystemUI Tuner will attempt to gain root access. If it can, it will grant all needed permissions for you. Otherwise, instructions will appear to guide you.</string>
+  <string name="intro_4">E la parte migliore di questa app? Non ha bisogno di root! Tenterà di ottenere i privilegi di root, ma nel caso non sia possibile si dovra utilizzare ADB. UTILIZZARE ADB NON È ROOTARE!</string>
+  <string name="intro_5">Una volta premuto il pulsante fine, SystemUI Tuner tenterà di ottenere l\'accesso root. Se possibile, concederà tutte le autorizzazioni per voi. In caso contrario, compariranno delle istruzioni per guidarvi.</string>
   <string name="adb_setup">The permissions above must be granted to continue. Root access was either denied or unavailable, which means you\'ll have to grant these permissions using ADB.</string>
-  <string name="missing_perms">Missing Permissions!</string>
+  <string name="missing_perms">Permesso mancante!</string>
 </resources>
