@@ -1,9 +1,11 @@
 package com.zacharee1.systemuituner.receivers;
 
+import android.app.Notification;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.preference.PreferenceManager;
 import android.provider.Settings;
 import android.util.Log;
@@ -34,7 +36,9 @@ public class BootReceiver extends BroadcastReceiver
 //            String backupQSVal = Settings.Global.getString(context.getContentResolver(), "sysui_qs_fancy_anim_backup");
 //            SettingsUtils.writeSecure(context, "sysui_qs_fancy_anim", backupQSVal);
 
-            context.startService(new Intent(context, SafeModeService.class));
+            if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.N_MR1) {
+                context.startService(new Intent(context, SafeModeService.class));
+            }
 
             Log.e("BOOTED", "BOOTED");
 

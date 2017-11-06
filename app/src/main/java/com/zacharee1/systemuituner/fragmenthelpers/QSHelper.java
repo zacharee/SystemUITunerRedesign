@@ -6,11 +6,10 @@ import android.preference.PreferenceCategory;
 import android.preference.SwitchPreference;
 import android.provider.Settings;
 
+import com.zacharee1.sliderpreferenceembedded.SliderPreferenceEmbedded;
 import com.zacharee1.systemuituner.R;
 import com.zacharee1.systemuituner.fragments.ItemDetailFragment;
-import com.zacharee1.systemuituner.prefs.SliderPreference;
 import com.zacharee1.systemuituner.misc.SettingsUtils;
-import com.zacharee1.systemuituner.prefs.SliderPreferenceEmbedded;
 
 public class QSHelper extends BaseHelper
 {

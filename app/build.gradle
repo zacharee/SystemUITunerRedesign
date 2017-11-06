@@ -64,4 +64,5 @@ dependencies {
         transitive = true
     }
     implementation 'com.github.apl-devs:appintro:v4.2.2'
+    implementation 'com.github.zacharee:SliderPreferenceEmbedded:-SNAPSHOT'
 }

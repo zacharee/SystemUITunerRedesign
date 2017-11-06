@@ -1,13 +1,11 @@
 package com.zacharee1.systemuituner.fragmenthelpers;
 
-import android.os.Build;
 import android.preference.Preference;
-import android.preference.SwitchPreference;
 import android.provider.Settings;
 
+import com.zacharee1.sliderpreferenceembedded.SliderPreferenceEmbedded;
 import com.zacharee1.systemuituner.fragments.ItemDetailFragment;
 import com.zacharee1.systemuituner.misc.SettingsUtils;
-import com.zacharee1.systemuituner.prefs.SliderPreferenceEmbedded;
 
 public class TWHelper extends BaseHelper
 {

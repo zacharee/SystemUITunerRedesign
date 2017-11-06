@@ -17,28 +17,20 @@
         <com.zacharee1.systemuituner.prefs.TimePreference
             android:title="@string/select_time"
             android:key="selected_time"/>
-        <com.zacharee1.systemuituner.prefs.SliderPreferenceEmbedded
+        <com.zacharee1.sliderpreferenceembedded.SliderPreferenceEmbedded
             app:max="100"
-            android:layout="@layout/pref_view_embedded"
-            android:widgetLayout="@layout/slider_pref_view"
             android:title="@string/select_battery_level"
             android:key="selected_battery_level"/>
-        <com.zacharee1.systemuituner.prefs.SliderPreferenceEmbedded
+        <com.zacharee1.sliderpreferenceembedded.SliderPreferenceEmbedded
             app:max="3"
-            android:layout="@layout/pref_view_embedded"
-            android:widgetLayout="@layout/slider_pref_view"
             android:title="@string/wifi_strength"
             android:key="wifi_strength"/>
-        <com.zacharee1.systemuituner.prefs.SliderPreferenceEmbedded
+        <com.zacharee1.sliderpreferenceembedded.SliderPreferenceEmbedded
             app:max="4"
-            android:layout="@layout/pref_view_embedded"
-            android:widgetLayout="@layout/slider_pref_view"
             android:title="@string/mobile_strength"
             android:key="selected_mobile_strength"/>
-        <com.zacharee1.systemuituner.prefs.SliderPreferenceEmbedded
+        <com.zacharee1.sliderpreferenceembedded.SliderPreferenceEmbedded
             app:max="7"
-            android:layout="@layout/pref_view_embedded"
-            android:widgetLayout="@layout/slider_pref_view"
             android:title="@string/sim_count"
             android:key="sim_count" />
         <ListPreference

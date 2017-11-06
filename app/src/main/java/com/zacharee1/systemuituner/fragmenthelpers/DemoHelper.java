@@ -6,26 +6,16 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.PackageManager;
-import android.os.Bundle;
-import android.preference.ListPreference;
 import android.preference.Preference;
-import android.preference.PreferenceManager;
 import android.preference.SwitchPreference;
 import android.provider.Settings;
-import android.util.Log;
-import android.widget.Switch;
 import android.widget.Toast;
 
 import com.zacharee1.systemuituner.activites.SetupActivity;
 import com.zacharee1.systemuituner.fragments.ItemDetailFragment;
 import com.zacharee1.systemuituner.R;
 import com.zacharee1.systemuituner.misc.DemoHandler;
-import com.zacharee1.systemuituner.prefs.SliderPreference;
-import com.zacharee1.systemuituner.prefs.SliderPreferenceEmbedded;
-import com.zacharee1.systemuituner.prefs.TimePreference;
 import com.zacharee1.systemuituner.misc.SettingsUtils;
-
-import java.util.List;
 
 public class DemoHelper extends BaseHelper
 {
