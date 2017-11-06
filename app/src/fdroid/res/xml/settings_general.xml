@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:title="@string/general">
+
+        <SwitchPreference
+            android:title="@string/dark_mode"
+            android:key="dark_mode" />
+
+        <SwitchPreference
+            android:title="@string/hide_welcome_screen"
+            android:key="hide_welcome_screen" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/danger_zone">
+
+        <SwitchPreference
+            android:title="@string/safe_mode"
+            android:key="safe_mode"
+            android:summary="@string/safe_mode_summary"/>
+
+        <SwitchPreference
+            android:title="@string/enable_custom_settings_input"
+            android:key="allow_custom_settings_input" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/tasker_support">
+
+        <SwitchPreference
+            android:title="@string/enabled"
+            android:key="tasker_support_enabled" />
+
+        <Preference
+            android:title="@string/instructions"
+            android:key="tasker_instructions" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
