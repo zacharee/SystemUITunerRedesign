@@ -195,5 +195,5 @@
   <string name="intro_4">¿Y la mejor parte acerca de esta aplicación? ¡No necesita root! Tratará de obtener privilegios de root, pero si no; podrías usar ADB. USAR ADB NO ROOTEA TU DISPOSITIVO!</string>
   <string name="intro_5">Una vez que usted pulse el botón finalizar, Modificador SystemUI intentará obtener acceso root. De ser así, se conceden todos los permisos necesarios para usarlo. De lo contrario, las instrucciones aparecerán para guiarlo.</string>
   <string name="adb_setup">Deben concederse los permisos anteriores para continuar. El acceso raíz fue denegado o no está disponible, lo que significa que tendrá que otorgar estos permisos utilizando ADB.</string>
-  <string name="missing_perms">Missing Permissions!</string>
+  <string name="missing_perms">¡Permisos que faltan!</string>
 </resources>
