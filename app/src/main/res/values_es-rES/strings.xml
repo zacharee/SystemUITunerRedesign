@@ -190,10 +190,10 @@
   <string name="no_root">No es necesario root</string>
   <string name="permissions">Permisos</string>
   <string name="intro_1">¡Gracias por descargar mi aplicación! Modificador SystemUI  está destinado a reemplazar/complementar el modificador de sistema de interfaz de usuario en AOSP. Ambos usuarios con y sin Modificador de Sistema de interfaz pueden beneficiarse de esta aplicación.</string>
-  <string name="intro_2">Like in AOSP, SystemUI Tuner allows you to hide certain status bar icons that you don\'t want shown. However, you also can do many other things, like turn off heads-up notifications or even toggle immersive mode.</string>
-  <string name="intro_3">There is a plethora of pre-defined options for the status bar, but if you don\'t see an icon you want to hide, you can try the Auto-Detect feature, which will attempt to detect icons that can be hidden.</string>
-  <string name="intro_4">And the best part about this app? It doesn\'t need root! It will attempt to get root privileges, but if it can\'t you will have to use ADB. USING ADB IS NOT ROOTING!</string>
-  <string name="intro_5">Once you tap the finish button, SystemUI Tuner will attempt to gain root access. If it can, it will grant all needed permissions for you. Otherwise, instructions will appear to guide you.</string>
-  <string name="adb_setup">The permissions above must be granted to continue. Root access was either denied or unavailable, which means you\'ll have to grant these permissions using ADB.</string>
+  <string name="intro_2">Como en AOSP, Modificador SystemUI le permite ocultar ciertos iconos en la barra de estado. Además, también se pueden hacer muchas otras cosas, como apagar notificaciones Heads-up o incluso activar el modo de inmersión.</string>
+  <string name="intro_3">Hay una Ventana de opciones predefinidas para la barra de estado, pero si no ve un icono que desea ocultar, puede probar la función de detección automática, que intentará detectar los iconos que se pueden ocultar.</string>
+  <string name="intro_4">¿Y la mejor parte acerca de esta aplicación? ¡No necesita root! Tratará de obtener privilegios de root, pero si no; podrías usar ADB. USAR ADB NO ROOTEA TU DISPOSITIVO!</string>
+  <string name="intro_5">Una vez que usted pulse el botón finalizar, Modificador SystemUI intentará obtener acceso root. De ser así, se conceden todos los permisos necesarios para usarlo. De lo contrario, las instrucciones aparecerán para guiarlo.</string>
+  <string name="adb_setup">Deben concederse los permisos anteriores para continuar. El acceso raíz fue denegado o no está disponible, lo que significa que tendrá que otorgar estos permisos utilizando ADB.</string>
   <string name="missing_perms">Missing Permissions!</string>
 </resources>
