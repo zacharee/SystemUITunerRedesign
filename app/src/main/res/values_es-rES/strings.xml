@@ -8,8 +8,8 @@
   <string name="more">Más</string>
   <string name="grant_dump_perm">Debes activar el permiso \"android.permission.DUMP\" para usar ésta característica.</string>
   <string name="safe_mode_auto_enabled">Dispositivo Samsung detectado! El modo seguro se activó para brindarte seguridad.</string>
-  <string name="notice">NOTICE</string>
-  <string name="fancy_pulldown_notice">Toggling this option off can cause issues after a reboot. Enable Safe Mode or manually toggle this option on and off after a reboot.</string>
+  <string name="notice">AVISO</string>
+  <string name="fancy_pulldown_notice">Activar esta opción de puede causar problemas después de reiniciar. Activar el modo seguro y cambiar manualmente esta opción y después de un reinicio.</string>
   <string name="safe_mode_summary">SAMSUNG USERS KEEP THIS TURNED ON UNLESS YOU HAVE AN AOSP ROM! \n\n
         Clears any status bar customizations on NORMAL reboot/shutdown and restores them after boot completes. \n
         Resets \"QS Fancy Pulldown Animation\" to default on NORMAL reboot/shutdown and restores saved option after boot completes.
