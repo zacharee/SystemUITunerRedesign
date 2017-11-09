@@ -19,22 +19,22 @@
   <string name="safe_mode_android_o">由於 Android O 的限制，此功能無法在本裝置使用</string>
   <string name="requires_nougat">需要 Android Nougat 以上的版本</string>
   <string name="requires_oreo">需要 Android Oreo 以上的版本</string>
-  <string name="enable_in_settings">Enable in Settings.</string>
-  <string name="about">About</string>
-  <string name="miscellaneous">Miscellaneous</string>
-  <string name="settings">Settings</string>
-  <string name="status_bar">Status Bar</string>
-  <string name="reboot_required">(Reboot Required)</string>
-  <string name="sorry">Sorry…</string>
-  <string name="created_by">App created by <a href="https://forum.xda-developers.com/member.php?u=7055541">Zacharee1</a></string>
-  <string name="spanish_from">Spanish translation by <a href="https://es.stackoverflow.com/users/28567/aaron-romero">Aaron Romero</a> and <a href="https://forum.xda-developers.com/member.php?u=7055541">Zacharee1</a></string>
-  <string name="enabled">Enabled</string>
-  <string name="show">Show</string>
-  <string name="select_time">Select Time</string>
-  <string name="select_battery_level">Select Battery Level</string>
-  <string name="wifi_strength">WiFi Strength</string>
-  <string name="battery_charging">Battery Charging</string>
-  <string name="mobile_strength">Mobile Strength</string>
+  <string name="enable_in_settings">在設定中啟用</string>
+  <string name="about">關於</string>
+  <string name="miscellaneous">雜項</string>
+  <string name="settings">設定</string>
+  <string name="status_bar">狀態列</string>
+  <string name="reboot_required">（需要重啟）</string>
+  <string name="sorry">抱歉⋯</string>
+  <string name="created_by">App 由 <a href=\'https://forum.xda-developers.com/member.php?u=7055541\'>Zacharee1</a> 製作</string>
+  <string name="spanish_from">西班牙文翻譯由 <a href=\'https://es.stackoverflow.com/users/28567/aaron-romero\'>Aaron Romero</a> 與 <a href=\'https://forum.xda-developers.com/member.php?u=7055541\'>Zacharee1</a> 提供</string>
+  <string name="enabled">已啟用</string>
+  <string name="show">顯示</string>
+  <string name="select_time">選擇時間</string>
+  <string name="select_battery_level">選擇電量</string>
+  <string name="wifi_strength">WiFi 強度</string>
+  <string name="battery_charging">充電中</string>
+  <string name="mobile_strength">行動網路訊號強度</string>
   <string name="mobile_type">Mobile Type</string>
   <string name="show_airplane_mode">Show Airplane Mode</string>
   <string name="show_notifications">Show Notifications</string>
