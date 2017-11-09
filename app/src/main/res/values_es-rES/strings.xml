@@ -140,8 +140,8 @@
   <string name="donate_hook">Hola, veo que utilizas mi aplicación.</string>
   <string name="donate_joke">¿Cómo; te preguntas? Magia.</string>
   <string name="donate_request">Si estás disfrutando de la aplicación, sería absolutamente increíble que nos ayudes con una donación.</string>
-  <string name="donate_dont_worry">There\'s absolutely no obligation. This app is free and always will be.</string>
-  <string name="qs_header_tile_count">QS Header Tile Count</string>
+  <string name="donate_dont_worry">Claro; éso no es para nada obligatorio. Ésta aplicación es gratuita y siempre lo será.</string>
+  <string name="qs_header_tile_count">Iconos de Ajuste a Rápido</string>
   <string name="fancy_pulldown_animation">Animación de Lujo Desplegable</string>
   <string name="move_full_rows">Mover Filas Completas</string>
   <string name="battery">Batería</string>
@@ -151,9 +151,9 @@
   <string name="tasker_defs">Aquí algunos Ejemplos:</string>
   <string name="for_settings_global">(para Ajustes.Globales)</string>
   <string name="for_settings_secure">(para Ajustes.Seguro)</string>
-  <string name="for_settings_system">(for Settings.System)</string>
-  <string name="desired_setting_key">Desired setting key</string>
-  <string name="desired_setting_value">Desired setting value</string>
+  <string name="for_settings_system">(para Settings.System)</string>
+  <string name="desired_setting_key">Clave de Configuración</string>
+  <string name="desired_setting_value">Valor de la Configuración</string>
   <string name="tasker_intro">Here\'s a quick set of instructions for Tasker. Since I don\'t know how to use Tasker, I can only build in support for intent broadcasts.</string>
   <string name="back_up_blacklist">Back Up Blacklist</string>
   <string name="restore_blacklist">Restore Blacklist</string>
