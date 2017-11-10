@@ -182,11 +182,11 @@
   <string name="qs_column_count">下拉快速設定欄位數量</string>
   <string name="qs_row_count">下拉快速設定行列數量</string>
   <string name="lockscreen">鎖定螢幕</string>
-  <string name="choose_left">Choose Left Shortcut</string>
-  <string name="choose_right">Choose Right Shortcut</string>
-  <string name="unlock_device">Unlock Device</string>
+  <string name="choose_left">選擇左捷徑</string>
+  <string name="choose_right">選擇右捷徑</string>
+  <string name="unlock_device">解鎖裝置</string>
   <string name="shortcuts">捷徑</string>
-  <string name="not_set">Not Set</string>
+  <string name="not_set">尚未設定</string>
   <string name="welcome">歡迎！</string>
   <string name="some_things">範例</string>
   <string name="no_root">完全不需要 Root</string>
