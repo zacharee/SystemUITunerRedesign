@@ -75,11 +75,11 @@
   <string name="donate">贊助</string>
   <string name="reset_blacklist">重設黑名單</string>
   <string name="animator_duration_scale">動畫持續時間</string>
-  <string name="transition_animation_scale">Transition Animation Scale</string>
-  <string name="window_animation_scale">Window Animation Scale</string>
-  <string name="animation_speeds">Animation Speeds</string>
-  <string name="general">General</string>
-  <string name="heads_up_notifications">Heads-Up Notifications</string>
+  <string name="transition_animation_scale">過場動畫持續時間</string>
+  <string name="window_animation_scale">視窗動畫持續時間</string>
+  <string name="animation_speeds">動畫速度</string>
+  <string name="general">一般</string>
+  <string name="heads_up_notifications">浮動通知</string>
   <string name="headphone_volume_warning">Headphone Volume Warning</string>
   <string name="custom_settings_values">Custom Settings Values</string>
   <string name="global">Global</string>
