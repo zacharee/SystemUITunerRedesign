@@ -11,7 +11,7 @@
   <string name="notice">AVISO</string>
   <string name="fancy_pulldown_notice">Activar esta opción de puede causar problemas después de reiniciar. Activar el modo seguro y cambiar manualmente esta opción y después de un reinicio.</string>
   <string name="safe_mode_summary">USUARIOS DE SAMSUNG MANTENER ESTO ENCENDIDO A MENOS QUE TENGA UNA ROM AOSP! \n\n borra las personalizaciones de barra de estado en el reinicio y apagado NORMAL y restaura después del arranque completo. \n Restablecer \"QS Fancy Pulldown Animation\" por defecto en NORMAL apaga/reinicia y restaura las opciones por defecto después del arranque.</string>
-  <string name="hide_welcome_screen">Oculta la Ventana de Bienvenida</string>
+  <string name="hide_welcome_screen">Ocultar Ventana de Bienvenida</string>
   <string name="tasker_support">Tareas Activadas</string>
   <string name="instructions">Instrucciones</string>
   <string name="safe_mode_android_o">Debido a las limitaciones en Android Oreo, ésta característica podría no activarse en tu dispositivo</string>
@@ -47,7 +47,7 @@
   <string name="battery_icon">Batería</string>
   <string name="battery_percentage">Porcentaje de Batería</string>
   <string name="cast_icon">Emisión</string>
-  <string name="rotation_lock_icon">Bloqueo de Rotación Icono</string>
+  <string name="rotation_lock_icon">Rotación Bloqueada</string>
   <string name="nfc_icon">NFC</string>
   <string name="location_icon">Ubicación</string>
   <string name="su_icon">Super SU</string>
@@ -128,8 +128,8 @@
   <string name="otg_mouse_icon">Raton OTG</string>
   <string name="power_saver_icon">Ahorro de Energía</string>
   <string name="secure_icon">Seguridad</string>
-  <string name="sync_active_icon">Sincronización</string>
-  <string name="sync_failing_icon">Sin Sincronización</string>
+  <string name="sync_active_icon">Sincronización Activa</string>
+  <string name="sync_failing_icon">Error de Sincronización</string>
   <string name="night_mode">Modo Nocturno</string>
   <string name="night_mode_auto">Modo Nocturno Automático</string>
   <string name="night_mode_override">Desactivar Modo Nocturno</string>
