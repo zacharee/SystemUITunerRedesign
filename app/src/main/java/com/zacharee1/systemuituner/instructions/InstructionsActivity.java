@@ -4,8 +4,10 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.support.annotation.ColorInt;
+import android.support.annotation.IdRes;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.Nullable;
 import android.os.Bundle;
@@ -17,6 +19,7 @@ import android.text.Spannable;
 import android.text.Spanned;
 import android.text.SpannedString;
 import android.text.TextUtils;
+import android.text.method.LinkMovementMethod;
 import android.text.style.TypefaceSpan;
 import android.util.Log;
 import android.util.TypedValue;
@@ -24,7 +27,10 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewParent;
 import android.widget.LinearLayout;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.ScrollView;
 import android.widget.Scroller;
 import android.widget.TextView;
@@ -32,6 +38,7 @@ import android.widget.TextView;
 import com.github.paolorotolo.appintro.AppIntro2;
 import com.github.paolorotolo.appintro.AppIntroFragment;
 import com.github.paolorotolo.appintro.ISlideBackgroundColorHolder;
+import com.github.paolorotolo.appintro.PagerAdapter;
 import com.zacharee1.systemuituner.R;
 import com.zacharee1.systemuituner.misc.Utils;
 
@@ -72,9 +79,8 @@ public class InstructionsActivity extends AppIntro2 {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setTheme(R.style.AppTheme_Intro);
         super.onCreate(savedInstanceState);
-
-        getSupportActionBar().hide();
 
         mSelector = Instructions.newInstance(getResources().getString(R.string.choose_your_weapon),
                 getResources().getString(R.string.which_os),
@@ -155,63 +161,68 @@ public class InstructionsActivity extends AppIntro2 {
     }
 
     private void addProperSlides(String which) {
-        removeAllExtraSlides();
-
         addSlide(mInitial);
+
+        Fragment fragment;
         switch (which) {
             case WINDOWS:
-                addSlide(mWindows);
+                fragment = mWindows;
                 break;
             case MAC:
-                addSlide(mMac);
+                fragment = mMac;
                 break;
             case UBUNTU:
-                addSlide(mUbuntu);
+                fragment = mUbuntu;
                 break;
             case LINUX:
-                addSlide(mLinux);
+                fragment = mLinux;
                 break;
             case FEDORA:
-                addSlide(mFedora);
+                fragment = mFedora;
+                break;
+            default:
+                fragment = null;
                 break;
         }
-        addSlide(mCommands);
+        if (fragment != null) addSlide(fragment);
 
-        mPagerAdapter.notifyDataSetChanged();
+        addSlide(mCommands);
 
         nextButton.setVisibility(View.VISIBLE);
         doneButton.setVisibility(View.GONE);
     }
 
-    private void removeAllExtraSlides() {
-        fragments.remove(mInitial);
-        fragments.remove(mWindows);
-        fragments.remove(mMac);
-        fragments.remove(mUbuntu);
-        fragments.remove(mLinux);
-        fragments.remove(mFedora);
-        fragments.remove(mCommands);
-        mPagerAdapter.notifyDataSetChanged();
-    }
-
     public void chooseWindows(View v) {
         addProperSlides(WINDOWS);
+        disableRadio(v);
     }
 
     public void chooseMac(View v) {
         addProperSlides(MAC);
+        disableRadio(v);
     }
 
     public void chooseUbuntu(View v) {
         addProperSlides(UBUNTU);
+        disableRadio(v);
     }
 
     public void chooseLinux(View v) {
         addProperSlides(LINUX);
+        disableRadio(v);
     }
 
     public void chooseFedora(View v) {
         addProperSlides(FEDORA);
+        disableRadio(v);
+    }
+
+    private void disableRadio(View v) {
+        RadioGroup rg1 = mSelector.findViewById(R.id.adb_select);
+
+        for(int i = 0; i < rg1.getChildCount(); i++){
+            (rg1.getChildAt(i)).setEnabled(false);
+        }
     }
 
     public static class Instructions extends Fragment implements ISlideBackgroundColorHolder {
@@ -266,6 +277,10 @@ public class InstructionsActivity extends AppIntro2 {
 
                     if (v instanceof TextView) {
                         ((TextView) v).setText(Html.fromHtml(((TextView) v).getText().toString()));
+                        ((TextView) v).setLinksClickable(true);
+                        ((TextView) v).setMovementMethod(LinkMovementMethod.getInstance());
+                        ((TextView) v).setLinkTextColor(getResources().getColorStateList(R.color.white, null));
+                        ((TextView) v).setTextColor(getResources().getColorStateList(R.color.white, null));
                     }
                 }
 
@@ -273,6 +288,10 @@ public class InstructionsActivity extends AppIntro2 {
             }
 
             return mView;
+        }
+
+        public <T extends View> T findViewById(@IdRes int id) {
+            return mView.findViewById(id);
         }
 
         public int getLayoutId() {
