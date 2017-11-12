@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="IconPreference">
-        <attr name="pref_title" format="string" />
-        <attr name="pref_summary" format="string"/>
         <attr name="pref_icon" format="integer"/>
         <attr name="pref_icon_tint" format="color"/>
     </declare-styleable>

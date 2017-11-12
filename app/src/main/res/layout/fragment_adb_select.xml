@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/choose_windows"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:onClick="chooseWindows"
+                android:text="@string/windows" />
+
+            <RadioButton
+                android:id="@+id/choose_mac"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:onClick="chooseMac"
+                android:text="@string/mac" />
+
+            <RadioButton
+                android:id="@+id/choose_ubuntu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:onClick="chooseUbuntu"
+                android:text="@string/ubuntu" />
+
+            <RadioButton
+                android:id="@+id/choose_fedora"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:onClick="chooseFedora"
+                android:text="@string/fedora"/>
+
+            <RadioButton
+                android:id="@+id/choose_linux"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="chooseLinux"
+                android:text="@string/linux" />
+        </RadioGroup>
+
+    </LinearLayout>
+
+</ScrollView>

@@ -28,10 +28,12 @@ import com.github.paolorotolo.appintro.AppIntro2;
 import com.github.paolorotolo.appintro.ISlideBackgroundColorHolder;
 import com.zacharee1.systemuituner.LauncherActivity;
 import com.zacharee1.systemuituner.R;
+import com.zacharee1.systemuituner.instructions.InstructionsActivity;
 import com.zacharee1.systemuituner.misc.RecreateHandler;
 import com.zacharee1.systemuituner.misc.SettingsUtils;
 import com.zacharee1.systemuituner.misc.Utils;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 @SuppressWarnings("unused")
@@ -44,8 +46,8 @@ public class SetupActivity extends AppIntro2
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        backButton.setVisibility(View.GONE);
-        skipButton.setVisibility(View.GONE);
+        setButtonState(backButton, false);
+        showSkipButton(true);
         showPagerIndicator(false);
 
         getSupportActionBar().hide();
@@ -80,8 +82,16 @@ public class SetupActivity extends AppIntro2
         }
     }
 
+    @Override
+    public void onSkipPressed(Fragment currentFragment) {
+        finish();
+    }
+
     public void launchInstructions(View v) {
-        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://zacharywander.tk/#sysuituner_adb")));
+//        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://zacharywander.tk/#sysuituner_adb")));
+        Intent intent = new Intent(this, InstructionsActivity.class);
+        intent.putStringArrayListExtra(InstructionsActivity.ARG_COMMANDS, new ArrayList<>(Arrays.asList(permissionsNeeded)));
+        startActivity(intent);
     }
 
     public static class PermsFragment extends Fragment {

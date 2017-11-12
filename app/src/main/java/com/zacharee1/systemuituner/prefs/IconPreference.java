@@ -23,9 +23,6 @@ import com.zacharee1.systemuituner.R;
 public class IconPreference extends Preference {
     private View mView;
 
-    private CharSequence mTitleString;
-    private CharSequence mSummaryString;
-
     private int mDrawableColor;
 
     private Drawable mDrawable;
@@ -47,8 +44,6 @@ public class IconPreference extends Preference {
                 0, 0);
 
         try {
-            mTitleString = a.getString(R.styleable.IconPreference_pref_title);
-            mSummaryString = a.getString(R.styleable.IconPreference_pref_summary);
             mDrawable = a.getDrawable(R.styleable.IconPreference_pref_icon);
             mDrawableColor = a.getColor(R.styleable.IconPreference_pref_icon_tint, Color.TRANSPARENT);
 
@@ -104,30 +99,6 @@ public class IconPreference extends Preference {
     }
 
     @Override
-    public void setTitle(int titleResId) {
-        mTitleString = getContext().getResources().getString(titleResId);
-        notifyChanged();
-    }
-
-    @Override
-    public void setTitle(CharSequence title) {
-        mTitleString = title;
-        notifyChanged();
-    }
-
-    @Override
-    public void setSummary(int summaryResId) {
-        mSummaryString = getContext().getResources().getString(summaryResId);
-        notifyChanged();
-    }
-
-    @Override
-    public void setSummary(CharSequence summary) {
-        mSummaryString = summary;
-        notifyChanged();
-    }
-
-    @Override
     protected void notifyChanged() {
         setInternal();
         super.notifyChanged();
@@ -137,10 +108,6 @@ public class IconPreference extends Preference {
         setIconColorInternal(mDrawableColor);
 
         setIconInternal(mDrawable);
-
-        setTitleInternal(mTitleString);
-
-        setSummaryInternal(mSummaryString);
     }
 
     private void setIconInternal(Drawable drawable) {
@@ -155,19 +122,6 @@ public class IconPreference extends Preference {
             mDrawable.setColorFilter(color, PorterDuff.Mode.SRC_ATOP);
             setIconInternal(mDrawable);
             mView.invalidate();
-        }
-    }
-
-    private void setTitleInternal(CharSequence string) {
-        if (mView != null && string != null) {
-            ((TextView) mView.findViewById(R.id.title)).setText(string);
-            mView.invalidate();
-        }
-    }
-
-    private void setSummaryInternal(CharSequence string) {
-        if (mView != null && string != null) {
-            ((TextView) mView.findViewById(R.id.summary)).setText(string);
         }
     }
 }

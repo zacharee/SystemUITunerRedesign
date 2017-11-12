@@ -13,6 +13,7 @@ import com.zacharee1.systemuituner.fragments.ItemDetailFragment;
 import com.zacharee1.systemuituner.misc.SettingsUtils;
 import com.zacharee1.systemuituner.misc.Utils;
 
+import java.lang.reflect.Array;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -28,7 +29,10 @@ public class AutoHelper extends BaseHelper
     public AutoHelper(ItemDetailFragment fragment) {
         super(fragment);
 
-        if (SettingsUtils.hasSpecificPerm(getContext(), Manifest.permission.PACKAGE_USAGE_STATS) && SettingsUtils.hasSpecificPerm(getContext(), Manifest.permission.DUMP)) {
+        boolean hasUsage = SettingsUtils.hasSpecificPerm(getContext(), Manifest.permission.PACKAGE_USAGE_STATS);
+        boolean hasDump = SettingsUtils.hasSpecificPerm(getContext(), Manifest.permission.DUMP);
+
+        if (hasDump && hasUsage) {
             String dump = Utils.runCommand("dumpsys activity service com.android.systemui/.SystemUIService");
             assert dump != null;
 
@@ -107,7 +111,11 @@ public class AutoHelper extends BaseHelper
             SettingsUtils.shouldSetSwitchChecked(getFragment());
         } else {
             Intent intent = new Intent(getContext(), SetupActivity.class);
-            intent.putExtra("permission_needed", new String[] {Manifest.permission.PACKAGE_USAGE_STATS, Manifest.permission.DUMP});
+            ArrayList<String> perms = new ArrayList<>();
+            if (!hasUsage) perms.add(Manifest.permission.PACKAGE_USAGE_STATS);
+            if (!hasDump) perms.add(Manifest.permission.DUMP);
+
+            intent.putExtra("permission_needed", perms.toArray(new String[]{}));
             getActivity().startActivity(intent);
 
             getActivity().finish();

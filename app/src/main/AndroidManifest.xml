@@ -158,7 +158,8 @@
 
         <activity android:name=".activites.AppsListActivity" />
         <activity android:name=".activites.ComponentsListActivity" />
-        <activity android:name=".activites.IntroActivity"></activity>
+        <activity android:name=".activites.IntroActivity" />
+        <activity android:name=".instructions.InstructionsActivity"></activity>
     </application>
 
 </manifest>

@@ -13,8 +13,8 @@
             android:selectable="false" />
 
         <com.zacharee1.systemuituner.prefs.IconPreference
-            app:pref_title="@string/choose_left"
-            app:pref_summary="@string/not_set"
+            android:title="@string/choose_left"
+            android:summary="@string/not_set"
             app:pref_icon="@drawable/ic_help_outline_black_24dp"
             app:pref_icon_tint="#fff"
             android:key="choose_left" />
@@ -28,8 +28,8 @@
             android:selectable="false" />
 
         <com.zacharee1.systemuituner.prefs.IconPreference
-            app:pref_title="@string/choose_right"
-            app:pref_summary="@string/not_set"
+            android:title="@string/choose_right"
+            android:summary="@string/not_set"
             app:pref_icon="@drawable/ic_help_outline_black_24dp"
             app:pref_icon_tint="#fff"
             android:key="choose_right" />
