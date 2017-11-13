@@ -214,8 +214,8 @@
   <string name="make_sure_adb_installed">1. 確認 ADB 是否正確安裝：</string>
   <string name="yum_install_adb"><![CDATA[- <b>sudo yum install android-tools</b>]]></string>
   <string name="download_adb_linux"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-linux.zip">下載 Linux 版 ADB</a>]]></string>
-  <string name="cd_linux"><![CDATA[4. Enter <b>cd /path/to/extracted/folder/</b> to get to the folder you extracted ADB into. For instance, <b>cd /home/Zachary/Desktop/platform-tools/</b>.]]></string>
-  <string name="choose_your_weapon">Choose your Weapon</string>
+  <string name="cd_linux"><![CDATA[4. 輸入 <b>cd /path/to/extracted/folder/</b> 以切換至 ADB 所在路徑，舉例來說：<b>cd /home/Zachary/Desktop/platform-tools/</b>。]]></string>
+  <string name="choose_your_weapon">選擇你的武器</string>
   <string name="initial_setup">初始化設定</string>
   <string name="windows_setup">Windows 設定步驟</string>
   <string name="mac_setup">macOS 設定步驟</string>
