@@ -196,17 +196,17 @@
   <string name="intro_3">There is a plethora of pre-defined options for the status bar, but if you don\'t see an icon you want to hide, you can try the Auto-Detect feature, which will attempt to detect icons that can be hidden.</string>
   <string name="intro_4">And the best part about this app? It doesn\'t need root! It will attempt to get root privileges, but if it can\'t you will have to use ADB. USING ADB IS NOT ROOTING!</string>
   <string name="intro_5">Once you tap the finish button, SystemUI Tuner will attempt to gain root access. If it can, it will grant all needed permissions for you. Otherwise, instructions will appear to guide you.</string>
-  <string name="adb_setup">The permissions above must be granted to continue. Root access was either denied or unavailable, which means you\'ll have to grant these permissions using ADB.</string>
-  <string name="missing_perms">Missing Permissions!</string>
+  <string name="adb_setup">必須授與上述權限以繼續。在沒有 root 的情況下，你需要使用 ADB 手動授與這些權限。</string>
+  <string name="missing_perms">缺少權限！</string>
   <string name="enable_debug"><![CDATA[1. 前往 "設定" 中的 "開發者選項"，確保 USB Debugging 是啟用的。]]></string>
   <string name="accept_auth">2. 將裝置連接至電腦，並接受授權要求。</string>
   <string name="enable_devops"><![CDATA[- 若要啟用開發者選項，請前往 "設定" 中的 "關於"，找到其中的 "建置號碼"，並連點七次。]]></string>
-  <string name="download_drivers">- Windows users may need to install device drivers, which are available from the manufacturer\'s website.</string>
-  <string name="download_adb_windows"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-windows.zip">Download the ADB ZIP for Windows.</a>]]></string>
-  <string name="extract_zip">2. Extract the ZIP to an easily-accessible location (ie Desktop).</string>
+  <string name="download_drivers">- Windows 用戶可能需要額外安裝驅動程式，請至手機製造商網站搜尋。</string>
+  <string name="download_adb_windows"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-windows.zip">下載 Windows 版 ADB</a>]]></string>
+  <string name="extract_zip">2. 將檔案解壓縮至方便存取的目錄（如桌面）。</string>
   <string name="open_cmd">3. 打開 CMD。</string>
-  <string name="cd_windows"><![CDATA[4. Enter <b>cd C:\\path\\to\\extracted\\folder\\</b> to get to the folder where you extracted ADB. For instance, <b>cd C:\\Users\\Zachary\\Desktop\\platform-tools\\</b>.]]></string>
-  <string name="cd_further"><![CDATA[- Make sure that the folder you <b>cd</b> into contains the ADB executable. If not, <b>cd</b> one level further.]]></string>
+  <string name="cd_windows"><![CDATA[4. 輸入 <b>cd C:\\path\\to\\extracted\\folder\\</b> 以切換至 ADB 所在路徑，舉例來說： <b>cd C:\\Users\\Zachary\\Desktop\\platform-tools\\</b>。]]></string>
+  <string name="cd_further"><![CDATA[- 確定你要 <b>cd</b> 的目錄包含 ADB 執行檔，若無則需再 <b>cd</b> 進入下一層。]]></string>
   <string name="download_adb_mac"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-darwin.zip">下載 macOS 版 ADB</a>]]></string>
   <string name="open_terminal">3. 打開終端機 (Terminal)</string>
   <string name="cd_mac"><![CDATA[4. 輸入 <b>cd /path/to/extracted/folder/</b> 以切換至 ADB 所在路徑，舉例來說：<b>cd /Users/Zachary/Desktop/platform-tools/</b>。]]></string>
