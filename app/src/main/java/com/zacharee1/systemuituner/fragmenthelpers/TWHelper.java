@@ -21,8 +21,8 @@ public class TWHelper extends BaseHelper
         final SliderPreferenceEmbedded rows = (SliderPreferenceEmbedded) findPreference("qs_tile_row");
         final SliderPreferenceEmbedded columns = (SliderPreferenceEmbedded) findPreference("qs_tile_column");
         int defVal = 3;
-        int savedRowVal = Settings.Secure.getInt(getActivity().getContentResolver(), rows.getKey(), defVal);
-        int savedColVal = Settings.Secure.getInt(getActivity().getContentResolver(), columns.getKey(), defVal);
+        final int savedRowVal = Settings.Secure.getInt(getActivity().getContentResolver(), rows.getKey(), defVal);
+        final int savedColVal = Settings.Secure.getInt(getActivity().getContentResolver(), columns.getKey(), defVal);
 
 //        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.N_MR1) {
 //            rows.setMinProgress(1);
@@ -31,9 +31,6 @@ public class TWHelper extends BaseHelper
 
         rows.setMinProgress(1);
         columns.setMinProgress(2);
-
-        rows.setProgress(savedRowVal);
-        columns.setProgress(savedColVal);
 
         rows.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
             @Override
@@ -55,6 +52,20 @@ public class TWHelper extends BaseHelper
                 }
                 SettingsUtils.writeSecure(getActivity(), preference.getKey(), newValue.toString());
                 return true;
+            }
+        });
+
+        rows.setOnViewCreatedListener(new SliderPreferenceEmbedded.OnViewCreatedListener() {
+            @Override
+            public void viewCreated() {
+                rows.setProgress(savedRowVal);
+            }
+        });
+
+        columns.setOnViewCreatedListener(new SliderPreferenceEmbedded.OnViewCreatedListener() {
+            @Override
+            public void viewCreated() {
+                columns.setProgress(savedColVal);
             }
         });
     }

@@ -12,7 +12,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'io.fabric'
 apply plugin: 'io.fabric'
 
-project.version = 226
+project.version = 227
 
 repositories {
     maven { url 'https://maven.fabric.io/public' }
@@ -66,5 +66,5 @@ dependencies {
     }
     implementation 'com.google.firebase:firebase-core:11.6.0'
     implementation 'com.github.apl-devs:appintro:v4.2.2'
-    implementation 'com.github.zacharee:SliderPreferenceEmbedded:-SNAPSHOT'
+    implementation 'com.github.zacharee:SliderPreferenceEmbedded:ba9e4a839b'
 }
