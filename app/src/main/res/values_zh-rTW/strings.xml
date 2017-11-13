@@ -198,35 +198,35 @@
   <string name="intro_5">Once you tap the finish button, SystemUI Tuner will attempt to gain root access. If it can, it will grant all needed permissions for you. Otherwise, instructions will appear to guide you.</string>
   <string name="adb_setup">The permissions above must be granted to continue. Root access was either denied or unavailable, which means you\'ll have to grant these permissions using ADB.</string>
   <string name="missing_perms">Missing Permissions!</string>
-  <string name="enable_debug"><![CDATA[1. Go to Settings >> Developer Options and make sure USB Debugging is enabled.]]></string>
-  <string name="accept_auth">2. Plug your device into your computer and accept the authorization request on it.</string>
-  <string name="enable_devops"><![CDATA[- Enable Developer Options by going to Settings >> About, finding \"Build Number\" and tapping it 7 times.]]></string>
+  <string name="enable_debug"><![CDATA[1. 前往 "設定" 中的 "開發者選項"，確保 USB Debugging 是啟用的。]]></string>
+  <string name="accept_auth">2. 將裝置連接至電腦，並接受授權要求。</string>
+  <string name="enable_devops"><![CDATA[- 若要啟用開發者選項，請前往 "設定" 中的 "關於"，找到其中的 "建置號碼"，並連點七次。]]></string>
   <string name="download_drivers">- Windows users may need to install device drivers, which are available from the manufacturer\'s website.</string>
   <string name="download_adb_windows"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-windows.zip">Download the ADB ZIP for Windows.</a>]]></string>
   <string name="extract_zip">2. Extract the ZIP to an easily-accessible location (ie Desktop).</string>
-  <string name="open_cmd">3. Open CMD.</string>
+  <string name="open_cmd">3. 打開 CMD。</string>
   <string name="cd_windows"><![CDATA[4. Enter <b>cd C:\\path\\to\\extracted\\folder\\</b> to get to the folder where you extracted ADB. For instance, <b>cd C:\\Users\\Zachary\\Desktop\\platform-tools\\</b>.]]></string>
   <string name="cd_further"><![CDATA[- Make sure that the folder you <b>cd</b> into contains the ADB executable. If not, <b>cd</b> one level further.]]></string>
-  <string name="download_adb_mac"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-darwin.zip">Download the ADB ZIP for macOS.</a>]]></string>
+  <string name="download_adb_mac"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-darwin.zip">下載 macOS 版 ADB</a>]]></string>
   <string name="open_terminal">3. 打開終端機 (Terminal)</string>
-  <string name="cd_mac"><![CDATA[4. Enter <b>cd /path/to/extracted/folder/</b> to get to the folder you extracted ADB into. For instance, <b>cd /Users/Zachary/Desktop/platform-tools/</b>.]]></string>
+  <string name="cd_mac"><![CDATA[4. 輸入 <b>cd /path/to/extracted/folder/</b> 以切換至 ADB 所在路徑，舉例來說：<b>cd /Users/Zachary/Desktop/platform-tools/</b>。]]></string>
   <string name="apt_get_adb"><![CDATA[- <b>sudo apt-get install adb</b>]]></string>
   <string name="make_sure_adb_installed">1. 確認 ADB 是否正確安裝：</string>
   <string name="yum_install_adb"><![CDATA[- <b>sudo yum install android-tools</b>]]></string>
-  <string name="download_adb_linux"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-linux.zip">Download the ADB ZIP for Linux.</a>]]></string>
+  <string name="download_adb_linux"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-linux.zip">下載 Linux 版 ADB</a>]]></string>
   <string name="cd_linux"><![CDATA[4. Enter <b>cd /path/to/extracted/folder/</b> to get to the folder you extracted ADB into. For instance, <b>cd /home/Zachary/Desktop/platform-tools/</b>.]]></string>
   <string name="choose_your_weapon">Choose your Weapon</string>
-  <string name="initial_setup">Initial Setup</string>
-  <string name="windows_setup">Windows Setup</string>
-  <string name="mac_setup">macOS Setup</string>
-  <string name="ubuntu_setup">Ubuntu Setup</string>
-  <string name="fedora_setup">Fedora Setup</string>
-  <string name="linux_setup">Linux Setup</string>
-  <string name="run_commands">Run the Commands</string>
-  <string name="which_os">Which operating system is your computer running?</string>
-  <string name="on_device">Follow these instructions on your device.</string>
-  <string name="on_computer">Follow these instructions on your computer.</string>
-  <string name="run_on_computer">Run these commands on your computer. For Linux and macOS, you will need to use \"./adb\" instead of \"adb\".</string>
+  <string name="initial_setup">初始化設定</string>
+  <string name="windows_setup">Windows 設定步驟</string>
+  <string name="mac_setup">macOS 設定步驟</string>
+  <string name="ubuntu_setup">Ubuntu 設定步驟</string>
+  <string name="fedora_setup">Fedora 設定步驟</string>
+  <string name="linux_setup">Linux 設定步驟</string>
+  <string name="run_commands">執行指令</string>
+  <string name="which_os">你的電腦作業系統是？</string>
+  <string name="on_device">在你的裝置上進行這些步驟。</string>
+  <string name="on_computer">在你的電腦上進行這些步驟。</string>
+  <string name="run_on_computer">在你的電腦上執行這些步驟。macOS 和 Linux 的用戶請注意，應該使用 \"./adb\" 而不是 \"adb\"。</string>
   <string name="windows">Windows</string>
   <string name="mac">macOS</string>
   <string name="ubuntu">Ubuntu</string>
