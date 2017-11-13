@@ -45,7 +45,7 @@
   <string name="setup">設定</string>
   <string name="dnd_switch_in_vol_slider">音量控制中顯示勿擾模式開關</string>
   <string name="dark_mode">暗色系主題</string>
-  <string name="managed_profile_icon">Managed Profile Icon</string>
+  <string name="managed_profile_icon">工作資料</string>
   <string name="battery_icon">電池</string>
   <string name="battery_percentage">電量百分比</string>
   <string name="cast_icon">投放</string>
@@ -193,7 +193,7 @@
   <string name="permissions">權限</string>
   <string name="intro_1">感謝下載我的 app！SystemUI Tuner 是款系統原生 System UI Tuner 的替代品，不論你的裝置有無 System UI Tuner ，這個 app 都能帶來全新感受。</string>
   <string name="intro_2">就像 AOSP 一樣，SystemUI Tuner 能讓你隱藏不想要的狀態列圖示，當然還不只這樣，你也可以關閉浮動通知甚至是切換沈浸模式等等。</string>
-  <string name="intro_3">There is a plethora of pre-defined options for the status bar, but if you don\'t see an icon you want to hide, you can try the Auto-Detect feature, which will attempt to detect icons that can be hidden.</string>
+  <string name="intro_3">我們有許多預設的狀態列圖示可以用，如果沒有找到想要隱藏的圖示，你還可以嘗試 \"自動偵測\" 功能，它會嘗試找出可以隱藏的圖示。</string>
   <string name="intro_4">本 app 最厲害的地方就是不用 root 也能用！它會嘗試取得 root 權限，但沒有也無妨，你可以使用 ADB 給予權限，ADB 不是 ROOT ！！</string>
   <string name="intro_5">按下完成後，SystemUI Tuner 會嘗試取得 root 權限，若成功授權它將會自動取得所需權限，否則會顯示進一步的操作說明引導你繼續。</string>
   <string name="adb_setup">必須授與上述權限以繼續。在沒有 root 的情況下，你需要使用 ADB 手動授與這些權限。</string>
