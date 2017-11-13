@@ -191,11 +191,11 @@
   <string name="some_things">範例</string>
   <string name="no_root">完全不需要 Root</string>
   <string name="permissions">權限</string>
-  <string name="intro_1">Thanks for downloading my app! SystemUI Tuner is meant to replace/supplement the built-in System UI Tuner seen in AOSP. Both users with and without System UI Tuner can benefit from this app.</string>
-  <string name="intro_2">Like in AOSP, SystemUI Tuner allows you to hide certain status bar icons that you don\'t want shown. However, you also can do many other things, like turn off heads-up notifications or even toggle immersive mode.</string>
+  <string name="intro_1">感謝下載我的 app！SystemUI Tuner 是款系統原生 System UI Tuner 的替代品，不論你的裝置有無 System UI Tuner ，這個 app 都能帶來全新感受。</string>
+  <string name="intro_2">就像 AOSP 一樣，SystemUI Tuner 能讓你隱藏不想要的狀態列圖示，當然還不只這樣，你也可以關閉浮動通知甚至是切換沈浸模式等等。</string>
   <string name="intro_3">There is a plethora of pre-defined options for the status bar, but if you don\'t see an icon you want to hide, you can try the Auto-Detect feature, which will attempt to detect icons that can be hidden.</string>
   <string name="intro_4">And the best part about this app? It doesn\'t need root! It will attempt to get root privileges, but if it can\'t you will have to use ADB. USING ADB IS NOT ROOTING!</string>
-  <string name="intro_5">Once you tap the finish button, SystemUI Tuner will attempt to gain root access. If it can, it will grant all needed permissions for you. Otherwise, instructions will appear to guide you.</string>
+  <string name="intro_5">按下完成後，SystemUI Tuner 會嘗試取得 root 權限，若成功授權它將會自動取得所需權限，否則會顯示進一步的操作說明引導你繼續。</string>
   <string name="adb_setup">必須授與上述權限以繼續。在沒有 root 的情況下，你需要使用 ADB 手動授與這些權限。</string>
   <string name="missing_perms">缺少權限！</string>
   <string name="enable_debug"><![CDATA[1. 前往 "設定" 中的 "開發者選項"，確保 USB Debugging 是啟用的。]]></string>
