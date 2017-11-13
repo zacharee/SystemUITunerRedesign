@@ -1,55 +1,31 @@
 package com.zacharee1.systemuituner.instructions;
 
-import android.content.BroadcastReceiver;
-import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
-import android.content.res.ColorStateList;
-import android.graphics.Color;
 import android.support.annotation.ColorInt;
 import android.support.annotation.IdRes;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.Nullable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.content.LocalBroadcastManager;
-import android.text.Editable;
 import android.text.Html;
-import android.text.Spannable;
 import android.text.Spanned;
-import android.text.SpannedString;
-import android.text.TextUtils;
 import android.text.method.LinkMovementMethod;
-import android.text.style.TypefaceSpan;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewParent;
 import android.widget.LinearLayout;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.ScrollView;
-import android.widget.Scroller;
 import android.widget.TextView;
 
 import com.github.paolorotolo.appintro.AppIntro2;
-import com.github.paolorotolo.appintro.AppIntroFragment;
 import com.github.paolorotolo.appintro.ISlideBackgroundColorHolder;
-import com.github.paolorotolo.appintro.PagerAdapter;
 import com.zacharee1.systemuituner.R;
 import com.zacharee1.systemuituner.misc.Utils;
 
-import org.w3c.dom.Text;
-import org.xml.sax.XMLReader;
-
 import java.util.ArrayList;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
-import static android.support.annotation.Dimension.SP;
 
 public class InstructionsActivity extends AppIntro2 {
     public static final String ARG_TITLE = "title";
@@ -70,12 +46,9 @@ public class InstructionsActivity extends AppIntro2 {
 
     private Instructions mSelector;
     private Instructions mInitial;
-    private Instructions mWindows;
-    private Instructions mMac;
-    private Instructions mUbuntu;
-    private Instructions mLinux;
-    private Instructions mFedora;
     private Commands mCommands;
+
+    private Instructions mInstructions;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,36 +60,14 @@ public class InstructionsActivity extends AppIntro2 {
                 R.layout.fragment_adb_select,
                 getResources().getColor(R.color.intro_5, null));
 
-        addSlide(mSelector);
-
         mInitial = Instructions.newInstance(getResources().getString(R.string.initial_setup),
                 getResources().getString(R.string.on_device),
                 R.layout.fragment_adb_initial,
                 getResources().getColor(R.color.intro_2, null));
 
-        mWindows = Instructions.newInstance(getResources().getString(R.string.windows_setup),
+        mInstructions = Instructions.newInstance(getResources().getString(R.string.windows_setup),
                 getResources().getString(R.string.on_computer),
                 R.layout.fragment_adb_windows,
-                getResources().getColor(R.color.intro_1, null));
-
-        mMac = Instructions.newInstance(getResources().getString(R.string.mac_setup),
-                getResources().getString(R.string.on_computer),
-                R.layout.fragment_adb_mac,
-                getResources().getColor(R.color.intro_1, null));
-
-        mUbuntu = Instructions.newInstance(getResources().getString(R.string.ubuntu_setup),
-                getResources().getString(R.string.on_computer),
-                R.layout.fragment_adb_ubuntu,
-                getResources().getColor(R.color.intro_1, null));
-
-        mLinux = Instructions.newInstance(getResources().getString(R.string.linux_setup),
-                getResources().getString(R.string.on_computer),
-                R.layout.fragment_adb_linux,
-                getResources().getColor(R.color.intro_1, null));
-
-        mFedora = Instructions.newInstance(getResources().getString(R.string.fedora_setup),
-                getResources().getString(R.string.on_computer),
-                R.layout.fragment_adb_fedora,
                 getResources().getColor(R.color.intro_1, null));
 
         Intent intent = getIntent();
@@ -127,6 +78,13 @@ public class InstructionsActivity extends AppIntro2 {
                 getResources().getString(R.string.run_on_computer),
                 getResources().getColor(R.color.intro_4, null),
                 cmds);
+
+        addSlide(mSelector);
+        addSlide(mInitial);
+        addSlide(mInstructions);
+        addSlide(mCommands);
+
+        pager.setOffscreenPageLimit(3);
 
         backButton.setVisibility(View.GONE);
         skipButtonEnabled = false;
@@ -160,69 +118,37 @@ public class InstructionsActivity extends AppIntro2 {
         finish();
     }
 
-    private void addProperSlides(String which) {
-        addSlide(mInitial);
+    private void replaceContentById(@LayoutRes int layout) {
+        mInstructions.setInternalLayout(layout);
+    }
 
-        Fragment fragment;
-        switch (which) {
-            case WINDOWS:
-                fragment = mWindows;
-                break;
-            case MAC:
-                fragment = mMac;
-                break;
-            case UBUNTU:
-                fragment = mUbuntu;
-                break;
-            case LINUX:
-                fragment = mLinux;
-                break;
-            case FEDORA:
-                fragment = mFedora;
-                break;
-            default:
-                fragment = null;
-                break;
-        }
-        if (fragment != null) addSlide(fragment);
-
-        addSlide(mCommands);
-
-        nextButton.setVisibility(View.VISIBLE);
-        doneButton.setVisibility(View.GONE);
+    private void setInstructionsTitle(String title) {
+        mInstructions.setTitle(title);
     }
 
     public void chooseWindows(View v) {
-        addProperSlides(WINDOWS);
-        disableRadio(v);
+        replaceContentById(R.layout.fragment_adb_windows);
+        setInstructionsTitle(getResources().getString(R.string.windows_setup));
     }
 
     public void chooseMac(View v) {
-        addProperSlides(MAC);
-        disableRadio(v);
+        replaceContentById(R.layout.fragment_adb_mac);
+        setInstructionsTitle(getResources().getString(R.string.mac_setup));
     }
 
     public void chooseUbuntu(View v) {
-        addProperSlides(UBUNTU);
-        disableRadio(v);
+        replaceContentById(R.layout.fragment_adb_ubuntu);
+        setInstructionsTitle(getResources().getString(R.string.ubuntu_setup));
     }
 
     public void chooseLinux(View v) {
-        addProperSlides(LINUX);
-        disableRadio(v);
+        replaceContentById(R.layout.fragment_adb_linux);
+        setInstructionsTitle(getResources().getString(R.string.linux_setup));
     }
 
     public void chooseFedora(View v) {
-        addProperSlides(FEDORA);
-        disableRadio(v);
-    }
-
-    private void disableRadio(View v) {
-        RadioGroup rg1 = mSelector.findViewById(R.id.adb_select);
-
-        for(int i = 0; i < rg1.getChildCount(); i++){
-            (rg1.getChildAt(i)).setEnabled(false);
-        }
+        replaceContentById(R.layout.fragment_adb_fedora);
+        setInstructionsTitle(getResources().getString(R.string.fedora_setup));
     }
 
     public static class Instructions extends Fragment implements ISlideBackgroundColorHolder {
@@ -255,10 +181,11 @@ public class InstructionsActivity extends AppIntro2 {
         public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
             mView = inflater.inflate(getLayoutId(), container, false);
 
+            Log.e("onCreateView()", getArguments().getString(ARG_TITLE));
+
             View main = mView.findViewById(R.id.main);
             TextView title = mView.findViewById(R.id.title);
             TextView desc = mView.findViewById(R.id.description);
-            LinearLayout holder = mView.findViewById(R.id.custom_layout_holder);
 
             Bundle args = getArguments();
 
@@ -267,24 +194,7 @@ public class InstructionsActivity extends AppIntro2 {
             desc.setText(args.getString(ARG_DESC));
 
             if (args.getInt(ARG_LAYOUT) != 0 && args.getInt(ARG_LAYOUT) != -1) {
-                ViewGroup viewParent = (ViewGroup) View.inflate(getActivity(), args.getInt(ARG_LAYOUT), null);
-                ViewGroup viewChild = (ViewGroup) viewParent.getChildAt(0);
-
-                ViewGroup view = viewChild != null ? viewChild : viewParent;
-
-                for (int i = 0; i < view.getChildCount(); i++) {
-                    View v = view.getChildAt(i);
-
-                    if (v instanceof TextView) {
-                        ((TextView) v).setText(Html.fromHtml(((TextView) v).getText().toString()));
-                        ((TextView) v).setLinksClickable(true);
-                        ((TextView) v).setMovementMethod(LinkMovementMethod.getInstance());
-                        ((TextView) v).setLinkTextColor(getResources().getColorStateList(R.color.white, null));
-                        ((TextView) v).setTextColor(getResources().getColorStateList(R.color.white, null));
-                    }
-                }
-
-                holder.addView(viewParent);
+                setInternalLayout(args.getInt(ARG_LAYOUT));
             }
 
             return mView;
@@ -298,6 +208,35 @@ public class InstructionsActivity extends AppIntro2 {
             return R.layout.fragment_intro_custom_center;
         }
 
+        public void setTitle(String title) {
+            TextView textView = mView.findViewById(R.id.title);
+            textView.setText(formatText(title));
+        }
+
+        public void setInternalLayout(@LayoutRes int layoutId) {
+            LinearLayout holder = mView.findViewById(R.id.custom_layout_holder);
+            holder.removeAllViews();
+
+            ViewGroup viewParent = (ViewGroup) View.inflate(getActivity(), layoutId, null);
+            ViewGroup viewChild = (ViewGroup) viewParent.getChildAt(0);
+
+            ViewGroup view = viewChild != null ? viewChild : viewParent;
+
+            for (int i = 0; i < view.getChildCount(); i++) {
+                View v = view.getChildAt(i);
+
+                if (v instanceof TextView) {
+                    ((TextView) v).setText(formatText(((TextView) v).getText().toString()));
+                    ((TextView) v).setLinksClickable(true);
+                    ((TextView) v).setMovementMethod(LinkMovementMethod.getInstance());
+                    ((TextView) v).setLinkTextColor(getResources().getColorStateList(R.color.white, null));
+                    ((TextView) v).setTextColor(getResources().getColorStateList(R.color.white, null));
+                }
+            }
+
+            holder.addView(viewParent);
+        }
+
         @Override
         public int getDefaultBackgroundColor() {
             return getArguments().getInt(ARG_BG_COLOR);
@@ -306,6 +245,10 @@ public class InstructionsActivity extends AppIntro2 {
         @Override
         public void setBackgroundColor(int backgroundColor) {
             mView.setBackgroundColor(backgroundColor);
+        }
+
+        private Spanned formatText(String text) {
+            return Html.fromHtml(text);
         }
     }
 

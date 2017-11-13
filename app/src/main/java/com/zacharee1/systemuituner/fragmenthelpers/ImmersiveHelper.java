@@ -72,10 +72,24 @@ public class ImmersiveHelper extends BaseHelper implements Preference.OnPreferen
 
     private void setAllOthersDisabled(String keyToNotDisable) {
         none.setChecked(none.getKey().equals(keyToNotDisable));
+        none.setEnabled(!none.getKey().equals(keyToNotDisable));
         full.setChecked(full.getKey().equals(keyToNotDisable));
+        full.setEnabled(!full.getKey().equals(keyToNotDisable));
         status.setChecked(status.getKey().equals(keyToNotDisable));
+        status.setEnabled(!status.getKey().equals(keyToNotDisable));
         navi.setChecked(navi.getKey().equals(keyToNotDisable));
+        navi.setEnabled(!navi.getKey().equals(keyToNotDisable));
         preconf.setChecked(preconf.getKey().equals(keyToNotDisable));
+        preconf.setEnabled(!preconf.getKey().equals(keyToNotDisable));
+    }
+
+    private boolean getAnyChecked() {
+        return (none.isChecked() ||
+                full.isChecked() ||
+                status.isChecked() ||
+                navi.isChecked() ||
+                preconf.isChecked()
+                );
     }
 
     private void disableQSSettingIfBelowNougat() {
@@ -104,11 +118,12 @@ public class ImmersiveHelper extends BaseHelper implements Preference.OnPreferen
 
             boolean isChecked = Boolean.valueOf(o.toString());
 
-            if (!isChecked) boxPreference.setChecked(true);
-            else {
+            if (isChecked) {
                 setAllOthersDisabled(boxPreference.getKey());
                 ImmersiveHandler.setMode(getActivity(), boxPreference.getKey());
             }
+
+            boxPreference.setEnabled(!isChecked);
         }
 
         if (preference instanceof ListPreference) {

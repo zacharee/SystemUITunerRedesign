@@ -256,7 +256,7 @@
     <string name="which_os">Which operating system is your computer running?</string>
     <string name="on_device">Follow these instructions on your device.</string>
     <string name="on_computer">Follow these instructions on your computer.</string>
-    <string name="run_on_computer">Run these commands on your computer.</string>
+    <string name="run_on_computer">Run these commands on your computer. For Linux and macOS, you will need to use \"./adb\" instead of \"adb\".</string>
 
     <string name="windows">Windows</string>
     <string name="mac">macOS</string>
