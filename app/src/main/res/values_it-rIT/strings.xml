@@ -198,17 +198,17 @@
   <string name="intro_5">Una volta premuto il pulsante fine, SystemUI Tuner tenterà di ottenere l\'accesso root. Se possibile, concederà tutte le autorizzazioni per voi. In caso contrario, compariranno delle istruzioni per guidarvi.</string>
   <string name="adb_setup">Per continuare devi concedere l\'autorizzazione qui sopra. L\'accesso root è stato negato o non è disponibile, il che significa che sarà necessario concedere queste autorizzazione tramite ADB.</string>
   <string name="missing_perms">Permesso mancante!</string>
-  <string name="enable_debug"><![CDATA[1. Go to Settings >> Developer Options and make sure USB Debugging is enabled.]]></string>
-  <string name="accept_auth">2. Plug your device into your computer and accept the authorization request on it.</string>
-  <string name="enable_devops"><![CDATA[- Enable Developer Options by going to Settings >> About, finding \"Build Number\" and tapping it 7 times.]]></string>
-  <string name="download_drivers">- Windows users may need to install device drivers, which are available from the manufacturer\'s website.</string>
-  <string name="download_adb_windows"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-windows.zip">Download the ADB ZIP for Windows.</a>]]></string>
-  <string name="extract_zip">2. Extract the ZIP to an easily-accessible location (ie Desktop).</string>
-  <string name="open_cmd">3. Open CMD.</string>
-  <string name="cd_windows"><![CDATA[4. Enter <b>cd C:\\path\\to\\extracted\\folder\\</b> to get to the folder where you extracted ADB. For instance, <b>cd C:\\Users\\Zachary\\Desktop\\platform-tools\\</b>.]]></string>
-  <string name="cd_further"><![CDATA[- Make sure that the folder you <b>cd</b> into contains the ADB executable. If not, <b>cd</b> one level further.]]></string>
-  <string name="download_adb_mac"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-darwin.zip">Download the ADB ZIP for macOS.</a>]]></string>
-  <string name="open_terminal">3. Open Terminal.</string>
+  <string name="enable_debug"><![CDATA[1. Vai nelle impostazioni >> Opzioni sviluppatore e assicurati che Debug Android sia attivo.]]></string>
+  <string name="accept_auth">2. Collega il tuo telefono al tuo pc e accetta l\'autorizzazione che comparirà su di esso.</string>
+  <string name="enable_devops"><![CDATA[- Abilita le opzioni sviluppatore andando su Impostazioni >> Stato telefono, trova \"Numero build\" e premilo 7 volte.]]></string>
+  <string name="download_drivers">- Gli utenti windows dovranno installare i driver del proprio dispositivo, che sono disponibili sul sito del proprio dispositivo.</string>
+  <string name="download_adb_windows"><![CDATA[<a href="https://dl.google.com/android/repository/platform-tools-latest-windows.zip">Scarica lo ZIP ADB per Windows.</a>]]></string>
+  <string name="extract_zip">2. Estrai lo ZIP in una posizione comoda (es: Desktop).</string>
+  <string name="open_cmd">3. Apri il CMD.</string>
+  <string name="cd_windows"><![CDATA[4. Digita <b>cd C:\\percorso\\a\\cartella\\estratta\\</b> per entrare nella cartella dove hai estratto ADB. Per esempio, <b>cd C:\\Users\\Zachary\\Desktop\\platform-tools\\</b>.]]></string>
+  <string name="cd_further"><![CDATA[- Assicurati che la cartella nella quale entrerai con <b>cd</b> contenga l'eseguibile ADB. Se non c'è, <b>cd</b> il percorso prima.]]></string>
+  <string name="download_adb_mac"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-darwin.zip">Scarica lo ZIP ADB per macOS.</a>]]></string>
+  <string name="open_terminal">3. Apri il terminale.</string>
   <string name="cd_mac"><![CDATA[4. Enter <b>cd /path/to/extracted/folder/</b> to get to the folder you extracted ADB into. For instance, <b>cd /Users/Zachary/Desktop/platform-tools/</b>.]]></string>
   <string name="apt_get_adb"><![CDATA[- <b>sudo apt-get install adb</b>]]></string>
   <string name="make_sure_adb_installed">1. Make sure ADB is installed:</string>
