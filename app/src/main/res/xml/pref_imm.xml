@@ -24,6 +24,11 @@
             android:title="@string/pre_confirms"
             android:key="immersive.preconfirms" />
 
+        <Preference
+            android:selectable="false"
+            android:title="@string/warning"
+            android:summary="@string/imm_warn" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
