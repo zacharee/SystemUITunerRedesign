@@ -4,4 +4,12 @@
         <attr name="pref_icon" format="integer"/>
         <attr name="pref_icon_tint" format="color"/>
     </declare-styleable>
+
+    <declare-styleable name="SeekBarPreferenceCustom">
+        <attr name="min" format="integer" />
+        <attr name="max" format="integer" />
+        <attr name="increment" format="integer" />
+        <attr name="adjustable" format="boolean" />
+        <attr name="showValue" format="boolean" />
+    </declare-styleable>
 </resources>

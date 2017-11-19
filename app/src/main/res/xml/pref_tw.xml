@@ -7,13 +7,15 @@
         <!--<SwitchPreference-->
             <!--android:key="high_bright_warning"-->
             <!--android:title="@string/high_brightness_warning"/>-->
-        <com.zacharee1.sliderpreferenceembedded.SliderPreferenceEmbedded
+        <com.zacharee1.sliderpreferenceembedded.SliderPreferenceEmbeddedNew
             android:title="@string/qs_row_count"
             android:key="qs_tile_row"
+            app:min="1"
             app:max="10"/>
-        <com.zacharee1.sliderpreferenceembedded.SliderPreferenceEmbedded
+        <com.zacharee1.sliderpreferenceembedded.SliderPreferenceEmbeddedNew
             android:title="@string/qs_column_count"
             android:key="qs_tile_column"
+            app:min="2"
             app:max="10"/>
     </PreferenceCategory>
 

@@ -33,7 +33,8 @@ public class MainActivity extends AppCompatActivity
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         DARK = sharedPreferences.getBoolean("dark_mode", false);
 
-        if (sharedPreferences.getBoolean("use_fabric", true)) Fabric.with(this, new Crashlytics());
+//        if (sharedPreferences.getBoolean("use_fabric", true))
+//            Fabric.with(this, new Crashlytics());
 
         setTheme(DARK ? R.style.AppTheme_Dark : R.style.AppTheme);
 

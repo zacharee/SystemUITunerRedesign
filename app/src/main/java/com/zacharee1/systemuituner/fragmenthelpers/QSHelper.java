@@ -6,7 +6,7 @@ import android.preference.PreferenceCategory;
 import android.preference.SwitchPreference;
 import android.provider.Settings;
 
-import com.zacharee1.sliderpreferenceembedded.SliderPreferenceEmbedded;
+import com.zacharee1.sliderpreferenceembedded.SliderPreferenceEmbeddedNew;
 import com.zacharee1.systemuituner.R;
 import com.zacharee1.systemuituner.fragments.ItemDetailFragment;
 import com.zacharee1.systemuituner.misc.SettingsUtils;
@@ -77,11 +77,8 @@ public class QSHelper extends BaseHelper
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N)
         {
 
-            SliderPreferenceEmbedded pref = (SliderPreferenceEmbedded) findPreference("sysui_qqs_count"); //find the SliderPreference
-
-            pref.setMaxProgess(20);
-            pref.setMinProgress(1);
-            pref.setProgressState(Settings.Secure.getInt(getContext().getContentResolver(), "sysui_qqs_count", 5)); //set the progress/value from Settings
+            final SliderPreferenceEmbeddedNew pref = (SliderPreferenceEmbeddedNew) findPreference("sysui_qqs_count"); //find the SliderPreference
+//            pref.set<in(1);
             pref.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener()
             {
                 @Override
@@ -91,6 +88,8 @@ public class QSHelper extends BaseHelper
                     return true;
                 }
             });
+
+            pref.setProgress(Settings.Secure.getInt(getContext().getContentResolver(), "sysui_qqs_count", 5)); //set the progress/value from Settings
         } else {
             PreferenceCategory category = (PreferenceCategory) findPreference("qqs_count_category");
             category.setEnabled(false);

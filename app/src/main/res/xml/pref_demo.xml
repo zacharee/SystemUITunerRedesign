@@ -17,20 +17,21 @@
         <com.zacharee1.systemuituner.prefs.TimePreference
             android:title="@string/select_time"
             android:key="selected_time"/>
-        <com.zacharee1.sliderpreferenceembedded.SliderPreferenceEmbedded
+        <com.zacharee1.sliderpreferenceembedded.SliderPreferenceEmbeddedNew
             app:max="100"
             android:title="@string/select_battery_level"
             android:key="selected_battery_level"/>
-        <com.zacharee1.sliderpreferenceembedded.SliderPreferenceEmbedded
+        <com.zacharee1.sliderpreferenceembedded.SliderPreferenceEmbeddedNew
             app:max="3"
             android:title="@string/wifi_strength"
             android:key="wifi_strength"/>
-        <com.zacharee1.sliderpreferenceembedded.SliderPreferenceEmbedded
+        <com.zacharee1.sliderpreferenceembedded.SliderPreferenceEmbeddedNew
             app:max="4"
             android:title="@string/mobile_strength"
             android:key="selected_mobile_strength"/>
-        <com.zacharee1.sliderpreferenceembedded.SliderPreferenceEmbedded
-            app:max="7"
+        <com.zacharee1.sliderpreferenceembedded.SliderPreferenceEmbeddedNew
+            app:min="1"
+            app:max="8"
             android:title="@string/sim_count"
             android:key="sim_count" />
         <ListPreference

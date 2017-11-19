@@ -3,7 +3,7 @@ package com.zacharee1.systemuituner.fragmenthelpers;
 import android.preference.Preference;
 import android.provider.Settings;
 
-import com.zacharee1.sliderpreferenceembedded.SliderPreferenceEmbedded;
+import com.zacharee1.sliderpreferenceembedded.SliderPreferenceEmbeddedNew;
 import com.zacharee1.systemuituner.fragments.ItemDetailFragment;
 import com.zacharee1.systemuituner.misc.SettingsUtils;
 
@@ -18,8 +18,8 @@ public class TWHelper extends BaseHelper
     }
 
     private void setUpQSStuff() {
-        final SliderPreferenceEmbedded rows = (SliderPreferenceEmbedded) findPreference("qs_tile_row");
-        final SliderPreferenceEmbedded columns = (SliderPreferenceEmbedded) findPreference("qs_tile_column");
+        final SliderPreferenceEmbeddedNew rows = (SliderPreferenceEmbeddedNew) findPreference("qs_tile_row");
+        final SliderPreferenceEmbeddedNew columns = (SliderPreferenceEmbeddedNew) findPreference("qs_tile_column");
         int defVal = 3;
         final int savedRowVal = Settings.Secure.getInt(getActivity().getContentResolver(), rows.getKey(), defVal);
         final int savedColVal = Settings.Secure.getInt(getActivity().getContentResolver(), columns.getKey(), defVal);
@@ -29,16 +29,12 @@ public class TWHelper extends BaseHelper
 //            columns.setMinProgress(1);
 //        }
 
-        rows.setMinProgress(1);
-        columns.setMinProgress(2);
+//        rows.setMinProgress(1);
+//        columns.setMax(2);
 
         rows.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
             @Override
             public boolean onPreferenceChange(Preference preference, Object newValue) {
-                if (Integer.valueOf(newValue.toString()) < 1) {
-                    newValue = 1;
-                    rows.setProgress(1);
-                }
                 SettingsUtils.writeSecure(getActivity(), preference.getKey(), newValue.toString());
                 return true;
             }
@@ -46,28 +42,13 @@ public class TWHelper extends BaseHelper
         columns.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
             @Override
             public boolean onPreferenceChange(Preference preference, Object newValue) {
-                if (Integer.valueOf(newValue.toString()) < 1) {
-                    newValue = 1;
-                    columns.setProgress(1);
-                }
                 SettingsUtils.writeSecure(getActivity(), preference.getKey(), newValue.toString());
                 return true;
             }
         });
 
-        rows.setOnViewCreatedListener(new SliderPreferenceEmbedded.OnViewCreatedListener() {
-            @Override
-            public void viewCreated() {
-                rows.setProgress(savedRowVal);
-            }
-        });
-
-        columns.setOnViewCreatedListener(new SliderPreferenceEmbedded.OnViewCreatedListener() {
-            @Override
-            public void viewCreated() {
-                columns.setProgress(savedColVal);
-            }
-        });
+        rows.setProgress(savedRowVal);
+        columns.setProgress(savedColVal);
     }
 
 //    private void setHBWState() {

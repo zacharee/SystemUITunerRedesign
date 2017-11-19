@@ -12,10 +12,10 @@
             android:title="@string/hide_welcome_screen"
             android:key="hide_welcome_screen" />
 
-        <SwitchPreference
-            android:title="@string/enable_fabric_io_analytics"
-            android:key="use_fabric"
-            android:defaultValue="true" />
+        <!--<SwitchPreference-->
+            <!--android:title="@string/enable_fabric_io_analytics"-->
+            <!--android:key="use_fabric"-->
+            <!--android:defaultValue="true" />-->
 
     </PreferenceCategory>
 
