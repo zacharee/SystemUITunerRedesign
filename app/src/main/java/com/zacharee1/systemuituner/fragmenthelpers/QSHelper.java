@@ -6,7 +6,7 @@ import android.preference.PreferenceCategory;
 import android.preference.SwitchPreference;
 import android.provider.Settings;
 
-import com.zacharee1.sliderpreferenceembedded.SliderPreferenceEmbeddedNew;
+import com.zacharee1.sliderpreferenceembedded.SliderPreferenceEmbedded;
 import com.zacharee1.systemuituner.R;
 import com.zacharee1.systemuituner.fragments.ItemDetailFragment;
 import com.zacharee1.systemuituner.misc.SettingsUtils;
@@ -77,7 +77,7 @@ public class QSHelper extends BaseHelper
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N)
         {
 
-            final SliderPreferenceEmbeddedNew pref = (SliderPreferenceEmbeddedNew) findPreference("sysui_qqs_count"); //find the SliderPreference
+            final SliderPreferenceEmbedded pref = (SliderPreferenceEmbedded) findPreference("sysui_qqs_count"); //find the SliderPreference
 //            pref.set<in(1);
             pref.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener()
             {

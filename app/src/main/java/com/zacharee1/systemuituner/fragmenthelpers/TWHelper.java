@@ -3,7 +3,7 @@ package com.zacharee1.systemuituner.fragmenthelpers;
 import android.preference.Preference;
 import android.provider.Settings;
 
-import com.zacharee1.sliderpreferenceembedded.SliderPreferenceEmbeddedNew;
+import com.zacharee1.sliderpreferenceembedded.SliderPreferenceEmbedded;
 import com.zacharee1.systemuituner.fragments.ItemDetailFragment;
 import com.zacharee1.systemuituner.misc.SettingsUtils;
 
@@ -18,8 +18,8 @@ public class TWHelper extends BaseHelper
     }
 
     private void setUpQSStuff() {
-        final SliderPreferenceEmbeddedNew rows = (SliderPreferenceEmbeddedNew) findPreference("qs_tile_row");
-        final SliderPreferenceEmbeddedNew columns = (SliderPreferenceEmbeddedNew) findPreference("qs_tile_column");
+        final SliderPreferenceEmbedded rows = (SliderPreferenceEmbedded) findPreference("qs_tile_row");
+        final SliderPreferenceEmbedded columns = (SliderPreferenceEmbedded) findPreference("qs_tile_column");
         int defVal = 3;
         final int savedRowVal = Settings.Secure.getInt(getActivity().getContentResolver(), rows.getKey(), defVal);
         final int savedColVal = Settings.Secure.getInt(getActivity().getContentResolver(), columns.getKey(), defVal);
