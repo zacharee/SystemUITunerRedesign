@@ -232,6 +232,6 @@
   <string name="ubuntu">Ubuntu</string>
   <string name="fedora">Fedora</string>
   <string name="linux">Linux</string>
-  <string name="warning">Warning!</string>
-  <string name="imm_warn">This feature merely allows you to enable Immersive Mode. It DOES NOT do anything beyond that. Any issues you experience are the fault of your device\'s manufacturer. I CANNOT FIX IT!</string>
+  <string name="warning">警告！</string>
+  <string name="imm_warn">本功能只會啟用沈浸模式，沒有別的了。若因此發生問題請洽裝置製造商，我幫不了你！</string>
 </resources>
