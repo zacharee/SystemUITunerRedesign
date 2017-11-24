@@ -83,15 +83,6 @@ public class ImmersiveHelper extends BaseHelper implements Preference.OnPreferen
         preconf.setEnabled(!preconf.getKey().equals(keyToNotDisable));
     }
 
-    private boolean getAnyChecked() {
-        return (none.isChecked() ||
-                full.isChecked() ||
-                status.isChecked() ||
-                navi.isChecked() ||
-                preconf.isChecked()
-                );
-    }
-
     private void disableQSSettingIfBelowNougat() {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.N) {
             PreferenceCategory category = (PreferenceCategory) findPreference("config_qs");

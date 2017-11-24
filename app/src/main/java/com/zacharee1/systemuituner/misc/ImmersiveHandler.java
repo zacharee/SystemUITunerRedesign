@@ -2,8 +2,11 @@ package com.zacharee1.systemuituner.misc;
 
 import android.content.Context;
 import android.net.Uri;
+import android.preference.PreferenceManager;
 import android.provider.Settings;
 import android.support.annotation.Nullable;
+
+import java.util.TreeSet;
 
 public class ImmersiveHandler {
     public static final String KEY = "policy_control";
@@ -44,11 +47,50 @@ public class ImmersiveHandler {
                 || type.contains(PRECONF)
                 || type.contains(DISABLED)) {
 
-            if (!type.contains("=*")) type = type.concat("=*");
+            type = concat(context, type);
 
             SettingsUtils.writeGlobal(context, KEY, type);
         } else {
             throw new IllegalArgumentException("Invalid type: " + type);
         }
+    }
+
+    private static String concat(Context context, String type) {
+        StringBuilder builder = new StringBuilder(type.replace("=*", ""));
+        builder.append("=");
+        if (isSelecting(context)) {
+            builder.append(parseSelectedApps(context, "*"));
+        } else {
+            builder.append("*");
+        }
+
+        return builder.toString();
+    }
+
+    public static String parseSelectedApps(Context context, String def) {
+        TreeSet<String> apps = parseSelectedApps(context, new TreeSet<String>());
+
+        if (apps.isEmpty()) return def;
+        else {
+            StringBuilder ret = new StringBuilder();
+
+            for (String app : apps) {
+                ret.append(isBlacklist(context) ? "-" : "").append(app).append(",");
+            }
+
+            return ret.toString();
+        }
+    }
+
+    public static TreeSet<String> parseSelectedApps(Context context, TreeSet<String> def) {
+        return new TreeSet<>(PreferenceManager.getDefaultSharedPreferences(context).getStringSet("immersive_apps", def));
+    }
+
+    public static boolean isSelecting(Context context) {
+        return PreferenceManager.getDefaultSharedPreferences(context).getBoolean("app_immersive", false);
+    }
+
+    public static boolean isBlacklist(Context context) {
+        return PreferenceManager.getDefaultSharedPreferences(context).getBoolean("immersive_blacklist", false);
     }
 }
