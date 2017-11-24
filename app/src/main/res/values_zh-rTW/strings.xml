@@ -7,12 +7,12 @@
   <string name="sorry_option">請在電腦上執行下列指令（指令為單行）：</string>
   <string name="more">更多</string>
   <string name="grant_dump_perm">你需要授予 \"android.permission.DUMP\" 權限才可使用本功能</string>
-  <string name="safe_mode_auto_enabled">偵測到三星裝置！為了安全起見，安全模式已自動啟動</string>
+  <string name="safe_mode_auto_enabled">Samsung device detected! Safe Mode has been automatically enabled for your safety. Be warned that modifying any status bar icons has the potential to BREAK SYSTEM UI! Please follow the link in the Play Store description for more information.</string>
   <string name="notice">注意</string>
   <string name="fancy_pulldown_notice">關閉本功能可能導致重啟後發生錯誤。請啟用安全模式或於重啟後手動切換功能。</string>
-  <string name="safe_mode_summary">三星用戶若非使用 AOSP 請保持本功能開啟！\n\n
-    在一般重啟或關機前重設所有狀態列更動，並於開機後還原 \n
-    在一般重啟或關機前重設下拉快速設定中的 \"炫炮下拉動畫\"，並於開機後還原先前儲存的設定    </string>
+  <string name="safe_mode_summary">SAMSUNG USERS KEEP THIS TURNED ON UNLESS YOU HAVE AN AOSP ROM! \n\n
+        Clears any status bar customizations on NORMAL reboot/shutdown and restores them after boot completes. \n
+    </string>
   <string name="hide_welcome_screen">隱藏歡迎畫面</string>
   <string name="tasker_support">Tasker 支援</string>
   <string name="instructions">操作指南</string>
