@@ -7,12 +7,12 @@
   <string name="sorry_option">Prova ad eseguire questo comando da un pc (è solo una linea):</string>
   <string name="more">Altro</string>
   <string name="grant_dump_perm">Devi concedere il permesso \"android.permission.DUMP\" per usare questa impostazione.</string>
-  <string name="safe_mode_auto_enabled">Telefono Samsung rilevato! La modalità provvisoria è stata attivata automaticamente per la tua sicurezza.</string>
+  <string name="safe_mode_auto_enabled">Samsung device detected! Safe Mode has been automatically enabled for your safety. Be warned that modifying any status bar icons has the potential to BREAK SYSTEM UI! Please follow the link in the Play Store description for more information.</string>
   <string name="notice">AVVISO</string>
   <string name="fancy_pulldown_notice">Attivare/Disattivare questa opzione può causare dei bug dopo un riavvio. Abilita la modalità provvisoria o seleziona manualmente questa opzione dopo un riavvio.</string>
-  <string name="safe_mode_summary">GLI UTENTI SAMSUNG DEVONO TENERE QUESTA OPZIONE ATTIVA A MENO CHE NON ABBIATE UNA ROM AOSP! \n\n
-        Cancella ogni personalizzazione alla barra di stato con un riavvio/spegnimento normale e ripristinali una volta completato l\'avvio.\n
-        Resetta \"QS Fancy Pulldown Animation\" a default con un riavvio/spegnimento normale e ripristina le opzioni salvate una volta completato l\'avvio.    </string>
+  <string name="safe_mode_summary">SAMSUNG USERS KEEP THIS TURNED ON UNLESS YOU HAVE AN AOSP ROM! \n\n
+        Clears any status bar customizations on NORMAL reboot/shutdown and restores them after boot completes. \n
+    </string>
   <string name="hide_welcome_screen">Nascondi la schermata di benvenuto</string>
   <string name="tasker_support">Supporto a Tasker</string>
   <string name="instructions">Istruzioni</string>
