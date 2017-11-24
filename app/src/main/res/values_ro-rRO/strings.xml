@@ -7,12 +7,11 @@
   <string name="sorry_option">Try executing the following command from a computer (it\'s one line):</string>
   <string name="more">More</string>
   <string name="grant_dump_perm">You need to grant the permission \"android.permission.DUMP\" to use this feature.</string>
-  <string name="safe_mode_auto_enabled">Samsung device detected! Safe Mode has been automatically enabled for your safety.</string>
+  <string name="safe_mode_auto_enabled">Samsung device detected! Safe Mode has been automatically enabled for your safety. Be warned that modifying any status bar icons has the potential to BREAK SYSTEM UI! Please follow the link in the Play Store description for more information.</string>
   <string name="notice">NOTICE</string>
   <string name="fancy_pulldown_notice">Toggling this option off can cause issues after a reboot. Enable Safe Mode or manually toggle this option on and off after a reboot.</string>
   <string name="safe_mode_summary">SAMSUNG USERS KEEP THIS TURNED ON UNLESS YOU HAVE AN AOSP ROM! \n\n
         Clears any status bar customizations on NORMAL reboot/shutdown and restores them after boot completes. \n
-        Resets \"QS Fancy Pulldown Animation\" to default on NORMAL reboot/shutdown and restores saved option after boot completes.
     </string>
   <string name="hide_welcome_screen">Hide Welcome Screen</string>
   <string name="tasker_support">Tasker Support</string>
