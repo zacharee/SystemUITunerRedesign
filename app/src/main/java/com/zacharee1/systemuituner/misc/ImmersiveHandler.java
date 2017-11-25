@@ -32,7 +32,7 @@ public class ImmersiveHandler {
     @Nullable
     public static String getMode(Context context) {
         String imm = Settings.Global.getString(context.getContentResolver(), KEY);
-        if (imm == null) imm = "";
+        if (imm == null) imm = "immersive.none";
         imm = imm.replaceAll("=(.+?)$", "");
 
         return imm;
