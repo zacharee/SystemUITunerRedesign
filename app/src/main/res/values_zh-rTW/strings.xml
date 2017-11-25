@@ -232,6 +232,11 @@
   <string name="ubuntu">Ubuntu</string>
   <string name="fedora">Fedora</string>
   <string name="linux">Linux</string>
+  <string name="app_specific">App-Specific</string>
+  <string name="blacklist">Blacklist</string>
+  <string name="select_apps">Select Apps</string>
+  <string name="app_specific_desc">Select apps to be included in or excluded from Immersive Mode.</string>
+  <string name="blacklist_desc">When on, selected apps will not use Immersive Mode</string>
   <string name="warning">警告！</string>
   <string name="imm_warn">本功能只會啟用沈浸模式，沒有別的了。若因此發生問題請洽裝置製造商，我幫不了你！</string>
 </resources>
