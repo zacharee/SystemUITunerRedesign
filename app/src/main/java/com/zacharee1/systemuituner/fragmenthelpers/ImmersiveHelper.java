@@ -1,5 +1,6 @@
 package com.zacharee1.systemuituner.fragmenthelpers;
 
+import android.content.Intent;
 import android.database.ContentObserver;
 import android.net.Uri;
 import android.os.Build;
@@ -13,6 +14,7 @@ import android.provider.Settings;
 import android.util.Log;
 
 import com.zacharee1.systemuituner.R;
+import com.zacharee1.systemuituner.activites.ImmersiveSelectActivity;
 import com.zacharee1.systemuituner.fragments.ItemDetailFragment;
 import com.zacharee1.systemuituner.misc.ImmersiveHandler;
 
@@ -45,6 +47,8 @@ public class ImmersiveHelper extends BaseHelper implements Preference.OnPreferen
         setContentObserver();
         setProperBoxChecked();
         disableQSSettingIfBelowNougat();
+        setSelectorListener();
+        setSelectionState();
     }
 
     private void setContentObserver() {
@@ -53,6 +57,7 @@ public class ImmersiveHelper extends BaseHelper implements Preference.OnPreferen
             public void onChange(boolean selfChange, Uri uri) {
                 if (uri.equals(ImmersiveHandler.POLICY_CONTROL)) {
                     setProperBoxChecked();
+                    setSelectionState();
                 }
             }
         };
@@ -61,7 +66,7 @@ public class ImmersiveHelper extends BaseHelper implements Preference.OnPreferen
     }
 
     private void setProperBoxChecked() {
-        String currentMode = ImmersiveHandler.getMode(getContext(), false);
+        String currentMode = ImmersiveHandler.getMode(getContext());
 
         if (currentMode == null || currentMode.isEmpty()) {
             currentMode = ImmersiveHandler.DISABLED;
@@ -71,16 +76,22 @@ public class ImmersiveHelper extends BaseHelper implements Preference.OnPreferen
     }
 
     private void setAllOthersDisabled(String keyToNotDisable) {
-        none.setChecked(none.getKey().equals(keyToNotDisable));
-        none.setEnabled(!none.getKey().equals(keyToNotDisable));
-        full.setChecked(full.getKey().equals(keyToNotDisable));
-        full.setEnabled(!full.getKey().equals(keyToNotDisable));
-        status.setChecked(status.getKey().equals(keyToNotDisable));
-        status.setEnabled(!status.getKey().equals(keyToNotDisable));
-        navi.setChecked(navi.getKey().equals(keyToNotDisable));
-        navi.setEnabled(!navi.getKey().equals(keyToNotDisable));
-        preconf.setChecked(preconf.getKey().equals(keyToNotDisable));
-        preconf.setEnabled(!preconf.getKey().equals(keyToNotDisable));
+        PreferenceCategory boxes = (PreferenceCategory) findPreference("imm_boxes");
+
+        for (int i = 0; i < boxes.getPreferenceCount(); i++) {
+            Preference preference = boxes.getPreference(i);
+
+            if (preference instanceof CheckBoxPreference) {
+                CheckBoxPreference p = (CheckBoxPreference) preference;
+                p.setEnabled(!p.getKey().equals(keyToNotDisable));
+
+                if (!p.getKey().equals(keyToNotDisable)) {
+                    p.setChecked(false);
+                } else if (!p.isChecked()) {
+                    p.setChecked(true);
+                }
+            }
+        }
     }
 
     private void disableQSSettingIfBelowNougat() {
@@ -93,6 +104,22 @@ public class ImmersiveHelper extends BaseHelper implements Preference.OnPreferen
                 preference.setSummary(R.string.requires_nougat);
             }
         }
+    }
+
+    private void setSelectorListener() {
+        Preference preference = findPreference("select_apps");
+        preference.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+            @Override
+            public boolean onPreferenceClick(Preference preference) {
+                getActivity().startActivity(new Intent(getActivity(), ImmersiveSelectActivity.class));
+                return true;
+            }
+        });
+    }
+
+    private void setSelectionState() {
+        PreferenceCategory appSelector = (PreferenceCategory) findPreference("app_specific");
+        appSelector.setEnabled(!ImmersiveHandler.isInImmersive(getActivity()));
     }
 
     @Override
@@ -113,8 +140,6 @@ public class ImmersiveHelper extends BaseHelper implements Preference.OnPreferen
                 setAllOthersDisabled(boxPreference.getKey());
                 ImmersiveHandler.setMode(getActivity(), boxPreference.getKey());
             }
-
-            boxPreference.setEnabled(!isChecked);
         }
 
         if (preference instanceof ListPreference) {

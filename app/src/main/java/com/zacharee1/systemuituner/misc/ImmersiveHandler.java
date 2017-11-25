@@ -30,12 +30,9 @@ public class ImmersiveHandler {
     }
 
     @Nullable
-    public static String getMode(Context context, boolean keepEqStar) {
+    public static String getMode(Context context) {
         String imm = Settings.Global.getString(context.getContentResolver(), KEY);
-
-        if (imm != null && !keepEqStar) {
-            imm = imm.replace("=*", "");
-        }
+        imm = imm.replaceAll("=(.+?)$", "");
 
         return imm;
     }
@@ -73,6 +70,7 @@ public class ImmersiveHandler {
         if (apps.isEmpty()) return def;
         else {
             StringBuilder ret = new StringBuilder();
+            if (isBlacklist(context)) ret.append("apps,");
 
             for (String app : apps) {
                 ret.append(isBlacklist(context) ? "-" : "").append(app).append(",");
@@ -84,6 +82,18 @@ public class ImmersiveHandler {
 
     public static TreeSet<String> parseSelectedApps(Context context, TreeSet<String> def) {
         return new TreeSet<>(PreferenceManager.getDefaultSharedPreferences(context).getStringSet("immersive_apps", def));
+    }
+
+    public static void addApp(Context context, String add) {
+        TreeSet<String> set = new TreeSet<>(PreferenceManager.getDefaultSharedPreferences(context).getStringSet("immersive_apps", new TreeSet<String>()));
+        set.add(add);
+        PreferenceManager.getDefaultSharedPreferences(context).edit().putStringSet("immersive_apps", set).apply();
+    }
+
+    public static void removeApp(Context context, String remove) {
+        TreeSet<String> set = new TreeSet<>(PreferenceManager.getDefaultSharedPreferences(context).getStringSet("immersive_apps", new TreeSet<String>()));
+        set.remove(remove);
+        PreferenceManager.getDefaultSharedPreferences(context).edit().putStringSet("immersive_apps", set).apply();
     }
 
     public static boolean isSelecting(Context context) {

@@ -16,6 +16,7 @@ import android.view.ViewGroup;
 import com.zacharee1.systemuituner.R;
 import com.zacharee1.systemuituner.misc.AppInfo;
 import com.zacharee1.systemuituner.misc.CustomAdapter;
+import com.zacharee1.systemuituner.misc.Utils;
 
 import java.util.ArrayList;
 import java.util.TreeMap;
@@ -66,7 +67,7 @@ public class AppsListActivity extends AppCompatActivity {
     private ArrayList<AppInfo> getAppInfo() {
         TreeMap<String, AppInfo> appMap = new TreeMap<>();
 
-        for (ApplicationInfo info : getPackageManager().getInstalledApplications(PackageManager.GET_META_DATA)) {
+        for (ApplicationInfo info : Utils.getInstalledApps(this)) {
             try {
                 if (getPackageManager().getPackageInfo(info.packageName, PackageManager.GET_ACTIVITIES).activities.length > 1) {
                     appMap.put(info.loadLabel(getPackageManager()).toString(),

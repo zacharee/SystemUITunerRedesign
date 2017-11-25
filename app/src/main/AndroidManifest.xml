@@ -159,7 +159,8 @@
         <activity android:name=".activites.AppsListActivity" />
         <activity android:name=".activites.ComponentsListActivity" />
         <activity android:name=".activites.IntroActivity" />
-        <activity android:name=".instructions.InstructionsActivity"></activity>
+        <activity android:name=".instructions.InstructionsActivity" />
+        <activity android:name=".activites.ImmersiveSelectActivity"></activity>
     </application>
 
 </manifest>

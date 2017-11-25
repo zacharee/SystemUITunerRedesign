@@ -4,7 +4,9 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.content.res.Resources;
 import android.os.Build;
 import android.preference.PreferenceManager;
@@ -22,6 +24,7 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.List;
 
 @SuppressWarnings({"WeakerAccess", "unused"})
 public class Utils
@@ -116,5 +119,9 @@ public class Utils
         } else {
             context.startActivity(new Intent(context, MainActivity.class));
         }
+    }
+
+    public static List<ApplicationInfo> getInstalledApps(Context context) {
+        return context.getPackageManager().getInstalledApplications(PackageManager.GET_META_DATA);
     }
 }

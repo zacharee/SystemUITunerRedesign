@@ -242,7 +242,7 @@
 
     <string name="download_adb_linux"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-linux.zip">Download the ADB ZIP for Linux.</a>]]></string>
     <string name="cd_linux"><![CDATA[4. Enter <b>cd /path/to/extracted/folder/</b> to get to the folder you extracted ADB into. For instance, <b>cd /home/Zachary/Desktop/platform-tools/</b>.]]></string>
-    
+
     <string name="choose_your_weapon">Choose your Weapon</string>
     <string name="initial_setup">Initial Setup</string>
     <string name="windows_setup">Windows Setup</string>
@@ -262,6 +262,12 @@
     <string name="ubuntu">Ubuntu</string>
     <string name="fedora">Fedora</string>
     <string name="linux">Linux</string>
+    <string name="app_specific">App-Specific</string>
+    <string name="blacklist">Blacklist</string>
+    <string name="select_apps">Select Apps</string>
+
+    <string name="app_specific_desc">Select apps to be included in or excluded from Immersive Mode.</string>
+    <string name="blacklist_desc">When on, selected apps will not use Immersive Mode</string>
 
     <string name="warning">Warning!</string>
 

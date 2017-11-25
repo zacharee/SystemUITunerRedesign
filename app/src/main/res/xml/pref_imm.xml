@@ -32,16 +32,22 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:title="App-Specific">
+        android:title="@string/app_specific"
+        android:summary="@string/app_specific_desc"
+        android:key="app_specific">
 
         <SwitchPreference
             android:title="@string/enabled"
             android:key="app_immersive" />
 
         <SwitchPreference
-            android:title="Blacklist"
-            android:summary="When on, selected apps will not use Immersive Mode"
+            android:title="@string/blacklist"
+            android:summary="@string/blacklist_desc"
             android:key="immersive_blacklist"/>
+
+        <Preference
+            android:title="@string/select_apps"
+            android:key="select_apps" />
 
     </PreferenceCategory>
 
