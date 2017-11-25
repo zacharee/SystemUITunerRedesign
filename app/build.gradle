@@ -12,7 +12,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'io.fabric'
 apply plugin: 'io.fabric'
 
-project.version = 230
+project.version = 231
 
 repositories {
     maven { url 'https://maven.fabric.io/public' }
