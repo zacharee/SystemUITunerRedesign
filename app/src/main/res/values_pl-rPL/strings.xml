@@ -194,9 +194,9 @@
   <string name="intro_2">Tak jak w AOSP, SystemUI Tuner pozwala na ukrycie wybranych ikon na pasku stanu. Poza tym jest wiele innych opcji, takie jak wyłączenie powiadomień heads-up czy tryb immersive.</string>
   <string name="intro_3">Jest mnóstwo przykładowych ustawień paska stanu, ale jeśli nie widzisz ikony, którą chcesz usunąć możesz użyć opcji automatycznego wykrywania.</string>
   <string name="intro_4">A najlepsza zaleta tej aplikacji? Nie potrzebny jest root! Będzie podjęta próba otrzymania uprawnień, lecz jeśli nie będzie to możliwe, konieczne będzie użycie ADB. UŻYWANIE ADB NIE OZNACZA ROOT!</string>
-  <string name="intro_5">Once you tap the finish button, SystemUI Tuner will attempt to gain root access. If it can, it will grant all needed permissions for you. Otherwise, instructions will appear to guide you.</string>
-  <string name="adb_setup">The permissions above must be granted to continue. Root access was either denied or unavailable, which means you\'ll have to grant these permissions using ADB.</string>
-  <string name="missing_perms">Missing Permissions!</string>
+  <string name="intro_5">Jak tylko naciśniesz na zakończ, SystemUI Tuner podejmie próbę dostępu do roota. Jeśli będzie mógł, przypisze wszystkie potrzebne uprawnienia dla ciebie. W innym przypadku instrukcje poprowadzą i pomogą ci z tym.</string>
+  <string name="adb_setup">Powyższe uprawnienia są wymagane do kontynuowania. Dostęp do roota został odrzucony lub jest niedostępny. Wymagane uprawnienia musisz nadać używając ADB.</string>
+  <string name="missing_perms">Brakuje uprawnień!</string>
   <string name="enable_debug"><![CDATA[1. Go to Settings >> Developer Options and make sure USB Debugging is enabled.]]></string>
   <string name="accept_auth">2. Plug your device into your computer and accept the authorization request on it.</string>
   <string name="enable_devops"><![CDATA[- Enable Developer Options by going to Settings >> About, finding \"Build Number\" and tapping it 7 times.]]></string>
