@@ -76,14 +76,14 @@ public class MiscHelper extends BaseHelper
     }
 
     private void setSecureSwitchStates() {
-        if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.M) {
+        if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.M || Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             PreferenceCategory category = (PreferenceCategory) findPreference("power_notification_controls");
             category.setEnabled(false);
 
             for (int i = 0; i < category.getPreferenceCount(); i++) {
                 SwitchPreference preference = (SwitchPreference) category.getPreference(i);
                 preference.setChecked(false);
-                preference.setSummary(R.string.requires_nougat);
+                preference.setSummary(Build.VERSION.SDK_INT <= Build.VERSION_CODES.M ? R.string.requires_nougat : R.string.safe_mode_android_o);
             }
         }
 
