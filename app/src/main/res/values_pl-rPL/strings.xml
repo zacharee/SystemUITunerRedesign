@@ -197,14 +197,14 @@
   <string name="intro_5">Jak tylko naciśniesz na zakończ, SystemUI Tuner podejmie próbę dostępu do roota. Jeśli będzie mógł, przypisze wszystkie potrzebne uprawnienia dla ciebie. W innym przypadku instrukcje poprowadzą i pomogą ci z tym.</string>
   <string name="adb_setup">Powyższe uprawnienia są wymagane do kontynuowania. Dostęp do roota został odrzucony lub jest niedostępny. Wymagane uprawnienia musisz nadać używając ADB.</string>
   <string name="missing_perms">Brakuje uprawnień!</string>
-  <string name="enable_debug"><![CDATA[1. Go to Settings >> Developer Options and make sure USB Debugging is enabled.]]></string>
-  <string name="accept_auth">2. Plug your device into your computer and accept the authorization request on it.</string>
-  <string name="enable_devops"><![CDATA[- Enable Developer Options by going to Settings >> About, finding \"Build Number\" and tapping it 7 times.]]></string>
-  <string name="download_drivers">- Windows users may need to install device drivers, which are available from the manufacturer\'s website.</string>
-  <string name="download_adb_windows"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-windows.zip">Download the ADB ZIP for Windows.</a>]]></string>
-  <string name="extract_zip">2. Extract the ZIP to an easily-accessible location (ie Desktop).</string>
-  <string name="open_cmd">3. Open CMD.</string>
-  <string name="cd_windows"><![CDATA[4. Enter <b>cd C:\\path\\to\\extracted\\folder\\</b> to get to the folder where you extracted ADB. For instance, <b>cd C:\\Users\\Zachary\\Desktop\\platform-tools\\</b>.]]></string>
+  <string name="enable_debug"><![CDATA[1. Wejdź w Ustawienia telefonu >> Opcje programistyczne i upewnij się, że Debugowanie USB jest włączone.]]></string>
+  <string name="accept_auth">2. Podłącz urządzenie do komputera i zaakceptuj autoryzację.</string>
+  <string name="enable_devops"><![CDATA[- Włącz Opcje programistyczne wchodząc w Ustawienia telefonu >> Informacje o telefonie, znajdź \"Numer kompilacji\" i naciśnij 7 razy.]]></string>
+  <string name="download_drivers">- Dla użytkowników Windows może być konieczna instalacja sterowników urządzenia, które są dostępne na stronie internetowej producenta.</string>
+  <string name="download_adb_windows"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-windows.zip">Pobierz ADB ZIP dla Windows.</a>]]></string>
+  <string name="extract_zip">2. Wypakuj ZIP w łatwo dostępnym miejscu (np. Pulpit).</string>
+  <string name="open_cmd">3. Otwórz wiersz poleceń (cmd).</string>
+  <string name="cd_windows"><![CDATA[4. Wpisz: <b>cd C:\\lokalizacja\\wypakowanego\\folderu\\</b>, aby dostać się do folderu gdzie został wypakowany ADB. Na przykład, <b>cd C:\\Uzytkownicy\\Zachary\\Pulpit\\platform-tools\\</b>.]]></string>
   <string name="cd_further"><![CDATA[- Make sure that the folder you <b>cd</b> into contains the ADB executable. If not, <b>cd</b> one level further.]]></string>
   <string name="download_adb_mac"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-darwin.zip">Download the ADB ZIP for macOS.</a>]]></string>
   <string name="open_terminal">3. Open Terminal.</string>
