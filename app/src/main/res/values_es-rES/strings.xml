@@ -231,6 +231,11 @@
   <string name="ubuntu">Ubuntu</string>
   <string name="fedora">Fedora</string>
   <string name="linux">Linux</string>
+  <string name="app_specific">App-Specific</string>
+  <string name="blacklist">Blacklist</string>
+  <string name="select_apps">Select Apps</string>
+  <string name="app_specific_desc">Select apps to be included in or excluded from Immersive Mode.</string>
+  <string name="blacklist_desc">When on, selected apps will not use Immersive Mode</string>
   <string name="warning">Warning!</string>
   <string name="imm_warn">This feature merely allows you to enable Immersive Mode. It DOES NOT do anything beyond that. Any issues you experience are the fault of your device\'s manufacturer. I CANNOT FIX IT!</string>
 </resources>
