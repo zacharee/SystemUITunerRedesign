@@ -192,8 +192,8 @@
   <string name="permissions">Uprawnienia</string>
   <string name="intro_1">Dziękuje za pobranie mojej aplikacji! SystemUI Tuner ma na celu zastąpić/dopełnić wbudowany SystemUI widziany w AOSP. Każdy użytkownik, z lub bez SystemUI Tuner znajdzie jakieś korzyści z tej aplikacji.</string>
   <string name="intro_2">Tak jak w AOSP, SystemUI Tuner pozwala na ukrycie wybranych ikon na pasku stanu. Poza tym jest wiele innych opcji, takie jak wyłączenie powiadomień heads-up czy tryb immersive.</string>
-  <string name="intro_3">There is a plethora of pre-defined options for the status bar, but if you don\'t see an icon you want to hide, you can try the Auto-Detect feature, which will attempt to detect icons that can be hidden.</string>
-  <string name="intro_4">And the best part about this app? It doesn\'t need root! It will attempt to get root privileges, but if it can\'t you will have to use ADB. USING ADB IS NOT ROOTING!</string>
+  <string name="intro_3">Jest mnóstwo przykładowych ustawień paska stanu, ale jeśli nie widzisz ikony, którą chcesz usunąć możesz użyć opcji automatycznego wykrywania.</string>
+  <string name="intro_4">A najlepsza zaleta tej aplikacji? Nie potrzebny jest root! Będzie podjęta próba otrzymania uprawnień, lecz jeśli nie będzie to możliwe, konieczne będzie użycie ADB. UŻYWANIE ADB NIE OZNACZA ROOT!</string>
   <string name="intro_5">Once you tap the finish button, SystemUI Tuner will attempt to gain root access. If it can, it will grant all needed permissions for you. Otherwise, instructions will appear to guide you.</string>
   <string name="adb_setup">The permissions above must be granted to continue. Root access was either denied or unavailable, which means you\'ll have to grant these permissions using ADB.</string>
   <string name="missing_perms">Missing Permissions!</string>
