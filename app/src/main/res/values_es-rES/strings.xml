@@ -10,9 +10,8 @@
   <string name="safe_mode_auto_enabled">¡Dispositivo Samsung detectado! Modo seguro se ha activado automáticamente para su seguridad. ¡Se advierte que modificar cualquier iconos de la barra de Estado tiene el potencial de romper la interfaz de sistema! Siga el enlace en la descripción de Play Store para obtener más información.</string>
   <string name="notice">AVISO</string>
   <string name="fancy_pulldown_notice">Activar esta opción de puede causar problemas después de reiniciar. Activar el modo seguro y cambiar manualmente esta opción y después de un reinicio.</string>
-  <string name="safe_mode_summary">SAMSUNG USERS KEEP THIS TURNED ON UNLESS YOU HAVE AN AOSP ROM! \n\n
-        Clears any status bar customizations on NORMAL reboot/shutdown and restores them after boot completes. \n
-    </string>
+  <string name="safe_mode_summary">USUARIOS DE SAMSUNG DEBEN ACTIVAR ESTO A MENOS QUE USEN UNA ROM AOSP! \n\n
+        Elimina las modificaciones en la barra de Estado con un reinicio/apagado y restaura después del inicio completo. \n    </string>
   <string name="hide_welcome_screen">Ocultar Ventana de Bienvenida</string>
   <string name="tasker_support">Tareas Activadas</string>
   <string name="instructions">Instrucciones</string>
@@ -198,8 +197,8 @@
   <string name="intro_5">Una vez que usted pulse el botón finalizar, Modificador SystemUI intentará obtener acceso root. De ser así, se conceden todos los permisos necesarios para usarlo. De lo contrario, las instrucciones aparecerán para guiarlo.</string>
   <string name="adb_setup">Deben concederse los permisos anteriores para continuar. El acceso raíz fue denegado o no está disponible, lo que significa que tendrá que otorgar estos permisos utilizando ADB.</string>
   <string name="missing_perms">¡Permisos que faltan!</string>
-  <string name="enable_debug"><![CDATA[1. Go to Settings >> Developer Options and make sure USB Debugging is enabled.]]></string>
-  <string name="accept_auth">2. Plug your device into your computer and accept the authorization request on it.</string>
+  <string name="enable_debug"><![CDATA[1. ir a Ajustes >> Opciones de Desarrollador y activar la depuración USB.]]></string>
+  <string name="accept_auth">2. Conecte su dispositivo al ordenador y acepte la solicitud de autorización en él.</string>
   <string name="enable_devops"><![CDATA[- Enable Developer Options by going to Settings >> About, finding \"Build Number\" and tapping it 7 times.]]></string>
   <string name="download_drivers">- Windows users may need to install device drivers, which are available from the manufacturer\'s website.</string>
   <string name="download_adb_windows"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-windows.zip">Download the ADB ZIP for Windows.</a>]]></string>
