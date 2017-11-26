@@ -14,30 +14,30 @@
   <string name="hide_welcome_screen">チュートリアルを隠す</string>
   <string name="tasker_support">Taskerサポート</string>
   <string name="instructions">手順</string>
-  <string name="safe_mode_android_o">Because of limitations added in Android O, this feature will not work on your device.</string>
-  <string name="requires_nougat">Requires Nougat or later.</string>
-  <string name="requires_oreo">Requires Oreo or later.</string>
-  <string name="enable_in_settings">Enable in Settings.</string>
-  <string name="about">About</string>
-  <string name="miscellaneous">Miscellaneous</string>
-  <string name="settings">Settings</string>
-  <string name="status_bar">Status Bar</string>
-  <string name="reboot_required">(Reboot Required)</string>
-  <string name="sorry">Sorry…</string>
-  <string name="created_by">App created by <a href="https://forum.xda-developers.com/member.php?u=7055541">Zacharee1</a></string>
-  <string name="spanish_from">Spanish translation by <a href="https://es.stackoverflow.com/users/28567/aaron-romero">Aaron Romero</a> and <a href="https://forum.xda-developers.com/member.php?u=7055541">Zacharee1</a></string>
-  <string name="enabled">Enabled</string>
-  <string name="show">Show</string>
-  <string name="select_time">Select Time</string>
-  <string name="select_battery_level">Select Battery Level</string>
-  <string name="wifi_strength">WiFi Strength</string>
-  <string name="battery_charging">Battery Charging</string>
-  <string name="mobile_strength">Mobile Strength</string>
-  <string name="mobile_type">Mobile Type</string>
-  <string name="show_airplane_mode">Show Airplane Mode</string>
-  <string name="show_notifications">Show Notifications</string>
-  <string name="status_bar_style">Status Bar Style</string>
-  <string name="home_desc">For Devices without this Activity</string>
+  <string name="safe_mode_android_o">Android 8.0より追加された制限により、お使いの端末ではこの機能をご利用いただくことができません。</string>
+  <string name="requires_nougat">Android 7.0以降に対応</string>
+  <string name="requires_oreo">Android 8.0以降に対応</string>
+  <string name="enable_in_settings">設定で有効にする。</string>
+  <string name="about">アプリ情報</string>
+  <string name="miscellaneous">その他</string>
+  <string name="settings">設定</string>
+  <string name="status_bar">ステータスバー</string>
+  <string name="reboot_required">(再起動が必要)</string>
+  <string name="sorry">申し訳ございません</string>
+  <string name="created_by"><a href="https://forum.xda-developers.com/member.php?u=7055541"> Zacharee1</a> によって作成されたアプリ</string>
+  <string name="spanish_from">スペイン語訳 <a href="https://es.stackoverflow.com/users/28567/aaron-romero">Aaron Romero</a> と <a href="https://forum.xda-developers.com/member.php?u=7055541">Zacharee1</a></string>
+  <string name="enabled">有効</string>
+  <string name="show">表示</string>
+  <string name="select_time">時間の選択</string>
+  <string name="select_battery_level">バッテリーレベルの選択</string>
+  <string name="wifi_strength">Wi-Fi強度</string>
+  <string name="battery_charging">バッテリー充電中</string>
+  <string name="mobile_strength">モバイルデータ通信強度</string>
+  <string name="mobile_type">ネットワークタイプ</string>
+  <string name="show_airplane_mode">機内モードの表示</string>
+  <string name="show_notifications">通知の表示</string>
+  <string name="status_bar_style">ステータスバーのスタイル</string>
+  <string name="home_desc">このアクティビティのない端末向け</string>
   <string name="home_joke">Or for devices with it, I\'m not your boss.</string>
   <string name="home_extra">(If you do have the stock SystemUI Tuner, this one provides some extra goodies.)</string>
   <string name="setup">Setup</string>
