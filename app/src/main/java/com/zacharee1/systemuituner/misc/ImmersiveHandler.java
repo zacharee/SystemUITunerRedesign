@@ -21,7 +21,7 @@ public class ImmersiveHandler {
     public static boolean isInImmersive(Context context) {
         String imm = Settings.Global.getString(context.getContentResolver(), KEY);
 
-        return imm != null && (
+        return imm != null && !imm.isEmpty() && (
                 imm.contains(FULL)
                 || imm.contains(STATUS)
                 || imm.contains(NAV)
