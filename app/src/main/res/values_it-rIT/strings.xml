@@ -72,6 +72,7 @@
   <string name="alarm_clock_icon">Icona della sveglia</string>
   <string name="zen_icon">Icona Zen</string>
   <string name="do_not_disturb">Icona Non disturbare</string>
+  <string name="dnd">Do Not Disturb</string>
   <string name="donate">Dona</string>
   <string name="reset_blacklist">Reimposta la blacklist</string>
   <string name="animator_duration_scale">Scala durata animatore</string>
