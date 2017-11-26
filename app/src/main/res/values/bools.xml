@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <bool name="show_slider_popup">false</bool>
+    <bool name="show_slider_text">true</bool>
+</resources>
