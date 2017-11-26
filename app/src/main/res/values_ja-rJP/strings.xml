@@ -8,14 +8,12 @@
   <string name="more">もっと見る</string>
   <string name="grant_dump_perm">この機能を利用するには\"android.permission.DUMP\"の権限を許可する必要があります。</string>
   <string name="safe_mode_auto_enabled">サムスン製の端末が検出されました！安全のため、自動的にセーフモードが有効になりました。ステータスバーアイコンを調整することで、システムUIが崩れる恐れがありますので、注意してください。詳細についてはPlayストアの説明のリンクを参照してください。</string>
-  <string name="notice">NOTICE</string>
-  <string name="fancy_pulldown_notice">Toggling this option off can cause issues after a reboot. Enable Safe Mode or manually toggle this option on and off after a reboot.</string>
-  <string name="safe_mode_summary">SAMSUNG USERS KEEP THIS TURNED ON UNLESS YOU HAVE AN AOSP ROM! \n\n
-        Clears any status bar customizations on NORMAL reboot/shutdown and restores them after boot completes. \n
-    </string>
-  <string name="hide_welcome_screen">Hide Welcome Screen</string>
-  <string name="tasker_support">Tasker Support</string>
-  <string name="instructions">Instructions</string>
+  <string name="notice">注意</string>
+  <string name="fancy_pulldown_notice">このオプションをオフにすることで再起動後に問題が生じる恐れがあります。セーフモードを有効にするか、このオプションを再起動の度に手動で切り替えてください。</string>
+  <string name="safe_mode_summary">AOSP ROMを所持していないサムスンユーザーはこれを有効にしておいてください。\n\n        再起動または電源を切る度にステータスバーのカスタマイズを消去し、起動が完了すると復元します。\n    </string>
+  <string name="hide_welcome_screen">チュートリアルを隠す</string>
+  <string name="tasker_support">Taskerサポート</string>
+  <string name="instructions">手順</string>
   <string name="safe_mode_android_o">Because of limitations added in Android O, this feature will not work on your device.</string>
   <string name="requires_nougat">Requires Nougat or later.</string>
   <string name="requires_oreo">Requires Oreo or later.</string>
