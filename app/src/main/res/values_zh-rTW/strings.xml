@@ -72,6 +72,7 @@
   <string name="alarm_clock_icon">鬧鈴</string>
   <string name="zen_icon">自訂勿擾模式</string>
   <string name="do_not_disturb">勿擾模式</string>
+  <string name="dnd">Do Not Disturb</string>
   <string name="donate">贊助</string>
   <string name="reset_blacklist">重設黑名單</string>
   <string name="animator_duration_scale">動畫持續時間</string>
