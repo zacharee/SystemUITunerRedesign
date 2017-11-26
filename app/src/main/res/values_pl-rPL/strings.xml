@@ -239,4 +239,5 @@
   <string name="blacklist_desc">Jeśli włączone, wybrane aplikacje nie będą używać trybu Immersive</string>
   <string name="warning">Uwaga!</string>
   <string name="imm_warn">Ta funkcja pozwala jedynie na włączenie trybu Immersive. NIE robi nic poza tym. Każde problemy, które doświadczysz są błędami producenta urządzenia. NIE JESTEM W STANIE TEGO NAPRAWIĆ!</string>
+  <string name="target_not_found">Unable to launch proper Settings page.</string>
 </resources>
