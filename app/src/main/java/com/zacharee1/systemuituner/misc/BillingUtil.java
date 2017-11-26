@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -13,9 +14,14 @@ import com.android.billingclient.api.BillingClientStateListener;
 import com.android.billingclient.api.BillingFlowParams;
 import com.android.billingclient.api.Purchase;
 import com.android.billingclient.api.PurchasesUpdatedListener;
+import com.crashlytics.android.answers.Answers;
+import com.crashlytics.android.answers.PurchaseEvent;
 import com.zacharee1.systemuituner.R;
 
+import java.math.BigDecimal;
+import java.util.Currency;
 import java.util.List;
+import java.util.Locale;
 
 import static com.zacharee1.systemuituner.misc.Utils.isPackageInstalled;
 
@@ -36,6 +42,15 @@ public class BillingUtil
             {
                 if (responseCode == BillingClient.BillingResponse.OK && purchases != null) {
                     for (Purchase purchase : purchases) {
+                        Answers.getInstance().logPurchase(new PurchaseEvent()
+                            .putItemId(purchase.getSku())
+                            .putSuccess(true)
+                            .putCustomAttribute("orderId", purchase.getOrderId())
+                            .putCustomAttribute("origJson", purchase.getOriginalJson())
+                            .putCustomAttribute("packageName", purchase.getPackageName())
+                            .putCustomAttribute("token", purchase.getPurchaseToken())
+                            .putCustomAttribute("time", purchase.getPurchaseTime())
+                            .putCustomAttribute("signature", purchase.getSignature()));
                         mBillingClient.consumeAsync(purchase.getPurchaseToken(), null);
                     }
                 }
@@ -47,20 +62,12 @@ public class BillingUtil
             public void onBillingSetupFinished(@BillingClient.BillingResponse int billingResponseCode) {
                 Log.e("BillingResult", billingResponseCode + "");
 
-                //noinspection StatementWithEmptyBody
                 if (billingResponseCode == BillingClient.BillingResponse.OK) {
-                    //        mSkuList = new ArrayList<>();
-                    //        mSkuList.add("donate_1");
-                    //        mSkuList.add("donate_2");
-                    //        mSkuList.add("donate_5");
-                    //        mSkuList.add("donate_10");
-                    //        mBillingClient.querySkuDetailsAsync(BillingClient.SkuType.INAPP , mSkuList,
-                    //                new SkuDetailsResponseListener() {
-                    //                    @Override
-                    //                    public void onSkuDetailsResponse(SkuDetails.SkuDetailsResult result) {
-                    //                        // Process the result.
-                    //                    }
-                    //                });
+                    TextView ppTitle = mActivity.findViewById(R.id.paypal_title);
+                    Button ppButton = mActivity.findViewById(R.id.paypal_button);
+
+                    if (ppTitle != null) ppTitle.setVisibility(View.GONE);
+                    if (ppButton != null) ppButton.setVisibility(View.GONE);
                 } else if (billingResponseCode == BillingClient.BillingResponse.BILLING_UNAVAILABLE) {
                     LinearLayout gPlayD = mActivity.findViewById(R.id.google_play_donate);
                     TextView gPlayDT = mActivity.findViewById(R.id.google_play_donate_title);
