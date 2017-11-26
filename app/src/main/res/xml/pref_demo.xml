@@ -19,19 +19,27 @@
             android:key="selected_time"/>
         <com.zacharee1.sliderpreferenceembedded.SliderPreferenceEmbedded
             app:seek_max="100"
+            app:show_text="true"
+            app:show_popup="false"
             android:title="@string/select_battery_level"
             android:key="selected_battery_level"/>
         <com.zacharee1.sliderpreferenceembedded.SliderPreferenceEmbedded
             app:seek_max="3"
+            app:show_text="true"
+            app:show_popup="false"
             android:title="@string/wifi_strength"
             android:key="wifi_strength"/>
         <com.zacharee1.sliderpreferenceembedded.SliderPreferenceEmbedded
             app:seek_max="4"
+            app:show_text="true"
+            app:show_popup="false"
             android:title="@string/mobile_strength"
             android:key="selected_mobile_strength"/>
         <com.zacharee1.sliderpreferenceembedded.SliderPreferenceEmbedded
             app:seek_min="1"
             app:seek_max="8"
+            app:show_text="true"
+            app:show_popup="false"
             android:title="@string/sim_count"
             android:key="sim_count" />
         <ListPreference

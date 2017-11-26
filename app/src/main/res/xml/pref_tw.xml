@@ -11,12 +11,16 @@
             android:title="@string/qs_row_count"
             android:key="qs_tile_row"
             app:seek_min="1"
-            app:seek_max="10"/>
+            app:seek_max="10"
+            app:show_text="true"
+            app:show_popup="false"/>
         <com.zacharee1.sliderpreferenceembedded.SliderPreferenceEmbedded
             android:title="@string/qs_column_count"
             android:key="qs_tile_column"
             app:seek_min="2"
-            app:seek_max="10"/>
+            app:seek_max="10"
+            app:show_text="true"
+            app:show_popup="false"/>
     </PreferenceCategory>
 
     <PreferenceCategory
