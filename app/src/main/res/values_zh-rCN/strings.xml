@@ -6,41 +6,39 @@
   <string name="sorry_explain">这项设置发生错误</string>
   <string name="sorry_option">请从电脑端输入以下命令行(是一整句哦)</string>
   <string name="more">更多</string>
-  <string name="grant_dump_perm">You need to grant the permission \"android.permission.DUMP\" to use this feature.</string>
-  <string name="safe_mode_auto_enabled">Samsung device detected! Safe Mode has been automatically enabled for your safety. Be warned that modifying any status bar icons has the potential to BREAK SYSTEM UI! Please follow the link in the Play Store description for more information.</string>
-  <string name="notice">NOTICE</string>
-  <string name="fancy_pulldown_notice">Toggling this option off can cause issues after a reboot. Enable Safe Mode or manually toggle this option on and off after a reboot.</string>
-  <string name="safe_mode_summary">SAMSUNG USERS KEEP THIS TURNED ON UNLESS YOU HAVE AN AOSP ROM! \n\n
-        Clears any status bar customizations on NORMAL reboot/shutdown and restores them after boot completes. \n
-    </string>
-  <string name="hide_welcome_screen">Hide Welcome Screen</string>
-  <string name="tasker_support">Tasker Support</string>
-  <string name="instructions">Instructions</string>
-  <string name="safe_mode_android_o">Because of limitations added in Android O, this feature will not work on your device.</string>
-  <string name="requires_nougat">Requires Nougat or later.</string>
-  <string name="requires_oreo">Requires Oreo or later.</string>
-  <string name="enable_in_settings">Enable in Settings.</string>
-  <string name="about">About</string>
-  <string name="miscellaneous">Miscellaneous</string>
-  <string name="settings">Settings</string>
-  <string name="status_bar">Status Bar</string>
-  <string name="reboot_required">(Reboot Required)</string>
-  <string name="sorry">Sorry…</string>
-  <string name="created_by">App created by <a href="https://forum.xda-developers.com/member.php?u=7055541">Zacharee1</a></string>
-  <string name="spanish_from">Spanish translation by <a href="https://es.stackoverflow.com/users/28567/aaron-romero">Aaron Romero</a> and <a href="https://forum.xda-developers.com/member.php?u=7055541">Zacharee1</a></string>
-  <string name="enabled">Enabled</string>
-  <string name="show">Show</string>
-  <string name="select_time">Select Time</string>
-  <string name="select_battery_level">Select Battery Level</string>
-  <string name="wifi_strength">WiFi Strength</string>
-  <string name="battery_charging">Battery Charging</string>
-  <string name="mobile_strength">Mobile Strength</string>
-  <string name="mobile_type">Mobile Type</string>
-  <string name="show_airplane_mode">Show Airplane Mode</string>
-  <string name="show_notifications">Show Notifications</string>
-  <string name="status_bar_style">Status Bar Style</string>
-  <string name="home_desc">For Devices without this Activity</string>
-  <string name="home_joke">Or for devices with it, I\'m not your boss.</string>
+  <string name="grant_dump_perm">需要给 android.permission.DUMP 权限来使用此功能</string>
+  <string name="safe_mode_auto_enabled">检测到三星设备! 安全模式已自动启用, 为了您的安全, 修改任何状态栏图标有可能打破系统 UI! 请参考play store中说明的链接了解更多信息。</string>
+  <string name="notice">注意</string>
+  <string name="fancy_pulldown_notice">关闭此选项会在重新启动后导致问题。启用安全模式或在重新启动后手动切换此选项。</string>
+  <string name="safe_mode_summary">三星用户保持此选项打开, 除非使用 AOSP ROM!\n\n 在正常重新启动/关闭时清除任何状态栏自定义, 并在启动完成后将其还原。\n    </string>
+  <string name="hide_welcome_screen">隐藏欢迎屏幕</string>
+  <string name="tasker_support">任务支持</string>
+  <string name="instructions">说明</string>
+  <string name="safe_mode_android_o">由于 Android Oreo中添加了限制, 这个功能不会在你的设备上起作用。</string>
+  <string name="requires_nougat">需要安卓7.0或更新版本。</string>
+  <string name="requires_oreo">需要安卓8.0或更新版本。</string>
+  <string name="enable_in_settings">启用设置</string>
+  <string name="about">关于</string>
+  <string name="miscellaneous">其他</string>
+  <string name="settings">设置</string>
+  <string name="status_bar">状态栏</string>
+  <string name="reboot_required">(需要重启)</string>
+  <string name="sorry">不好意思...</string>
+  <string name="created_by">作者 <a href="https://forum.xda-developers.com/member.php?u=7055541">Zacharee1</a></string>
+  <string name="spanish_from">西班牙语翻译 <a href="https://es.stackoverflow.com/users/28567/aaron-romero">Aaron Romero</a> and <a href="https://forum.xda-developers.com/member.php?u=7055541">Zacharee1</a></string>
+  <string name="enabled">已启用</string>
+  <string name="show">显示</string>
+  <string name="select_time">选择时间</string>
+  <string name="select_battery_level">选择电池级别</string>
+  <string name="wifi_strength">WiFi 强度</string>
+  <string name="battery_charging">电池充电</string>
+  <string name="mobile_strength">信号强度</string>
+  <string name="mobile_type">信号格式</string>
+  <string name="show_airplane_mode">显示飞行模式</string>
+  <string name="show_notifications">显示通知</string>
+  <string name="status_bar_style">状态栏样式</string>
+  <string name="home_desc">对没有此活动的设备</string>
+  <string name="home_joke">如果有这个的，我才不管你</string>
   <string name="home_extra">(If you do have the stock SystemUI Tuner, this one provides some extra goodies.)</string>
   <string name="setup">Setup</string>
   <string name="dnd_switch_in_vol_slider">DND Switch in Vol Slider</string>
