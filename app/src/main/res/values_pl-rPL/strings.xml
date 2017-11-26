@@ -71,6 +71,7 @@
   <string name="alarm_clock_icon">Ikona budzika</string>
   <string name="zen_icon">Ikona Zen</string>
   <string name="do_not_disturb">Ikona \'Nie przeszkadzać\'</string>
+  <string name="dnd">Do Not Disturb</string>
   <string name="donate">Wesprzyj mnie</string>
   <string name="reset_blacklist">Reset czarnej listy</string>
   <string name="animator_duration_scale">Długość animacji</string>
