@@ -89,7 +89,7 @@ public class InstructionsActivity extends AppIntro2 {
         backButton.setVisibility(View.GONE);
         skipButtonEnabled = false;
         doneButton.setVisibility(View.GONE);
-        showPagerIndicator(false);
+//        showPagerIndicator(false);
 
         setColorTransitionsEnabled(true);
     }

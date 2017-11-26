@@ -9,6 +9,7 @@ import android.graphics.drawable.Icon;
 import android.os.BatteryManager;
 import android.service.quicksettings.Tile;
 import android.service.quicksettings.TileService;
+import android.widget.Toast;
 
 import com.zacharee1.systemuituner.R;
 
@@ -47,7 +48,12 @@ public class BatteryTile extends TileService
     public void onClick()
     {
         Intent intentBatteryUsage = new Intent(Intent.ACTION_POWER_USAGE_SUMMARY);
-        startActivityAndCollapse(intentBatteryUsage);
+
+        try {
+            startActivityAndCollapse(intentBatteryUsage);
+        } catch (Exception e) {
+            Toast.makeText(this, getResources().getString(R.string.target_not_found), Toast.LENGTH_SHORT).show();
+        }
 
         super.onClick();
     }

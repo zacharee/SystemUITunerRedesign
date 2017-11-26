@@ -19,7 +19,6 @@ public class NightModeTile extends TileService
     @Override
     public void onStartListening()
     {
-        final Tile nightMode = getQsTile();
         boolean isActive;
 
         if (Build.VERSION.SDK_INT == Build.VERSION_CODES.N) isActive = Settings.Secure.getInt(getContentResolver(), "twilight_mode", 0) != 0;
@@ -33,21 +32,21 @@ public class NightModeTile extends TileService
                 int id = nightDisplayAvailable.getInt(null);
 
                 if (!Resources.getSystem().getBoolean(id)) {
-                    nightMode.setState(Tile.STATE_UNAVAILABLE);
-                    nightMode.updateTile();
+                    getQsTile().setState(Tile.STATE_UNAVAILABLE);
+                    getQsTile().updateTile();
                 } else {
-                    nightMode.setState(isActive ? Tile.STATE_ACTIVE : Tile.STATE_INACTIVE);
-                    nightMode.updateTile();
+                    getQsTile().setState(isActive ? Tile.STATE_ACTIVE : Tile.STATE_INACTIVE);
+                    getQsTile().updateTile();
                 }
             } catch (Exception e) {
                 e.printStackTrace();
 
-                nightMode.setState(isActive ? Tile.STATE_ACTIVE : Tile.STATE_INACTIVE);
-                nightMode.updateTile();
+                getQsTile().setState(isActive ? Tile.STATE_ACTIVE : Tile.STATE_INACTIVE);
+                getQsTile().updateTile();
             }
         } else {
-            nightMode.setState(isActive ? Tile.STATE_ACTIVE : Tile.STATE_INACTIVE);
-            nightMode.updateTile();
+            getQsTile().setState(isActive ? Tile.STATE_ACTIVE : Tile.STATE_INACTIVE);
+            getQsTile().updateTile();
         }
     }
 

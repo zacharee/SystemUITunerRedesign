@@ -110,7 +110,7 @@ public class DemoHandler {
             intent.putExtra("speakerphone", spkphone() ? "show" : "hide");
             mContext.sendBroadcast(intent);
 
-            Settings.Global.putInt(mContext.getContentResolver(), "sysui_tuner_demo_on", 1);
+            SettingsUtils.writeGlobal(mContext, "sysui_tuner_demo_on", "1");
         } catch (Exception e) {
             Log.e("Demo", e.getMessage());
             e.printStackTrace();
@@ -122,7 +122,7 @@ public class DemoHandler {
         intent.putExtra("command", "exit");
         mContext.sendBroadcast(intent);
 
-        Settings.Global.putInt(mContext.getContentResolver(), "sysui_tuner_demo_on", 0);
+        SettingsUtils.writeGlobal(mContext, "sysui_tuner_demo_on", "0");
     }
 
     private boolean showNotifs() {
