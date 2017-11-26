@@ -139,18 +139,18 @@
   <string name="night_display">夜間ディスプレイ</string>
   <string name="donate_hook">あなたは、私のアプリを利用してますね。</string>
   <string name="donate_joke">どうやってやるかって？魔法です。</string>
-  <string name="donate_request">If you\'re enjoying your time here, it\'d be absolutely amazing if you could spare a dollar or two.</string>
-  <string name="donate_dont_worry">There\'s absolutely no obligation. This app is free and always will be.</string>
-  <string name="qs_header_tile_count">QS Header Tile Count</string>
-  <string name="fancy_pulldown_animation">Fancy Pulldown Animation</string>
-  <string name="move_full_rows">Move Full Rows</string>
-  <string name="battery">Battery</string>
-  <string name="enable_fabric_io_analytics">Fabric.io Analytics</string>
-  <string name="tasker_how_to">Tasker How-To</string>
-  <string name="base_command_tasker">This is the base command:</string>
-  <string name="tasker_defs">This is what everything means:</string>
-  <string name="for_settings_global">(for Settings.Global)</string>
-  <string name="for_settings_secure">(for Settings.Secure)</string>
+  <string name="donate_request">このアプリをお楽しみいただけたなら1、2ドル寄付していただけるだけで、とても助かります。</string>
+  <string name="donate_dont_worry">寄付に義務は一切ありません。このアプリは完全に無料であり続けます。</string>
+  <string name="qs_header_tile_count">クイック設定ヘッダーのタイル数</string>
+  <string name="fancy_pulldown_animation">派手なプルダウンアニメーション</string>
+  <string name="move_full_rows">行を完全に移動</string>
+  <string name="battery">バッテリー</string>
+  <string name="enable_fabric_io_analytics">Fabric.io分析</string>
+  <string name="tasker_how_to">Taskerの使い方</string>
+  <string name="base_command_tasker">これが基本的なコマンドです:</string>
+  <string name="tasker_defs">これがすべての意味です:</string>
+  <string name="for_settings_global">(Settings.Global向け)</string>
+  <string name="for_settings_secure">(Settings.Secure向け)</string>
   <string name="for_settings_system">(for Settings.System)</string>
   <string name="desired_setting_key">Desired setting key</string>
   <string name="desired_setting_value">Desired setting value</string>
@@ -199,8 +199,8 @@
   <string name="enable_debug"><![CDATA[1. Go to Settings >> Developer Options and make sure USB Debugging is enabled.]]></string>
   <string name="accept_auth">2. Plug your device into your computer and accept the authorization request on it.</string>
   <string name="enable_devops"><![CDATA[- Enable Developer Options by going to Settings >> About, finding \"Build Number\" and tapping it 7 times.]]></string>
-  <string name="download_drivers">- Windows users may need to install device drivers, which are available from the manufacturer\'s website.</string>
-  <string name="download_adb_windows"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-windows.zip">Download the ADB ZIP for Windows.</a>]]></string>
+  <string name="download_drivers">Windowsユーザーは、製造元のウェブサイトから利用可能なデバイスドライバーをインストールする必要のある可能性があります。</string>
+  <string name="download_adb_windows"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-windows.zip"> Windows用 ADB ZIP をダウンロード。</a>]]></string>
   <string name="extract_zip">2. Extract the ZIP to an easily-accessible location (ie Desktop).</string>
   <string name="open_cmd">3. Open CMD.</string>
   <string name="cd_windows"><![CDATA[4. Enter <b>cd C:\\path\\to\\extracted\\folder\\</b> to get to the folder where you extracted ADB. For instance, <b>cd C:\\Users\\Zachary\\Desktop\\platform-tools\\</b>.]]></string>
