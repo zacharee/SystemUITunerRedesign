@@ -239,4 +239,5 @@
   <string name="blacklist_desc">When on, selected apps will not use Immersive Mode</string>
   <string name="warning">Warning!</string>
   <string name="imm_warn">This feature merely allows you to enable Immersive Mode. It DOES NOT do anything beyond that. Any issues you experience are the fault of your device\'s manufacturer. I CANNOT FIX IT!</string>
+  <string name="target_not_found">Unable to launch proper Settings page.</string>
 </resources>
