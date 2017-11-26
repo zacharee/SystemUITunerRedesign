@@ -240,4 +240,5 @@
   <string name="blacklist_desc">When on, selected apps will not use Immersive Mode</string>
   <string name="warning">警告！</string>
   <string name="imm_warn">本功能只會啟用沈浸模式，沒有別的了。若因此發生問題請洽裝置製造商，我幫不了你！</string>
+  <string name="target_not_found">Unable to launch proper Settings page.</string>
 </resources>
