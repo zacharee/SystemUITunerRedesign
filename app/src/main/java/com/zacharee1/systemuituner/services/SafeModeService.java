@@ -1,14 +1,12 @@
 package com.zacharee1.systemuituner.services;
 
 import android.app.Notification;
-import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.database.ContentObservable;
 import android.database.ContentObserver;
 import android.net.Uri;
 import android.os.Handler;
@@ -17,8 +15,8 @@ import android.os.Looper;
 import android.provider.Settings;
 
 import com.zacharee1.systemuituner.R;
-import com.zacharee1.systemuituner.activites.SettingsActivity;
-import com.zacharee1.systemuituner.misc.SettingsUtils;
+import com.zacharee1.systemuituner.activites.settings.SettingsActivity;
+import com.zacharee1.systemuituner.util.SettingsUtils;
 
 public class SafeModeService extends Service {
     private ShutDownReceiver mShutDownReceiver;

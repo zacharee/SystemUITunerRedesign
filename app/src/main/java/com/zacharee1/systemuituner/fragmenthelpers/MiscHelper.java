@@ -11,7 +11,7 @@ import android.provider.Settings;
 
 import com.zacharee1.systemuituner.fragments.ItemDetailFragment;
 import com.zacharee1.systemuituner.R;
-import com.zacharee1.systemuituner.misc.SettingsUtils;
+import com.zacharee1.systemuituner.util.SettingsUtils;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;

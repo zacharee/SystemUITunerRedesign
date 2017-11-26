@@ -3,13 +3,11 @@ package com.zacharee1.systemuituner.qstiles;
 import android.annotation.TargetApi;
 import android.content.res.Resources;
 import android.os.Build;
-import android.preference.SwitchPreference;
 import android.provider.Settings;
 import android.service.quicksettings.Tile;
 import android.service.quicksettings.TileService;
 
-import com.zacharee1.systemuituner.R;
-import com.zacharee1.systemuituner.misc.SettingsUtils;
+import com.zacharee1.systemuituner.util.SettingsUtils;
 
 import java.lang.reflect.Field;
 

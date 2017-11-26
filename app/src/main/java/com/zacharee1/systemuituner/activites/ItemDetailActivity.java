@@ -12,7 +12,7 @@ import android.view.MenuItem;
 import com.zacharee1.systemuituner.fragments.ItemDetailFragment;
 import com.zacharee1.systemuituner.R;
 import com.zacharee1.systemuituner.misc.OptionSelected;
-import com.zacharee1.systemuituner.misc.RecreateHandler;
+import com.zacharee1.systemuituner.handlers.RecreateHandler;
 
 /**
  * An activity representing a single Item detail screen. This

@@ -3,21 +3,16 @@ package com.zacharee1.systemuituner;
 import android.Manifest;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 
 import com.crashlytics.android.Crashlytics;
-import com.zacharee1.systemuituner.activites.IntroActivity;
-import com.zacharee1.systemuituner.activites.ItemListActivity;
-import com.zacharee1.systemuituner.activites.MainActivity;
-import com.zacharee1.systemuituner.activites.SetupActivity;
-import com.zacharee1.systemuituner.misc.SettingsUtils;
-import com.zacharee1.systemuituner.misc.SuUtils;
-import com.zacharee1.systemuituner.misc.Utils;
+import com.zacharee1.systemuituner.activites.info.IntroActivity;
+import com.zacharee1.systemuituner.activites.instructions.SetupActivity;
+import com.zacharee1.systemuituner.util.SuUtils;
+import com.zacharee1.systemuituner.util.Utils;
 
 import io.fabric.sdk.android.Fabric;
 

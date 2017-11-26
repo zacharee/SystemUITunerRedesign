@@ -1,8 +1,9 @@
-package com.zacharee1.systemuituner.activites;
+package com.zacharee1.systemuituner.activites.apppickers;
 
-import android.content.Context;
+import android.app.Activity;
 import android.content.Intent;
-import android.content.pm.ApplicationInfo;
+import android.content.pm.ActivityInfo;
+import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,18 +11,15 @@ import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
 
 import com.zacharee1.systemuituner.R;
 import com.zacharee1.systemuituner.misc.AppInfo;
 import com.zacharee1.systemuituner.misc.CustomAdapter;
-import com.zacharee1.systemuituner.misc.Utils;
 
 import java.util.ArrayList;
 import java.util.TreeMap;
 
-public class AppsListActivity extends AppCompatActivity {
+public class ComponentsListActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,10 +34,14 @@ public class AppsListActivity extends AppCompatActivity {
         Bundle extras = intent.getExtras();
         if (extras == null) finish();
 
+        String packageName = extras.getString("package");
+        String appName = extras.getString("name");
         boolean isLeft = extras.getBoolean("isLeft");
 
+        setTitle(appName);
+
         RecyclerView recyclerView = findViewById(R.id.app_rec);
-        recyclerView.setAdapter(new CustomAdapter(getAppInfo(), this, isLeft));
+        recyclerView.setAdapter(new CustomAdapter(getComponentInfo(packageName), this, isLeft));
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
     }
@@ -48,6 +50,7 @@ public class AppsListActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
+                setResult(Activity.RESULT_CANCELED);
                 finish();
                 return true;
         }
@@ -55,31 +58,24 @@ public class AppsListActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
+    private ArrayList<AppInfo> getComponentInfo(String packageName) {
+        TreeMap<String, AppInfo> apps = new TreeMap<>();
 
-        if (resultCode == RESULT_OK) {
-            finish();
-        }
-    }
+        PackageManager pm = getPackageManager();
 
-    private ArrayList<AppInfo> getAppInfo() {
-        TreeMap<String, AppInfo> appMap = new TreeMap<>();
+        try {
+            PackageInfo info = pm.getPackageInfo(packageName, PackageManager.GET_ACTIVITIES);
 
-        for (ApplicationInfo info : Utils.getInstalledApps(this)) {
-            try {
-                if (getPackageManager().getPackageInfo(info.packageName, PackageManager.GET_ACTIVITIES).activities.length > 1) {
-                    appMap.put(info.loadLabel(getPackageManager()).toString(),
-                            new AppInfo(info.loadLabel(getPackageManager()).toString(),
-                                    info.packageName,
-                                    null,
-                                    info.loadIcon(getPackageManager()))
-                    );
-                }
-            } catch (Exception e) {}
-        }
+            for (ActivityInfo activity : info.activities) {
+                apps.put(activity.name,
+                        new AppInfo(activity.name,
+                                activity.packageName,
+                                activity.name,
+                                activity.loadIcon(getPackageManager()))
+                );
+            }
+        } catch (Exception e) {}
 
-        return new ArrayList<>(appMap.values());
+        return new ArrayList<>(apps.values());
     }
 }

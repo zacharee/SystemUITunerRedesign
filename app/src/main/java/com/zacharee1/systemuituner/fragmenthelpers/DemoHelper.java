@@ -11,11 +11,11 @@ import android.preference.SwitchPreference;
 import android.provider.Settings;
 import android.widget.Toast;
 
-import com.zacharee1.systemuituner.activites.SetupActivity;
+import com.zacharee1.systemuituner.activites.instructions.SetupActivity;
 import com.zacharee1.systemuituner.fragments.ItemDetailFragment;
 import com.zacharee1.systemuituner.R;
-import com.zacharee1.systemuituner.misc.DemoHandler;
-import com.zacharee1.systemuituner.misc.SettingsUtils;
+import com.zacharee1.systemuituner.handlers.DemoHandler;
+import com.zacharee1.systemuituner.util.SettingsUtils;
 
 public class DemoHelper extends BaseHelper
 {

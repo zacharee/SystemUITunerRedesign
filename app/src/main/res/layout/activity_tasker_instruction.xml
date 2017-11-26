@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.zacharee1.systemuituner.activites.SetupActivity">
+    tools:context="com.zacharee1.systemuituner.activites.instructions.SetupActivity">
 
     <TextView
         android:id="@+id/tasker_info"

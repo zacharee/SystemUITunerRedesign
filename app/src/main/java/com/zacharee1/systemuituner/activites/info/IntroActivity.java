@@ -1,30 +1,24 @@
-package com.zacharee1.systemuituner.activites;
+package com.zacharee1.systemuituner.activites.info;
 
 import android.Manifest;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Color;
-import android.os.Build;
-import android.preference.Preference;
 import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.github.paolorotolo.appintro.AppIntro2;
 import com.github.paolorotolo.appintro.ISlideBackgroundColorHolder;
 import com.zacharee1.systemuituner.R;
-import com.zacharee1.systemuituner.misc.SettingsUtils;
-import com.zacharee1.systemuituner.misc.SuUtils;
-import com.zacharee1.systemuituner.misc.Utils;
+import com.zacharee1.systemuituner.activites.instructions.SetupActivity;
+import com.zacharee1.systemuituner.util.SuUtils;
+import com.zacharee1.systemuituner.util.Utils;
 
 public class IntroActivity extends AppIntro2 {
 

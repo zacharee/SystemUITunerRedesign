@@ -5,11 +5,7 @@ import android.preference.SwitchPreference;
 import android.provider.Settings;
 
 import com.zacharee1.systemuituner.fragments.ItemDetailFragment;
-import com.zacharee1.systemuituner.misc.SettingsUtils;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Set;
+import com.zacharee1.systemuituner.util.SettingsUtils;
 
 public class StatbarHelper extends BaseHelper
 {

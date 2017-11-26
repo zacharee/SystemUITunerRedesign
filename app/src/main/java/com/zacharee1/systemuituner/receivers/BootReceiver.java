@@ -1,16 +1,13 @@
 package com.zacharee1.systemuituner.receivers;
 
-import android.app.Notification;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.preference.PreferenceManager;
-import android.provider.Settings;
 import android.util.Log;
 
-import com.zacharee1.systemuituner.misc.SettingsUtils;
 import com.zacharee1.systemuituner.services.SafeModeService;
 
 public class BootReceiver extends BroadcastReceiver

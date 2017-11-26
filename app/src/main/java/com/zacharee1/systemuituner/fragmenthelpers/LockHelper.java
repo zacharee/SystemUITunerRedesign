@@ -1,32 +1,18 @@
 package com.zacharee1.systemuituner.fragmenthelpers;
 
-import android.content.BroadcastReceiver;
 import android.content.ComponentName;
-import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
-import android.content.SharedPreferences;
-import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
-import android.database.ContentObserver;
-import android.net.Uri;
 import android.os.Build;
-import android.os.Handler;
-import android.os.Looper;
 import android.preference.Preference;
 import android.preference.PreferenceCategory;
-import android.preference.PreferenceManager;
 import android.preference.SwitchPreference;
 import android.provider.Settings;
-import android.util.Log;
-import android.view.View;
 
-import com.zacharee1.systemuituner.activites.AppsListActivity;
+import com.zacharee1.systemuituner.activites.apppickers.AppsListActivity;
 import com.zacharee1.systemuituner.fragments.ItemDetailFragment;
-import com.zacharee1.systemuituner.misc.SettingsUtils;
+import com.zacharee1.systemuituner.util.SettingsUtils;
 import com.zacharee1.systemuituner.prefs.IconPreference;
-
-import java.util.Arrays;
 
 public class LockHelper extends BaseHelper {
     public static final String ACTION_APP_UPDATED = "com.zacharee1.systemuituner.action.APP_UPDATED";

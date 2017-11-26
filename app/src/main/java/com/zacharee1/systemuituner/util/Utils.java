@@ -1,4 +1,4 @@
-package com.zacharee1.systemuituner.misc;
+package com.zacharee1.systemuituner.util;
 
 import android.app.Activity;
 import android.content.Context;

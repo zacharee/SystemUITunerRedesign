@@ -11,12 +11,11 @@ import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceCategory;
 import android.provider.Settings;
-import android.util.Log;
 
 import com.zacharee1.systemuituner.R;
-import com.zacharee1.systemuituner.activites.ImmersiveSelectActivity;
+import com.zacharee1.systemuituner.activites.apppickers.ImmersiveSelectActivity;
 import com.zacharee1.systemuituner.fragments.ItemDetailFragment;
-import com.zacharee1.systemuituner.misc.ImmersiveHandler;
+import com.zacharee1.systemuituner.handlers.ImmersiveHandler;
 
 public class ImmersiveHelper extends BaseHelper implements Preference.OnPreferenceChangeListener {
 

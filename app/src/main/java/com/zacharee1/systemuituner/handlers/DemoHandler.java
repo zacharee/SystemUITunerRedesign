@@ -1,4 +1,4 @@
-package com.zacharee1.systemuituner.misc;
+package com.zacharee1.systemuituner.handlers;
 
 import android.content.Context;
 import android.content.Intent;
@@ -6,6 +6,8 @@ import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.provider.Settings;
 import android.util.Log;
+
+import com.zacharee1.systemuituner.util.SettingsUtils;
 
 public class DemoHandler {
     private Context mContext;

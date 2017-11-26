@@ -57,12 +57,12 @@
                 android:value="com.zacharee1.systemuituner.activites.ItemListActivity" />
         </activity>
         <activity
-            android:name=".activites.SettingsActivity"
+            android:name=".activites.settings.SettingsActivity"
             android:label="@string/settings" />
         <activity android:name=".activites.MainActivity" />
-        <activity android:name=".activites.SettingWriteFailed" />
+        <activity android:name=".activites.info.SettingWriteFailed" />
         <activity
-            android:name=".activites.SetupActivity"
+            android:name=".activites.instructions.SetupActivity"
             android:label="@string/setup" />
 
         <service
@@ -106,7 +106,7 @@
         </service>
 
         <activity
-            android:name=".activites.AboutActivity"
+            android:name=".activites.info.AboutActivity"
             android:label="@string/about" />
 
         <receiver
@@ -136,7 +136,7 @@
         </receiver>
 
         <activity
-            android:name=".activites.TaskerInstructionActivity"
+            android:name=".activites.instructions.TaskerInstructionActivity"
             android:label="@string/tasker_how_to" />
 
         <meta-data
@@ -157,11 +157,11 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name=".activites.AppsListActivity" />
-        <activity android:name=".activites.ComponentsListActivity" />
-        <activity android:name=".activites.IntroActivity" />
-        <activity android:name=".instructions.InstructionsActivity" />
-        <activity android:name=".activites.ImmersiveSelectActivity"></activity>
+        <activity android:name=".activites.apppickers.AppsListActivity" />
+        <activity android:name=".activites.apppickers.ComponentsListActivity" />
+        <activity android:name=".activites.info.IntroActivity" />
+        <activity android:name=".activites.instructions.InstructionsActivity" />
+        <activity android:name=".activites.apppickers.ImmersiveSelectActivity"></activity>
     </application>
 
 </manifest>

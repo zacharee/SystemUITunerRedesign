@@ -1,4 +1,4 @@
-package com.zacharee1.systemuituner.activites;
+package com.zacharee1.systemuituner.activites.info;
 
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
@@ -10,8 +10,8 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.zacharee1.systemuituner.R;
-import com.zacharee1.systemuituner.misc.BillingUtil;
-import com.zacharee1.systemuituner.misc.RecreateHandler;
+import com.zacharee1.systemuituner.util.BillingUtil;
+import com.zacharee1.systemuituner.handlers.RecreateHandler;
 
 @SuppressWarnings("unused")
 public class AboutActivity extends AppCompatActivity

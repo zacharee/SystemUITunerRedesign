@@ -1,10 +1,12 @@
-package com.zacharee1.systemuituner.misc;
+package com.zacharee1.systemuituner.handlers;
 
 import android.content.Context;
 import android.net.Uri;
 import android.preference.PreferenceManager;
 import android.provider.Settings;
 import android.support.annotation.Nullable;
+
+import com.zacharee1.systemuituner.util.SettingsUtils;
 
 import java.util.TreeSet;
 

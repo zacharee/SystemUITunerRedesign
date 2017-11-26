@@ -5,7 +5,7 @@ import android.provider.Settings;
 
 import com.zacharee1.sliderpreferenceembedded.SliderPreferenceEmbedded;
 import com.zacharee1.systemuituner.fragments.ItemDetailFragment;
-import com.zacharee1.systemuituner.misc.SettingsUtils;
+import com.zacharee1.systemuituner.util.SettingsUtils;
 
 public class TWHelper extends BaseHelper
 {

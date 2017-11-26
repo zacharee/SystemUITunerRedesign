@@ -1,4 +1,4 @@
-package com.zacharee1.systemuituner.activites;
+package com.zacharee1.systemuituner.activites.info;
 
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
@@ -8,7 +8,7 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.zacharee1.systemuituner.R;
-import com.zacharee1.systemuituner.misc.RecreateHandler;
+import com.zacharee1.systemuituner.handlers.RecreateHandler;
 
 public class SettingWriteFailed extends AppCompatActivity
 {

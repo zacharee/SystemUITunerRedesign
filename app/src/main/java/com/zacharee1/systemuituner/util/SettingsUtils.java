@@ -1,23 +1,17 @@
-package com.zacharee1.systemuituner.misc;
+package com.zacharee1.systemuituner.util;
 
-import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
-import android.preference.PreferenceManager;
 import android.preference.SwitchPreference;
 import android.provider.Settings;
-import android.widget.Toast;
 
-import com.zacharee1.systemuituner.activites.SettingWriteFailed;
+import com.zacharee1.systemuituner.activites.info.SettingWriteFailed;
 import com.zacharee1.systemuituner.fragments.ItemDetailFragment;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-
-import static com.zacharee1.systemuituner.misc.SuUtils.testSudo;
-import static com.zacharee1.systemuituner.misc.SuUtils.sudo;
 
 @SuppressWarnings("UnusedReturnValue")
 public class SettingsUtils
@@ -28,8 +22,8 @@ public class SettingsUtils
             return true;
         } catch (Exception e) {
             String baseCommand = "settings put global " + key + " " + value;
-            if (testSudo()) {
-                sudo(baseCommand);
+            if (SuUtils.testSudo()) {
+                SuUtils.sudo(baseCommand);
                 return true;
             } else {
                 String adbCommand = "adb shell " + baseCommand;
@@ -48,8 +42,8 @@ public class SettingsUtils
             return true;
         } catch (Exception e) {
             String baseCommand = "settings put secure " + key + " " + value;
-            if (testSudo()) {
-                sudo(baseCommand);
+            if (SuUtils.testSudo()) {
+                SuUtils.sudo(baseCommand);
                 return true;
             } else {
                 String adbCommand = "adb shell " + baseCommand;
@@ -68,8 +62,8 @@ public class SettingsUtils
             return true;
         } catch (Exception e) {
             String baseCommand = "settings put system " + key + " " + value;
-            if (testSudo()) {
-                sudo(baseCommand);
+            if (SuUtils.testSudo()) {
+                SuUtils.sudo(baseCommand);
                 return true;
             } else {
                 String adbCommand = "adb shell " + baseCommand;

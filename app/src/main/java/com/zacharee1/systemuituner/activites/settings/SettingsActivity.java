@@ -1,4 +1,4 @@
-package com.zacharee1.systemuituner.activites;
+package com.zacharee1.systemuituner.activites.settings;
 
 import android.annotation.TargetApi;
 import android.content.Intent;
@@ -16,10 +16,9 @@ import android.util.Log;
 import android.view.MenuItem;
 
 import com.zacharee1.systemuituner.R;
-import com.zacharee1.systemuituner.misc.RecreateHandler;
+import com.zacharee1.systemuituner.activites.instructions.TaskerInstructionActivity;
+import com.zacharee1.systemuituner.handlers.RecreateHandler;
 import com.zacharee1.systemuituner.services.SafeModeService;
-
-import java.util.List;
 
 /**
  * A {@link PreferenceActivity} that presents a set of application settings. On

@@ -1,20 +1,16 @@
 package com.zacharee1.systemuituner.fragmenthelpers;
 
 import android.Manifest;
-import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.preference.Preference;
 import android.preference.SwitchPreference;
 import android.util.Log;
 
-import com.zacharee1.systemuituner.activites.SetupActivity;
+import com.zacharee1.systemuituner.activites.instructions.SetupActivity;
 import com.zacharee1.systemuituner.fragments.ItemDetailFragment;
-import com.zacharee1.systemuituner.misc.SettingsUtils;
-import com.zacharee1.systemuituner.misc.Utils;
+import com.zacharee1.systemuituner.util.SettingsUtils;
+import com.zacharee1.systemuituner.util.Utils;
 
-import java.lang.reflect.Array;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Map;

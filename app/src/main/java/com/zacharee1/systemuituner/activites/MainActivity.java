@@ -10,13 +10,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.crashlytics.android.Crashlytics;
 import com.zacharee1.systemuituner.R;
-import com.zacharee1.systemuituner.misc.BillingUtil;
+import com.zacharee1.systemuituner.util.BillingUtil;
 import com.zacharee1.systemuituner.misc.OptionSelected;
-import com.zacharee1.systemuituner.misc.RecreateHandler;
-
-import io.fabric.sdk.android.Fabric;
+import com.zacharee1.systemuituner.handlers.RecreateHandler;
 
 @SuppressWarnings("unused")
 public class MainActivity extends AppCompatActivity

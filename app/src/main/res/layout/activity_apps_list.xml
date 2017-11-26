@@ -4,6 +4,6 @@
     android:id="@+id/app_rec"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.zacharee1.systemuituner.activites.AppsListActivity">
+    tools:context="com.zacharee1.systemuituner.activites.apppickers.AppsListActivity">
 
 </android.support.v7.widget.RecyclerView>

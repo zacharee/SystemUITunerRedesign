@@ -1,4 +1,4 @@
-package com.zacharee1.systemuituner.instructions;
+package com.zacharee1.systemuituner.activites.instructions;
 
 import android.content.Intent;
 import android.support.annotation.ColorInt;
@@ -17,13 +17,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
-import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.github.paolorotolo.appintro.AppIntro2;
 import com.github.paolorotolo.appintro.ISlideBackgroundColorHolder;
 import com.zacharee1.systemuituner.R;
-import com.zacharee1.systemuituner.misc.Utils;
+import com.zacharee1.systemuituner.util.Utils;
 
 import java.util.ArrayList;
 

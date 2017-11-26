@@ -7,7 +7,7 @@ import android.preference.PreferenceManager;
 import android.util.Log;
 
 import com.zacharee1.systemuituner.misc.MiscStrings;
-import com.zacharee1.systemuituner.misc.SettingsUtils;
+import com.zacharee1.systemuituner.util.SettingsUtils;
 
 import java.util.ArrayList;
 import java.util.Arrays;

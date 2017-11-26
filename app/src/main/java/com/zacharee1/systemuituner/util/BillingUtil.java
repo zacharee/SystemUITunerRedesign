@@ -1,4 +1,4 @@
-package com.zacharee1.systemuituner.misc;
+package com.zacharee1.systemuituner.util;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -18,12 +18,7 @@ import com.crashlytics.android.answers.Answers;
 import com.crashlytics.android.answers.PurchaseEvent;
 import com.zacharee1.systemuituner.R;
 
-import java.math.BigDecimal;
-import java.util.Currency;
 import java.util.List;
-import java.util.Locale;
-
-import static com.zacharee1.systemuituner.misc.Utils.isPackageInstalled;
 
 
 public class BillingUtil
@@ -97,7 +92,7 @@ public class BillingUtil
     }
 
     public static void onDonatePayPalClicked(Activity activity) {
-        boolean labsInstalled = isPackageInstalled("com.xda.labs", activity.getPackageManager());
+        boolean labsInstalled = Utils.isPackageInstalled("com.xda.labs", activity.getPackageManager());
         Uri uri = Uri.parse(labsInstalled ? "https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=andywander@yahoo.com" : "https://forum.xda-developers.com/donatetome.php?u=7055541");
         Intent intent = new Intent(Intent.ACTION_VIEW, uri);
         activity.startActivity(intent);

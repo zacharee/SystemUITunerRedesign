@@ -1,25 +1,16 @@
 package com.zacharee1.systemuituner.qstiles;
 
 import android.annotation.TargetApi;
-import android.content.BroadcastReceiver;
-import android.content.Context;
-import android.content.Intent;
-import android.content.IntentFilter;
-import android.content.SharedPreferences;
 import android.database.ContentObserver;
-import android.graphics.drawable.Icon;
 import android.net.Uri;
-import android.os.BatteryManager;
 import android.os.Handler;
 import android.os.Looper;
 import android.preference.PreferenceManager;
 import android.provider.Settings;
 import android.service.quicksettings.Tile;
 import android.service.quicksettings.TileService;
-import android.util.Log;
 
-import com.zacharee1.systemuituner.R;
-import com.zacharee1.systemuituner.misc.ImmersiveHandler;
+import com.zacharee1.systemuituner.handlers.ImmersiveHandler;
 
 @TargetApi(24)
 public class ImmersiveTile extends TileService

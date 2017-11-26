@@ -6,8 +6,8 @@ import android.net.Uri;
 import android.view.MenuItem;
 
 import com.zacharee1.systemuituner.R;
-import com.zacharee1.systemuituner.activites.AboutActivity;
-import com.zacharee1.systemuituner.activites.SettingsActivity;
+import com.zacharee1.systemuituner.activites.info.AboutActivity;
+import com.zacharee1.systemuituner.activites.settings.SettingsActivity;
 
 public class OptionSelected
 {

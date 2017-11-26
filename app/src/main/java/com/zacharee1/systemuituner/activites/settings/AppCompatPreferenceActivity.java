@@ -1,4 +1,4 @@
-package com.zacharee1.systemuituner.activites;
+package com.zacharee1.systemuituner.activites.settings;
 
 import android.content.res.Configuration;
 import android.os.Bundle;

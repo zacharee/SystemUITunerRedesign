@@ -1,4 +1,4 @@
-package com.zacharee1.systemuituner.misc;
+package com.zacharee1.systemuituner.handlers;
 
 import android.app.Activity;
 import android.content.BroadcastReceiver;
@@ -7,7 +7,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.support.v4.content.LocalBroadcastManager;
 
-import com.zacharee1.systemuituner.activites.SettingsActivity;
+import com.zacharee1.systemuituner.activites.settings.SettingsActivity;
 
 public class RecreateHandler
 {

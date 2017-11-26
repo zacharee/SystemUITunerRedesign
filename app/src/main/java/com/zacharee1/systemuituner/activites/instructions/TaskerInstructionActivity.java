@@ -1,4 +1,4 @@
-package com.zacharee1.systemuituner.activites;
+package com.zacharee1.systemuituner.activites.instructions;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

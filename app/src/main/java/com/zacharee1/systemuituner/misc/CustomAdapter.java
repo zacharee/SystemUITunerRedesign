@@ -11,9 +11,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.zacharee1.systemuituner.R;
-import com.zacharee1.systemuituner.activites.AppsListActivity;
-import com.zacharee1.systemuituner.activites.ComponentsListActivity;
-import com.zacharee1.systemuituner.fragmenthelpers.LockHelper;
+import com.zacharee1.systemuituner.activites.apppickers.AppsListActivity;
+import com.zacharee1.systemuituner.activites.apppickers.ComponentsListActivity;
+import com.zacharee1.systemuituner.util.SettingsUtils;
 
 import java.util.ArrayList;
 

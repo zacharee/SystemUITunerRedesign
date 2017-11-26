@@ -1,37 +1,22 @@
-package com.zacharee1.systemuituner.activites;
+package com.zacharee1.systemuituner.activites.instructions;
 
-import android.Manifest;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.content.pm.PackageManager;
 import android.content.res.ColorStateList;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
-import android.net.Uri;
-import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.github.paolorotolo.appintro.AppIntro2;
-import com.github.paolorotolo.appintro.ISlideBackgroundColorHolder;
-import com.zacharee1.systemuituner.LauncherActivity;
 import com.zacharee1.systemuituner.R;
-import com.zacharee1.systemuituner.instructions.InstructionsActivity;
-import com.zacharee1.systemuituner.misc.RecreateHandler;
-import com.zacharee1.systemuituner.misc.SettingsUtils;
-import com.zacharee1.systemuituner.misc.Utils;
+import com.zacharee1.systemuituner.util.Utils;
 
 import java.util.ArrayList;
 import java.util.Arrays;

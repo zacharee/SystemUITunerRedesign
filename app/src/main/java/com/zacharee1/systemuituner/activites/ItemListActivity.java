@@ -27,7 +27,7 @@ import com.zacharee1.systemuituner.fragments.ItemDetailFragment;
 import com.zacharee1.systemuituner.R;
 import com.zacharee1.systemuituner.misc.TweakItems;
 import com.zacharee1.systemuituner.misc.OptionSelected;
-import com.zacharee1.systemuituner.misc.RecreateHandler;
+import com.zacharee1.systemuituner.handlers.RecreateHandler;
 
 import java.util.List;
 

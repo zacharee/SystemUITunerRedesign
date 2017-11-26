@@ -5,14 +5,10 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.graphics.drawable.Icon;
-import android.os.BatteryManager;
-import android.provider.Settings;
 import android.service.quicksettings.Tile;
 import android.service.quicksettings.TileService;
 
-import com.zacharee1.systemuituner.R;
-import com.zacharee1.systemuituner.misc.DemoHandler;
+import com.zacharee1.systemuituner.handlers.DemoHandler;
 
 @TargetApi(24)
 public class DemoTile extends TileService
