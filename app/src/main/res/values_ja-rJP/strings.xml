@@ -70,6 +70,7 @@
   <string name="alarm_clock_icon">Alarm Clock Icon</string>
   <string name="zen_icon">Zen Icon</string>
   <string name="do_not_disturb">Do Not Disturb Icon</string>
+  <string name="dnd">Do Not Disturb</string>
   <string name="donate">Donate</string>
   <string name="reset_blacklist">Reset Blacklist</string>
   <string name="animator_duration_scale">Animator Duration Scale</string>
