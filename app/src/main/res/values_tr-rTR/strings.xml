@@ -7,7 +7,7 @@
   <string name="sorry_option">Aşşağıda ki komutu bilgisayar\'dan çalıştırmayı deneyin(tek satır):</string>
   <string name="more">Daha fazla</string>
   <string name="grant_dump_perm">Bu özelliği kullanabilmek için \"android.permission.DUMP\" a yetki vermen gerekiyor.</string>
-  <string name="safe_mode_auto_enabled">Samsung aygıtı algılandı! Sizi korumak için güvenli mod otomatik olarak etkinleştirildi. Herhangi bir durum çubuğu simgesini değiştirmenin sistemini kırma potansiyeline sahip olduğuna dikkat edin! Lütfen daha fazla açıklama için play store adresini ziyaret edin.</string>
+  <string name="safe_mode_auto_enabled">Samsung aygıtı algılandı! Sizi korumak için güvenli mod otomatik olarak etkinleştirildi. Herhangi bir durum çubuğu simgesini değiştirmenin sistemi kırma potansiyeline sahip olduğuna dikkat edin! Lütfen daha fazla açıklama için play store içinde ki adresi ziyaret edin.</string>
   <string name="notice">DİKKAT</string>
   <string name="fancy_pulldown_notice">Bu seçeneği değiştirmek, yeniden başlattığınızda soruna sebep olabilir. Güvenli mod\'u etkinleştirin veya manuel olarak bu seçeneği yeniden başlatmanın arkasından açın veya kapatın.</string>
   <string name="safe_mode_summary">SAMSUNG USERS KEEP THIS TURNED ON UNLESS YOU HAVE AN AOSP ROM! \n\n
@@ -240,7 +240,7 @@
   <string name="blacklist_desc">Seçili olduğunda, seçilmiş uygulama sürükleyici modda kullanılamaz</string>
   <string name="warning">Uyarı!</string>
   <string name="imm_warn">This feature merely allows you to enable Immersive Mode. It DOES NOT do anything beyond that. Any issues you experience are the fault of your device\'s manufacturer. I CANNOT FIX IT!</string>
-  <string name="target_not_found">Ayarlar sayfası gerektiği gibi başlatılamadı.</string>
+  <string name="target_not_found">Ayarlar sayfası gerektiği gibi başlatılamıyor.</string>
   <string name="select_all">Hepsini seç</string>
   <string name="deselect_all">Tüm Seçilenleri Kaldır</string>
   <string name="invert_selection">Seçimi tersine çevir</string>
