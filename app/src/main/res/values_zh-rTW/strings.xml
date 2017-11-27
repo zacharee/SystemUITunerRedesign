@@ -241,4 +241,7 @@
   <string name="warning">警告！</string>
   <string name="imm_warn">本功能只會啟用沈浸模式，沒有別的了。若因此發生問題請洽裝置製造商，我幫不了你！</string>
   <string name="target_not_found">無法啟動對應的設定頁面。</string>
+  <string name="select_all">Select All</string>
+  <string name="deselect_all">Deselect All</string>
+  <string name="invert_selection">Invert Selection</string>
 </resources>
