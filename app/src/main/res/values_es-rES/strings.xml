@@ -210,7 +210,7 @@
   <string name="download_adb_mac"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-darwin.zip"> Descargar el ZIP de ADB para macOS.</a>]]></string>
   <string name="open_terminal">3. Abra Terminal.</string>
   <string name="cd_mac"><![CDATA[4. Escriba <b>cd C:\\path\\to\\extracted\\folder\\</b> para llegar a la carpeta donde extrajo ADB. Por ejemplo, <b>cd C:\\Users\\Zachary\\Desktop\\platform-tools\\</b>.]]></string>
-  <string name="apt_get_adb"><![CDATA[- <b>sudo apt-get install adb</b>]]></string>
+  <string name="apt_get_adb"><![CDATA[<b>sudo apt-get install adb</b>]]></string>
   <string name="make_sure_adb_installed">1. Asegúrese de que ADB está instalado:</string>
   <string name="yum_install_adb"><![CDATA[-<b>sudo yum instalar herramientas de android</b>]]></string>
   <string name="download_adb_linux"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-linux.zip"> descargar el ZIP de ADB para Linux.</a>]]></string>
@@ -232,7 +232,7 @@
   <string name="ubuntu">Ubuntu</string>
   <string name="fedora">Fedora</string>
   <string name="linux">Linux</string>
-  <string name="app_specific">App-Specific</string>
+  <string name="app_specific">App- Específica</string>
   <string name="blacklist">Lista negra</string>
   <string name="select_apps">Seleccionar Apps</string>
   <string name="app_specific_desc">Seleccionar aplicaciones para incluir o excluir en modo inmersivo.</string>
