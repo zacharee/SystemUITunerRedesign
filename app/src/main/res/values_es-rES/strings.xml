@@ -3,11 +3,11 @@
 <resources>
   <string name="app_name">SystemUI Tuner</string>
   <string name="to_the_tweaks">¡Configurar!</string>
-  <string name="sorry_explain">Algo salió mal al activar el ajuste.</string>
+  <string name="sorry_explain">Algo salió mal al activar la palanca.</string>
   <string name="sorry_option">Intenta ejecutar el comando desde tu computadora (una línea):</string>
   <string name="more">Más</string>
   <string name="grant_dump_perm">Debes activar el permiso \"android.permission.DUMP\" para usar ésta característica.</string>
-  <string name="safe_mode_auto_enabled">¡Dispositivo Samsung detectado! Modo seguro se ha activado automáticamente para su seguridad. ¡Se advierte que modificar cualquier iconos de la barra de Estado tiene el potencial de romper la interfaz de sistema! Siga el enlace en la descripción de Play Store para obtener más información.</string>
+  <string name="safe_mode_auto_enabled">¡Dispositivo Samsung detectado! Modo seguro se ha activado automáticamente para su seguridad. ¡Se advierte que modificar cualquier icono de la barra de Estado tiene el potencial de romper la interfaz de sistema! Siga el enlace en la descripción de Play Store para obtener más información.</string>
   <string name="notice">AVISO</string>
   <string name="fancy_pulldown_notice">Activar esta opción de puede causar problemas después de reiniciar. Activar el modo seguro y cambiar manualmente esta opción y después de un reinicio.</string>
   <string name="safe_mode_summary">USUARIOS DE SAMSUNG DEBEN ACTIVAR ESTO A MENOS QUE USEN UNA ROM AOSP! \n\n
