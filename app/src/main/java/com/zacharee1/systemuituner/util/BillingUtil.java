@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.android.billingclient.api.BillingClient;
 import com.android.billingclient.api.BillingClientStateListener;
 import com.android.billingclient.api.BillingFlowParams;
+import com.android.billingclient.api.ConsumeResponseListener;
 import com.android.billingclient.api.Purchase;
 import com.android.billingclient.api.PurchasesUpdatedListener;
 import com.crashlytics.android.answers.Answers;
@@ -46,7 +47,12 @@ public class BillingUtil
                             .putCustomAttribute("token", purchase.getPurchaseToken())
                             .putCustomAttribute("time", purchase.getPurchaseTime())
                             .putCustomAttribute("signature", purchase.getSignature()));
-                        mBillingClient.consumeAsync(purchase.getPurchaseToken(), null);
+                        mBillingClient.consumeAsync(purchase.getPurchaseToken(), new ConsumeResponseListener() {
+                            @Override
+                            public void onConsumeResponse(int i, String s) {
+
+                            }
+                        });
                     }
                 }
             }
