@@ -48,6 +48,7 @@ public class BatteryTile extends TileService
     public void onClick()
     {
         Intent intentBatteryUsage = new Intent(Intent.ACTION_POWER_USAGE_SUMMARY);
+        intentBatteryUsage.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
         try {
             startActivityAndCollapse(intentBatteryUsage);

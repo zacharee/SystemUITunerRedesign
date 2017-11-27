@@ -179,27 +179,29 @@ public class ImmersiveSelectActivity extends AppCompatActivity {
         public void populateList() {
             TreeSet<String> selectedApps = ImmersiveHandler.parseSelectedApps(getActivity(), new TreeSet<String>());
 
-            for (AppInfo info : mInfo.values()) {
-                CheckBoxPreference preference = new CheckBoxPreference(getActivity());
-                preference.setTitle(info.appName);
-                preference.setSummary(info.packageName);
-                preference.setIcon(info.appIcon);
-                preference.setKey(info.packageName);
-                preference.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
-                    @Override
-                    public boolean onPreferenceChange(Preference preference, Object o) {
-                        boolean isChecked = Boolean.valueOf(o.toString());
-                        if (isChecked) {
-                            ImmersiveHandler.addApp(getActivity(), preference.getKey());
-                        } else {
-                            ImmersiveHandler.removeApp(getActivity(), preference.getKey());
+            if (mInfo != null) {
+                for (AppInfo info : mInfo.values()) {
+                    CheckBoxPreference preference = new CheckBoxPreference(getActivity());
+                    preference.setTitle(info.appName);
+                    preference.setSummary(info.packageName);
+                    preference.setIcon(info.appIcon);
+                    preference.setKey(info.packageName);
+                    preference.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
+                        @Override
+                        public boolean onPreferenceChange(Preference preference, Object o) {
+                            boolean isChecked = Boolean.valueOf(o.toString());
+                            if (isChecked) {
+                                ImmersiveHandler.addApp(getActivity(), preference.getKey());
+                            } else {
+                                ImmersiveHandler.removeApp(getActivity(), preference.getKey());
+                            }
+                            return true;
                         }
-                        return true;
-                    }
-                });
-                preference.setChecked(selectedApps.contains(preference.getKey()));
+                    });
+                    preference.setChecked(selectedApps.contains(preference.getKey()));
 
-                getPreferenceScreen().addPreference(preference);
+                    getPreferenceScreen().addPreference(preference);
+                }
             }
         }
 
