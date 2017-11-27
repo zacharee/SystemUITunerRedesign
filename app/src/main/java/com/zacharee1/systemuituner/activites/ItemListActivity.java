@@ -28,6 +28,7 @@ import com.zacharee1.systemuituner.R;
 import com.zacharee1.systemuituner.misc.TweakItems;
 import com.zacharee1.systemuituner.misc.OptionSelected;
 import com.zacharee1.systemuituner.handlers.RecreateHandler;
+import com.zacharee1.systemuituner.util.Utils;
 
 import java.util.List;
 
@@ -48,8 +49,6 @@ public class ItemListActivity extends AppCompatActivity {
     private boolean mTwoPane;
     private final List<TweakItems.TweakItem> mItems = TweakItems.ITEMS;
     @SuppressWarnings("FieldCanBeLocal")
-    private static boolean DARK = false;
-    @SuppressWarnings("FieldCanBeLocal")
     private static SharedPreferences mSharedPreferences;
 
     @Override
@@ -58,16 +57,15 @@ public class ItemListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-        DARK = mSharedPreferences.getBoolean("dark_mode", false);
 
-        setTheme(DARK ? R.style.AppTheme_Dark_NoActionBar : R.style.AppTheme_NoActionBar);
+        setTheme(Utils.isInDarkMode(this) ? R.style.AppTheme_Dark_NoActionBar : R.style.AppTheme_NoActionBar);
 
         RecreateHandler.onCreate(this);
 
         setContentView(R.layout.activity_item_list);
 
         final Toolbar toolbar = findViewById(R.id.toolbar);
-        toolbar.setPopupTheme(DARK ? R.style.AppTheme_Dark_PopupOverlay : R.style.AppTheme_PopupOverlay);
+        toolbar.setPopupTheme(Utils.isInDarkMode(this) ? R.style.AppTheme_Dark_PopupOverlay : R.style.AppTheme_PopupOverlay);
         setSupportActionBar(toolbar);
         toolbar.setTitle(getTitle());
 

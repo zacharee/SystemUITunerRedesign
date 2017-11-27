@@ -14,12 +14,11 @@ import com.zacharee1.systemuituner.R;
 import com.zacharee1.systemuituner.util.BillingUtil;
 import com.zacharee1.systemuituner.misc.OptionSelected;
 import com.zacharee1.systemuituner.handlers.RecreateHandler;
+import com.zacharee1.systemuituner.util.Utils;
 
 @SuppressWarnings("unused")
 public class MainActivity extends AppCompatActivity
 {
-    @SuppressWarnings("FieldCanBeLocal")
-    private static boolean DARK = false;
     private BillingUtil mBilling;
 
     @Override
@@ -27,13 +26,10 @@ public class MainActivity extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
 
-        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-        DARK = sharedPreferences.getBoolean("dark_mode", false);
-
 //        if (sharedPreferences.getBoolean("use_fabric", true))
 //            Fabric.with(this, new Crashlytics());
 
-        setTheme(DARK ? R.style.AppTheme_Dark : R.style.AppTheme);
+        setTheme(Utils.isInDarkMode(this) ? R.style.AppTheme_Dark : R.style.AppTheme);
 
         RecreateHandler.onCreate(this);
 

@@ -13,6 +13,7 @@ import com.zacharee1.systemuituner.fragments.ItemDetailFragment;
 import com.zacharee1.systemuituner.R;
 import com.zacharee1.systemuituner.misc.OptionSelected;
 import com.zacharee1.systemuituner.handlers.RecreateHandler;
+import com.zacharee1.systemuituner.util.Utils;
 
 /**
  * An activity representing a single Item detail screen. This
@@ -22,23 +23,17 @@ import com.zacharee1.systemuituner.handlers.RecreateHandler;
  */
 public class ItemDetailActivity extends AppCompatActivity {
 
-    @SuppressWarnings("FieldCanBeLocal")
-    private static boolean DARK = false;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-        DARK = sharedPreferences.getBoolean("dark_mode", false);
-
-        setTheme(DARK ? R.style.AppTheme_Dark_NoActionBar : R.style.AppTheme_NoActionBar);
+        setTheme(Utils.isInDarkMode(this) ? R.style.AppTheme_Dark_NoActionBar : R.style.AppTheme_NoActionBar);
 
         RecreateHandler.onCreate(this);
 
         setContentView(R.layout.activity_item_detail);
         Toolbar toolbar = findViewById(R.id.detail_toolbar);
-        toolbar.setPopupTheme(DARK ? R.style.AppTheme_Dark_PopupOverlay : R.style.AppTheme_PopupOverlay);
+        toolbar.setPopupTheme(Utils.isInDarkMode(this) ? R.style.AppTheme_Dark_PopupOverlay : R.style.AppTheme_PopupOverlay);
         setSupportActionBar(toolbar);
 
         // Show the Up button in the action bar.

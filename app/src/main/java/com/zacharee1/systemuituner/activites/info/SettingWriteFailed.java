@@ -9,22 +9,16 @@ import android.widget.TextView;
 
 import com.zacharee1.systemuituner.R;
 import com.zacharee1.systemuituner.handlers.RecreateHandler;
+import com.zacharee1.systemuituner.util.Utils;
 
 public class SettingWriteFailed extends AppCompatActivity
 {
-
-    @SuppressWarnings("FieldCanBeLocal")
-    private static boolean DARK = false;
-
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
 
-        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-        DARK = sharedPreferences.getBoolean("dark_mode", false);
-
-        setTheme(DARK ? R.style.AppTheme_Dark : R.style.AppTheme);
+        setTheme(Utils.isInDarkMode(this) ? R.style.AppTheme_Dark : R.style.AppTheme);
         setContentView(R.layout.activity_setting_write_failed);
 
         RecreateHandler.onCreate(this);

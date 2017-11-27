@@ -1,24 +1,33 @@
 package com.zacharee1.systemuituner.activites.apppickers;
 
+import android.app.Fragment;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.os.Looper;
 import android.preference.CheckBoxPreference;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
+import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import com.zacharee1.systemuituner.R;
 import com.zacharee1.systemuituner.misc.AppInfo;
 import com.zacharee1.systemuituner.handlers.ImmersiveHandler;
 import com.zacharee1.systemuituner.util.Utils;
 
+import java.util.ArrayList;
 import java.util.TreeMap;
 import java.util.TreeSet;
 
@@ -28,9 +37,9 @@ public class ImmersiveSelectActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_blank);
+        setTheme(Utils.isInDarkMode(this) ? R.style.AppTheme_Dark_NoActionBar : R.style.AppTheme_NoActionBar);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        setContentView(R.layout.activity_blank_custom_toolbar);
 
         final ProgressBar bar = new ProgressBar(this);
         bar.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
@@ -67,6 +76,7 @@ public class ImmersiveSelectActivity extends AppCompatActivity {
                         try {
                             getFragmentManager().beginTransaction().replace(R.id.content_main, fragment).commit();
                         } catch (Exception e) {}
+                        setUpActionBar(fragment);
                     }
                 });
             }
@@ -81,6 +91,70 @@ public class ImmersiveSelectActivity extends AppCompatActivity {
                 return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    private void setUpActionBar(final SelectorFragment fragment) {
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        View selectAll = LayoutInflater.from(this).inflate(R.layout.select_all, toolbar, false);
+        View deselectAll = LayoutInflater.from(this).inflate(R.layout.deselect_all, toolbar, false);
+        View invertSelection = LayoutInflater.from(this).inflate(R.layout.invert_select, toolbar, false);
+
+        toolbar.addView(selectAll);
+        toolbar.addView(deselectAll);
+        toolbar.addView(invertSelection);
+
+        selectAll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                fragment.selectAllBoxes();
+            }
+        });
+        deselectAll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                fragment.deselectAllBoxes();
+            }
+        });
+        invertSelection.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                fragment.invertSelection();
+            }
+        });
+
+        selectAll.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                Toast.makeText(ImmersiveSelectActivity.this,
+                        getResources().getString(R.string.select_all),
+                        Toast.LENGTH_SHORT)
+                        .show();
+                return true;
+            }
+        });
+        deselectAll.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                Toast.makeText(ImmersiveSelectActivity.this,
+                        getResources().getString(R.string.deselect_all),
+                        Toast.LENGTH_SHORT)
+                        .show();
+                return true;
+            }
+        });
+        invertSelection.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                Toast.makeText(ImmersiveSelectActivity.this,
+                        getResources().getString(R.string.invert_selection),
+                        Toast.LENGTH_SHORT)
+                        .show();
+                return true;
+            }
+        });
     }
 
     public static class SelectorFragment extends PreferenceFragment {
@@ -126,6 +200,50 @@ public class ImmersiveSelectActivity extends AppCompatActivity {
                 preference.setChecked(selectedApps.contains(preference.getKey()));
 
                 getPreferenceScreen().addPreference(preference);
+            }
+        }
+
+        public void selectAllBoxes() {
+            setBoxesSelected(true);
+        }
+
+        public void deselectAllBoxes() {
+            setBoxesSelected(false);
+        }
+
+        public void setBoxesSelected(boolean selected) {
+            for (int i = 0; i < getPreferenceScreen().getPreferenceCount(); i++) {
+                Preference p = getPreferenceScreen().getPreference(i);
+
+                if (p instanceof CheckBoxPreference) {
+                    ((CheckBoxPreference) p).setChecked(selected);
+                }
+            }
+        }
+
+        public void invertSelection() {
+            ArrayList<CheckBoxPreference> selected = new ArrayList<>();
+            ArrayList<CheckBoxPreference> unselected = new ArrayList<>();
+
+            for (int i = 0; i < getPreferenceScreen().getPreferenceCount(); i++) {
+                Preference p = getPreferenceScreen().getPreference(i);
+
+                if (p instanceof CheckBoxPreference) {
+                    CheckBoxPreference box = (CheckBoxPreference) p;
+                    if (box.isChecked()) {
+                        selected.add(box);
+                    } else {
+                        unselected.add(box);
+                    }
+                }
+            }
+
+            for (CheckBoxPreference box : selected) {
+                box.setChecked(false);
+            }
+
+            for (CheckBoxPreference box : unselected) {
+                box.setChecked(true);
             }
         }
     }

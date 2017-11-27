@@ -124,4 +124,8 @@ public class Utils
     public static List<ApplicationInfo> getInstalledApps(Context context) {
         return context.getPackageManager().getInstalledApplications(PackageManager.GET_META_DATA);
     }
+
+    public static boolean isInDarkMode(Context context) {
+        return PreferenceManager.getDefaultSharedPreferences(context).getBoolean("dark_mode", false);
+    }
 }

@@ -19,6 +19,7 @@ import com.zacharee1.systemuituner.R;
 import com.zacharee1.systemuituner.activites.instructions.TaskerInstructionActivity;
 import com.zacharee1.systemuituner.handlers.RecreateHandler;
 import com.zacharee1.systemuituner.services.SafeModeService;
+import com.zacharee1.systemuituner.util.Utils;
 
 /**
  * A {@link PreferenceActivity} that presents a set of application settings. On
@@ -36,16 +37,10 @@ public class SettingsActivity extends AppCompatPreferenceActivity
 
     public final static String RECREATE_ACTIVITY = "recreate_activity";
 
-    @SuppressWarnings("FieldCanBeLocal")
-    private static boolean DARK = false;
-
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
-        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-        DARK = sharedPreferences.getBoolean("dark_mode", false);
-
-        setTheme(DARK ? R.style.AppTheme_Dark : R.style.AppTheme);
+        setTheme(Utils.isInDarkMode(this) ? R.style.AppTheme_Dark : R.style.AppTheme);
 
         RecreateHandler.onCreate(this);
 
