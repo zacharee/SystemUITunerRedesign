@@ -67,7 +67,7 @@ public class StatbarHelper extends BaseHelper
         for (int i = 0; i < getPreferenceScreen().getRootAdapter().getCount(); i++) {
             Object o = getPreferenceScreen().getRootAdapter().getItem(i);
 
-            if (o instanceof SwitchPreference && !((SwitchPreference)o).getTitle().toString().toLowerCase().contains("high brightness warning")) {
+            if (o instanceof SwitchPreference) {
                 final SwitchPreference pref = (SwitchPreference) o;
 
                 pref.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener()

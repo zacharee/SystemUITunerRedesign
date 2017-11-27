@@ -40,6 +40,7 @@ public class ImmersiveSelectActivity extends AppCompatActivity {
         setTheme(Utils.isInDarkMode(this) ? R.style.AppTheme_Dark_NoActionBar : R.style.AppTheme_NoActionBar);
 
         setContentView(R.layout.activity_blank_custom_toolbar);
+        setTitle(R.string.select_apps);
 
         final ProgressBar bar = new ProgressBar(this);
         bar.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));

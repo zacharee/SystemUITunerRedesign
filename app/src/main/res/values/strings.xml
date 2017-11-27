@@ -278,4 +278,12 @@
     <string name="select_all">Select All</string>
     <string name="deselect_all">Deselect All</string>
     <string name="invert_selection">Invert Selection</string>
+
+    <string name="statbar_rotation_lock_notif">On certain devices, modifying the status bar icons can cause an icon that looks like a phone to appear. This is the Rotation Lock icon.</string>
+    <string name="feature_not_supported">It seems your device doesn\'t support this feature :/</string>
+
+    <string name="select_app">Select App</string>
+    <string name="select_component">Select Component</string>
+
+    <string name="reset">Reset</string>
 </resources>

@@ -9,6 +9,7 @@ import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.zacharee1.systemuituner.R;
 import com.zacharee1.systemuituner.misc.AppInfo;
@@ -24,6 +25,7 @@ public class AppsListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_apps_list);
+        setTitle(R.string.select_app);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -33,10 +35,25 @@ public class AppsListActivity extends AppCompatActivity {
         Bundle extras = intent.getExtras();
         if (extras == null) finish();
 
-        boolean isLeft = extras.getBoolean("isLeft");
+        final boolean isLeft = extras.getBoolean("isLeft");
 
-        RecyclerView recyclerView = findViewById(R.id.app_rec);
-        recyclerView.setAdapter(new CustomAdapter(getAppInfo(), this, isLeft));
+        final RecyclerView recyclerView = findViewById(R.id.app_rec);
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                final CustomAdapter adapter = new CustomAdapter(getAppInfo(), AppsListActivity.this, isLeft);
+
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        recyclerView.setAdapter(adapter);
+                        findViewById(R.id.progress).setVisibility(View.GONE);
+                    }
+                });
+            }
+        }).start();
+
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
     }

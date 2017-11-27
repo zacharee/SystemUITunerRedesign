@@ -23,6 +23,8 @@
             app:show_popup="@bool/show_slider_popup"/>
     </PreferenceCategory>
 
+    <com.zacharee1.systemuituner.prefs.StatBarWarnPref />
+
     <PreferenceCategory
         android:title="@string/status_bar">
         <Preference

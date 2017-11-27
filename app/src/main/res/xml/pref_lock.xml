@@ -24,8 +24,11 @@
             android:key="sysui_keyguard_left_unlock" />
 
         <Preference
-            android:enabled="false"
-            android:selectable="false" />
+            android:title="@string/reset"
+            android:key="reset_left" />
+
+        <Preference
+            android:enabled="false" />
 
         <com.zacharee1.systemuituner.prefs.IconPreference
             android:title="@string/choose_right"
@@ -37,6 +40,10 @@
         <SwitchPreference
             android:title="@string/unlock_device"
             android:key="sysui_keyguard_right_unlock" />
+
+        <Preference
+            android:title="@string/reset"
+            android:key="reset_right" />
 
     </PreferenceCategory>
 

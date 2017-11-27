@@ -6,6 +6,7 @@ import android.preference.Preference;
 import android.preference.SwitchPreference;
 import android.util.Log;
 
+import com.zacharee1.systemuituner.R;
 import com.zacharee1.systemuituner.activites.instructions.SetupActivity;
 import com.zacharee1.systemuituner.fragments.ItemDetailFragment;
 import com.zacharee1.systemuituner.util.SettingsUtils;
@@ -97,11 +98,20 @@ public class AutoHelper extends BaseHelper
                     }
                 });
 
-                mPrefs.put(preference.getKey(), preference);
+                if (!preference.getKey().isEmpty() && !preference.getTitle().toString().isEmpty()) {
+                    mPrefs.put(preference.getKey(), preference);
+                }
             }
 
-            for (Preference preference : mPrefs.values()) {
-                getPreferenceScreen().addPreference(preference);
+            if (mPrefs.values().size() > 0) {
+                for (Preference preference : mPrefs.values()) {
+                    getPreferenceScreen().addPreference(preference);
+                }
+            } else {
+                Preference notSupported = new Preference(getActivity());
+                notSupported.setSummary(R.string.feature_not_supported);
+                notSupported.setSelectable(false);
+                getPreferenceScreen().addPreference(notSupported);
             }
 
             SettingsUtils.shouldSetSwitchChecked(getFragment());

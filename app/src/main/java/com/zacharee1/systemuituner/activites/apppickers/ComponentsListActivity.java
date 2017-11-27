@@ -11,6 +11,7 @@ import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.zacharee1.systemuituner.R;
 import com.zacharee1.systemuituner.misc.AppInfo;
@@ -25,6 +26,7 @@ public class ComponentsListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_apps_list);
+        setTitle(R.string.select_component);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -34,14 +36,29 @@ public class ComponentsListActivity extends AppCompatActivity {
         Bundle extras = intent.getExtras();
         if (extras == null) finish();
 
-        String packageName = extras.getString("package");
+        final String packageName = extras.getString("package");
         String appName = extras.getString("name");
-        boolean isLeft = extras.getBoolean("isLeft");
+        final boolean isLeft = extras.getBoolean("isLeft");
 
         setTitle(appName);
 
-        RecyclerView recyclerView = findViewById(R.id.app_rec);
-        recyclerView.setAdapter(new CustomAdapter(getComponentInfo(packageName), this, isLeft));
+        final RecyclerView recyclerView = findViewById(R.id.app_rec);
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                final CustomAdapter adapter = new CustomAdapter(getComponentInfo(packageName), ComponentsListActivity.this, isLeft);
+
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        recyclerView.setAdapter(adapter);
+                        findViewById(R.id.progress).setVisibility(View.GONE);
+                    }
+                });
+            }
+        }).start();
+
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
     }
