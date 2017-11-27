@@ -144,7 +144,7 @@ public class ItemListActivity extends AppCompatActivity {
         @Override
         public void onBindViewHolder(final ViewHolder holder, int position) {
             holder.mItem = mValues.get(position);
-            holder.mIconView.setImageDrawable(getResources().getDrawable(holder.mItem.drawableId, null));
+            holder.mIconView.setImageDrawable(getResources().getDrawable(holder.mItem.drawableId, null).getConstantState().newDrawable().mutate());
             setIconTint(holder);
             holder.mContentView.setText(mValues.get(position).content);
 

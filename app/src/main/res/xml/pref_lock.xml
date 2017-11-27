@@ -12,11 +12,11 @@
             android:title="@string/requires_oreo"
             android:selectable="false" />
 
-        <com.zacharee1.systemuituner.prefs.IconPreference
+        <Preference
             android:title="@string/choose_left"
             android:summary="@string/not_set"
-            app:pref_icon="@drawable/ic_help_outline_black_24dp"
-            app:pref_icon_tint="#fff"
+            android:icon="@drawable/ic_help_outline_black_24dp"
+            android:layout="@layout/preference_icon"
             android:key="choose_left" />
 
         <SwitchPreference
@@ -28,13 +28,14 @@
             android:key="reset_left" />
 
         <Preference
-            android:enabled="false" />
+            android:enabled="false"
+            android:shouldDisableView="true"/>
 
-        <com.zacharee1.systemuituner.prefs.IconPreference
+        <Preference
             android:title="@string/choose_right"
             android:summary="@string/not_set"
-            app:pref_icon="@drawable/ic_help_outline_black_24dp"
-            app:pref_icon_tint="#fff"
+            android:icon="@drawable/ic_help_outline_black_24dp"
+            android:layout="@layout/preference_icon"
             android:key="choose_right" />
 
         <SwitchPreference

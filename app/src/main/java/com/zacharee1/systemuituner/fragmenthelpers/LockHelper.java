@@ -16,7 +16,6 @@ import com.zacharee1.systemuituner.R;
 import com.zacharee1.systemuituner.activites.apppickers.AppsListActivity;
 import com.zacharee1.systemuituner.fragments.ItemDetailFragment;
 import com.zacharee1.systemuituner.util.SettingsUtils;
-import com.zacharee1.systemuituner.prefs.IconPreference;
 
 public class LockHelper extends BaseHelper {
     public LockHelper(ItemDetailFragment fragment) {
@@ -40,7 +39,7 @@ public class LockHelper extends BaseHelper {
     private void setEnabled() {
         PreferenceCategory shortcuts = (PreferenceCategory) findPreference("lockscreen_shortcuts");
         Preference oreoMsg = findPreference("oreo_needed");
-        boolean isOreo = Build.VERSION.SDK_INT >= Build.VERSION_CODES.N_MR1;
+        boolean isOreo = Build.VERSION.SDK_INT > Build.VERSION_CODES.N_MR1;
 
         shortcuts.setEnabled(isOreo);
         if (isOreo) shortcuts.removePreference(oreoMsg);
@@ -88,8 +87,8 @@ public class LockHelper extends BaseHelper {
     }
 
     private void setLockSummaryAndIcon() {
-        IconPreference leftLock = (IconPreference) findPreference("choose_left");
-        IconPreference rightLock = (IconPreference) findPreference("choose_right");
+        Preference leftLock = findPreference("choose_left");
+        Preference rightLock = findPreference("choose_right");
 
         String leftSum = Settings.Secure.getString(getContext().getContentResolver(), "sysui_keyguard_left");
         String rightSum = Settings.Secure.getString(getContext().getContentResolver(), "sysui_keyguard_right");
