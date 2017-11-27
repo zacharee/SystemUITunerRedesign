@@ -240,4 +240,7 @@
   <string name="warning">¡Alerta!</string>
   <string name="imm_warn">Esta función simplemente permite activar el modo de inmersión. NO hace nada más allá de eso. Cualquier problema que usted experimenta es culpa del fabricante de su dispositivo. ¡NO PUEDO ARREGLARLO!</string>
   <string name="target_not_found">No se puede lanzar la página configuración adecuada.</string>
+  <string name="select_all">Select All</string>
+  <string name="deselect_all">Deselect All</string>
+  <string name="invert_selection">Invert Selection</string>
 </resources>
