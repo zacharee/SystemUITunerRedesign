@@ -244,9 +244,9 @@
   <string name="select_all">全選</string>
   <string name="deselect_all">全不選</string>
   <string name="invert_selection">反向選取</string>
-  <string name="statbar_rotation_lock_notif">On certain devices, modifying the status bar icons can cause an icon that looks like a phone to appear. This is the Rotation Lock icon.</string>
-  <string name="feature_not_supported">It seems your device doesn\'t support this feature :/</string>
+  <string name="statbar_rotation_lock_notif">某些裝置修改狀態列圖示後，會多出一個像手機的圖示，它是螢幕旋轉鎖定圖示。</string>
+  <string name="feature_not_supported">你的裝置好像不支援此功能 :/</string>
   <string name="select_app">選擇 app</string>
-  <string name="select_component">Select Component</string>
-  <string name="reset">Reset</string>
+  <string name="select_component">選擇元件</string>
+  <string name="reset">重設</string>
 </resources>
