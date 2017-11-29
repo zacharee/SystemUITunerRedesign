@@ -26,11 +26,7 @@ public class SettingsUtils
                 SuUtils.sudo(baseCommand);
                 return true;
             } else {
-                String adbCommand = "adb shell " + baseCommand;
-                Intent intent = new Intent(context, SettingWriteFailed.class);
-                intent.setAction(Intent.ACTION_VIEW);
-                intent.putExtra("command", adbCommand);
-                context.startActivity(intent);
+                launchErrorActivity(context, baseCommand);
                 return false;
             }
         }
@@ -46,11 +42,7 @@ public class SettingsUtils
                 SuUtils.sudo(baseCommand);
                 return true;
             } else {
-                String adbCommand = "adb shell " + baseCommand;
-                Intent intent = new Intent(context, SettingWriteFailed.class);
-                intent.setAction(Intent.ACTION_VIEW);
-                intent.putExtra("command", adbCommand);
-                context.startActivity(intent);
+                launchErrorActivity(context, baseCommand);
                 return false;
             }
         }
@@ -66,14 +58,19 @@ public class SettingsUtils
                 SuUtils.sudo(baseCommand);
                 return true;
             } else {
-                String adbCommand = "adb shell " + baseCommand;
-                Intent intent = new Intent(context, SettingWriteFailed.class);
-                intent.setAction(Intent.ACTION_VIEW);
-                intent.putExtra("command", adbCommand);
-                context.startActivity(intent);
+                launchErrorActivity(context, baseCommand);
                 return false;
             }
         }
+    }
+
+    private static void launchErrorActivity(Context context, String baseCommand) {
+        String adbCommand = "adb shell " + baseCommand;
+        Intent intent = new Intent(context, SettingWriteFailed.class);
+        intent.setAction(Intent.ACTION_VIEW);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        intent.putExtra("command", adbCommand);
+        context.startActivity(intent);
     }
 
     public static boolean hasPerms(Context context) {

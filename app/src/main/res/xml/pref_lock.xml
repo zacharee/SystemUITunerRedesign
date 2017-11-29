@@ -28,8 +28,7 @@
             android:key="reset_left" />
 
         <Preference
-            android:enabled="false"
-            android:shouldDisableView="true"/>
+            android:enabled="false"/>
 
         <Preference
             android:title="@string/choose_right"
