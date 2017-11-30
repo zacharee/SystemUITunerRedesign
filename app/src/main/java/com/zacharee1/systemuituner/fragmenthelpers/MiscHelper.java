@@ -81,7 +81,7 @@ public class MiscHelper extends BaseHelper
             category.setEnabled(false);
 
             for (int i = 0; i < category.getPreferenceCount(); i++) {
-                SwitchPreference preference = (SwitchPreference) category.getPreference(i);
+                SwitchPreference preference = (SwitchPreference) findPreference("show_importance_slider");
                 preference.setChecked(false);
                 preference.setSummary(Build.VERSION.SDK_INT <= Build.VERSION_CODES.M ? R.string.requires_nougat : R.string.safe_mode_android_o);
             }

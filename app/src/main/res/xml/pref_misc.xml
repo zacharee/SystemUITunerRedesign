@@ -67,7 +67,15 @@
         android:key="power_notification_controls">
         <SwitchPreference
             android:key="show_importance_slider"
-            android:title="@string/power_notification_controls"/>
+            android:title="@string/enabled"/>
+        <Preference
+            android:title="@string/about"
+            android:summary="@string/pnc_desc"
+            android:selectable="false" />
+        <Preference
+            android:title="@string/warning"
+            android:selectable="false"
+            android:summary="@string/pnc_warn"/>
     </PreferenceCategory>
 
 </PreferenceScreen>
