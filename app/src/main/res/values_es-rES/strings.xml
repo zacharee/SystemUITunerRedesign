@@ -240,12 +240,12 @@
   <string name="warning">¡Alerta!</string>
   <string name="imm_warn">Esta función simplemente permite activar el modo de inmersión. NO hace nada más allá de eso. Cualquier problema que usted experimenta es culpa del fabricante de su dispositivo. ¡NO PUEDO ARREGLARLO!</string>
   <string name="target_not_found">No se puede lanzar la página configuración adecuada.</string>
-  <string name="select_all">Select All</string>
-  <string name="deselect_all">Deselect All</string>
-  <string name="invert_selection">Invert Selection</string>
-  <string name="statbar_rotation_lock_notif">On certain devices, modifying the status bar icons can cause an icon that looks like a phone to appear. This is the Rotation Lock icon.</string>
-  <string name="feature_not_supported">It seems your device doesn\'t support this feature :/</string>
-  <string name="select_app">Select App</string>
-  <string name="select_component">Select Component</string>
-  <string name="reset">Reset</string>
+  <string name="select_all">Seleccionar todo</string>
+  <string name="deselect_all">Sin Selección</string>
+  <string name="invert_selection">Invertir Selección</string>
+  <string name="statbar_rotation_lock_notif">En ciertos dispositivos, modificar los iconos de la barra de estado puede hacer aparecer un icono. Este es el icono de bloqueo de rotación.</string>
+  <string name="feature_not_supported">Al parecer su dispositivo no soporta ésta característica</string>
+  <string name="select_app">Seleccione Aplicación</string>
+  <string name="select_component">Seleccione componente</string>
+  <string name="reset">Restablece</string>
 </resources>
