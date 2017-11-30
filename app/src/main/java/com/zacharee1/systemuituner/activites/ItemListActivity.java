@@ -1,6 +1,7 @@
 package com.zacharee1.systemuituner.activites;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
@@ -9,6 +10,7 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.annotation.ColorInt;
 import android.support.annotation.NonNull;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.RecyclerView;
@@ -19,6 +21,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -49,7 +52,7 @@ public class ItemListActivity extends AppCompatActivity {
     private boolean mTwoPane;
     private final List<TweakItems.TweakItem> mItems = TweakItems.ITEMS;
     @SuppressWarnings("FieldCanBeLocal")
-    private static SharedPreferences mSharedPreferences;
+    private SharedPreferences mSharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -92,6 +95,81 @@ public class ItemListActivity extends AppCompatActivity {
             getFragmentManager().beginTransaction()
                     .replace(R.id.item_detail_container, fragment)
                     .commit();
+        }
+
+        showWarningDialog();
+    }
+
+    private void showWarningDialog() {
+        if (mSharedPreferences.getBoolean("show_system_settings_warning", true)) {
+            final AlertDialog dialog = new AlertDialog.Builder(this)
+                    .setTitle(R.string.warning)
+                    .setMessage("This app modifies system settings. Uninstalling won't revert anything, nor can I make that happen. Unless you are comfortable with manual recovery, don't use the app. You have been warned!")
+                    .setCancelable(false)
+                    .setPositiveButton(R.string.agree, null)
+                    .setNeutralButton(R.string.cancel, new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            finish();
+                        }
+                    })
+                    .setNegativeButton(R.string.dont_show, new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            mSharedPreferences.edit().putBoolean("show_system_settings_warning", false).apply();
+                        }
+                    })
+                    .create();
+
+            dialog.setOnShowListener(new DialogInterface.OnShowListener() {
+                @Override
+                public void onShow(DialogInterface dialogInterface) {
+                    final int time = 5;
+
+                    final Button ok = dialog.getButton(DialogInterface.BUTTON_POSITIVE);
+                    final Button dontShow = dialog.getButton(DialogInterface.BUTTON_NEGATIVE);
+
+                    ok.setEnabled(false);
+                    dontShow.setEnabled(false);
+
+                    ok.setText(ok.getText().toString().concat(" (" + time + ")"));
+                    dontShow.setText(dontShow.getText().toString().concat(" (" + time + ")"));
+
+                    new Thread(new Runnable() {
+                        @Override
+                        public void run() {
+                            for (int i = time; i > 0; i--) {
+                                final int i2 = i;
+
+                                runOnUiThread(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        ok.setText(ok.getText().toString().replace(String.valueOf(i2 + 1), i2 + ""));
+                                        dontShow.setText(dontShow.getText().toString().replace(String.valueOf(i2 + 1), i2 + ""));
+                                    }
+                                });
+
+                                try {
+                                    Thread.sleep(1000);
+                                } catch (Exception e) {}
+                            }
+
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    ok.setText(R.string.agree);
+                                    dontShow.setText(R.string.dont_show);
+
+                                    ok.setEnabled(true);
+                                    dontShow.setEnabled(true);
+                                }
+                            });
+                        }
+                    }).start();
+                }
+            });
+
+            dialog.show();
         }
     }
 

@@ -289,4 +289,8 @@
 
     <string name="pnc_desc">Power Notification Controls allow you to set the level of importance for notifications on a per-app basis. Simply turn the feature on and hold down on a notification to get started. You may need to tap the A to enable the slider.</string>
     <string name="pnc_warn">This feature is known to be unreliable on certain devices, especially on TouchWiz! It is impossible to fix, but the best workaround seems to be to tap repeatedly on the desired level. Again, I CANNOT fix it!</string>
+
+    <string name="agree">Agree</string>
+    <string name="cancel">Cancel</string>
+    <string name="dont_show">Don\'t Show Again</string>
 </resources>
