@@ -106,11 +106,13 @@ public class Utils
         boolean firstStart = sharedPreferences.getBoolean("first_start", true);
         if (firstStart && Build.MANUFACTURER.toLowerCase().contains("samsung") && Build.VERSION.SDK_INT < Build.VERSION_CODES.O) {
             sharedPreferences.edit().putBoolean("safe_mode", true).apply();
-            new AlertDialog.Builder(context)
-                    .setTitle(context.getResources().getString(R.string.notice))
-                    .setMessage(context.getResources().getString(R.string.safe_mode_auto_enabled))
-                    .setPositiveButton(context.getResources().getString(R.string.ok), null)
-                    .show();
+            try {
+                new AlertDialog.Builder(context)
+                        .setTitle(context.getResources().getString(R.string.notice))
+                        .setMessage(context.getResources().getString(R.string.safe_mode_auto_enabled))
+                        .setPositiveButton(context.getResources().getString(R.string.ok), null)
+                        .show();
+            } catch (Exception e) {}
         }
         sharedPreferences.edit().putBoolean("first_start", false).apply();
 

@@ -54,6 +54,11 @@ public class InstructionsActivity extends AppIntro2 {
         setTheme(R.style.AppTheme_Intro);
         super.onCreate(savedInstanceState);
 
+        mInstructions = Instructions.newInstance(getResources().getString(R.string.windows_setup),
+                getResources().getString(R.string.on_computer),
+                R.layout.fragment_adb_windows,
+                getResources().getColor(R.color.intro_1, null));
+
         mSelector = Instructions.newInstance(getResources().getString(R.string.choose_your_weapon),
                 getResources().getString(R.string.which_os),
                 R.layout.fragment_adb_select,
@@ -63,11 +68,6 @@ public class InstructionsActivity extends AppIntro2 {
                 getResources().getString(R.string.on_device),
                 R.layout.fragment_adb_initial,
                 getResources().getColor(R.color.intro_2, null));
-
-        mInstructions = Instructions.newInstance(getResources().getString(R.string.windows_setup),
-                getResources().getString(R.string.on_computer),
-                R.layout.fragment_adb_windows,
-                getResources().getColor(R.color.intro_1, null));
 
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
@@ -83,7 +83,7 @@ public class InstructionsActivity extends AppIntro2 {
         addSlide(mInstructions);
         addSlide(mCommands);
 
-        pager.setOffscreenPageLimit(3);
+        pager.setOffscreenPageLimit(300);
 
         backButton.setVisibility(View.GONE);
         skipButtonEnabled = false;
