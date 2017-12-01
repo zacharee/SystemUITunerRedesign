@@ -248,9 +248,9 @@
   <string name="select_app">Seleccione Aplicación</string>
   <string name="select_component">Seleccione componente</string>
   <string name="reset">Restablece</string>
-  <string name="pnc_desc">Power Notification Controls allow you to set the level of importance for notifications on a per-app basis. Simply turn the feature on and hold down on a notification to get started. You may need to tap the A to enable the slider.</string>
-  <string name="pnc_warn">This feature is known to be unreliable on certain devices, especially on TouchWiz! It is impossible to fix, but the best workaround seems to be to tap repeatedly on the desired level. Again, I CANNOT fix it!</string>
-  <string name="agree">Agree</string>
-  <string name="cancel">Cancel</string>
-  <string name="dont_show">Don\'t Show Again</string>
+  <string name="pnc_desc">El Controlador de Notificaciones le permiten ajustar el nivel de importancia para las notificaciones por aplicación. Simplemente active la característica y pulsado una notificación para empezar. Deberá pulsar la A para activar el control deslizante.</string>
+  <string name="pnc_warn">Esta característica parece no ser compatible en algunos dispositivos, especialmente en TouchWiz! Es imposible de arreglar, pero la mejor solución parece ser golpear repetidamente en el nivel deseado. ¡Una vez más, NO puedo arreglarlo!</string>
+  <string name="agree">De Acuerdo</string>
+  <string name="cancel">Cancelar</string>
+  <string name="dont_show">No Mostar de Nuevo</string>
 </resources>
