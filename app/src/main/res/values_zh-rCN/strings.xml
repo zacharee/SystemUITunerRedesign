@@ -252,4 +252,6 @@
   <string name="agree">Agree</string>
   <string name="cancel">Cancel</string>
   <string name="dont_show">Don\'t Show Again</string>
+  <string name="miui_detected">MIUI Device Detected!</string>
+  <string name="miui_warning">It seems that you\'re using a MIUI device. Please take note that few, if any, features of this app will work for you. It is NOT fixable!</string>
 </resources>
