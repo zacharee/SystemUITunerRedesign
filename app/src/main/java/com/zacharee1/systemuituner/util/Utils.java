@@ -1,5 +1,6 @@
 package com.zacharee1.systemuituner.util;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -23,6 +24,7 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -129,5 +131,39 @@ public class Utils
 
     public static boolean isInDarkMode(Context context) {
         return PreferenceManager.getDefaultSharedPreferences(context).getBoolean("dark_mode", false);
+    }
+
+    public static boolean checkMIUI() {
+        ArrayList<String> miui = new ArrayList<>();
+        miui.add("ro.miui.ui.version.code");
+        miui.add("ro.miui.ui.version.name");
+        miui.add("ro.miui.cust_variant");
+        miui.add("ro.miui.has_cust_partition");
+        miui.add("ro.miui.has_handy_mode_sf");
+        miui.add("ro.miui.has_real_blur");
+        miui.add("ro.miui.mcc");
+        miui.add("ro.miui.mnc");
+        miui.add("ro.miui.region");
+        miui.add("ro.miui.version.code_time");
+
+        ArrayList<String> props = new ArrayList<>();
+        props.addAll(miui);
+
+        try {
+            @SuppressLint("PrivateApi") Class<?> SystemProperties = Class.forName("android.os.SystemProperties");
+            Method get = SystemProperties.getMethod("get", String.class);
+
+            for (String prop : props) {
+                String ret = get.invoke(null, prop).toString();
+
+                if (!ret.isEmpty()) {
+                    return true;
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return false;
     }
 }

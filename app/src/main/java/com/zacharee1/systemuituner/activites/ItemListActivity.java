@@ -98,6 +98,7 @@ public class ItemListActivity extends AppCompatActivity {
         }
 
         showWarningDialog();
+        showMIUIDialog();
     }
 
     private void showWarningDialog() {
@@ -170,6 +171,22 @@ public class ItemListActivity extends AppCompatActivity {
             });
 
             dialog.show();
+        }
+    }
+
+    private void showMIUIDialog() {
+        if (Utils.checkMIUI() && mSharedPreferences.getBoolean("warn_miui", true)) {
+            new AlertDialog.Builder(this)
+                    .setTitle(R.string.miui_detected)
+                    .setMessage(R.string.miui_warning)
+                    .setPositiveButton(R.string.ok, null)
+                    .setNeutralButton(R.string.dont_show, new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            mSharedPreferences.edit().putBoolean("warn_miui", false).apply();
+                        }
+                    })
+                    .show();
         }
     }
 
