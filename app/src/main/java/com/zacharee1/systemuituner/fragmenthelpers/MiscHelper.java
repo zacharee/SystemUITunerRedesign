@@ -9,6 +9,7 @@ import android.preference.PreferenceCategory;
 import android.preference.SwitchPreference;
 import android.provider.Settings;
 
+import com.zacharee1.sliderpreferenceembedded.SliderPreferenceEmbedded;
 import com.zacharee1.systemuituner.fragments.ItemDetailFragment;
 import com.zacharee1.systemuituner.R;
 import com.zacharee1.systemuituner.util.SettingsUtils;
@@ -36,6 +37,7 @@ public class MiscHelper extends BaseHelper
         setSystemSwitchStates();
         setNightModeSwitchStates();
         setEditTextStates();
+        setUpAnimationScales();
     }
 
     private boolean showingCustomSettings() {
@@ -255,9 +257,9 @@ public class MiscHelper extends BaseHelper
 
     private void setEditTextStates() {
         ArrayList<EditTextPreference> preferences = new ArrayList<EditTextPreference>() {{
-            add((EditTextPreference) findPreference("animator_duration_scale"));
-            add((EditTextPreference) findPreference("transition_animation_scale"));
-            add((EditTextPreference) findPreference("window_animation_scale"));
+//            add((EditTextPreference) findPreference("animator_duration_scale"));
+//            add((EditTextPreference) findPreference("transition_animation_scale"));
+//            add((EditTextPreference) findPreference("window_animation_scale"));
             if (showingCustomSettings())
             {
                 add((EditTextPreference) findPreference("global_settings"));
@@ -270,19 +272,20 @@ public class MiscHelper extends BaseHelper
             final String key = preference.getKey();
             preference.setPersistent(false);
 
-            if (key.contains("anim")) {
-                preference.setSummary(Settings.Global.getFloat(getContext().getContentResolver(), key, 1.0f) + "");
-                preference.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener()
-                {
-                    @Override
-                    public boolean onPreferenceChange(Preference preference, Object o)
-                    {
-                        SettingsUtils.writeGlobal(getContext(), key, o.toString());
-                        preference.setSummary(o.toString());
-                        return true;
-                    }
-                });
-            } else if (key.contains("settings")) {
+//            if (key.contains("anim")) {
+//                preference.setSummary(Settings.Global.getFloat(getContext().getContentResolver(), key, 1.0f) + "");
+//                preference.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener()
+//                {
+//                    @Override
+//                    public boolean onPreferenceChange(Preference preference, Object o)
+//                    {
+//                        SettingsUtils.writeGlobal(getContext(), key, o.toString());
+//                        preference.setSummary(o.toString());
+//                        return true;
+//                    }
+//                });
+//            } else
+            if (key.contains("settings")) {
                 preference.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener()
                 {
                     @Override
@@ -319,6 +322,32 @@ public class MiscHelper extends BaseHelper
                 });
             }
         }
+    }
+
+    private void setUpAnimationScales() {
+        SliderPreferenceEmbedded duration = (SliderPreferenceEmbedded) findPreference("animator_duration_scale");
+        SliderPreferenceEmbedded transition = (SliderPreferenceEmbedded) findPreference("transition_animation_scale");
+        SliderPreferenceEmbedded window = (SliderPreferenceEmbedded) findPreference("window_animation_scale");
+
+        float durScale = Settings.Global.getFloat(getActivity().getContentResolver(), duration.getKey(), 1.0F);
+        float tranScale = Settings.Global.getFloat(getActivity().getContentResolver(), transition.getKey(), 1.0F);
+        float winScale = Settings.Global.getFloat(getActivity().getContentResolver(), window.getKey(), 1.0F);
+
+        duration.setProgress((int)(durScale * 100));
+        transition.setProgress((int)(tranScale * 100));
+        window.setProgress((int)(winScale * 100));
+
+        Preference.OnPreferenceChangeListener listener = new Preference.OnPreferenceChangeListener() {
+            @Override
+            public boolean onPreferenceChange(Preference preference, Object o) {
+                SettingsUtils.writeGlobal(getContext(), preference.getKey(), String.valueOf(Float.valueOf(o.toString()) / 100));
+                return true;
+            }
+        };
+
+        duration.setOnPreferenceChangeListener(listener);
+        transition.setOnPreferenceChangeListener(listener);
+        window.setOnPreferenceChangeListener(listener);
     }
 
     @Override

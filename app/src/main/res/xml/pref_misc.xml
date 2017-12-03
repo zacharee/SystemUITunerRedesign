@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <PreferenceCategory
         android:title="@string/general">
@@ -37,15 +38,40 @@
 
     <PreferenceCategory
         android:title="@string/animation_speeds">
-        <EditTextPreference
-            android:key="animator_duration_scale"
-            android:title="@string/animator_duration_scale"/>
-        <EditTextPreference
-            android:key="transition_animation_scale"
-            android:title="@string/transition_animation_scale"/>
-        <EditTextPreference
-            android:key="window_animation_scale"
-            android:title="@string/window_animation_scale"/>
+        <!--<EditTextPreference-->
+            <!--android:key="animator_duration_scale"-->
+            <!--android:title="@string/animator_duration_scale"/>-->
+        <!--<EditTextPreference-->
+            <!--android:key="transition_animation_scale"-->
+            <!--android:title="@string/transition_animation_scale"/>-->
+        <!--<EditTextPreference-->
+            <!--android:key="window_animation_scale"-->
+            <!--android:title="@string/window_animation_scale"/>-->
+
+        <com.zacharee1.sliderpreferenceembedded.SliderPreferenceEmbedded
+            app:seek_min="0"
+            app:seek_max="100"
+            app:scale="0.01"
+            app:show_text="true"
+            app:show_popup="false"
+            android:title="@string/animator_duration_scale"
+            android:key="animator_duration_scale" />
+        <com.zacharee1.sliderpreferenceembedded.SliderPreferenceEmbedded
+            app:seek_min="0"
+            app:seek_max="100"
+            app:scale="0.01"
+            app:show_text="true"
+            app:show_popup="false"
+            android:title="@string/transition_animation_scale"
+            android:key="transition_animation_scale" />
+        <com.zacharee1.sliderpreferenceembedded.SliderPreferenceEmbedded
+            app:seek_min="0"
+            app:seek_max="100"
+            app:scale="0.01"
+            app:show_text="true"
+            app:show_popup="false"
+            android:title="@string/window_animation_scale"
+            android:key="window_animation_scale" />
     </PreferenceCategory>
 
     <PreferenceCategory
