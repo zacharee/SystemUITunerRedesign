@@ -233,7 +233,7 @@
   <string name="ubuntu">Ubuntu</string>
   <string name="fedora">Fedora</string>
   <string name="linux">Linux</string>
-  <string name="app_specific">App-Specific</string>
+  <string name="app_specific">特定 app</string>
   <string name="blacklist">黑名單</string>
   <string name="select_apps">選擇 app</string>
   <string name="app_specific_desc">選擇沈浸模式要包含或排除的 app。</string>
@@ -249,7 +249,7 @@
   <string name="select_app">選擇 app</string>
   <string name="select_component">選擇元件</string>
   <string name="reset">重設</string>
-  <string name="pnc_desc">Power Notification Controls allow you to set the level of importance for notifications on a per-app basis. Simply turn the feature on and hold down on a notification to get started. You may need to tap the A to enable the slider.</string>
+  <string name="pnc_desc">電量通知控制讓你可以調整每個 app 的通知重要程度。開啟本功能並長按任意通知即可開始使用，若要使用滑掉條可能需要按 A。</string>
   <string name="pnc_warn">本功能在某些裝置上無法使用，尤其是 TouchWiz ！多按幾次或許會成功，這我沒辦法處理。</string>
   <string name="agree">同意</string>
   <string name="cancel">取消</string>
