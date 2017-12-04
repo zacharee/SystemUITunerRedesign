@@ -250,7 +250,7 @@
   <string name="select_component">選擇元件</string>
   <string name="reset">重設</string>
   <string name="pnc_desc">Power Notification Controls allow you to set the level of importance for notifications on a per-app basis. Simply turn the feature on and hold down on a notification to get started. You may need to tap the A to enable the slider.</string>
-  <string name="pnc_warn">This feature is known to be unreliable on certain devices, especially on TouchWiz! It is impossible to fix, but the best workaround seems to be to tap repeatedly on the desired level. Again, I CANNOT fix it!</string>
+  <string name="pnc_warn">本功能在某些裝置上無法使用，尤其是 TouchWiz ！多按幾次或許會成功，這我沒辦法處理。</string>
   <string name="agree">同意</string>
   <string name="cancel">取消</string>
   <string name="dont_show">不再顯示</string>
