@@ -78,9 +78,9 @@
   <string name="window_animation_scale">Pencere animasyonu ölçeği</string>
   <string name="animation_speeds">Animasyon hızı</string>
   <string name="general">Genel</string>
-  <string name="heads_up_notifications">Heads-Up Notifications</string>
-  <string name="headphone_volume_warning">Headphone Volume Warning</string>
-  <string name="custom_settings_values">Custom Settings Values</string>
+  <string name="heads_up_notifications">Dikkat Etme Bildirimleri</string>
+  <string name="headphone_volume_warning">Kulaklık Ses Düzeyi Uyarısı</string>
+  <string name="custom_settings_values">Özel Ayar Değerleri</string>
   <string name="global">Küresel</string>
   <string name="secure">Güvenli</string>
   <string name="system">Sistem</string>
@@ -88,7 +88,7 @@
   <string name="power_notification_controls">Güç bildirim kontrolleri</string>
   <string name="danger_zone">Tehlike Alanı</string>
   <string name="safe_mode">Güvenli mod</string>
-  <string name="enable_custom_settings_input">Enable Custom Settings Input</string>
+  <string name="enable_custom_settings_input">Özel Ayar Girişini Etkinleştir</string>
   <string name="enable">Etkinleştir</string>
   <string name="knox_icon">KNOX simgesi</string>
   <string name="smart_network_icon">Akıllı ağ simgesi</string>
