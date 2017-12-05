@@ -9,7 +9,7 @@
   <string name="grant_dump_perm">Musisz uznać uprawnienie \"android.permission.DUMP\", aby użyć tej funkcji.</string>
   <string name="safe_mode_auto_enabled">Wykryto urządzenie Samsung! Tryb bezpieczny został automatycznie włączony dla twojego bezpieczeństwa. Miej na uwadze, że modyfikacja ikon paska stanu może powodować USZKODZENIE SYSTEM UI! Wejdź w link znajdujący się w opisie na Play Store, aby uzyskać więcej informacji.</string>
   <string name="notice">UWAGA</string>
-  <string name="fancy_pulldown_notice">Wyłączanie tej opcji może powodować problemy po ponownym uruchomieniu. Włącz tryb bezpieczny lub ręcznie włącz i wyłącz tą opcje po ponownym uruchomieniu.</string>
+  <string name="fancy_pulldown_notice">Toggling this option off can cause issues after a reboot. Manually toggle this option on and off after a reboot.</string>
   <string name="safe_mode_summary">UŻYTKOWNICY SAMSUNG POWINNI POZOSTAWIĆ TO WŁĄCZONE, CHYBA ŻE MASZ AOSP ROM! \n\n
         Usuwa modyfikacje paska stanu po NORMALNYM restarcie/wyłączeniu oraz przywraca je po zakończeniu rozruchu. \n    </string>
   <string name="hide_welcome_screen">Ukryj ekran powitalny</string>
@@ -235,7 +235,7 @@
   <string name="app_specific">Specyficzne dla aplikacji</string>
   <string name="blacklist">Czarna lista</string>
   <string name="select_apps">Wybierz Aplikacje</string>
-  <string name="app_specific_desc">Wybierz aplikacje, które maja zostać dodane lub usunięte z trybu Immersive.</string>
+  <string name="app_specific_desc">Select apps to be included in or excluded from Immersive Mode. Immersive Mode must be disabled to change these settings.</string>
   <string name="blacklist_desc">Jeśli włączone, wybrane aplikacje nie będą używać trybu Immersive</string>
   <string name="warning">Uwaga!</string>
   <string name="imm_warn">Ta funkcja pozwala jedynie na włączenie trybu Immersive. NIE robi nic poza tym. Każde problemy, które doświadczysz są błędami producenta urządzenia. NIE JESTEM W STANIE TEGO NAPRAWIĆ!</string>
