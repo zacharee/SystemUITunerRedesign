@@ -9,7 +9,7 @@
   <string name="grant_dump_perm">Debes activar el permiso \"android.permission.DUMP\" para usar ésta característica.</string>
   <string name="safe_mode_auto_enabled">¡Dispositivo Samsung detectado! Modo seguro se ha activado automáticamente para su seguridad. ¡Se advierte que modificar cualquier icono de la barra de Estado tiene el potencial de romper la interfaz de sistema! Siga el enlace en la descripción de Play Store para obtener más información.</string>
   <string name="notice">AVISO</string>
-  <string name="fancy_pulldown_notice">Activar esta opción de puede causar problemas después de reiniciar. Activar el modo seguro y cambiar manualmente esta opción y después de un reinicio.</string>
+  <string name="fancy_pulldown_notice">Toggling this option off can cause issues after a reboot. Manually toggle this option on and off after a reboot.</string>
   <string name="safe_mode_summary">USUARIOS DE SAMSUNG DEBEN ACTIVAR ESTO A MENOS QUE USEN UNA ROM AOSP! \n\n
         Elimina las modificaciones en la barra de Estado con un reinicio/apagado y restaura después del inicio completo. \n    </string>
   <string name="hide_welcome_screen">Ocultar Ventana de Bienvenida</string>
@@ -235,7 +235,7 @@
   <string name="app_specific">App- Específica</string>
   <string name="blacklist">Lista negra</string>
   <string name="select_apps">Seleccionar Apps</string>
-  <string name="app_specific_desc">Seleccionar aplicaciones para incluir o excluir en modo inmersivo.</string>
+  <string name="app_specific_desc">Select apps to be included in or excluded from Immersive Mode. Immersive Mode must be disabled to change these settings.</string>
   <string name="blacklist_desc">Al estar Activo, las aplicaciones seleccionadas no usarán el modo inmersivo</string>
   <string name="warning">¡Alerta!</string>
   <string name="imm_warn">Esta función simplemente permite activar el modo de inmersión. NO hace nada más allá de eso. Cualquier problema que usted experimenta es culpa del fabricante de su dispositivo. ¡NO PUEDO ARREGLARLO!</string>
