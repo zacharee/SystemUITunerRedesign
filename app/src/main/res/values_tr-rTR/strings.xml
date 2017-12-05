@@ -204,10 +204,10 @@
   <string name="download_adb_windows"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-windows.zip">Windows için ADB ZIP dosyasını indirin.</a>]]></string>
   <string name="extract_zip">2. ZIP dosyasını kolayca erişilebilen bir konuma (yani Masaüstü) ayıklayın.</string>
   <string name="open_cmd">3. CMD\'yi açın.</string>
-  <string name="cd_windows"><![CDATA[4. Enter <b>cd C:\\path\\to\\extracted\\folder\\</b> to get to the folder where you extracted ADB. For instance, <b>cd C:\\Users\\Zachary\\Desktop\\platform-tools\\</b>.]]></string>
-  <string name="cd_further"><![CDATA[- Make sure that the folder you <b>cd</b> into contains the ADB executable. If not, <b>cd</b> one level further.]]></string>
-  <string name="download_adb_mac"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-darwin.zip">Download the ADB ZIP for macOS.</a>]]></string>
-  <string name="open_terminal">3. Open Terminal.</string>
+  <string name="cd_windows"><![CDATA[4. ADB'yi çıkardığınız klasöre gitmek için<b>cd C:\\path\\to\\extracted\\folder\\</b> girin. Örneğin, <b>cd C:\\Users\\Zachary\\Desktop\\platform-tools\\</b>.]]></string>
+  <string name="cd_further"><![CDATA[- Klasörün size ait olduğundan emin olun <b>cd</b>içine ADB yürütülebilir dosyası bulunur. Değilse, <b>cd</b> bir adım daha ilerleyin.]]></string>
+  <string name="download_adb_mac"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-darwin.zip">MacOS için ADB ZIP dosyasını indirin.</a>]]></string>
+  <string name="open_terminal">3. Terminali açın.</string>
   <string name="cd_mac"><![CDATA[4. Enter <b>cd /path/to/extracted/folder/</b> to get to the folder you extracted ADB into. For instance, <b>cd /Users/Zachary/Desktop/platform-tools/</b>.]]></string>
   <string name="apt_get_adb"><![CDATA[- <b>sudo apt-get install adb</b>]]></string>
   <string name="make_sure_adb_installed">1. Make sure ADB is installed:</string>
