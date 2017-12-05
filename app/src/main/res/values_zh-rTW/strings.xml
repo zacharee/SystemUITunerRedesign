@@ -9,7 +9,7 @@
   <string name="grant_dump_perm">你需要授予 \"android.permission.DUMP\" 權限才可使用本功能</string>
   <string name="safe_mode_auto_enabled">偵測到 Samsung 裝置！保險起見安全模式已自動開啟。請注意更動任何狀態列圖示可能導致系統損毀！詳細資訊請見 Play 商店中的敘述。</string>
   <string name="notice">注意</string>
-  <string name="fancy_pulldown_notice">關閉本功能可能導致重啟後發生錯誤。請啟用安全模式或於重啟後手動切換功能。</string>
+  <string name="fancy_pulldown_notice">Toggling this option off can cause issues after a reboot. Manually toggle this option on and off after a reboot.</string>
   <string name="safe_mode_summary">SAMSUNG 用戶請勿關閉此設定除非你有 AOSP ROM！\n\n
         在 \"正常的\" 重啟或關機前清除所有狀態列自訂選項，並於開機後還原。\n
     </string>
@@ -236,7 +236,7 @@
   <string name="app_specific">特定 app</string>
   <string name="blacklist">黑名單</string>
   <string name="select_apps">選擇 app</string>
-  <string name="app_specific_desc">選擇沈浸模式要包含或排除的 app。</string>
+  <string name="app_specific_desc">Select apps to be included in or excluded from Immersive Mode. Immersive Mode must be disabled to change these settings.</string>
   <string name="blacklist_desc">選項啟用時 app 將不會進入沈浸模式</string>
   <string name="warning">警告！</string>
   <string name="imm_warn">本功能只會啟用沈浸模式，沒有別的了。若因此發生問題請洽裝置製造商，我幫不了你！</string>
