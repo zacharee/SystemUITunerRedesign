@@ -198,12 +198,12 @@
   <string name="adb_setup">Devam etmek için yukarıdaki izinler verilmelidir. Kök erişimi reddedildi veya kullanım dışı; bu izinleri ADB\'yi kullanarak vermeniz gerektiği anlamına geliyor.</string>
   <string name="missing_perms">Eksik İzinler!</string>
   <string name="enable_debug"><![CDATA[1. Ayarlar'a gidin >>Geliştirici Seçenekleri'ni seçin ve USB Hata Ayıklama'nın etkinleştirildiğinden emin olun.]]></string>
-  <string name="accept_auth">2. Plug your device into your computer and accept the authorization request on it.</string>
-  <string name="enable_devops"><![CDATA[- Enable Developer Options by going to Settings >> About, finding \"Build Number\" and tapping it 7 times.]]></string>
-  <string name="download_drivers">- Windows users may need to install device drivers, which are available from the manufacturer\'s website.</string>
-  <string name="download_adb_windows"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-windows.zip">Download the ADB ZIP for Windows.</a>]]></string>
-  <string name="extract_zip">2. Extract the ZIP to an easily-accessible location (ie Desktop).</string>
-  <string name="open_cmd">3. Open CMD.</string>
+  <string name="accept_auth">2. Cihazınızı bilgisayarınıza takın ve üzerindeki yetkilendirme izin talebini kabul edin.</string>
+  <string name="enable_devops"><![CDATA[- Ayarlar'a giderek Geliştirici Seçeneklerini etkinleştirin >> Hakkında, bulunuyor \"Yapı numarası \" ve 7 kez dokunun.]]></string>
+  <string name="download_drivers">- Windows kullanıcılarının üreticinin web sitesinde bulunan aygıt sürücülerini yüklemeleri gerekebilir.</string>
+  <string name="download_adb_windows"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-windows.zip">Windows için ADB ZIP dosyasını indirin.</a>]]></string>
+  <string name="extract_zip">2. ZIP dosyasını kolayca erişilebilen bir konuma (yani Masaüstü) ayıklayın.</string>
+  <string name="open_cmd">3. CMD\'yi açın.</string>
   <string name="cd_windows"><![CDATA[4. Enter <b>cd C:\\path\\to\\extracted\\folder\\</b> to get to the folder where you extracted ADB. For instance, <b>cd C:\\Users\\Zachary\\Desktop\\platform-tools\\</b>.]]></string>
   <string name="cd_further"><![CDATA[- Make sure that the folder you <b>cd</b> into contains the ADB executable. If not, <b>cd</b> one level further.]]></string>
   <string name="download_adb_mac"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-darwin.zip">Download the ADB ZIP for macOS.</a>]]></string>
