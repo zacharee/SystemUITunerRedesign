@@ -191,10 +191,10 @@
   <string name="no_root">Kök gerektirmez</string>
   <string name="permissions">İzinler</string>
   <string name="intro_1">Uygulamamı indirdiğiniz için teşekkürler! SystemUI Tuner, AOSP\'de görülen yerleşik Sistem UI Ayarlayıcısını değiştirmek / tamamlamak içindir. Sistem UI Ayarlayıcısı olan veya olmayan Kullanıcılar bu uygulamadan yararlanabilir.</string>
-  <string name="intro_2">Like in AOSP, SystemUI Tuner allows you to hide certain status bar icons that you don\'t want shown. However, you also can do many other things, like turn off heads-up notifications or even toggle immersive mode.</string>
-  <string name="intro_3">There is a plethora of pre-defined options for the status bar, but if you don\'t see an icon you want to hide, you can try the Auto-Detect feature, which will attempt to detect icons that can be hidden.</string>
-  <string name="intro_4">And the best part about this app? It doesn\'t need root! It will attempt to get root privileges, but if it can\'t you will have to use ADB. USING ADB IS NOT ROOTING!</string>
-  <string name="intro_5">Once you tap the finish button, SystemUI Tuner will attempt to gain root access. If it can, it will grant all needed permissions for you. Otherwise, instructions will appear to guide you.</string>
+  <string name="intro_2">AOSP\'de olduğu gibi, SystemUI Tuner, istemediğiniz belirli durum çubuğu simgelerini gizlemenize izin verir. Bununla birlikte, başka birçok şey yapabilirsiniz, örneğin uyarı mesajı vermeyi kapatma veya sürükleyici modu değiştirme gibi.</string>
+  <string name="intro_3">Durum çubuğu için önceden belirlenmiş bir çok seçenek var, ancak gizlemek istediğiniz bir simge görmüyorsanız Gizlenebilir simgeleri algılamaya çalışacak Otomatik Algılama özelliğini deneyebilirsiniz.</string>
+  <string name="intro_4">Ve bu uygulamanın en iyi yanı nedir? Kök lazım değil! Kök ayrıcalıkları elde etmeye çalışacak, ancak yapamıyorsa ADB\'yi kullanmak zorunda kalacaksınız. ADB KULLANIMI, ROOTING DEĞİLDİR!</string>
+  <string name="intro_5">Bitir düğmesine dokunduğunuzda, SystemUI Tuner kök erişimini kazanmaya çalışacaktır. Mümkünse, sizin için gerekli tüm izinleri verir. Aksi takdirde, size rehberlik edecek talimatlar görünecektir.</string>
   <string name="adb_setup">Devam etmek için yukarıdaki izinler verilmelidir. Kök erişimi reddedildi veya kullanım dışı; bu izinleri ADB\'yi kullanarak vermeniz gerektiği anlamına geliyor.</string>
   <string name="missing_perms">Eksik İzinler!</string>
   <string name="enable_debug"><![CDATA[1. Ayarlar'a gidin >>Geliştirici Seçenekleri'ni seçin ve USB Hata Ayıklama'nın etkinleştirildiğinden emin olun.]]></string>
