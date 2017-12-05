@@ -208,12 +208,12 @@
   <string name="cd_further"><![CDATA[- Klasörün size ait olduğundan emin olun <b>cd</b>içine ADB yürütülebilir dosyası bulunur. Değilse, <b>cd</b> bir adım daha ilerleyin.]]></string>
   <string name="download_adb_mac"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-darwin.zip">MacOS için ADB ZIP dosyasını indirin.</a>]]></string>
   <string name="open_terminal">3. Terminali açın.</string>
-  <string name="cd_mac"><![CDATA[4. Enter <b>cd /path/to/extracted/folder/</b> to get to the folder you extracted ADB into. For instance, <b>cd /Users/Zachary/Desktop/platform-tools/</b>.]]></string>
+  <string name="cd_mac"><![CDATA[4. ADB'yi çıkardığınız klasöre gitmek için <b>cd /path/to/extracted/folder/</b> 'e girin. Örneğin, <b>cd /Users/Zachary/Desktop/platform-tools/</b>.]]></string>
   <string name="apt_get_adb"><![CDATA[- <b>sudo apt-get install adb</b>]]></string>
-  <string name="make_sure_adb_installed">1. Make sure ADB is installed:</string>
+  <string name="make_sure_adb_installed">1. ADB\'nin kurulu olduğundan emin olun:</string>
   <string name="yum_install_adb"><![CDATA[- <b>sudo yum install android-tools</b>]]></string>
-  <string name="download_adb_linux"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-linux.zip">Download the ADB ZIP for Linux.</a>]]></string>
-  <string name="cd_linux"><![CDATA[4. Enter <b>cd /path/to/extracted/folder/</b> to get to the folder you extracted ADB into. For instance, <b>cd /home/Zachary/Desktop/platform-tools/</b>.]]></string>
+  <string name="download_adb_linux"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-linux.zip">Linux için ADB ZIP dosyasını indirin.</a>]]></string>
+  <string name="cd_linux"><![CDATA[4. ADB'yi çıkardığınız klasöre gitmek için <b>cd /path/to/extracted/folder/</b> girin. Örneğin, <b>cd /home/Zachary/Desktop/platform-tools/</b>.]]></string>
   <string name="choose_your_weapon">Silahını seç</string>
   <string name="initial_setup">İlk kurulum</string>
   <string name="windows_setup">Windows Kur</string>
@@ -222,16 +222,16 @@
   <string name="fedora_setup">Fedora kurulum</string>
   <string name="linux_setup">Linux kurulumu</string>
   <string name="run_commands">Komutları çalıştır</string>
-  <string name="which_os">Which operating system is your computer running?</string>
-  <string name="on_device">Follow these instructions on your device.</string>
-  <string name="on_computer">Follow these instructions on your computer.</string>
-  <string name="run_on_computer">Run these commands on your computer. For Linux and macOS, you will need to use \"./adb\" instead of \"adb\".</string>
+  <string name="which_os">Bilgisayarınız hangi işletim sisteminde çalışıyor?</string>
+  <string name="on_device">Cihazınızdaki bu talimatları uygulayın.</string>
+  <string name="on_computer">Bilgisayarınızdaki bu talimatları uygulayın.</string>
+  <string name="run_on_computer">Bu komutları bilgisayarınızda çalıştırın. Linux ve macOS için, \"adb\" yerine \"./adb\" kullanmanız gerekecektir.</string>
   <string name="windows">Windows</string>
   <string name="mac">macOS</string>
   <string name="ubuntu">Ubuntu</string>
   <string name="fedora">Fedora</string>
   <string name="linux">Linux</string>
-  <string name="app_specific">App-Specific</string>
+  <string name="app_specific">Uygulama-Özel</string>
   <string name="blacklist">Karaliste</string>
   <string name="select_apps">Uygulamaları Seç</string>
   <string name="app_specific_desc">Select apps to be included in or excluded from Immersive Mode. Immersive Mode must be disabled to change these settings.</string>
