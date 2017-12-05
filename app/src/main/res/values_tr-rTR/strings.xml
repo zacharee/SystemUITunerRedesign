@@ -10,10 +10,8 @@
   <string name="safe_mode_auto_enabled">Samsung aygıtı algılandı! Sizi korumak için güvenli mod otomatik olarak etkinleştirildi. Herhangi bir durum çubuğu simgesini değiştirmenin sistemi kırma potansiyeline sahip olduğuna dikkat edin! Lütfen daha fazla açıklama için play store içinde ki adresi ziyaret edin.</string>
   <string name="notice">DİKKAT</string>
   <string name="fancy_pulldown_notice">Bu seçeneği değiştirmek, yeniden başlattığınızda soruna sebep olabilir. Güvenli mod\'u etkinleştirin veya manuel olarak bu seçeneği yeniden başlatmanın arkasından açın veya kapatın.</string>
-  <string name="safe_mode_summary">SAMSUNG USERS KEEP THIS TURNED ON UNLESS YOU HAVE AN AOSP ROM! \n\n
-        Clears any status bar customizations on NORMAL reboot/shutdown and restores them after boot completes. \n
-    </string>
-  <string name="hide_welcome_screen">Hide Welcome Screen</string>
+  <string name="safe_mode_summary">SAMSUNG KULLANICILARI BİR AOSP ROM\'A SAHİP DEĞİLSENİZ AÇIK TUTUN! \n\n         NORMAL yeniden başlatma/kapatma sırasında herhangi bir durum çubuğu özelleştirmeleri temizler ve önyükleme işlemi tamamlandıktan sonra geri yükler. \n    </string>
+  <string name="hide_welcome_screen">Hoş Geldiniz Ekranını Gizle</string>
   <string name="tasker_support">Tasker Support</string>
   <string name="instructions">Talimatlar</string>
   <string name="safe_mode_android_o">Because of limitations added in Android O, this feature will not work on your device.</string>
