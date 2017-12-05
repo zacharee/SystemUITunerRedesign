@@ -9,7 +9,7 @@
   <string name="grant_dump_perm">この機能を利用するには\"android.permission.DUMP\"の権限を許可する必要があります。</string>
   <string name="safe_mode_auto_enabled">サムスン製の端末が検出されました！安全のため、自動的にセーフモードが有効になりました。ステータスバーアイコンを調整することで、システムUIが崩れる恐れがありますので、注意してください。詳細についてはPlayストアの説明のリンクを参照してください。</string>
   <string name="notice">注意</string>
-  <string name="fancy_pulldown_notice">このオプションをオフにすることで再起動後に問題が生じる恐れがあります。セーフモードを有効にするか、このオプションを再起動の度に手動で切り替えてください。</string>
+  <string name="fancy_pulldown_notice">Toggling this option off can cause issues after a reboot. Manually toggle this option on and off after a reboot.</string>
   <string name="safe_mode_summary">AOSP ROMを所持していないサムスンユーザーはこれを有効にしておいてください。\n\n        再起動または電源を切る度にステータスバーのカスタマイズを消去し、起動が完了すると復元します。\n    </string>
   <string name="hide_welcome_screen">チュートリアルを隠す</string>
   <string name="tasker_support">Taskerサポート</string>
@@ -234,7 +234,7 @@
   <string name="app_specific">App-Specific</string>
   <string name="blacklist">Blacklist</string>
   <string name="select_apps">Select Apps</string>
-  <string name="app_specific_desc">Select apps to be included in or excluded from Immersive Mode.</string>
+  <string name="app_specific_desc">Select apps to be included in or excluded from Immersive Mode. Immersive Mode must be disabled to change these settings.</string>
   <string name="blacklist_desc">When on, selected apps will not use Immersive Mode</string>
   <string name="warning">Warning!</string>
   <string name="imm_warn">This feature merely allows you to enable Immersive Mode. It DOES NOT do anything beyond that. Any issues you experience are the fault of your device\'s manufacturer. I CANNOT FIX IT!</string>
