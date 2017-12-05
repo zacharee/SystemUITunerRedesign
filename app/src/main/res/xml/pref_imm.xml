@@ -33,8 +33,11 @@
 
     <PreferenceCategory
         android:title="@string/app_specific"
-        android:summary="@string/app_specific_desc"
         android:key="app_specific">
+
+        <Preference
+            android:selectable="false"
+            android:summary="@string/app_specific_desc" />
 
         <SwitchPreference
             android:title="@string/enabled"
