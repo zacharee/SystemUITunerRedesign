@@ -192,10 +192,10 @@
   <string name="permissions">İzinler</string>
   <string name="intro_1">Benim uygulamamı indirdiğiniz için teşekkürler! SystemUI Tuner, Sistem UI Ayarlayıcısını değiştirmek / tamamlamak için AOSP\'de görülen yerleşik  uygulamadır. Sistem UI Ayarlayıcısı olan veya olmayan kullanıcılar hepsi bu uygulamadan faydalanabilirler.</string>
   <string name="intro_2">AOSP\'deki gibi, SystemUI Tuner, görrüntülenmesini istemediğiniz belirli durum çubuğu simgelerini saklamanıza izin verir. Bununla birlikte,  uyarı mesajı vermeyi kapatma gibi veya sürükleyici modu değiştirmek gibi birçok başka şey yapabilirsiniz.</string>
-  <string name="intro_3">Durum çubuğu için önceden belirlenmiş bir çok seçenek var, ancak gizlemek istediğiniz bir simge görmüyorsanız Gizlenebilir simgeleri algılamaya çalışacak Otomatik Algılama özelliğini deneyebilirsiniz.</string>
-  <string name="intro_4">Ve bu uygulamanın en iyi yanı nedir? Kök lazım değil! Kök ayrıcalıkları elde etmeye çalışacak, ancak yapamıyorsa ADB\'yi kullanmak zorunda kalacaksınız. ADB KULLANIMI, ROOTING DEĞİLDİR!</string>
+  <string name="intro_3">Önceden belirlenmiş bir çok seçenek durum çubuğu için  bulunmaktadır, fakat gizlemek istediğiniz bir simge göremiyosanız, Otomatik Algılama özelliğini gizlenebilir simgeleri algılamaya çalışacak  şekilde kullanabilirsiniz.</string>
+  <string name="intro_4">Ve en iyi tarafı bu uygulamanın nedir? Köke ihtiyaç duyulamamaktadır! Kök ayrıcalıkları almaya çalışacak, fakat alamaz ise  ADB\'yi kullanmak zorunda kalacaksınız. ADB\'nin KULLANIMI, ROOTING DEĞİLDİR!</string>
   <string name="intro_5">Bir kez bitir düğmesine dokunun, SystemUI Tuner kök erişimini sağlamaya çalışacaktır. Olabilirse,  gerekli tüm izinleri sizin için verecektir. Aksi halde, size yol gösterici talimatları görüntüleyecektir.</string>
-  <string name="adb_setup">Devam etmek için yukarıdaki izinler verilmelidir. Kök erişimi reddedildi veya kullanım dışı; bu izinleri ADB\'yi kullanarak vermeniz gerektiği anlamına geliyor.</string>
+  <string name="adb_setup">Yukarıdaki izinleri devam edebilmek için  kabul etmelisiniz. ADB kullanarak bu izinleri vermek zorundasınız anlamına gelir, bu  kök erişimi engellendi ya da ulaşılamıyor kısmı.</string>
   <string name="missing_perms">Eksik İzinler!</string>
   <string name="enable_debug"><![CDATA[1. Ayarlar'a gidin >>Geliştirici Seçenekleri'ni seçin ve USB Hata Ayıklama'nın etkinleştirildiğinden emin olun.]]></string>
   <string name="accept_auth">2. Cihazınızı bilgisayarınıza takın ve üzerindeki yetkilendirme izin talebini kabul edin.</string>
