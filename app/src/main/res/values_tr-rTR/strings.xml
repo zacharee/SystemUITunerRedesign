@@ -248,11 +248,11 @@
   <string name="select_app">Uygulamayı Seç</string>
   <string name="select_component">Bileşeni seç</string>
   <string name="reset">Sıfırla</string>
-  <string name="pnc_desc">Güç Bildirim Kontrolleri, bildirimler için her uygulama için önem seviyesini ayarlamanıza izin verir. Bu özelliği açıp başlamak için bir bildirimi basılı tutmanız yeterlidir. Kaydırıcıyı etkinleştirmek için A\'ya dokunmanız gerekebilir.</string>
-  <string name="pnc_warn">Bu özelliğin bazı cihazlarda, özellikle de TouchWiz\'de güvenilmez olduğu biliniyor! Düzeltmek imkansızdır, ancak en iyi çözüm, tekrar tekrar istenilen seviyeye dokunmaktır. Yine, bunu düzeltemiyorum!</string>
+  <string name="pnc_desc">Güç Bildirim Denetimleri uygulaması başına  olacak şekilde bildirimleri önem düzeyini ayarlamak için izin verir. Sadece bu özelliği etkinleştirmek ve başlamak için bir bildirim üzerine basılı tutun. Kaydırıcıyı aktif etmek için A harfine dokunumanız lazım olabilir.</string>
+  <string name="pnc_warn">Bazı cihazlarda bu özellik güvenilmez, özellikle TouchWiz de  biliniyor. Düzeltmek mümkün değildir, ama en iyi çözüm sürekli olarak istenilen düzeyde dokunmak gibi görünüyor.  Tekrar, bunu düzeltemiyorum!</string>
   <string name="agree">Kabul</string>
   <string name="cancel">İptal</string>
   <string name="dont_show">Tekrar Gösterme</string>
   <string name="miui_detected">MIUI aygıt algılandı!</string>
-  <string name="miui_warning">Görünüşe göre bir MIUI cihazı kullanıyorsunuz. Lütfen, Lütfen, varsa, az sayıda özellik bulunduğunu unutmayın, bu uygulama sizin için işinize yarayacak. Düzeltilebilir DEĞİLDİR!</string>
+  <string name="miui_warning">MIUI bir cihaz kullanıyorsun gibi görünüyor.Bu uygulamayı varsa birkaç, özellikleri sizin için çalışacak not alın lütfen. Düzeltilecek bir şey DEĞİL! </string>
 </resources>
