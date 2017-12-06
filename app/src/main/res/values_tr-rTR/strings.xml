@@ -138,9 +138,9 @@
   <string name="night_display_auto">Otomatik Gece görüntüsü </string>
   <string name="night_display_activated">Gece Görüntüsü Aktifleştirildi</string>
   <string name="night_display">Gece görüntüsü </string>
-  <string name="donate_hook">Hey, uygulamanı kullandığını görüyorum.</string>
+  <string name="donate_hook">Hey, uygulamamı kullandığını görüyorum.</string>
   <string name="donate_joke">Nasıl soruyorsun? Sihirli.</string>
-  <string name="donate_request">Burada vakit geçiriyorsanız, bir ya da iki dolar ayırdıysanız kesinlikle şaşırtıcı olur.</string>
+  <string name="donate_request">Burada vakit geçiriyorsanız, eğer bir ya da iki dolar ayırdıysanız kesinlikle şaşırtıcı olur.</string>
   <string name="donate_dont_worry">Hiçbir zorunluluk yoktur. Bu uygulama ücretsiz ve her zaman olacak.</string>
   <string name="qs_header_tile_count">QS Üstbilgi Karosu Sayısı</string>
   <string name="fancy_pulldown_animation">Eğlenceli Çekme Animasyonu</string>
