@@ -140,8 +140,8 @@
   <string name="night_display">Gece görüntüsü </string>
   <string name="donate_hook">Hey, uygulamamı kullandığını görüyorum.</string>
   <string name="donate_joke">Nasıl soruyorsun? Sihirli.</string>
-  <string name="donate_request">Burada vakit geçiriyorsanız, eğer bir ya da iki dolar ayırdıysanız kesinlikle şaşırtıcı olur.</string>
-  <string name="donate_dont_worry">Hiçbir zorunluluk yoktur. Bu uygulama ücretsiz ve her zaman olacak.</string>
+  <string name="donate_request">Eğer burada vakit geçiriyor iseniz, şayet bir ya da iki dolar ayırdıysanız kesinlikle şaşırtıcı olur.</string>
+  <string name="donate_dont_worry">Kesinlikle hiçbir zorunluluk yoktur. Bu uygulama ücretsiz ve her zaman olacak.</string>
   <string name="qs_header_tile_count">QS Üstbilgi Karosu Sayısı</string>
   <string name="fancy_pulldown_animation">Eğlenceli Çekme Animasyonu</string>
   <string name="move_full_rows">Tam Satırları Taşı</string>
@@ -155,7 +155,7 @@
   <string name="for_settings_system">(for Settings.System)</string>
   <string name="desired_setting_key">İstenilen ayar tuşu</string>
   <string name="desired_setting_value">Istenilen ayar değeri</string>
-  <string name="tasker_intro">İşte Görevler için hızlı bir talimatlar grubu. Görevler\'ı nasıl kullanacağımı bilmediğimden, sadece niyetli yayınları destekleyerek katkıda bulunabilirim.</string>
+  <string name="tasker_intro">Görevler için işte hızlı bir talimatlar grubu. Görevler\'ı nasıl kullanacağımı bilmediğimden, sadece yayınları destekleyerek katkıda bulunabilirim.</string>
   <string name="back_up_blacklist">Kara listeye geri dön</string>
   <string name="restore_blacklist">Kara listeyi geri yükle</string>
   <string name="chinese_from">Çince çeviri <a href="https://twitter.com/NCXR188?s=09">NCXR188</a> tarafından</string>
@@ -190,7 +190,7 @@
   <string name="some_things">Örnekler</string>
   <string name="no_root">Kök gerektirmez</string>
   <string name="permissions">İzinler</string>
-  <string name="intro_1">Uygulamamı indirdiğiniz için teşekkürler! SystemUI Tuner, AOSP\'de görülen yerleşik Sistem UI Ayarlayıcısını değiştirmek / tamamlamak içindir. Sistem UI Ayarlayıcısı olan veya olmayan Kullanıcılar bu uygulamadan yararlanabilir.</string>
+  <string name="intro_1">Benim uygulamamı indirdiğiniz için teşekkürler! SystemUI Tuner, Sistem UI Ayarlayıcısını değiştirmek / tamamlamak için AOSP\'de görülen yerleşik  uygulamadır. Sistem UI Ayarlayıcısı olan veya olmayan kullanıcılar hepsi bu uygulamadan faydalanabilirler.</string>
   <string name="intro_2">AOSP\'de olduğu gibi, SystemUI Tuner, istemediğiniz belirli durum çubuğu simgelerini gizlemenize izin verir. Bununla birlikte, başka birçok şey yapabilirsiniz, örneğin uyarı mesajı vermeyi kapatma veya sürükleyici modu değiştirme gibi.</string>
   <string name="intro_3">Durum çubuğu için önceden belirlenmiş bir çok seçenek var, ancak gizlemek istediğiniz bir simge görmüyorsanız Gizlenebilir simgeleri algılamaya çalışacak Otomatik Algılama özelliğini deneyebilirsiniz.</string>
   <string name="intro_4">Ve bu uygulamanın en iyi yanı nedir? Kök lazım değil! Kök ayrıcalıkları elde etmeye çalışacak, ancak yapamıyorsa ADB\'yi kullanmak zorunda kalacaksınız. ADB KULLANIMI, ROOTING DEĞİLDİR!</string>
