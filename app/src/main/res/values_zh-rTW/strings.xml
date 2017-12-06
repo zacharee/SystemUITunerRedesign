@@ -9,7 +9,7 @@
   <string name="grant_dump_perm">你需要授予 \"android.permission.DUMP\" 權限才可使用本功能</string>
   <string name="safe_mode_auto_enabled">偵測到 Samsung 裝置！保險起見安全模式已自動開啟。請注意更動任何狀態列圖示可能導致系統損毀！詳細資訊請見 Play 商店中的敘述。</string>
   <string name="notice">注意</string>
-  <string name="fancy_pulldown_notice">Toggling this option off can cause issues after a reboot. Manually toggle this option on and off after a reboot.</string>
+  <string name="fancy_pulldown_notice">關閉本功能可能導致重啟後發生問題。請於重啟後手動開啟再關閉。</string>
   <string name="safe_mode_summary">SAMSUNG 用戶請勿關閉此設定除非你有 AOSP ROM！\n\n
         在 \"正常的\" 重啟或關機前清除所有狀態列自訂選項，並於開機後還原。\n
     </string>
