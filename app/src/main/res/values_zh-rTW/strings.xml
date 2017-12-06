@@ -236,7 +236,7 @@
   <string name="app_specific">特定 app</string>
   <string name="blacklist">黑名單</string>
   <string name="select_apps">選擇 app</string>
-  <string name="app_specific_desc">Select apps to be included in or excluded from Immersive Mode. Immersive Mode must be disabled to change these settings.</string>
+  <string name="app_specific_desc">選擇要包含或排除於沈浸模式的 app。變更設定前必須先停用沈浸模式。</string>
   <string name="blacklist_desc">選項啟用時 app 將不會進入沈浸模式</string>
   <string name="warning">警告！</string>
   <string name="imm_warn">本功能只會啟用沈浸模式，沒有別的了。若因此發生問題請洽裝置製造商，我幫不了你！</string>
