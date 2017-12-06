@@ -200,7 +200,8 @@
   <string name="enable_debug"><![CDATA[1. Ayarlar'a gidin >>Geliştirici Seçenekleri'ni seçin ve USB Hata Ayıklama'nın etkinleştirildiğinden emin olun.]]></string>
   <string name="accept_auth">2. Cihazınızı bilgisayarınıza takın ve üzerindeki yetkilendirme izin talebini kabul edin.</string>
   <string name="enable_devops"><![CDATA[- Ayarlar'a giderek Geliştirici Seçeneklerini etkinleştirin >> Hakkında, bulunuyor \"Yapı numarası \" ve 7 kez dokunun.]]></string>
-  <string name="download_drivers">- Windows kullanıcılarının üreticinin web sitesinde bulunan aygıt sürücülerini yüklemeleri gerekebilir.</string>
+  <string name="download_drivers">-Üreticinin web sitesinde bulunan aygıt sürücülerini  Windows kullanıcılarının yüklemeler lazım olabilir.
+</string>
   <string name="download_adb_windows"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-windows.zip">Windows için ADB ZIP dosyasını indirin.</a>]]></string>
   <string name="extract_zip">2. ZIP dosyasını kolayca erişilebilen bir konuma (yani Masaüstü) ayıklayın.</string>
   <string name="open_cmd">3. CMD\'yi açın.</string>
@@ -212,7 +213,7 @@
   <string name="apt_get_adb"><![CDATA[- <b>sudo apt-get install adb</b>]]></string>
   <string name="make_sure_adb_installed">1. ADB\'nin kurulu olduğundan emin olun:</string>
   <string name="yum_install_adb"><![CDATA[- <b>sudo yum install android-tools</b>]]></string>
-  <string name="download_adb_linux"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-linux.zip">Linux için ADB ZIP dosyasını indirin.</a>]]></string>
+  <string name="download_adb_linux"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-linux.zip">Linux'e gerekli ADB ZIP dosyasını indirin.</a>]]></string>
   <string name="cd_linux"><![CDATA[4. ADB'yi çıkardığınız klasöre gitmek için <b>cd /path/to/extracted/folder/</b> girin. Örneğin, <b>cd /home/Zachary/Desktop/platform-tools/</b>.]]></string>
   <string name="choose_your_weapon">Silahını seç</string>
   <string name="initial_setup">İlk kurulum</string>
@@ -225,7 +226,7 @@
   <string name="which_os">Bilgisayarınız hangi işletim sisteminde çalışıyor?</string>
   <string name="on_device">Cihazınızdaki bu talimatları uygulayın.</string>
   <string name="on_computer">Bilgisayarınızdaki bu talimatları uygulayın.</string>
-  <string name="run_on_computer">Bu komutları bilgisayarınızda çalıştırın. Linux ve macOS için, \"adb\" yerine \"./adb\" kullanmanız gerekecektir.</string>
+  <string name="run_on_computer">Bilgisayarınızda bu komutları  çalıştırın. Linux ve macOS için, \"adb\" yerine \"./adb\" kullanmaya ihtiyacınız olacaktır.</string>
   <string name="windows">Windows</string>
   <string name="mac">macOS</string>
   <string name="ubuntu">Ubuntu</string>
@@ -234,15 +235,15 @@
   <string name="app_specific">Uygulama-Özel</string>
   <string name="blacklist">Karaliste</string>
   <string name="select_apps">Uygulamaları Seç</string>
-  <string name="app_specific_desc">Sürükleyici moda dahil edilmek veya hariç tutmak için uygulamalar seçin. Bu ayarları değiştirmek için Sürükleyici Modu devre dışı bırakılmalıdır.</string>
+  <string name="app_specific_desc">Uygulamaları sürükleyici moda dahil edilmek veya hariç tutmak için seçin. Sürükleyici Modu devre dışı bırakılarak bu ayarları değiştirilir. </string>
   <string name="blacklist_desc">Seçili olduğunda, seçilmiş uygulama sürükleyici modda kullanılamaz</string>
   <string name="warning">Uyarı!</string>
-  <string name="imm_warn">Bu özellik, yalnızca Sürükleyici Modu etkinleştirmenizi sağlar. Bundan öte bir şey yapmaz. Karşılaştığınız tüm sorunlar cihazınızın üreticisinin hatasıdır. DÜZELTEMİYORUM!</string>
+  <string name="imm_warn">Sürükleyici Modu etkinleştirmenizi, yalnızca bu özellik yapar. Bundan daha ileri bir şey yapmaz.Karşılaştığınız herhangi bir sorun cihazınızın üreticisinin suçudur. DÜZELTEMİYORUM!</string>
   <string name="target_not_found">Ayarlar sayfası gerektiği gibi başlatılamıyor.</string>
   <string name="select_all">Hepsini seç</string>
   <string name="deselect_all">Tüm Seçilenleri Kaldır</string>
   <string name="invert_selection">Seçimi tersine çevir</string>
-  <string name="statbar_rotation_lock_notif">Bazı cihazlarda, durum çubuğu simgelerini değiştirmek telefonda görünen bir simgeye neden olabilir. Bu Rotasyon Kilidi simgesidir.</string>
+  <string name="statbar_rotation_lock_notif">Kimi aygıtlarda, durum çubuğu simgelerini değiştirmek telefonda görünen bir simgeye neden olabilir. Bu Döndürme Kilit simgesidir</string>
   <string name="feature_not_supported">Cihazınızın bu özelliği desteklemediği görünüyor :/</string>
   <string name="select_app">Uygulamayı Seç</string>
   <string name="select_component">Bileşeni seç</string>
