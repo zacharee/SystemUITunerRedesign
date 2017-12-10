@@ -191,8 +191,8 @@
   <string name="not_set">لم يتم التعيين</string>
   <string name="welcome">مرحبا!</string>
   <string name="some_things">أمثلة</string>
-  <string name="no_root">No Root is Needed</string>
-  <string name="permissions">Permissions</string>
+  <string name="no_root">ليس هناك حاجة إلى أي روت</string>
+  <string name="permissions">الصلاحيات</string>
   <string name="intro_1">Thanks for downloading my app! SystemUI Tuner is meant to replace/supplement the built-in System UI Tuner seen in AOSP. Both users with and without System UI Tuner can benefit from this app.</string>
   <string name="intro_2">Like in AOSP, SystemUI Tuner allows you to hide certain status bar icons that you don\'t want shown. However, you also can do many other things, like turn off heads-up notifications or even toggle immersive mode.</string>
   <string name="intro_3">There is a plethora of pre-defined options for the status bar, but if you don\'t see an icon you want to hide, you can try the Auto-Detect feature, which will attempt to detect icons that can be hidden.</string>
@@ -218,14 +218,14 @@
   <string name="download_adb_linux"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-linux.zip">Download the ADB ZIP for Linux.</a>]]></string>
   <string name="cd_linux"><![CDATA[4. Enter <b>cd /path/to/extracted/folder/</b> to get to the folder you extracted ADB into. For instance, <b>cd /home/Zachary/Desktop/platform-tools/</b>.]]></string>
   <string name="choose_your_weapon">Choose your Weapon</string>
-  <string name="initial_setup">Initial Setup</string>
-  <string name="windows_setup">Windows Setup</string>
-  <string name="mac_setup">macOS Setup</string>
-  <string name="ubuntu_setup">Ubuntu Setup</string>
-  <string name="fedora_setup">Fedora Setup</string>
-  <string name="linux_setup">Linux Setup</string>
-  <string name="run_commands">Run the Commands</string>
-  <string name="which_os">Which operating system is your computer running?</string>
+  <string name="initial_setup">الإعداد الأولي</string>
+  <string name="windows_setup">برنامج إعداد Windows</string>
+  <string name="mac_setup">برنامج إعداد macOs</string>
+  <string name="ubuntu_setup">برنامج إعداد Ubuntu</string>
+  <string name="fedora_setup">برنامج إعداد Fedora</string>
+  <string name="linux_setup">برنامج إعداد Linux</string>
+  <string name="run_commands">قم بتشغيل الأوامر</string>
+  <string name="which_os">أي نظام تشغيل يعمل به جهاز الكمبيوتر الخاص بك؟</string>
   <string name="on_device">Follow these instructions on your device.</string>
   <string name="on_computer">Follow these instructions on your computer.</string>
   <string name="run_on_computer">Run these commands on your computer. For Linux and macOS, you will need to use \"./adb\" instead of \"adb\".</string>
