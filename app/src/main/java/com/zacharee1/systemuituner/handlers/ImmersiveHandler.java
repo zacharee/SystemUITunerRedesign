@@ -5,6 +5,7 @@ import android.net.Uri;
 import android.preference.PreferenceManager;
 import android.provider.Settings;
 import android.support.annotation.Nullable;
+import android.util.Log;
 
 import com.zacharee1.systemuituner.util.SettingsUtils;
 
@@ -41,6 +42,8 @@ public class ImmersiveHandler {
     }
 
     public static void setMode(Context context, String type) {
+        Log.e("Setting Mode", type);
+
         if (type.contains(FULL)
                 || type.contains(STATUS)
                 || type.contains(NAV)
@@ -51,7 +54,7 @@ public class ImmersiveHandler {
 
             SettingsUtils.writeGlobal(context, KEY, type);
         } else {
-            throw new IllegalArgumentException("Invalid type: " + type);
+            throw new IllegalArgumentException("Invalid Immersive Mode type: " + type);
         }
     }
 
@@ -63,6 +66,8 @@ public class ImmersiveHandler {
         } else {
             builder.append("*");
         }
+
+        Log.e("Options", builder.toString());
 
         return builder.toString();
     }

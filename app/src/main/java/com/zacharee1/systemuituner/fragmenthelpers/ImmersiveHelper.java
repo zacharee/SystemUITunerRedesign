@@ -10,6 +10,7 @@ import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceCategory;
+import android.preference.SwitchPreference;
 import android.provider.Settings;
 
 import com.zacharee1.systemuituner.R;
@@ -47,7 +48,6 @@ public class ImmersiveHelper extends BaseHelper implements Preference.OnPreferen
         setProperBoxChecked();
         disableQSSettingIfBelowNougat();
         setSelectorListener();
-        setSelectionState();
     }
 
     private void setContentObserver() {
@@ -56,7 +56,6 @@ public class ImmersiveHelper extends BaseHelper implements Preference.OnPreferen
             public void onChange(boolean selfChange, Uri uri) {
                 if (uri.equals(ImmersiveHandler.POLICY_CONTROL)) {
                     setProperBoxChecked();
-                    setSelectionState();
                 }
             }
         };
@@ -114,11 +113,20 @@ public class ImmersiveHelper extends BaseHelper implements Preference.OnPreferen
                 return true;
             }
         });
-    }
 
-    private void setSelectionState() {
-        PreferenceCategory appSelector = (PreferenceCategory) findPreference("app_specific");
-        appSelector.setEnabled(!ImmersiveHandler.isInImmersive(getActivity()));
+        SwitchPreference enabled = (SwitchPreference) findPreference("app_immersive");
+        enabled.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
+            @Override
+            public boolean onPreferenceChange(Preference preference, Object o) {
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        ImmersiveHandler.setMode(getContext(), ImmersiveHandler.getMode(getContext()));
+                    }
+                }, 100);
+                return true;
+            }
+        });
     }
 
     @Override

@@ -196,6 +196,7 @@ public class ImmersiveSelectActivity extends AppCompatActivity {
                             } else {
                                 ImmersiveHandler.removeApp(getActivity(), preference.getKey());
                             }
+                            restartMode();
                             return true;
                         }
                     });
@@ -220,6 +221,7 @@ public class ImmersiveSelectActivity extends AppCompatActivity {
 
                 if (p instanceof CheckBoxPreference) {
                     ((CheckBoxPreference) p).setChecked(selected);
+                    p.getOnPreferenceChangeListener().onPreferenceChange(p, selected);
                 }
             }
         }
@@ -243,11 +245,17 @@ public class ImmersiveSelectActivity extends AppCompatActivity {
 
             for (CheckBoxPreference box : selected) {
                 box.setChecked(false);
+                box.getOnPreferenceChangeListener().onPreferenceChange(box, false);
             }
 
             for (CheckBoxPreference box : unselected) {
                 box.setChecked(true);
+                box.getOnPreferenceChangeListener().onPreferenceChange(box, true);
             }
+        }
+
+        private void restartMode() {
+            ImmersiveHandler.setMode(getContext(), ImmersiveHandler.getMode(getContext()));
         }
     }
 }
