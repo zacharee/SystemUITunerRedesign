@@ -111,9 +111,9 @@
   <string name="toddler_icon">Toddler Icon</string>
   <string name="wearable_icon">Wearable Icon</string>
   <string name="wifi_ap_icon">رمز Wifi AP</string>
-  <string name="wifi_oxygen_icon">WiFi Oxygen Icon</string>
+  <string name="wifi_oxygen_icon">رمز Wifi Oxygen</string>
   <string name="wifi_p2p_icon">WiFi P2P Icon</string>
-  <string name="wimax_icon">WiMax Icon</string>
+  <string name="wimax_icon">رمز WiMax</string>
   <string name="remote_call_icon">Remote Call Icon</string>
   <string name="tty_icon">رمز TTY</string>
   <string name="cdma_eri_icon">CDMA ERI Icon</string>
