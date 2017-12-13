@@ -9,7 +9,7 @@
   <string name="grant_dump_perm">أنت بحاجة لمنح إذن \"android.permission.DUMP\" لاستخدام هذه الميزة.</string>
   <string name="safe_mode_auto_enabled">تم الكشف عن جهاز سامسونج! تم تمكين الوضع الأمن تلقائياً لضمان سلامتك. إحذر من تعديل أي رموز شريطة القدرة على \"الخروج من واجهة مستخدم النظام\"! الرجاء اتباع الارتباط في وصف مخزن اللعب للحصول على مزيد من المعلومات.</string>
   <string name="notice">إشعار</string>
-  <string name="fancy_pulldown_notice">Toggling this option off can cause issues after a reboot. Manually toggle this option on and off after a reboot.</string>
+  <string name="fancy_pulldown_notice">تبديل هذا الخيار يمكن أن يسبب مشاكل بعد إعادة تشغيل الكمبيوتر. تفعيلل أو إيقاف هذا الخيار يدويا بعد إعادة تشغيل الجهاز.</string>
   <string name="safe_mode_summary">SAMSUNG USERS KEEP THIS TURNED ON UNLESS YOU HAVE AN AOSP ROM! \n\n
         Clears any status bar customizations on NORMAL reboot/shutdown and restores them after boot completes. \n
     </string>
@@ -27,7 +27,7 @@
   <string name="reboot_required">(يتطلب إعادة التشغيل)</string>
   <string name="sorry">معذرة…</string>
   <string name="created_by">App created by <a href="https://forum.xda-developers.com/member.php?u=7055541">Zacharee1</a></string>
-  <string name="spanish_from">Spanish translation by <a href="https://es.stackoverflow.com/users/28567/aaron-romero">Aaron Romero</a> and <a href="https://forum.xda-developers.com/member.php?u=7055541">Zacharee1</a></string>
+  <string name="spanish_from">الترجمة الإسبانية <a href="https://es.stackoverflow.com/users/28567/aaron-romero"> روميرو آرون</a> و <a href="https://forum.xda-developers.com/member.php?u=7055541"> Zacharee1</a></string>
   <string name="enabled">مفعل</string>
   <string name="show">	
 إظهار</string>
@@ -50,20 +50,20 @@
   <string name="battery_icon">رمز البطارية</string>
   <string name="battery_percentage">النسبة المئوية للبطارية</string>
   <string name="cast_icon">رمز المدلى بها</string>
-  <string name="rotation_lock_icon">Rotation lock Icon</string>
-  <string name="nfc_icon">NFC Icon</string>
+  <string name="rotation_lock_icon">رمز قفل التدوير</string>
+  <string name="nfc_icon">رمز NFC</string>
   <string name="location_icon">رمز الموقع</string>
   <string name="su_icon">رمز SU</string>
   <string name="networking_data"><![CDATA[Networking & Data]]></string>
   <string name="bluetooth_icon">رمز Bluetooth</string>
-  <string name="data_saver_icon">Data Saver Icon</string>
-  <string name="ethernet_icon">Ethernet Icon</string>
-  <string name="hotspot_icon">Hotspot Icon</string>
+  <string name="data_saver_icon">رمز توفير البيانات</string>
+  <string name="ethernet_icon">رمز الشبكة المحلية</string>
+  <string name="hotspot_icon">رمز Hotspot</string>
   <string name="mobile_icon">رمز الجوال</string>
-  <string name="airplane_icon">Airplane Icon</string>
+  <string name="airplane_icon">رمز الطائرة</string>
   <string name="wifi_icon">رمز Wifi</string>
-  <string name="vpn_icon">VPN Icon</string>
-  <string name="sounds_alerts"><![CDATA[Sounds & Alerts]]></string>
+  <string name="vpn_icon">رمز VPN</string>
+  <string name="sounds_alerts"><![CDATA[التنبيهات الصوتية]]></string>
   <string name="volume">رمز حجم الصوت</string>
   <string name="headset_icon">رمز السماعة</string>
   <string name="speakerphone_icon">رمز مكبر الصوت</string>
@@ -79,8 +79,8 @@
   <string name="animator_duration_scale">Animator Duration Scale</string>
   <string name="transition_animation_scale">Transition Animation Scale</string>
   <string name="window_animation_scale">Window Animation Scale</string>
-  <string name="animation_speeds">Animation Speeds</string>
-  <string name="general">General</string>
+  <string name="animation_speeds">سرعة الحركة</string>
+  <string name="general">العام</string>
   <string name="heads_up_notifications">Heads-Up Notifications</string>
   <string name="headphone_volume_warning">Headphone Volume Warning</string>
   <string name="custom_settings_values">Custom Settings Values</string>
