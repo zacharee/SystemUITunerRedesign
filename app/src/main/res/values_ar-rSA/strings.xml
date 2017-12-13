@@ -33,15 +33,15 @@
 إظهار</string>
   <string name="select_time">اختيار الوقت</string>
   <string name="select_battery_level">حدد مستوى البطارية</string>
-  <string name="wifi_strength">WiFi Strength</string>
+  <string name="wifi_strength">قوة Wifi</string>
   <string name="battery_charging">يتم شحن البطارية</string>
-  <string name="mobile_strength">Mobile Strength</string>
+  <string name="mobile_strength">قوة شبكة الجوال</string>
   <string name="mobile_type">نوع المحمول</string>
   <string name="show_airplane_mode">إظهار وضع الطائرة</string>
   <string name="show_notifications">إظهار الإشعارات</string>
   <string name="status_bar_style">نمط شريط المعلومات</string>
   <string name="home_desc">للأجهزة بدون هذا النشاط</string>
-  <string name="home_joke">Or for devices with it, I\'m not your boss.</string>
+  <string name="home_joke">أو للأجهزة مع ذلك، أنا لست رئيسك.</string>
   <string name="home_extra">(If you do have the stock SystemUI Tuner, this one provides some extra goodies.)</string>
   <string name="setup">تنصيب</string>
   <string name="dnd_switch_in_vol_slider">DND Switch in Vol Slider</string>
