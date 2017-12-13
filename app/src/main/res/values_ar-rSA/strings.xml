@@ -177,7 +177,7 @@
   <string name="immersive_mode">وضع الغطاء</string>
   <string name="none">لا شيء</string>
   <string name="full">كامل</string>
-  <string name="navigation_bar">Navigation Bar</string>
+  <string name="navigation_bar">شريط التصفح</string>
   <string name="pre_confirms">Pre-Confirms</string>
   <string name="config_qs">Configure Quick Tile</string>
   <string name="mode">النمط</string>
@@ -210,14 +210,14 @@
   <string name="cd_windows"><![CDATA[4. أدخل <b>القرص المضغوط C:\\path\\to\\extracted\\folder\\</b> للوصول إلى المجلد حيث قمت باستخراج بنك التنمية الآسيوي. على سبيل المثال، <b>قرص مضغوط C:\\Users\\Zachary\\Desktop\\platform-tools\\</b>.]]></string>
   <string name="cd_further"><![CDATA[- Make sure that the folder you <b>cd</b> into contains the ADB executable. If not, <b>cd</b> one level further.]]></string>
   <string name="download_adb_mac"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-darwin.zip">Download the ADB ZIP for macOS.</a>]]></string>
-  <string name="open_terminal">3. Open Terminal.</string>
+  <string name="open_terminal">3. فتح المحطة.</string>
   <string name="cd_mac"><![CDATA[4. Enter <b>cd /path/to/extracted/folder/</b> to get to the folder you extracted ADB into. For instance, <b>cd /Users/Zachary/Desktop/platform-tools/</b>.]]></string>
   <string name="apt_get_adb"><![CDATA[- <b>sudo apt-get install adb</b>]]></string>
-  <string name="make_sure_adb_installed">1. Make sure ADB is installed:</string>
-  <string name="yum_install_adb"><![CDATA[- <b>sudo yum install android-tools</b>]]></string>
-  <string name="download_adb_linux"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-linux.zip">Download the ADB ZIP for Linux.</a>]]></string>
-  <string name="cd_linux"><![CDATA[4. Enter <b>cd /path/to/extracted/folder/</b> to get to the folder you extracted ADB into. For instance, <b>cd /home/Zachary/Desktop/platform-tools/</b>.]]></string>
-  <string name="choose_your_weapon">Choose your Weapon</string>
+  <string name="make_sure_adb_installed">تأكد من أن ADB مفعل:</string>
+  <string name="yum_install_adb"><![CDATA[<b>sudo yum install android-tools</b>]]></string>
+  <string name="download_adb_linux"><![CDATA[1-<a href="https://dl.google.com/android/repository/platform-tools-latest-linux.zip"> تحميل ADB ZIP لينكس.</a>]]></string>
+  <string name="cd_linux"><![CDATA[4. أدخل <b>cd /path/to/extracted/folder/</b> to get to the folder you extracted ADB into. For instance, <b>cd /home/Zachary/Desktop/platform-tools/</b>.]]></string>
+  <string name="choose_your_weapon">اختر سلاحك</string>
   <string name="initial_setup">الإعداد الأولي</string>
   <string name="windows_setup">برنامج إعداد Windows</string>
   <string name="mac_setup">برنامج إعداد macOs</string>
@@ -226,9 +226,9 @@
   <string name="linux_setup">برنامج إعداد Linux</string>
   <string name="run_commands">قم بتشغيل الأوامر</string>
   <string name="which_os">أي نظام تشغيل يعمل به جهاز الكمبيوتر الخاص بك؟</string>
-  <string name="on_device">Follow these instructions on your device.</string>
-  <string name="on_computer">Follow these instructions on your computer.</string>
-  <string name="run_on_computer">Run these commands on your computer. For Linux and macOS, you will need to use \"./adb\" instead of \"adb\".</string>
+  <string name="on_device">اتبع هذه الإرشادات على الجهاز الخاص بك.</string>
+  <string name="on_computer">اتبع هذه الإرشادات على الكمبيوتر الخاص بك.</string>
+  <string name="run_on_computer">تشغيل هذه الأوامر على جهاز الكمبيوتر الخاص بك. لينكس وماك، سوف تحتاج إلى استخدام \"./adb\" بدلاً من \"adb\".</string>
   <string name="windows">ويندوز</string>
   <string name="mac">نظام ماك وش</string>
   <string name="ubuntu">أوبونتو</string>
@@ -240,7 +240,7 @@
   <string name="app_specific_desc">حدد التطبيقات التي سيتم تضمينها أو استبعادها من \"وضع غامرة\". يجب تعطيل وضع غامرة لتغيير هذه الإعدادات.</string>
   <string name="blacklist_desc">عند التفعيل،التطبيقات مختارة لن تستخدم \"وضع غامرة\"</string>
   <string name="warning">تحذير!</string>
-  <string name="imm_warn">This feature merely allows you to enable Immersive Mode. It DOES NOT do anything beyond that. Any issues you experience are the fault of your device\'s manufacturer. I CANNOT FIX IT!</string>
+  <string name="imm_warn">هذه الميزة فقط يسمح لك لتمكين \"وضع غامرة\". أنه لا يفعل أي شيء أبعد من ذلك. أية مشكلات تواجهك هي الخطأ من الشركة المصنعة للجهاز الخاص بك. لا يمكن إصلاحه!</string>
   <string name="target_not_found">غير قادر على بدء تشغيل صفحة الإعدادات الصحيحة.</string>
   <string name="select_all">تحديد الكل</string>
   <string name="deselect_all">إلغاء اختيار الكل</string>
@@ -249,7 +249,7 @@
   <string name="feature_not_supported">It seems your device doesn\'t support this feature :/</string>
   <string name="select_app">Select App</string>
   <string name="select_component">Select Component</string>
-  <string name="reset">Reset</string>
+  <string name="reset">إعادة ضبط</string>
   <string name="pnc_desc">Power Notification Controls allow you to set the level of importance for notifications on a per-app basis. Simply turn the feature on and hold down on a notification to get started. You may need to tap the A to enable the slider.</string>
   <string name="pnc_warn">This feature is known to be unreliable on certain devices, especially on TouchWiz! It is impossible to fix, but the best workaround seems to be to tap repeatedly on the desired level. Again, I CANNOT fix it!</string>
   <string name="agree">Agree</string>
