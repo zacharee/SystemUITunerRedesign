@@ -207,7 +207,7 @@
   <string name="download_adb_windows"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-windows.zip">Download the ADB ZIP for Windows.</a>]]></string>
   <string name="extract_zip">2. Extract the ZIP to an easily-accessible location (ie Desktop).</string>
   <string name="open_cmd">3. فتح cmd.</string>
-  <string name="cd_windows"><![CDATA[4. أدخل <b>القرص المضغوط C:\\path\\to\\extracted\\folder\\</b> للوصول إلى المجلد حيث قمت باستخراج بنك التنمية الآسيوي. على سبيل المثال، <b>قرص مضغوط C:\\Users\\Zachary\\Desktop\\platform-tools\\</b>.]]></string>
+  <string name="cd_windows"><![CDATA[4. أدخل <b>cd C:\\path\\to\\extracted\\folder\\</b>> للوصول إلى المجلد حيث قمت باستخراج بنك التنمية الآسيوي. على سبيل المثال، <b>قرص مضغوط C:\\Users\\Zachary\\Desktop\\platform-tools\\</b>.]]></string>
   <string name="cd_further"><![CDATA[- Make sure that the folder you <b>cd</b> into contains the ADB executable. If not, <b>cd</b> one level further.]]></string>
   <string name="download_adb_mac"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-darwin.zip">Download the ADB ZIP for macOS.</a>]]></string>
   <string name="open_terminal">3. فتح المحطة.</string>
