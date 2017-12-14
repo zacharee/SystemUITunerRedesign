@@ -68,7 +68,7 @@
   <string name="speakerphone_icon">Luidspreker-pictogram</string>
   <string name="time_such"><![CDATA[Time & Such]]></string>
   <string name="clock">Klok-pictogram</string>
-  <string name="show_clock_seconds">Show Clock Seconds</string>
+  <string name="show_clock_seconds">Klokseconden weergeven</string>
   <string name="alarm_clock_icon">Alarm Klok-pictogram</string>
   <string name="zen_icon">Zen-pictogram</string>
   <string name="do_not_disturb">Niet storen-pictogram</string>
@@ -131,7 +131,7 @@
   <string name="otg_mouse_icon">OTG Mouse Icon</string>
   <string name="power_saver_icon">Power Saver Icon</string>
   <string name="secure_icon">Veilig-pictogram</string>
-  <string name="sync_active_icon">Sync Active Icon</string>
+  <string name="sync_active_icon">Actieve Sync-pictogram</string>
   <string name="sync_failing_icon">Sync Failing Icon</string>
   <string name="night_mode">Nachtmodus</string>
   <string name="night_mode_auto">Night Mode Auto</string>
