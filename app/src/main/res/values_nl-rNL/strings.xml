@@ -216,7 +216,7 @@
   <string name="yum_install_adb"><![CDATA[- <b>sudo yum install android-tools</b>]]></string>
   <string name="download_adb_linux"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-linux.zip">Download the ADB ZIP for Linux.</a>]]></string>
   <string name="cd_linux"><![CDATA[4. Enter <b>cd /path/to/extracted/folder/</b> to get to the folder you extracted ADB into. For instance, <b>cd /home/Zachary/Desktop/platform-tools/</b>.]]></string>
-  <string name="choose_your_weapon">Choose your Weapon</string>
+  <string name="choose_your_weapon">Kies je Wapen</string>
   <string name="initial_setup">Initial Setup</string>
   <string name="windows_setup">Windows Setup</string>
   <string name="mac_setup">macOS Setup</string>
