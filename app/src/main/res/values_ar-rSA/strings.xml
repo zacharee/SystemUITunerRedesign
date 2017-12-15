@@ -31,7 +31,7 @@
   <string name="enabled">مفعل</string>
   <string name="show">	
 إظهار</string>
-  <string name="select_time">اختيار الوقت</string>
+  <string name="select_time">حدد الوقت</string>
   <string name="select_battery_level">حدد مستوى البطارية</string>
   <string name="wifi_strength">قوة Wifi</string>
   <string name="battery_charging">يتم شحن البطارية</string>
@@ -39,16 +39,16 @@
   <string name="mobile_type">نوع المحمول</string>
   <string name="show_airplane_mode">إظهار وضع الطائرة</string>
   <string name="show_notifications">إظهار الإشعارات</string>
-  <string name="status_bar_style">نمط شريط المعلومات</string>
-  <string name="home_desc">للأجهزة بدون هذا النشاط</string>
-  <string name="home_joke">أو للأجهزة مع ذلك، أنا لست رئيسك.</string>
+  <string name="status_bar_style">نمط شريط الحالة</string>
+  <string name="home_desc">الأجهزة بدون هذا النشاط</string>
+  <string name="home_joke">أو للأجهزة المتوفرة عليه، أنا لست رئيسك.</string>
   <string name="home_extra">(If you do have the stock SystemUI Tuner, this one provides some extra goodies.)</string>
   <string name="setup">تنصيب</string>
   <string name="dnd_switch_in_vol_slider">DND Switch in Vol Slider</string>
   <string name="dark_mode">الوضع المظلم</string>
   <string name="managed_profile_icon">رمز إدارة الملف الشخصي</string>
   <string name="battery_icon">رمز البطارية</string>
-  <string name="battery_percentage">النسبة المئوية للبطارية</string>
+  <string name="battery_percentage">Battery Percentage</string>
   <string name="cast_icon">رمز المدلى بها</string>
   <string name="rotation_lock_icon">رمز قفل التدوير</string>
   <string name="nfc_icon">رمز NFC</string>
