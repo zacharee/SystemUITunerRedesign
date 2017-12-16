@@ -27,7 +27,7 @@
   <string name="reboot_required">(يتطلب إعادة التشغيل)</string>
   <string name="sorry">معذرة…</string>
   <string name="created_by">App created by <a href="https://forum.xda-developers.com/member.php?u=7055541">Zacharee1</a></string>
-  <string name="spanish_from">الترجمة الإسبانية <a href="https://es.stackoverflow.com/users/28567/aaron-romero"> روميرو آرون</a> و <a href="https://forum.xda-developers.com/member.php?u=7055541"> Zacharee1</a></string>
+  <string name="spanish_from">الترجمة الإسبانية من طرف <a href="https://es.stackoverflow.com/users/28567/aaron-romero"> Aaron Romero </a> و <a href="https://forum.xda-developers.com/member.php?u=7055541"> Zacharee1</a></string>
   <string name="enabled">مفعل</string>
   <string name="show">	
 إظهار</string>
@@ -40,7 +40,7 @@
   <string name="show_airplane_mode">إظهار وضع الطائرة</string>
   <string name="show_notifications">إظهار الإشعارات</string>
   <string name="status_bar_style">نمط شريط الحالة</string>
-  <string name="home_desc">الأجهزة بدون هذا النشاط</string>
+  <string name="home_desc">للأجهزة بدون هذا النشاط</string>
   <string name="home_joke">أو للأجهزة المتوفرة عليه، أنا لست رئيسك.</string>
   <string name="home_extra">(If you do have the stock SystemUI Tuner, this one provides some extra goodies.)</string>
   <string name="setup">تنصيب</string>
@@ -237,10 +237,10 @@
   <string name="app_specific">App-Specific</string>
   <string name="blacklist">القائمة السوداء</string>
   <string name="select_apps">حدد التطبيقات</string>
-  <string name="app_specific_desc">حدد التطبيقات التي سيتم تضمينها أو استبعادها من \"وضع غامرة\". يجب تعطيل وضع غامرة لتغيير هذه الإعدادات.</string>
-  <string name="blacklist_desc">عند التفعيل،التطبيقات مختارة لن تستخدم \"وضع غامرة\"</string>
+  <string name="app_specific_desc">حدد التطبيقات التي سيتم تضمينها أو استبعادها من \"وضع المخاطرة\". يجب تعطيل وضع المخاطرة لتغيير هذه الإعدادات.</string>
+  <string name="blacklist_desc">عند التفعيل،التطبيقات المختارة لن تستخدم \"وضع المخاطرة\"</string>
   <string name="warning">تحذير!</string>
-  <string name="imm_warn">هذه الميزة فقط يسمح لك لتمكين \"وضع غامرة\". أنه لا يفعل أي شيء أبعد من ذلك. أية مشكلات تواجهك هي الخطأ من الشركة المصنعة للجهاز الخاص بك. لا يمكن إصلاحه!</string>
+  <string name="imm_warn">هذه الميزة فقط تسمح لك بتمكين \"وضع المخاطرة\". لأنه لا يفعل أي شيء أبعد من ذلك. أية مشكلات تواجهك هي خطأ من الشركة المصنعة للجهاز الخاص بك. لا أستطيع إصلاحه!</string>
   <string name="target_not_found">غير قادر على تشغيل صفحة الإعدادات.</string>
   <string name="select_all">تحديد الكل</string>
   <string name="deselect_all">إلغاء تحديد الكل</string>
