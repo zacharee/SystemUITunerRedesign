@@ -65,7 +65,7 @@
   <string name="volume">أيقونة حجم الصوت</string>
   <string name="headset_icon">أيقونة السماعة</string>
   <string name="speakerphone_icon">أيقونة مكبر الصوت</string>
-  <string name="time_such"><![CDATA[Time & Such]]></string>
+  <string name="time_such"><![CDATA[الوقت و ما إلى ذلك]]></string>
   <string name="clock">أيقونة الساعة</string>
   <string name="show_clock_seconds">عرض ثواني الساعة</string>
   <string name="alarm_clock_icon">أيقونة المنبه</string>
@@ -74,7 +74,7 @@
   <string name="dnd">عدم الإزعاج</string>
   <string name="donate">تبرع</string>
   <string name="reset_blacklist">استعادة القائمة السوداء</string>
-  <string name="animator_duration_scale">Animator Duration Scale</string>
+  <string name="animator_duration_scale">مقياس مدة الرسوم المتحركة</string>
   <string name="transition_animation_scale">مقياس الحركة الانتقالية</string>
   <string name="window_animation_scale">Window Animation Scale</string>
   <string name="animation_speeds">سرعة الحركة</string>
@@ -105,9 +105,9 @@
   <string name="rcs_icon">أيقونة RCS</string>
   <string name="safezone_icon">أيقونة Safezone</string>
   <string name="smart_bonding_icon">Smart Bonding Icon</string>
-  <string name="smart_scroll_icon">SmartScroll Icon</string>
-  <string name="toddler_icon">Toddler Icon</string>
-  <string name="wearable_icon">Wearable Icon</string>
+  <string name="smart_scroll_icon">أيقونة سمارتسكرول</string>
+  <string name="toddler_icon">أيقونة طفل صغير</string>
+  <string name="wearable_icon">أيقونة يمكن ارتداؤها</string>
   <string name="wifi_ap_icon">أيقونة Wifi AP</string>
   <string name="wifi_oxygen_icon">أيقونة Wifi Oxygen</string>
   <string name="wifi_p2p_icon">أيقونة P2P WiFi</string>
@@ -122,7 +122,7 @@
   <string name="volte">VoLTE</string>
   <string name="vowifi">VoWIFI</string>
   <string name="wifi_calling_icon">أيقونة الاتصال Wifi</string>
-  <string name="answering_memo_icon">Answering Memo Icon</string>
+  <string name="answering_memo_icon">أيقونة ردا على المذكرة</string>
   <string name="felica_lock_icon">أيقونة القفل Felica</string>
   <string name="ime_icon">أيقونة IME</string>
   <string name="nfc_lock_icon">أيقونة القفل NFC</string>
@@ -201,7 +201,7 @@
   <string name="enable_debug"><![CDATA[1. انتقل إلى إعدادات >> "خيارات المطور" و إجعل تمكين تصحيح USB مفعل.]]></string>
   <string name="accept_auth">2. قم بتوصيل الجهاز إلى جهاز الكمبيوتر الخاص بك وقبول طلب الإذن.</string>
   <string name="enable_devops"><![CDATA[- Enable Developer Options by going to Settings >> About, finding \"Build Number\" and tapping it 7 times.]]></string>
-  <string name="download_drivers">- Windows users may need to install device drivers, which are available from the manufacturer\'s website.</string>
+  <string name="download_drivers">مستخدمي ويندوز قد يحتاجون إلى تثبيت برامج تشغيل الأجهزة، التي تتوفر في موقع الويب الخاص بالشركة المصنعة.</string>
   <string name="download_adb_windows"><![CDATA[1-<a href="https://dl.google.com/android/repository/platform-tools-latest-windows.zip"> تحميل ADB ZIP لينكس. </a>]]></string>
   <string name="extract_zip">2-استخراج ZIP إلى موقع يمكن الوصول إليه بسهولة (أي سطح المكتب).</string>
   <string name="open_cmd">3. فتح CMD.</string>
