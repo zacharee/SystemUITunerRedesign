@@ -76,12 +76,12 @@
   <string name="reset_blacklist">استعادة القائمة السوداء</string>
   <string name="animator_duration_scale">مقياس مدة الرسوم المتحركة</string>
   <string name="transition_animation_scale">مقياس الحركة الانتقالية</string>
-  <string name="window_animation_scale">Window Animation Scale</string>
+  <string name="window_animation_scale">حجم إطار الرسوم المتحركة</string>
   <string name="animation_speeds">سرعة الحركة</string>
   <string name="general">العام</string>
   <string name="heads_up_notifications">Heads-Up Notifications</string>
   <string name="headphone_volume_warning">Headphone Volume Warning</string>
-  <string name="custom_settings_values">Custom Settings Values</string>
+  <string name="custom_settings_values">قيم إعدادات مخصصة</string>
   <string name="global">شامل</string>
   <string name="secure">الأمان/تأمين</string>
   <string name="system">النظام</string>
@@ -177,7 +177,7 @@
   <string name="full">ممتلئ</string>
   <string name="navigation_bar">شريط التصفح</string>
   <string name="pre_confirms">التأكيد المسبق</string>
-  <string name="config_qs">Configure Quick Tile</string>
+  <string name="config_qs">تكوين بلاط سريع</string>
   <string name="mode">النمط</string>
   <string name="qs_column_count">عدد أعمدة QS</string>
   <string name="qs_row_count">عدد صفوف QS</string>
@@ -205,16 +205,16 @@
   <string name="download_adb_windows"><![CDATA[1-<a href="https://dl.google.com/android/repository/platform-tools-latest-windows.zip"> تحميل ADB ZIP لينكس. </a>]]></string>
   <string name="extract_zip">2-استخراج ZIP إلى موقع يمكن الوصول إليه بسهولة (أي سطح المكتب).</string>
   <string name="open_cmd">3. فتح CMD.</string>
-  <string name="cd_windows"><![CDATA[4. Enter <b>cd C:\\path\\to\\extracted\\folder\\</b> to get to the folder where you extracted ADB. For instance, <b>cd C:\\Users\\Zachary\\Desktop\\platform-tools\\</b>.]]></string>
+  <string name="cd_windows"><![CDATA[4-أدخل <b>cd C:\\path\\to\\extracted\\folder\\</b> للوصول إلى المجلد الذي استخرجت فيهADB. على سبيل المثال <b>cd C:\\Users\\Zachary\\Desktop\\platform-tools\\</b>.]]></string>
   <string name="cd_further"><![CDATA[- Make sure that the folder you <b>cd</b> into contains the ADB executable. If not, <b>cd</b> one level further.]]></string>
   <string name="download_adb_mac"><![CDATA[1-<a href="https://dl.google.com/android/repository/platform-tools-latest-darwin.zip"> تحميل ADB ZIP لينكس. </a>]]></string>
   <string name="open_terminal">3. فتح الجهاز.</string>
-  <string name="cd_mac"><![CDATA[4. Enter <b>cd /path/to/extracted/folder/</b> to get to the folder you extracted ADB into. For instance, <b>cd /Users/Zachary/Desktop/platform-tools/</b>.]]></string>
+  <string name="cd_mac"><![CDATA[4-أدخل <b>cd /path/to/extracted/folder/</b> للوصول إلى المجلد الذي استخرجت فيه ADB. على سبيل المثال, <b>cd /home/Zachary/Desktop/platform-tools/</b>.]]></string>
   <string name="apt_get_adb"><![CDATA[- <b>sudo apt-get install adb</b>]]></string>
   <string name="make_sure_adb_installed">تأكد من أن ADB مثبت:</string>
   <string name="yum_install_adb"><![CDATA[<b>sudo yum install android-tools</b>]]></string>
   <string name="download_adb_linux"><![CDATA[1-<a href="https://dl.google.com/android/repository/platform-tools-latest-linux.zip"> تحميل ADB ZIP لينكس.</a>]]></string>
-  <string name="cd_linux"><![CDATA[4. أدخل <b>cd /path/to/extracted/folder/</b> to get to the folder you extracted ADB into. For instance, <b>cd /home/Zachary/Desktop/platform-tools/</b>.]]></string>
+  <string name="cd_linux"><![CDATA[4-أدخل <b>cd /path/to/extracted/folder/</b> للوصول إلى المجلد الذي استخرجت فيه ADB. على سبيل المثال, <b>cd /home/Zachary/Desktop/platform-tools/</b>.]]></string>
   <string name="choose_your_weapon">اختر سلاحك</string>
   <string name="initial_setup">الإعداد الأولي</string>
   <string name="windows_setup">إعداد برنامج Windows</string>
