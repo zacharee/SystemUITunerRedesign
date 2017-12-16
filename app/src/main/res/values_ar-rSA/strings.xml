@@ -75,7 +75,7 @@
   <string name="donate">تبرع</string>
   <string name="reset_blacklist">استعادة القائمة السوداء</string>
   <string name="animator_duration_scale">Animator Duration Scale</string>
-  <string name="transition_animation_scale">Transition Animation Scale</string>
+  <string name="transition_animation_scale">مقياس الحركة الانتقالية</string>
   <string name="window_animation_scale">Window Animation Scale</string>
   <string name="animation_speeds">سرعة الحركة</string>
   <string name="general">العام</string>
@@ -195,7 +195,7 @@
   <string name="intro_2">مثل في AOSP، SystemUI Tuner يسمح لك بإخفاء بعض أيقونات أشرطة الحالة التي لا تريدها أن تظهر. ومع ذلك، يمكنك أيضا القيام بالعديد من الأشياء الأخرى، مثل إيقاف تشغيل الإشعارات أو حتى تبديل إلى وضع خطرة.</string>
   <string name="intro_3">There is a plethora of pre-defined options for the status bar, but if you don\'t see an icon you want to hide, you can try the Auto-Detect feature, which will attempt to detect icons that can be hidden.</string>
   <string name="intro_4">And the best part about this app? It doesn\'t need root! It will attempt to get root privileges, but if it can\'t you will have to use ADB. USING ADB IS NOT ROOTING!</string>
-  <string name="intro_5">Once you tap the finish button, SystemUI Tuner will attempt to gain root access. If it can, it will grant all needed permissions for you. Otherwise, instructions will appear to guide you.</string>
+  <string name="intro_5">بمجرد النقر على الزر \"إنهاء\"، سيحاول System Tuner الوصول للجذر. إذا كان بالإمكان، فإنها ستمنح كل الأذونات التي أنت بحاجة إليها. خلاف ذلك، سوف تظهر إرشادات لإرشادك.</string>
   <string name="adb_setup">The permissions above must be granted to continue. Root access was either denied or unavailable, which means you\'ll have to grant these permissions using ADB.</string>
   <string name="missing_perms">لا يتوفر على صلاحيات!</string>
   <string name="enable_debug"><![CDATA[1. انتقل إلى إعدادات >> "خيارات المطور" و إجعل تمكين تصحيح USB مفعل.]]></string>
