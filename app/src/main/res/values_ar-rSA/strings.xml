@@ -101,7 +101,7 @@
   <string name="femtocell_icon">أيقونة Femtocell</string>
   <string name="gps_icon">أيقونة GPS</string>
   <string name="gesture_icon">أيقونة الإيماءة</string>
-  <string name="ims_volte_icon">IMS VoLTE Icon</string>
+  <string name="ims_volte_icon">أيقونة IMS VoLTE</string>
   <string name="keyguard_wakeup_icon">KeyGuard Wakeup Icon</string>
   <string name="lbs_icon">أيقونة LBS</string>
   <string name="rcs_icon">أيقونة RCS</string>
@@ -122,7 +122,7 @@
   <string name="evdo_signal_icon">أيقونة إشارة EvDo</string>
   <string name="phone_signal_icon">أيقونة إشارة الهاتف</string>
   <string name="volte">VoLTE</string>
-  <string name="vowifi">VoWiFi</string>
+  <string name="vowifi">VoWIFI</string>
   <string name="wifi_calling_icon">WiFi Calling Icon</string>
   <string name="answering_memo_icon">Answering Memo Icon</string>
   <string name="felica_lock_icon">Felica Lock Icon</string>
@@ -132,8 +132,8 @@
   <string name="otg_mouse_icon">أيقونة فأرة OTG</string>
   <string name="power_saver_icon">Power Saver Icon</string>
   <string name="secure_icon">Secure Icon</string>
-  <string name="sync_active_icon">Sync Active Icon</string>
-  <string name="sync_failing_icon">Sync Failing Icon</string>
+  <string name="sync_active_icon">أيقونة المزامنة النشطة</string>
+  <string name="sync_failing_icon">أيقونة فشل المزامنة</string>
   <string name="night_mode">الوضع الليلي</string>
   <string name="night_mode_auto">الوضع الليلي التلقائي</string>
   <string name="night_mode_override">تجاوز الوضع الليلي</string>
