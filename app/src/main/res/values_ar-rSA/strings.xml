@@ -142,7 +142,7 @@
   <string name="donate_hook">انت، إني أراك تستعمل التطبيق الخاص بي.</string>
   <string name="donate_joke">كيف تسأل؟ السحر.</string>
   <string name="donate_request">إذا كنت تتمتع بوقتك هنا، سيكون مدهش للغاية إذا أمكنك التبرع بدولار أو اثنان.</string>
-  <string name="donate_dont_worry">There\'s absolutely no obligation. This app is free and always will be.</string>
+  <string name="donate_dont_worry">ليس هناك على الإطلاق أي التزام. هذا التطبيق مجاني وسوف يبقى كذلك.</string>
   <string name="qs_header_tile_count">QS Header Tile Count</string>
   <string name="fancy_pulldown_animation">Fancy Pulldown Animation</string>
   <string name="move_full_rows">نقل كل الصفوف</string>
@@ -156,10 +156,10 @@
   <string name="for_settings_system">(بالنسبة ل Settings.System)</string>
   <string name="desired_setting_key">مفتاح الإعداد المطلوب</string>
   <string name="desired_setting_value">قيمة الإعداد المطلوب</string>
-  <string name="tasker_intro">Here\'s a quick set of instructions for Tasker. Since I don\'t know how to use Tasker, I can only build in support for intent broadcasts.</string>
+  <string name="tasker_intro">هنا مجموعة سريعة من التعليمات تاسكر. أنا لا أعرف كيفية استخدام تاسكر، يمكن فقط بناء الدعم للبرامج الإذاعية النية.</string>
   <string name="back_up_blacklist">احتياطي القائمة السوداء</string>
   <string name="restore_blacklist">استعادة القائمة السوداء</string>
-  <string name="chinese_from">Chinese translation by <a href="https://twitter.com/NCXR188?s=09">NCXR188</a></string>
+  <string name="chinese_from">ترجمة باللغة الصينية من <a href="https://twitter.com/NCXR188?s=09"> NCXR188 </a></string>
   <string name="quick_settings">الإعدادات السريعة</string>
   <string name="demo_mode">الوضع التجريبي</string>
   <string name="auto_detect">الكشف التلقائي</string>
