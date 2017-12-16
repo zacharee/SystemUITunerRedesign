@@ -174,9 +174,9 @@
   <string name="sync_icon">رمز المزامنة</string>
   <string name="microphone_mute">رمز كتم الميكروفون</string>
   <string name="night_display_not_avail">الوضع الليلي غير متوفر في هذا الجهاز.</string>
-  <string name="immersive_mode">وضع الغطاء</string>
-  <string name="none">لا شيء</string>
-  <string name="full">كامل</string>
+  <string name="immersive_mode">Immersive Mode</string>
+  <string name="none">لا يوجد</string>
+  <string name="full">ممتلئ</string>
   <string name="navigation_bar">شريط التصفح</string>
   <string name="pre_confirms">Pre-Confirms</string>
   <string name="config_qs">Configure Quick Tile</string>
@@ -249,7 +249,7 @@
   <string name="feature_not_supported">It seems your device doesn\'t support this feature :/</string>
   <string name="select_app">Select App</string>
   <string name="select_component">Select Component</string>
-  <string name="reset">إعادة ضبط</string>
+  <string name="reset">إعادة الضبط</string>
   <string name="pnc_desc">Power Notification Controls allow you to set the level of importance for notifications on a per-app basis. Simply turn the feature on and hold down on a notification to get started. You may need to tap the A to enable the slider.</string>
   <string name="pnc_warn">This feature is known to be unreliable on certain devices, especially on TouchWiz! It is impossible to fix, but the best workaround seems to be to tap repeatedly on the desired level. Again, I CANNOT fix it!</string>
   <string name="agree">Agree</string>
