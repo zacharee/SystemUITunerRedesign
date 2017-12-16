@@ -200,7 +200,7 @@
   <string name="intro_5">Once you tap the finish button, SystemUI Tuner will attempt to gain root access. If it can, it will grant all needed permissions for you. Otherwise, instructions will appear to guide you.</string>
   <string name="adb_setup">The permissions above must be granted to continue. Root access was either denied or unavailable, which means you\'ll have to grant these permissions using ADB.</string>
   <string name="missing_perms">لا يتوفر على صلاحيات!</string>
-  <string name="enable_debug"><![CDATA[1. Go to Settings >> Developer Options and make sure USB Debugging is enabled.]]></string>
+  <string name="enable_debug"><![CDATA[1. انتقل إلى إعدادات >> "خيارات المطور" و إجعل تمكين تصحيح USB مفعل.]]></string>
   <string name="accept_auth">2. Plug your device into your computer and accept the authorization request on it.</string>
   <string name="enable_devops"><![CDATA[- Enable Developer Options by going to Settings >> About, finding \"Build Number\" and tapping it 7 times.]]></string>
   <string name="download_drivers">- Windows users may need to install device drivers, which are available from the manufacturer\'s website.</string>
