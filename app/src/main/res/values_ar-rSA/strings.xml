@@ -243,8 +243,8 @@
   <string name="imm_warn">هذه الميزة فقط يسمح لك لتمكين \"وضع غامرة\". أنه لا يفعل أي شيء أبعد من ذلك. أية مشكلات تواجهك هي الخطأ من الشركة المصنعة للجهاز الخاص بك. لا يمكن إصلاحه!</string>
   <string name="target_not_found">غير قادر على بدء تشغيل صفحة الإعدادات الصحيحة.</string>
   <string name="select_all">تحديد الكل</string>
-  <string name="deselect_all">إلغاء اختيار الكل</string>
-  <string name="invert_selection">عكس التحديد</string>
+  <string name="deselect_all">إلغاء تحديد الكل</string>
+  <string name="invert_selection">إعكس التحديد</string>
   <string name="statbar_rotation_lock_notif">On certain devices, modifying the status bar icons can cause an icon that looks like a phone to appear. This is the Rotation Lock icon.</string>
   <string name="feature_not_supported">It seems your device doesn\'t support this feature :/</string>
   <string name="select_app">Select App</string>
