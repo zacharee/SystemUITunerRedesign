@@ -193,7 +193,7 @@
   <string name="some_things">أمثلة</string>
   <string name="no_root">ليس هناك حاجة إلى أي روت</string>
   <string name="permissions">الصلاحيات</string>
-  <string name="intro_1">Thanks for downloading my app! SystemUI Tuner is meant to replace/supplement the built-in System UI Tuner seen in AOSP. Both users with and without System UI Tuner can benefit from this app.</string>
+  <string name="intro_1">شكرا لتحميل التطبيق! SystemUI Tuner يهدف إلى استبدال/الملحق المدمج في SystemUI Tune في AOSP. يمكن للمستخدمين على حد سواء مع أو بدون \"SystemUI Tune\" الاستفادة من هذا التطبيق.</string>
   <string name="intro_2">مثل في AOSP، SystemUI Tuner يسمح لك بإخفاء بعض أيقونات أشرطة الحالة التي لا تريدها أن تظهر. ومع ذلك، يمكنك أيضا القيام بالعديد من الأشياء الأخرى، مثل إيقاف تشغيل الإشعارات أو حتى تبديل إلى وضع خطرة.</string>
   <string name="intro_3">There is a plethora of pre-defined options for the status bar, but if you don\'t see an icon you want to hide, you can try the Auto-Detect feature, which will attempt to detect icons that can be hidden.</string>
   <string name="intro_4">And the best part about this app? It doesn\'t need root! It will attempt to get root privileges, but if it can\'t you will have to use ADB. USING ADB IS NOT ROOTING!</string>
@@ -201,7 +201,7 @@
   <string name="adb_setup">The permissions above must be granted to continue. Root access was either denied or unavailable, which means you\'ll have to grant these permissions using ADB.</string>
   <string name="missing_perms">لا يتوفر على صلاحيات!</string>
   <string name="enable_debug"><![CDATA[1. انتقل إلى إعدادات >> "خيارات المطور" و إجعل تمكين تصحيح USB مفعل.]]></string>
-  <string name="accept_auth">2. Plug your device into your computer and accept the authorization request on it.</string>
+  <string name="accept_auth">2. قم بتوصيل الجهاز إلى جهاز الكمبيوتر الخاص بك وقبول طلب الإذن.</string>
   <string name="enable_devops"><![CDATA[- Enable Developer Options by going to Settings >> About, finding \"Build Number\" and tapping it 7 times.]]></string>
   <string name="download_drivers">- Windows users may need to install device drivers, which are available from the manufacturer\'s website.</string>
   <string name="download_adb_windows"><![CDATA[1-<a href="https://dl.google.com/android/repository/platform-tools-latest-windows.zip"> تحميل ADB ZIP لينكس. </a>]]></string>
@@ -246,7 +246,7 @@
   <string name="deselect_all">إلغاء تحديد الكل</string>
   <string name="invert_selection">إعكس التحديد</string>
   <string name="statbar_rotation_lock_notif">في بعض الأجهزة، يمكن أن يسبب تعديل رموز شريط الحالة إلى ظهور رمز يشبه الهاتف. هذا هو رمز \"قفل الدوران\".</string>
-  <string name="feature_not_supported">It seems your device doesn\'t support this feature :/</string>
+  <string name="feature_not_supported">يبدو أن جهازك لا يدعم هذه الميزة</string>
   <string name="select_app">حدد التطبيق</string>
   <string name="select_component">حدد المكون</string>
   <string name="reset">إعادة الضبط</string>
