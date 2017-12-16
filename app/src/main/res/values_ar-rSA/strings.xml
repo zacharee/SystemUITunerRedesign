@@ -26,7 +26,7 @@
   <string name="status_bar">شريط المعلومات</string>
   <string name="reboot_required">(يتطلب إعادة التشغيل)</string>
   <string name="sorry">معذرة…</string>
-  <string name="created_by">App created by <a href="https://forum.xda-developers.com/member.php?u=7055541">Zacharee1</a></string>
+  <string name="created_by">التطبيق التي تم إنشاؤها من طرف <a href="https://forum.xda-developers.com/member.php?u=7055541"> Zacharee1</a></string>
   <string name="spanish_from">الترجمة الإسبانية من طرف <a href="https://es.stackoverflow.com/users/28567/aaron-romero"> Aaron Romero </a> و <a href="https://forum.xda-developers.com/member.php?u=7055541"> Zacharee1</a></string>
   <string name="enabled">مفعل</string>
   <string name="show">	
@@ -42,7 +42,7 @@
   <string name="status_bar_style">نمط شريط الحالة</string>
   <string name="home_desc">للأجهزة بدون هذا النشاط</string>
   <string name="home_joke">أو للأجهزة المتوفرة عليه، أنا لست رئيسك.</string>
-  <string name="home_extra">(If you do have the stock SystemUI Tuner, this one provides some extra goodies.)</string>
+  <string name="home_extra">(إذا كان لديك stock SystemUi Tuner، إنه يوفر لك بعض الأشياء الإضافية الجيدة.)</string>
   <string name="setup">تنصيب</string>
   <string name="dnd_switch_in_vol_slider">DND Switch in Vol Slider</string>
   <string name="dark_mode">الوضع المظلم</string>
@@ -149,17 +149,17 @@
   <string name="fancy_pulldown_animation">Fancy Pulldown Animation</string>
   <string name="move_full_rows">Move Full Rows</string>
   <string name="battery">البطارية</string>
-  <string name="enable_fabric_io_analytics">Fabric.io Analytics</string>
+  <string name="enable_fabric_io_analytics">تحليلات Fabric.io</string>
   <string name="tasker_how_to">Tasker How-To</string>
-  <string name="base_command_tasker">This is the base command:</string>
-  <string name="tasker_defs">This is what everything means:</string>
+  <string name="base_command_tasker">هذا هو الأمر الأساسي:</string>
+  <string name="tasker_defs">هذا ما يعنيه كل شيء:</string>
   <string name="for_settings_global">(بالنسبة ل Settings.Global)</string>
   <string name="for_settings_secure">(بالنسبة ل Settings.Secure)</string>
   <string name="for_settings_system">(بالنسبة ل Settings.System)</string>
-  <string name="desired_setting_key">Desired setting key</string>
-  <string name="desired_setting_value">Desired setting value</string>
+  <string name="desired_setting_key">مفتاح الإعداد المطلوب</string>
+  <string name="desired_setting_value">قيمة الإعداد المطلوب</string>
   <string name="tasker_intro">Here\'s a quick set of instructions for Tasker. Since I don\'t know how to use Tasker, I can only build in support for intent broadcasts.</string>
-  <string name="back_up_blacklist">Back Up Blacklist</string>
+  <string name="back_up_blacklist">احتياطي القائمة السوداء</string>
   <string name="restore_blacklist">استعادة القائمة السوداء</string>
   <string name="chinese_from">Chinese translation by <a href="https://twitter.com/NCXR188?s=09">NCXR188</a></string>
   <string name="quick_settings">الإعدادات السريعة</string>
@@ -178,14 +178,14 @@
   <string name="none">لا يوجد</string>
   <string name="full">ممتلئ</string>
   <string name="navigation_bar">شريط التصفح</string>
-  <string name="pre_confirms">Pre-Confirms</string>
+  <string name="pre_confirms">التأكيد المسبق</string>
   <string name="config_qs">Configure Quick Tile</string>
   <string name="mode">النمط</string>
-  <string name="qs_column_count">QS Column Count</string>
+  <string name="qs_column_count">عدد أعمدة QS</string>
   <string name="qs_row_count">عدد صفوف QS</string>
   <string name="lockscreen">إقفال الشاشة</string>
   <string name="choose_left">اختيار الإختصار في الأيسر</string>
-  <string name="choose_right">Choose Right Shortcut</string>
+  <string name="choose_right">اختيار الإختصار الصحيح</string>
   <string name="unlock_device">فتح الجهاز</string>
   <string name="shortcuts">الاختصارات</string>
   <string name="not_set">غير مضبوط</string>
