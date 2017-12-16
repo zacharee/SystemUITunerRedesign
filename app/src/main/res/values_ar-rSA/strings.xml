@@ -141,13 +141,13 @@
   <string name="night_display_auto">عرض الوضع الليلي التلقائي</string>
   <string name="night_display_activated">الوضع الليلي مفعل</string>
   <string name="night_display">عرض الوضع الليلي</string>
-  <string name="donate_hook">Hey, I see you\'re using my app.</string>
+  <string name="donate_hook">انت، إني أراك تستعمل التطبيق الخاص بي.</string>
   <string name="donate_joke">كيف تسأل؟ السحر.</string>
-  <string name="donate_request">If you\'re enjoying your time here, it\'d be absolutely amazing if you could spare a dollar or two.</string>
+  <string name="donate_request">إذا كنت تتمتع بوقتك هنا، سيكون مدهش للغاية إذا أمكنك التبرع بدولار أو اثنان.</string>
   <string name="donate_dont_worry">There\'s absolutely no obligation. This app is free and always will be.</string>
   <string name="qs_header_tile_count">QS Header Tile Count</string>
   <string name="fancy_pulldown_animation">Fancy Pulldown Animation</string>
-  <string name="move_full_rows">Move Full Rows</string>
+  <string name="move_full_rows">نقل كل الصفوف</string>
   <string name="battery">البطارية</string>
   <string name="enable_fabric_io_analytics">تحليلات Fabric.io</string>
   <string name="tasker_how_to">Tasker How-To</string>
@@ -205,7 +205,7 @@
   <string name="enable_devops"><![CDATA[- Enable Developer Options by going to Settings >> About, finding \"Build Number\" and tapping it 7 times.]]></string>
   <string name="download_drivers">- Windows users may need to install device drivers, which are available from the manufacturer\'s website.</string>
   <string name="download_adb_windows"><![CDATA[1-<a href="https://dl.google.com/android/repository/platform-tools-latest-windows.zip"> تحميل ADB ZIP لينكس. </a>]]></string>
-  <string name="extract_zip">2. Extract the ZIP to an easily-accessible location (ie Desktop).</string>
+  <string name="extract_zip">2-استخراج ZIP إلى موقع يمكن الوصول إليه بسهولة (أي سطح المكتب).</string>
   <string name="open_cmd">3. فتح CMD.</string>
   <string name="cd_windows"><![CDATA[4. Enter <b>cd C:\\path\\to\\extracted\\folder\\</b> to get to the folder where you extracted ADB. For instance, <b>cd C:\\Users\\Zachary\\Desktop\\platform-tools\\</b>.]]></string>
   <string name="cd_further"><![CDATA[- Make sure that the folder you <b>cd</b> into contains the ADB executable. If not, <b>cd</b> one level further.]]></string>
