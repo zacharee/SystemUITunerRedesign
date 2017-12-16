@@ -182,13 +182,13 @@
   <string name="config_qs">Configure Quick Tile</string>
   <string name="mode">النمط</string>
   <string name="qs_column_count">QS Column Count</string>
-  <string name="qs_row_count">عدد الصفوف QS</string>
-  <string name="lockscreen">قفل الشاشة</string>
-  <string name="choose_left">اختر اختصار الأيسر</string>
+  <string name="qs_row_count">عدد صفوف QS</string>
+  <string name="lockscreen">إقفال الشاشة</string>
+  <string name="choose_left">اختيار الإختصار في الأيسر</string>
   <string name="choose_right">Choose Right Shortcut</string>
-  <string name="unlock_device">إلغاء تأمين الجهاز</string>
+  <string name="unlock_device">فتح الجهاز</string>
   <string name="shortcuts">الاختصارات</string>
-  <string name="not_set">لم يتم التعيين</string>
+  <string name="not_set">غير مضبوط</string>
   <string name="welcome">مرحبا!</string>
   <string name="some_things">أمثلة</string>
   <string name="no_root">ليس هناك حاجة إلى أي روت</string>
@@ -199,14 +199,14 @@
   <string name="intro_4">And the best part about this app? It doesn\'t need root! It will attempt to get root privileges, but if it can\'t you will have to use ADB. USING ADB IS NOT ROOTING!</string>
   <string name="intro_5">Once you tap the finish button, SystemUI Tuner will attempt to gain root access. If it can, it will grant all needed permissions for you. Otherwise, instructions will appear to guide you.</string>
   <string name="adb_setup">The permissions above must be granted to continue. Root access was either denied or unavailable, which means you\'ll have to grant these permissions using ADB.</string>
-  <string name="missing_perms">أذونات مفقود!</string>
+  <string name="missing_perms">لا يتوفر على صلاحيات!</string>
   <string name="enable_debug"><![CDATA[1. Go to Settings >> Developer Options and make sure USB Debugging is enabled.]]></string>
   <string name="accept_auth">2. Plug your device into your computer and accept the authorization request on it.</string>
   <string name="enable_devops"><![CDATA[- Enable Developer Options by going to Settings >> About, finding \"Build Number\" and tapping it 7 times.]]></string>
   <string name="download_drivers">- Windows users may need to install device drivers, which are available from the manufacturer\'s website.</string>
   <string name="download_adb_windows"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-windows.zip">Download the ADB ZIP for Windows.</a>]]></string>
   <string name="extract_zip">2. Extract the ZIP to an easily-accessible location (ie Desktop).</string>
-  <string name="open_cmd">3. فتح cmd.</string>
+  <string name="open_cmd">3. فتح CMD.</string>
   <string name="cd_windows"><![CDATA[4. أدخل <b>cd C:\\path\\to\\extracted\\folder\\</b>> للوصول إلى المجلد حيث قمت باستخراج بنك التنمية الآسيوي. على سبيل المثال، <b>قرص مضغوط C:\\Users\\Zachary\\Desktop\\platform-tools\\</b>.]]></string>
   <string name="cd_further"><![CDATA[- Make sure that the folder you <b>cd</b> into contains the ADB executable. If not, <b>cd</b> one level further.]]></string>
   <string name="download_adb_mac"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-darwin.zip">Download the ADB ZIP for macOS.</a>]]></string>
