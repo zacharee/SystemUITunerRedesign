@@ -42,7 +42,7 @@
   <string name="home_joke">أو للأجهزة المتوفرة عليه، أنا لست رئيسك.</string>
   <string name="home_extra">(إذا كان لديك stock SystemUi Tuner، إنه يوفر لك بعض الأشياء الإضافية الجيدة.)</string>
   <string name="setup">تنصيب</string>
-  <string name="dnd_switch_in_vol_slider">DND Switch in Vol Slider</string>
+  <string name="dnd_switch_in_vol_slider">DND Switch في شريط Vol</string>
   <string name="dark_mode">الوضع المظلم</string>
   <string name="managed_profile_icon">رمز إدارة الملف الشخصي</string>
   <string name="battery_icon">أيقونة البطارية</string>
@@ -79,8 +79,8 @@
   <string name="window_animation_scale">حجم إطار الرسوم المتحركة</string>
   <string name="animation_speeds">سرعة الحركة</string>
   <string name="general">العام</string>
-  <string name="heads_up_notifications">Heads-Up Notifications</string>
-  <string name="headphone_volume_warning">Headphone Volume Warning</string>
+  <string name="heads_up_notifications">الإشعارات العلوية</string>
+  <string name="headphone_volume_warning">تحذير حجم صوت سماعة الرأس</string>
   <string name="custom_settings_values">قيم إعدادات مخصصة</string>
   <string name="global">شامل</string>
   <string name="secure">الأمان/تأمين</string>
@@ -104,7 +104,7 @@
   <string name="lbs_icon">أيقونة LBS</string>
   <string name="rcs_icon">أيقونة RCS</string>
   <string name="safezone_icon">أيقونة Safezone</string>
-  <string name="smart_bonding_icon">Smart Bonding Icon</string>
+  <string name="smart_bonding_icon">أيقونة الارتباط الذكي</string>
   <string name="smart_scroll_icon">أيقونة سمارتسكرول</string>
   <string name="toddler_icon">أيقونة طفل صغير</string>
   <string name="wearable_icon">أيقونة يمكن ارتداؤها</string>
@@ -143,7 +143,7 @@
   <string name="donate_joke">كيف تسأل؟ السحر.</string>
   <string name="donate_request">إذا كنت تتمتع بوقتك هنا، سيكون مدهش للغاية إذا أمكنك التبرع بدولار أو اثنان.</string>
   <string name="donate_dont_worry">ليس هناك على الإطلاق أي التزام. هذا التطبيق مجاني وسوف يبقى كذلك.</string>
-  <string name="qs_header_tile_count">QS Header Tile Count</string>
+  <string name="qs_header_tile_count">عد QS النوافذ</string>
   <string name="fancy_pulldown_animation">Fancy Pulldown Animation</string>
   <string name="move_full_rows">نقل كل الصفوف</string>
   <string name="battery">البطارية</string>
@@ -172,7 +172,7 @@
   <string name="sync_icon">أيقونة المزامنة</string>
   <string name="microphone_mute">أيقونة كتم الميكروفون</string>
   <string name="night_display_not_avail">الوضع الليلي غير متوفر في هذا الجهاز.</string>
-  <string name="immersive_mode">Immersive Mode</string>
+  <string name="immersive_mode">وضع الغطاء</string>
   <string name="none">لا يوجد</string>
   <string name="full">ممتلئ</string>
   <string name="navigation_bar">شريط التصفح</string>
@@ -248,7 +248,7 @@
   <string name="select_app">حدد التطبيق</string>
   <string name="select_component">حدد المكون</string>
   <string name="reset">إعادة الضبط</string>
-  <string name="pnc_desc">Power Notification Controls allow you to set the level of importance for notifications on a per-app basis. Simply turn the feature on and hold down on a notification to get started. You may need to tap the A to enable the slider.</string>
+  <string name="pnc_desc">ضوابط إعلام الطاقة تسمح لك بتعيين مستوى الأهمية للإخطارات على أساس كل تطبيق. ببساطة شغل الميزة واضغط باستمرار على إعلام للشروع في العمل. قد تحتاج إلى إدخال الرمز A لتفعيل شريط التمرير.</string>
   <string name="pnc_warn">This feature is known to be unreliable on certain devices, especially on TouchWiz! It is impossible to fix, but the best workaround seems to be to tap repeatedly on the desired level. Again, I CANNOT fix it!</string>
   <string name="agree">أوافق</string>
   <string name="cancel">إلغاء</string>
