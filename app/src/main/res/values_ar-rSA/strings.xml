@@ -200,13 +200,13 @@
   <string name="missing_perms">لا يتوفر على صلاحيات!</string>
   <string name="enable_debug"><![CDATA[1. انتقل إلى إعدادات >> "خيارات المطور" و إجعل تمكين تصحيح USB مفعل.]]></string>
   <string name="accept_auth">2. قم بتوصيل الجهاز إلى جهاز الكمبيوتر الخاص بك وقبول طلب الإذن.</string>
-  <string name="enable_devops"><![CDATA[- Enable Developer Options by going to Settings >> About, finding \"Build Number\" and tapping it 7 times.]]></string>
+  <string name="enable_devops"><![CDATA[-تمكين خيارات المطور عن طريق الذهاب إلى اعدادات >> عن، إيجاد \"Build Number\" و الضغط عليها 7 مرات.]]></string>
   <string name="download_drivers">مستخدمي ويندوز قد يحتاجون إلى تثبيت برامج تشغيل الأجهزة، التي تتوفر في موقع الويب الخاص بالشركة المصنعة.</string>
   <string name="download_adb_windows"><![CDATA[1-<a href="https://dl.google.com/android/repository/platform-tools-latest-windows.zip"> تحميل ADB ZIP لينكس. </a>]]></string>
   <string name="extract_zip">2-استخراج ZIP إلى موقع يمكن الوصول إليه بسهولة (أي سطح المكتب).</string>
   <string name="open_cmd">3. فتح CMD.</string>
   <string name="cd_windows"><![CDATA[4-أدخل <b>cd C:\\path\\to\\extracted\\folder\\</b> للوصول إلى المجلد الذي استخرجت فيهADB. على سبيل المثال <b>cd C:\\Users\\Zachary\\Desktop\\platform-tools\\</b>.]]></string>
-  <string name="cd_further"><![CDATA[- Make sure that the folder you <b>cd</b> into contains the ADB executable. If not, <b>cd</b> one level further.]]></string>
+  <string name="cd_further"><![CDATA[-- تأكد من أن المجلد <b>cd</b> يحتوي على ملف ADB التنفيذي. إذا لم يكن هنا <b>cd</b> إذهب إلى مستوى أعلى.]]></string>
   <string name="download_adb_mac"><![CDATA[1-<a href="https://dl.google.com/android/repository/platform-tools-latest-darwin.zip"> تحميل ADB ZIP لينكس. </a>]]></string>
   <string name="open_terminal">3. فتح الجهاز.</string>
   <string name="cd_mac"><![CDATA[4-أدخل <b>cd /path/to/extracted/folder/</b> للوصول إلى المجلد الذي استخرجت فيه ADB. على سبيل المثال, <b>cd /home/Zachary/Desktop/platform-tools/</b>.]]></string>
