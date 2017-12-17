@@ -205,7 +205,7 @@
   <string name="download_adb_windows"><![CDATA[1-<a href="https://dl.google.com/android/repository/platform-tools-latest-windows.zip"> تحميل ADB ZIP لينكس. </a>]]></string>
   <string name="extract_zip">2-استخراج ZIP إلى موقع يمكن الوصول إليه بسهولة (أي سطح المكتب).</string>
   <string name="open_cmd">3. فتح CMD.</string>
-  <string name="cd_windows"><![CDATA[4-أدخل <b>cd C:\\path\\to\\extracted\\folder\\</b> للوصول إلى المجلد الذي استخرجت فيهADB. على سبيل المثال <b>cd C:\\Users\\Zachary\\Desktop\\platform-tools\\</b>.]]></string>
+  <string name="cd_windows"><![CDATA[4-أدخل <b>cd C:\\path\\to\\extracted\\folder\\</b> للوصول إلى المجلد الذي استخرجت فيه ADB. على سبيل المثال <b>cd C:\\Users\\Zachary\\Desktop\\platform-tools\\</b>.]]></string>
   <string name="cd_further"><![CDATA[-- تأكد من أن المجلد <b>cd</b> يحتوي على ملف ADB التنفيذي. إذا لم يكن هنا <b>cd</b> إذهب إلى مستوى أعلى.]]></string>
   <string name="download_adb_mac"><![CDATA[1-<a href="https://dl.google.com/android/repository/platform-tools-latest-darwin.zip"> تحميل ADB ZIP لينكس. </a>]]></string>
   <string name="open_terminal">3. فتح الجهاز.</string>
@@ -232,7 +232,7 @@
   <string name="ubuntu">Ubuntu</string>
   <string name="fedora">Fedora</string>
   <string name="linux">Linux</string>
-  <string name="app_specific">App-Specific</string>
+  <string name="app_specific">خصائص التطبيق</string>
   <string name="blacklist">القائمة السوداء</string>
   <string name="select_apps">حدد التطبيقات</string>
   <string name="app_specific_desc">حدد التطبيقات التي سيتم تضمينها أو استبعادها من \"وضع المخاطرة\". يجب تعطيل وضع المخاطرة لتغيير هذه الإعدادات.</string>
