@@ -24,21 +24,21 @@
   <string name="miscellaneous">Sonstiges</string>
   <string name="settings">Einstellungen</string>
   <string name="status_bar">Statusleiste</string>
-  <string name="reboot_required">(Reboot Required)</string>
-  <string name="sorry">Sorry…</string>
-  <string name="created_by">App created by <a href="https://forum.xda-developers.com/member.php?u=7055541">Zacharee1</a></string>
+  <string name="reboot_required">(Neustart erforderlich)</string>
+  <string name="sorry">Tut mir leid…</string>
+  <string name="created_by">App von <a href="https://forum.xda-developers.com/member.php?u=7055541">Zacharee1</a></string>
   <string name="spanish_from">Spanish translation by <a href="https://es.stackoverflow.com/users/28567/aaron-romero">Aaron Romero</a> and <a href="https://forum.xda-developers.com/member.php?u=7055541">Zacharee1</a></string>
-  <string name="enabled">Enabled</string>
-  <string name="show">Show</string>
-  <string name="select_time">Select Time</string>
+  <string name="enabled">Aktiviert</string>
+  <string name="show">Anzeigen</string>
+  <string name="select_time">Zeit wählen</string>
   <string name="select_battery_level">Select Battery Level</string>
   <string name="wifi_strength">WiFi Strength</string>
-  <string name="battery_charging">Battery Charging</string>
+  <string name="battery_charging">Akku ladend</string>
   <string name="mobile_strength">Mobile Strength</string>
   <string name="mobile_type">Mobile Type</string>
   <string name="show_airplane_mode">Show Airplane Mode</string>
   <string name="show_notifications">Show Notifications</string>
-  <string name="status_bar_style">Status Bar Style</string>
+  <string name="status_bar_style">Statusleisten Stil</string>
   <string name="home_desc">For Devices without this Activity</string>
   <string name="home_joke">Or for devices with it, I\'m not your boss.</string>
   <string name="home_extra">(If you do have the stock SystemUI Tuner, this one provides some extra goodies.)</string>
