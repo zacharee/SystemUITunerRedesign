@@ -200,7 +200,7 @@
   <string name="adb_setup">Les autorisations ci-dessus doivent être accordées pour continuer. Accès root soit refusé ou indisponible, ce qui signifie que vous aurez à accorder ces autorisations à l’aide de la ADB.</string>
   <string name="missing_perms">Autorisations manquantes!</string>
   <string name="enable_debug"><![CDATA[1. Go to Settings >> Developer Options and make sure USB Debugging is enabled.]]></string>
-  <string name="accept_auth">2. Plug your device into your computer and accept the authorization request on it.</string>
+  <string name="accept_auth">2. Branchez votre appareil sur votre ordinateur et acceptez la demande d\'autorisation à ce sujet.</string>
   <string name="enable_devops"><![CDATA[- Enable Developer Options by going to Settings >> About, finding \"Build Number\" and tapping it 7 times.]]></string>
   <string name="download_drivers">- Windows users may need to install device drivers, which are available from the manufacturer\'s website.</string>
   <string name="download_adb_windows"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-windows.zip">Download the ADB ZIP for Windows.</a>]]></string>
