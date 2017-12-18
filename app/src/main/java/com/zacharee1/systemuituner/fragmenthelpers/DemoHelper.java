@@ -19,6 +19,12 @@ import com.zacharee1.systemuituner.util.SettingsUtils;
 
 public class DemoHelper extends BaseHelper
 {
+    public static final String PERMISSION_NEEDED = "permission_needed";
+    public static final String DEMO_ALLOWED = "sysui_demo_allowed";
+    public static final String SHOW_DEMO = "show_demo";
+
+    public static final String DEMO_ACTION = "com.android.systemui.demo";
+
     private DemoHandler mDemoHandler;
     private BroadcastReceiver switchReceiver;
 
@@ -31,26 +37,26 @@ public class DemoHelper extends BaseHelper
             setDemoSwitchListener();
         } else {
             Intent intent = new Intent(getContext(), SetupActivity.class);
-            intent.putExtra("permission_needed", new String[] { Manifest.permission.DUMP });
-            getActivity().startActivity(intent);
+            intent.putExtra(PERMISSION_NEEDED, new String[] { Manifest.permission.DUMP });
+            startActivity(intent);
 
             getActivity().finish();
         }
     }
 
     private void setPrefListeners() {
-        final Preference enableDemo = findPreference("sysui_demo_allowed");
-        enableDemo.setEnabled(Settings.Global.getInt(getContext().getContentResolver(), "sysui_demo_allowed", 0) == 0);
+        final Preference enableDemo = findPreference(DEMO_ALLOWED);
+        enableDemo.setEnabled(Settings.Global.getInt(getContext().getContentResolver(), DEMO_ALLOWED, 0) == 0);
         enableDemo.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener()
         {
             @Override
             public boolean onPreferenceClick(Preference preference)
             {
-                if (getActivity().checkCallingOrSelfPermission("android.permission.DUMP") == PackageManager.PERMISSION_GRANTED) {
+                if (getActivity().checkCallingOrSelfPermission(Manifest.permission.DUMP) == PackageManager.PERMISSION_GRANTED) {
                     SettingsUtils.writeGlobal(getContext(), preference.getKey(), "1");
-                    findPreference("show_demo").setEnabled(true);
+                    findPreference(SHOW_DEMO).setEnabled(true);
                 } else {
-                    Toast.makeText(getContext(), getActivity().getResources().getString(R.string.grant_dump_perm), Toast.LENGTH_LONG).show();
+                    Toast.makeText(getContext(), getResources().getString(R.string.grant_dump_perm), Toast.LENGTH_LONG).show();
                 }
                 return true;
             }
@@ -58,7 +64,7 @@ public class DemoHelper extends BaseHelper
     }
 
     private void setDemoSwitchListener() {
-        final SwitchPreference demo = (SwitchPreference) findPreference("show_demo");
+        final SwitchPreference demo = (SwitchPreference) findPreference(SHOW_DEMO);
 
         switchReceiver = new BroadcastReceiver() {
             @Override
@@ -70,7 +76,7 @@ public class DemoHelper extends BaseHelper
             }
         };
 
-        IntentFilter filter = new IntentFilter("com.android.systemui.demo");
+        IntentFilter filter = new IntentFilter(DEMO_ACTION);
 
         getActivity().registerReceiver(switchReceiver, filter);
 
@@ -113,7 +119,7 @@ public class DemoHelper extends BaseHelper
             if (item instanceof Preference) {
                 Preference preference = (Preference) item;
 
-                if (preference.hasKey() && !(preference.getKey().equals("sysui_demo_allowed") || preference.getKey().equals("show_demo"))) {
+                if (preference.hasKey() && !(preference.getKey().equals(DEMO_ALLOWED) || preference.getKey().equals(SHOW_DEMO))) {
                     preference.setEnabled(!disable);
                 }
             }

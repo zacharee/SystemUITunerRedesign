@@ -3,6 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <PreferenceCategory
+        android:title="QS Layout">
+        <Preference
+            android:title="Launch Editor"
+            android:key="launch_editor" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:title="@string/general"
         android:key="general_qs">
         <SwitchPreference

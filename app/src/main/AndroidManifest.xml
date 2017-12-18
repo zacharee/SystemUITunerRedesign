@@ -161,7 +161,8 @@
         <activity android:name=".activites.apppickers.ComponentsListActivity" />
         <activity android:name=".activites.info.IntroActivity" />
         <activity android:name=".activites.instructions.InstructionsActivity" />
-        <activity android:name=".activites.apppickers.ImmersiveSelectActivity"></activity>
+        <activity android:name=".activites.apppickers.ImmersiveSelectActivity" />
+        <activity android:name=".activites.QuickSettingsLayoutEditor"></activity>
     </application>
 
 </manifest>

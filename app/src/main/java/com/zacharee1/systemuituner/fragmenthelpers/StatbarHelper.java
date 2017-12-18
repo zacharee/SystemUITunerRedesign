@@ -9,6 +9,11 @@ import com.zacharee1.systemuituner.util.SettingsUtils;
 
 public class StatbarHelper extends BaseHelper
 {
+    public static final String RESET_BLACKLIST = "reset_blacklist";
+    public static final String BACKUP_BLACKLIST = "backup_blacklist";
+    public static final String RESTORE_BLACKLIST = "restore_blacklist";
+    public static final String ICON_BLACKLIST = "icon_blacklist";
+    public static final String ICON_BLACKLIST_BACKUP = "icon_blacklist_backup";
 
     public StatbarHelper(ItemDetailFragment fragment) {
         super(fragment);
@@ -19,16 +24,16 @@ public class StatbarHelper extends BaseHelper
     }
 
     private void preferenceListeners() {
-        Preference resetBL = findPreference("reset_blacklist");
-        Preference backupBL = findPreference("backup_blacklist");
-        Preference restoreBL = findPreference("restore_blacklist");
+        Preference resetBL = findPreference(RESET_BLACKLIST);
+        Preference backupBL = findPreference(BACKUP_BLACKLIST);
+        Preference restoreBL = findPreference(RESTORE_BLACKLIST);
 
         resetBL.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener()
         {
             @Override
             public boolean onPreferenceClick(Preference preference)
             {
-                SettingsUtils.writeSecure(getContext(), "icon_blacklist", "");
+                SettingsUtils.writeSecure(getContext(), ICON_BLACKLIST, "");
                 setSwitchPreferenceStates();
                 return true;
             }
@@ -39,8 +44,8 @@ public class StatbarHelper extends BaseHelper
             @Override
             public boolean onPreferenceClick(Preference preference)
             {
-                String currentBL = Settings.Secure.getString(getContext().getContentResolver(), "icon_blacklist");
-                SettingsUtils.writeGlobal(getContext(), "icon_blacklist_backup", currentBL);
+                String currentBL = Settings.Secure.getString(getContext().getContentResolver(), ICON_BLACKLIST);
+                SettingsUtils.writeGlobal(getContext(), ICON_BLACKLIST_BACKUP, currentBL);
                 setSwitchPreferenceStates();
                 return true;
             }
@@ -51,8 +56,8 @@ public class StatbarHelper extends BaseHelper
             @Override
             public boolean onPreferenceClick(Preference preference)
             {
-                String backupBL = Settings.Global.getString(getContext().getContentResolver(), "icon_blacklist_backup");
-                SettingsUtils.writeSecure(getContext(), "icon_blacklist", backupBL);
+                String backupBL = Settings.Global.getString(getContext().getContentResolver(), ICON_BLACKLIST_BACKUP);
+                SettingsUtils.writeSecure(getContext(), ICON_BLACKLIST, backupBL);
                 setSwitchPreferenceStates();
                 return true;
             }

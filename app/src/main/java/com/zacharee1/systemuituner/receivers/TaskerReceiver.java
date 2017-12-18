@@ -29,7 +29,7 @@ public class TaskerReceiver extends BroadcastReceiver
 
             //expecting dataString with format "SETTING:key/value"
             String[] nameVal = dataString.split("[:]");
-            if (nameVal[1] == null) nameVal[1] = "";
+            if (nameVal.length < 2 || nameVal[1] == null) nameVal[1] = "";
             String keyVal = nameVal[1];
 
             ArrayList<String> keyValPair = new ArrayList<>(Arrays.asList(keyVal.split("[/]")));

@@ -122,7 +122,7 @@ public class AutoHelper extends BaseHelper
             if (!hasDump) perms.add(Manifest.permission.DUMP);
 
             intent.putExtra("permission_needed", perms.toArray(new String[]{}));
-            getActivity().startActivity(intent);
+            startActivity(intent);
 
             getActivity().finish();
         }

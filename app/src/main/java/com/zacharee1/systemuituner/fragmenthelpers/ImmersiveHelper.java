@@ -19,6 +19,13 @@ import com.zacharee1.systemuituner.fragments.ItemDetailFragment;
 import com.zacharee1.systemuituner.handlers.ImmersiveHandler;
 
 public class ImmersiveHelper extends BaseHelper implements Preference.OnPreferenceChangeListener {
+    public static final String IMMERSIVE_BOXES = "imm_boxes";
+    public static final String APP_SPECIFIC = "app_specific";
+    public static final String APP_IMMERSIVE = "app_immsersive";
+    public static final String IMMERSIVE_BLACKLIST = "immersive_blacklist";
+    public static final String SELECT_APPS = "select_apps";
+    public static final String CONFIG_QS = "config_qs";
+    public static final String IMMERSIVE_TILE_MODE = "immersive_tile_mode";
 
     private CheckBoxPreference none;
     private CheckBoxPreference full;
@@ -74,7 +81,7 @@ public class ImmersiveHelper extends BaseHelper implements Preference.OnPreferen
     }
 
     private void setAllOthersDisabled(String keyToNotDisable) {
-        PreferenceCategory boxes = (PreferenceCategory) findPreference("imm_boxes");
+        PreferenceCategory boxes = (PreferenceCategory) findPreference(IMMERSIVE_BOXES);
 
         for (int i = 0; i < boxes.getPreferenceCount(); i++) {
             Preference preference = boxes.getPreference(i);
@@ -94,7 +101,7 @@ public class ImmersiveHelper extends BaseHelper implements Preference.OnPreferen
 
     private void disableQSSettingIfBelowNougat() {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.N) {
-            PreferenceCategory category = (PreferenceCategory) findPreference("config_qs");
+            PreferenceCategory category = (PreferenceCategory) findPreference(CONFIG_QS);
 
             for (int i = 0; i < category.getPreferenceCount(); i++) {
                 Preference preference = category.getPreference(i);
@@ -105,7 +112,7 @@ public class ImmersiveHelper extends BaseHelper implements Preference.OnPreferen
     }
 
     private void setSelectorListener() {
-        Preference preference = findPreference("select_apps");
+        Preference preference = findPreference(SELECT_APPS);
         preference.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
             @Override
             public boolean onPreferenceClick(Preference preference) {
@@ -114,7 +121,7 @@ public class ImmersiveHelper extends BaseHelper implements Preference.OnPreferen
             }
         });
 
-        SwitchPreference enabled = (SwitchPreference) findPreference("app_immersive");
+        SwitchPreference enabled = (SwitchPreference) findPreference(APP_IMMERSIVE);
         enabled.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
             @Override
             public boolean onPreferenceChange(Preference preference, Object o) {
