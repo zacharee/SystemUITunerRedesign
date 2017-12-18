@@ -79,23 +79,25 @@ public class QuickSettingsLayoutEditor extends AppCompatActivity {
             }
         }).attachToRecyclerView(recyclerView);
 
-        FloatingActionButton addTile = new FloatingActionButton(this);
-        FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        params.gravity = Gravity.BOTTOM | Gravity.END;
-        addTile.setLayoutParams(params);
-        addTile.setImageResource(R.drawable.ic_add_black_24dp);
-        addTile.setImageTintList(ColorStateList.valueOf(Color.WHITE));
-        addTile.setUseCompatPadding(true);
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.N) {
+            FloatingActionButton addTile = new FloatingActionButton(this);
+            FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+            params.gravity = Gravity.BOTTOM | Gravity.END;
+            addTile.setLayoutParams(params);
+            addTile.setImageResource(R.drawable.ic_add_black_24dp);
+            addTile.setImageTintList(ColorStateList.valueOf(Color.WHITE));
+            addTile.setUseCompatPadding(true);
 
-        addTile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                new AddTileView(QuickSettingsLayoutEditor.this, adapter).show();
-            }
-        });
+            addTile.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    new AddTileView(QuickSettingsLayoutEditor.this, adapter).show();
+                }
+            });
 
-        FrameLayout root = findViewById(R.id.root);
-        root.addView(addTile);
+            FrameLayout root = findViewById(R.id.root);
+            root.addView(addTile);
+        }
 
         mObserver = new ContentObserver(new Handler(Looper.getMainLooper())) {
             @Override

@@ -8,6 +8,7 @@ import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.provider.Settings;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
@@ -161,6 +162,10 @@ public class QSDragAdapter extends RecyclerView.Adapter<QSDragAdapter.QSViewHold
         public QSViewHolder(View view) {
             super(view);
             mView = view;
+
+            if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M) {
+                mView.findViewById(R.id.close_button).setVisibility(View.GONE);
+            }
         }
 
         public void setTitle(String title) {
