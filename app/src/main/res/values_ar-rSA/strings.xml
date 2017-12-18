@@ -255,4 +255,7 @@
   <string name="dont_show">لا تظهره مرة اخرى</string>
   <string name="miui_detected">تم الكشف عن جهاز MIUI!</string>
   <string name="miui_warning">يبدو أنك تستخدم جهاز MIUI. يرجى الإحاطة علما أن ميزات قليلة إن وجدت لهذا التطبيق سوف تعمل. لا يمكن حلها!</string>
+  <!-- TODO: Remove or change this placeholder text -->
+  <string name="hello_blank_fragment">Hello blank fragment</string>
+  <string name="intent">Intent</string>
 </resources>
