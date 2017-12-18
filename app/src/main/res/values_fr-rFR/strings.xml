@@ -256,4 +256,7 @@
   <string name="dont_show">Ne plus montrer</string>
   <string name="miui_detected">Appareil MIUI détecté!</string>
   <string name="miui_warning">Il semble que vous utilisez un appareil MIUI. Veuillez prendre note que peu, voire aucune, caractéristiques de cette application fonctionnera pour vous. Il n’est pas réparable!</string>
+  <!-- TODO: Remove or change this placeholder text -->
+  <string name="hello_blank_fragment">Hello blank fragment</string>
+  <string name="intent">Intent</string>
 </resources>
