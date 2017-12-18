@@ -3,8 +3,13 @@ package com.zacharee1.systemuituner.activites;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.res.ColorStateList;
+import android.database.ContentObserver;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Build;
+import android.os.Handler;
+import android.os.Looper;
+import android.provider.Settings;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -15,6 +20,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -33,6 +39,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class QuickSettingsLayoutEditor extends AppCompatActivity {
+    private ContentObserver mObserver;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +52,7 @@ public class QuickSettingsLayoutEditor extends AppCompatActivity {
     }
 
     private void setUpRecyclerView() {
-        RecyclerView recyclerView = findViewById(R.id.content_main);
+        final RecyclerView recyclerView = findViewById(R.id.content_main);
         final QSDragAdapter adapter = new QSDragAdapter(this);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new GridLayoutManager(this, 3));
@@ -72,25 +79,49 @@ public class QuickSettingsLayoutEditor extends AppCompatActivity {
             }
         }).attachToRecyclerView(recyclerView);
 
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.N) {
-            FloatingActionButton addTile = new FloatingActionButton(this);
-            FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-            params.gravity = Gravity.BOTTOM | Gravity.END;
-            addTile.setLayoutParams(params);
-            addTile.setImageResource(R.drawable.ic_add_black_24dp);
-            addTile.setImageTintList(ColorStateList.valueOf(Color.WHITE));
-            addTile.setUseCompatPadding(true);
+        FloatingActionButton addTile = new FloatingActionButton(this);
+        FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        params.gravity = Gravity.BOTTOM | Gravity.END;
+        addTile.setLayoutParams(params);
+        addTile.setImageResource(R.drawable.ic_add_black_24dp);
+        addTile.setImageTintList(ColorStateList.valueOf(Color.WHITE));
+        addTile.setUseCompatPadding(true);
 
-            addTile.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    new AddTileView(QuickSettingsLayoutEditor.this, adapter).show();
+        addTile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                new AddTileView(QuickSettingsLayoutEditor.this, adapter).show();
+            }
+        });
+
+        FrameLayout root = findViewById(R.id.root);
+        root.addView(addTile);
+
+        mObserver = new ContentObserver(new Handler(Looper.getMainLooper())) {
+            @Override
+            public void onChange(boolean selfChange, Uri uri) {
+                if (uri.equals(Settings.Secure.getUriFor("sysui_qs_tiles"))) {
+                    if (!recyclerView.isAnimating()) {
+                        new Handler(Looper.getMainLooper()).post(new Runnable() {
+                            @Override
+                            public void run() {
+                                adapter.parseTileList();
+                                adapter.notifyDataSetChanged();
+                            }
+                        });
+                    }
                 }
-            });
+            }
+        };
 
-            FrameLayout root = findViewById(R.id.root);
-            root.addView(addTile);
-        }
+        getContentResolver().registerContentObserver(Settings.Secure.CONTENT_URI, true, mObserver);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        getContentResolver().unregisterContentObserver(mObserver);
     }
 
     private static class AddTileView extends AlertDialog {
@@ -157,7 +188,7 @@ public class QuickSettingsLayoutEditor extends AppCompatActivity {
 
             private void addTile(AddVH holder, boolean removeFromAvail) {
                 mDragAdapter.addTile(mAvailableTiles.get(holder.getAdapterPosition()));
-                if (removeFromAvail) mDragAdapter.mAvailableTiles.remove(holder.getAdapterPosition());
+                if (removeFromAvail) mDragAdapter.mAvailableTiles.remove(mAvailableTiles.get(holder.getAdapterPosition()));
                 dismiss();
             }
 

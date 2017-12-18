@@ -35,27 +35,33 @@ public class QSDragAdapter extends RecyclerView.Adapter<QSDragAdapter.QSViewHold
 
     public QSDragAdapter(Context context) {
         mContext = context;
-        parseTileList(context);
+        parseTileList();
     }
 
-    private void parseTileList(Context context) {
-        String tiles = Settings.Secure.getString(context.getContentResolver(), "sysui_qs_tiles");
+    public void parseTileList() {
+        String tiles = Settings.Secure.getString(mContext.getContentResolver(), "sysui_qs_tiles");
 
         if (tiles == null) {
-            tiles = getDefaultTileOrder(context);
+            tiles = getDefaultTileOrder();
         }
 
         String[] tileArray = tiles.split("[,]");
 
+        ArrayList<QSTile> tempTiles = new ArrayList<>();
+
         for (String tile : tileArray) {
-            mTiles.add(new QSTile(tile, context));
+            tempTiles.add(new QSTile(tile, mContext));
         }
+
+        mTiles.clear();
+        mTiles.addAll(tempTiles);
 
         refreshAvailableTiles();
     }
 
     public void refreshAvailableTiles() {
-        for (QSTile tile : getDefaultTiles(mContext)) {
+        mAvailableTiles.clear();
+        for (QSTile tile : getDefaultTiles()) {
             boolean hasTile = false;
 
             for (QSTile tile1 : mTiles) {
@@ -68,21 +74,21 @@ public class QSDragAdapter extends RecyclerView.Adapter<QSDragAdapter.QSViewHold
         }
     }
 
-    private ArrayList<QSTile> getDefaultTiles(Context context) {
-        String order = getDefaultTileOrder(context);
+    private ArrayList<QSTile> getDefaultTiles() {
+        String order = getDefaultTileOrder();
         String[] array = order.split("[,]");
 
         ArrayList<QSTile> ret = new ArrayList<>();
 
         for (String tile : array) {
-            ret.add(new QSTile(tile, context));
+            ret.add(new QSTile(tile, mContext));
         }
 
         return ret;
     }
 
-    private String getDefaultTileOrder(Context context) {
-        PackageManager pm = context.getPackageManager();
+    private String getDefaultTileOrder() {
+        PackageManager pm = mContext.getPackageManager();
 
         try {
             Resources resources = pm.getResourcesForApplication("com.android.systemui");
@@ -128,18 +134,17 @@ public class QSDragAdapter extends RecyclerView.Adapter<QSDragAdapter.QSViewHold
             @Override
             public void onClick(View view) {
                 new AlertDialog.Builder(mContext)
-                        .setTitle("Removing Tile")
-                        .setMessage("Remove " + mTiles.get(holder.getAdapterPosition()).title + "?")
-                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                        .setTitle(R.string.removing_tile)
+                        .setMessage(String.format(holder.getContext().getResources().getString(R.string.remove_tile), mTiles.get(holder.getAdapterPosition()).title))
+                        .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 mTiles.remove(holder.getAdapterPosition());
                                 setOrder(mTiles);
                                 notifyItemRemoved(holder.getAdapterPosition());
-                                refreshAvailableTiles();
                             }
                         })
-                        .setNegativeButton("No", null)
+                        .setNegativeButton(R.string.no, null)
                         .show();
             }
         });
