@@ -157,7 +157,7 @@
   <string name="for_settings_system">(for Settings.System)</string>
   <string name="desired_setting_key">Desired setting key</string>
   <string name="desired_setting_value">Desired setting value</string>
-  <string name="tasker_intro">Here\'s a quick set of instructions for Tasker. Since I don\'t know how to use Tasker, I can only build in support for intent broadcasts.</string>
+  <string name="tasker_intro">Hier is een snel overzicht van instructies voor Tasker. Omdat ik niet weet hoe ik Tasker moet gebruiken, kan ik alleen ondersteuning voor intentie-uitzendingen inbouwen.</string>
   <string name="back_up_blacklist">Back Up Blacklist</string>
   <string name="restore_blacklist">Restore Blacklist</string>
   <string name="chinese_from">Chinese translation by <a href="https://twitter.com/NCXR188?s=09">NCXR188</a></string>
@@ -203,18 +203,18 @@
   <string name="accept_auth">2. Plug your device into your computer and accept the authorization request on it.</string>
   <string name="enable_devops"><![CDATA[- Enable Developer Options by going to Settings >> About, finding \"Build Number\" and tapping it 7 times.]]></string>
   <string name="download_drivers">- Windows users may need to install device drivers, which are available from the manufacturer\'s website.</string>
-  <string name="download_adb_windows"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-windows.zip">Download the ADB ZIP for Windows.</a>]]></string>
+  <string name="download_adb_windows"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-windows.zip">ADB ZIP voor Windows downloaden.</a>]]></string>
   <string name="extract_zip">2. Extract the ZIP to an easily-accessible location (ie Desktop).</string>
   <string name="open_cmd">3. Open CMD.</string>
   <string name="cd_windows"><![CDATA[4. Voer <b>cd C:\\path\\to\\extracted\\folder\\</b> in om naar de map te gaan waar u ADB heeft uitgepakt. Bij voorbeeld, <b>cd C:\\Users\\Zachary\\Desktop\\platform-tools\\</b>.]]></string>
   <string name="cd_further"><![CDATA[- Make sure that the folder you <b>cd</b> into contains the ADB executable. If not, <b>cd</b> one level further.]]></string>
-  <string name="download_adb_mac"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-darwin.zip">Download the ADB ZIP for macOS.</a>]]></string>
+  <string name="download_adb_mac"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-darwin.zip">ADB ZIP voor macOS downloaden.</a>]]></string>
   <string name="open_terminal">3. Open Terminal.</string>
   <string name="cd_mac"><![CDATA[4. Enter <b>cd /path/to/extracted/folder/</b> to get to the folder you extracted ADB into. For instance, <b>cd /Users/Zachary/Desktop/platform-tools/</b>.]]></string>
   <string name="apt_get_adb"><![CDATA[- <b>sudo apt-get install adb</b>]]></string>
   <string name="make_sure_adb_installed">1. Make sure ADB is installed:</string>
   <string name="yum_install_adb"><![CDATA[- <b>sudo yum install android-tools</b>]]></string>
-  <string name="download_adb_linux"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-linux.zip">Download the ADB ZIP for Linux.</a>]]></string>
+  <string name="download_adb_linux"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-linux.zip">ADB ZIP voor Linux downloaden.</a>]]></string>
   <string name="cd_linux"><![CDATA[4. Enter <b>cd /path/to/extracted/folder/</b> to get to the folder you extracted ADB into. For instance, <b>cd /home/Zachary/Desktop/platform-tools/</b>.]]></string>
   <string name="choose_your_weapon">Kies je Wapen</string>
   <string name="initial_setup">Initial Setup</string>
@@ -236,7 +236,7 @@
   <string name="app_specific">App-Specific</string>
   <string name="blacklist">Blacklist</string>
   <string name="select_apps">Selecteer Apps</string>
-  <string name="app_specific_desc">Select apps to be included in or excluded from Immersive Mode. Immersive Mode must be disabled to change these settings.</string>
+  <string name="app_specific_desc">Selecteer applicaties om in Immersive Mode op te nemen of uit te sluiten. De meeslepende modus moet worden uitgeschakeld om deze instellingen te wijzigen.</string>
   <string name="blacklist_desc">When on, selected apps will not use Immersive Mode</string>
   <string name="warning">Waarschuwing!</string>
   <string name="imm_warn">Met deze functie kunt u eenvoudig de Immersive-modus activeren. Het doet Niets anders dan dat. Elk probleem dat u ervaart, is de schuld van de fabrikant van uw apparaat. IK KAN HET NIET VASTSTELLEN!</string>
@@ -244,7 +244,7 @@
   <string name="select_all">Alles selecteren</string>
   <string name="deselect_all">Alles deselecteren</string>
   <string name="invert_selection">Invert Selection</string>
-  <string name="statbar_rotation_lock_notif">On certain devices, modifying the status bar icons can cause an icon that looks like a phone to appear. This is the Rotation Lock icon.</string>
+  <string name="statbar_rotation_lock_notif">Op bepaalde apparaten kan het wijzigen van de statusbalkpictogrammen ertoe leiden dat er een pictogram verschijnt dat eruitziet als een telefoon. Dit is het Rotation Lock-pictogram.</string>
   <string name="feature_not_supported">It seems your device doesn\'t support this feature :/</string>
   <string name="select_app">Selecteer App</string>
   <string name="select_component">Select Component</string>
@@ -255,7 +255,7 @@
   <string name="cancel">Annuleren</string>
   <string name="dont_show">Niet meer tonen</string>
   <string name="miui_detected">MIUI Device Detected!</string>
-  <string name="miui_warning">It seems that you\'re using a MIUI device. Please take note that few, if any, features of this app will work for you. It is NOT fixable!</string>
+  <string name="miui_warning">Het lijkt erop dat u een MIUI-apparaat gebruikt. Houd er rekening mee dat enkele, indien aanwezig, functies van deze applicatie voor u werken. Het is niet repareerbaar!</string>
   <string name="intent">Intent</string>
   <string name="removing_tile">Removing Tile</string>
   <string name="remove_tile">Remove %s?</string>
