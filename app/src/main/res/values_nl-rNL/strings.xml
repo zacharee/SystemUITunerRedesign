@@ -9,7 +9,7 @@
   <string name="grant_dump_perm">U moet aan \"android.permission.DUMP\" machtiging geven om deze functie te gebruiken.</string>
   <string name="safe_mode_auto_enabled">Samsung-apparaat gedetecteerd! De veilige modus is automatisch geactiveerd voor uw veiligheid. Wees gewaarschuwd dat het wijzigen van een pictogram in de statusbalk de potentie heeft om de systeeminterface te verbreken! Volg de link in de Play Store-beschrijving voor meer informatie.</string>
   <string name="notice">LET OP</string>
-  <string name="fancy_pulldown_notice">Toggling this option off can cause issues after a reboot. Manually toggle this option on and off after a reboot.</string>
+  <string name="fancy_pulldown_notice">Als u deze functie uitschakelt, kan dit problemen veroorzaken na het opnieuw opstarten. Schakel deze handmatig in en schakel hem vervolgens weer uit.</string>
   <string name="safe_mode_summary">SAMSUNG USERS KEEP THIS TURNED ON UNLESS YOU HAVE AN AOSP ROM! \n\n
         Clears any status bar customizations on NORMAL reboot/shutdown and restores them after boot completes. \n
     </string>
