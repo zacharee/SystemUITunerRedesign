@@ -259,6 +259,6 @@
   <string name="intent">Intent</string>
   <string name="removing_tile">Removing Tile</string>
   <string name="remove_tile">Remove %s?</string>
-  <string name="yes">Yes</string>
-  <string name="no">No</string>
+  <string name="yes">Ja</string>
+  <string name="no">Nee</string>
 </resources>
