@@ -164,7 +164,7 @@ public class MiscHelper extends BaseHelper
     }
 
     private void setNightModeSwitchStates() {
-        final SwitchPreference auto = (SwitchPreference) findPreference(NIGHT_DISPLAY_AUTO);
+        final SwitchPreference auto = (SwitchPreference) findPreference(NIGHT_MODE_AUTO);
         final SwitchPreference override = (SwitchPreference) findPreference(NIGHT_MODE_OVERRIDE);
         final SwitchPreference tint = (SwitchPreference) findPreference(TUNER_NIGHT_MODE_TINT);
 
