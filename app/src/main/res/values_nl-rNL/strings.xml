@@ -142,7 +142,7 @@
   <string name="night_display">Night Display</string>
   <string name="donate_hook">Hej, ik zie dat je mijn app gebruikt.</string>
   <string name="donate_joke">How, you ask? Magic.</string>
-  <string name="donate_request">If you\'re enjoying your time here, it\'d be absolutely amazing if you could spare a dollar or two.</string>
+  <string name="donate_request">Als u de toepassing leuk vindt, zou het absoluut ongelooflijk zijn om ons te helpen met een donatie.</string>
   <string name="donate_dont_worry">There\'s absolutely no obligation. This app is free and always will be.</string>
   <string name="qs_header_tile_count">QS Header Tile Count</string>
   <string name="fancy_pulldown_animation">Fancy Pulldown Animation</string>
@@ -201,13 +201,13 @@
   <string name="missing_perms">Missing Permissions!</string>
   <string name="enable_debug"><![CDATA[1. Go to Settings >> Developer Options and make sure USB Debugging is enabled.]]></string>
   <string name="accept_auth">2. Plug your device into your computer and accept the authorization request on it.</string>
-  <string name="enable_devops"><![CDATA[- Enable Developer Options by going to Settings >> About, finding \"Build Number\" and tapping it 7 times.]]></string>
-  <string name="download_drivers">- Windows users may need to install device drivers, which are available from the manufacturer\'s website.</string>
+  <string name="enable_devops"><![CDATA[- Schakel Developer Options in door naar Instellingen >> About te gaan, \"Build Number\" te vinden en er 7 keer op te tikken.]]></string>
+  <string name="download_drivers">- Windows-gebruikers moeten apparaatstuurprogramma\'s installeren, die beschikbaar zijn via de website van de fabrikant.</string>
   <string name="download_adb_windows"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-windows.zip">ADB ZIP voor Windows downloaden.</a>]]></string>
   <string name="extract_zip">2. Extract the ZIP to an easily-accessible location (ie Desktop).</string>
   <string name="open_cmd">3. Open CMD.</string>
   <string name="cd_windows"><![CDATA[4. Voer <b>cd C:\\path\\to\\extracted\\folder\\</b> in om naar de map te gaan waar u ADB heeft uitgepakt. Bij voorbeeld, <b>cd C:\\Users\\Zachary\\Desktop\\platform-tools\\</b>.]]></string>
-  <string name="cd_further"><![CDATA[- Make sure that the folder you <b>cd</b> into contains the ADB executable. If not, <b>cd</b> one level further.]]></string>
+  <string name="cd_further"><![CDATA[- Zorg ervoor dat de map waarin u <b>cd</b> plaatst het uitvoerbare ADB-bestand bevat. Zo niet, <b>cd</b> een niveau verder.]]></string>
   <string name="download_adb_mac"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-darwin.zip">ADB ZIP voor macOS downloaden.</a>]]></string>
   <string name="open_terminal">3. Open Terminal.</string>
   <string name="cd_mac"><![CDATA[4. Enter <b>cd /path/to/extracted/folder/</b> to get to the folder you extracted ADB into. For instance, <b>cd /Users/Zachary/Desktop/platform-tools/</b>.]]></string>
@@ -227,7 +227,7 @@
   <string name="which_os">Which operating system is your computer running?</string>
   <string name="on_device">Follow these instructions on your device.</string>
   <string name="on_computer">Follow these instructions on your computer.</string>
-  <string name="run_on_computer">Run these commands on your computer. For Linux and macOS, you will need to use \"./adb\" instead of \"adb\".</string>
+  <string name="run_on_computer">Voer deze opdrachten uit op uw computer. Voor Linux en macOS moet u \"./adb\" in plaats van \"adb\" gebruiken.</string>
   <string name="windows">Windows</string>
   <string name="mac">macOS</string>
   <string name="ubuntu">Ubuntu</string>
