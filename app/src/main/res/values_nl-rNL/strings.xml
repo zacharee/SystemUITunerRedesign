@@ -195,9 +195,9 @@
   <string name="intro_1">Bedankt voor het downloaden van mijn applicatie! SystemUI-modifier is bedoeld om de gebruikersinterfacesysteemmodifier in AOSP te vervangen/aanvullen. Zowel gebruikers met als zonder interface-systeemmodifier kunnen van deze toepassing profiteren.</string>
   <string name="intro_2">Net als in AOSP kunt u met SystemUI-modifier bepaalde pictogrammen in de statusbalk verbergen. Daarnaast kun je ook veel andere dingen doen, zoals het uitschakelen van Let op-meldingen of zelfs het activeren van de duikmodus.</string>
   <string name="intro_3">Er is een venster met vooraf gedefinieerde opties voor de statusbalk, maar als u geen pictogram ziet dat u wilt verbergen, kunt u de automatische detectiefunctie proberen, die probeert de pictogrammen te vinden die verborgen kunnen zijn.</string>
-  <string name="intro_4">And the best part about this app? It doesn\'t need root! It will attempt to get root privileges, but if it can\'t you will have to use ADB. USING ADB IS NOT ROOTING!</string>
+  <string name="intro_4">En het beste deel over deze applicatie? Je hebt geen root nodig! Het zal proberen root-privileges te verkrijgen, maar zo niet; Je zou ADB kunnen gebruiken. HET GEBRUIK VAN ADB IS GEEN ROOT!</string>
   <string name="intro_5">Nadat u op de knop Einde hebt gedrukt, probeert Modifier SystemUI roottoegang te verkrijgen. Als dat het geval is, worden alle benodigde vergunningen verleend om het te gebruiken. Anders verschijnen de instructies om u te begeleiden.</string>
-  <string name="adb_setup">The permissions above must be granted to continue. Root access was either denied or unavailable, which means you\'ll have to grant these permissions using ADB.</string>
+  <string name="adb_setup">De bovenstaande machtigingen moeten worden verleend om door te gaan. Root-toegang is geweigerd of niet beschikbaar, dat betekent dat u deze machtigingen moet verlenen met behulp van ADB.</string>
   <string name="missing_perms">Missing Permissions!</string>
   <string name="enable_debug"><![CDATA[1. Go to Settings >> Developer Options and make sure USB Debugging is enabled.]]></string>
   <string name="accept_auth">2. Plug your device into your computer and accept the authorization request on it.</string>
@@ -206,7 +206,7 @@
   <string name="download_adb_windows"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-windows.zip">Download the ADB ZIP for Windows.</a>]]></string>
   <string name="extract_zip">2. Extract the ZIP to an easily-accessible location (ie Desktop).</string>
   <string name="open_cmd">3. Open CMD.</string>
-  <string name="cd_windows"><![CDATA[4. Enter <b>cd C:\\path\\to\\extracted\\folder\\</b> to get to the folder where you extracted ADB. For instance, <b>cd C:\\Users\\Zachary\\Desktop\\platform-tools\\</b>.]]></string>
+  <string name="cd_windows"><![CDATA[4. Voer <b>cd C:\\path\\to\\extracted\\folder\\</b> in om naar de map te gaan waar u ADB heeft uitgepakt. Bij voorbeeld, <b>cd C:\\Users\\Zachary\\Desktop\\platform-tools\\</b>.]]></string>
   <string name="cd_further"><![CDATA[- Make sure that the folder you <b>cd</b> into contains the ADB executable. If not, <b>cd</b> one level further.]]></string>
   <string name="download_adb_mac"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-darwin.zip">Download the ADB ZIP for macOS.</a>]]></string>
   <string name="open_terminal">3. Open Terminal.</string>
