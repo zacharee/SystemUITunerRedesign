@@ -7,7 +7,7 @@
   <string name="sorry_option">Probeer het volgende commando uit te voeren vanaf een computer (het is één regel):</string>
   <string name="more">Meer</string>
   <string name="grant_dump_perm">U moet aan \"android.permission.DUMP\" machtiging geven om deze functie te gebruiken.</string>
-  <string name="safe_mode_auto_enabled">Samsung device detected! Safe Mode has been automatically enabled for your safety. Be warned that modifying any status bar icons has the potential to BREAK SYSTEM UI! Please follow the link in the Play Store description for more information.</string>
+  <string name="safe_mode_auto_enabled">Samsung-apparaat gedetecteerd! De veilige modus is automatisch geactiveerd voor uw veiligheid. Wees gewaarschuwd dat het wijzigen van een pictogram in de statusbalk de potentie heeft om de systeeminterface te verbreken! Volg de link in de Play Store-beschrijving voor meer informatie.</string>
   <string name="notice">LET OP</string>
   <string name="fancy_pulldown_notice">Toggling this option off can cause issues after a reboot. Manually toggle this option on and off after a reboot.</string>
   <string name="safe_mode_summary">SAMSUNG USERS KEEP THIS TURNED ON UNLESS YOU HAVE AN AOSP ROM! \n\n
