@@ -27,7 +27,7 @@
   <string name="reboot_required">(Opnieuw opstarten vereist)</string>
   <string name="sorry">Sorry…</string>
   <string name="created_by">App created by <a href="https://forum.xda-developers.com/member.php?u=7055541">Zacharee1</a></string>
-  <string name="spanish_from">Spanish translation by <a href="https://es.stackoverflow.com/users/28567/aaron-romero">Aaron Romero</a> and <a href="https://forum.xda-developers.com/member.php?u=7055541">Zacharee1</a></string>
+  <string name="spanish_from">Spaanse vertaling door <a href="https://es.stackoverflow.com/users/28567/aaron-romero">Aaron Romero</a> en <a href="https://forum.xda-developers.com/member.php?u=7055541">Zacharee1</a></string>
   <string name="enabled">Ingeschakeld</string>
   <string name="show">Weergeven</string>
   <string name="select_time">Tijd Selecteren</string>
@@ -196,7 +196,7 @@
   <string name="intro_2">Net als in AOSP kunt u met SystemUI-modifier bepaalde pictogrammen in de statusbalk verbergen. Daarnaast kun je ook veel andere dingen doen, zoals het uitschakelen van Let op-meldingen of zelfs het activeren van de duikmodus.</string>
   <string name="intro_3">Er is een venster met vooraf gedefinieerde opties voor de statusbalk, maar als u geen pictogram ziet dat u wilt verbergen, kunt u de automatische detectiefunctie proberen, die probeert de pictogrammen te vinden die verborgen kunnen zijn.</string>
   <string name="intro_4">And the best part about this app? It doesn\'t need root! It will attempt to get root privileges, but if it can\'t you will have to use ADB. USING ADB IS NOT ROOTING!</string>
-  <string name="intro_5">Once you tap the finish button, SystemUI Tuner will attempt to gain root access. If it can, it will grant all needed permissions for you. Otherwise, instructions will appear to guide you.</string>
+  <string name="intro_5">Nadat u op de knop Einde hebt gedrukt, probeert Modifier SystemUI roottoegang te verkrijgen. Als dat het geval is, worden alle benodigde vergunningen verleend om het te gebruiken. Anders verschijnen de instructies om u te begeleiden.</string>
   <string name="adb_setup">The permissions above must be granted to continue. Root access was either denied or unavailable, which means you\'ll have to grant these permissions using ADB.</string>
   <string name="missing_perms">Missing Permissions!</string>
   <string name="enable_debug"><![CDATA[1. Go to Settings >> Developer Options and make sure USB Debugging is enabled.]]></string>
@@ -239,7 +239,7 @@
   <string name="app_specific_desc">Select apps to be included in or excluded from Immersive Mode. Immersive Mode must be disabled to change these settings.</string>
   <string name="blacklist_desc">When on, selected apps will not use Immersive Mode</string>
   <string name="warning">Waarschuwing!</string>
-  <string name="imm_warn">This feature merely allows you to enable Immersive Mode. It DOES NOT do anything beyond that. Any issues you experience are the fault of your device\'s manufacturer. I CANNOT FIX IT!</string>
+  <string name="imm_warn">Met deze functie kunt u eenvoudig de Immersive-modus activeren. Het doet Niets anders dan dat. Elk probleem dat u ervaart, is de schuld van de fabrikant van uw apparaat. IK KAN HET NIET VASTSTELLEN!</string>
   <string name="target_not_found">Unable to launch proper Settings page.</string>
   <string name="select_all">Alles selecteren</string>
   <string name="deselect_all">Alles deselecteren</string>
