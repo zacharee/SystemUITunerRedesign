@@ -192,9 +192,9 @@
   <string name="some_things">Voorbeelden</string>
   <string name="no_root">No Root is Needed</string>
   <string name="permissions">Machtigingen</string>
-  <string name="intro_1">Thanks for downloading my app! SystemUI Tuner is meant to replace/supplement the built-in System UI Tuner seen in AOSP. Both users with and without System UI Tuner can benefit from this app.</string>
+  <string name="intro_1">Bedankt voor het downloaden van mijn applicatie! SystemUI-modifier is bedoeld om de gebruikersinterfacesysteemmodifier in AOSP te vervangen/aanvullen. Zowel gebruikers met als zonder interface-systeemmodifier kunnen van deze toepassing profiteren.</string>
   <string name="intro_2">Net als in AOSP kunt u met SystemUI-modifier bepaalde pictogrammen in de statusbalk verbergen. Daarnaast kun je ook veel andere dingen doen, zoals het uitschakelen van Let op-meldingen of zelfs het activeren van de duikmodus.</string>
-  <string name="intro_3">There is a plethora of pre-defined options for the status bar, but if you don\'t see an icon you want to hide, you can try the Auto-Detect feature, which will attempt to detect icons that can be hidden.</string>
+  <string name="intro_3">Er is een venster met vooraf gedefinieerde opties voor de statusbalk, maar als u geen pictogram ziet dat u wilt verbergen, kunt u de automatische detectiefunctie proberen, die probeert de pictogrammen te vinden die verborgen kunnen zijn.</string>
   <string name="intro_4">And the best part about this app? It doesn\'t need root! It will attempt to get root privileges, but if it can\'t you will have to use ADB. USING ADB IS NOT ROOTING!</string>
   <string name="intro_5">Once you tap the finish button, SystemUI Tuner will attempt to gain root access. If it can, it will grant all needed permissions for you. Otherwise, instructions will appear to guide you.</string>
   <string name="adb_setup">The permissions above must be granted to continue. Root access was either denied or unavailable, which means you\'ll have to grant these permissions using ADB.</string>
