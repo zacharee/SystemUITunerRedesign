@@ -27,21 +27,21 @@
   <string name="reboot_required">(Repornire Necesară)</string>
   <string name="sorry">Îmi pare rau…</string>
   <string name="created_by">Aplicație creată de <a href="https://forum.xda-developers.com/member.php?u=7055541">Zacharee1</a></string>
-  <string name="spanish_from">Spanish translation by <a href="https://es.stackoverflow.com/users/28567/aaron-romero">Aaron Romero</a> and <a href="https://forum.xda-developers.com/member.php?u=7055541">Zacharee1</a></string>
-  <string name="enabled">Enabled</string>
-  <string name="show">Show</string>
-  <string name="select_time">Select Time</string>
-  <string name="select_battery_level">Select Battery Level</string>
-  <string name="wifi_strength">WiFi Strength</string>
-  <string name="battery_charging">Battery Charging</string>
-  <string name="mobile_strength">Mobile Strength</string>
-  <string name="mobile_type">Mobile Type</string>
-  <string name="show_airplane_mode">Show Airplane Mode</string>
-  <string name="show_notifications">Show Notifications</string>
-  <string name="status_bar_style">Status Bar Style</string>
-  <string name="home_desc">For Devices without this Activity</string>
-  <string name="home_joke">Or for devices with it, I\'m not your boss.</string>
-  <string name="home_extra">(If you do have the stock SystemUI Tuner, this one provides some extra goodies.)</string>
+  <string name="spanish_from">Traducere în spaniolă de <a href="https://es.stackoverflow.com/users/28567/aaron-romero">Aaron Romero</a> și <a href="https://forum.xda-developers.com/member.php?u=7055541">Zacharee1</a></string>
+  <string name="enabled">Activat</string>
+  <string name="show">Arată</string>
+  <string name="select_time">Selectează ora</string>
+  <string name="select_battery_level">Selectează Nivelul Bateriei</string>
+  <string name="wifi_strength">Putere WiFi</string>
+  <string name="battery_charging">Se încarcă bateria</string>
+  <string name="mobile_strength">Putere Mobil</string>
+  <string name="mobile_type">Tipul Mobilului</string>
+  <string name="show_airplane_mode">Arată Modul Avion</string>
+  <string name="show_notifications">Arată Notificările</string>
+  <string name="status_bar_style">Stilul bării de stare</string>
+  <string name="home_desc">Pentru aparate fără această activitate</string>
+  <string name="home_joke">Sau pentru aparate cu această activitate, nu sunt șeful tau.</string>
+  <string name="home_extra">(Dacă aveți stocul SystemUI Tuner, acesta oferă servicii suplimentare.)</string>
   <string name="setup">Configurare</string>
   <string name="dnd_switch_in_vol_slider">DND Switch in Vol Slider</string>
   <string name="dark_mode">Dark Mode</string>
