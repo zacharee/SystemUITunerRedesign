@@ -9,7 +9,7 @@
   <string name="grant_dump_perm">Debes activar el permiso \"android.permission.DUMP\" para usar ésta característica.</string>
   <string name="safe_mode_auto_enabled">¡Dispositivo Samsung detectado! Modo seguro se ha activado automáticamente para su seguridad. ¡Se advierte que modificar cualquier icono de la barra de Estado tiene el potencial de romper la interfaz de sistema! Siga el enlace en la descripción de Play Store para obtener más información.</string>
   <string name="notice">AVISO</string>
-  <string name="fancy_pulldown_notice">Toggling this option off can cause issues after a reboot. Manually toggle this option on and off after a reboot.</string>
+  <string name="fancy_pulldown_notice">Desactivar esta opción puede causar problemas después de reiniciar. Activa y desactiva manualmente esta opción después de reiniciar.</string>
   <string name="safe_mode_summary">USUARIOS DE SAMSUNG DEBEN ACTIVAR ESTO A MENOS QUE USEN UNA ROM AOSP! \n\n
         Elimina las modificaciones en la barra de Estado con un reinicio/apagado y restaura después del inicio completo. \n    </string>
   <string name="hide_welcome_screen">Ocultar Ventana de Bienvenida</string>
@@ -253,11 +253,11 @@
   <string name="agree">De Acuerdo</string>
   <string name="cancel">Cancelar</string>
   <string name="dont_show">No Mostar de Nuevo</string>
-  <string name="miui_detected">MIUI Device Detected!</string>
+  <string name="miui_detected">¡Dispositivo MIUI detectado!</string>
   <string name="miui_warning">It seems that you\'re using a MIUI device. Please take note that few, if any, features of this app will work for you. It is NOT fixable!</string>
   <string name="intent">Intent</string>
   <string name="removing_tile">Removing Tile</string>
   <string name="remove_tile">Remove %s?</string>
-  <string name="yes">Yes</string>
+  <string name="yes">Sí</string>
   <string name="no">No</string>
 </resources>
