@@ -158,12 +158,12 @@
   <string name="desired_setting_key">Tasta de setare dorită</string>
   <string name="desired_setting_value">Valoare de setare dorită</string>
   <string name="tasker_intro">Here\'s a quick set of instructions for Tasker. Since I don\'t know how to use Tasker, I can only build in support for intent broadcasts.</string>
-  <string name="back_up_blacklist">Back Up Blacklist</string>
-  <string name="restore_blacklist">Restore Blacklist</string>
-  <string name="chinese_from">Chinese translation by <a href="https://twitter.com/NCXR188?s=09">NCXR188</a></string>
-  <string name="quick_settings">Quick Settings</string>
-  <string name="demo_mode">Demo Mode</string>
-  <string name="auto_detect">Auto Detect</string>
+  <string name="back_up_blacklist">Fă o copie de rezervă a Listei Negre</string>
+  <string name="restore_blacklist">Restabilește Lista neagră</string>
+  <string name="chinese_from">Traducere în limba chineză de<a href="https://twitter.com/NCXR188?s=09">NCXR188</a></string>
+  <string name="quick_settings">Setări Rapide</string>
+  <string name="demo_mode">Mod Demo</string>
+  <string name="auto_detect">Detectare Automată</string>
   <string name="sim_count">SIM Count</string>
   <string name="volume_icon_style">Volume Icon Style</string>
   <string name="bluetooth_icon_style">Bluetooth Icon Style</string>
@@ -209,7 +209,7 @@
   <string name="cd_windows"><![CDATA[4. Enter <b>cd C:\\path\\to\\extracted\\folder\\</b> to get to the folder where you extracted ADB. For instance, <b>cd C:\\Users\\Zachary\\Desktop\\platform-tools\\</b>.]]></string>
   <string name="cd_further"><![CDATA[- Make sure that the folder you <b>cd</b> into contains the ADB executable. If not, <b>cd</b> one level further.]]></string>
   <string name="download_adb_mac"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-darwin.zip">Download the ADB ZIP for macOS.</a>]]></string>
-  <string name="open_terminal">3. Open Terminal.</string>
+  <string name="open_terminal">3. Deschide Terminal.</string>
   <string name="cd_mac"><![CDATA[4. Enter <b>cd /path/to/extracted/folder/</b> to get to the folder you extracted ADB into. For instance, <b>cd /Users/Zachary/Desktop/platform-tools/</b>.]]></string>
   <string name="apt_get_adb"><![CDATA[- <b>sudo apt-get install adb</b>]]></string>
   <string name="make_sure_adb_installed">1. Make sure ADB is installed:</string>
