@@ -9,7 +9,7 @@
   <string name="grant_dump_perm">需要给 android.permission.DUMP 权限来使用此功能</string>
   <string name="safe_mode_auto_enabled">检测到三星设备! 安全模式已自动启用, 为了您的安全, 修改任何状态栏图标有可能打破系统 UI! 请参考play store中说明的链接了解更多信息。</string>
   <string name="notice">注意</string>
-  <string name="fancy_pulldown_notice">Toggling this option off can cause issues after a reboot. Manually toggle this option on and off after a reboot.</string>
+  <string name="fancy_pulldown_notice">关闭此选项可能导致重启后出现问题。如果如果出现问题，请手动切换此选项</string>
   <string name="safe_mode_summary">三星用户保持此选项打开, 除非使用 AOSP ROM!\n\n 在正常重新启动/关闭时清除任何状态栏自定义, 并在启动完成后将其还原。\n    </string>
   <string name="hide_welcome_screen">隐藏欢迎屏幕</string>
   <string name="tasker_support">任务支持</string>
