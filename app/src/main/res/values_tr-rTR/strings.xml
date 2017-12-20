@@ -255,9 +255,9 @@
   <string name="dont_show">Tekrar Gösterme</string>
   <string name="miui_detected">MIUI aygıt algılandı!</string>
   <string name="miui_warning">MIUI bir cihaz kullanıyorsun gibi görünüyor.Bu uygulamayı varsa birkaç, özellikleri sizin için çalışacak not alın lütfen. Düzeltilecek bir şey DEĞİL! </string>
-  <string name="intent">Intent</string>
-  <string name="removing_tile">Removing Tile</string>
-  <string name="remove_tile">Remove %s?</string>
-  <string name="yes">Yes</string>
-  <string name="no">No</string>
+  <string name="intent">Maksat</string>
+  <string name="removing_tile">Karoyu Çıkarma</string>
+  <string name="remove_tile">%s kaldırılsın mı?</string>
+  <string name="yes">Evet</string>
+  <string name="no">Hayir</string>
 </resources>
