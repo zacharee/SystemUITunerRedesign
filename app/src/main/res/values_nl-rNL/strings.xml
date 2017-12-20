@@ -160,7 +160,7 @@
   <string name="tasker_intro">Hier is een snel overzicht van instructies voor Tasker. Omdat ik niet weet hoe ik Tasker moet gebruiken, kan ik alleen ondersteuning voor intentie-uitzendingen inbouwen.</string>
   <string name="back_up_blacklist">Back Up Blacklist</string>
   <string name="restore_blacklist">Restore Blacklist</string>
-  <string name="chinese_from">Chinese translation by <a href="https://twitter.com/NCXR188?s=09">NCXR188</a></string>
+  <string name="chinese_from">Chinese vertaling door <a href="https://twitter.com/NCXR188?s=09"> NCXR188</a></string>
   <string name="quick_settings">Snelle instellingen</string>
   <string name="demo_mode">Demo Mode</string>
   <string name="auto_detect">Automatische detectie</string>
@@ -237,7 +237,7 @@
   <string name="blacklist">Blacklist</string>
   <string name="select_apps">Selecteer Apps</string>
   <string name="app_specific_desc">Selecteer applicaties om in Immersive Mode op te nemen of uit te sluiten. De meeslepende modus moet worden uitgeschakeld om deze instellingen te wijzigen.</string>
-  <string name="blacklist_desc">When on, selected apps will not use Immersive Mode</string>
+  <string name="blacklist_desc">Wanneer ingeschakeld, zullen geselecteerde apps de Immersive-modus niet gebruiken</string>
   <string name="warning">Waarschuwing!</string>
   <string name="imm_warn">Met deze functie kunt u eenvoudig de Immersive-modus activeren. Het doet Niets anders dan dat. Elk probleem dat u ervaart, is de schuld van de fabrikant van uw apparaat. IK KAN HET NIET VASTSTELLEN!</string>
   <string name="target_not_found">Unable to launch proper Settings page.</string>
