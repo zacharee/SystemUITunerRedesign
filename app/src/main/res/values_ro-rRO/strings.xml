@@ -6,10 +6,10 @@
   <string name="sorry_explain">Ceva nu a mers bine în timp ce setai această comutare.</string>
   <string name="sorry_option">Încearcă să execuți următoarea comandă de la un calculator (este o singură linie):</string>
   <string name="more">Mai mult</string>
-  <string name="grant_dump_perm">You need to grant the permission \"android.permission.DUMP\" to use this feature.</string>
-  <string name="safe_mode_auto_enabled">Samsung device detected! Safe Mode has been automatically enabled for your safety. Be warned that modifying any status bar icons has the potential to BREAK SYSTEM UI! Please follow the link in the Play Store description for more information.</string>
-  <string name="notice">NOTICE</string>
-  <string name="fancy_pulldown_notice">Toggling this option off can cause issues after a reboot. Manually toggle this option on and off after a reboot.</string>
+  <string name="grant_dump_perm">Trebuie să permiți \"android.permission.DUMP\" să folosească această caracteristică.</string>
+  <string name="safe_mode_auto_enabled">Aparat Samsung detectat! Modul de siguranță a fost activat pentru sigurața dumneavoastră. Orice modificare a statutului iconițelor are potențialul de a SPARGE SYSTEM UI! Pentru mai multe informații, vă rugăm să urmați link-ul din descrierea Play Store.</string>
+  <string name="notice">NOTIFICARE</string>
+  <string name="fancy_pulldown_notice">Dezactivarea acestei opțiuni poate duce la unele probleme după o repornire. Opriți și porniți manual această opțiune după o repornire.</string>
   <string name="safe_mode_summary">SAMSUNG USERS KEEP THIS TURNED ON UNLESS YOU HAVE AN AOSP ROM! \n\n
         Clears any status bar customizations on NORMAL reboot/shutdown and restores them after boot completes. \n
     </string>
