@@ -254,7 +254,7 @@
   <string name="cancel">Cancelar</string>
   <string name="dont_show">No Mostar de Nuevo</string>
   <string name="miui_detected">¡Dispositivo MIUI detectado!</string>
-  <string name="miui_warning">It seems that you\'re using a MIUI device. Please take note that few, if any, features of this app will work for you. It is NOT fixable!</string>
+  <string name="miui_warning">Parece que usted está usando un dispositivo MIUI. Tenga en cuenta que pocos o ningúna característica de esta aplicación funcionará para usted. NO se puede arreglar!</string>
   <string name="intent">Intent</string>
   <string name="removing_tile">Removing Tile</string>
   <string name="remove_tile">Remove %s?</string>
