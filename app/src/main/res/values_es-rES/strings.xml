@@ -235,7 +235,7 @@
   <string name="app_specific">App- Específica</string>
   <string name="blacklist">Lista negra</string>
   <string name="select_apps">Seleccionar Apps</string>
-  <string name="app_specific_desc">Select apps to be included in or excluded from Immersive Mode. Immersive Mode must be disabled to change these settings.</string>
+  <string name="app_specific_desc">Seleccionar aplicaciones para ser incluidos o excluidos del modo inmersivo. El Modo de inmersión debe desactivarse para cambiar la configuración.</string>
   <string name="blacklist_desc">Al estar Activo, las aplicaciones seleccionadas no usarán el modo inmersivo</string>
   <string name="warning">¡Alerta!</string>
   <string name="imm_warn">Esta función simplemente permite activar el modo de inmersión. NO hace nada más allá de eso. Cualquier problema que usted experimenta es culpa del fabricante de su dispositivo. ¡NO PUEDO ARREGLARLO!</string>
