@@ -255,8 +255,8 @@
   <string name="dont_show">No Mostar de Nuevo</string>
   <string name="miui_detected">¡Dispositivo MIUI detectado!</string>
   <string name="miui_warning">Parece que usted está usando un dispositivo MIUI. Tenga en cuenta que pocos o ningúna característica de esta aplicación funcionará para usted. NO se puede arreglar!</string>
-  <string name="intent">Intent</string>
-  <string name="removing_tile">Removing Tile</string>
+  <string name="intent">Intenta</string>
+  <string name="removing_tile">Remover Activador</string>
   <string name="remove_tile">Remover %s?</string>
   <string name="yes">Sí</string>
   <string name="no">No</string>
