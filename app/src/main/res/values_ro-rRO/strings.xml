@@ -89,11 +89,11 @@
   <string name="danger_zone">Zonă de pericol</string>
   <string name="safe_mode">Mod de siguranță</string>
   <string name="enable_custom_settings_input">Enable Custom Settings Input</string>
-  <string name="enable">Enable</string>
-  <string name="knox_icon">KNOX Icon</string>
-  <string name="smart_network_icon">Smart Network Icon</string>
-  <string name="glove_icon">Glove Icon</string>
-  <string name="private_mode_icon">Private Mode Icon</string>
+  <string name="enable">Activează</string>
+  <string name="knox_icon">Iconiță KNOX</string>
+  <string name="smart_network_icon">Iconiță Rețea inteligentă</string>
+  <string name="glove_icon">Iconiță Mânușă</string>
+  <string name="private_mode_icon">Iconiță Mod Privat</string>
   <string name="face_icon">Face Icon</string>
   <string name="femtocell_icon">Femtocell Icon</string>
   <string name="gps_icon">GPS Icon</string>
