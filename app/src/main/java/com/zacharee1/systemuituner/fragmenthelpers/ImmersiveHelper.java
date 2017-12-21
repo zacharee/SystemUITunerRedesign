@@ -21,7 +21,7 @@ import com.zacharee1.systemuituner.handlers.ImmersiveHandler;
 public class ImmersiveHelper extends BaseHelper implements Preference.OnPreferenceChangeListener {
     public static final String IMMERSIVE_BOXES = "imm_boxes";
     public static final String APP_SPECIFIC = "app_specific";
-    public static final String APP_IMMERSIVE = "app_immsersive";
+    public static final String APP_IMMERSIVE = "app_immersive";
     public static final String IMMERSIVE_BLACKLIST = "immersive_blacklist";
     public static final String SELECT_APPS = "select_apps";
     public static final String CONFIG_QS = "config_qs";
