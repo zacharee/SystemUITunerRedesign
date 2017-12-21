@@ -10,11 +10,9 @@
   <string name="safe_mode_auto_enabled">Aparat Samsung detectat! Modul de siguranță a fost activat pentru sigurața dumneavoastră. Orice modificare a statutului iconițelor are potențialul de a SPARGE SYSTEM UI! Pentru mai multe informații, vă rugăm să urmați link-ul din descrierea Play Store.</string>
   <string name="notice">NOTIFICARE</string>
   <string name="fancy_pulldown_notice">Dezactivarea acestei opțiuni poate duce la unele probleme după o repornire. Opriți și porniți manual această opțiune după o repornire.</string>
-  <string name="safe_mode_summary">SAMSUNG USERS KEEP THIS TURNED ON UNLESS YOU HAVE AN AOSP ROM! \n\n
-        Clears any status bar customizations on NORMAL reboot/shutdown and restores them after boot completes. \n
-    </string>
+  <string name="safe_mode_summary">UTILIZATORII SAMSUNG SĂ PĂSTREZE ACEASTĂ OPȚIUNE DEZACTIVATĂ!\n\n        Elimină toate particularizările bării de stare și pe repornire/închidere NORMAL și restabilește-le după ce s-a repornit complet.\n    </string>
   <string name="hide_welcome_screen">Ascunde Ecranul de Întâmpinare</string>
-  <string name="tasker_support">Tasker Support</string>
+  <string name="tasker_support">Suport Tasker</string>
   <string name="instructions">Instrucțiuni</string>
   <string name="safe_mode_android_o">Din cauza limitărilor adăugate la Android O, această caracteristică nu va funcționa pe aparatul dumneavoastră.</string>
   <string name="requires_nougat">Necesită Nougat sau o versiune mai noua.</string>
@@ -66,7 +64,7 @@
   <string name="volume">Pictograma de volum</string>
   <string name="headset_icon">Pictograma căştilor</string>
   <string name="speakerphone_icon">Pictograma difuzorului</string>
-  <string name="time_such"><![CDATA[Time & Such]]></string>
+  <string name="time_such"><![CDATA[Timp & Altele]]></string>
   <string name="clock">Iconiță Ceas</string>
   <string name="show_clock_seconds">Arată Secundele de pe Ceas</string>
   <string name="alarm_clock_icon">Iconiță Alarmă</string>
@@ -78,11 +76,11 @@
   <string name="animator_duration_scale">Animator Duration Scale</string>
   <string name="transition_animation_scale">Transition Animation Scale</string>
   <string name="window_animation_scale">Window Animation Scale</string>
-  <string name="animation_speeds">Animation Speeds</string>
+  <string name="animation_speeds">Viteza animației</string>
   <string name="general">General</string>
-  <string name="heads_up_notifications">Heads-Up Notifications</string>
-  <string name="headphone_volume_warning">Headphone Volume Warning</string>
-  <string name="custom_settings_values">Custom Settings Values</string>
+  <string name="heads_up_notifications">Notificări de avertizare</string>
+  <string name="headphone_volume_warning">Avertizare pentru volulmul căștilor</string>
+  <string name="custom_settings_values">Setări particularizate ale valorilor</string>
   <string name="global">Global</string>
   <string name="secure">Securizare</string>
   <string name="system">Sistem</string>
