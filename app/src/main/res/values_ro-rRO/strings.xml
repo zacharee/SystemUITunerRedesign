@@ -198,13 +198,13 @@
   <string name="adb_setup">Pentru continuare, trebuie sã acordati permisiune cerintei de mai sus. Accesul Root a fost fie respins, fie indisponibil, ceea ce însemnã cã trebuie sã oferiti permisiune folosind ADB.</string>
   <string name="missing_perms">Permisiunile lipsesc!</string>
   <string name="enable_debug"><![CDATA[1. Du-te la Setãri >> Optiuni Developer si asigurã-te cã USB Debugging este dezactivat.]]></string>
-  <string name="accept_auth">2. Plug your device into your computer and accept the authorization request on it.</string>
-  <string name="enable_devops"><![CDATA[- Enable Developer Options by going to Settings >> About, finding \"Build Number\" and tapping it 7 times.]]></string>
-  <string name="download_drivers">- Windows users may need to install device drivers, which are available from the manufacturer\'s website.</string>
-  <string name="download_adb_windows"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-windows.zip">Download the ADB ZIP for Windows.</a>]]></string>
-  <string name="extract_zip">2. Extract the ZIP to an easily-accessible location (ie Desktop).</string>
-  <string name="open_cmd">3. Open CMD.</string>
-  <string name="cd_windows"><![CDATA[4. Enter <b>cd C:\\path\\to\\extracted\\folder\\</b> to get to the folder where you extracted ADB. For instance, <b>cd C:\\Users\\Zachary\\Desktop\\platform-tools\\</b>.]]></string>
+  <string name="accept_auth">2. Conectați aparatul în computer și acceptați cererea de autorizare.</string>
+  <string name="enable_devops"><![CDATA[- Activează Opțiuniile de Developer de la Setări >> Despre, găsește \"Build Number\" și apasă pe el de 7 ori.]]></string>
+  <string name="download_drivers">- Utilizatorii de Windows se poată să aibe nevoie să instaleze drivere-le, care sunt disponibile pe website-ul producătorului.</string>
+  <string name="download_adb_windows"><![CDATA[1.<a href="https://dl.google.com/android/repository/platform-tools-latest-windows.zip">Descarcă ADB ZIP pentru Windows.</a>]]></string>
+  <string name="extract_zip">2. Extrage fișierul ZIP pe o locație ușor accesibilă (ex. Desktop).</string>
+  <string name="open_cmd">3. Deschide CMD.</string>
+  <string name="cd_windows"><![CDATA[4. Introduce <b>cd C:\\path\\to\\extracted\\folder\\</b> pentru a obține dosarul în care ai extras ADB. De exemplu, <b>cd C:\\Users\\Zachary\\Desktop\\platform-tools\\</b>.]]></string>
   <string name="cd_further"><![CDATA[- Make sure that the folder you <b>cd</b> into contains the ADB executable. If not, <b>cd</b> one level further.]]></string>
   <string name="download_adb_mac"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-darwin.zip">Download the ADB ZIP for macOS.</a>]]></string>
   <string name="open_terminal">3. Deschide Terminal.</string>
