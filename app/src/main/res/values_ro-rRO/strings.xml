@@ -205,15 +205,15 @@
   <string name="extract_zip">2. Extrage fișierul ZIP pe o locație ușor accesibilă (ex. Desktop).</string>
   <string name="open_cmd">3. Deschide CMD.</string>
   <string name="cd_windows"><![CDATA[4. Introduce <b>cd C:\\path\\to\\extracted\\folder\\</b> pentru a obține dosarul în care ai extras ADB. De exemplu, <b>cd C:\\Users\\Zachary\\Desktop\\platform-tools\\</b>.]]></string>
-  <string name="cd_further"><![CDATA[- Make sure that the folder you <b>cd</b> into contains the ADB executable. If not, <b>cd</b> one level further.]]></string>
-  <string name="download_adb_mac"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-darwin.zip">Download the ADB ZIP for macOS.</a>]]></string>
+  <string name="cd_further"><![CDATA[- Asigură-te că dosarul <b>cd</b> conține executabilul ADB. Dacă nu, <b>cd</b> un nivel mai departe.]]></string>
+  <string name="download_adb_mac"><![CDATA[1.<a href="https://dl.google.com/android/repository/platform-tools-latest-darwin.zip">Descarcă ADB ZIP pentru macOS.</a>]]></string>
   <string name="open_terminal">3. Deschide Terminal.</string>
   <string name="cd_mac"><![CDATA[4. Intră în<b>cd /path/to/extracted/folder</b> pentru a găsi dosarul în care ai extras ADB-ul. Spre exemplu, <b>cd /Users/Zachary/Desktop/platform-tools/</b>.]]></string>
   <string name="apt_get_adb"><![CDATA[- <b>sudo apt-obține instalarea adb</b>]]></string>
   <string name="make_sure_adb_installed">1. Asigură-te că ADB este instalat:</string>
-  <string name="yum_install_adb"><![CDATA[- <b>sudo yum install android-tools</b>]]></string>
-  <string name="download_adb_linux"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-linux.zip">Download the ADB ZIP for Linux.</a>]]></string>
-  <string name="cd_linux"><![CDATA[4. Enter <b>cd /path/to/extracted/folder/</b> to get to the folder you extracted ADB into. For instance, <b>cd /home/Zachary/Desktop/platform-tools/</b>.]]></string>
+  <string name="yum_install_adb"><![CDATA[- <b> instalare unetle android sudo yum</b>]]></string>
+  <string name="download_adb_linux"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-linux.zip">Descarcă ADB ZIP pentru Linux.</a>]]></string>
+  <string name="cd_linux"><![CDATA[4. Introduce <b>cd /path/to/extracted/folder/</b> pentru a obține Spre exemplu, <b>cd /home/Zachary/Desktop/platform-tools/</b>.]]></string>
   <string name="choose_your_weapon">Alege-ți Arma</string>
   <string name="initial_setup">Configurare Inițială</string>
   <string name="windows_setup">Configurare Windows</string>
