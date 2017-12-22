@@ -242,12 +242,12 @@
   <string name="select_all">Selectează tot</string>
   <string name="deselect_all">Deselectează tot</string>
   <string name="invert_selection">Inversează Selecția</string>
-  <string name="statbar_rotation_lock_notif">On certain devices, modifying the status bar icons can cause an icon that looks like a phone to appear. This is the Rotation Lock icon.</string>
+  <string name="statbar_rotation_lock_notif">Pe anumite aparate, modificare iconițelor din bara de stare pote să ducă la apariția unei iconițe asemănătoare unui telefon. Aceasta este iconița de Blocare a Rotației.</string>
   <string name="feature_not_supported">Se pare că aparatul tău nu acceptă această caracteristică :/</string>
   <string name="select_app">Selectează Aplicația</string>
   <string name="select_component">Selectează Componeta</string>
   <string name="reset">Resetare</string>
-  <string name="pnc_desc">Power Notification Controls allow you to set the level of importance for notifications on a per-app basis. Simply turn the feature on and hold down on a notification to get started. You may need to tap the A to enable the slider.</string>
+  <string name="pnc_desc">Controale de Notificare a Puterii îți permit să setezi nivelul importanței notificărilor. Activează această funcție și ține apăsat o notificare pentru a începe. Trebuie să apăsați A pentru a activa glisorul.</string>
   <string name="pnc_warn">This feature is known to be unreliable on certain devices, especially on TouchWiz! It is impossible to fix, but the best workaround seems to be to tap repeatedly on the desired level. Again, I CANNOT fix it!</string>
   <string name="agree">De acord</string>
   <string name="cancel">Anulare</string>
