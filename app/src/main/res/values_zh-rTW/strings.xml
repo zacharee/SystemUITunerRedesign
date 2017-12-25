@@ -257,8 +257,8 @@
   <string name="miui_detected">偵測到使用 MIUI 的裝置！</string>
   <string name="miui_warning">看起來你正在使用搭載 MIUI 的裝置。請注意本裝置只可以使用 app 的少數功能，這題無解！</string>
   <string name="intent">Intent</string>
-  <string name="removing_tile">Removing Tile</string>
-  <string name="remove_tile">Remove %s?</string>
-  <string name="yes">Yes</string>
-  <string name="no">No</string>
+  <string name="removing_tile">正在移除方塊</string>
+  <string name="remove_tile">要移除 %s 嗎？</string>
+  <string name="yes">是</string>
+  <string name="no">否</string>
 </resources>
