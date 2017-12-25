@@ -74,7 +74,7 @@
   <string name="do_not_disturb">Ne smetaj ikona</string>
   <string name="dnd">Ne smetaj</string>
   <string name="donate">Doniraj</string>
-  <string name="reset_blacklist">Očisti crnu listu</string>
+  <string name="reset_blacklist">Očisti crnu popis</string>
   <string name="animator_duration_scale">Animator Duration Scale</string>
   <string name="transition_animation_scale">Transition Animation Scale</string>
   <string name="window_animation_scale">Window Animation Scale</string>
@@ -162,8 +162,8 @@
   <string name="restore_blacklist">Restore Blacklist</string>
   <string name="chinese_from">Chinese translation by <a href="https://twitter.com/NCXR188?s=09">NCXR188</a></string>
   <string name="quick_settings">Quick Settings</string>
-  <string name="demo_mode">Demo Mode</string>
-  <string name="auto_detect">Auto Detect</string>
+  <string name="demo_mode">Demo način rada</string>
+  <string name="auto_detect">Automatsko otkrivanje</string>
   <string name="sim_count">SIM Count</string>
   <string name="volume_icon_style">Volume Icon Style</string>
   <string name="bluetooth_icon_style">Bluetooth Icon Style</string>
@@ -173,10 +173,10 @@
   <string name="sync_icon">Ikona sinkronizacije</string>
   <string name="microphone_mute">Microphone Muted Icon</string>
   <string name="night_display_not_avail">Night Display is not available on this device.</string>
-  <string name="immersive_mode">Immersive Mode</string>
-  <string name="none">None</string>
+  <string name="immersive_mode">Cijelozaslonski način rada</string>
+  <string name="none">Ništa</string>
   <string name="full">Full</string>
-  <string name="navigation_bar">Navigation Bar</string>
+  <string name="navigation_bar">Navigacijska traka</string>
   <string name="pre_confirms">Pre-Confirms</string>
   <string name="config_qs">Konfiguriraj brze pločice</string>
   <string name="mode">Način</string>
@@ -187,7 +187,7 @@
   <string name="choose_right">Choose Right Shortcut</string>
   <string name="unlock_device">Otključaj uređaj</string>
   <string name="shortcuts">Prečaci</string>
-  <string name="not_set">Not Set</string>
+  <string name="not_set">Nije postavljeno</string>
   <string name="welcome">Dobrodošli!</string>
   <string name="some_things">Primjeri</string>
   <string name="no_root">Root nije potreban</string>
@@ -234,7 +234,7 @@
   <string name="fedora">Fedora</string>
   <string name="linux">Linux</string>
   <string name="app_specific">App-Specific</string>
-  <string name="blacklist">Blacklist</string>
+  <string name="blacklist">Crni popis</string>
   <string name="select_apps">Select Apps</string>
   <string name="app_specific_desc">Select apps to be included in or excluded from Immersive Mode. Immersive Mode must be disabled to change these settings.</string>
   <string name="blacklist_desc">When on, selected apps will not use Immersive Mode</string>
@@ -248,13 +248,13 @@
   <string name="feature_not_supported">It seems your device doesn\'t support this feature :/</string>
   <string name="select_app">Select App</string>
   <string name="select_component">Select Component</string>
-  <string name="reset">Reset</string>
+  <string name="reset">Poništi</string>
   <string name="pnc_desc">Power Notification Controls allow you to set the level of importance for notifications on a per-app basis. Simply turn the feature on and hold down on a notification to get started. You may need to tap the A to enable the slider.</string>
   <string name="pnc_warn">This feature is known to be unreliable on certain devices, especially on TouchWiz! It is impossible to fix, but the best workaround seems to be to tap repeatedly on the desired level. Again, I CANNOT fix it!</string>
-  <string name="agree">Agree</string>
-  <string name="cancel">Cancel</string>
+  <string name="agree">Slažem se</string>
+  <string name="cancel">Otkaži</string>
   <string name="dont_show">Don\'t Show Again</string>
-  <string name="miui_detected">MIUI Device Detected!</string>
+  <string name="miui_detected">MIUI uređaj je otkriven!</string>
   <string name="miui_warning">It seems that you\'re using a MIUI device. Please take note that few, if any, features of this app will work for you. It is NOT fixable!</string>
   <string name="intent">Intent</string>
   <string name="removing_tile">Removing Tile</string>
