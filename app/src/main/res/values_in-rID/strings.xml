@@ -10,41 +10,41 @@
   <string name="safe_mode_auto_enabled">Perangkat samsung terdeteksi! Mode aman telah secara otomatis diaktifkan untuk keselamatan Anda. Berhati-hatilah bahwa memodifikasi ikon status bar memiliki potensi untuk memecahkan sistem UI! Silahkan ikuti tautan di deskripsi Play Store untuk informasi lebih lanjut.</string>
   <string name="notice">PEMBERITAHUAN</string>
   <string name="fancy_pulldown_notice">Toggling opsi ini dapat menyebabkan masalah setelah reboot. Secara manual matikan opsi ini dan nonaktifkan setelah melakukan reboot.</string>
-  <string name="safe_mode_summary">SAMSUNG USERS KEEP THIS TURNED ON UNLESS YOU HAVE AN AOSP ROM! \n\n
-        Clears any status bar customizations on NORMAL reboot/shutdown and restores them after boot completes. \n
+  <string name="safe_mode_summary">PENGGUNA SAMSUNG TERBUKTI INI TURNED ON KECUALI ANDA MEMILIKI ROM AOSP! \n\n
+        Menghapus setiap penyesuaian status bar pada reboot NORMAL/shutdown dan mengembalikannya setelah boot selesai. \n
     </string>
-  <string name="hide_welcome_screen">Hide Welcome Screen</string>
-  <string name="tasker_support">Tasker Support</string>
-  <string name="instructions">Instructions</string>
-  <string name="safe_mode_android_o">Because of limitations added in Android O, this feature will not work on your device.</string>
-  <string name="requires_nougat">Requires Nougat or later.</string>
-  <string name="requires_oreo">Requires Oreo or later.</string>
-  <string name="enable_in_settings">Enable in Settings.</string>
-  <string name="about">About</string>
-  <string name="miscellaneous">Miscellaneous</string>
-  <string name="settings">Settings</string>
-  <string name="status_bar">Status Bar</string>
-  <string name="reboot_required">(Reboot Required)</string>
-  <string name="sorry">Sorry…</string>
-  <string name="created_by">App created by <a href="https://forum.xda-developers.com/member.php?u=7055541">Zacharee1</a></string>
-  <string name="spanish_from">Spanish translation by <a href="https://es.stackoverflow.com/users/28567/aaron-romero">Aaron Romero</a> and <a href="https://forum.xda-developers.com/member.php?u=7055541">Zacharee1</a></string>
-  <string name="enabled">Enabled</string>
-  <string name="show">Show</string>
-  <string name="select_time">Select Time</string>
-  <string name="select_battery_level">Select Battery Level</string>
-  <string name="wifi_strength">WiFi Strength</string>
-  <string name="battery_charging">Battery Charging</string>
-  <string name="mobile_strength">Mobile Strength</string>
-  <string name="mobile_type">Mobile Type</string>
-  <string name="show_airplane_mode">Show Airplane Mode</string>
-  <string name="show_notifications">Show Notifications</string>
-  <string name="status_bar_style">Status Bar Style</string>
-  <string name="home_desc">For Devices without this Activity</string>
-  <string name="home_joke">Or for devices with it, I\'m not your boss.</string>
-  <string name="home_extra">(If you do have the stock SystemUI Tuner, this one provides some extra goodies.)</string>
-  <string name="setup">Setup</string>
-  <string name="dnd_switch_in_vol_slider">DND Switch in Vol Slider</string>
-  <string name="dark_mode">Dark Mode</string>
+  <string name="hide_welcome_screen">Sembunyikan Layar Selamat Datang</string>
+  <string name="tasker_support">Dukungan Tasker</string>
+  <string name="instructions">Instruksi</string>
+  <string name="safe_mode_android_o">Karena keterbatasan yang ditambah di Android O, fitur ini tidak akan berfungsi pada perangkat Anda.</string>
+  <string name="requires_nougat">Memerlukan Nougat atau nanti.</string>
+  <string name="requires_oreo">Membutukan Oreo atau nanti.</string>
+  <string name="enable_in_settings">Aktifkan di Setelan.</string>
+  <string name="about">Tentang</string>
+  <string name="miscellaneous">Lain-lain</string>
+  <string name="settings">Setelan</string>
+  <string name="status_bar">Bilah status</string>
+  <string name="reboot_required">(Reboot Diperlukan)</string>
+  <string name="sorry">Maaf…</string>
+  <string name="created_by">Aplikasi yang dibuat oleh <a href="https://forum.xda-developers.com/member.php?u=7055541">Zacharee1</a></string>
+  <string name="spanish_from">Terjemahan bahasa Spanyol oleh <a href="https://es.stackoverflow.com/users/28567/aaron-romero">Aaron Romero</a> dan <a href="https://forum.xda-developers.com/member.php?u=7055541">Zacharee1</a></string>
+  <string name="enabled">Diaktifkan</string>
+  <string name="show">Tampilkan</string>
+  <string name="select_time">Pilih Waktu</string>
+  <string name="select_battery_level">Pilih Tingkat Baterai</string>
+  <string name="wifi_strength">Kekuatan WiFi</string>
+  <string name="battery_charging">Pengisian Baterai</string>
+  <string name="mobile_strength">Kekuatan Mobile</string>
+  <string name="mobile_type">Jenis Mobile</string>
+  <string name="show_airplane_mode">Tampilkan Mode Pesawat Terbang</string>
+  <string name="show_notifications">Tampilkan Pemberitahuan</string>
+  <string name="status_bar_style">Gaya Bilah Status</string>
+  <string name="home_desc">Untuk Perangkat tanpa Aktivitas</string>
+  <string name="home_joke">Atau untuk perangkat dengan itu, saya bukan atasan Anda.</string>
+  <string name="home_extra">(Jika Anda memiliki stok SytemUI Tuner, yang satu ini menyediakan beberapa barang ekstra.)</string>
+  <string name="setup">Mempersiapkan</string>
+  <string name="dnd_switch_in_vol_slider">Beralih DND dalam Vol Slider</string>
+  <string name="dark_mode">Mode Gelap</string>
   <string name="managed_profile_icon">Managed Profile Icon</string>
   <string name="battery_icon">Battery Icon</string>
   <string name="battery_percentage">Battery Percentage</string>
