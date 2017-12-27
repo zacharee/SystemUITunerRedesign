@@ -201,8 +201,8 @@
   <string name="missing_perms">Izin yang Hilang!</string>
   <string name="enable_debug"><![CDATA[1. Pergi ke Pengaturan > Pengembang Pilihan dan membuat yakin USB Debugging diaktifkan.]]></string>
   <string name="accept_auth">2. Pasang perangkan Anda ke komputer dan menerima permintaan otoritas di atasnya.</string>
-  <string name="enable_devops"><![CDATA[- Enable Developer Options by going to Settings >> About, finding \"Build Number\" and tapping it 7 times.]]></string>
-  <string name="download_drivers">- Windows users may need to install device drivers, which are available from the manufacturer\'s website.</string>
+  <string name="enable_devops"><![CDATA[- Memungkinkan pengembang pilihan dengan pergi ke pengaturan >> tentang, menemukan\"Nomor Bangunan\" dan menekan itu 7 kali.]]></string>
+  <string name="download_drivers">- Jendela pengguna mungkin perlu memasang driver perangkat yang tersedia dari website produsen.</string>
   <string name="download_adb_windows"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-windows.zip"> Unduh ZIP ADB untuk WIndows.</a>]]></string>
   <string name="extract_zip">2. Ekstrak ZIP ke lokasi yang mudah diakses (yaitu Dekstop).</string>
   <string name="open_cmd">3. Buka CMD.</string>
