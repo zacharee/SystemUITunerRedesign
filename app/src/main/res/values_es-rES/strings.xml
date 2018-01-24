@@ -3,7 +3,7 @@
 <resources>
   <string name="app_name">SystemUI Tuner</string>
   <string name="to_the_tweaks">¡Configurar!</string>
-  <string name="sorry_explain">Algo salió mal al activar la palanca.</string>
+  <string name="sorry_explain">Something went wrong while setting this toggle.</string>
   <string name="sorry_option">Intenta ejecutar el comando desde tu computadora (una línea):</string>
   <string name="more">Más</string>
   <string name="grant_dump_perm">Debes activar el permiso \"android.permission.DUMP\" para usar ésta característica.</string>
