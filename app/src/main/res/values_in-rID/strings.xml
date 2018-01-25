@@ -227,12 +227,12 @@
   <string name="which_os">Sistem operasi mana komputer Anda berjalan?</string>
   <string name="on_device">Ikuti petunjuk ini pada perangkat Anda.</string>
   <string name="on_computer">Ikuti petunjuk ini pada komputer Anda.</string>
-  <string name="run_on_computer">Jalankan perintah ini pada komputer Anda. Untuk Linux dan macOS, Anda perlu menggunakan \"./adb\" bukan \"adb\".</string>
+  <string name="run_on_computer">Run these commands on your computer. For Linux (Other) and macOS, you will need to use \"./adb\" instead of \"adb\".</string>
   <string name="windows">Windows</string>
   <string name="mac">macOS</string>
   <string name="ubuntu">Ubuntu</string>
   <string name="fedora">Fedora</string>
-  <string name="linux">Linux</string>
+  <string name="linux">Linux (Other)</string>
   <string name="app_specific">Spesifik App</string>
   <string name="blacklist">Daftar Hitam</string>
   <string name="select_apps">Pilih Aplikasi</string>
