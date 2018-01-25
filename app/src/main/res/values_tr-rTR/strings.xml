@@ -226,12 +226,12 @@
   <string name="which_os">Bilgisayarınız hangi işletim sisteminde çalışıyor?</string>
   <string name="on_device">Cihazınızdaki bu talimatları uygulayın.</string>
   <string name="on_computer">Bilgisayarınızdaki bu talimatları uygulayın.</string>
-  <string name="run_on_computer">Bilgisayarınızda bu komutları  çalıştırın. Linux ve macOS için, \"adb\" yerine \"./adb\" kullanmaya ihtiyacınız olacaktır.</string>
+  <string name="run_on_computer">Run these commands on your computer. For Linux (Other) and macOS, you will need to use \"./adb\" instead of \"adb\".</string>
   <string name="windows">Windows</string>
   <string name="mac">macOS</string>
   <string name="ubuntu">Ubuntu</string>
   <string name="fedora">Fedora</string>
-  <string name="linux">Linux</string>
+  <string name="linux">Linux (Other)</string>
   <string name="app_specific">Uygulama-Özel</string>
   <string name="blacklist">Karaliste</string>
   <string name="select_apps">Uygulamaları Seç</string>
