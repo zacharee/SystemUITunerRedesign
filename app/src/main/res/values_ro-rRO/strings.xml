@@ -225,12 +225,12 @@
   <string name="which_os">Ce sistem de operare rulează pe computerul tău?</string>
   <string name="on_device">Urmează instrucțiunile următoare, pe aparatul tău.</string>
   <string name="on_computer">Urmează instrucțiunile următoare pe computerul tău.</string>
-  <string name="run_on_computer">Rulează aceste comenzi pe computerul tău. Pentur Linux și macOS, ai nevoie de \"./adb\", în loc de \"adb\".</string>
+  <string name="run_on_computer">Run these commands on your computer. For Linux (Other) and macOS, you will need to use \"./adb\" instead of \"adb\".</string>
   <string name="windows">Windows</string>
   <string name="mac">macOS</string>
   <string name="ubuntu">Ubuntu</string>
   <string name="fedora">Fedora</string>
-  <string name="linux">Linux</string>
+  <string name="linux">Linux (Other)</string>
   <string name="app_specific">Specificele Aplicației</string>
   <string name="blacklist">Lista neagră</string>
   <string name="select_apps">Selectează Aplicații</string>
