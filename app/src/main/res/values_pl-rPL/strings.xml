@@ -226,12 +226,12 @@
   <string name="which_os">Jaki system operacyjny używa twój komputer?</string>
   <string name="on_device">Postępuj z tymi instrukcjami na twoim urządzeniu.</string>
   <string name="on_computer">Postępuj z tymi instrukcjami na twoim komputerze.</string>
-  <string name="run_on_computer">Uruchom te polecenia na twoim komputerze. Użytkownicy Linux i macOS musza użyć \"./adb\" zamiast \"adb\".</string>
+  <string name="run_on_computer">Run these commands on your computer. For Linux (Other) and macOS, you will need to use \"./adb\" instead of \"adb\".</string>
   <string name="windows">Windows</string>
   <string name="mac">macOS</string>
   <string name="ubuntu">Ubuntu</string>
   <string name="fedora">Fedora</string>
-  <string name="linux">Linux</string>
+  <string name="linux">Linux (Other)</string>
   <string name="app_specific">Specyficzne dla aplikacji</string>
   <string name="blacklist">Czarna lista</string>
   <string name="select_apps">Wybierz Aplikacje</string>
