@@ -226,12 +226,12 @@
   <string name="which_os">أي نظام تشغيل يعمل به جهاز الكمبيوتر الخاص بك؟</string>
   <string name="on_device">اتبع هذه الإرشادات على جهازك الخاص.</string>
   <string name="on_computer">اتبع هذه الإرشادات على الكمبيوتر الخاص بك.</string>
-  <string name="run_on_computer">تشغيل هذه الأوامر على جهاز الكمبيوتر الخاص بك. لينكس وماك، سوف تحتاج إلى استخدام \"./adb\" بدلاً من \"adb\".</string>
+  <string name="run_on_computer">Run these commands on your computer. For Linux (Other) and macOS, you will need to use \"./adb\" instead of \"adb\".</string>
   <string name="windows">ويندوز</string>
   <string name="mac">نظام macOS</string>
   <string name="ubuntu">Ubuntu</string>
   <string name="fedora">Fedora</string>
-  <string name="linux">Linux</string>
+  <string name="linux">Linux (Other)</string>
   <string name="app_specific">خصائص التطبيق</string>
   <string name="blacklist">القائمة السوداء</string>
   <string name="select_apps">حدد التطبيقات</string>
