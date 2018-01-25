@@ -29,6 +29,17 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_marginTop="?attr/actionBarSize" />
+        android:layout_marginTop="?attr/actionBarSize" >
+
+        <ProgressBar
+            android:id="@+id/app_load_progress"
+            style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:indeterminate="false"
+            android:paddingEnd="16dp"
+            android:paddingStart="16dp" />
+
+    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

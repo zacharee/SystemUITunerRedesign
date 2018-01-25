@@ -28,6 +28,7 @@ import com.zacharee1.systemuituner.handlers.ImmersiveHandler;
 import com.zacharee1.systemuituner.util.Utils;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.TreeMap;
 import java.util.TreeSet;
 
@@ -42,10 +43,15 @@ public class ImmersiveSelectActivity extends AppCompatActivity {
         setContentView(R.layout.activity_blank_custom_toolbar);
         setTitle(R.string.select_apps);
 
-        final ProgressBar bar = new ProgressBar(this);
-        bar.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+//        final ProgressBar bar = new ProgressBar(this);
+//        bar.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
 
-        ((LinearLayout)findViewById(R.id.content_main)).addView(bar);
+//        ((LinearLayout)findViewById(R.id.content_main)).addView(bar);
+
+        final List<ApplicationInfo> installedApps = Utils.getInstalledApps(this);
+
+        final ProgressBar bar = findViewById(R.id.app_load_progress);
+        bar.setMax(installedApps.size());
 
         new Thread(new Runnable() {
             @Override
@@ -54,7 +60,7 @@ public class ImmersiveSelectActivity extends AppCompatActivity {
 
                 final TreeMap<String, AppInfo> appMap = new TreeMap<>();
 
-                for (ApplicationInfo info : Utils.getInstalledApps(ImmersiveSelectActivity.this)) {
+                for (final ApplicationInfo info : installedApps) {
                     try {
                         if (getPackageManager().getPackageInfo(info.packageName, PackageManager.GET_ACTIVITIES).activities.length > 1) {
                             appMap.put(info.loadLabel(getPackageManager()).toString(),
@@ -63,6 +69,12 @@ public class ImmersiveSelectActivity extends AppCompatActivity {
                                             null,
                                             info.loadIcon(getPackageManager()))
                             );
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    bar.setProgress(installedApps.indexOf(info) + 1);
+                                }
+                            });
                         }
                     } catch (Exception e) {}
                 }

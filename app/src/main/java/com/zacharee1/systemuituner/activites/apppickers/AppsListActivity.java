@@ -10,6 +10,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ProgressBar;
 
 import com.zacharee1.systemuituner.R;
 import com.zacharee1.systemuituner.misc.AppInfo;
@@ -17,6 +18,7 @@ import com.zacharee1.systemuituner.misc.CustomAdapter;
 import com.zacharee1.systemuituner.util.Utils;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.TreeMap;
 
 public class AppsListActivity extends AppCompatActivity {
@@ -81,7 +83,12 @@ public class AppsListActivity extends AppCompatActivity {
     private ArrayList<AppInfo> getAppInfo() {
         TreeMap<String, AppInfo> appMap = new TreeMap<>();
 
-        for (ApplicationInfo info : Utils.getInstalledApps(this)) {
+        final List<ApplicationInfo> apps = Utils.getInstalledApps(this);
+
+        final ProgressBar bar = findViewById(R.id.progress);
+        bar.setMax(apps.size());
+
+        for (final ApplicationInfo info : apps) {
             try {
                 if (getPackageManager().getPackageInfo(info.packageName, PackageManager.GET_ACTIVITIES).activities.length > 1) {
                     appMap.put(info.loadLabel(getPackageManager()).toString(),
@@ -90,6 +97,13 @@ public class AppsListActivity extends AppCompatActivity {
                                     null,
                                     info.loadIcon(getPackageManager()))
                     );
+
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            bar.setProgress(apps.indexOf(info) + 1);
+                        }
+                    });
                 }
             } catch (Exception e) {}
         }

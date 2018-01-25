@@ -12,12 +12,14 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ProgressBar;
 
 import com.zacharee1.systemuituner.R;
 import com.zacharee1.systemuituner.misc.AppInfo;
 import com.zacharee1.systemuituner.misc.CustomAdapter;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.TreeMap;
 
 public class ComponentsListActivity extends AppCompatActivity {
@@ -83,13 +85,25 @@ public class ComponentsListActivity extends AppCompatActivity {
         try {
             PackageInfo info = pm.getPackageInfo(packageName, PackageManager.GET_ACTIVITIES);
 
-            for (ActivityInfo activity : info.activities) {
+            final ActivityInfo[] activities = info.activities;
+
+            final ProgressBar bar = findViewById(R.id.progress);
+            bar.setMax(apps.size());
+
+            for (final ActivityInfo activity : activities) {
                 apps.put(activity.name,
                         new AppInfo(activity.name,
                                 activity.packageName,
                                 activity.name,
                                 activity.loadIcon(getPackageManager()))
                 );
+
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        bar.setProgress(Arrays.asList(activities).indexOf(activity) + 1);
+                    }
+                });
             }
         } catch (Exception e) {}
 

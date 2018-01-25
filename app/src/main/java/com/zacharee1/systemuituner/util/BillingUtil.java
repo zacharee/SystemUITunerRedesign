@@ -99,7 +99,7 @@ public class BillingUtil
 
     public static void onDonatePayPalClicked(Activity activity) {
         boolean labsInstalled = Utils.isPackageInstalled("com.xda.labs", activity.getPackageManager());
-        Uri uri = Uri.parse(labsInstalled ? "https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=andywander@yahoo.com" : "https://forum.xda-developers.com/donatetome.php?u=7055541");
+        Uri uri = Uri.parse(labsInstalled ? "https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=zachary.wander@gmail.com" : "https://forum.xda-developers.com/donatetome.php?u=7055541");
         Intent intent = new Intent(Intent.ACTION_VIEW, uri);
         activity.startActivity(intent);
     }
