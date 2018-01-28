@@ -32,7 +32,9 @@ public class LauncherActivity extends AppCompatActivity
             startActivity(new Intent(this, IntroActivity.class));
         } else {
             String[] perms = new String[]{
-                    Manifest.permission.WRITE_SECURE_SETTINGS
+                    Manifest.permission.WRITE_SECURE_SETTINGS,
+                    Manifest.permission.DUMP,
+                    Manifest.permission.PACKAGE_USAGE_STATS
             };
 
             String[] ret;

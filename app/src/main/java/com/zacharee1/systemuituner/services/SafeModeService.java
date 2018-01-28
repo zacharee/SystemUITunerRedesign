@@ -1,6 +1,8 @@
 package com.zacharee1.systemuituner.services;
 
 import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
 import android.content.BroadcastReceiver;
@@ -9,6 +11,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.database.ContentObserver;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Looper;
@@ -63,16 +66,22 @@ public class SafeModeService extends Service {
 
     private void startInForeground() {
         PendingIntent settingsIntent = PendingIntent.getActivity(this, 0, new Intent(this, SettingsActivity.class), 0);
+        NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
 
-        Notification notification = new Notification.Builder(this)
+        Notification.Builder notification = new Notification.Builder(this)
                 .setSmallIcon(R.mipmap.ic_launcher)
-                .setContentTitle("Safe Mode Service is running")
-                .setContentText("Tap to change settings")
+                .setContentTitle(getResources().getString(R.string.notif_title))
+                .setContentText(getResources().getString(R.string.notif_desc))
                 .setPriority(Notification.PRIORITY_MIN)
-                .setContentIntent(settingsIntent)
-                .build();
+                .setContentIntent(settingsIntent);
 
-        startForeground(1001, notification);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            NotificationChannel channel = new NotificationChannel("zacharee1", "SystemUI Tuner", NotificationManager.IMPORTANCE_LOW);
+            manager.createNotificationChannel(channel);
+            notification.setChannelId("zacharee1");
+        }
+
+        startForeground(1001, notification.build());
     }
 
     private void setUpReceivers() {

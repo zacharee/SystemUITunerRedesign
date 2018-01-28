@@ -90,7 +90,9 @@ public class IntroActivity extends AppIntro2 {
     @Override
     public void onDonePressed(Fragment currentFragment) {
         String[] perms = new String[] {
-                Manifest.permission.WRITE_SECURE_SETTINGS
+                Manifest.permission.WRITE_SECURE_SETTINGS,
+                Manifest.permission.DUMP,
+                Manifest.permission.PACKAGE_USAGE_STATS
         };
 
         String[] ret;

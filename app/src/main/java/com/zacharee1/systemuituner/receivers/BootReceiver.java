@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 import android.os.Build;
 import android.preference.PreferenceManager;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.zacharee1.systemuituner.services.SafeModeService;
 
@@ -26,27 +27,11 @@ public class BootReceiver extends BroadcastReceiver
                 action.equals("android.intent.action.QUICKBOOT_POWERON") ||
                 action.equals("com.htc.intent.action.QUICKBOOT_POWERON")
         )) {
-//            String backupBL = Settings.Global.getString(context.getContentResolver(), "icon_blacklist_backup");
-//            SettingsUtils.writeSecure(context, "icon_blacklist", backupBL);
-//            SettingsUtils.writeGlobal(context, "system_booted", "1");
-//
-//            String backupQSVal = Settings.Global.getString(context.getContentResolver(), "sysui_qs_fancy_anim_backup");
-//            SettingsUtils.writeSecure(context, "sysui_qs_fancy_anim", backupQSVal);
-
             if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.N_MR1) {
                 context.startService(new Intent(context, SafeModeService.class));
+            } else {
+                context.startForegroundService(new Intent(context, SafeModeService.class));
             }
-
-            Log.e("BOOTED", "BOOTED");
-
-//            JobScheduler jobScheduler = (JobScheduler)
-//                    context.getSystemService(Context.JOB_SCHEDULER_SERVICE);
-//
-//            JobInfo.Builder builder = new JobInfo.Builder(1,
-//                    new ComponentName( context.getPackageName(),
-//                            ShutdownService.class.getName()));
-//
-//            jobScheduler.schedule(builder.build());
         }
     }
 }

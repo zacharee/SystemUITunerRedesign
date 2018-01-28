@@ -147,25 +147,23 @@ public class SettingsActivity extends AppCompatPreferenceActivity
                 }
             });
 
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                safeMode.setChecked(false);
-                safeMode.setEnabled(false);
-                safeMode.setSummary(getResources().getString(R.string.safe_mode_android_o));
-            } else {
-                safeMode.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
-                    @Override
-                    public boolean onPreferenceChange(Preference preference, Object newValue) {
-                        if (Boolean.valueOf(newValue.toString())) {
-                            getActivity().stopService(new Intent(getActivity(), SafeModeService.class));
+            safeMode.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
+                @Override
+                public boolean onPreferenceChange(Preference preference, Object newValue) {
+                    if (Boolean.valueOf(newValue.toString())) {
+                        getActivity().stopService(new Intent(getActivity(), SafeModeService.class));
+                        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O) {
                             getActivity().startService(new Intent(getActivity(), SafeModeService.class));
                         } else {
-                            getActivity().stopService(new Intent(getActivity(), SafeModeService.class));
+                            getActivity().startForegroundService(new Intent(getActivity(), SafeModeService.class));
                         }
-
-                            return true;
+                    } else {
+                        getActivity().stopService(new Intent(getActivity(), SafeModeService.class));
                     }
-                });
-            }
+
+                    return true;
+                }
+            });
         }
 
         private void setPreferenceListeners() {

@@ -1,14 +1,7 @@
 package com.zacharee1.systemuituner.fragments;
 
-import android.app.Activity;
-import android.content.Intent;
-import android.content.res.ColorStateList;
-import android.graphics.Color;
-import android.graphics.drawable.Drawable;
-import android.preference.Preference;
 import android.preference.PreferenceFragment;
 import android.os.Bundle;
-import android.util.Log;
 
 import com.zacharee1.systemuituner.fragmenthelpers.AutoHelper;
 import com.zacharee1.systemuituner.fragmenthelpers.BaseHelper;
@@ -22,8 +15,6 @@ import com.zacharee1.systemuituner.fragmenthelpers.MiscHelper;
 import com.zacharee1.systemuituner.fragmenthelpers.QSHelper;
 import com.zacharee1.systemuituner.fragmenthelpers.StatbarHelper;
 import com.zacharee1.systemuituner.fragmenthelpers.TWHelper;
-
-import java.util.concurrent.locks.Lock;
 
 /**
  * A fragment representing a single Item detail screen.
@@ -95,6 +86,7 @@ public class ItemDetailFragment extends PreferenceFragment
                     break;
                 case "lockscreen":
                     helper = new LockHelper(this);
+                    break;
             }
 
             getActivity().setTitle(mItem.content);

@@ -35,20 +35,8 @@ import com.zacharee1.systemuituner.util.Utils;
 
 import java.util.List;
 
-/**
- * An activity representing a list of Items. This activity
- * has different presentations for handset and tablet-size devices. On
- * handsets, the activity presents a list of items, which when touched,
- * lead to a {@link ItemDetailActivity} representing
- * item details. On tablets, the activity presents the list of items and
- * item details side-by-side using two vertical panes.
- */
 public class ItemListActivity extends AppCompatActivity {
 
-    /**
-     * Whether or not the activity is in two-pane mode, i.e. running on a tablet
-     * device.
-     */
     private boolean mTwoPane;
     private final List<TweakItems.TweakItem> mItems = TweakItems.ITEMS;
     @SuppressWarnings("FieldCanBeLocal")
@@ -105,7 +93,7 @@ public class ItemListActivity extends AppCompatActivity {
         if (mSharedPreferences.getBoolean("show_system_settings_warning", true)) {
             final AlertDialog dialog = new AlertDialog.Builder(this)
                     .setTitle(R.string.warning)
-                    .setMessage("This app modifies system settings. Uninstalling won't revert anything, nor can I make that happen. Unless you are comfortable with manual recovery, don't use the app. You have been warned!")
+                    .setMessage(getResources().getString(R.string.warn_message))
                     .setCancelable(false)
                     .setPositiveButton(R.string.agree, null)
                     .setNeutralButton(R.string.cancel, new DialogInterface.OnClickListener() {

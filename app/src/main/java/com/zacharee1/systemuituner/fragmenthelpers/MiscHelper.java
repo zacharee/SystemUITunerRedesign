@@ -1,5 +1,6 @@
 package com.zacharee1.systemuituner.fragmenthelpers;
 
+import android.annotation.SuppressLint;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.os.Build;
@@ -215,7 +216,7 @@ public class MiscHelper extends BaseHelper
             auto.setTitle(R.string.night_display_auto);
 
             try {
-                Class<?> InternalBool = Class.forName("com.android.internal.R$bool");
+                @SuppressLint("PrivateApi") Class<?> InternalBool = Class.forName("com.android.internal.R$bool");
 
                 Field nightDisplayAvailable = InternalBool.getField("config_nightDisplayAvailable");
                 int id = nightDisplayAvailable.getInt(null);
