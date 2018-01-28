@@ -9,9 +9,10 @@
   <string name="grant_dump_perm">You need to grant the permission \"android.permission.DUMP\" to use this feature.</string>
   <string name="safe_mode_auto_enabled">Samsung device detected! Safe Mode has been automatically enabled for your safety. Be warned that modifying any status bar icons has the potential to BREAK SYSTEM UI! Please follow the link in the Play Store description for more information.</string>
   <string name="notice">OBAVIJEST</string>
-  <string name="fancy_pulldown_notice">Toggling this option off can cause issues after a reboot. Manually toggle this option on and off after a reboot.</string>
+  <string name="fancy_pulldown_notice">Toggling this option off can cause issues after a reboot. Manually toggle this option on and off after a reboot, or enable Safe Mode.</string>
   <string name="safe_mode_summary">SAMSUNG USERS KEEP THIS TURNED ON UNLESS YOU HAVE AN AOSP ROM! \n\n
-        Clears any status bar customizations on NORMAL reboot/shutdown and restores them after boot completes. \n
+        Clears any status bar customizations on NORMAL reboot/shutdown and restores them after boot completes. \n\n
+        Toggles the QS Fancy Animation on boot, to prevent weird QS behavior.
     </string>
   <string name="hide_welcome_screen">Sakrij zaslon dobrodošlice</string>
   <string name="tasker_support">Tasker podrška</string>
@@ -259,6 +260,10 @@
   <string name="intent">Intent</string>
   <string name="removing_tile">Removing Tile</string>
   <string name="remove_tile">Remove %s?</string>
+  <string name="allow_deep_sleep">Enable Automatic Deep Sleep</string>
   <string name="yes">Yes</string>
   <string name="no">No</string>
+  <string name="warn_message">This app modifies system settings. Uninstalling won\'t revert anything, nor can I make that happen. Unless you are comfortable with manual recovery, don\'t use the app. You have been warned!</string>
+  <string name="notif_title">Safe Mode Service is running</string>
+  <string name="notif_desc">Tap to change settings</string>
 </resources>
