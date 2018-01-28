@@ -9,8 +9,11 @@
   <string name="grant_dump_perm">أنت بحاجة لمنح إذن \"android.permission.DUMP\" لاستخدام هذه الميزة.</string>
   <string name="safe_mode_auto_enabled">تم الكشف عن جهاز سامسونج! تم تمكين الوضع الأمن تلقائياً لضمان سلامتك. إحذر من تعديل أي رموز شريطة القدرة على \"الخروج من واجهة مستخدم النظام\"! الرجاء اتباع الارتباط في وصف مخزن اللعب للحصول على مزيد من المعلومات.</string>
   <string name="notice">إشعار</string>
-  <string name="fancy_pulldown_notice">تبديل هذا الخيار يمكن أن يسبب مشاكل بعد إعادة تشغيل الكمبيوتر. تفعيلل أو إيقاف هذا الخيار يدويا بعد إعادة تشغيل الجهاز.</string>
-  <string name="safe_mode_summary">مستخدمي سامسونج  يبقون هذا مشغلا إلا إذا كان لديك مدمج AOSP! \n\n أمسح أي تخصيصات شريط الحالة عند إعادة تشغيل/إيقاف  عادي يعيدهم بعد اكتمال التمهيد. \n    </string>
+  <string name="fancy_pulldown_notice">Toggling this option off can cause issues after a reboot. Manually toggle this option on and off after a reboot, or enable Safe Mode.</string>
+  <string name="safe_mode_summary">SAMSUNG USERS KEEP THIS TURNED ON UNLESS YOU HAVE AN AOSP ROM! \n\n
+        Clears any status bar customizations on NORMAL reboot/shutdown and restores them after boot completes. \n\n
+        Toggles the QS Fancy Animation on boot, to prevent weird QS behavior.
+    </string>
   <string name="hide_welcome_screen">إخفاء شاشة الترحيب</string>
   <string name="tasker_support">دعم تاسكر</string>
   <string name="instructions">التعليمات</string>
@@ -258,6 +261,10 @@
   <string name="intent">Intent</string>
   <string name="removing_tile">Removing Tile</string>
   <string name="remove_tile">Remove %s?</string>
+  <string name="allow_deep_sleep">Enable Automatic Deep Sleep</string>
   <string name="yes">Yes</string>
   <string name="no">No</string>
+  <string name="warn_message">This app modifies system settings. Uninstalling won\'t revert anything, nor can I make that happen. Unless you are comfortable with manual recovery, don\'t use the app. You have been warned!</string>
+  <string name="notif_title">Safe Mode Service is running</string>
+  <string name="notif_desc">Tap to change settings</string>
 </resources>
