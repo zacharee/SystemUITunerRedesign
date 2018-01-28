@@ -9,9 +9,10 @@
   <string name="grant_dump_perm">Anda perlu memberikan izin \"android.permission.DUMP\" untuk menggunakan fitur ini.</string>
   <string name="safe_mode_auto_enabled">Perangkat samsung terdeteksi! Mode aman telah secara otomatis diaktifkan untuk keselamatan Anda. Berhati-hatilah bahwa memodifikasi ikon status bar memiliki potensi untuk memecahkan sistem UI! Silahkan ikuti tautan di deskripsi Play Store untuk informasi lebih lanjut.</string>
   <string name="notice">PEMBERITAHUAN</string>
-  <string name="fancy_pulldown_notice">Toggling opsi ini dapat menyebabkan masalah setelah reboot. Secara manual matikan opsi ini dan nonaktifkan setelah melakukan reboot.</string>
-  <string name="safe_mode_summary">PENGGUNA SAMSUNG TERBUKTI INI TURNED ON KECUALI ANDA MEMILIKI ROM AOSP! \n\n
-        Menghapus setiap penyesuaian status bar pada reboot NORMAL/shutdown dan mengembalikannya setelah boot selesai. \n
+  <string name="fancy_pulldown_notice">Toggling this option off can cause issues after a reboot. Manually toggle this option on and off after a reboot, or enable Safe Mode.</string>
+  <string name="safe_mode_summary">SAMSUNG USERS KEEP THIS TURNED ON UNLESS YOU HAVE AN AOSP ROM! \n\n
+        Clears any status bar customizations on NORMAL reboot/shutdown and restores them after boot completes. \n\n
+        Toggles the QS Fancy Animation on boot, to prevent weird QS behavior.
     </string>
   <string name="hide_welcome_screen">Sembunyikan Layar Selamat Datang</string>
   <string name="tasker_support">Dukungan Tasker</string>
@@ -259,6 +260,10 @@
   <string name="intent">Maksud</string>
   <string name="removing_tile">Menghapus Ubin</string>
   <string name="remove_tile">Hapus %s?</string>
+  <string name="allow_deep_sleep">Enable Automatic Deep Sleep</string>
   <string name="yes">Iya</string>
   <string name="no">Tidak</string>
+  <string name="warn_message">This app modifies system settings. Uninstalling won\'t revert anything, nor can I make that happen. Unless you are comfortable with manual recovery, don\'t use the app. You have been warned!</string>
+  <string name="notif_title">Safe Mode Service is running</string>
+  <string name="notif_desc">Tap to change settings</string>
 </resources>
