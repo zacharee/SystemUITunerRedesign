@@ -9,9 +9,11 @@
   <string name="grant_dump_perm">Debes activar el permiso \"android.permission.DUMP\" para usar ésta característica.</string>
   <string name="safe_mode_auto_enabled">¡Dispositivo Samsung detectado! Modo seguro se ha activado automáticamente para su seguridad. ¡Se advierte que modificar cualquier icono de la barra de Estado tiene el potencial de romper la interfaz de sistema! Siga el enlace en la descripción de Play Store para obtener más información.</string>
   <string name="notice">AVISO</string>
-  <string name="fancy_pulldown_notice">Desactivar esta opción puede causar problemas después de reiniciar. Activa y desactiva manualmente esta opción después de reiniciar.</string>
-  <string name="safe_mode_summary">USUARIOS DE SAMSUNG DEBEN ACTIVAR ESTO A MENOS QUE USEN UNA ROM AOSP! \n\n
-        Elimina las modificaciones en la barra de Estado con un reinicio/apagado y restaura después del inicio completo. \n    </string>
+  <string name="fancy_pulldown_notice">Toggling this option off can cause issues after a reboot. Manually toggle this option on and off after a reboot, or enable Safe Mode.</string>
+  <string name="safe_mode_summary">SAMSUNG USERS KEEP THIS TURNED ON UNLESS YOU HAVE AN AOSP ROM! \n\n
+        Clears any status bar customizations on NORMAL reboot/shutdown and restores them after boot completes. \n\n
+        Toggles the QS Fancy Animation on boot, to prevent weird QS behavior.
+    </string>
   <string name="hide_welcome_screen">Ocultar Ventana de Bienvenida</string>
   <string name="tasker_support">Tareas Activadas</string>
   <string name="instructions">Instrucciones</string>
@@ -258,6 +260,10 @@
   <string name="intent">Intenta</string>
   <string name="removing_tile">Remover Activador</string>
   <string name="remove_tile">Remover %s?</string>
+  <string name="allow_deep_sleep">Enable Automatic Deep Sleep</string>
   <string name="yes">Sí</string>
   <string name="no">No</string>
+  <string name="warn_message">This app modifies system settings. Uninstalling won\'t revert anything, nor can I make that happen. Unless you are comfortable with manual recovery, don\'t use the app. You have been warned!</string>
+  <string name="notif_title">Safe Mode Service is running</string>
+  <string name="notif_desc">Tap to change settings</string>
 </resources>
