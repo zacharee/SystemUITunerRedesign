@@ -9,9 +9,11 @@
   <string name="grant_dump_perm">Devi concedere il permesso \"android.permission.DUMP\" per usare questa impostazione.</string>
   <string name="safe_mode_auto_enabled">Dispositivo Samsung rilevato! La modalità provvisoria è stata abilitata automaticamente per la sicurezza del sistema. State attenti, modificare una qualsiasi icona nella status bar potrebbe CORROMPERE LA UI DI SISTEMA! Segui il link nella descrizione del Play Store per maggiori informazioni.</string>
   <string name="notice">AVVISO</string>
-  <string name="fancy_pulldown_notice">Abilitare/Disabilitare questa opzione potrebbe causare problemi dopo un riavvio. Abilita/disabilita manualmente questa opzione dopo il riavvio.</string>
-  <string name="safe_mode_summary">GLI UTENTI SAMSUNG DEVONO TENERE ATTIVA QUESTA FUNZIONO A MENO CHE NON SI ABBIA UNA ROM AOSP! \n\n
-        Cancella ogni personalizzazione effettuata con un riavvio/spegnimento e ripristinale una volta completato l\'avvio. \n    </string>
+  <string name="fancy_pulldown_notice">Toggling this option off can cause issues after a reboot. Manually toggle this option on and off after a reboot, or enable Safe Mode.</string>
+  <string name="safe_mode_summary">SAMSUNG USERS KEEP THIS TURNED ON UNLESS YOU HAVE AN AOSP ROM! \n\n
+        Clears any status bar customizations on NORMAL reboot/shutdown and restores them after boot completes. \n\n
+        Toggles the QS Fancy Animation on boot, to prevent weird QS behavior.
+    </string>
   <string name="hide_welcome_screen">Nascondi la schermata di benvenuto</string>
   <string name="tasker_support">Supporto a Tasker</string>
   <string name="instructions">Istruzioni</string>
@@ -258,6 +260,10 @@
   <string name="intent">Intent</string>
   <string name="removing_tile">Rimuovi Tile</string>
   <string name="remove_tile">Rimuovi %s?</string>
+  <string name="allow_deep_sleep">Enable Automatic Deep Sleep</string>
   <string name="yes">Si</string>
   <string name="no">No</string>
+  <string name="warn_message">This app modifies system settings. Uninstalling won\'t revert anything, nor can I make that happen. Unless you are comfortable with manual recovery, don\'t use the app. You have been warned!</string>
+  <string name="notif_title">Safe Mode Service is running</string>
+  <string name="notif_desc">Tap to change settings</string>
 </resources>
