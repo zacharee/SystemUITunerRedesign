@@ -35,7 +35,7 @@ public class ImmersiveHandler {
     @Nullable
     public static String getMode(Context context) {
         String imm = Settings.Global.getString(context.getContentResolver(), KEY);
-        if (imm == null) imm = "immersive.none";
+        if (imm == null || imm.isEmpty()) imm = "immersive.none";
         imm = imm.replaceAll("=(.+?)$", "");
 
         return imm;

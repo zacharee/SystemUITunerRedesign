@@ -94,7 +94,6 @@ public class QSHelper extends BaseHelper
     private void setSliderState() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N)
         {
-
             final SliderPreferenceEmbedded pref = (SliderPreferenceEmbedded) findPreference(QQS_COUNT); //find the SliderPreference
 //            pref.set<in(1);
             pref.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener()
@@ -102,6 +101,7 @@ public class QSHelper extends BaseHelper
                 @Override
                 public boolean onPreferenceChange(Preference preference, Object o)
                 {
+                    preference.getSharedPreferences().edit().putInt("qs_header_count", Integer.valueOf(o.toString())).apply();
                     SettingsUtils.writeSecure(getContext(), QQS_COUNT, o.toString()); //write new value to Settings if user presses OK
                     return true;
                 }

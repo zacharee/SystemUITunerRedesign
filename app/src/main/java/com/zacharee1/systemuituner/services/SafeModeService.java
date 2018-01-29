@@ -15,6 +15,7 @@ import android.os.Build;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Looper;
+import android.preference.PreferenceManager;
 import android.provider.Settings;
 
 import com.zacharee1.systemuituner.R;
@@ -43,7 +44,9 @@ public class SafeModeService extends Service {
 
         startInForeground();
         restoreStateOnStartup();
+        restoreQSHeaderCount();
         setUpReceivers();
+        listenForQSHeaderCountChanges();
         return START_STICKY;
     }
 
@@ -114,6 +117,42 @@ public class SafeModeService extends Service {
         SettingsUtils.writeGlobal(this, "system_booted", "1");
     }
 
+    private void restoreQSHeaderCount() {
+        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M) {
+            int count = PreferenceManager.getDefaultSharedPreferences(this).getInt("qs_header_count", -1);
+            if (count != -1) SettingsUtils.writeSecure(this, "sysui_qqs_count", String.valueOf(count));
+        }
+    }
+
+    private void saveQSHeaderCount() {
+        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M) {
+            int count = Settings.Secure.getInt(getContentResolver(), "sysui_qqs_count", -1);
+            if (count != -1) PreferenceManager.getDefaultSharedPreferences(this).edit().putInt("qs_header_count", count).apply();
+        }
+    }
+
+    private void listenForQSHeaderCountChanges() {
+        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M) {
+            ContentObserver observer = new ContentObserver(new Handler(Looper.getMainLooper())) {
+                @Override
+                public void onChange(boolean selfChange, Uri uri) {
+                    if (uri.equals(Settings.Secure.getUriFor("sysui_qqs_count"))) {
+                        int prefCount = PreferenceManager.getDefaultSharedPreferences(SafeModeService.this).getInt("qs_header_count", -1);
+                        int setCount = Settings.Secure.getInt(getContentResolver(), "sysui_qqs_count", -1);
+
+                        if (prefCount != -1 && setCount != -1) {
+                            if (prefCount != setCount) {
+                                SettingsUtils.writeSecure(SafeModeService.this, "sysui_qqs_count", String.valueOf(prefCount));
+                            }
+                        }
+                    }
+                }
+            };
+
+            getContentResolver().registerContentObserver(Settings.Global.CONTENT_URI, true, observer);
+        }
+    }
+
     private void resetBlacklist(boolean restore) {
         final String blacklist = Settings.Secure.getString(getContentResolver(), "icon_blacklist");
 
@@ -144,6 +183,7 @@ public class SafeModeService extends Service {
         @Override
         public void onReceive(Context context, Intent intent) {
             resetBlacklist(false);
+            saveQSHeaderCount();
         }
     }
 

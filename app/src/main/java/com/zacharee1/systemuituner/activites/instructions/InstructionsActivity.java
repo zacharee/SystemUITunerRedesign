@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.annotation.ColorInt;
 import android.support.annotation.IdRes;
 import android.support.annotation.LayoutRes;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -180,8 +181,6 @@ public class InstructionsActivity extends AppIntro2 {
         public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
             mView = inflater.inflate(getLayoutId(), container, false);
 
-            Log.e("onCreateView()", getArguments().getString(ARG_TITLE));
-
             View main = mView.findViewById(R.id.main);
             TextView title = mView.findViewById(R.id.title);
             TextView desc = mView.findViewById(R.id.description);
@@ -213,27 +212,29 @@ public class InstructionsActivity extends AppIntro2 {
         }
 
         public void setInternalLayout(@LayoutRes int layoutId) {
-            LinearLayout holder = mView.findViewById(R.id.custom_layout_holder);
-            holder.removeAllViews();
+            if (mView != null) {
+                LinearLayout holder = mView.findViewById(R.id.custom_layout_holder);
+                holder.removeAllViews();
 
-            ViewGroup viewParent = (ViewGroup) View.inflate(getActivity(), layoutId, null);
-            ViewGroup viewChild = (ViewGroup) viewParent.getChildAt(0);
+                ViewGroup viewParent = (ViewGroup) View.inflate(getActivity(), layoutId, null);
+                ViewGroup viewChild = (ViewGroup) viewParent.getChildAt(0);
 
-            ViewGroup view = viewChild != null ? viewChild : viewParent;
+                ViewGroup view = viewChild != null ? viewChild : viewParent;
 
-            for (int i = 0; i < view.getChildCount(); i++) {
-                View v = view.getChildAt(i);
+                for (int i = 0; i < view.getChildCount(); i++) {
+                    View v = view.getChildAt(i);
 
-                if (v instanceof TextView) {
-                    ((TextView) v).setText(formatText(((TextView) v).getText().toString()));
-                    ((TextView) v).setLinksClickable(true);
-                    ((TextView) v).setMovementMethod(LinkMovementMethod.getInstance());
-                    ((TextView) v).setLinkTextColor(getResources().getColorStateList(R.color.white, null));
-                    ((TextView) v).setTextColor(getResources().getColorStateList(R.color.white, null));
+                    if (v instanceof TextView) {
+                        ((TextView) v).setText(formatText(((TextView) v).getText().toString()));
+                        ((TextView) v).setLinksClickable(true);
+                        ((TextView) v).setMovementMethod(LinkMovementMethod.getInstance());
+                        ((TextView) v).setLinkTextColor(getResources().getColorStateList(R.color.white, null));
+                        ((TextView) v).setTextColor(getResources().getColorStateList(R.color.white, null));
+                    }
                 }
-            }
 
-            holder.addView(viewParent);
+                holder.addView(viewParent);
+            }
         }
 
         @Override
