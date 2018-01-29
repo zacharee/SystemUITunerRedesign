@@ -11,8 +11,9 @@
   <string name="notice">UWAGA</string>
   <string name="fancy_pulldown_notice">Toggling this option off can cause issues after a reboot. Manually toggle this option on and off after a reboot, or enable Safe Mode.</string>
   <string name="safe_mode_summary">SAMSUNG USERS KEEP THIS TURNED ON UNLESS YOU HAVE AN AOSP ROM! \n\n
-        Clears any status bar customizations on NORMAL reboot/shutdown and restores them after boot completes. \n\n
-        Toggles the QS Fancy Animation on boot, to prevent weird QS behavior.
+    - Clears any status bar customizations on NORMAL reboot/shutdown and restores them after boot completes. \n
+    - Toggles the QS Fancy Animation on boot, to prevent weird QS behavior. \n
+    - Resets the QS Header count and restores the custom value on reboot (Nougat+).
     </string>
   <string name="hide_welcome_screen">Ukryj ekran powitalny</string>
   <string name="tasker_support">Pomoc przy Tasker</string>
