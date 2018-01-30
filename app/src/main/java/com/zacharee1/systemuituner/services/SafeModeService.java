@@ -9,6 +9,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.SharedPreferences;
 import android.database.ContentObserver;
 import android.net.Uri;
 import android.os.Build;
@@ -29,6 +30,8 @@ public class SafeModeService extends Service {
     private ResolutionChangeListener mResListener;
 
     private Handler mHandler;
+    private ContentObserver observer;
+    private SharedPreferences preferences;
 
     public SafeModeService() {
     }
@@ -41,12 +44,13 @@ public class SafeModeService extends Service {
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         mHandler = new Handler(Looper.getMainLooper());
+        preferences = PreferenceManager.getDefaultSharedPreferences(this);
 
         startInForeground();
         restoreStateOnStartup();
         restoreQSHeaderCount();
         setUpReceivers();
-        listenForQSHeaderCountChanges();
+        setUpContentObserver();
         return START_STICKY;
     }
 
@@ -64,6 +68,10 @@ public class SafeModeService extends Service {
 
         try {
             getContentResolver().unregisterContentObserver(mResListener);
+        } catch (Exception e) {}
+
+        try {
+            getContentResolver().unregisterContentObserver(observer);
         } catch (Exception e) {}
     }
 
@@ -119,7 +127,7 @@ public class SafeModeService extends Service {
 
     private void restoreQSHeaderCount() {
         if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M) {
-            int count = PreferenceManager.getDefaultSharedPreferences(this).getInt("qs_header_count", -1);
+            int count = preferences.getInt("qs_header_count", -1);
             if (count != -1) SettingsUtils.writeSecure(this, "sysui_qqs_count", String.valueOf(count));
         }
     }
@@ -127,22 +135,47 @@ public class SafeModeService extends Service {
     private void saveQSHeaderCount() {
         if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M) {
             int count = Settings.Secure.getInt(getContentResolver(), "sysui_qqs_count", -1);
-            if (count != -1) PreferenceManager.getDefaultSharedPreferences(this).edit().putInt("qs_header_count", count).apply();
+            if (count != -1) preferences.edit().putInt("qs_header_count", count).apply();
         }
     }
 
-    private void listenForQSHeaderCountChanges() {
+    private void saveQSRowColCount() {
+        int row = Settings.Secure.getInt(getContentResolver(), "qs_tile_row", -1);
+        int col = Settings.Secure.getInt(getContentResolver(), "qs_tile_column", -1);
+        if (row != -1) preferences.edit().putInt("qs_tile_row", row).apply();
+        if (col != -1) preferences.edit().putInt("qs_tile_column", col).apply();
+    }
+
+    private void setUpContentObserver() {
         if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M) {
-            ContentObserver observer = new ContentObserver(new Handler(Looper.getMainLooper())) {
+            observer = new ContentObserver(new Handler(Looper.getMainLooper())) {
                 @Override
                 public void onChange(boolean selfChange, Uri uri) {
                     if (uri.equals(Settings.Secure.getUriFor("sysui_qqs_count"))) {
-                        int prefCount = PreferenceManager.getDefaultSharedPreferences(SafeModeService.this).getInt("qs_header_count", -1);
+                        int prefCount = preferences.getInt("qs_header_count", -1);
                         int setCount = Settings.Secure.getInt(getContentResolver(), "sysui_qqs_count", -1);
 
                         if (prefCount != -1 && setCount != -1) {
                             if (prefCount != setCount) {
                                 SettingsUtils.writeSecure(SafeModeService.this, "sysui_qqs_count", String.valueOf(prefCount));
+                            }
+                        }
+                    } else if (uri.equals(Settings.Secure.getUriFor("qs_tile_row")) || uri.equals(Settings.Secure.getUriFor("qs_tile_column"))) {
+                        int rowCount = preferences.getInt("qs_tile_row", -1);
+                        int colCount = preferences.getInt("qs_tile_column", -1);
+
+                        int rowSet = Settings.Secure.getInt(getContentResolver(), "qs_tile_row", -1);
+                        int colSet = Settings.Secure.getInt(getContentResolver(), "qs_tile_column", -1);
+
+                        if (rowCount != -1 && rowSet != -1) {
+                            if (rowCount != rowSet) {
+                                SettingsUtils.writeSecure(SafeModeService.this, "qs_tile_row", String.valueOf(rowCount));
+                            }
+                        }
+
+                        if (colCount != -1 && colSet != -1) {
+                            if (colCount != colSet) {
+                                SettingsUtils.writeSecure(SafeModeService.this, "qs_tile_column", String.valueOf(colCount));
                             }
                         }
                     }
@@ -184,6 +217,7 @@ public class SafeModeService extends Service {
         public void onReceive(Context context, Intent intent) {
             resetBlacklist(false);
             saveQSHeaderCount();
+            saveQSRowColCount();
         }
     }
 

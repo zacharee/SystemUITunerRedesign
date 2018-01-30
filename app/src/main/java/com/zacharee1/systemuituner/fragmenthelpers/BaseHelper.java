@@ -3,6 +3,7 @@ package com.zacharee1.systemuituner.fragmenthelpers;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.preference.Preference;
 import android.preference.PreferenceManager;
@@ -27,6 +28,10 @@ public abstract class BaseHelper {
 
     public ItemDetailFragment getFragment() {
         return mFragment;
+    }
+
+    public SharedPreferences getSharedPreferences() {
+        return getFragment().getPreferenceManager().getSharedPreferences();
     }
 
     public Preference findPreference(String preference) {

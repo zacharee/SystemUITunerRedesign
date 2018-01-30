@@ -23,6 +23,16 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+        android:title="@string/navigation_bar">
+
+        <com.jaredrummler.android.colorpicker.ColorPreference
+            android:title="@string/color"
+            android:key="navigationbar_color"
+            android:defaultValue="-1"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:title="@string/status_bar">
         <com.zacharee1.systemuituner.prefs.StatBarWarnPref />
 
