@@ -229,12 +229,12 @@
   <string name="which_os">你的電腦作業系統是？</string>
   <string name="on_device">在你的裝置上進行這些步驟。</string>
   <string name="on_computer">在你的電腦上進行這些步驟。</string>
-  <string name="run_on_computer">Run these commands on your computer. For Linux (Other) and macOS, you will need to use \"./adb\" instead of \"adb\".</string>
+  <string name="run_on_computer">在你的電腦上執行這些步驟。macOS 和 Linux (其他) 的用戶請注意，應該使用 \"./adb\" 而不是 \"adb\"。</string>
   <string name="windows">Windows</string>
   <string name="mac">macOS</string>
   <string name="ubuntu">Ubuntu</string>
   <string name="fedora">Fedora</string>
-  <string name="linux">Linux (Other)</string>
+  <string name="linux">Linux (其他)</string>
   <string name="app_specific">特定 app</string>
   <string name="blacklist">黑名單</string>
   <string name="select_apps">選擇 app</string>
