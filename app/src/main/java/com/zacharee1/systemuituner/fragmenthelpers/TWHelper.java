@@ -12,8 +12,11 @@ public class TWHelper extends BaseHelper
     public static final String TILE_ROW = "qs_tile_row";
     public static final String TILE_COLUMN = "qs_tile_column";
 
+    private StatbarHelper statbarHelper;
+
     public TWHelper(ItemDetailFragment fragment) {
         super(fragment);
+        statbarHelper = new StatbarHelper(fragment);
         setUpQSStuff();
     }
 
@@ -45,6 +48,6 @@ public class TWHelper extends BaseHelper
 
     @Override
     public void onDestroy() {
-
+        statbarHelper.onDestroy();
     }
 }

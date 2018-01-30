@@ -25,7 +25,6 @@ import com.zacharee1.systemuituner.fragmenthelpers.TWHelper;
 public class ItemDetailFragment extends PreferenceFragment
 {
     private BaseHelper helper;
-    private BaseHelper helper2;
 
     /**
      * The fragment argument representing the item ID that this fragment
@@ -72,8 +71,7 @@ public class ItemDetailFragment extends PreferenceFragment
                     helper = new DemoHelper(this);
                     break;
                 case "touchwiz":
-                    helper = new StatbarHelper(this);
-                    helper2 = new TWHelper(this);
+                    helper = new TWHelper(this);
                     break;
                 case "misc":
                     helper = new MiscHelper(this);
@@ -100,16 +98,11 @@ public class ItemDetailFragment extends PreferenceFragment
         if (helper != null) {
             helper.onDestroy();
         }
-
-        if (helper2 != null) {
-            helper2.onDestroy();
-        }
     }
 
     @Override
     public void onResume() {
         super.onResume();
         if (helper != null) helper.onResume();
-        if (helper2 != null) helper2.onResume();
     }
 }

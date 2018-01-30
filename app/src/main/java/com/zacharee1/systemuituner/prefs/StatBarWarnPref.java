@@ -39,16 +39,6 @@ public class StatBarWarnPref extends Preference {
         setSummary(R.string.statbar_rotation_lock_notif);
         setIcon(R.drawable.ic_smartphone_black_24dp);
         setSelectable(false);
-
-        TypedValue typedValue = new TypedValue();
-        Resources.Theme theme = getContext().getTheme();
-        theme.resolveAttribute(R.attr.colorAccent, typedValue, true);
-        @ColorInt int color = typedValue.data;
-
-        Drawable icon = getContext().getResources().getDrawable(R.drawable.ic_smartphone_black_24dp, null);
-        icon.setColorFilter(color, PorterDuff.Mode.SRC_ATOP);
-
-        setIcon(icon);
         return view;
     }
 }

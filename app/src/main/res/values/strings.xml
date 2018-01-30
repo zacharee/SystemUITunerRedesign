@@ -312,4 +312,6 @@
 
     <string name="notif_title">Safe Mode Service is running</string>
     <string name="notif_desc">Tap to change settings</string>
+
+    <string name="touchwiz_oreo_qqs">On TouchWiz Oreo devices, this setting is no longer reliable! Along with setting the number here, you may have to also save the value to Settings.System.apanel_number, which can only be done with ADB or root. Safe Mode attempts to implement a workaround, but I can\'t guarantee it will work!</string>
 </resources>

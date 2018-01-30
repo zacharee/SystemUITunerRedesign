@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-    <com.zacharee1.systemuituner.prefs.StatBarWarnPref />
-
     <PreferenceCategory
         android:title="@string/status_bar">
+        <com.zacharee1.systemuituner.prefs.StatBarWarnPref />
         <Preference
             android:key="reset_blacklist"
             android:title="@string/reset_blacklist"
