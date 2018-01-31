@@ -49,8 +49,10 @@ public class SafeModeService extends Service {
         startInForeground();
         restoreStateOnStartup();
         restoreQSHeaderCount();
+        restoreQSRowColCount();
         setUpReceivers();
         setUpContentObserver();
+        restoreSnoozeState();
         return START_STICKY;
     }
 
@@ -146,38 +148,40 @@ public class SafeModeService extends Service {
         if (col != -1) preferences.edit().putInt("qs_tile_column", col).apply();
     }
 
+    private void restoreQSRowColCount() {
+        int row = preferences.getInt("qs_tile_row", -1);
+        int col = preferences.getInt("qs_tile_column", -1);
+
+        if (row != -1) SettingsUtils.writeSecure(this, "qs_tile_row", row + "");
+        if (col != -1) SettingsUtils.writeSecure(this, "qs_tile_column", col + "");
+    }
+
+    private void restoreSnoozeState() {
+        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.O) {
+            String saved = preferences.getString("notification_snooze_options", "");
+
+            if (!saved.isEmpty()) {
+                SettingsUtils.writeGlobal(this, "notification_snooze_options", saved);
+            }
+        }
+    }
+
+    private void saveSnoozeState() {
+        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.O) {
+            String set = Settings.Global.getString(getContentResolver(), "notification_snooze_options");
+            if (set != null && !set.isEmpty()) preferences.edit().putString("notification_snooze_options", set).apply();
+        }
+    }
+
     private void setUpContentObserver() {
         if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M) {
             observer = new ContentObserver(new Handler(Looper.getMainLooper())) {
                 @Override
                 public void onChange(boolean selfChange, Uri uri) {
                     if (uri.equals(Settings.Secure.getUriFor("sysui_qqs_count"))) {
-                        int prefCount = preferences.getInt("qs_header_count", -1);
-                        int setCount = Settings.Secure.getInt(getContentResolver(), "sysui_qqs_count", -1);
-
-                        if (prefCount != -1 && setCount != -1) {
-                            if (prefCount != setCount) {
-                                SettingsUtils.writeSecure(SafeModeService.this, "sysui_qqs_count", String.valueOf(prefCount));
-                            }
-                        }
+                        restoreQSHeaderCount();
                     } else if (uri.equals(Settings.Secure.getUriFor("qs_tile_row")) || uri.equals(Settings.Secure.getUriFor("qs_tile_column"))) {
-                        int rowCount = preferences.getInt("qs_tile_row", -1);
-                        int colCount = preferences.getInt("qs_tile_column", -1);
-
-                        int rowSet = Settings.Secure.getInt(getContentResolver(), "qs_tile_row", -1);
-                        int colSet = Settings.Secure.getInt(getContentResolver(), "qs_tile_column", -1);
-
-                        if (rowCount != -1 && rowSet != -1) {
-                            if (rowCount != rowSet) {
-                                SettingsUtils.writeSecure(SafeModeService.this, "qs_tile_row", String.valueOf(rowCount));
-                            }
-                        }
-
-                        if (colCount != -1 && colSet != -1) {
-                            if (colCount != colSet) {
-                                SettingsUtils.writeSecure(SafeModeService.this, "qs_tile_column", String.valueOf(colCount));
-                            }
-                        }
+                        restoreQSRowColCount();
                     }
                 }
             };
@@ -218,6 +222,7 @@ public class SafeModeService extends Service {
             resetBlacklist(false);
             saveQSHeaderCount();
             saveQSRowColCount();
+            saveSnoozeState();
         }
     }
 

@@ -80,6 +80,43 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+        android:title="@string/notifs_snooze"
+        android:key="notifs_snooze">
+
+        <Preference
+            android:summary="@string/notifs_snooze_desc"
+            android:key="notifs_snooze_desc"
+            android:enabled="false"
+            android:selectable="false" />
+
+        <EditTextPreference
+            android:title="@string/default_text"
+            android:inputType="number"
+            android:key="default_time" />
+
+        <EditTextPreference
+            android:title="@string/time_a"
+            android:inputType="number"
+            android:key="time_a" />
+
+        <EditTextPreference
+            android:title="@string/time_b"
+            android:inputType="number"
+            android:key="time_b" />
+
+        <EditTextPreference
+            android:title="@string/time_c"
+            android:inputType="number"
+            android:key="time_c" />
+
+        <EditTextPreference
+            android:title="@string/time_d"
+            android:inputType="number"
+            android:key="time_d" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:title="@string/power_notification_controls"
         android:key="power_notification_controls">
         <SwitchPreference

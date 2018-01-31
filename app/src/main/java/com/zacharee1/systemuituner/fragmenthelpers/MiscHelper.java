@@ -17,6 +17,7 @@ import com.zacharee1.systemuituner.util.SettingsUtils;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class MiscHelper extends BaseHelper
 {
@@ -60,6 +61,7 @@ public class MiscHelper extends BaseHelper
         setNightModeSwitchStates();
         setEditTextStates();
         setUpAnimationScales();
+        setUpSnoozeStuff();
     }
 
     private boolean showingCustomSettings() {
@@ -357,6 +359,107 @@ public class MiscHelper extends BaseHelper
         duration.setOnPreferenceChangeListener(listener);
         transition.setOnPreferenceChangeListener(listener);
         window.setOnPreferenceChangeListener(listener);
+    }
+
+    private void setUpSnoozeStuff() {
+        PreferenceCategory category = (PreferenceCategory) findPreference("notifs_snooze");
+        Preference summary = findPreference("notifs_snooze_desc");
+
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O_MR1) {
+            category.setEnabled(false);
+            summary.setSummary(R.string.requires_8_1);
+        } else {
+            final EditTextPreference def = (EditTextPreference) findPreference("default_time");
+            final EditTextPreference a = (EditTextPreference) findPreference("time_a");
+            final EditTextPreference b = (EditTextPreference) findPreference("time_b");
+            final EditTextPreference c = (EditTextPreference) findPreference("time_c");
+            final EditTextPreference d = (EditTextPreference) findPreference("time_d");
+
+            ArrayList<String> times = parseSnoozeTimes();
+
+            def.setText(times.get(0));
+            a.setText(times.get(1));
+            b.setText(times.get(2));
+            c.setText(times.get(3));
+            d.setText(times.get(4));
+
+            def.setSummary(times.get(0));
+            a.setSummary(times.get(1));
+            b.setSummary(times.get(2));
+            c.setSummary(times.get(3));
+            d.setSummary(times.get(4));
+
+            Preference.OnPreferenceChangeListener listener = new Preference.OnPreferenceChangeListener() {
+                @Override
+                public boolean onPreferenceChange(Preference preference, Object newValue) {
+                    ArrayList<String> toSave = new ArrayList<>();
+                    toSave.add(def.getText());
+                    toSave.add(a.getText());
+                    toSave.add(b.getText());
+                    toSave.add(c.getText());
+                    toSave.add(d.getText());
+
+                    int index = 0;
+                    switch (preference.getKey()) {
+                        case "default_time":
+                            index = 0;
+                            break;
+                        case "time_a":
+                            index = 1;
+                            break;
+                        case "time_b":
+                            index = 2;
+                            break;
+                        case "time_c":
+                            index = 3;
+                            break;
+                        case "time_d":
+                            index = 4;
+                            break;
+                    }
+                    toSave.set(index, newValue.toString());
+
+                    preference.setSummary(newValue.toString());
+
+                    saveSnoozeTimes(toSave);
+
+                    return true;
+                }
+            };
+
+            def.setOnPreferenceChangeListener(listener);
+            a.setOnPreferenceChangeListener(listener);
+            b.setOnPreferenceChangeListener(listener);
+            c.setOnPreferenceChangeListener(listener);
+            d.setOnPreferenceChangeListener(listener);
+        }
+    }
+
+    private void saveSnoozeTimes(ArrayList<String> toSave) {
+        String base = "default=" + toSave.get(0) + ",options_array=" + toSave.get(1) + ":" + toSave.get(2) + ":" + toSave.get(3) + ":" + toSave.get(4);
+        SettingsUtils.writeGlobal(getContext(), "notification_snooze_options", base);
+    }
+
+    private ArrayList<String> parseSnoozeTimes() {
+        ArrayList<String> ret = new ArrayList<>();
+        String saved = Settings.Global.getString(getContext().getContentResolver(), "notification_snooze_options");
+
+        if (saved == null || saved.isEmpty()) {
+            ret.add("60");
+            ret.add("15");
+            ret.add("30");
+            ret.add("60");
+            ret.add("120");
+        } else {
+            String[] parts = saved.split("[,]");
+            String def = parts[0].split("[=]")[1];
+            String[] options = parts[1].split("[=]")[1].split(":");
+
+            ret.add(def);
+            ret.addAll(Arrays.asList(options));
+        }
+
+        return ret;
     }
 
     @Override
