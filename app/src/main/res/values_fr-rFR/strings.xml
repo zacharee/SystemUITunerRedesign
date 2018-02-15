@@ -24,7 +24,7 @@
   <string name="safe_mode_android_o">Because of limitations added in Android O, this feature will not work on your device.</string>
   <string name="requires_nougat">Nécessite Nougat ou version ultérieure.</string>
   <string name="requires_oreo">Nécessite Oreo ou version ultérieure.</string>
-  <string name="requires_8_1">Requires Oreo 8.1 or later.</string>
+  <string name="requires_8_1">Nécessite Oreo ou version ultérieure.</string>
   <string name="enable_in_settings">Activer dans les paramètres.</string>
   <string name="about">À propos</string>
   <string name="miscellaneous">Divers</string>
@@ -32,7 +32,7 @@
   <string name="status_bar">Barre d’État</string>
   <string name="reboot_required">(Redémarrage requis)</string>
   <string name="sorry">Désolé…</string>
-  <string name="created_by">App created by <a href="https://forum.xda-developers.com/member.php?u=7055541">Zacharee1</a></string>
+  <string name="created_by">Application créé par <a href="https://forum.xda-developers.com/member.php?u=7055541"> Zacharee1</a></string>
   <string name="spanish_from">Spanish translation by <a href="https://es.stackoverflow.com/users/28567/aaron-romero">Aaron Romero</a> and <a href="https://forum.xda-developers.com/member.php?u=7055541">Zacharee1</a></string>
   <string name="enabled">Activé</string>
   <string name="show">Montrer</string>
@@ -41,7 +41,7 @@
   <string name="wifi_strength">Force WiFi</string>
   <string name="battery_charging">Batterie en charge</string>
   <string name="mobile_strength">Force mobile</string>
-  <string name="mobile_type">Mobile Type</string>
+  <string name="mobile_type">Type de mobile</string>
   <string name="show_airplane_mode">Show Airplane Mode</string>
   <string name="show_notifications">Show Notifications</string>
   <string name="status_bar_style">Status Bar Style</string>
