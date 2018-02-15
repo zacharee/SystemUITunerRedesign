@@ -46,7 +46,7 @@
   <string name="show_notifications">Show Notifications</string>
   <string name="status_bar_style">Status Bar Style</string>
   <string name="home_desc">For Devices without this Activity</string>
-  <string name="home_joke">Or for devices with it, I\'m not your boss.</string>
+  <string name="home_joke">Ou pour les appareils avec, je ne suis pas votre patron.</string>
   <string name="home_extra">(If you do have the stock SystemUI Tuner, this one provides some extra goodies.)</string>
   <string name="setup">Setup</string>
   <string name="dnd_switch_in_vol_slider">DND Switch in Vol Slider</string>
