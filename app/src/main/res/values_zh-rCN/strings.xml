@@ -4,20 +4,18 @@
   <string name="app_name">系统界面调节工具</string>
   <string name="to_the_tweaks">见不得人的秘密</string>
   <string name="sorry_explain">这项设置发生错误</string>
-  <string name="sorry_option">请从电脑端输入以下命令行(是一整句哦)</string>
+  <string name="sorry_option">Try executing the following command from a computer (it\'s one line):</string>
   <string name="more">更多</string>
   <string name="grant_dump_perm">需要给 android.permission.DUMP 权限来使用此功能</string>
   <string name="safe_mode_auto_enabled">检测到三星设备! 安全模式已自动启用, 为了您的安全, 修改任何状态栏图标有可能打破系统 UI! 请参考play store中说明的链接了解更多信息。</string>
   <string name="notice">注意</string>
   <string name="fancy_pulldown_notice">Toggling this option off can cause issues after a reboot. Manually toggle this option on and off after a reboot, or enable Safe Mode.</string>
-  <string name="safe_mode_summary">
-    SAMSUNG USERS KEEP THIS TURNED ON UNLESS YOU HAVE AN AOSP ROM! \n\n
-    - Clears any status bar customizations on reboot and restores them after boot completes. \n
-    - Toggles the QS Fancy Animation on boot. \n
-    - Restores custom QS header count value on boot (Nougat+). \n
-    - Restores custom QS row/column count on boot (TouchWiz, Nougat+). \n
-    - Restores custom notification snooze options on boot (8.1+).
-    </string>
+  <string name="safe_mode_summary">SAMSUNG USERS KEEP THIS TURNED ON UNLESS YOU HAVE AN AOSP ROM!</string>
+  <string name="safe_mode_summary_1">Clears any status bar customizations on reboot and restores them after boot completes.</string>
+  <string name="safe_mode_summary_2">Toggles the QS Fancy Animation on boot.</string>
+  <string name="safe_mode_summary_3">Restores custom QS header count value on boot (Nougat+).</string>
+  <string name="safe_mode_summary_4">Restores custom QS row/column count on boot (TouchWiz, Nougat+).</string>
+  <string name="safe_mode_summary_5">Restores custom notification snooze options on boot (8.1+).</string>
   <string name="hide_welcome_screen">隐藏欢迎屏幕</string>
   <string name="tasker_support">任务支持</string>
   <string name="instructions">说明</string>
