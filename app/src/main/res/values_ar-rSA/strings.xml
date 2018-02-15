@@ -4,20 +4,18 @@
   <string name="app_name">أداة ضبط واجهة مستخدم النظام</string>
   <string name="to_the_tweaks">للدردشة!</string>
   <string name="sorry_explain">حدث خطأ أثناء تعيين هذا التبديل.</string>
-  <string name="sorry_option">حاول تنفيذ الأمر التالي عبر جهاز الكمبيوتر (سطر واحد):</string>
+  <string name="sorry_option">Try executing the following command from a computer (it\'s one line):</string>
   <string name="more">المزيد</string>
   <string name="grant_dump_perm">أنت بحاجة لمنح إذن \"android.permission.DUMP\" لاستخدام هذه الميزة.</string>
   <string name="safe_mode_auto_enabled">تم الكشف عن جهاز سامسونج! تم تمكين الوضع الأمن تلقائياً لضمان سلامتك. إحذر من تعديل أي رموز شريطة القدرة على \"الخروج من واجهة مستخدم النظام\"! الرجاء اتباع الارتباط في وصف مخزن اللعب للحصول على مزيد من المعلومات.</string>
   <string name="notice">إشعار</string>
   <string name="fancy_pulldown_notice">Toggling this option off can cause issues after a reboot. Manually toggle this option on and off after a reboot, or enable Safe Mode.</string>
-  <string name="safe_mode_summary">
-    SAMSUNG USERS KEEP THIS TURNED ON UNLESS YOU HAVE AN AOSP ROM! \n\n
-    - Clears any status bar customizations on reboot and restores them after boot completes. \n
-    - Toggles the QS Fancy Animation on boot. \n
-    - Restores custom QS header count value on boot (Nougat+). \n
-    - Restores custom QS row/column count on boot (TouchWiz, Nougat+). \n
-    - Restores custom notification snooze options on boot (8.1+).
-    </string>
+  <string name="safe_mode_summary">SAMSUNG USERS KEEP THIS TURNED ON UNLESS YOU HAVE AN AOSP ROM!</string>
+  <string name="safe_mode_summary_1">Clears any status bar customizations on reboot and restores them after boot completes.</string>
+  <string name="safe_mode_summary_2">Toggles the QS Fancy Animation on boot.</string>
+  <string name="safe_mode_summary_3">Restores custom QS header count value on boot (Nougat+).</string>
+  <string name="safe_mode_summary_4">Restores custom QS row/column count on boot (TouchWiz, Nougat+).</string>
+  <string name="safe_mode_summary_5">Restores custom notification snooze options on boot (8.1+).</string>
   <string name="hide_welcome_screen">إخفاء شاشة الترحيب</string>
   <string name="tasker_support">دعم تاسكر</string>
   <string name="instructions">التعليمات</string>
