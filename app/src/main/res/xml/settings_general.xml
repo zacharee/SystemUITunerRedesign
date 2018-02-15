@@ -27,6 +27,26 @@
             android:key="safe_mode"
             android:summary="@string/safe_mode_summary"/>
 
+        <Preference
+            android:selectable="false"
+            android:summary="@string/safe_mode_summary_1" />
+
+        <Preference
+            android:selectable="false"
+            android:summary="@string/safe_mode_summary_2" />
+
+        <Preference
+            android:selectable="false"
+            android:summary="@string/safe_mode_summary_3" />
+
+        <Preference
+            android:selectable="false"
+            android:summary="@string/safe_mode_summary_4" />
+
+        <Preference
+            android:selectable="false"
+            android:summary="@string/safe_mode_summary_5" />
+
         <SwitchPreference
             android:title="@string/enable_custom_settings_input"
             android:key="allow_custom_settings_input" />
