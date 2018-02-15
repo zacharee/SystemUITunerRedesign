@@ -4,7 +4,6 @@ import android.Manifest
 import android.content.Intent
 import android.preference.Preference
 import android.preference.SwitchPreference
-import android.util.Log
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.activites.instructions.SetupActivity
 import com.zacharee1.systemuituner.fragments.ItemDetailFragment
@@ -27,7 +26,7 @@ class AutoHelper(fragment: ItemDetailFragment) : BaseHelper(fragment) {
             val index = dump.indexOf("icon slots")
             if (index != -1) {
                 val icons = dump.substring(index)
-                val ico = ArrayList(Arrays.asList<String>(*icons.split("[\\n]".toRegex()).dropLastWhile({ it.isEmpty() }).toTypedArray()))
+                val ico = ArrayList(icons.split("\n"))
                 ico.removeAt(0)
                 for (slot in ico) {
                     if (slot.startsWith("         ") || slot.startsWith("        ")) {
@@ -61,7 +60,7 @@ class AutoHelper(fragment: ItemDetailFragment) : BaseHelper(fragment) {
 
             while (!m.hitEnd()) if (m.find()) find = find + m.group() + "\n"
 
-            val slots = ArrayList(Arrays.asList<String>(*find.split("[\\n]".toRegex()).dropLastWhile({ it.isEmpty() }).toTypedArray()))
+            val slots = ArrayList(find.split("\n"))
             for (slot in slots) {
                 val slotNew = slot.replace("slot=", "").replace(" ", "")
 

@@ -57,7 +57,7 @@ object Utils {
             val errorReader = BufferedReader(InputStreamReader(comm.errorStream))
 
             var ret = ""
-            var line: String
+            var line: String?
 
             do {
                 line = inputReader.readLine()

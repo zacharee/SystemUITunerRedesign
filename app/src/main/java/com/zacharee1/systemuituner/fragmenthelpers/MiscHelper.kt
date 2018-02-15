@@ -246,7 +246,7 @@ class MiscHelper(fragment: ItemDetailFragment) : BaseHelper(fragment) {
             if (key.contains("settings")) {
                 preference.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { _, o ->
                     val value = o.toString()
-                    val keyVal = value.split("[ ]".toRegex()).dropLastWhile({ it.isEmpty() }).toTypedArray()
+                    val keyVal = value.split(" ")
 
                     var putKey = ""
                     var putVal = ""
@@ -371,12 +371,12 @@ class MiscHelper(fragment: ItemDetailFragment) : BaseHelper(fragment) {
             ret.add("60")
             ret.add("120")
         } else {
-            val parts = saved.split("[,]".toRegex()).dropLastWhile({ it.isEmpty() }).toTypedArray()
-            val def = parts[0].split("[=]".toRegex()).dropLastWhile({ it.isEmpty() }).toTypedArray()[1]
-            val options = parts[1].split("[=]".toRegex()).dropLastWhile({ it.isEmpty() }).toTypedArray()[1].split(":".toRegex()).dropLastWhile({ it.isEmpty() }).toTypedArray()
+            val parts = saved.split(",")
+            val def = parts[0].split("=")[1]
+            val options = parts[1].split("=")[1].split(":")
 
             ret.add(def)
-            ret.addAll(Arrays.asList(*options))
+            ret.addAll(options)
         }
 
         return ret

@@ -82,11 +82,8 @@ class LockHelper(fragment: ItemDetailFragment) : BaseHelper(fragment) {
         var leftStuff: Array<String>? = null
         var rightStuff: Array<String>? = null
 
-        if (leftSum != null) leftStuff = leftSum.split("[/]".toRegex()).dropLastWhile({ it.isEmpty() }).toTypedArray()
-        if (rightSum != null) rightStuff = rightSum.split("[/]".toRegex()).dropLastWhile({ it.isEmpty() }).toTypedArray()
-
-        //        if (leftSum != null) leftSum = leftSum.replace("/.", "");
-        //        if (rightSum != null) rightSum = rightSum.replace("/.", "");
+        if (leftSum != null) leftStuff = leftSum.split("/").toTypedArray()
+        if (rightSum != null) rightStuff = rightSum.split("/").toTypedArray()
 
         leftLock.summary = leftSum
         rightLock.summary = rightSum

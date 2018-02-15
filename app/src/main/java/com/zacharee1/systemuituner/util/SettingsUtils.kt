@@ -5,6 +5,7 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.preference.SwitchPreference
 import android.provider.Settings
+import android.text.TextUtils
 import com.zacharee1.systemuituner.activites.info.SettingWriteFailed
 import com.zacharee1.systemuituner.fragments.ItemDetailFragment
 import java.util.*
@@ -96,27 +97,23 @@ object SettingsUtils {
 
     fun changeBlacklist(key: String?, value: Boolean, context: Context) {
         if (key != null) {
-            var currentBL: String? = Settings.Secure.getString(context.contentResolver, "icon_blacklist")
-            if (currentBL == null) currentBL = ""
+            var currentBL: String = Settings.Secure.getString(context.contentResolver, "icon_blacklist") ?: ""
 
             if (!value) {
-                currentBL = if (currentBL.isEmpty()) {
+                currentBL += if (currentBL.isEmpty()) {
                     key
                 } else {
-                    ("," + key)
+                    ",$key"
                 }
             } else {
-                val blItems = ArrayList(Arrays.asList<String>(*currentBL.split("[,]".toRegex()).dropLastWhile({ it.isEmpty() }).toTypedArray()))
-                val keyItems = ArrayList(Arrays.asList<String>(*key.split("[,]".toRegex()).dropLastWhile({ it.isEmpty() }).toTypedArray()))
+                val blItems = ArrayList(currentBL.split(","))
+                val keyItems = ArrayList(key.split(","))
 
                 keyItems
                         .filter { blItems.contains(it) }
                         .forEach { blItems.remove(it) }
 
-                currentBL = blItems.toString()
-                        .replace("[", "")
-                        .replace("]", "")
-                        .replace(" ", "")
+                currentBL = TextUtils.join(",", blItems) ?: ""
             }
 
             SettingsUtils.writeSecure(context, "icon_blacklist", currentBL)
@@ -127,7 +124,7 @@ object SettingsUtils {
         var blString: String? = Settings.Secure.getString(fragment.activity.contentResolver, "icon_blacklist")
         if (blString == null) blString = ""
 
-        val blItems = ArrayList(Arrays.asList<String>(*blString.split("[,]".toRegex()).dropLastWhile({ it.isEmpty() }).toTypedArray()))
+        val blItems = ArrayList(blString.split(","))
 
         for (i in 0 until fragment.preferenceScreen.rootAdapter.count) {
             val o = fragment.preferenceScreen.rootAdapter.getItem(i)
@@ -140,7 +137,7 @@ object SettingsUtils {
                     val key = o.key
 
                     if (key != null) {
-                        val keyItems = ArrayList(Arrays.asList<String>(*key.split("[,]".toRegex()).dropLastWhile({ it.isEmpty() }).toTypedArray()))
+                        val keyItems = ArrayList(key.split(","))
 
                         keyItems
                                 .filter { blItems.contains(it) }

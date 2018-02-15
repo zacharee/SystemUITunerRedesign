@@ -17,11 +17,11 @@ class TaskerReceiver : BroadcastReceiver() {
             val dataString = intent.dataString
 
             //expecting dataString with format "SETTING:key/value"
-            val nameVal = dataString!!.split("[:]".toRegex()).dropLastWhile({ it.isEmpty() }).toTypedArray()
+            val nameVal = dataString.split(":").toTypedArray()
             if (nameVal.size < 2) nameVal[1] = ""
             val keyVal = nameVal[1]
 
-            val keyValPair = ArrayList(Arrays.asList<String>(*keyVal.split("[/]".toRegex()).dropLastWhile({ it.isEmpty() }).toTypedArray()))
+            val keyValPair = ArrayList(keyVal.split("/"))
             if (keyValPair.size < 2) keyValPair[1] = ""
 
             when (intent.action) {

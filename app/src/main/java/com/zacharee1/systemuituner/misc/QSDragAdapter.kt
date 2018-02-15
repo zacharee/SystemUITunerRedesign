@@ -27,7 +27,7 @@ class QSDragAdapter(private val mContext: Context) : RecyclerView.Adapter<QSDrag
     private val defaultTiles: ArrayList<QSTile>
         get() {
             val order = defaultTileOrder
-            val array = order.split("[,]".toRegex()).dropLastWhile({ it.isEmpty() }).toTypedArray()
+            val array = order.split(",")
 
             return array.mapTo(ArrayList()) { QSTile(it, mContext) }
         }
@@ -58,7 +58,7 @@ class QSDragAdapter(private val mContext: Context) : RecyclerView.Adapter<QSDrag
             tiles = defaultTileOrder
         }
 
-        val tileArray = tiles.split("[,]".toRegex()).dropLastWhile({ it.isEmpty() }).toTypedArray()
+        val tileArray = tiles.split(",")
 
         val tempTiles = tileArray.map { QSTile(it, mContext) }
 
@@ -208,8 +208,8 @@ class QSDragAdapter(private val mContext: Context) : RecyclerView.Adapter<QSDrag
 
             name = name.replace("(", "").replace(")", "")
 
-            val packageName = name.split("[/]".toRegex()).dropLastWhile({ it.isEmpty() }).toTypedArray()[0]
-            val component = name.split("[/]".toRegex()).dropLastWhile({ it.isEmpty() }).toTypedArray()[1]
+            val packageName = name.split("/")[0]
+            val component = name.split("/")[1]
 
             try {
                 icon = mContext.packageManager.getApplicationIcon(packageName)
@@ -217,7 +217,7 @@ class QSDragAdapter(private val mContext: Context) : RecyclerView.Adapter<QSDrag
             }
 
             try {
-                val split = component.split("[.]".toRegex()).dropLastWhile({ it.isEmpty() }).toTypedArray()
+                val split = component.split(".")
                 title = split[split.size - 1]
             } catch (e: Exception) {
             }

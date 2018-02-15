@@ -10,7 +10,6 @@ import com.zacharee1.systemuituner.util.SettingsUtils
 class StatbarHelper(fragment: ItemDetailFragment) : BaseHelper(fragment) {
 
     init {
-
         preferenceListeners()
         setSwitchPreferenceStates()
         switchPreferenceListeners()
