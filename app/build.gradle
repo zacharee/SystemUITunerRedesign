@@ -9,13 +9,15 @@ buildscript {
     }
 }
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
 apply plugin: 'io.fabric'
 
-project.version = 246
+project.version = 248
 
 repositories {
     maven { url 'https://maven.fabric.io/public' }
     maven { url 'https://jitpack.io' }
+    mavenCentral()
 }
 
 android {
@@ -69,6 +71,7 @@ dependencies {
         transitive = true
     }
     implementation 'com.jaredrummler:colorpicker:1.0.1'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
 
 apply plugin: 'com.google.gms.google-services'
