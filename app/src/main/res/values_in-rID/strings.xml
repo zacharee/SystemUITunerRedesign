@@ -4,20 +4,18 @@
   <string name="app_name">SystemUI Tuner</string>
   <string name="to_the_tweaks">Untuk Tweak!</string>
   <string name="sorry_explain">Ada sesuatu yang tidak beres saat menyetel toggle ini.</string>
-  <string name="sorry_option">Coba jalankan perintah berikut dari komputer (ini satu baris):</string>
+  <string name="sorry_option">Try executing the following command from a computer (it\'s one line):</string>
   <string name="more">Selebihnya</string>
   <string name="grant_dump_perm">Anda perlu memberikan izin \"android.permission.DUMP\" untuk menggunakan fitur ini.</string>
   <string name="safe_mode_auto_enabled">Perangkat samsung terdeteksi! Mode aman telah secara otomatis diaktifkan untuk keselamatan Anda. Berhati-hatilah bahwa memodifikasi ikon status bar memiliki potensi untuk memecahkan sistem UI! Silahkan ikuti tautan di deskripsi Play Store untuk informasi lebih lanjut.</string>
   <string name="notice">PEMBERITAHUAN</string>
   <string name="fancy_pulldown_notice">Toggling this option off can cause issues after a reboot. Manually toggle this option on and off after a reboot, or enable Safe Mode.</string>
-  <string name="safe_mode_summary">
-    SAMSUNG USERS KEEP THIS TURNED ON UNLESS YOU HAVE AN AOSP ROM! \n\n
-    - Clears any status bar customizations on reboot and restores them after boot completes. \n
-    - Toggles the QS Fancy Animation on boot. \n
-    - Restores custom QS header count value on boot (Nougat+). \n
-    - Restores custom QS row/column count on boot (TouchWiz, Nougat+). \n
-    - Restores custom notification snooze options on boot (8.1+).
-    </string>
+  <string name="safe_mode_summary">SAMSUNG USERS KEEP THIS TURNED ON UNLESS YOU HAVE AN AOSP ROM!</string>
+  <string name="safe_mode_summary_1">Clears any status bar customizations on reboot and restores them after boot completes.</string>
+  <string name="safe_mode_summary_2">Toggles the QS Fancy Animation on boot.</string>
+  <string name="safe_mode_summary_3">Restores custom QS header count value on boot (Nougat+).</string>
+  <string name="safe_mode_summary_4">Restores custom QS row/column count on boot (TouchWiz, Nougat+).</string>
+  <string name="safe_mode_summary_5">Restores custom notification snooze options on boot (8.1+).</string>
   <string name="hide_welcome_screen">Sembunyikan Layar Selamat Datang</string>
   <string name="tasker_support">Dukungan Tasker</string>
   <string name="instructions">Instruksi</string>
