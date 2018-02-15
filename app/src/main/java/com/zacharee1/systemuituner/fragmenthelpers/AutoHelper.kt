@@ -37,7 +37,6 @@ class AutoHelper(fragment: ItemDetailFragment) : BaseHelper(fragment) {
                         while (!m.hitEnd()) {
                             if (m.find()) {
                                 val result = m.group().replace("(", "").replace(")", "")
-                                Log.e("SLOT", result)
 
                                 val preference = SwitchPreference(context)
                                 preference.title = result
@@ -65,7 +64,6 @@ class AutoHelper(fragment: ItemDetailFragment) : BaseHelper(fragment) {
             val slots = ArrayList(Arrays.asList<String>(*find.split("[\\n]".toRegex()).dropLastWhile({ it.isEmpty() }).toTypedArray()))
             for (slot in slots) {
                 val slotNew = slot.replace("slot=", "").replace(" ", "")
-                Log.e("SLOT", slotNew)
 
                 val preference = SwitchPreference(context)
                 preference.title = slotNew

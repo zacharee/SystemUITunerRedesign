@@ -9,7 +9,6 @@ import android.content.pm.PackageManager
 import android.os.Build
 import android.preference.PreferenceManager
 import android.support.v7.app.AlertDialog
-import android.util.Log
 import android.util.TypedValue
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.activites.ItemListActivity
@@ -76,7 +75,6 @@ object Utils {
                 comm.waitFor()
             } catch (e: InterruptedException) {
                 e.printStackTrace()
-                Log.e("Err", e.message)
             }
 
             outputStream.close()

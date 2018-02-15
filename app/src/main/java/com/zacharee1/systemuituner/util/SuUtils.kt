@@ -1,6 +1,5 @@
 package com.zacharee1.systemuituner.util
 
-import android.util.Log
 import java.io.*
 
 object SuUtils {
@@ -21,7 +20,6 @@ object SuUtils {
                 su.waitFor()
             } catch (e: InterruptedException) {
                 e.printStackTrace()
-                Log.e("No Root?", e.message)
             }
 
             outputStream.close()

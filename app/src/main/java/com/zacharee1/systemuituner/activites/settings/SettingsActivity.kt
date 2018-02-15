@@ -8,7 +8,6 @@ import android.preference.Preference
 import android.preference.PreferenceFragment
 import android.preference.SwitchPreference
 import android.support.v4.content.LocalBroadcastManager
-import android.util.Log
 import android.view.MenuItem
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.activites.instructions.TaskerInstructionActivity
@@ -53,7 +52,6 @@ class SettingsActivity : AppCompatPreferenceActivity() {
      * Make sure to deny any unknown fragments here.
      */
     override fun isValidFragment(fragmentName: String): Boolean {
-        Log.e("Gen", GeneralPreferenceFragment::class.java.name)
         return PreferenceFragment::class.java.name == fragmentName || GeneralPreferenceFragment::class.java.name == fragmentName
     }
 

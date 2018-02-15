@@ -4,16 +4,12 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.preference.PreferenceManager
-import android.util.Log
 import com.zacharee1.systemuituner.misc.MiscStrings
 import com.zacharee1.systemuituner.util.SettingsUtils
 import java.util.*
 
 class TaskerReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context, intent: Intent) {
-        Log.e("DATA", "RECEIVED")
-        Log.e("DATA", intent.dataString)
-
         if ((intent.action == MiscStrings.ACTION_SETTINGS_GLOBAL ||
                         intent.action == MiscStrings.ACTION_SETTINGS_SECURE ||
                         intent.action == MiscStrings.ACTION_SETTINGS_SYSTEM) && PreferenceManager.getDefaultSharedPreferences(context).getBoolean("tasker_support_enabled", false)) {

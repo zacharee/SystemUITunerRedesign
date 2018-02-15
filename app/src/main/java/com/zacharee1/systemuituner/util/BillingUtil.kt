@@ -3,7 +3,6 @@ package com.zacharee1.systemuituner.util
 import android.app.Activity
 import android.content.Intent
 import android.net.Uri
-import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.LinearLayout
@@ -39,8 +38,6 @@ class BillingUtil(private val mActivity: Activity) {
 
         mBillingClient.startConnection(object : BillingClientStateListener {
             override fun onBillingSetupFinished(@BillingClient.BillingResponse billingResponseCode: Int) {
-                Log.e("BillingResult", billingResponseCode.toString() + "")
-
                 if (billingResponseCode == BillingClient.BillingResponse.OK) {
                     val ppTitle = mActivity.findViewById<TextView>(R.id.paypal_title)
                     val ppButton = mActivity.findViewById<Button>(R.id.paypal_button)

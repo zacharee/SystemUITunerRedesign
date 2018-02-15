@@ -5,8 +5,6 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.preference.PreferenceManager
 import android.provider.Settings
-import android.util.Log
-
 import com.zacharee1.systemuituner.util.SettingsUtils
 
 class DemoHandler(private val mContext: Context) {
@@ -106,7 +104,6 @@ class DemoHandler(private val mContext: Context) {
 
             SettingsUtils.writeGlobal(mContext, "sysui_tuner_demo_on", "1")
         } catch (e: Exception) {
-            Log.e("Demo", e.message)
             e.printStackTrace()
         }
 

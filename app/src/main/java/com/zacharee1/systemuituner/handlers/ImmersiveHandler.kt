@@ -3,7 +3,6 @@ package com.zacharee1.systemuituner.handlers
 import android.content.Context
 import android.preference.PreferenceManager
 import android.provider.Settings
-import android.util.Log
 import com.zacharee1.systemuituner.util.SettingsUtils
 import java.util.*
 
@@ -35,8 +34,6 @@ object ImmersiveHandler {
     }
 
     fun setMode(context: Context, type: String?) {
-        Log.e("Setting Mode", type)
-
         type?.let {
             if (it.contains(FULL)
                     || it.contains(STATUS)
@@ -61,8 +58,6 @@ object ImmersiveHandler {
         } else {
             builder.append("*")
         }
-
-        Log.e("Options", builder.toString())
 
         return builder.toString()
     }
