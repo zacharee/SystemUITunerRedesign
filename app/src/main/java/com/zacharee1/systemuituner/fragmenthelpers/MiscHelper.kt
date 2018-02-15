@@ -300,7 +300,7 @@ class MiscHelper(fragment: ItemDetailFragment) : BaseHelper(fragment) {
 
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O_MR1) {
             category.isEnabled = false
-            summary.setSummary(R.string.requires_8_1)
+            summary?.setSummary(R.string.requires_8_1)
         } else {
             val def = findPreference("default_time") as EditTextPreference
             val a = findPreference("time_a") as EditTextPreference

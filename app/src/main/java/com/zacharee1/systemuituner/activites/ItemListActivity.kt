@@ -176,7 +176,7 @@ class ItemListActivity : AppCompatActivity() {
             holder.mItem = mValues[position]
             holder.mIconView.setImageDrawable(resources.getDrawable(holder.mItem!!.drawableId, null).constantState!!.newDrawable().mutate())
             setIconTint(holder)
-            holder.mContentView.text = mValues[position].content
+            holder.mContentView.text = resources.getString(mValues[position].title)
 
             holder.mView.setOnClickListener { v ->
                 if (mTwoPane) {

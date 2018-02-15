@@ -31,7 +31,7 @@ abstract class BaseHelper(val fragment: ItemDetailFragment) {
     val resources: Resources
         get() = activity.resources
 
-    fun findPreference(preference: String): Preference {
+    fun findPreference(preference: String): Preference? {
         return fragment.findPreference(preference)
     }
 

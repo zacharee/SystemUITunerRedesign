@@ -16,7 +16,6 @@ import com.zacharee1.systemuituner.util.SettingsUtils
 class QSHelper(fragment: ItemDetailFragment) : BaseHelper(fragment) {
 
     init {
-
         setSwitchStates()
         setSwitchListeners()
         setSliderState()
@@ -25,7 +24,7 @@ class QSHelper(fragment: ItemDetailFragment) : BaseHelper(fragment) {
 
     private fun setEditorListener() {
         val launch = findPreference("launch_editor")
-        launch.onPreferenceClickListener = Preference.OnPreferenceClickListener {
+        launch?.onPreferenceClickListener = Preference.OnPreferenceClickListener {
             startActivity(Intent(context, QuickSettingsLayoutEditor::class.java))
             true
         }

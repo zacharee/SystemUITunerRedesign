@@ -56,7 +56,7 @@ class LockHelper(fragment: ItemDetailFragment) : BaseHelper(fragment) {
         setLockSummaryAndIcon()
 
         val left = findPreference(CHOOSE_LEFT)
-        left.onPreferenceClickListener = Preference.OnPreferenceClickListener {
+        left?.onPreferenceClickListener = Preference.OnPreferenceClickListener {
             val activity = Intent(context, AppsListActivity::class.java)
             activity.putExtra(EXTRA_ISLEFT, true)
             startActivityForResult(activity, 1337)
@@ -64,7 +64,7 @@ class LockHelper(fragment: ItemDetailFragment) : BaseHelper(fragment) {
         }
 
         val right = findPreference(CHOOSE_RIGHT)
-        right.onPreferenceClickListener = Preference.OnPreferenceClickListener {
+        right?.onPreferenceClickListener = Preference.OnPreferenceClickListener {
             val activity = Intent(context, AppsListActivity::class.java)
             activity.putExtra(EXTRA_ISLEFT, false)
             startActivityForResult(activity, 1337)
@@ -85,8 +85,8 @@ class LockHelper(fragment: ItemDetailFragment) : BaseHelper(fragment) {
         if (leftSum != null) leftStuff = leftSum.split("/").toTypedArray()
         if (rightSum != null) rightStuff = rightSum.split("/").toTypedArray()
 
-        leftLock.summary = leftSum
-        rightLock.summary = rightSum
+        leftLock?.summary = leftSum
+        rightLock?.summary = rightSum
 
         val pm = activity.packageManager
 
@@ -94,15 +94,15 @@ class LockHelper(fragment: ItemDetailFragment) : BaseHelper(fragment) {
         unknown.setColorFilter(Color.WHITE, PorterDuff.Mode.SRC_ATOP)
 
         try {
-            leftLock.icon = pm.getActivityIcon(ComponentName(leftStuff!![0], leftStuff[1]))
+            leftLock?.icon = pm.getActivityIcon(ComponentName(leftStuff!![0], leftStuff[1]))
         } catch (e: Exception) {
-            leftLock.icon = unknown
+            leftLock?.icon = unknown
         }
 
         try {
-            rightLock.icon = pm.getActivityIcon(ComponentName(rightStuff!![0], rightStuff[1]))
+            rightLock?.icon = pm.getActivityIcon(ComponentName(rightStuff!![0], rightStuff[1]))
         } catch (e: Exception) {
-            rightLock.icon = unknown
+            rightLock?.icon = unknown
         }
 
     }
@@ -111,12 +111,12 @@ class LockHelper(fragment: ItemDetailFragment) : BaseHelper(fragment) {
         val resetLeft = findPreference(RESET_LEFT)
         val resetRight = findPreference(RESET_RIGHT)
 
-        resetLeft.onPreferenceClickListener = Preference.OnPreferenceClickListener {
+        resetLeft?.onPreferenceClickListener = Preference.OnPreferenceClickListener {
             SettingsUtils.writeSecure(context, KEYGUARD_LEFT, "")
             setLockSummaryAndIcon()
             true
         }
-        resetRight.onPreferenceClickListener = Preference.OnPreferenceClickListener {
+        resetRight?.onPreferenceClickListener = Preference.OnPreferenceClickListener {
             SettingsUtils.writeSecure(context, KEYGUARD_RIGHT, "")
             setLockSummaryAndIcon()
             true

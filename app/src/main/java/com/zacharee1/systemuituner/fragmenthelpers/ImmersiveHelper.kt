@@ -15,21 +15,21 @@ import com.zacharee1.systemuituner.handlers.ImmersiveHandler
 
 class ImmersiveHelper(fragment: ItemDetailFragment) : BaseHelper(fragment), Preference.OnPreferenceChangeListener {
 
-    private val none: CheckBoxPreference = findPreference(ImmersiveHandler.DISABLED) as CheckBoxPreference
-    private val full: CheckBoxPreference = findPreference(ImmersiveHandler.FULL) as CheckBoxPreference
-    private val status: CheckBoxPreference = findPreference(ImmersiveHandler.STATUS) as CheckBoxPreference
-    private val navi: CheckBoxPreference = findPreference(ImmersiveHandler.NAV) as CheckBoxPreference
-    private val preconf: CheckBoxPreference = findPreference(ImmersiveHandler.PRECONF) as CheckBoxPreference
+    private val none = findPreference(ImmersiveHandler.DISABLED) as CheckBoxPreference?
+    private val full = findPreference(ImmersiveHandler.FULL) as CheckBoxPreference?
+    private val status = findPreference(ImmersiveHandler.STATUS) as CheckBoxPreference?
+    private val navi = findPreference(ImmersiveHandler.NAV) as CheckBoxPreference?
+    private val preconf = findPreference(ImmersiveHandler.PRECONF) as CheckBoxPreference?
     private var mObserver: ContentObserver? = null
 
     init {
-        findPreference("immersive_tile_mode").onPreferenceChangeListener = this
+        findPreference("immersive_tile_mode")?.onPreferenceChangeListener = this
 
-        none.onPreferenceChangeListener = this
-        full.onPreferenceChangeListener = this
-        status.onPreferenceChangeListener = this
-        navi.onPreferenceChangeListener = this
-        preconf.onPreferenceChangeListener = this
+        none?.onPreferenceChangeListener = this
+        full?.onPreferenceChangeListener = this
+        status?.onPreferenceChangeListener = this
+        navi?.onPreferenceChangeListener = this
+        preconf?.onPreferenceChangeListener = this
 
         setContentObserver()
         setProperBoxChecked()
@@ -91,13 +91,13 @@ class ImmersiveHelper(fragment: ItemDetailFragment) : BaseHelper(fragment), Pref
 
     private fun setSelectorListener() {
         val preference = findPreference(SELECT_APPS)
-        preference.onPreferenceClickListener = Preference.OnPreferenceClickListener {
+        preference?.onPreferenceClickListener = Preference.OnPreferenceClickListener {
             activity.startActivity(Intent(activity, ImmersiveSelectActivity::class.java))
             true
         }
 
-        val enabled = findPreference(APP_IMMERSIVE) as SwitchPreference
-        enabled.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { _, _ ->
+        val enabled = findPreference(APP_IMMERSIVE) as SwitchPreference?
+        enabled?.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { _, _ ->
             Handler().postDelayed({ ImmersiveHandler.setMode(context, ImmersiveHandler.getMode(context)) }, 100)
             true
         }

@@ -30,11 +30,6 @@ class ImmersiveSelectActivity : AppCompatActivity() {
         setContentView(R.layout.activity_blank_custom_toolbar)
         setTitle(R.string.select_apps)
 
-        //        final ProgressBar bar = new ProgressBar(this);
-        //        bar.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
-
-        //        ((LinearLayout)findViewById(R.id.content_main)).addView(bar);
-
         val installedApps = Utils.getInstalledApps(this)
 
         val bar = findViewById<ProgressBar>(R.id.app_load_progress)

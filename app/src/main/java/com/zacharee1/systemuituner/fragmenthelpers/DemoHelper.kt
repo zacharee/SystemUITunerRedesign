@@ -37,11 +37,11 @@ class DemoHelper(fragment: ItemDetailFragment) : BaseHelper(fragment) {
 
     private fun setPrefListeners() {
         val enableDemo = findPreference(DEMO_ALLOWED)
-        enableDemo.isEnabled = Settings.Global.getInt(context.contentResolver, DEMO_ALLOWED, 0) == 0
-        enableDemo.onPreferenceClickListener = Preference.OnPreferenceClickListener { preference ->
+        enableDemo?.isEnabled = Settings.Global.getInt(context.contentResolver, DEMO_ALLOWED, 0) == 0
+        enableDemo?.onPreferenceClickListener = Preference.OnPreferenceClickListener { preference ->
             if (activity.checkCallingOrSelfPermission(Manifest.permission.DUMP) == PackageManager.PERMISSION_GRANTED) {
                 SettingsUtils.writeGlobal(context, preference.key, "1")
-                findPreference(SHOW_DEMO).isEnabled = true
+                findPreference(SHOW_DEMO)?.isEnabled = true
             } else {
                 Toast.makeText(context, resources.getString(R.string.grant_dump_perm), Toast.LENGTH_LONG).show()
             }

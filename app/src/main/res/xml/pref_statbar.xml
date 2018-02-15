@@ -15,6 +15,11 @@
             android:key="restore_blacklist"
             android:title="@string/restore_blacklist"
             android:icon="@drawable/ic_restore_black_24dp"/>
+        <Preference
+            android:key="auto_detect"
+            android:title="@string/auto_detect"
+            android:summary="@string/auto_detect_summary"
+            android:icon="@drawable/ic_help_outline_black_24dp" />
     </PreferenceCategory>
 
     <PreferenceCategory

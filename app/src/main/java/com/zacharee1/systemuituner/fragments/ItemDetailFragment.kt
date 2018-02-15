@@ -2,16 +2,12 @@ package com.zacharee1.systemuituner.fragments
 
 import android.os.Bundle
 import android.preference.PreferenceFragment
+import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.fragmenthelpers.*
 import com.zacharee1.systemuituner.misc.TweakItems
 
 class ItemDetailFragment : PreferenceFragment() {
     private var helper: BaseHelper? = null
-
-    /**
-     * The dummy content this fragment is presenting.
-     */
-    private var mItem: TweakItems.TweakItem? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,10 +15,14 @@ class ItemDetailFragment : PreferenceFragment() {
 
         if (arguments.containsKey(ARG_ITEM_ID)) {
             val id = arguments.getString(ARG_ITEM_ID)!!
+            var item = TweakItems.ITEM_MAP[id]
 
-            mItem = TweakItems.ITEM_MAP[id]
+            if (id == "auto") item = TweakItems.TweakItem(id,
+                    R.drawable.ic_help_outline_black_24dp,
+                    R.string.auto_detect,
+                    R.xml.pref_auto)
 
-            addPreferencesFromResource(mItem!!.layoutId)
+            addPreferencesFromResource(item!!.layoutId)
 
             when (id) {
                 "statbar" -> helper = StatbarHelper(this)
@@ -35,7 +35,7 @@ class ItemDetailFragment : PreferenceFragment() {
                 "lockscreen" -> helper = LockHelper(this)
             }
 
-            activity.title = mItem!!.content
+            activity.title = resources.getString(item.title)
         }
     }
 
