@@ -168,6 +168,7 @@
   <string name="quick_settings">快速設定</string>
   <string name="demo_mode">Demo 模式</string>
   <string name="auto_detect">自動偵測</string>
+  <string name="auto_detect_summary">Attempts to automatically detect which status bar icons can be hidden. Does not work on all devices!</string>
   <string name="sim_count">SIM 卡數量</string>
   <string name="volume_icon_style">音量圖示樣式</string>
   <string name="bluetooth_icon_style">藍芽圖示樣式</string>
