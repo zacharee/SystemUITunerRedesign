@@ -4,20 +4,18 @@
   <string name="app_name">SystemUI Tuner</string>
   <string name="to_the_tweaks">調整する！</string>
   <string name="sorry_explain">設定中に何らかの問題が発生しました。</string>
-  <string name="sorry_option">コンピューターから次のコマンドを実行してみてください(1行です):</string>
+  <string name="sorry_option">Try executing the following command from a computer (it\'s one line):</string>
   <string name="more">もっと見る</string>
   <string name="grant_dump_perm">この機能を利用するには\"android.permission.DUMP\"の権限を許可する必要があります。</string>
   <string name="safe_mode_auto_enabled">サムスン製の端末が検出されました！安全のため、自動的にセーフモードが有効になりました。ステータスバーアイコンを調整することで、システムUIが崩れる恐れがありますので、注意してください。詳細についてはPlayストアの説明のリンクを参照してください。</string>
   <string name="notice">注意</string>
   <string name="fancy_pulldown_notice">Toggling this option off can cause issues after a reboot. Manually toggle this option on and off after a reboot, or enable Safe Mode.</string>
-  <string name="safe_mode_summary">
-    SAMSUNG USERS KEEP THIS TURNED ON UNLESS YOU HAVE AN AOSP ROM! \n\n
-    - Clears any status bar customizations on reboot and restores them after boot completes. \n
-    - Toggles the QS Fancy Animation on boot. \n
-    - Restores custom QS header count value on boot (Nougat+). \n
-    - Restores custom QS row/column count on boot (TouchWiz, Nougat+). \n
-    - Restores custom notification snooze options on boot (8.1+).
-    </string>
+  <string name="safe_mode_summary">SAMSUNG USERS KEEP THIS TURNED ON UNLESS YOU HAVE AN AOSP ROM!</string>
+  <string name="safe_mode_summary_1">Clears any status bar customizations on reboot and restores them after boot completes.</string>
+  <string name="safe_mode_summary_2">Toggles the QS Fancy Animation on boot.</string>
+  <string name="safe_mode_summary_3">Restores custom QS header count value on boot (Nougat+).</string>
+  <string name="safe_mode_summary_4">Restores custom QS row/column count on boot (TouchWiz, Nougat+).</string>
+  <string name="safe_mode_summary_5">Restores custom notification snooze options on boot (8.1+).</string>
   <string name="hide_welcome_screen">チュートリアルを隠す</string>
   <string name="tasker_support">Taskerサポート</string>
   <string name="instructions">手順</string>
