@@ -35,13 +35,13 @@ class HuNTile : TileService() {
     }
 
     private fun setState() {
-        qsTile.state = if (isEnabled) Tile.STATE_ACTIVE else Tile.STATE_INACTIVE
+        qsTile?.state = if (isEnabled) Tile.STATE_ACTIVE else Tile.STATE_INACTIVE
         setIcon()
-        qsTile.updateTile()
+        qsTile?.updateTile()
     }
 
     private fun setIcon() {
-        qsTile.icon = Icon.createWithResource(this, if (isEnabled) R.drawable.ic_notifications_black_24dp else R.drawable.ic_notifications_off_black_24dp)
+        qsTile?.icon = Icon.createWithResource(this, if (isEnabled) R.drawable.ic_notifications_black_24dp else R.drawable.ic_notifications_off_black_24dp)
     }
 
     override fun onClick() {

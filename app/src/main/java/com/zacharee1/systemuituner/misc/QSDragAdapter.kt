@@ -149,16 +149,10 @@ class QSDragAdapter(private val mContext: Context) : RecyclerView.Adapter<QSDrag
     }
 
     class QSTile(var key: String, context: Context) {
-        var title: String
-        var icon: Drawable
-
         private var mParser: TileParser = TileParser(key, context)
 
-        init {
-
-            this.title = mParser.title
-            this.icon = mParser.icon
-        }
+        var title = mParser.title
+        var icon = mParser.icon
     }
 
     class TileParser(var key: String, private val mContext: Context) {
@@ -166,7 +160,6 @@ class QSDragAdapter(private val mContext: Context) : RecyclerView.Adapter<QSDrag
         lateinit var title: String
 
         init {
-
             parseKey()
         }
 
@@ -227,25 +220,24 @@ class QSDragAdapter(private val mContext: Context) : RecyclerView.Adapter<QSDrag
         private fun parseStandard() {
             title = key.toLowerCase()
 
-            var iconRes = R.drawable.ic_android_black_24dp
-
-            when (key.toLowerCase()) {
-                "wifi" -> iconRes = R.drawable.ic_signal_wifi_4_bar_black_24dp
-                "bluetooth", "bt" -> iconRes = R.drawable.ic_bluetooth_black_24dp
-                "color_inversion", "inversion" -> iconRes = R.drawable.ic_invert_colors_black_24dp
-                "cell" -> iconRes = R.drawable.ic_signal_cellular_4_bar_black_24dp
-                "do_not_disturb", "dnd" -> iconRes = R.drawable.ic_do_not_disturb_on_black_24dp
-                "airplane" -> iconRes = R.drawable.ic_airplanemode_active_black_24dp
-                "cast" -> iconRes = R.drawable.ic_cast_black_24dp
-                "location" -> iconRes = R.drawable.ic_location_on_black_24dp
-                "rotation" -> iconRes = R.drawable.ic_screen_rotation_black_24dp
-                "flashlight" -> iconRes = R.drawable.ic_highlight_black_24dp
-                "hotspot" -> iconRes = R.drawable.ic_wifi_tethering_black_24dp
-                "battery" -> iconRes = R.drawable.ic_battery_full_black_24dp
-                "sound" -> iconRes = R.drawable.ic_volume_up_black_24dp
-                "sync" -> iconRes = R.drawable.ic_sync_black_24dp
-                "nfc" -> iconRes = R.drawable.ic_nfc_black_24dp
-                "data" -> iconRes = R.drawable.ic_data_usage_black_24dp
+            val iconRes = when (key.toLowerCase()) {
+                "wifi" -> R.drawable.ic_signal_wifi_4_bar_black_24dp
+                "bluetooth", "bt" -> R.drawable.ic_bluetooth_black_24dp
+                "color_inversion", "inversion" -> R.drawable.ic_invert_colors_black_24dp
+                "cell" -> R.drawable.ic_signal_cellular_4_bar_black_24dp
+                "do_not_disturb", "dnd" -> R.drawable.ic_do_not_disturb_on_black_24dp
+                "airplane" -> R.drawable.ic_airplanemode_active_black_24dp
+                "cast" -> R.drawable.ic_cast_black_24dp
+                "location" -> R.drawable.ic_location_on_black_24dp
+                "rotation" -> R.drawable.ic_screen_rotation_black_24dp
+                "flashlight" -> R.drawable.ic_highlight_black_24dp
+                "hotspot" -> R.drawable.ic_wifi_tethering_black_24dp
+                "battery" -> R.drawable.ic_battery_full_black_24dp
+                "sound" -> R.drawable.ic_volume_up_black_24dp
+                "sync" -> R.drawable.ic_sync_black_24dp
+                "nfc" -> R.drawable.ic_nfc_black_24dp
+                "data" -> R.drawable.ic_data_usage_black_24dp
+                else -> R.drawable.ic_android_black_24dp
             }
 
             val drawable = mContext.resources.getDrawable(iconRes, null).current.mutate()
