@@ -10,7 +10,7 @@ import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.MenuItem
 import android.view.View
-import android.widget.ProgressBar
+import com.dinuscxj.progressbar.CircleProgressBar
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.misc.AppInfo
 import com.zacharee1.systemuituner.misc.CustomAdapter
@@ -25,8 +25,7 @@ class AppsListActivity : AppCompatActivity() {
 
             val apps = Utils.getInstalledApps(this)
 
-            val bar = findViewById<ProgressBar>(R.id.progress)
-            bar.max = apps.size
+            val bar = findViewById<CircleProgressBar>(R.id.progress)
 
             for (info in apps) {
                 try {
@@ -36,7 +35,7 @@ class AppsListActivity : AppCompatActivity() {
                                 null,
                                 info.loadIcon(packageManager))
 
-                        runOnUiThread { bar.progress = apps.indexOf(info) + 1 }
+                        runOnUiThread { bar.progress = 100 * (apps.indexOf(info) + 1) / apps.size }
                     }
                 } catch (e: Exception) {
                 }
@@ -87,7 +86,7 @@ class AppsListActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent) {
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
         if (resultCode == Activity.RESULT_OK) {

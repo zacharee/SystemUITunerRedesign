@@ -12,8 +12,8 @@ import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
 import android.widget.LinearLayout
-import android.widget.ProgressBar
 import android.widget.Toast
+import com.dinuscxj.progressbar.CircleProgressBar
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.handlers.ImmersiveHandler
 import com.zacharee1.systemuituner.misc.AppInfo
@@ -32,8 +32,7 @@ class ImmersiveSelectActivity : AppCompatActivity() {
 
         val installedApps = Utils.getInstalledApps(this)
 
-        val bar = findViewById<ProgressBar>(R.id.app_load_progress)
-        bar.max = installedApps.size
+        val bar = findViewById<CircleProgressBar>(R.id.app_load_progress)
 
         Thread(Runnable {
             Looper.prepare()
@@ -47,7 +46,7 @@ class ImmersiveSelectActivity : AppCompatActivity() {
                                 info.packageName,
                                 null,
                                 info.loadIcon(packageManager))
-                        runOnUiThread { bar.progress = installedApps.indexOf(info) + 1 }
+                        runOnUiThread { bar.progress = 100 * (installedApps.indexOf(info) + 1) / installedApps.size }
                     }
                 } catch (e: Exception) {
                 }

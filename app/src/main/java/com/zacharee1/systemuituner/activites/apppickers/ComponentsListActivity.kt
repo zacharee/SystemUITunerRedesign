@@ -9,7 +9,7 @@ import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.MenuItem
 import android.view.View
-import android.widget.ProgressBar
+import com.dinuscxj.progressbar.CircleProgressBar
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.misc.AppInfo
 import com.zacharee1.systemuituner.misc.CustomAdapter
@@ -73,8 +73,7 @@ class ComponentsListActivity : AppCompatActivity() {
 
             val activities = info.activities
 
-            val bar = findViewById<ProgressBar>(R.id.progress)
-            bar.max = apps.size
+            val bar = findViewById<CircleProgressBar>(R.id.progress)
 
             for (activity in activities) {
                 apps[activity.name] = AppInfo(activity.name,
@@ -82,7 +81,7 @@ class ComponentsListActivity : AppCompatActivity() {
                         activity.name,
                         activity.loadIcon(packageManager))
 
-                runOnUiThread { bar.progress = Arrays.asList(*activities).indexOf(activity) + 1 }
+                runOnUiThread { bar.progress = 100 * (Arrays.asList(*activities).indexOf(activity) + 1) / apps.size }
             }
         } catch (e: Exception) {
         }

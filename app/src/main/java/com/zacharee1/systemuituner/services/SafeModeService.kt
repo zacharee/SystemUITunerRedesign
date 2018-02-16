@@ -28,7 +28,7 @@ class SafeModeService : Service() {
         return null
     }
 
-    override fun onStartCommand(intent: Intent, flags: Int, startId: Int): Int {
+    override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         mHandler = Handler(Looper.getMainLooper())
         preferences = PreferenceManager.getDefaultSharedPreferences(this)
 

@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.zacharee1.systemuituner.activites.apppickers.AppsListActivity">
 
     <android.support.v7.widget.RecyclerView
@@ -10,13 +11,19 @@
         android:layout_height="match_parent"
         android:id="@+id/app_rec" />
 
-    <ProgressBar
+    <com.dinuscxj.progressbar.CircleProgressBar
         android:id="@+id/progress"
-        style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
-        android:indeterminate="false"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_margin="16dp"
+        app:style="solid_line"
+        app:progress_stroke_width="15dp"
+        app:progress_background_color="@color/white"
+        app:progress_start_color="?colorAccent"
+        app:progress_end_color="?colorAccent"
+        app:progress_text_size="42sp"
+        app:progress_text_color="@color/white"
+        android:max="100"/>
 
 </FrameLayout>

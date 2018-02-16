@@ -19,10 +19,7 @@ import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.helper.ItemTouchHelper
-import android.view.Gravity
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.EditText
 import android.widget.FrameLayout
 import android.widget.TextView
@@ -37,6 +34,8 @@ class QuickSettingsLayoutEditor : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_blank_recycler)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        title = resources.getString(R.string.quick_settings)
 
         findViewById<View>(R.id.root).setBackgroundColor(Color.parseColor("#ff303030"))
 
@@ -97,6 +96,15 @@ class QuickSettingsLayoutEditor : AppCompatActivity() {
         }
 
         contentResolver.registerContentObserver(Settings.Secure.CONTENT_URI, true, mObserver!!)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        item?.let {
+            when (it.itemId) {
+                android.R.id.home -> finish()
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 
     override fun onDestroy() {

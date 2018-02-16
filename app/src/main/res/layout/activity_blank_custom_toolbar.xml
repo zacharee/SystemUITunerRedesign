@@ -2,9 +2,9 @@
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
     <android.support.v7.widget.ActionBarContainer
         android:id="@+id/action_bar"
@@ -26,19 +26,29 @@
 
     <LinearLayout
         android:id="@+id/content_main"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
         android:orientation="vertical"
-        android:layout_marginTop="?attr/actionBarSize" >
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/action_bar">
 
-        <ProgressBar
+        <com.dinuscxj.progressbar.CircleProgressBar
             android:id="@+id/app_load_progress"
-            style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:indeterminate="false"
-            android:paddingEnd="16dp"
-            android:paddingStart="16dp" />
+            android:layout_gravity="center"
+            android:layout_margin="16dp"
+            app:style="solid_line"
+            app:progress_stroke_width="15dp"
+            app:progress_background_color="@color/white"
+            app:progress_start_color="?colorAccent"
+            app:progress_end_color="?colorAccent"
+            app:progress_text_size="42sp"
+            app:progress_text_color="@color/white"
+            android:max="100"/>
 
     </LinearLayout>
 
