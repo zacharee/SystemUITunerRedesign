@@ -72,6 +72,7 @@
   <string name="speakerphone_icon">Icona del vivavoce</string>
   <string name="time_such"><![CDATA[Tempo e simili]]></string>
   <string name="clock">Icona orologio</string>
+  <string name="clock_tile">Clock</string>
   <string name="show_clock_seconds">Mostra secondi nell\'orologio</string>
   <string name="alarm_clock_icon">Icona della sveglia</string>
   <string name="zen_icon">Icona Zen</string>
@@ -245,7 +246,7 @@
   <string name="blacklist_desc">Quando attiva, le app selezionate non useranno la modalità immersiva</string>
   <string name="warning">Attenzione!</string>
   <string name="imm_warn">Questa funzione ti permette di attivare la modalità immersiva. Non fa nient\'altro. Ogni problema riscontrato durante l\'utilizzo è causato dal produttore del telefono. NON POSSO SISTEMARLO!</string>
-  <string name="target_not_found">Impossibile avviare le impostazioni.</string>
+  <string name="target_not_found">Unable to launch app.</string>
   <string name="select_all">Seleziona tutto</string>
   <string name="deselect_all">Deseleziona tutto</string>
   <string name="invert_selection">Inverti selezione</string>
@@ -282,4 +283,9 @@
   <string name="time_b">Time B</string>
   <string name="time_c">Time C</string>
   <string name="time_d">Time D</string>
+  <string name="clock_tile_format">Clock Tile Format</string>
+  <string name="twelve">12-Hour</string>
+  <string name="twelve_nosec">12-Hour, No Seconds</string>
+  <string name="military">24-Hour</string>
+  <string name="military_nosec">24-Hour, No Seconds</string>
 </resources>
