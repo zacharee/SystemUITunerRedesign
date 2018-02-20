@@ -3,27 +3,27 @@
 <resources>
   <string name="app_name">SystemUI Tuner</string>
   <string name="to_the_tweaks">Zu den Tweaks!</string>
-  <string name="sorry_explain">Something went wrong while setting this toggle.</string>
+  <string name="sorry_explain">Irgendetwas ist beim Setzen dieses Schalters schiefgelaufen.</string>
   <string name="sorry_option">Versuche den folgenden Befehl von einem Computer auszuführen (es ist eine Zeile):</string>
   <string name="more">Mehr</string>
   <string name="grant_dump_perm">Du musst die Berechtigung \"android.permission.DUMP\" gewähren, um diese Funktion zu nutzen.</string>
   <string name="safe_mode_auto_enabled">Samsung Gerät erkannt! Sicherer Modus wurde automatisch zu deiner Sicherheit aktiviert. Sei gewarnt, das jegliches Modifizieren deiner Statusleiste möglicherweise dein SYSTEM ZERSTÖREN könnte! Bitte folge dem Link in der Play Store Beschreibung für mehr Informationen.</string>
-  <string name="notice">NOTICE</string>
+  <string name="notice">NOTIZ</string>
   <string name="fancy_pulldown_notice">Toggling this option off can cause issues after a reboot. Manually toggle this option on and off after a reboot, or enable Safe Mode.</string>
-  <string name="safe_mode_summary">SAMSUNG USERS KEEP THIS TURNED ON UNLESS YOU HAVE AN AOSP ROM!</string>
-  <string name="safe_mode_summary_1">Clears any status bar customizations on reboot and restores them after boot completes.</string>
+  <string name="safe_mode_summary">SAMSUNG BENUTZER LASSEN DIES AN SOFERN DU NICHT EINE AOSP ROM HAST!</string>
+  <string name="safe_mode_summary_1">Löscht jegliche Statusleistenveränderungen beim Neustart und stellt sie nach dem Start vollständig wieder her.</string>
   <string name="safe_mode_summary_2">Toggles the QS Fancy Animation on boot.</string>
   <string name="safe_mode_summary_3">Restores custom QS header count value on boot (Nougat+).</string>
   <string name="safe_mode_summary_4">Restores custom QS row/column count on boot (TouchWiz, Nougat+).</string>
   <string name="safe_mode_summary_5">Restores custom notification snooze options on boot (8.1+).</string>
-  <string name="hide_welcome_screen">Hide Welcome Screen</string>
+  <string name="hide_welcome_screen">Willkommensbildschirm verstecken</string>
   <string name="tasker_support">Tasker Unterstützung</string>
-  <string name="instructions">Instructions</string>
+  <string name="instructions">Anleitung</string>
   <string name="safe_mode_android_o">Because of limitations added in Android O, this feature will not work on your device.</string>
   <string name="requires_nougat">Requires Nougat or later.</string>
   <string name="requires_oreo">Requires Oreo or later.</string>
   <string name="requires_8_1">Requires Oreo 8.1 or later.</string>
-  <string name="enable_in_settings">Enable in Settings.</string>
+  <string name="enable_in_settings">In den Einstellungen aktivieren.</string>
   <string name="about">Infos</string>
   <string name="miscellaneous">Sonstiges</string>
   <string name="settings">Einstellungen</string>
@@ -31,14 +31,14 @@
   <string name="reboot_required">(Neustart erforderlich)</string>
   <string name="sorry">Tut mir leid…</string>
   <string name="created_by">App von <a href="https://forum.xda-developers.com/member.php?u=7055541">Zacharee1</a></string>
-  <string name="spanish_from">Spanish translation by <a href="https://es.stackoverflow.com/users/28567/aaron-romero">Aaron Romero</a> and <a href="https://forum.xda-developers.com/member.php?u=7055541">Zacharee1</a></string>
+  <string name="spanish_from">Spanische Übersetzung von <a href="https://es.stackoverflow.com/users/28567/aaron-romero">Aaron Romero</a> und <a href="https://forum.xda-developers.com/member.php?u=7055541">Zacharee1</a></string>
   <string name="enabled">Aktiviert</string>
   <string name="show">Anzeigen</string>
   <string name="select_time">Zeit wählen</string>
-  <string name="select_battery_level">Select Battery Level</string>
-  <string name="wifi_strength">WiFi Strength</string>
+  <string name="select_battery_level">Wähle Batterielevel aus</string>
+  <string name="wifi_strength">WLAN-Stärke</string>
   <string name="battery_charging">Akku ladend</string>
-  <string name="mobile_strength">Mobile Strength</string>
+  <string name="mobile_strength">Mobile Daten Ausschlag</string>
   <string name="mobile_type">Mobile Type</string>
   <string name="show_airplane_mode">Show Airplane Mode</string>
   <string name="show_notifications">Show Notifications</string>
