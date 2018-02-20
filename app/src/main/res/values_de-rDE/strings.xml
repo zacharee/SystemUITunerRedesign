@@ -4,10 +4,10 @@
   <string name="app_name">SystemUI Tuner</string>
   <string name="to_the_tweaks">Zu den Tweaks!</string>
   <string name="sorry_explain">Something went wrong while setting this toggle.</string>
-  <string name="sorry_option">Try executing the following command from a computer (it\'s one line):</string>
+  <string name="sorry_option">Versuche den folgenden Befehl von einem Computer auszuführen (es ist eine Zeile):</string>
   <string name="more">Mehr</string>
-  <string name="grant_dump_perm">You need to grant the permission \"android.permission.DUMP\" to use this feature.</string>
-  <string name="safe_mode_auto_enabled">Samsung device detected! Safe Mode has been automatically enabled for your safety. Be warned that modifying any status bar icons has the potential to BREAK SYSTEM UI! Please follow the link in the Play Store description for more information.</string>
+  <string name="grant_dump_perm">Du musst die Berechtigung \"android.permission.DUMP\" gewähren, um diese Funktion zu nutzen.</string>
+  <string name="safe_mode_auto_enabled">Samsung Gerät erkannt! Sicherer Modus wurde automatisch zu deiner Sicherheit aktiviert. Sei gewarnt, das jegliches Modifizieren deiner Statusleiste möglicherweise dein SYSTEM ZERSTÖREN könnte! Bitte folge dem Link in der Play Store Beschreibung für mehr Informationen.</string>
   <string name="notice">NOTICE</string>
   <string name="fancy_pulldown_notice">Toggling this option off can cause issues after a reboot. Manually toggle this option on and off after a reboot, or enable Safe Mode.</string>
   <string name="safe_mode_summary">SAMSUNG USERS KEEP THIS TURNED ON UNLESS YOU HAVE AN AOSP ROM!</string>
