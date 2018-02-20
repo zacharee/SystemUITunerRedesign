@@ -72,6 +72,7 @@
   <string name="speakerphone_icon">Altavoz</string>
   <string name="time_such"><![CDATA[Tiempo y Más]]></string>
   <string name="clock">Reloj</string>
+  <string name="clock_tile">Clock</string>
   <string name="show_clock_seconds">Visibilidad de Segundos</string>
   <string name="alarm_clock_icon">Alarma</string>
   <string name="zen_icon">Zen</string>
@@ -245,7 +246,7 @@
   <string name="blacklist_desc">Al estar Activo, las aplicaciones seleccionadas no usarán el modo inmersivo</string>
   <string name="warning">¡Alerta!</string>
   <string name="imm_warn">Esta función simplemente permite activar el modo de inmersión. NO hace nada más allá de eso. Cualquier problema que usted experimenta es culpa del fabricante de su dispositivo. ¡NO PUEDO ARREGLARLO!</string>
-  <string name="target_not_found">No se puede lanzar la página configuración adecuada.</string>
+  <string name="target_not_found">Unable to launch app.</string>
   <string name="select_all">Seleccionar todo</string>
   <string name="deselect_all">Sin Selección</string>
   <string name="invert_selection">Invertir Selección</string>
@@ -282,4 +283,9 @@
   <string name="time_b">Time B</string>
   <string name="time_c">Time C</string>
   <string name="time_d">Time D</string>
+  <string name="clock_tile_format">Clock Tile Format</string>
+  <string name="twelve">12-Hour</string>
+  <string name="twelve_nosec">12-Hour, No Seconds</string>
+  <string name="military">24-Hour</string>
+  <string name="military_nosec">24-Hour, No Seconds</string>
 </resources>
