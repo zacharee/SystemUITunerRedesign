@@ -20,6 +20,19 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+        android:title="@string/quick_settings"
+        android:key="quick_settings">
+
+        <ListPreference
+            android:key="clock_format"
+            android:title="@string/clock_tile_format"
+            android:entryValues="@array/clock_format_values"
+            android:entries="@array/clock_format_names"
+            android:defaultValue="twelve" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:title="@string/danger_zone">
 
         <SwitchPreference

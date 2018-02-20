@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.preference.Preference
+import android.preference.PreferenceCategory
 import android.preference.PreferenceFragment
 import android.preference.SwitchPreference
 import android.support.v4.content.LocalBroadcastManager
@@ -65,6 +66,7 @@ class SettingsActivity : AppCompatPreferenceActivity() {
             super.onCreate(savedInstanceState)
             addPreferencesFromResource(R.xml.settings_general)
             setHasOptionsMenu(true)
+            setUpQSStuff()
             setSwitchListeners()
             setPreferenceListeners()
         }
@@ -76,6 +78,17 @@ class SettingsActivity : AppCompatPreferenceActivity() {
                 return true
             }
             return super.onOptionsItemSelected(item)
+        }
+
+        private fun setUpQSStuff() {
+            val category = findPreference("quick_settings") as PreferenceCategory
+
+            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.N) {
+                category.isEnabled = false
+                for (i in 0 until category.preferenceCount) {
+                    category.getPreference(i).summary = resources.getText(R.string.requires_nougat)
+                }
+            }
         }
 
         private fun setSwitchListeners() {

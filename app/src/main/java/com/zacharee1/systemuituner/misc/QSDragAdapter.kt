@@ -1,6 +1,7 @@
 package com.zacharee1.systemuituner.misc
 
 import android.app.AlertDialog
+import android.content.ComponentName
 import android.content.Context
 import android.graphics.Color
 import android.graphics.PorterDuff
@@ -204,21 +205,30 @@ class QSDragAdapter(private val mContext: Context) : RecyclerView.Adapter<QSDrag
             val packageName = name.split("/")[0]
             val component = name.split("/")[1]
 
-            try {
-                icon = mContext.packageManager.getApplicationIcon(packageName)
+            icon = try {
+                mContext.packageManager.getServiceInfo(ComponentName(packageName, "$packageName$component"), 0).loadIcon(mContext.packageManager)
             } catch (e: Exception) {
+                e.printStackTrace()
+                mContext.resources.getDrawable(R.drawable.ic_android_black_24dp, null)
             }
+            icon.setColorFilter(Color.WHITE, PorterDuff.Mode.SRC_ATOP)
 
-            try {
-                val split = component.split(".")
-                title = split[split.size - 1]
+            title = try {
+                mContext.packageManager.getServiceInfo(ComponentName(packageName, "$packageName$component"), 0).loadLabel(mContext.packageManager).toString()
             } catch (e: Exception) {
+                e.printStackTrace()
+                try {
+                    val split = component.split(".")
+                    split[split.size - 1]
+                } catch (ex: Exception) {
+                    packageName
+                }
             }
 
         }
 
         private fun parseStandard() {
-            title = key.toLowerCase()
+            title = capitalize(key.toLowerCase())
 
             val iconRes = when (key.toLowerCase()) {
                 "wifi" -> R.drawable.ic_signal_wifi_4_bar_black_24dp
@@ -244,6 +254,17 @@ class QSDragAdapter(private val mContext: Context) : RecyclerView.Adapter<QSDrag
             drawable.setColorFilter(Color.WHITE, PorterDuff.Mode.SRC_ATOP)
 
             icon = drawable
+        }
+
+        private fun capitalize(string: String): String {
+            val builder = StringBuilder()
+
+            val words = string.split(" ")
+            for (word in words) {
+                builder.append("${word[0].toUpperCase()}${word.substring(1, word.length)}")
+            }
+
+            return builder.toString()
         }
     }
 }

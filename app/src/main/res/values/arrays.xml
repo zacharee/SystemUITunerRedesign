@@ -86,4 +86,20 @@
         <item>immersive.navigation</item>
         <item>immersive.preconfirms</item>
     </string-array>
+
+    <string-array name="clock_format_names"
+        translatable="false">
+        <item>@string/twelve</item>
+        <item>@string/twelve_nosec</item>
+        <item>@string/military</item>
+        <item>@string/military_nosec</item>
+    </string-array>
+
+    <string-array name="clock_format_values"
+        translatable="false">
+        <item>twelve</item>
+        <item>twelve_nosec</item>
+        <item>military</item>
+        <item>military_nosec</item>
+    </string-array>
 </resources>
