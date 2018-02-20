@@ -72,6 +72,7 @@
   <string name="speakerphone_icon">Ikona zestawu głośnomówiącego</string>
   <string name="time_such"><![CDATA[Czas i podobne]]></string>
   <string name="clock">Ikona zegara</string>
+  <string name="clock_tile">Clock</string>
   <string name="show_clock_seconds">Pokaż sekundy na zegarku</string>
   <string name="alarm_clock_icon">Ikona budzika</string>
   <string name="zen_icon">Ikona Zen</string>
@@ -245,7 +246,7 @@
   <string name="blacklist_desc">Jeśli włączone, wybrane aplikacje nie będą używać trybu Immersive</string>
   <string name="warning">Uwaga!</string>
   <string name="imm_warn">Ta funkcja pozwala jedynie na włączenie trybu Immersive. NIE robi nic poza tym. Każde problemy, które doświadczysz są błędami producenta urządzenia. NIE JESTEM W STANIE TEGO NAPRAWIĆ!</string>
-  <string name="target_not_found">Unable to launch proper Settings page.</string>
+  <string name="target_not_found">Unable to launch app.</string>
   <string name="select_all">Select All</string>
   <string name="deselect_all">Deselect All</string>
   <string name="invert_selection">Invert Selection</string>
@@ -282,4 +283,9 @@
   <string name="time_b">Time B</string>
   <string name="time_c">Time C</string>
   <string name="time_d">Time D</string>
+  <string name="clock_tile_format">Clock Tile Format</string>
+  <string name="twelve">12-Hour</string>
+  <string name="twelve_nosec">12-Hour, No Seconds</string>
+  <string name="military">24-Hour</string>
+  <string name="military_nosec">24-Hour, No Seconds</string>
 </resources>
