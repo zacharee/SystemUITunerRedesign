@@ -72,6 +72,7 @@
   <string name="speakerphone_icon">Telefon Hoparlörü Simgesi</string>
   <string name="time_such"><![CDATA[Zaman & Bu tür]]></string>
   <string name="clock">Saat simgesi</string>
+  <string name="clock_tile">Clock</string>
   <string name="show_clock_seconds">Saat saniyelerini göster</string>
   <string name="alarm_clock_icon">Çalar saat simgesi</string>
   <string name="zen_icon">Zen simgesi</string>
@@ -246,7 +247,7 @@
   <string name="blacklist_desc">Seçili olduğunda, seçilmiş uygulama sürükleyici modda kullanılamaz</string>
   <string name="warning">Uyarı!</string>
   <string name="imm_warn">Sürükleyici Modu etkinleştirmenizi, yalnızca bu özellik yapar. Bundan daha ileri bir şey yapmaz.Karşılaştığınız herhangi bir sorun cihazınızın üreticisinin suçudur. DÜZELTEMİYORUM!</string>
-  <string name="target_not_found">Ayarlar sayfası gerektiği gibi başlatılamıyor.</string>
+  <string name="target_not_found">Unable to launch app.</string>
   <string name="select_all">Hepsini seç</string>
   <string name="deselect_all">Tüm Seçilenleri Kaldır</string>
   <string name="invert_selection">Seçimi tersine çevir</string>
@@ -283,4 +284,9 @@
   <string name="time_b">Time B</string>
   <string name="time_c">Time C</string>
   <string name="time_d">Time D</string>
+  <string name="clock_tile_format">Clock Tile Format</string>
+  <string name="twelve">12-Hour</string>
+  <string name="twelve_nosec">12-Hour, No Seconds</string>
+  <string name="military">24-Hour</string>
+  <string name="military_nosec">24-Hour, No Seconds</string>
 </resources>
