@@ -73,6 +73,7 @@
   <string name="speakerphone_icon">أيقونة مكبر الصوت</string>
   <string name="time_such"><![CDATA[الوقت و ما إلى ذلك]]></string>
   <string name="clock">أيقونة الساعة</string>
+  <string name="clock_tile">Clock</string>
   <string name="show_clock_seconds">عرض ثواني الساعة</string>
   <string name="alarm_clock_icon">أيقونة المنبه</string>
   <string name="zen_icon">رمز Zen</string>
@@ -246,7 +247,7 @@
   <string name="blacklist_desc">عند التفعيل،التطبيقات المختارة لن تستخدم \"وضع المخاطرة\"</string>
   <string name="warning">تحذير!</string>
   <string name="imm_warn">هذه الميزة فقط تسمح لك بتمكين \"وضع المخاطرة\". لأنه لا يفعل أي شيء أبعد من ذلك. أية مشكلات تواجهك هي خطأ من الشركة المصنعة للجهاز الخاص بك. لا أستطيع إصلاحه!</string>
-  <string name="target_not_found">غير قادر على تشغيل صفحة الإعدادات.</string>
+  <string name="target_not_found">Unable to launch app.</string>
   <string name="select_all">تحديد الكل</string>
   <string name="deselect_all">إلغاء تحديد الكل</string>
   <string name="invert_selection">إعكس التحديد</string>
@@ -283,4 +284,9 @@
   <string name="time_b">Time B</string>
   <string name="time_c">Time C</string>
   <string name="time_d">Time D</string>
+  <string name="clock_tile_format">Clock Tile Format</string>
+  <string name="twelve">12-Hour</string>
+  <string name="twelve_nosec">12-Hour, No Seconds</string>
+  <string name="military">24-Hour</string>
+  <string name="military_nosec">24-Hour, No Seconds</string>
 </resources>
