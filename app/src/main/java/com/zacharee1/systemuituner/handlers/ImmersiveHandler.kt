@@ -33,7 +33,7 @@ object ImmersiveHandler {
         return imm
     }
 
-    fun setMode(context: Context, type: String?) {
+    fun setMode(context: Context?, type: String?) {
         type?.let {
             if (it.contains(FULL)
                     || it.contains(STATUS)
@@ -50,7 +50,7 @@ object ImmersiveHandler {
         }
     }
 
-    private fun concat(context: Context, type: String): String {
+    private fun concat(context: Context?, type: String): String {
         val builder = StringBuilder(type.replace("=*", ""))
         builder.append("=")
         if (isSelecting(context)) {
@@ -62,7 +62,7 @@ object ImmersiveHandler {
         return builder.toString()
     }
 
-    private fun parseSelectedApps(context: Context, def: String): String {
+    private fun parseSelectedApps(context: Context?, def: String): String {
         val apps = parseSelectedApps(context, TreeSet())
 
         return if (apps.isEmpty())
@@ -79,27 +79,27 @@ object ImmersiveHandler {
         }
     }
 
-    fun parseSelectedApps(context: Context, def: TreeSet<String>): TreeSet<String> {
+    fun parseSelectedApps(context: Context?, def: TreeSet<String>): TreeSet<String> {
         return TreeSet(PreferenceManager.getDefaultSharedPreferences(context).getStringSet("immersive_apps", def)!!)
     }
 
-    fun addApp(context: Context, add: String) {
+    fun addApp(context: Context?, add: String) {
         val set = TreeSet(PreferenceManager.getDefaultSharedPreferences(context).getStringSet("immersive_apps", TreeSet())!!)
         set.add(add)
         PreferenceManager.getDefaultSharedPreferences(context).edit().putStringSet("immersive_apps", set).apply()
     }
 
-    fun removeApp(context: Context, remove: String) {
+    fun removeApp(context: Context?, remove: String) {
         val set = TreeSet(PreferenceManager.getDefaultSharedPreferences(context).getStringSet("immersive_apps", TreeSet())!!)
         set.remove(remove)
         PreferenceManager.getDefaultSharedPreferences(context).edit().putStringSet("immersive_apps", set).apply()
     }
 
-    private fun isSelecting(context: Context): Boolean {
+    private fun isSelecting(context: Context?): Boolean {
         return PreferenceManager.getDefaultSharedPreferences(context).getBoolean("app_immersive", false)
     }
 
-    private fun isBlacklist(context: Context): Boolean {
+    private fun isBlacklist(context: Context?): Boolean {
         return PreferenceManager.getDefaultSharedPreferences(context).getBoolean("immersive_blacklist", false)
     }
 }

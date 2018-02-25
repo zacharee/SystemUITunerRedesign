@@ -158,32 +158,30 @@ class InstructionsActivity : AppIntro2() {
         }
 
         fun setTitle(title: String) {
-            val textView = mView!!.findViewById<TextView>(R.id.title)
-            textView.text = formatText(title)
+            val textView = mView?.findViewById<TextView>(R.id.title)
+            textView?.text = formatText(title)
         }
 
         fun setInternalLayout(@LayoutRes layoutId: Int) {
-            if (mView != null) {
-                val holder = mView!!.findViewById<LinearLayout>(R.id.custom_layout_holder)
-                holder.removeAllViews()
+            val holder = mView?.findViewById<LinearLayout>(R.id.custom_layout_holder)
+            holder?.removeAllViews()
 
-                val viewParent = View.inflate(activity, layoutId, null) as ViewGroup
-                val viewChild = viewParent.getChildAt(0) as ViewGroup
+            val viewParent = View.inflate(activity, layoutId, null) as ViewGroup
+            val viewChild = viewParent.getChildAt(0) as ViewGroup
 
-                for (i in 0 until viewChild.childCount) {
-                    val v = viewChild.getChildAt(i)
+            for (i in 0 until viewChild.childCount) {
+                val v = viewChild.getChildAt(i)
 
-                    if (v is TextView) {
-                        v.text = formatText(v.text.toString())
-                        v.linksClickable = true
-                        v.movementMethod = LinkMovementMethod.getInstance()
-                        v.setLinkTextColor(resources.getColorStateList(R.color.white, null))
-                        v.setTextColor(resources.getColorStateList(R.color.white, null))
-                    }
+                if (v is TextView) {
+                    v.text = formatText(v.text.toString())
+                    v.linksClickable = true
+                    v.movementMethod = LinkMovementMethod.getInstance()
+                    v.setLinkTextColor(resources.getColorStateList(R.color.white, null))
+                    v.setTextColor(resources.getColorStateList(R.color.white, null))
                 }
-
-                holder.addView(viewParent)
             }
+
+            holder?.addView(viewParent)
         }
 
         override fun getDefaultBackgroundColor(): Int {

@@ -11,9 +11,9 @@ import com.zacharee1.systemuituner.fragments.ItemDetailFragment
 import java.util.*
 
 object SettingsUtils {
-    fun writeGlobal(context: Context, key: String, value: String?): Boolean {
+    fun writeGlobal(context: Context?, key: String, value: String?): Boolean {
         return try {
-            Settings.Global.putString(context.contentResolver, key, value)
+            Settings.Global.putString(context?.contentResolver, key, value)
             true
         } catch (e: Exception) {
             val baseCommand = if (value != null) "settings put global $key $value" else "settings delete global $key"
@@ -62,19 +62,19 @@ object SettingsUtils {
 
     }
 
-    private fun launchErrorActivity(context: Context, baseCommand: String) {
+    private fun launchErrorActivity(context: Context?, baseCommand: String) {
         val adbCommand = "adb shell " + baseCommand
         val intent = Intent(context, SettingWriteFailed::class.java)
         intent.action = Intent.ACTION_VIEW
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
         intent.putExtra("command", adbCommand)
-        context.startActivity(intent)
+        context?.startActivity(intent)
     }
 
-    fun hasPerms(context: Context): Boolean {
+    fun hasPerms(context: Context?): Boolean {
         try {
-            val packageInfo = context.packageManager.getPackageInfo(context.packageName, PackageManager.GET_PERMISSIONS)
-            val perms = ArrayList(Arrays.asList(*packageInfo.requestedPermissions))
+            val packageInfo = context?.packageManager?.getPackageInfo(context.packageName, PackageManager.GET_PERMISSIONS)
+            val perms = ArrayList(Arrays.asList(*packageInfo?.requestedPermissions))
 
             for (permission in perms) {
                 if (!hasSpecificPerm(context, permission)) return false
@@ -86,13 +86,12 @@ object SettingsUtils {
         return true
     }
 
-    fun hasSpecificPerm(context: Context, permission: String): Boolean {
-        return context.checkCallingOrSelfPermission(permission) == PackageManager.PERMISSION_GRANTED
+    fun hasSpecificPerm(context: Context?, permission: String): Boolean {
+        return context?.checkCallingOrSelfPermission(permission) == PackageManager.PERMISSION_GRANTED
     }
 
-    fun hasSpecificPerms(context: Context, permissions: Array<String>): Boolean {
-
-        return permissions.none { context.checkCallingOrSelfPermission(it) == PackageManager.PERMISSION_DENIED }
+    fun hasSpecificPerms(context: Context?, permissions: Array<String>): Boolean {
+        return permissions.none { context?.checkCallingOrSelfPermission(it) == PackageManager.PERMISSION_DENIED }
     }
 
     fun changeBlacklist(key: String?, value: Boolean, context: Context) {

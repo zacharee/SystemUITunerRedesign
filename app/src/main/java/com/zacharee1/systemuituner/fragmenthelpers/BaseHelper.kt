@@ -16,7 +16,7 @@ abstract class BaseHelper(val fragment: ItemDetailFragment) {
     val context: Context
         get() = fragment.context
 
-    val activity: Activity
+    val activity: Activity?
         get() = fragment.activity
 
     val sharedPreferences: SharedPreferences
@@ -28,23 +28,23 @@ abstract class BaseHelper(val fragment: ItemDetailFragment) {
     val preferenceManager: PreferenceManager
         get() = fragment.preferenceManager
 
-    val resources: Resources
-        get() = activity.resources
+    val resources: Resources?
+        get() = activity?.resources
 
     fun findPreference(preference: String): Preference? {
         return fragment.findPreference(preference)
     }
 
     fun startActivity(intent: Intent) {
-        activity.startActivity(intent)
+        activity?.startActivity(intent)
     }
 
     fun startActivityForResult(intent: Intent, requestCode: Int) {
-        activity.startActivityForResult(intent, requestCode)
+        activity?.startActivityForResult(intent, requestCode)
     }
 
     fun sendBroadcast(intent: Intent) {
-        activity.sendBroadcast(intent)
+        activity?.sendBroadcast(intent)
     }
 
     open fun onResume() {

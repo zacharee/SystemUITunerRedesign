@@ -20,7 +20,13 @@ class ImmersiveHelper(fragment: ItemDetailFragment) : BaseHelper(fragment), Pref
     private val status = findPreference(ImmersiveHandler.STATUS) as CheckBoxPreference?
     private val navi = findPreference(ImmersiveHandler.NAV) as CheckBoxPreference?
     private val preconf = findPreference(ImmersiveHandler.PRECONF) as CheckBoxPreference?
-    private var mObserver: ContentObserver? = null
+    private var mObserver = object : ContentObserver(Handler(Looper.getMainLooper())) {
+        override fun onChange(selfChange: Boolean, uri: Uri) {
+            if (uri == ImmersiveHandler.POLICY_CONTROL) {
+                setProperBoxChecked()
+            }
+        }
+    }
 
     init {
         findPreference("immersive_tile_mode")?.onPreferenceChangeListener = this
@@ -38,15 +44,7 @@ class ImmersiveHelper(fragment: ItemDetailFragment) : BaseHelper(fragment), Pref
     }
 
     private fun setContentObserver() {
-        mObserver = object : ContentObserver(Handler(Looper.getMainLooper())) {
-            override fun onChange(selfChange: Boolean, uri: Uri) {
-                if (uri == ImmersiveHandler.POLICY_CONTROL) {
-                    setProperBoxChecked()
-                }
-            }
-        }
-
-        activity.contentResolver.registerContentObserver(Settings.Global.CONTENT_URI, true, mObserver!!)
+        activity?.contentResolver?.registerContentObserver(Settings.Global.CONTENT_URI, true, mObserver)
     }
 
     private fun setProperBoxChecked() {
@@ -92,7 +90,7 @@ class ImmersiveHelper(fragment: ItemDetailFragment) : BaseHelper(fragment), Pref
     private fun setSelectorListener() {
         val preference = findPreference(SELECT_APPS)
         preference?.onPreferenceClickListener = Preference.OnPreferenceClickListener {
-            activity.startActivity(Intent(activity, ImmersiveSelectActivity::class.java))
+            activity?.startActivity(Intent(activity, ImmersiveSelectActivity::class.java))
             true
         }
 
@@ -105,7 +103,7 @@ class ImmersiveHelper(fragment: ItemDetailFragment) : BaseHelper(fragment), Pref
 
     override fun onDestroy() {
         try {
-            activity.contentResolver.unregisterContentObserver(mObserver!!)
+            activity?.contentResolver?.unregisterContentObserver(mObserver)
         } catch (e: Exception) {
         }
 

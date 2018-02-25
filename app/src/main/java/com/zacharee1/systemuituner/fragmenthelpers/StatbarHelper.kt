@@ -52,7 +52,9 @@ class StatbarHelper(fragment: ItemDetailFragment) : BaseHelper(fragment) {
                 arguments.putString(ItemDetailFragment.ARG_ITEM_ID, "auto")
                 val fragment = ItemDetailFragment()
                 fragment.arguments = arguments
-                fragment.activity?.fragmentManager?.beginTransaction()
+                activity
+                        ?.fragmentManager
+                        ?.beginTransaction()
                         ?.replace(R.id.item_detail_container, fragment)
                         ?.commit()
             } else {

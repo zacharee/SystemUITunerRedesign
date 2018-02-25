@@ -31,7 +31,7 @@ class DemoHelper(fragment: ItemDetailFragment) : BaseHelper(fragment) {
             intent.putExtra(PERMISSION_NEEDED, arrayOf(Manifest.permission.DUMP))
             startActivity(intent)
 
-            activity.finish()
+            activity?.finish()
         }
     }
 
@@ -39,11 +39,11 @@ class DemoHelper(fragment: ItemDetailFragment) : BaseHelper(fragment) {
         val enableDemo = findPreference(DEMO_ALLOWED)
         enableDemo?.isEnabled = Settings.Global.getInt(context.contentResolver, DEMO_ALLOWED, 0) == 0
         enableDemo?.onPreferenceClickListener = Preference.OnPreferenceClickListener { preference ->
-            if (activity.checkCallingOrSelfPermission(Manifest.permission.DUMP) == PackageManager.PERMISSION_GRANTED) {
+            if (activity?.checkCallingOrSelfPermission(Manifest.permission.DUMP) == PackageManager.PERMISSION_GRANTED) {
                 SettingsUtils.writeGlobal(context, preference.key, "1")
                 findPreference(SHOW_DEMO)?.isEnabled = true
             } else {
-                Toast.makeText(context, resources.getString(R.string.grant_dump_perm), Toast.LENGTH_LONG).show()
+                Toast.makeText(context, resources?.getString(R.string.grant_dump_perm), Toast.LENGTH_LONG).show()
             }
             true
         }
@@ -63,7 +63,7 @@ class DemoHelper(fragment: ItemDetailFragment) : BaseHelper(fragment) {
 
         val filter = IntentFilter(DEMO_ACTION)
 
-        activity.registerReceiver(switchReceiver, filter)
+        activity?.registerReceiver(switchReceiver, filter)
 
         demo.isEnabled = mDemoHandler.isAllowed
 
@@ -102,7 +102,7 @@ class DemoHelper(fragment: ItemDetailFragment) : BaseHelper(fragment) {
 
     override fun onDestroy() {
         try {
-            activity.unregisterReceiver(switchReceiver)
+            activity?.unregisterReceiver(switchReceiver)
         } catch (e: Exception) {
         }
 

@@ -98,7 +98,7 @@ class AutoHelper(fragment: ItemDetailFragment) : BaseHelper(fragment) {
             intent.putExtra("permission_needed", perms.toTypedArray())
             startActivity(intent)
 
-            activity.finish()
+            activity?.finish()
         }
     }
 

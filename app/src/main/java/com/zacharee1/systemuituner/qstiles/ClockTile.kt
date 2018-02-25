@@ -53,14 +53,16 @@ class ClockTile : TileService() {
         prefs.registerOnSharedPreferenceChangeListener(prefsListener)
         setTime()
 
-        qsTile.state = Tile.STATE_ACTIVE
-        qsTile.updateTile()
+        qsTile?.state = Tile.STATE_ACTIVE
+        qsTile?.updateTile()
     }
 
     override fun onStopListening() {
         shouldRun = false
         prefs.unregisterOnSharedPreferenceChangeListener(prefsListener)
-        unregisterReceiver(mReceiver)
+        try {
+            unregisterReceiver(mReceiver)
+        } catch (e: Exception) {}
         super.onStopListening()
     }
 

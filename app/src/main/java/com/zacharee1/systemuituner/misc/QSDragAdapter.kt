@@ -55,7 +55,7 @@ class QSDragAdapter(private val mContext: Context) : RecyclerView.Adapter<QSDrag
     fun parseTileList() {
         var tiles: String? = Settings.Secure.getString(mContext.contentResolver, "sysui_qs_tiles")
 
-        if (tiles == null) {
+        if (tiles == null || tiles.isEmpty()) {
             tiles = defaultTileOrder
         }
 
