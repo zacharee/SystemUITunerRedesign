@@ -260,9 +260,9 @@ class QSDragAdapter(private val mContext: Context) : RecyclerView.Adapter<QSDrag
             val builder = StringBuilder()
 
             val words = string.split(" ")
-            for (word in words) {
-                builder.append("${word[0].toUpperCase()}${word.substring(1, word.length)}")
-            }
+            words
+                    .filter { it.isNotEmpty() }
+                    .forEach { builder.append("${it[0].toUpperCase()}${it.substring(1, it.length)}") }
 
             return builder.toString()
         }

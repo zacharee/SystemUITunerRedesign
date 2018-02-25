@@ -95,7 +95,8 @@ class InstructionsActivity : AppIntro2() {
     }
 
     private fun replaceContentById(@LayoutRes layout: Int) {
-        mInstructions!!.setInternalLayout(layout)
+        val group = View.inflate(this, layout, null) as ViewGroup
+        mInstructions!!.setInternalLayout(group)
     }
 
     private fun setInstructionsTitle(title: String) {
@@ -147,7 +148,8 @@ class InstructionsActivity : AppIntro2() {
             desc.text = args.getString(ARG_DESC)
 
             if (args.getInt(ARG_LAYOUT) != 0 && args.getInt(ARG_LAYOUT) != -1) {
-                setInternalLayout(args.getInt(ARG_LAYOUT))
+                val group = View.inflate(activity, args.getInt(ARG_LAYOUT), null) as ViewGroup
+                setInternalLayout(group)
             }
 
             return mView
@@ -162,12 +164,11 @@ class InstructionsActivity : AppIntro2() {
             textView?.text = formatText(title)
         }
 
-        fun setInternalLayout(@LayoutRes layoutId: Int) {
+        fun setInternalLayout(group: ViewGroup) {
             val holder = mView?.findViewById<LinearLayout>(R.id.custom_layout_holder)
             holder?.removeAllViews()
 
-            val viewParent = View.inflate(activity, layoutId, null) as ViewGroup
-            val viewChild = viewParent.getChildAt(0) as ViewGroup
+            val viewChild = group.getChildAt(0) as ViewGroup
 
             for (i in 0 until viewChild.childCount) {
                 val v = viewChild.getChildAt(i)
@@ -181,7 +182,7 @@ class InstructionsActivity : AppIntro2() {
                 }
             }
 
-            holder?.addView(viewParent)
+            holder?.addView(group)
         }
 
         override fun getDefaultBackgroundColor(): Int {

@@ -36,8 +36,8 @@ class MiscHelper(fragment: ItemDetailFragment) : BaseHelper(fragment) {
     }
 
     private fun showCustomSettings() {
-        val customSettings = findPreference(CUSTOM_SETTINGS_VALUES) as PreferenceCategory
-        if (!mSharedPreferences.getBoolean(ALLOW_CUSTOM_INPUT, false)) {
+        val customSettings = findPreference(CUSTOM_SETTINGS_VALUES) as PreferenceCategory?
+        if (customSettings != null && !mSharedPreferences.getBoolean(ALLOW_CUSTOM_INPUT, false)) {
             customSettings.isEnabled = false
 
             (0 until customSettings.preferenceCount)
