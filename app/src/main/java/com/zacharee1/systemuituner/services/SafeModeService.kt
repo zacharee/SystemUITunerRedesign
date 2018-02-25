@@ -171,6 +171,8 @@ class SafeModeService : Service() {
                         restoreQSHeaderCount()
                     } else if (uri == Settings.Secure.getUriFor("qs_tile_row") || uri == Settings.Secure.getUriFor("qs_tile_column")) {
                         restoreQSRowColCount()
+                    } else if (uri == Settings.Global.getUriFor("notification_snooze_options")) {
+                        restoreSnoozeState()
                     }
                 }
             }
