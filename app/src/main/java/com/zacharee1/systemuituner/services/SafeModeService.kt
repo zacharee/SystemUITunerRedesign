@@ -24,6 +24,19 @@ class SafeModeService : Service() {
     private var observer: ContentObserver? = null
     private var preferences: SharedPreferences? = null
 
+    private val prefsListener: SharedPreferences.OnSharedPreferenceChangeListener = SharedPreferences.OnSharedPreferenceChangeListener { preferences, key ->
+        when (key) {
+            "show_safe_mode_notif" -> {
+                val on = preferences.getBoolean(key, true)
+                if (!on) {
+                    stopForeground(true)
+                } else {
+                    startInForeground()
+                }
+            }
+        }
+    }
+
     override fun onBind(intent: Intent): IBinder? {
         return null
     }
@@ -31,6 +44,7 @@ class SafeModeService : Service() {
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         mHandler = Handler(Looper.getMainLooper())
         preferences = PreferenceManager.getDefaultSharedPreferences(this)
+        preferences?.registerOnSharedPreferenceChangeListener(prefsListener)
 
         startInForeground()
         restoreStateOnStartup()
@@ -47,24 +61,23 @@ class SafeModeService : Service() {
 
         try {
             unregisterReceiver(mThemeReceiver)
-        } catch (e: Exception) {
-        }
+        } catch (e: Exception) {}
 
         try {
             unregisterReceiver(mShutDownReceiver)
-        } catch (e: Exception) {
-        }
+        } catch (e: Exception) {}
 
         try {
             contentResolver.unregisterContentObserver(mResListener!!)
-        } catch (e: Exception) {
-        }
+        } catch (e: Exception) {}
 
         try {
             contentResolver.unregisterContentObserver(observer!!)
-        } catch (e: Exception) {
-        }
+        } catch (e: Exception) {}
 
+        try {
+            preferences?.unregisterOnSharedPreferenceChangeListener(prefsListener)
+        } catch (e: Exception) {}
     }
 
     private fun startInForeground() {

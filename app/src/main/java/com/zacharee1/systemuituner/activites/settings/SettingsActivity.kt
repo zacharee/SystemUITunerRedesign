@@ -95,6 +95,7 @@ class SettingsActivity : AppCompatPreferenceActivity() {
             val darkMode = findPreference("dark_mode") as SwitchPreference
             val taskerEnabled = findPreference("tasker_support_enabled") as SwitchPreference
             val safeMode = findPreference("safe_mode") as SwitchPreference
+            val safeNotif = findPreference("show_safe_mode_notif") as SwitchPreference
 
             darkMode.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { _, _ ->
                 val intent = Intent()
@@ -122,6 +123,11 @@ class SettingsActivity : AppCompatPreferenceActivity() {
                 }
 
                 true
+            }
+
+            if (Build.VERSION.SDK_INT > Build.VERSION_CODES.N_MR1) {
+                safeNotif.isEnabled = false
+                safeNotif.summary = resources.getText(R.string.safe_mode_notif_desc_not_supported)
             }
         }
 

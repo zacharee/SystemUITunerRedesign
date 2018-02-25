@@ -33,12 +33,18 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:title="@string/danger_zone">
+        android:title="@string/safe_mode" >
 
         <SwitchPreference
-            android:title="@string/safe_mode"
+            android:title="@string/enable"
             android:key="safe_mode"
             android:summary="@string/safe_mode_summary"/>
+
+        <SwitchPreference
+            android:title="@string/show_notif"
+            android:key="show_safe_mode_notif"
+            android:defaultValue="true"
+            android:summary="@string/safe_mode_notif_desc" />
 
         <Preference
             android:selectable="false"
@@ -59,6 +65,11 @@
         <Preference
             android:selectable="false"
             android:summary="@string/safe_mode_summary_5" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/danger_zone">
 
         <SwitchPreference
             android:title="@string/enable_custom_settings_input"
