@@ -276,9 +276,9 @@ class MiscHelper(fragment: ItemDetailFragment) : BaseHelper(fragment) {
         val transition = findPreference(Settings.Global.TRANSITION_ANIMATION_SCALE) as SliderPreferenceEmbedded
         val window = findPreference(Settings.Global.WINDOW_ANIMATION_SCALE) as SliderPreferenceEmbedded
 
-        val durScale = Settings.Global.getFloat(activity.contentResolver, duration.key, 1.0f)
-        val tranScale = Settings.Global.getFloat(activity.contentResolver, transition.key, 1.0f)
-        val winScale = Settings.Global.getFloat(activity.contentResolver, window.key, 1.0f)
+        val durScale = Settings.Global.getFloat(activity?.contentResolver, duration.key, 1.0f)
+        val tranScale = Settings.Global.getFloat(activity?.contentResolver, transition.key, 1.0f)
+        val winScale = Settings.Global.getFloat(activity?.contentResolver, window.key, 1.0f)
 
         duration.progress = (durScale * 100).toInt()
         transition.progress = (tranScale * 100).toInt()

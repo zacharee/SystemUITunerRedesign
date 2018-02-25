@@ -88,19 +88,19 @@ class LockHelper(fragment: ItemDetailFragment) : BaseHelper(fragment) {
         leftLock?.summary = leftSum
         rightLock?.summary = rightSum
 
-        val pm = activity.packageManager
+        val pm = activity?.packageManager
 
         val unknown = context.resources.getDrawable(R.drawable.ic_help_outline_black_24dp, null)
         unknown.setColorFilter(Color.WHITE, PorterDuff.Mode.SRC_ATOP)
 
         try {
-            leftLock?.icon = pm.getActivityIcon(ComponentName(leftStuff!![0], leftStuff[1]))
+            leftLock?.icon = pm?.getActivityIcon(ComponentName(leftStuff!![0], leftStuff[1]))
         } catch (e: Exception) {
             leftLock?.icon = unknown
         }
 
         try {
-            rightLock?.icon = pm.getActivityIcon(ComponentName(rightStuff!![0], rightStuff[1]))
+            rightLock?.icon = pm?.getActivityIcon(ComponentName(rightStuff!![0], rightStuff[1]))
         } catch (e: Exception) {
             rightLock?.icon = unknown
         }

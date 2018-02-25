@@ -22,8 +22,8 @@ class TWHelper(fragment: ItemDetailFragment) : BaseHelper(fragment) {
         val rows = findPreference(TILE_ROW) as SliderPreferenceEmbedded
         val columns = findPreference(TILE_COLUMN) as SliderPreferenceEmbedded
         val defVal = 3
-        val savedRowVal = Settings.Secure.getInt(activity.contentResolver, rows.key, defVal)
-        val savedColVal = Settings.Secure.getInt(activity.contentResolver, columns.key, defVal)
+        val savedRowVal = Settings.Secure.getInt(activity?.contentResolver, rows.key, defVal)
+        val savedColVal = Settings.Secure.getInt(activity?.contentResolver, columns.key, defVal)
 
         val listener = Preference.OnPreferenceChangeListener { preference, newValue ->
             sharedPreferences.edit().putInt(preference.key, Integer.valueOf(newValue.toString())).apply()

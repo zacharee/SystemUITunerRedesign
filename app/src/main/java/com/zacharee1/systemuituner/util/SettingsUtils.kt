@@ -28,9 +28,9 @@ object SettingsUtils {
 
     }
 
-    fun writeSecure(context: Context, key: String, value: String?): Boolean {
+    fun writeSecure(context: Context?, key: String, value: String?): Boolean {
         return try {
-            Settings.Secure.putString(context.contentResolver, key, value)
+            Settings.Secure.putString(context?.contentResolver, key, value)
             true
         } catch (e: Exception) {
             val baseCommand = if (value != null) "settings put secure $key $value" else "settings delete secure $key"
