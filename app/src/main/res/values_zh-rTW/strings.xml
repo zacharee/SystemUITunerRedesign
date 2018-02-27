@@ -4,14 +4,14 @@
   <string name="app_name">系統使用者介面調整精靈</string>
   <string name="to_the_tweaks">立馬大改！</string>
   <string name="sorry_explain">設定時發生未知錯誤</string>
-  <string name="sorry_option">Try executing the following command from a computer (it\'s one line):</string>
+  <string name="sorry_option">試著從電腦執行下列指定（單行指令）：</string>
   <string name="more">更多</string>
   <string name="grant_dump_perm">你需要授予 \"android.permission.DUMP\" 權限才可使用本功能</string>
   <string name="safe_mode_auto_enabled">偵測到 Samsung 裝置！保險起見安全模式已自動開啟。請注意更動任何狀態列圖示可能導致系統損毀！詳細資訊請見 Play 商店中的敘述。</string>
   <string name="notice">注意</string>
   <string name="fancy_pulldown_notice">關閉本功能可能導致重啟後發生問題。請於重啟後手動開啟再關閉,，或啟用安全模式。</string>
-  <string name="safe_mode_summary">SAMSUNG USERS KEEP THIS TURNED ON UNLESS YOU HAVE AN AOSP ROM!</string>
-  <string name="safe_mode_summary_1">Clears any status bar customizations on reboot and restores them after boot completes.</string>
+  <string name="safe_mode_summary">三星用戶應保持本設定啟用，除非你有 AOSP ROM！</string>
+  <string name="safe_mode_summary_1">重啟時清除任何狀態列個人化設定，且於開機後還原。</string>
   <string name="safe_mode_summary_2">開機時切換快速設定動畫。</string>
   <string name="safe_mode_summary_3">Restores custom QS header count value on boot (Nougat+).</string>
   <string name="safe_mode_summary_4">Restores custom QS row/column count on boot (TouchWiz, Nougat+).</string>
@@ -279,16 +279,16 @@
     Use the options below to set the different snooze times. \"Default\" sets the time Android will use by default. The other items will be the snooze times available for you to select.
     </string>
   <string name="default_text">預設值</string>
-  <string name="time_a">Time A</string>
-  <string name="time_b">Time B</string>
-  <string name="time_c">Time C</string>
-  <string name="time_d">Time D</string>
+  <string name="time_a">時間 A</string>
+  <string name="time_b">時間 B</string>
+  <string name="time_c">時間 C</string>
+  <string name="time_d">時間 D</string>
   <string name="clock_tile_format">時鐘方塊格式</string>
   <string name="twelve">12 小時制</string>
   <string name="twelve_nosec">12 小時制，不含秒數</string>
   <string name="military">24 小時制</string>
   <string name="military_nosec">24 小時制，不含秒數</string>
   <string name="show_notif">顯示通知</string>
-  <string name="safe_mode_notif_desc">It is recommended that you keep this active, and hide the notification instead. Turning it off may cause Safe Mode to no longer function.</string>
+  <string name="safe_mode_notif_desc">建議你保持本設定啟用，並用隱藏通知作為替代方式。停用此設定可能導致安全模式無法正常運作。</string>
   <string name="safe_mode_notif_desc_not_supported">本設定在 Oreo 中必須保持啟用</string>
 </resources>
