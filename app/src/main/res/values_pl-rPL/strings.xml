@@ -22,7 +22,7 @@
   <string name="safe_mode_android_o">Ze względu na ograniczenia wprowadzone w Android O, ta funkcja nie będzie działać na twoim urządzeniu.</string>
   <string name="requires_nougat">Wymaga Nougat lub późniejsze.</string>
   <string name="requires_oreo">Wymaga Oreo lub późniejsze.</string>
-  <string name="requires_8_1">Requires Oreo 8.1 or later.</string>
+  <string name="requires_8_1">Wymaga Oreo 8.1 lub nowszą wersje.</string>
   <string name="enable_in_settings">Włącz w ustawieniach.</string>
   <string name="about">Informacje</string>
   <string name="miscellaneous">Inne</string>
@@ -72,7 +72,7 @@
   <string name="speakerphone_icon">Ikona zestawu głośnomówiącego</string>
   <string name="time_such"><![CDATA[Czas i podobne]]></string>
   <string name="clock">Ikona zegara</string>
-  <string name="clock_tile">Clock</string>
+  <string name="clock_tile">Zegar</string>
   <string name="show_clock_seconds">Pokaż sekundy na zegarku</string>
   <string name="alarm_clock_icon">Ikona budzika</string>
   <string name="zen_icon">Ikona Zen</string>
@@ -238,7 +238,7 @@
   <string name="mac">macOS</string>
   <string name="ubuntu">Ubuntu</string>
   <string name="fedora">Fedora</string>
-  <string name="linux">Linux (Other)</string>
+  <string name="linux">Linux (inne)</string>
   <string name="app_specific">Specyficzne dla aplikacji</string>
   <string name="blacklist">Czarna lista</string>
   <string name="select_apps">Wybierz Aplikacje</string>
@@ -246,28 +246,28 @@
   <string name="blacklist_desc">Jeśli włączone, wybrane aplikacje nie będą używać trybu Immersive</string>
   <string name="warning">Uwaga!</string>
   <string name="imm_warn">Ta funkcja pozwala jedynie na włączenie trybu Immersive. NIE robi nic poza tym. Każde problemy, które doświadczysz są błędami producenta urządzenia. NIE JESTEM W STANIE TEGO NAPRAWIĆ!</string>
-  <string name="target_not_found">Unable to launch app.</string>
-  <string name="select_all">Select All</string>
-  <string name="deselect_all">Deselect All</string>
+  <string name="target_not_found">Nie można uruchomić aplikacji.</string>
+  <string name="select_all">Zaznacz wszystko</string>
+  <string name="deselect_all">Odznacz Wszystko</string>
   <string name="invert_selection">Invert Selection</string>
   <string name="statbar_rotation_lock_notif">On certain devices, modifying the status bar icons can cause an icon that looks like a phone to appear. This is the Rotation Lock icon.</string>
   <string name="feature_not_supported">It seems your device doesn\'t support this feature :/</string>
-  <string name="select_app">Select App</string>
-  <string name="select_component">Select Component</string>
+  <string name="select_app">Wybierz Aplikacje</string>
+  <string name="select_component">Wybierz komponent</string>
   <string name="reset">Reset</string>
   <string name="pnc_desc">Power Notification Controls allow you to set the level of importance for notifications on a per-app basis. Simply turn the feature on and hold down on a notification to get started. You may need to tap the A to enable the slider.</string>
   <string name="pnc_warn">This feature is known to be unreliable on certain devices, especially on TouchWiz! It is impossible to fix, but the best workaround seems to be to tap repeatedly on the desired level. Again, I CANNOT fix it!</string>
-  <string name="agree">Agree</string>
-  <string name="cancel">Cancel</string>
-  <string name="dont_show">Don\'t Show Again</string>
-  <string name="miui_detected">MIUI Device Detected!</string>
+  <string name="agree">Zgadzam się</string>
+  <string name="cancel">Anuluj</string>
+  <string name="dont_show">Nie pokazuj ponownie</string>
+  <string name="miui_detected">MIUI urządzenia wykryte!</string>
   <string name="miui_warning">It seems that you\'re using a MIUI device. Please take note that few, if any, features of this app will work for you. It is NOT fixable!</string>
   <string name="intent">Intent</string>
   <string name="removing_tile">Removing Tile</string>
   <string name="remove_tile">Remove %s?</string>
   <string name="allow_deep_sleep">Enable Automatic Deep Sleep</string>
-  <string name="yes">Yes</string>
-  <string name="no">No</string>
+  <string name="yes">Tak</string>
+  <string name="no">Nie</string>
   <string name="warn_message">This app modifies system settings. Uninstalling won\'t revert anything, nor can I make that happen. Unless you are comfortable with manual recovery, don\'t use the app. You have been warned!</string>
   <string name="notif_title">Safe Mode Service is running</string>
   <string name="notif_desc">Tap to change settings</string>
@@ -278,10 +278,10 @@
     In Android 8.1 and later, you can set custom times for notification snoozing. These values reset on reboot, so make sure to enable Safe Mode if you would like them to persist across power cycles.\n\n&#160;
     Use the options below to set the different snooze times. \"Default\" sets the time Android will use by default. The other items will be the snooze times available for you to select.
     </string>
-  <string name="default_text">Default</string>
-  <string name="time_a">Time A</string>
-  <string name="time_b">Time B</string>
-  <string name="time_c">Time C</string>
+  <string name="default_text">Domyślne</string>
+  <string name="time_a">Czas A</string>
+  <string name="time_b">Czas B</string>
+  <string name="time_c">Czas C</string>
   <string name="time_d">Time D</string>
   <string name="clock_tile_format">Clock Tile Format</string>
   <string name="twelve">12-Hour</string>
