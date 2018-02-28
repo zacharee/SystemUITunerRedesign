@@ -163,7 +163,7 @@ class SafeModeService : Service() {
         if (Build.VERSION.SDK_INT > Build.VERSION_CODES.O) {
             val saved = preferences!!.getString("notification_snooze_options", "")
 
-            if (!saved!!.isEmpty()) {
+            if (!saved.isEmpty()) {
                 SettingsUtils.writeGlobal(this, "notification_snooze_options", saved)
             }
         }
@@ -190,7 +190,8 @@ class SafeModeService : Service() {
                 }
             }
 
-            contentResolver.registerContentObserver(Settings.Global.CONTENT_URI, true, observer!!)
+            contentResolver.registerContentObserver(Settings.Global.CONTENT_URI, true, observer)
+            contentResolver.registerContentObserver(Settings.Secure.CONTENT_URI, true, observer)
         }
     }
 

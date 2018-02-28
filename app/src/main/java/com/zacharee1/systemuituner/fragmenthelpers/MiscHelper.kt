@@ -357,6 +357,7 @@ class MiscHelper(fragment: ItemDetailFragment) : BaseHelper(fragment) {
 
     private fun saveSnoozeTimes(toSave: ArrayList<String>) {
         val base = "default=" + toSave[0] + ",options_array=" + toSave[1] + ":" + toSave[2] + ":" + toSave[3] + ":" + toSave[4]
+        mSharedPreferences.edit().putString("notification_snooze_options", base).apply()
         SettingsUtils.writeGlobal(context, "notification_snooze_options", base)
     }
 
