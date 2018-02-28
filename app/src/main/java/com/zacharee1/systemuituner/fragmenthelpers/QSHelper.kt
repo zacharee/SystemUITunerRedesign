@@ -38,7 +38,7 @@ class QSHelper(fragment: ItemDetailFragment) : BaseHelper(fragment) {
                 .filterIsInstance<SwitchPreference>()
                 .forEach { //if current preference is a SwitchPreference
 
-                    it.isChecked = Settings.Secure.getInt(context.contentResolver, it.key, 1) == 1
+                    it.isChecked = Settings.Secure.getInt(context?.contentResolver, it.key, 1) == 1
                 }
     }
 
@@ -84,7 +84,7 @@ class QSHelper(fragment: ItemDetailFragment) : BaseHelper(fragment) {
                 true
             }
 
-            pref.progress = Settings.Secure.getInt(context.contentResolver, QQS_COUNT, 5) //set the progress/value from Settings
+            pref.progress = Settings.Secure.getInt(context?.contentResolver, QQS_COUNT, 5) //set the progress/value from Settings
         } else {
             val category = findPreference(COUNT_CATEGORY) as PreferenceCategory
             category.isEnabled = false

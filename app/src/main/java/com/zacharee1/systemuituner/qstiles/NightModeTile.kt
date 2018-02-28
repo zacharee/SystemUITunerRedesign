@@ -26,22 +26,22 @@ class NightModeTile : TileService() {
                 val id = nightDisplayAvailable.getInt(null)
 
                 if (!Resources.getSystem().getBoolean(id)) {
-                    qsTile.state = Tile.STATE_UNAVAILABLE
-                    qsTile.updateTile()
+                    qsTile?.state = Tile.STATE_UNAVAILABLE
+                    qsTile?.updateTile()
                 } else {
-                    qsTile.state = if (isActive) Tile.STATE_ACTIVE else Tile.STATE_INACTIVE
-                    qsTile.updateTile()
+                    qsTile?.state = if (isActive) Tile.STATE_ACTIVE else Tile.STATE_INACTIVE
+                    qsTile?.updateTile()
                 }
             } catch (e: Exception) {
                 e.printStackTrace()
 
-                qsTile.state = if (isActive) Tile.STATE_ACTIVE else Tile.STATE_INACTIVE
-                qsTile.updateTile()
+                qsTile?.state = if (isActive) Tile.STATE_ACTIVE else Tile.STATE_INACTIVE
+                qsTile?.updateTile()
             }
 
         } else {
-            qsTile.state = if (isActive) Tile.STATE_ACTIVE else Tile.STATE_INACTIVE
-            qsTile.updateTile()
+            qsTile?.state = if (isActive) Tile.STATE_ACTIVE else Tile.STATE_INACTIVE
+            qsTile?.updateTile()
         }
     }
 

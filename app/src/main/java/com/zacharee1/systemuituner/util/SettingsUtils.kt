@@ -45,9 +45,9 @@ object SettingsUtils {
 
     }
 
-    fun writeSystem(context: Context, key: String, value: String?): Boolean {
+    fun writeSystem(context: Context?, key: String, value: String?): Boolean {
         return try {
-            Settings.System.putString(context.contentResolver, key, value)
+            Settings.System.putString(context?.contentResolver, key, value)
             true
         } catch (e: Exception) {
             val baseCommand = if (value != null) "settings put system $key $value" else "settings delete system $key"
@@ -94,9 +94,9 @@ object SettingsUtils {
         return permissions.none { context?.checkCallingOrSelfPermission(it) == PackageManager.PERMISSION_DENIED }
     }
 
-    fun changeBlacklist(key: String?, value: Boolean, context: Context) {
+    fun changeBlacklist(key: String?, value: Boolean, context: Context?) {
         if (key != null) {
-            var currentBL: String = Settings.Secure.getString(context.contentResolver, "icon_blacklist") ?: ""
+            var currentBL: String = Settings.Secure.getString(context?.contentResolver, "icon_blacklist") ?: ""
 
             if (!value) {
                 currentBL += if (currentBL.isEmpty()) {

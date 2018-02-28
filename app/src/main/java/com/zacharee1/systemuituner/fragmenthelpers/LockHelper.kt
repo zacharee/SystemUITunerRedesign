@@ -76,8 +76,8 @@ class LockHelper(fragment: ItemDetailFragment) : BaseHelper(fragment) {
         val leftLock = findPreference(CHOOSE_LEFT)
         val rightLock = findPreference(CHOOSE_RIGHT)
 
-        val leftSum = Settings.Secure.getString(context.contentResolver, KEYGUARD_LEFT)
-        val rightSum = Settings.Secure.getString(context.contentResolver, KEYGUARD_RIGHT)
+        val leftSum = Settings.Secure.getString(context?.contentResolver, KEYGUARD_LEFT)
+        val rightSum = Settings.Secure.getString(context?.contentResolver, KEYGUARD_RIGHT)
 
         var leftStuff: Array<String>? = null
         var rightStuff: Array<String>? = null
@@ -90,8 +90,8 @@ class LockHelper(fragment: ItemDetailFragment) : BaseHelper(fragment) {
 
         val pm = activity?.packageManager
 
-        val unknown = context.resources.getDrawable(R.drawable.ic_help_outline_black_24dp, null)
-        unknown.setColorFilter(Color.WHITE, PorterDuff.Mode.SRC_ATOP)
+        val unknown = context?.resources?.getDrawable(R.drawable.ic_help_outline_black_24dp, null)
+        unknown?.setColorFilter(Color.WHITE, PorterDuff.Mode.SRC_ATOP)
 
         try {
             leftLock?.icon = pm?.getActivityIcon(ComponentName(leftStuff!![0], leftStuff[1]))

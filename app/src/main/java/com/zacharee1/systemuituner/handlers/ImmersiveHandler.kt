@@ -16,8 +16,8 @@ object ImmersiveHandler {
 
     val POLICY_CONTROL = Settings.Global.getUriFor(KEY)!!
 
-    fun isInImmersive(context: Context): Boolean {
-        val imm = Settings.Global.getString(context.contentResolver, KEY)
+    fun isInImmersive(context: Context?): Boolean {
+        val imm = Settings.Global.getString(context?.contentResolver, KEY)
 
         return imm != null && !imm.isEmpty() && (imm.contains(FULL)
                 || imm.contains(STATUS)
@@ -25,8 +25,8 @@ object ImmersiveHandler {
                 || imm.contains(PRECONF))
     }
 
-    fun getMode(context: Context): String? {
-        var imm: String? = Settings.Global.getString(context.contentResolver, KEY)
+    fun getMode(context: Context?): String? {
+        var imm: String? = Settings.Global.getString(context?.contentResolver, KEY)
         if (imm == null || imm.isEmpty()) imm = "immersive.none"
         imm = imm.replace("=(.+?)$".toRegex(), "")
 

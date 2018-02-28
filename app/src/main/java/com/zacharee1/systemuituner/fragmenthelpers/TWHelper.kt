@@ -40,7 +40,7 @@ class TWHelper(fragment: ItemDetailFragment) : BaseHelper(fragment) {
 
     private fun setUpNavBarStuff() {
         val preference = findPreference(NAVBAR_COLOR) as ColorPreference
-        val savedVal = Settings.Global.getInt(context.contentResolver, NAVBAR_COLOR, Color.WHITE)
+        val savedVal = Settings.Global.getInt(context?.contentResolver, NAVBAR_COLOR, Color.WHITE)
 
         preference.saveValue(savedVal)
         preference.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { _, newValue ->

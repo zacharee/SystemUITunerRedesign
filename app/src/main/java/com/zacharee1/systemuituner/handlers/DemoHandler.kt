@@ -7,21 +7,21 @@ import android.preference.PreferenceManager
 import android.provider.Settings
 import com.zacharee1.systemuituner.util.SettingsUtils
 
-class DemoHandler(private val mContext: Context) {
-    private val mPrefs: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(mContext)
+class DemoHandler(private val context: Context?) {
+    private val mPrefs: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(context)
 
     val isAllowed: Boolean
-        get() = Settings.Global.getInt(mContext.contentResolver, "sysui_demo_allowed", 0) == 1
+        get() = Settings.Global.getInt(context?.contentResolver, "sysui_demo_allowed", 0) == 1
 
     val isEnabled: Boolean
-        get() = Settings.Global.getInt(mContext.contentResolver, "sysui_tuner_demo_on", 0) == 1
+        get() = Settings.Global.getInt(context?.contentResolver, "sysui_tuner_demo_on", 0) == 1
 
     fun showDemo() {
         try {
             //create new Intent and add relevant data to show Demo Mode with specified options
             var intent = Intent("com.android.systemui.demo")
             intent.putExtra("command", "enter")
-            mContext.sendBroadcast(intent)
+            context?.sendBroadcast(intent)
 
             //            logIntent(intent);
 
@@ -29,7 +29,7 @@ class DemoHandler(private val mContext: Context) {
             intent.putExtra("command", "clock")
             //            intent.putExtra("hhmm", (timeHour() < 10 ? "0" + timeHour() : timeHour()) + "" + (timeMinute() < 10 ? "0" + timeMinute() : timeMinute()));
             intent.putExtra("millis", time().toString() + "")
-            mContext.sendBroadcast(intent)
+            context?.sendBroadcast(intent)
 
             //            logIntent(intent);
 
@@ -39,7 +39,7 @@ class DemoHandler(private val mContext: Context) {
             intent.putExtra("fully", mobileFully())
             intent.putExtra("level", mobileLevel().toString() + "")
             intent.putExtra("datatype", mobileType())
-            mContext.sendBroadcast(intent)
+            context?.sendBroadcast(intent)
 
             //            logIntent(intent);
 
@@ -47,7 +47,7 @@ class DemoHandler(private val mContext: Context) {
             intent.putExtra("command", "network")
             intent.putExtra("sims", simCount().toString() + "")
             intent.putExtra("nosim", if (noSim()) "show" else "hide")
-            mContext.sendBroadcast(intent)
+            context?.sendBroadcast(intent)
 
             //            logIntent(intent);
 
@@ -56,14 +56,14 @@ class DemoHandler(private val mContext: Context) {
             intent.putExtra("wifi", if (showWiFi()) "show" else "hide")
             intent.putExtra("fully", wifiFully())
             intent.putExtra("level", wifiLevel().toString() + "")
-            mContext.sendBroadcast(intent)
+            context?.sendBroadcast(intent)
 
             //            logIntent(intent);
 
             intent = Intent("com.android.systemui.demo")
             intent.putExtra("command", "network")
             intent.putExtra("airplane", if (showAirplane()) "show" else "hide")
-            mContext.sendBroadcast(intent)
+            context?.sendBroadcast(intent)
 
             //            logIntent(intent);
 
@@ -71,21 +71,21 @@ class DemoHandler(private val mContext: Context) {
             intent.putExtra("command", "battery")
             intent.putExtra("level", batteryLevel().toString() + "")
             intent.putExtra("plugged", batteryCharging().toString() + "")
-            mContext.sendBroadcast(intent)
+            context?.sendBroadcast(intent)
 
             //            logIntent(intent);
 
             intent = Intent("com.android.systemui.demo")
             intent.putExtra("command", "notifications")
             intent.putExtra("visible", showNotifs().toString() + "")
-            mContext.sendBroadcast(intent)
+            context?.sendBroadcast(intent)
 
             //            logIntent(intent);
 
             intent = Intent("com.android.systemui.demo")
             intent.putExtra("command", "bars")
             intent.putExtra("mode", statStyle())
-            mContext.sendBroadcast(intent)
+            context?.sendBroadcast(intent)
 
             //            logIntent(intent);
 
@@ -100,9 +100,9 @@ class DemoHandler(private val mContext: Context) {
             intent.putExtra("eri", if (eri()) "show" else "hide")
             intent.putExtra("mute", if (mute()) "show" else "hide")
             intent.putExtra("speakerphone", if (spkphone()) "show" else "hide")
-            mContext.sendBroadcast(intent)
+            context?.sendBroadcast(intent)
 
-            SettingsUtils.writeGlobal(mContext, "sysui_tuner_demo_on", "1")
+            SettingsUtils.writeGlobal(context, "sysui_tuner_demo_on", "1")
         } catch (e: Exception) {
             e.printStackTrace()
         }
@@ -112,9 +112,9 @@ class DemoHandler(private val mContext: Context) {
     fun hideDemo() {
         val intent = Intent("com.android.systemui.demo")
         intent.putExtra("command", "exit")
-        mContext.sendBroadcast(intent)
+        context?.sendBroadcast(intent)
 
-        SettingsUtils.writeGlobal(mContext, "sysui_tuner_demo_on", "0")
+        SettingsUtils.writeGlobal(context, "sysui_tuner_demo_on", "0")
     }
 
     private fun showNotifs(): Boolean {

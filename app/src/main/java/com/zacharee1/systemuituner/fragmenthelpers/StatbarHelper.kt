@@ -33,14 +33,14 @@ class StatbarHelper(fragment: ItemDetailFragment) : BaseHelper(fragment) {
         }
 
         backupBL?.onPreferenceClickListener = Preference.OnPreferenceClickListener {
-            val currentBL = Settings.Secure.getString(context.contentResolver, ICON_BLACKLIST)
+            val currentBL = Settings.Secure.getString(context?.contentResolver, ICON_BLACKLIST)
             SettingsUtils.writeGlobal(context, ICON_BLACKLIST_BACKUP, currentBL)
             setSwitchPreferenceStates()
             true
         }
 
         restoreBL?.onPreferenceClickListener = Preference.OnPreferenceClickListener {
-            val backupBLString = Settings.Global.getString(context.contentResolver, ICON_BLACKLIST_BACKUP)
+            val backupBLString = Settings.Global.getString(context?.contentResolver, ICON_BLACKLIST_BACKUP)
             SettingsUtils.writeSecure(context, ICON_BLACKLIST, backupBLString)
             setSwitchPreferenceStates()
             true
@@ -61,7 +61,7 @@ class StatbarHelper(fragment: ItemDetailFragment) : BaseHelper(fragment) {
                 val intent = Intent(context, ItemDetailActivity::class.java)
                 intent.putExtra(ItemDetailFragment.ARG_ITEM_ID, "auto")
 
-                context.startActivity(intent)
+                context?.startActivity(intent)
             }
             true
         }

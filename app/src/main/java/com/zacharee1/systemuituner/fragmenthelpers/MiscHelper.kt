@@ -56,7 +56,7 @@ class MiscHelper(fragment: ItemDetailFragment) : BaseHelper(fragment) {
 
         for (preference in preferences) {
             val key = preference.key
-            preference.isChecked = Settings.Global.getInt(context.contentResolver, key, 1) == 1
+            preference.isChecked = Settings.Global.getInt(context?.contentResolver, key, 1) == 1
             preference.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { _, o ->
                 SettingsUtils.writeGlobal(context, key, if (java.lang.Boolean.valueOf(o.toString())) "1" else "0")
                 true
@@ -98,7 +98,7 @@ class MiscHelper(fragment: ItemDetailFragment) : BaseHelper(fragment) {
 
         for (preference in preferences) {
             val key = preference.key
-            preference.isChecked = Settings.Secure.getInt(context.contentResolver, key, 0) == 1
+            preference.isChecked = Settings.Secure.getInt(context?.contentResolver, key, 0) == 1
             preference.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { _, o ->
                 SettingsUtils.writeSecure(context, key, if (java.lang.Boolean.valueOf(o.toString())) "1" else "0")
                 true
@@ -115,7 +115,7 @@ class MiscHelper(fragment: ItemDetailFragment) : BaseHelper(fragment) {
 
         for (preference in preferences) {
             val key = preference.key
-            preference.isChecked = Settings.System.getInt(context.contentResolver, key, 0) == 1
+            preference.isChecked = Settings.System.getInt(context?.contentResolver, key, 0) == 1
             preference.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { _, o ->
                 SettingsUtils.writeSystem(context, key, if (java.lang.Boolean.valueOf(o.toString())) "1" else "0")
                 true
@@ -130,9 +130,9 @@ class MiscHelper(fragment: ItemDetailFragment) : BaseHelper(fragment) {
 
         when {
             Build.VERSION.SDK_INT == Build.VERSION_CODES.N -> {
-                tint.isChecked = Settings.Secure.getInt(context.contentResolver, NIGHT_MODE_TINT, 0) == 1
+                tint.isChecked = Settings.Secure.getInt(context?.contentResolver, NIGHT_MODE_TINT, 0) == 1
 
-                val current = Settings.Secure.getInt(context.contentResolver, TWILIGHT_MODE, 0)
+                val current = Settings.Secure.getInt(context?.contentResolver, TWILIGHT_MODE, 0)
 
                 when (current) {
                     TWILIGHT_MODE_INACTIVE -> {
@@ -164,9 +164,9 @@ class MiscHelper(fragment: ItemDetailFragment) : BaseHelper(fragment) {
                 category.setTitle(R.string.night_display)
                 category.removePreference(tint)
 
-                override.isChecked = Settings.Secure.getInt(context.contentResolver, NIGHT_DISPLAY_ACTIVATED, 0) == 1
+                override.isChecked = Settings.Secure.getInt(context?.contentResolver, NIGHT_DISPLAY_ACTIVATED, 0) == 1
                 override.setTitle(R.string.night_display_activated)
-                auto.isChecked = Settings.Secure.getInt(context.contentResolver, NIGHT_DISPLAY_AUTO, 0) == 1
+                auto.isChecked = Settings.Secure.getInt(context?.contentResolver, NIGHT_DISPLAY_AUTO, 0) == 1
                 auto.setTitle(R.string.night_display_auto)
 
                 try {
@@ -362,7 +362,7 @@ class MiscHelper(fragment: ItemDetailFragment) : BaseHelper(fragment) {
 
     private fun parseSnoozeTimes(): ArrayList<String> {
         val ret = ArrayList<String>()
-        val saved = Settings.Global.getString(context.contentResolver, "notification_snooze_options")
+        val saved = Settings.Global.getString(context?.contentResolver, "notification_snooze_options")
 
         if (saved == null || saved.isEmpty()) {
             ret.add("60")

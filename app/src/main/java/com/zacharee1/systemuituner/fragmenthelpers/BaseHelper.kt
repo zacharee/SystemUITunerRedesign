@@ -13,7 +13,7 @@ import com.zacharee1.systemuituner.fragments.ItemDetailFragment
 
 abstract class BaseHelper(val fragment: ItemDetailFragment) {
 
-    val context: Context
+    val context: Context?
         get() = fragment.context
 
     val activity: Activity?
