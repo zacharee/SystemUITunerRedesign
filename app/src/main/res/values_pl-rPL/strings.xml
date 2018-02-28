@@ -4,7 +4,7 @@
   <string name="app_name">SystemUI Tuner</string>
   <string name="to_the_tweaks">Do poprawek!</string>
   <string name="sorry_explain">Coś poszło nie tak podczas ustawiania.</string>
-  <string name="sorry_option">Try executing the following command from a computer (it\'s one line):</string>
+  <string name="sorry_option">Spróbuj wpisać to polecenie na komputerze (w jednym wierszu):</string>
   <string name="more">Więcej</string>
   <string name="grant_dump_perm">Musisz uznać uprawnienie \"android.permission.DUMP\", aby użyć tej funkcji.</string>
   <string name="safe_mode_auto_enabled">Wykryto urządzenie Samsung! Tryb bezpieczny został automatycznie włączony dla twojego bezpieczeństwa. Miej na uwadze, że modyfikacja ikon paska stanu może powodować USZKODZENIE SYSTEM UI! Wejdź w link znajdujący się w opisie na Play Store, aby uzyskać więcej informacji.</string>
@@ -250,8 +250,8 @@
   <string name="select_all">Zaznacz wszystko</string>
   <string name="deselect_all">Odznacz Wszystko</string>
   <string name="invert_selection">Invert Selection</string>
-  <string name="statbar_rotation_lock_notif">On certain devices, modifying the status bar icons can cause an icon that looks like a phone to appear. This is the Rotation Lock icon.</string>
-  <string name="feature_not_supported">It seems your device doesn\'t support this feature :/</string>
+  <string name="statbar_rotation_lock_notif">Na niektórych urządzeniach, modyfikacja paska ikon może spowodować pojawienie sie ikonki telefonu. Jest to ikona blokady obrotu ekranu. </string>
+  <string name="feature_not_supported">Twoje urządzenie nie obsługuje tej funkcji ;/</string>
   <string name="select_app">Wybierz Aplikacje</string>
   <string name="select_component">Wybierz komponent</string>
   <string name="reset">Reset</string>
@@ -264,16 +264,16 @@
   <string name="miui_warning">It seems that you\'re using a MIUI device. Please take note that few, if any, features of this app will work for you. It is NOT fixable!</string>
   <string name="intent">Intent</string>
   <string name="removing_tile">Removing Tile</string>
-  <string name="remove_tile">Remove %s?</string>
+  <string name="remove_tile">Usunać %s?</string>
   <string name="allow_deep_sleep">Enable Automatic Deep Sleep</string>
   <string name="yes">Tak</string>
   <string name="no">Nie</string>
   <string name="warn_message">This app modifies system settings. Uninstalling won\'t revert anything, nor can I make that happen. Unless you are comfortable with manual recovery, don\'t use the app. You have been warned!</string>
   <string name="notif_title">Safe Mode Service is running</string>
-  <string name="notif_desc">Tap to change settings</string>
+  <string name="notif_desc">Kliknij, aby zmienić ustawienia</string>
   <string name="touchwiz_oreo_qqs">On TouchWiz Oreo devices, this setting is no longer reliable! Along with setting the number here, you may have to also save the value to Settings.System.apanel_number, which can only be done with ADB or root. Safe Mode attempts to implement a workaround, but I can\'t guarantee it will work!</string>
-  <string name="color">Color</string>
-  <string name="notifs_snooze">Notification Snoozing</string>
+  <string name="color">Kolor</string>
+  <string name="notifs_snooze">Usypianie powiadomień</string>
   <string name="notifs_snooze_desc">&#160;
     In Android 8.1 and later, you can set custom times for notification snoozing. These values reset on reboot, so make sure to enable Safe Mode if you would like them to persist across power cycles.\n\n&#160;
     Use the options below to set the different snooze times. \"Default\" sets the time Android will use by default. The other items will be the snooze times available for you to select.
@@ -282,13 +282,13 @@
   <string name="time_a">Czas A</string>
   <string name="time_b">Czas B</string>
   <string name="time_c">Czas C</string>
-  <string name="time_d">Time D</string>
-  <string name="clock_tile_format">Clock Tile Format</string>
-  <string name="twelve">12-Hour</string>
-  <string name="twelve_nosec">12-Hour, No Seconds</string>
-  <string name="military">24-Hour</string>
-  <string name="military_nosec">24-Hour, No Seconds</string>
-  <string name="show_notif">Show Notification</string>
+  <string name="time_d">Czas D</string>
+  <string name="clock_tile_format">Format zegara</string>
+  <string name="twelve">12 Godzinny</string>
+  <string name="twelve_nosec">12 godzinny, brak sekund</string>
+  <string name="military">24 godzinny</string>
+  <string name="military_nosec">24 godzinny, brak sekund</string>
+  <string name="show_notif">Pokaż powiadomienia</string>
   <string name="safe_mode_notif_desc">It is recommended that you keep this active, and hide the notification instead. Turning it off may cause Safe Mode to no longer function.</string>
-  <string name="safe_mode_notif_desc_not_supported">This setting must remain enabled on Oreo.</string>
+  <string name="safe_mode_notif_desc_not_supported">To ustawienie musi pozostać włączone na Oreo</string>
 </resources>
