@@ -13,9 +13,9 @@
   <string name="safe_mode_summary">三星用戶應保持本設定啟用，除非你有 AOSP ROM！</string>
   <string name="safe_mode_summary_1">重啟時清除任何狀態列個人化設定，且於開機後還原。</string>
   <string name="safe_mode_summary_2">開機時切換快速設定動畫。</string>
-  <string name="safe_mode_summary_3">Restores custom QS header count value on boot (Nougat+).</string>
-  <string name="safe_mode_summary_4">Restores custom QS row/column count on boot (TouchWiz, Nougat+).</string>
-  <string name="safe_mode_summary_5">Restores custom notification snooze options on boot (8.1+).</string>
+  <string name="safe_mode_summary_3">在啟動時還原自訂 QS 標頭計數值 (Nougat+)。</string>
+  <string name="safe_mode_summary_4">在啟動時還原自訂 QS 行/列計數 (TouchWiz、Nougat+)。</string>
+  <string name="safe_mode_summary_5">啟動時，恢復自訂的通知暫停選項 (8.1 +)。</string>
   <string name="hide_welcome_screen">隱藏歡迎畫面</string>
   <string name="tasker_support">Tasker 支援</string>
   <string name="instructions">操作指南</string>
