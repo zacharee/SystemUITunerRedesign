@@ -47,7 +47,7 @@
   <string name="home_joke">Or for devices with it, I\'m not your boss.</string>
   <string name="home_extra">(If you do have the stock SystemUI Tuner, this one provides some extra goodies.)</string>
   <string name="setup">Podešavanje</string>
-  <string name="dnd_switch_in_vol_slider">DND Switch in Vol Slider</string>
+  <string name="dnd_switch_in_vol_slider">DND sklopka u prozoru glasnoće</string>
   <string name="dark_mode">Tamni način</string>
   <string name="managed_profile_icon">Managed Profile Icon</string>
   <string name="battery_icon">Ikona baterije</string>
@@ -61,7 +61,7 @@
   <string name="bluetooth_icon">Bluetooth ikona</string>
   <string name="data_saver_icon">Ikona štednje podataka</string>
   <string name="ethernet_icon">Ethernet ikona</string>
-  <string name="hotspot_icon">Hotspot Icon</string>
+  <string name="hotspot_icon">Ikona mob. pristupne točke</string>
   <string name="mobile_icon">Ikona mobilnih podataka</string>
   <string name="airplane_icon">Ikona zrakoplovnog načina</string>
   <string name="wifi_icon">Wi-Fi ikona</string>
@@ -273,7 +273,7 @@
   <string name="notif_desc">Dodirnite za promjenu postavki</string>
   <string name="touchwiz_oreo_qqs">On TouchWiz Oreo devices, this setting is no longer reliable! Along with setting the number here, you may have to also save the value to Settings.System.apanel_number, which can only be done with ADB or root. Safe Mode attempts to implement a workaround, but I can\'t guarantee it will work!</string>
   <string name="color">Boja</string>
-  <string name="notifs_snooze">Notification Snoozing</string>
+  <string name="notifs_snooze">Utišavanje obavijesti</string>
   <string name="notifs_snooze_desc">&#160;
     In Android 8.1 and later, you can set custom times for notification snoozing. These values reset on reboot, so make sure to enable Safe Mode if you would like them to persist across power cycles.\n\n&#160;
     Use the options below to set the different snooze times. \"Default\" sets the time Android will use by default. The other items will be the snooze times available for you to select.
