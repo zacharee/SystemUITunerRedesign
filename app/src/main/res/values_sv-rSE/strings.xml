@@ -10,8 +10,8 @@
   <string name="safe_mode_auto_enabled">Samsung-enhet upptäckt! Felsäkert läge har aktiverats automatiskt för din säkerhet. Varning att modifiera någon av statusfältetets ikoner. Detta kan krascha SYSTEM UI! Följ länken i Play Butik beskrivningen för mer information.</string>
   <string name="notice">MEDDELANDE</string>
   <string name="fancy_pulldown_notice">Ändring av detta alternativ kan orsaka problem efter en omstart. Växla alternativet på och av efter en omstart, eller aktivera felsäkert läge.</string>
-  <string name="safe_mode_summary">SAMSUNG USERS KEEP THIS TURNED ON UNLESS YOU HAVE AN AOSP ROM!</string>
-  <string name="safe_mode_summary_1">Clears any status bar customizations on reboot and restores them after boot completes.</string>
+  <string name="safe_mode_summary">SAMSUNG-ANVÄNDARE HÅLL DETTA På SÅVIDA DU INTE HAR EN AOSP ROM!</string>
+  <string name="safe_mode_summary_1">Rensar alla status bar anpassningar vid omstart och återställer dem efter booten är klar.</string>
   <string name="safe_mode_summary_2">Toggles the QS Fancy Animation on boot.</string>
   <string name="safe_mode_summary_3">Restores custom QS header count value on boot (Nougat+).</string>
   <string name="safe_mode_summary_4">Restores custom QS row/column count on boot (TouchWiz, Nougat+).</string>
