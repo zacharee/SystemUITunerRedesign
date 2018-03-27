@@ -19,7 +19,7 @@
   <string name="hide_welcome_screen">Willkommensbildschirm verstecken</string>
   <string name="tasker_support">Tasker Unterstützung</string>
   <string name="instructions">Anleitung</string>
-  <string name="safe_mode_android_o">Because of limitations added in Android O, this feature will not work on your device.</string>
+  <string name="safe_mode_android_o">Dieses Feature ist durch Limitationen in Android O nicht auf deinem Gerät verfügbar.</string>
   <string name="requires_nougat">Erfordert Nougat oder höher.</string>
   <string name="requires_oreo">Erfordert Oreo oder höher.</string>
   <string name="requires_8_1">Erfordert Oreo 8.1 oder höher.</string>
@@ -56,7 +56,7 @@
   <string name="rotation_lock_icon">Drehsperre Symbol</string>
   <string name="nfc_icon">NFC-Symbol</string>
   <string name="location_icon">GPS-Symbol</string>
-  <string name="su_icon">SU Icon</string>
+  <string name="su_icon">SU-Symbol</string>
   <string name="networking_data"><![CDATA[Netzwerke und Daten]]></string>
   <string name="bluetooth_icon">Bluetooth-Symbol</string>
   <string name="data_saver_icon">Datensparmodus-Symbol</string>
@@ -68,10 +68,10 @@
   <string name="vpn_icon">VPN-Symbol</string>
   <string name="sounds_alerts"><![CDATA[Geräusche & Benachrichtigungen]]></string>
   <string name="volume">Volume Icon</string>
-  <string name="headset_icon">Headset Icon</string>
-  <string name="speakerphone_icon">Speakerphone Icon</string>
+  <string name="headset_icon">Headset-Symbol</string>
+  <string name="speakerphone_icon">Lautsprecher-Symbol</string>
   <string name="time_such"><![CDATA[Time & Such]]></string>
-  <string name="clock">Clock Icon</string>
+  <string name="clock">Uhr-Symbol</string>
   <string name="clock_tile">Uhr</string>
   <string name="show_clock_seconds">Show Clock Seconds</string>
   <string name="alarm_clock_icon">Alarm Clock Icon</string>
@@ -103,8 +103,8 @@
   <string name="private_mode_icon">Private Mode Icon</string>
   <string name="face_icon">Face Icon</string>
   <string name="femtocell_icon">Femtocell Icon</string>
-  <string name="gps_icon">GPS Icon</string>
-  <string name="gesture_icon">Gesture Icon</string>
+  <string name="gps_icon">GPS-Symbol</string>
+  <string name="gesture_icon">Gesten-Symbol</string>
   <string name="ims_volte_icon">IMS VoLTE Icon</string>
   <string name="keyguard_wakeup_icon">KeyGuard Wakeup Icon</string>
   <string name="lbs_icon">LBS-Symbol</string>
