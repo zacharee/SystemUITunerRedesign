@@ -20,9 +20,9 @@
   <string name="tasker_support">Tasker Unterstützung</string>
   <string name="instructions">Anleitung</string>
   <string name="safe_mode_android_o">Because of limitations added in Android O, this feature will not work on your device.</string>
-  <string name="requires_nougat">Requires Nougat or later.</string>
-  <string name="requires_oreo">Requires Oreo or later.</string>
-  <string name="requires_8_1">Requires Oreo 8.1 or later.</string>
+  <string name="requires_nougat">Erfordert Nougat oder höher.</string>
+  <string name="requires_oreo">Erfordert Oreo oder höher.</string>
+  <string name="requires_8_1">Erfordert Oreo 8.1 oder höher.</string>
   <string name="enable_in_settings">In den Einstellungen aktivieren.</string>
   <string name="about">Infos</string>
   <string name="miscellaneous">Sonstiges</string>
@@ -72,7 +72,7 @@
   <string name="speakerphone_icon">Speakerphone Icon</string>
   <string name="time_such"><![CDATA[Time & Such]]></string>
   <string name="clock">Clock Icon</string>
-  <string name="clock_tile">Clock</string>
+  <string name="clock_tile">Uhr</string>
   <string name="show_clock_seconds">Show Clock Seconds</string>
   <string name="alarm_clock_icon">Alarm Clock Icon</string>
   <string name="zen_icon">Zen Icon</string>
