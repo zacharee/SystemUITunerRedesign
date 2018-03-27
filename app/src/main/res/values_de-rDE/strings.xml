@@ -42,12 +42,12 @@
   <string name="mobile_type">Mobile Daten Netz</string>
   <string name="show_airplane_mode">Zeige Flugzeugmodus</string>
   <string name="show_notifications">Zeige Benachrichtigungen</string>
-  <string name="status_bar_style">Statusleisten Stil</string>
+  <string name="status_bar_style">Statusleisten-Stil</string>
   <string name="home_desc">Für Geräte ohne diese Aktivität</string>
   <string name="home_joke">Oder für Geräte mit ihr. Ich bin nicht dein Chef.</string>
   <string name="home_extra">(Wenn du den normalen SystemUI Tuner hast, bietet dir dies ein paar extra Vorteile.)</string>
   <string name="setup">Einrichtung</string>
-  <string name="dnd_switch_in_vol_slider">DND Switch in Vol Slider</string>
+  <string name="dnd_switch_in_vol_slider">DND-Schalter im Lautstärke-Slider</string>
   <string name="dark_mode">Dunkler Modus</string>
   <string name="managed_profile_icon">Verwaltetes Profilbild</string>
   <string name="battery_icon">Battery Symbol</string>
@@ -81,9 +81,9 @@
   <string name="donate">Spenden</string>
   <string name="reset_blacklist">Blacklist zurücksetzen</string>
   <string name="animator_duration_scale">Maßstab Animationsdauer</string>
-  <string name="transition_animation_scale">Transition Animation Scale</string>
-  <string name="window_animation_scale">Window Animation Scale</string>
-  <string name="animation_speeds">Animation Speeds</string>
+  <string name="transition_animation_scale">Maßstab Übergangsanimation</string>
+  <string name="window_animation_scale">Maßstab Fensteranimation</string>
+  <string name="animation_speeds">Animationsgeschwindigkeiten</string>
   <string name="general">Allgemein</string>
   <string name="heads_up_notifications">Heads-Up Notifications</string>
   <string name="headphone_volume_warning">Headphone Volume Warning</string>
@@ -112,7 +112,7 @@
   <string name="safezone_icon">Sicherheitszonen-Symbol</string>
   <string name="smart_bonding_icon">\"Smart Bonding\"-Symbol</string>
   <string name="smart_scroll_icon">Intelligentes Scrollen-Symbol</string>
-  <string name="toddler_icon">Toddler Icon</string>
+  <string name="toddler_icon">Toddler-Symbol</string>
   <string name="wearable_icon">Smartwatch-Symbol</string>
   <string name="wifi_ap_icon">WLAN-Hotspot-Symbol</string>
   <string name="wifi_oxygen_icon">\"WiFi Oxygen\"-Symbol</string>
