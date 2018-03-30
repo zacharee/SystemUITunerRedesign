@@ -27,7 +27,7 @@
   <string name="about">정보</string>
   <string name="miscellaneous">기타</string>
   <string name="settings">설정</string>
-  <string name="status_bar">상태 바</string>
+  <string name="status_bar">상태 표시줄</string>
   <string name="reboot_required">(재부팅 필요)</string>
   <string name="sorry">죄송합니다...</string>
   <string name="created_by"><a href="https://forum.xda-developers.com/member.php?u=7055541">Zacharee1(이)가 개발한 앱</a></string>
@@ -42,7 +42,7 @@
   <string name="mobile_type">모바일 유형</string>
   <string name="show_airplane_mode">비행기 모드 표시</string>
   <string name="show_notifications">알림 표시</string>
-  <string name="status_bar_style">상태 바 스타일</string>
+  <string name="status_bar_style">상태 표시줄 스타일</string>
   <string name="home_desc">For Devices without this Activity</string>
   <string name="home_joke">Or for devices with it, I\'m not your boss.</string>
   <string name="home_extra">(If you do have the stock SystemUI Tuner, this one provides some extra goodies.)</string>
@@ -92,7 +92,7 @@
   <string name="secure">Secure</string>
   <string name="system">시스템</string>
   <string name="ok">확인</string>
-  <string name="power_notification_controls">전원 알림 제어</string>
+  <string name="power_notification_controls">강력 알림 제어</string>
   <string name="danger_zone">Danger Zone</string>
   <string name="safe_mode">안전 모드</string>
   <string name="enable_custom_settings_input">사용자 지정 설정 입력 활성화</string>
@@ -169,7 +169,7 @@
   <string name="quick_settings">빠른 설정</string>
   <string name="demo_mode">데모 모드</string>
   <string name="auto_detect">자동 감지</string>
-  <string name="auto_detect_summary">Attempts to automatically detect which status bar icons can be hidden. Does not work on all devices!</string>
+  <string name="auto_detect_summary">상태 표시줄 아이콘을 자동으로 감지하는 시도를 숨길 수 있습니다. 모든 장치에서 작동하지 않습니다!</string>
   <string name="sim_count">SIM 수량</string>
   <string name="volume_icon_style">음량 아이콘 스타일</string>
   <string name="bluetooth_icon_style">블루투스 아이콘 스타일</string>
@@ -250,18 +250,18 @@
   <string name="select_all">모두 선택</string>
   <string name="deselect_all">모두 선택 취소</string>
   <string name="invert_selection">선택 반전</string>
-  <string name="statbar_rotation_lock_notif">On certain devices, modifying the status bar icons can cause an icon that looks like a phone to appear. This is the Rotation Lock icon.</string>
+  <string name="statbar_rotation_lock_notif">특정 장치에서 상태 표시줄 아이콘을 수정하면 전화처럼 보이는 아이콘을 나타나게 할 수 있습니다. 이것은 회전 잠금 아이콘입니다.</string>
   <string name="feature_not_supported">It seems your device doesn\'t support this feature :/</string>
   <string name="select_app">앱 선택</string>
   <string name="select_component">구성 요소 선택</string>
   <string name="reset">재설정</string>
-  <string name="pnc_desc">Power Notification Controls allow you to set the level of importance for notifications on a per-app basis. Simply turn the feature on and hold down on a notification to get started. You may need to tap the A to enable the slider.</string>
-  <string name="pnc_warn">This feature is known to be unreliable on certain devices, especially on TouchWiz! It is impossible to fix, but the best workaround seems to be to tap repeatedly on the desired level. Again, I CANNOT fix it!</string>
+  <string name="pnc_desc">강력 알림 제어는 앱 별로 알림에 대한 중요 수준을 설정하도록 합니다. 시작하려면 간단하게 기능을 켜고 알림을 누르고 있으면 됩니다. A를 탭하여 슬라이더를 활성화해야 할 수도 있습니다.</string>
+  <string name="pnc_warn">이 기능은 특정 장치, 특히 터치위즈에서 불안정한 것으로 알려져 있습니다! 문제를 해결할 수 없지만, 가장 좋은 대체 수단은 원하는 수준에서 반복적으로 탭하는 것입니다. 다시 언급하지만, 저는 이 문제를 해결할 수 없습니다!</string>
   <string name="agree">동의</string>
   <string name="cancel">취소</string>
   <string name="dont_show">다시 표시하지 않음</string>
   <string name="miui_detected">MIUI 장치가 감지됨!</string>
-  <string name="miui_warning">It seems that you\'re using a MIUI device. Please take note that few, if any, features of this app will work for you. It is NOT fixable!</string>
+  <string name="miui_warning">MIUI 장치를 사용 하는 것으로 보입니다. 이 앱의 기능들이 아예 작동하지 않거나 극히 일부 기능만 작동할 것입니다. 문제 해결이 불가능합니다!</string>
   <string name="intent">의도</string>
   <string name="removing_tile">타일 제거 중</string>
   <string name="remove_tile">%s을(를) 제거할까요?</string>
