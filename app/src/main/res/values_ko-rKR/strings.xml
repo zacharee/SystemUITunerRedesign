@@ -118,7 +118,7 @@
   <string name="wifi_oxygen_icon">와이파이 Oxygen 아이콘</string>
   <string name="wifi_p2p_icon">와이파이 P2P 아이콘</string>
   <string name="wimax_icon">WiMax 아이콘</string>
-  <string name="remote_call_icon">Remote Call Icon</string>
+  <string name="remote_call_icon">원격 통화 아이콘</string>
   <string name="tty_icon">TTY 아이콘</string>
   <string name="cdma_eri_icon">CDMA ERI 아이콘</string>
   <string name="dmb">DMB</string>
@@ -145,18 +145,18 @@
   <string name="night_display_auto">야간 화면 자동</string>
   <string name="night_display_activated">야간 화면 활성화</string>
   <string name="night_display">야간 화면</string>
-  <string name="donate_hook">Hey, I see you\'re using my app.</string>
-  <string name="donate_joke">How, you ask? Magic.</string>
-  <string name="donate_request">If you\'re enjoying your time here, it\'d be absolutely amazing if you could spare a dollar or two.</string>
-  <string name="donate_dont_worry">There\'s absolutely no obligation. This app is free and always will be.</string>
-  <string name="qs_header_tile_count">QS Header Tile Count</string>
-  <string name="fancy_pulldown_animation">Fancy Pulldown Animation</string>
+  <string name="donate_hook">저기요, 제 앱을 사용하고 계시네요.</string>
+  <string name="donate_joke">어떻게 아냐고요? 마술입니다.</string>
+  <string name="donate_request">이 앱이 유익하셨다면, 소액이나마 기부해주신다면 정말 감사하겠습니다.</string>
+  <string name="donate_dont_worry">절대 의무사항은 아닙니다. 이 앱은 무료이며 언제나 무료일테니까요.</string>
+  <string name="qs_header_tile_count">빠른 설정 머리글 타일 갯수</string>
+  <string name="fancy_pulldown_animation">멋진 풀다운 애니메이션</string>
   <string name="move_full_rows">전체 행 이동</string>
   <string name="battery">배터리</string>
   <string name="enable_fabric_io_analytics">Fabric.io 분석</string>
   <string name="tasker_how_to">태스커 사용법</string>
-  <string name="base_command_tasker">This is the base command:</string>
-  <string name="tasker_defs">This is what everything means:</string>
+  <string name="base_command_tasker">이것은 기본 명령입니다:</string>
+  <string name="tasker_defs">모든 것을 의미하는 바는 이겁니다:</string>
   <string name="for_settings_global">(Settings.Global 전용)</string>
   <string name="for_settings_secure"> (Settings.Secure 전용)</string>
   <string name="for_settings_system">(Settings.System 전용)</string>
@@ -251,7 +251,7 @@
   <string name="deselect_all">모두 선택 취소</string>
   <string name="invert_selection">선택 반전</string>
   <string name="statbar_rotation_lock_notif">특정 장치에서 상태 표시줄 아이콘을 수정하면 전화처럼 보이는 아이콘을 나타나게 할 수 있습니다. 이것은 회전 잠금 아이콘입니다.</string>
-  <string name="feature_not_supported">It seems your device doesn\'t support this feature :/</string>
+  <string name="feature_not_supported">장치가 이 기능을 지원 하지 않는 것 같습니다. :/</string>
   <string name="select_app">앱 선택</string>
   <string name="select_component">구성 요소 선택</string>
   <string name="reset">재설정</string>
@@ -261,7 +261,7 @@
   <string name="cancel">취소</string>
   <string name="dont_show">다시 표시하지 않음</string>
   <string name="miui_detected">MIUI 장치가 감지됨!</string>
-  <string name="miui_warning">MIUI 장치를 사용 하는 것으로 보입니다. 이 앱의 기능들이 아예 작동하지 않거나 극히 일부 기능만 작동할 것입니다. 문제 해결이 불가능합니다!</string>
+  <string name="miui_warning">MIUI 장치를 사용하시는 것 같습니다. 이 앱의 기능들이 아예 작동하지 않거나 극히 일부 기능만 작동할 것입니다. 문제 해결이 불가능합니다!</string>
   <string name="intent">의도</string>
   <string name="removing_tile">타일 제거 중</string>
   <string name="remove_tile">%s을(를) 제거할까요?</string>
@@ -275,8 +275,8 @@
   <string name="color">색상</string>
   <string name="notifs_snooze">알림 연기</string>
   <string name="notifs_snooze_desc">&#160;
-    In Android 8.1 and later, you can set custom times for notification snoozing. These values reset on reboot, so make sure to enable Safe Mode if you would like them to persist across power cycles.\n\n&#160;
-    Use the options below to set the different snooze times. \"Default\" sets the time Android will use by default. The other items will be the snooze times available for you to select.
+    안드로이드 8.1 이상에서는, 알림 지연 시간을 사용자 지정할 수 있습니다. 이 설정 값들은 재부팅 시 초기화되므로, 전원을 껐다 켰다 반복하는 동안 해당 설정을 유지하기 휘애 안전 모드를 활성화했는지 확인하십시오. \n\n&#160;
+    아래 옵션을 사용하여 각기 다른 지연 시간을 설정하십시오. \"기본\"은 안드로이드가 기본으로 사용하는 시간으로 설정합니다.기타 항목은 사용자가 선택 가능한 지연 시간입니다.
     </string>
   <string name="default_text">기본</string>
   <string name="time_a">시간 A</string>
@@ -289,6 +289,6 @@
   <string name="military">24시간</string>
   <string name="military_nosec">24시간, 초 단위 없음</string>
   <string name="show_notif">알림 표시</string>
-  <string name="safe_mode_notif_desc">It is recommended that you keep this active, and hide the notification instead. Turning it off may cause Safe Mode to no longer function.</string>
-  <string name="safe_mode_notif_desc_not_supported">This setting must remain enabled on Oreo.</string>
+  <string name="safe_mode_notif_desc">이것을 켜는 대신, 알림을 숨길 것을 권장합니다. 이것을 끄면 안전 모드가 더 이상 작동하지 않는 원인이 될 수 있습니다.</string>
+  <string name="safe_mode_notif_desc_not_supported">이 설정은 오레오에서 반드시 활성화되어야 합니다.</string>
 </resources>
