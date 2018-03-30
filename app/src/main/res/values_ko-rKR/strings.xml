@@ -209,19 +209,19 @@
   <string name="accept_auth">2. Plug your device into your computer and accept the authorization request on it.</string>
   <string name="enable_devops"><![CDATA[- 설정 >> 정보로 이동하여 \"빌드 번호\"를 찾아 7회 탭하여 개발자 옵션을 활성화하십시오.]]></string>
   <string name="download_drivers">-윈도우 사용자의 경우, 제조업체의 웹 사이트에서 사용 가능한 장치 드라이버를 설치해야 할 수 있습니다.</string>
-  <string name="download_adb_windows"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-windows.zip">윈도우용 ADB ZIP을 다운로드 하십시오.</a>]]></string>
-  <string name="extract_zip">2. ZIP을 쉽게 접근이 가능한 위치에 압축 해제하십시오 (예제: 바탕 화면).</string>
+  <string name="download_adb_windows"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-windows.zip">윈도우용 ADB ZIP을(를) 다운로드 하십시오.</a>]]></string>
+  <string name="extract_zip">2. ZIP을 쉽게 접근이 가능한 위치에 압축을 푸십시오 (예제: 바탕 화면).</string>
   <string name="open_cmd">3. CMD를 엽니다.</string>
-  <string name="cd_windows"><![CDATA[4. ADB의 압축을 푼 폴더로 이동하기 위해 <b>cd C:\\압축\\해제\\폴더\\경로\\</b>를 입력하십시오. 예를 들어, <b>cd C:\\사용자\\홍길동\\바탕화면\\platform-tools\\</b>.]]></string>
-  <string name="cd_further"><![CDATA[- Make sure that the folder you <b>cd</b> into contains the ADB executable. If not, <b>cd</b> one level further.]]></string>
-  <string name="download_adb_mac"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-darwin.zip">Download the ADB ZIP for macOS.</a>]]></string>
+  <string name="cd_windows"><![CDATA[4. ADB의 압축을 푼 폴더로 이동하기 위해 <b>cd C:\압축\해제\폴더\경로\</b>를 입력하십시오. 예를 들어, <b>cd C:\사용자\홍길동\바탕화면\platform-tools\</b>.]]></string>
+  <string name="cd_further"><![CDATA[- <b>cd</b>(으)로 이동한 폴더에 ADB 실행 파일이 포함되었는지 확인하십시오. 그렇지 않다면, <b>cd</b>(으)로 한 단계 더 이동하십시오.]]></string>
+  <string name="download_adb_mac"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-darwin.zip">맥OS용 ADB ZIP을(를) 다운로드 하십시오.</a>]]></string>
   <string name="open_terminal">3. 터미널을 엽니다.</string>
-  <string name="cd_mac"><![CDATA[4. Enter <b>cd /path/to/extracted/folder/</b> to get to the folder you extracted ADB into. For instance, <b>cd /Users/Zachary/Desktop/platform-tools/</b>.]]></string>
+  <string name="cd_mac"><![CDATA[4. ADB의 압축을 푼 폴더로 이동하기 위해 <b>cd /압축/해제/폴더/경로\\</b>를 입력하십시오. 예를 들어, <b>cd /사용자/홍길동/바탕화면/platform-tools/</b>.]]></string>
   <string name="apt_get_adb"><![CDATA[- <b>sudo apt-get install adb</b>]]></string>
   <string name="make_sure_adb_installed">1. ADB가 설치되었는지 확인하십시오:</string>
   <string name="yum_install_adb"><![CDATA[- <b>sudo yum install android-tools</b>]]></string>
-  <string name="download_adb_linux"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-linux.zip">Download the ADB ZIP for Linux.</a>]]></string>
-  <string name="cd_linux"><![CDATA[4. Enter <b>cd /path/to/extracted/folder/</b> to get to the folder you extracted ADB into. For instance, <b>cd /home/Zachary/Desktop/platform-tools/</b>.]]></string>
+  <string name="download_adb_linux"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-linux.zip">리눅스용 ADB ZIP을(를) 다운로드 하십시오.</a>]]></string>
+  <string name="cd_linux"><![CDATA[4. ADB의 압축을 푼 폴더로 이동하기 위해 <b>cd /압축/해제/폴더/경로\\</b>를 입력하십시오. 예를 들어, <b>cd /홈/홍길동/바탕화면/platform-tools/</b>.]]></string>
   <string name="choose_your_weapon">비장의 무기 선택</string>
   <string name="initial_setup">초기 설정</string>
   <string name="windows_setup">윈도우 설정</string>
@@ -230,10 +230,10 @@
   <string name="fedora_setup">페도라 설정</string>
   <string name="linux_setup">리눅스 설정</string>
   <string name="run_commands">명령 실행</string>
-  <string name="which_os">Which operating system is your computer running?</string>
-  <string name="on_device">Follow these instructions on your device.</string>
-  <string name="on_computer">Follow these instructions on your computer.</string>
-  <string name="run_on_computer">Run these commands on your computer. For Linux (Other) and macOS, you will need to use \"./adb\" instead of \"adb\".</string>
+  <string name="which_os">컴퓨터에서 실행 중인 운영체제가 무엇입니까?</string>
+  <string name="on_device">장치에서 다음 지침을 따르십시오.</string>
+  <string name="on_computer">장치에서 다음 지침을 따르십시오.</string>
+  <string name="run_on_computer">컴퓨터에서 다음 명령을 실행하십시오. 리눅스(기타)와 맥OS 같은 경우, \"./adb\" 대신 \"adb\"을(를) 사용해야 합니다.</string>
   <string name="windows">윈도우</string>
   <string name="mac">맥OS</string>
   <string name="ubuntu">우분투</string>
