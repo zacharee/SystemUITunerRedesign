@@ -11,7 +11,7 @@
   <string name="notice">공지</string>
   <string name="fancy_pulldown_notice">Toggling this option off can cause issues after a reboot. Manually toggle this option on and off after a reboot, or enable Safe Mode.</string>
   <string name="safe_mode_summary">SAMSUNG USERS KEEP THIS TURNED ON UNLESS YOU HAVE AN AOSP ROM!</string>
-  <string name="safe_mode_summary_1">Clears any status bar customizations on reboot and restores them after boot completes.</string>
+  <string name="safe_mode_summary_1">재부팅 시 상태 표시줄 사용자 설정을 삭제하고 부팅 완료 후 이를 복원 합니다.</string>
   <string name="safe_mode_summary_2">Toggles the QS Fancy Animation on boot.</string>
   <string name="safe_mode_summary_3">Restores custom QS header count value on boot (Nougat+).</string>
   <string name="safe_mode_summary_4">Restores custom QS row/column count on boot (TouchWiz, Nougat+).</string>
@@ -87,7 +87,7 @@
   <string name="general">일반</string>
   <string name="heads_up_notifications">헤드 업 알림</string>
   <string name="headphone_volume_warning">헤드폰 볼륨 경고</string>
-  <string name="custom_settings_values">사용자 지정 설정 값</string>
+  <string name="custom_settings_values">사용자 설정 값</string>
   <string name="global">전체</string>
   <string name="secure">Secure</string>
   <string name="system">시스템</string>
@@ -95,7 +95,7 @@
   <string name="power_notification_controls">강력 알림 제어</string>
   <string name="danger_zone">Danger Zone</string>
   <string name="safe_mode">안전 모드</string>
-  <string name="enable_custom_settings_input">사용자 지정 설정 입력 활성화</string>
+  <string name="enable_custom_settings_input">사용자 설정 입력 활성화</string>
   <string name="enable">활성화</string>
   <string name="knox_icon">녹스 아이콘</string>
   <string name="smart_network_icon">스마트 네트워크 아이콘</string>
@@ -245,7 +245,7 @@
   <string name="app_specific_desc">Select apps to be included in or excluded from Immersive Mode. Immersive Mode must be disabled to change these settings.</string>
   <string name="blacklist_desc">When on, selected apps will not use Immersive Mode</string>
   <string name="warning">경고!</string>
-  <string name="imm_warn">This feature merely allows you to enable Immersive Mode. It DOES NOT do anything beyond that. Any issues you experience are the fault of your device\'s manufacturer. I CANNOT FIX IT!</string>
+  <string name="imm_warn">이 기능은 단순히 단지 몰입 모드를 활성화할 수 있도록 합니다. 그 이상의 기능은 없습니다. 발생하는 모든 문제는 장치 제조업체 탓입니다. 저는 문제를 해결할 수 없습니다!</string>
   <string name="target_not_found">앱을 시작할 수 없습니다.</string>
   <string name="select_all">모두 선택</string>
   <string name="deselect_all">모두 선택 취소</string>
@@ -271,7 +271,7 @@
   <string name="warn_message">이 앱은 시스템 설정을 수정합니다. 앱을 제거한다 해도 아무 것도 원상복귀되지 않으며, 그렇게 할 수 있는 방법 또한 없습니다. 수동 복구과정이 불편할 경우, 본 앱을 사용하지 마십시오. 분명히 경고 했습니다!</string>
   <string name="notif_title">안전 모드 서비스 실행 중</string>
   <string name="notif_desc">탭하여 설정 변경</string>
-  <string name="touchwiz_oreo_qqs">On TouchWiz Oreo devices, this setting is no longer reliable! Along with setting the number here, you may have to also save the value to Settings.System.apanel_number, which can only be done with ADB or root. Safe Mode attempts to implement a workaround, but I can\'t guarantee it will work!</string>
+  <string name="touchwiz_oreo_qqs">이 설정은 더 이상 터치위즈 오레오 장치에서 안정적으로 작동하지 않습니다! 여기서 숫자를 설정하는 것 뿐만 아니라, 이 값을 오직 ADB 또는 루팅으로 Settings.System.apanel_number에 저장해야 할 수도 있습니다. 안전 모드가 해결 방법을 제시하기 위해 시도하지만, 작동여부는 보장하지 않습니다!</string>
   <string name="color">색상</string>
   <string name="notifs_snooze">알림 연기</string>
   <string name="notifs_snooze_desc">&#160;
