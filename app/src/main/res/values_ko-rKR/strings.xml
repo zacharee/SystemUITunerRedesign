@@ -186,8 +186,8 @@
   <string name="pre_confirms">Pre-Confirms</string>
   <string name="config_qs">빠른 타일 구성</string>
   <string name="mode">모드</string>
-  <string name="qs_column_count">QS Column Count</string>
-  <string name="qs_row_count">QS Row Count</string>
+  <string name="qs_column_count">빠른 설정 열 갯수</string>
+  <string name="qs_row_count">빠른 설정 행 갯수</string>
   <string name="lockscreen">잠금 화면</string>
   <string name="choose_left">왼쪽 바로 가기 선택</string>
   <string name="choose_right">오른쪽 바로 가기 선택</string>
@@ -196,17 +196,17 @@
   <string name="not_set">설정되지 않음</string>
   <string name="welcome">환영합니다!</string>
   <string name="some_things">예제</string>
-  <string name="no_root">No Root is Needed</string>
+  <string name="no_root">루팅이 필요 없음</string>
   <string name="permissions">권한</string>
-  <string name="intro_1">Thanks for downloading my app! SystemUI Tuner is meant to replace/supplement the built-in System UI Tuner seen in AOSP. Both users with and without System UI Tuner can benefit from this app.</string>
-  <string name="intro_2">Like in AOSP, SystemUI Tuner allows you to hide certain status bar icons that you don\'t want shown. However, you also can do many other things, like turn off heads-up notifications or even toggle immersive mode.</string>
+  <string name="intro_1">제 앱을 다운로드 해주셔서 감사합니다! SystemUI Tuner는 내장된 System UI Tuner를 대체/보완하는 것이 목적입니다. 이 앱은 System UI Tuner 유무와 상관없이 모든 사용자들에게 혜택을 제공합니다.</string>
+  <string name="intro_2">AOSP처럼 SystemUI Tuner는 표시를 원하지 않는 특정 상태 표시줄 아이콘을 숨깁니다. 하지만, 헤드업 알림을 끄기 또는 심지어 집중 모드 토글과 같은 다른 많은 기능을 수행할 수 있습니다.</string>
   <string name="intro_3">There is a plethora of pre-defined options for the status bar, but if you don\'t see an icon you want to hide, you can try the Auto-Detect feature, which will attempt to detect icons that can be hidden.</string>
   <string name="intro_4">And the best part about this app? It doesn\'t need root! It will attempt to get root privileges, but if it can\'t you will have to use ADB. USING ADB IS NOT ROOTING!</string>
-  <string name="intro_5">Once you tap the finish button, SystemUI Tuner will attempt to gain root access. If it can, it will grant all needed permissions for you. Otherwise, instructions will appear to guide you.</string>
-  <string name="adb_setup">The permissions above must be granted to continue. Root access was either denied or unavailable, which means you\'ll have to grant these permissions using ADB.</string>
+  <string name="intro_5">마침 버튼을 탭하면, SystemUI Tuner는 루트 접근을 시도합니다. 이것이 가능하다면 모든 필수 권한을 알아서 허용합니다. 그렇지 않으면, 안내를 위해 사용 설명이 나타납니다.</string>
+  <string name="adb_setup">계속하려면 위의 권한이 허용되어야 합니다. 루트 접근이 거부되었거나 사용할 수 없었으며, 이는 ADB를 사용하여 이러한 사용 권한을 허용해야 함을 의미합니다.</string>
   <string name="missing_perms">권한 없음!</string>
-  <string name="enable_debug"><![CDATA[1. Go to Settings >> Developer Options and make sure USB Debugging is enabled.]]></string>
-  <string name="accept_auth">2. Plug your device into your computer and accept the authorization request on it.</string>
+  <string name="enable_debug"><![CDATA[1. 설정 >> 개발자 옵션으로 이동하여 USB 디버깅이 활성화되었는지 확인하십시오.]]></string>
+  <string name="accept_auth">2. 장치를 컴퓨터와 연결하여 인증 요청을 승인하십시오.</string>
   <string name="enable_devops"><![CDATA[- 설정 >> 정보로 이동하여 \"빌드 번호\"를 찾아 7회 탭하여 개발자 옵션을 활성화하십시오.]]></string>
   <string name="download_drivers">-윈도우 사용자의 경우, 제조업체의 웹 사이트에서 사용 가능한 장치 드라이버를 설치해야 할 수 있습니다.</string>
   <string name="download_adb_windows"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-windows.zip">윈도우용 ADB ZIP을(를) 다운로드 하십시오.</a>]]></string>
