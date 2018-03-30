@@ -12,7 +12,7 @@
   <string name="fancy_pulldown_notice">이 옵션을 끄면 재부팅 후 발생하는 문제의 원인이 될 수 있습니다. 재부팅 후 이 옵션을 수동으로 켰다 껐다 하거나, 안전 모드를 활성화하십시오.</string>
   <string name="safe_mode_summary">삼성 사용자라면 AOSP 롬이 아닌 경우 이것을 켜세요!</string>
   <string name="safe_mode_summary_1">재부팅 시 상태 표시줄 사용자 설정을 삭제하고 부팅 완료 후 이를 복원 합니다.</string>
-  <string name="safe_mode_summary_2">Toggles the QS Fancy Animation on boot.</string>
+  <string name="safe_mode_summary_2">부팅 시 빠른 설정에 멋진 애니메이션을 토글합니다.</string>
   <string name="safe_mode_summary_3">부팅 시 빠른 설정 헤더의 아이콘 갯수에 대한 사용자 지정 값을 복원합니다(누가+).</string>
   <string name="safe_mode_summary_4">부팅 시 빠른 설정 열/행 갯수에 대한 사용자 지정 값을 복원합니다(터치위즈, 누가+).</string>
   <string name="safe_mode_summary_5">부팅 시 사용자 지정 알림 지연 옵션을 복원합니다(8.1+).</string>
@@ -109,7 +109,7 @@
   <string name="keyguard_wakeup_icon">키가드 웨이크업 아이콘</string>
   <string name="lbs_icon">LBS 아이콘</string>
   <string name="rcs_icon">RCS 아이콘</string>
-  <string name="safezone_icon">Safezone Icon</string>
+  <string name="safezone_icon">세이프존 아이콘</string>
   <string name="smart_bonding_icon">스마트 결합 아이콘</string>
   <string name="smart_scroll_icon">스마트스크롤 아이콘</string>
   <string name="toddler_icon">유아 아이콘</string>
@@ -162,7 +162,7 @@
   <string name="for_settings_system">(Settings.System 전용)</string>
   <string name="desired_setting_key">희망 설정 키</string>
   <string name="desired_setting_value">희망 설정 값</string>
-  <string name="tasker_intro">Here\'s a quick set of instructions for Tasker. Since I don\'t know how to use Tasker, I can only build in support for intent broadcasts.</string>
+  <string name="tasker_intro">이것은 태스커에 대한 지침의 빠른 사용법입니다. 제가 태스커를 사용하는 방법을 모르기 때문에, intent broadcast 지원을 위해서만 개발합니다.</string>
   <string name="back_up_blacklist">제외 목록 백업</string>
   <string name="restore_blacklist">제외 목록 복원</string>
   <string name="chinese_from"><a href="https://twitter.com/NCXR188?s=09">NCXR188</a>이(가) 중국어 번역에 기여함</string>
