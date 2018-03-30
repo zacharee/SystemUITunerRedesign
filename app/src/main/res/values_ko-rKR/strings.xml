@@ -67,7 +67,7 @@
   <string name="wifi_icon">와이파이 아이콘</string>
   <string name="vpn_icon">VPN 아이콘</string>
   <string name="sounds_alerts"><![CDATA[소리 & 알림]]></string>
-  <string name="volume">음량 아이콘</string>
+  <string name="volume">볼륨 아이콘</string>
   <string name="headset_icon">헤드셋 아이콘</string>
   <string name="speakerphone_icon">스피커폰 아이콘</string>
   <string name="time_such"><![CDATA[시간 & 관련]]></string>
@@ -171,7 +171,7 @@
   <string name="auto_detect">자동 감지</string>
   <string name="auto_detect_summary">상태 표시줄 아이콘을 자동으로 감지하는 시도를 숨길 수 있습니다. 모든 장치에서 작동하지 않습니다!</string>
   <string name="sim_count">SIM 수량</string>
-  <string name="volume_icon_style">음량 아이콘 스타일</string>
+  <string name="volume_icon_style">볼륨 아이콘 스타일</string>
   <string name="bluetooth_icon_style">블루투스 아이콘 스타일</string>
   <string name="mobile_fully">모바일 연결 완료</string>
   <string name="wifi_fully">와이파이 연결 완료</string>
@@ -202,12 +202,12 @@
   <string name="intro_2">AOSP처럼 SystemUI Tuner는 표시를 원하지 않는 특정 상태 표시줄 아이콘을 숨깁니다. 하지만, 헤드업 알림을 끄기 또는 심지어 몰입 모드 토글과 같은 다른 많은 기능을 수행할 수 있습니다.</string>
   <string name="intro_3">상태 표시줄에 사전 정의 옵션이 과다하지만, 숨기길 원하는 아이콘이 없을 경우, 자동 탐지 기능으로 숨길 수 있는 아이콘에 대한 탐지를 시도할 수 있습니다.</string>
   <string name="intro_4">이 앱의 가장 좋은 점은? 바로 루팅이 필요없다는 것입니다! 루트 권한을 얻으려는 시도는 하지만, 할 수 없다면 ADB를 사용해야 합니다. ADB 사용은 루팅이 아닙니다!</string>
-  <string name="intro_5">마침 버튼을 탭하면, SystemUI Tuner는 루트 접근을 시도합니다. 이것이 가능하다면 모든 필수 권한을 알아서 허용합니다. 그렇지 않으면, 안내를 위해 사용 설명이 나타납니다.</string>
-  <string name="adb_setup">계속하려면 위의 권한이 허용되어야 합니다. 루트 접근이 거부되었거나 사용할 수 없었으며, 이는 ADB를 사용하여 이러한 사용 권한을 허용해야 함을 의미합니다.</string>
+  <string name="intro_5">마침 버튼을 누르면, SystemUI Tuner는 루트 접근을 시도합니다. 이것이 가능하다면 모든 필수 권한을 알아서 부여합니다. 그렇지 않으면, 안내를 위한 사용법이 나타납니다.</string>
+  <string name="adb_setup">계속하려면 위의 권한이 부여되어야 합니다. 루트 접근이 거부되었거나 사용할 수 없었으며, 따라서 ADB를 사용하여 이러한 사용 권한을 부여해야 합니다.</string>
   <string name="missing_perms">권한 없음!</string>
   <string name="enable_debug"><![CDATA[1. 설정 >> 개발자 옵션으로 이동하여 USB 디버깅이 활성화되었는지 확인하십시오.]]></string>
   <string name="accept_auth">2. 장치를 컴퓨터와 연결하여 인증 요청을 승인하십시오.</string>
-  <string name="enable_devops"><![CDATA[- 설정 >> 정보로 이동하여 \"빌드 번호\"를 찾아 7회 탭하여 개발자 옵션을 활성화하십시오.]]></string>
+  <string name="enable_devops"><![CDATA[- 설정 >> 정보로 이동하여 \"빌드 번호\"를 찾아 7회 눌러 개발자 옵션을 활성화하십시오.]]></string>
   <string name="download_drivers">-윈도우 사용자의 경우, 제조업체의 웹 사이트에서 사용 가능한 장치 드라이버를 설치해야 할 수 있습니다.</string>
   <string name="download_adb_windows"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-windows.zip">윈도우용 ADB ZIP을(를) 다운로드 하십시오.</a>]]></string>
   <string name="extract_zip">2. ZIP을 쉽게 접근이 가능한 위치에 압축을 푸십시오 (예제: 바탕 화면).</string>
@@ -255,8 +255,8 @@
   <string name="select_app">앱 선택</string>
   <string name="select_component">구성 요소 선택</string>
   <string name="reset">재설정</string>
-  <string name="pnc_desc">강력 알림 제어는 앱 별로 알림에 대한 중요 수준을 설정하도록 합니다. 시작하려면 간단하게 기능을 켜고 알림을 누르고 있으면 됩니다. A를 탭하여 슬라이더를 활성화해야 할 수도 있습니다.</string>
-  <string name="pnc_warn">이 기능은 특정 장치, 특히 터치위즈에서 불안정한 것으로 알려져 있습니다! 문제를 해결할 수 없지만, 가장 좋은 대체 수단은 원하는 수준에서 반복적으로 탭하는 것입니다. 다시 언급하지만, 저는 이 문제를 해결할 수 없습니다!</string>
+  <string name="pnc_desc">강력 알림 제어는 앱 별로 알림에 대한 중요 수준을 설정하도록 합니다. 시작하려면 간단하게 기능을 켜고 알림을 누르고 있으면 됩니다. A를 눌러 슬라이더를 활성화해야 할 수도 있습니다.</string>
+  <string name="pnc_warn">이 기능은 특정 장치, 특히 터치위즈에서 불안정한 것으로 알려져 있습니다! 문제를 해결할 수 없지만, 가장 좋은 대체 수단은 원하는 수준에서 반복적으로 누르는 것입니다. 다시 언급하지만, 저는 이 문제를 해결할 수 없습니다!</string>
   <string name="agree">동의</string>
   <string name="cancel">취소</string>
   <string name="dont_show">다시 표시하지 않음</string>
@@ -270,7 +270,7 @@
   <string name="no">아니오</string>
   <string name="warn_message">이 앱은 시스템 설정을 수정합니다. 앱을 제거한다 해도 아무 것도 원상복귀되지 않으며, 그렇게 할 수 있는 방법 또한 없습니다. 수동 복구과정이 불편할 경우, 본 앱을 사용하지 마십시오. 분명히 경고 했습니다!</string>
   <string name="notif_title">안전 모드 서비스 실행 중</string>
-  <string name="notif_desc">탭하여 설정 변경</string>
+  <string name="notif_desc">눌러서 설정 변경</string>
   <string name="touchwiz_oreo_qqs">이 설정은 더 이상 터치위즈 오레오 장치에서 안정적으로 작동하지 않습니다! 여기서 숫자를 설정하는 것 뿐만 아니라, 이 값을 오직 ADB 또는 루팅으로 Settings.System.apanel_number에 저장해야 할 수도 있습니다. 안전 모드가 해결 방법을 제시하기 위해 시도하지만, 작동여부는 보장하지 않습니다!</string>
   <string name="color">색상</string>
   <string name="notifs_snooze">알림 연기</string>
