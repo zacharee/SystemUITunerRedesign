@@ -18,7 +18,7 @@
   <string name="safe_mode_summary_5">Restores custom notification snooze options on boot (8.1+).</string>
   <string name="hide_welcome_screen">환영 화면 숨기기</string>
   <string name="tasker_support">태스커 지원</string>
-  <string name="instructions">Instructions</string>
+  <string name="instructions">사용법</string>
   <string name="safe_mode_android_o">Because of limitations added in Android O, this feature will not work on your device.</string>
   <string name="requires_nougat">누가 이상 필요.</string>
   <string name="requires_oreo">오레오 이상 필요.</string>
@@ -200,8 +200,8 @@
   <string name="permissions">권한</string>
   <string name="intro_1">제 앱을 다운로드 해주셔서 감사합니다! SystemUI Tuner는 내장된 System UI Tuner를 대체/보완하는 것이 목적입니다. 이 앱은 System UI Tuner 유무와 상관없이 모든 사용자들에게 혜택을 제공합니다.</string>
   <string name="intro_2">AOSP처럼 SystemUI Tuner는 표시를 원하지 않는 특정 상태 표시줄 아이콘을 숨깁니다. 하지만, 헤드업 알림을 끄기 또는 심지어 집중 모드 토글과 같은 다른 많은 기능을 수행할 수 있습니다.</string>
-  <string name="intro_3">There is a plethora of pre-defined options for the status bar, but if you don\'t see an icon you want to hide, you can try the Auto-Detect feature, which will attempt to detect icons that can be hidden.</string>
-  <string name="intro_4">And the best part about this app? It doesn\'t need root! It will attempt to get root privileges, but if it can\'t you will have to use ADB. USING ADB IS NOT ROOTING!</string>
+  <string name="intro_3">상태 표시줄에 사전 정의 옵션이 과다하지만, 숨기길 원하는 아이콘이 없을 경우, 자동 탐지 기능으로 숨길 수 있는 아이콘에 대한 탐지를 시도할 수 있습니다.</string>
+  <string name="intro_4">이 앱의 가장 좋은 점은? 바로 루팅이 필요없다는 것입니다! 루트 권한을 얻으려는 시도는 하지만, 할 수 없다면 ADB를 사용해야 합니다. ADB 사용은 루팅이 아닙니다!</string>
   <string name="intro_5">마침 버튼을 탭하면, SystemUI Tuner는 루트 접근을 시도합니다. 이것이 가능하다면 모든 필수 권한을 알아서 허용합니다. 그렇지 않으면, 안내를 위해 사용 설명이 나타납니다.</string>
   <string name="adb_setup">계속하려면 위의 권한이 허용되어야 합니다. 루트 접근이 거부되었거나 사용할 수 없었으며, 이는 ADB를 사용하여 이러한 사용 권한을 허용해야 함을 의미합니다.</string>
   <string name="missing_perms">권한 없음!</string>
@@ -242,8 +242,8 @@
   <string name="app_specific">앱 특정</string>
   <string name="blacklist">제외 목록</string>
   <string name="select_apps">앱 선택</string>
-  <string name="app_specific_desc">Select apps to be included in or excluded from Immersive Mode. Immersive Mode must be disabled to change these settings.</string>
-  <string name="blacklist_desc">When on, selected apps will not use Immersive Mode</string>
+  <string name="app_specific_desc">집중 모드에 포함 또는 제외할 앱을 선택하십시오. 이 설정을 변경하려면 집중 모드를 비활성화해야 합니다.</string>
+  <string name="blacklist_desc">켜졌을 때, 선택한 앱은 집중 모드를 사용하지 않습니다.</string>
   <string name="warning">경고!</string>
   <string name="imm_warn">이 기능은 단순히 단지 몰입 모드를 활성화할 수 있도록 합니다. 그 이상의 기능은 없습니다. 발생하는 모든 문제는 장치 제조업체 탓입니다. 저는 문제를 해결할 수 없습니다!</string>
   <string name="target_not_found">앱을 시작할 수 없습니다.</string>
