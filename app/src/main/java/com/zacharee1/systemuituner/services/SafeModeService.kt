@@ -10,6 +10,7 @@ import android.os.IBinder
 import android.os.Looper
 import android.preference.PreferenceManager
 import android.provider.Settings
+import android.support.v4.app.NotificationCompat
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.activites.settings.SettingsActivity
 import com.zacharee1.systemuituner.util.SettingsUtils
@@ -84,18 +85,18 @@ class SafeModeService : Service() {
         val settingsIntent = PendingIntent.getActivity(this, 0, Intent(this, SettingsActivity::class.java), 0)
         val manager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
 
-        val notification = Notification.Builder(this)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val channel = NotificationChannel("systemuituner", "SystemUI Tuner", NotificationManager.IMPORTANCE_LOW)
+            manager.createNotificationChannel(channel)
+        }
+
+        val notification = NotificationCompat.Builder(this, "systemuituner")
                 .setSmallIcon(R.mipmap.ic_launcher)
                 .setContentTitle(resources.getString(R.string.notif_title))
                 .setContentText(resources.getString(R.string.notif_desc))
-                .setPriority(Notification.PRIORITY_MIN)
                 .setContentIntent(settingsIntent)
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            val channel = NotificationChannel("zacharee1", "SystemUI Tuner", NotificationManager.IMPORTANCE_LOW)
-            manager.createNotificationChannel(channel)
-            notification.setChannelId("zacharee1")
-        }
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O) notification.priority = Notification.PRIORITY_MIN
 
         startForeground(1001, notification.build())
     }
