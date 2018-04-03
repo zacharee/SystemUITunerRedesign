@@ -31,7 +31,7 @@
   <string name="reboot_required">(재부팅 필요)</string>
   <string name="sorry">죄송합니다...</string>
   <string name="created_by"><a href="https://forum.xda-developers.com/member.php?u=7055541">Zacharee1(이)가 개발한 앱</a></string>
-  <string name="spanish_from"><a href="https://es.stackoverflow.com/users/28567/aaron-romero">Aaron Romero</a>와(과) <a href="https://forum.xda-developers.com/member.php?u=7055541">Zacharee1</a>이(가) 스페인어 번역에 기여함</string>
+  <string name="lang_credit">Translations by volunteers on <a href="https://crowdin.com/project/systemui-tuner">Crowdin</a></string>
   <string name="enabled">활성화됨</string>
   <string name="show">표시</string>
   <string name="select_time">시간 선택</string>
@@ -165,7 +165,6 @@
   <string name="tasker_intro">이것은 태스커에 대한 지침의 빠른 사용법입니다. 제가 태스커를 사용하는 방법을 모르기 때문에, intent broadcast 지원을 위해서만 개발합니다.</string>
   <string name="back_up_blacklist">제외 목록 백업</string>
   <string name="restore_blacklist">제외 목록 복원</string>
-  <string name="chinese_from"><a href="https://twitter.com/NCXR188?s=09">NCXR188</a>이(가) 중국어 번역에 기여함</string>
   <string name="quick_settings">빠른 설정</string>
   <string name="demo_mode">데모 모드</string>
   <string name="auto_detect">자동 감지</string>
