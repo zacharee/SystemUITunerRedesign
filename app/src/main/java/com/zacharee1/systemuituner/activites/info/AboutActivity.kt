@@ -29,12 +29,10 @@ class AboutActivity : AppCompatActivity() {
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
 
         val appCred = findViewById<TextView>(R.id.app_credit)
-        val appSpanishCred = findViewById<TextView>(R.id.spanish_lang_credit)
-        val appChineseCred = findViewById<TextView>(R.id.chinese_lang_credit)
+        val langCred = findViewById<TextView>(R.id.lang_credit)
 
         appCred.movementMethod = LinkMovementMethod.getInstance()
-        appSpanishCred.movementMethod = LinkMovementMethod.getInstance()
-        appChineseCred.movementMethod = LinkMovementMethod.getInstance()
+        langCred.movementMethod = LinkMovementMethod.getInstance()
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
