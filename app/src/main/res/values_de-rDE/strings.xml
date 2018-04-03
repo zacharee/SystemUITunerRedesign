@@ -31,7 +31,7 @@
   <string name="reboot_required">(Neustart erforderlich)</string>
   <string name="sorry">Tut mir leid…</string>
   <string name="created_by">App von <a href="https://forum.xda-developers.com/member.php?u=7055541">Zacharee1</a></string>
-  <string name="spanish_from">Spanische Übersetzung von <a href="https://es.stackoverflow.com/users/28567/aaron-romero">Aaron Romero</a> und <a href="https://forum.xda-developers.com/member.php?u=7055541">Zacharee1</a></string>
+  <string name="lang_credit">Translations by volunteers on <a href="https://crowdin.com/project/systemui-tuner">Crowdin</a></string>
   <string name="enabled">Aktiviert</string>
   <string name="show">Anzeigen</string>
   <string name="select_time">Zeit wählen</string>
@@ -165,7 +165,6 @@
   <string name="tasker_intro">Here\'s a quick set of instructions for Tasker. Since I don\'t know how to use Tasker, I can only build in support for intent broadcasts.</string>
   <string name="back_up_blacklist">Back Up Blacklist</string>
   <string name="restore_blacklist">Restore Blacklist</string>
-  <string name="chinese_from">Chinese translation by <a href="https://twitter.com/NCXR188?s=09">NCXR188</a></string>
   <string name="quick_settings">Quick Settings</string>
   <string name="demo_mode">Demo Mode</string>
   <string name="auto_detect">Auto Detect</string>
