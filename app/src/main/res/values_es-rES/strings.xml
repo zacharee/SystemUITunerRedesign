@@ -279,16 +279,16 @@
     Use the options below to set the different snooze times. \"Default\" sets the time Android will use by default. The other items will be the snooze times available for you to select.
     </string>
   <string name="default_text">Por defecto</string>
-  <string name="time_a">Time A</string>
-  <string name="time_b">Time B</string>
-  <string name="time_c">Time C</string>
-  <string name="time_d">Time D</string>
-  <string name="clock_tile_format">Clock Tile Format</string>
-  <string name="twelve">12-Hour</string>
-  <string name="twelve_nosec">12-Hour, No Seconds</string>
-  <string name="military">24-Hour</string>
-  <string name="military_nosec">24-Hour, No Seconds</string>
-  <string name="show_notif">Show Notification</string>
+  <string name="time_a">Tiempo A</string>
+  <string name="time_b">Tiempo B</string>
+  <string name="time_c">Tiempo C</string>
+  <string name="time_d">Tiempo D</string>
+  <string name="clock_tile_format">Formato de teja de reloj</string>
+  <string name="twelve">Formato de 12 horas</string>
+  <string name="twelve_nosec">Formata de 12 horas, sin segundos</string>
+  <string name="military">Formato de 24 horas</string>
+  <string name="military_nosec">Formata de 24 horas, sin segundos</string>
+  <string name="show_notif">Mostrar notificación</string>
   <string name="safe_mode_notif_desc">It is recommended that you keep this active, and hide the notification instead. Turning it off may cause Safe Mode to no longer function.</string>
-  <string name="safe_mode_notif_desc_not_supported">This setting must remain enabled on Oreo.</string>
+  <string name="safe_mode_notif_desc_not_supported">Este valor debe permanecer habilitado en Oreo.</string>
 </resources>
