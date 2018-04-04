@@ -230,6 +230,7 @@
   <string name="fedora_setup">Fedora kurulum</string>
   <string name="linux_setup">Linux kurulumu</string>
   <string name="run_commands">Komutları çalıştır</string>
+  <string name="change_selection">Change Selection</string>
   <string name="which_os">Bilgisayarınız hangi işletim sisteminde çalışıyor?</string>
   <string name="on_device">Cihazınızdaki bu talimatları uygulayın.</string>
   <string name="on_computer">Bilgisayarınızdaki bu talimatları uygulayın.</string>
