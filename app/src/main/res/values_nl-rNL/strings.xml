@@ -229,6 +229,7 @@
   <string name="fedora_setup">Fedora Setup</string>
   <string name="linux_setup">Linux Setup</string>
   <string name="run_commands">Run the Commands</string>
+  <string name="change_selection">Change Selection</string>
   <string name="which_os">Welk besturingssysteem draait op uw computer?</string>
   <string name="on_device">Volg deze instructies op uw apparaat.</string>
   <string name="on_computer">Volg deze instructies op uw computer.</string>
