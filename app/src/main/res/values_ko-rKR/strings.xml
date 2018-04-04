@@ -229,6 +229,7 @@
   <string name="fedora_setup">페도라 설정</string>
   <string name="linux_setup">리눅스 설정</string>
   <string name="run_commands">명령 실행</string>
+  <string name="change_selection">Change Selection</string>
   <string name="which_os">컴퓨터에서 실행 중인 운영체제가 무엇입니까?</string>
   <string name="on_device">장치에서 다음 지침을 따르십시오.</string>
   <string name="on_computer">장치에서 다음 지침을 따르십시오.</string>
