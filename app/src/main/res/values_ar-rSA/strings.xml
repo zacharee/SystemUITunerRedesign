@@ -230,6 +230,7 @@
   <string name="fedora_setup">برنامج إعداد Fedora</string>
   <string name="linux_setup">برنامج إعداد Linux</string>
   <string name="run_commands">تشغيل الأوامر</string>
+  <string name="change_selection">Change Selection</string>
   <string name="which_os">أي نظام تشغيل يعمل به جهاز الكمبيوتر الخاص بك؟</string>
   <string name="on_device">اتبع هذه الإرشادات على جهازك الخاص.</string>
   <string name="on_computer">اتبع هذه الإرشادات على الكمبيوتر الخاص بك.</string>
