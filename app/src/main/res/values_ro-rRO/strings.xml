@@ -229,6 +229,7 @@
   <string name="fedora_setup">Configurare Fedora</string>
   <string name="linux_setup">Configurare Linux</string>
   <string name="run_commands">Rulează Comenzile</string>
+  <string name="change_selection">Change Selection</string>
   <string name="which_os">Ce sistem de operare rulează pe computerul tău?</string>
   <string name="on_device">Urmează instrucțiunile următoare, pe aparatul tău.</string>
   <string name="on_computer">Urmează instrucțiunile următoare pe computerul tău.</string>
