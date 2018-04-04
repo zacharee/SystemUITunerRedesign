@@ -211,7 +211,7 @@
   <string name="download_adb_windows"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-windows.zip">윈도우용 ADB ZIP을(를) 다운로드 하십시오.</a>]]></string>
   <string name="extract_zip">2. ZIP을 쉽게 접근이 가능한 위치에 압축을 푸십시오 (예제: 바탕 화면).</string>
   <string name="open_cmd">3. CMD를 엽니다.</string>
-  <string name="cd_windows"><![CDATA[4. ADB의 압축을 푼 폴더로 이동하기 위해 <b>cd C:\압축\해제\폴더\경로\</b>를 입력하십시오. 예를 들어, <b>cd C:\사용자\홍길동\바탕화면\platform-tools\</b>.]]></string>
+  <string name="cd_windows"><![CDATA[4. ADB의 압축을 푼 폴더로 이동하기 위해 <b>cd C:\\압축\\해제\\폴더\\경로\\</b>를 입력하십시오. 예를 들어, <b>cd C:\\사용자\\홍길동\\바탕화면\\platform-tools\\</b>.]]></string>
   <string name="cd_further"><![CDATA[- <b>cd</b>(으)로 이동한 폴더에 ADB 실행 파일이 포함되었는지 확인하십시오. 그렇지 않다면, <b>cd</b>(으)로 한 단계 더 이동하십시오.]]></string>
   <string name="download_adb_mac"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-darwin.zip">맥OS용 ADB ZIP을(를) 다운로드 하십시오.</a>]]></string>
   <string name="open_terminal">3. 터미널을 엽니다.</string>
