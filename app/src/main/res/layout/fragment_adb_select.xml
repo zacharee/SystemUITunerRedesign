@@ -23,7 +23,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:checked="true"
-                android:onClick="chooseWindows"
                 android:text="@string/windows"
                 android:textSize="18sp" />
 
@@ -32,7 +31,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                android:onClick="chooseMac"
                 android:text="@string/mac"
                 android:textSize="18sp" />
 
@@ -41,7 +39,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                android:onClick="chooseUbuntu"
                 android:text="@string/ubuntu"
                 android:textSize="18sp" />
 
@@ -50,7 +47,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                android:onClick="chooseFedora"
                 android:text="@string/fedora"
                 android:textSize="18sp" />
 
@@ -58,7 +54,6 @@
                 android:id="@+id/choose_linux"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="chooseLinux"
                 android:text="@string/linux"
                 android:textSize="18sp" />
         </RadioGroup>

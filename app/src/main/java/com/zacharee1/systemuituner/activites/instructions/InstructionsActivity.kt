@@ -1,6 +1,8 @@
 package com.zacharee1.systemuituner.activites.instructions
 
+import android.animation.Animator
 import android.annotation.SuppressLint
+import android.os.Build
 import android.os.Bundle
 import android.support.annotation.ColorInt
 import android.support.annotation.IdRes
@@ -14,7 +16,9 @@ import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.LinearLayout
+import android.widget.RadioButton
 import android.widget.TextView
 import com.github.paolorotolo.appintro.AppIntro2
 import com.github.paolorotolo.appintro.ISlideBackgroundColorHolder
@@ -24,22 +28,16 @@ import java.util.*
 
 class InstructionsActivity : AppIntro2() {
 
-    private var mSelector: Instructions? = null
     private var mInitial: Instructions? = null
     private var mCommands: Commands? = null
 
-    private var mInstructions: Instructions? = null
+    private var mInstructions: OSInstructions? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(R.style.AppTheme_Intro)
         super.onCreate(savedInstanceState)
 
-        mInstructions = Instructions.newInstance(resources.getString(R.string.windows_setup),
-                resources.getString(R.string.on_computer),
-                R.layout.fragment_adb_windows,
-                resources.getColor(R.color.intro_1, null))
-
-        mSelector = Instructions.newInstance(resources.getString(R.string.choose_your_weapon),
+        mInstructions = OSInstructions.newInstance(resources.getString(R.string.choose_your_weapon),
                 resources.getString(R.string.which_os),
                 R.layout.fragment_adb_select,
                 resources.getColor(R.color.intro_5, null))
@@ -55,10 +53,10 @@ class InstructionsActivity : AppIntro2() {
 
         mCommands = Commands.newInstance(resources.getString(R.string.run_commands),
                 resources.getString(R.string.run_on_computer),
-                resources.getColor(R.color.intro_4, null),
+                resources.getColor(R.color.intro_6, null),
                 cmds)
 
-        addSlide(mSelector!!)
+//        addSlide(mSelector!!)
         addSlide(mInitial!!)
         addSlide(mInstructions!!)
         addSlide(mCommands!!)
@@ -94,45 +92,124 @@ class InstructionsActivity : AppIntro2() {
         finish()
     }
 
-    private fun replaceContentById(@LayoutRes layout: Int) {
-        val group = View.inflate(this, layout, null) as ViewGroup
-        mInstructions!!.setInternalLayout(group)
-    }
+    open class OSInstructions: Instructions() {
+        companion object {
+            @JvmOverloads
+            fun newInstance(title: CharSequence, description: CharSequence,
+                            @LayoutRes layoutId: Int, @ColorInt bgColor: Int,
+                            @ColorInt titleColor: Int = 0, @ColorInt descColor: Int = 0): OSInstructions {
+                val slide = OSInstructions()
+                val args = Bundle()
+                args.putString(ARG_TITLE, title.toString())
+                args.putString(ARG_DESC, description.toString())
+                args.putInt(ARG_LAYOUT, layoutId)
+                args.putInt(ARG_BG_COLOR, bgColor)
+                args.putInt(ARG_TITLE_COLOR, titleColor)
+                args.putInt(ARG_DESC_COLOR, descColor)
+                slide.arguments = args
 
-    private fun setInstructionsTitle(title: String) {
-        mInstructions!!.setTitle(title)
-    }
+                return slide
+            }
+        }
 
-    fun chooseWindows(v: View) {
-        replaceContentById(R.layout.fragment_adb_windows)
-        setInstructionsTitle(resources.getString(R.string.windows_setup))
-    }
+        private lateinit var selection: Button
 
-    fun chooseMac(v: View) {
-        replaceContentById(R.layout.fragment_adb_mac)
-        setInstructionsTitle(resources.getString(R.string.mac_setup))
-    }
+        override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+            val view = super.onCreateView(inflater, container, savedInstanceState)
 
-    fun chooseUbuntu(v: View) {
-        replaceContentById(R.layout.fragment_adb_ubuntu)
-        setInstructionsTitle(resources.getString(R.string.ubuntu_setup))
-    }
+            selection = findViewById(R.id.change_selection)
 
-    fun chooseLinux(v: View) {
-        replaceContentById(R.layout.fragment_adb_linux)
-        setInstructionsTitle(resources.getString(R.string.linux_setup))
-    }
+            addSelectorButton()
+            setSelectionListeners()
 
-    fun chooseFedora(v: View) {
-        replaceContentById(R.layout.fragment_adb_fedora)
-        setInstructionsTitle(resources.getString(R.string.fedora_setup))
+            return view
+        }
+
+        private fun setSelectionListeners() {
+            selection.visibility = View.GONE
+
+            val windows = findViewById<RadioButton>(R.id.choose_windows)
+            val mac = findViewById<RadioButton>(R.id.choose_mac)
+            val ubuntu = findViewById<RadioButton>(R.id.choose_ubuntu)
+            val fedora = findViewById<RadioButton>(R.id.choose_fedora)
+            val linux = findViewById<RadioButton>(R.id.choose_linux)
+
+            val clickListener = View.OnClickListener {
+                var title = 0
+                var layout = 0
+
+                when (it.id) {
+                    R.id.choose_windows -> {
+                        title = R.string.windows_setup
+                        layout = R.layout.fragment_adb_windows
+                    }
+
+                    R.id.choose_mac -> {
+                        title = R.string.mac_setup
+                        layout = R.layout.fragment_adb_mac
+                    }
+
+                    R.id.choose_ubuntu -> {
+                        title = R.string.ubuntu_setup
+                        layout = R.layout.fragment_adb_ubuntu
+                    }
+
+                    R.id.choose_fedora -> {
+                        title = R.string.fedora_setup
+                        layout = R.layout.fragment_adb_fedora
+                    }
+
+                    R.id.choose_linux -> {
+                        title = R.string.linux_setup
+                        layout = R.layout.fragment_adb_linux
+                    }
+                }
+
+                animateChange(layout, title, R.string.on_computer, Runnable { selection.visibility = View.VISIBLE })
+            }
+
+            windows.setOnClickListener(clickListener)
+            mac.setOnClickListener(clickListener)
+            ubuntu.setOnClickListener(clickListener)
+            fedora.setOnClickListener(clickListener)
+            linux.setOnClickListener(clickListener)
+        }
+
+        private fun addSelectorButton() {
+            selection.setOnClickListener {
+                animateChange(R.layout.fragment_adb_select, R.string.choose_your_weapon, R.string.which_os, Runnable { setSelectionListeners() })
+            }
+        }
+
+        private fun animateChange(targetLayout: Int, targetTitle: Int, targetDesc: Int, runnable: Runnable) {
+            view?.findViewById<LinearLayout>(R.id.animation_dummy)?.animate()?.let {
+                it.setListener(object : Animator.AnimatorListener {
+                    override fun onAnimationEnd(animation: Animator?) {
+                        setInternalLayout(View.inflate(context, targetLayout, null) as ViewGroup)
+                        setTitle(resources.getString(targetTitle))
+                        setDescription(resources.getString(targetDesc))
+                        runnable.run()
+
+                        it.setListener(null)
+                        it.alpha(1.0f).setDuration(500L).start()
+                    }
+
+                    override fun onAnimationCancel(animation: Animator?) {}
+
+                    override fun onAnimationRepeat(animation: Animator?) {}
+
+                    override fun onAnimationStart(animation: Animator?) {}
+                })
+
+                it.alpha(0.0f).setDuration(500L).start()
+            }
+        }
     }
 
     open class Instructions : Fragment(), ISlideBackgroundColorHolder {
         private var mView: View? = null
 
-        private val layoutId: Int
-            get() = R.layout.fragment_intro_custom_center
+        private val layoutId: Int = R.layout.fragment_intro_custom_center
 
         override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
             mView = inflater.inflate(layoutId, container, false)
@@ -164,6 +241,11 @@ class InstructionsActivity : AppIntro2() {
             textView?.text = formatText(title)
         }
 
+        fun setDescription(description: String) {
+            val desc = mView?.findViewById<TextView>(R.id.description)
+            desc?.text = formatText(description)
+        }
+
         fun setInternalLayout(group: ViewGroup) {
             val holder = mView?.findViewById<LinearLayout>(R.id.custom_layout_holder)
             holder?.removeAllViews()
@@ -173,7 +255,7 @@ class InstructionsActivity : AppIntro2() {
             for (i in 0 until viewChild.childCount) {
                 val v = viewChild.getChildAt(i)
 
-                if (v is TextView) {
+                if (v is TextView && v !is Button) {
                     v.text = formatText(v.text.toString())
                     v.linksClickable = true
                     v.movementMethod = LinkMovementMethod.getInstance()
@@ -194,11 +276,10 @@ class InstructionsActivity : AppIntro2() {
         }
 
         private fun formatText(text: String): Spanned {
-            return Html.fromHtml(text)
+            return if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M) Html.fromHtml(text, 0) else Html.fromHtml(text)
         }
 
         companion object {
-
             @JvmOverloads
             fun newInstance(title: CharSequence, description: CharSequence,
                             @LayoutRes layoutId: Int, @ColorInt bgColor: Int,

@@ -257,6 +257,7 @@
     <string name="fedora_setup">Fedora Setup</string>
     <string name="linux_setup">Linux Setup</string>
     <string name="run_commands">Run the Commands</string>
+    <string name="change_selection">Change Selection</string>
 
     <string name="which_os">Which operating system is your computer running?</string>
     <string name="on_device">Follow these instructions on your device.</string>
@@ -311,7 +312,7 @@
     <string name="yes">Yes</string>
     <string name="no">No</string>
 
-    <string name="warn_message">This app modifies system settings. Uninstalling won\'t revert anything, nor can I make that happen. Unless you are comfortable with manual recovery, don't use the app. You have been warned!</string>
+    <string name="warn_message">This app modifies system settings. Uninstalling won\'t revert anything, nor can I make that happen. Unless you are comfortable with manual recovery, don\'t use the app. You have been warned!</string>
 
     <string name="notif_title">Safe Mode Service is running</string>
     <string name="notif_desc">Tap to change settings</string>

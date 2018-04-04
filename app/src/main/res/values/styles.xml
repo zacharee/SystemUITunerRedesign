@@ -14,8 +14,8 @@
     </style>
 
     <style name="AppTheme.Intro" parent="AppTheme.Dark.NoActionBar">
-        <item name="android:textColorLink">@android:color/primary_text_dark</item>
-        <item name="android:textColor">@android:color/primary_text_dark</item>
+        <!--<item name="android:textColorLink">@android:color/primary_text_dark</item>-->
+        <!--<item name="android:textColor">@android:color/primary_text_dark</item>-->
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />

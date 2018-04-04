@@ -10,4 +10,5 @@
     <color name="intro_3">@color/colorAccent</color>
     <color name="intro_4">#512DA8</color>
     <color name="intro_5">#388E3C</color>
+    <color name="intro_6">#00897b</color>
 </resources>
