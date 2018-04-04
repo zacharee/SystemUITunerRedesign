@@ -31,7 +31,7 @@
   <string name="reboot_required">（需要重啟）</string>
   <string name="sorry">抱歉⋯</string>
   <string name="created_by">App 由 <a href=\'https://forum.xda-developers.com/member.php?u=7055541\'>Zacharee1</a> 製作</string>
-  <string name="lang_credit">Translations by volunteers on <a href="https://crowdin.com/project/systemui-tuner">Crowdin</a></string>
+  <string name="lang_credit"><a href="https://crowdin.com/project/systemui-tuner">Crowdin</a> 志願者的翻譯</string>
   <string name="enabled">已啟用</string>
   <string name="show">顯示</string>
   <string name="select_time">選擇時間</string>
@@ -229,6 +229,7 @@
   <string name="fedora_setup">Fedora 設定步驟</string>
   <string name="linux_setup">Linux 設定步驟</string>
   <string name="run_commands">執行指令</string>
+  <string name="change_selection">變更選取模式</string>
   <string name="which_os">你的電腦作業系統是？</string>
   <string name="on_device">在你的裝置上進行這些步驟。</string>
   <string name="on_computer">在你的電腦上進行這些步驟。</string>
@@ -270,7 +271,7 @@
   <string name="warn_message">本 app 會修改系統設定，且移除 app 並不會復原設定，即便是作者本人也無法復原。除非你能接受否則請勿使用本 app，別說我沒警告過你！</string>
   <string name="notif_title">安全模式服務正在執行</string>
   <string name="notif_desc">點擊以變更設定</string>
-  <string name="touchwiz_oreo_qqs">On TouchWiz Oreo devices, this setting is no longer reliable! Along with setting the number here, you may have to also save the value to Settings.System.apanel_number, which can only be done with ADB or root. Safe Mode attempts to implement a workaround, but I can\'t guarantee it will work!</string>
+  <string name="touchwiz_oreo_qqs">在 TouchWiz 奧利利的設備, 這個設置不再可靠!在這裡設置數位的同時, 您可能還必須將該值保存到 Settings.System.apanel_number, 這只能用亞行或 root 使用者來完成。安全模式試圖實現一種變通辦法, 但我不能保證它會奏效!</string>
   <string name="color">色彩</string>
   <string name="notifs_snooze">延遲通知</string>
   <string name="notifs_snooze_desc">&#160;
