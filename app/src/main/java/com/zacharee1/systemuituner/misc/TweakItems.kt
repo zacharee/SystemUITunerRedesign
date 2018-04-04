@@ -4,6 +4,7 @@ import android.os.Build
 import android.support.annotation.DrawableRes
 import android.support.annotation.XmlRes
 import com.zacharee1.systemuituner.R
+import com.zacharee1.systemuituner.util.Utils
 import java.util.*
 
 object TweakItems {
@@ -27,7 +28,7 @@ object TweakItems {
                 R.string.demo_mode,
                 R.xml.pref_demo)
         )
-        addItem(TweakItem("touchwiz",
+        if (Utils.checkSamsung()) addItem(TweakItem("touchwiz",
                 R.drawable.ic_phone_android_black_24dp,
                 R.string.touchwiz,
                 R.xml.pref_tw)

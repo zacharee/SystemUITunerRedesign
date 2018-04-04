@@ -97,7 +97,7 @@ object Utils {
         val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context)
 
         val firstStart = sharedPreferences.getBoolean("first_start", true)
-        if (firstStart && Build.MANUFACTURER.toLowerCase().contains("samsung") && Build.VERSION.SDK_INT < Build.VERSION_CODES.O) {
+        if (firstStart && checkSamsung()) {
             sharedPreferences.edit().putBoolean("safe_mode", true).apply()
             try {
                 AlertDialog.Builder(context)
@@ -105,9 +105,7 @@ object Utils {
                         .setMessage(context.resources.getString(R.string.safe_mode_auto_enabled))
                         .setPositiveButton(context.resources.getString(R.string.ok), null)
                         .show()
-            } catch (e: Exception) {
-            }
-
+            } catch (e: Exception) {}
         }
         sharedPreferences.edit().putBoolean("first_start", false).apply()
 
@@ -155,6 +153,19 @@ object Utils {
             }
         } catch (e: Exception) {
             e.printStackTrace()
+        }
+
+        return false
+    }
+
+    fun checkSamsung(): Boolean {
+        val check = arrayListOf(
+                Build.MANUFACTURER,
+                Build.BRAND
+        )
+
+        for (s in check) {
+            if (s.toLowerCase().contains("samsung")) return true
         }
 
         return false
