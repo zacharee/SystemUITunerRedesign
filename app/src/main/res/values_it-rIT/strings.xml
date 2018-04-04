@@ -229,6 +229,7 @@
   <string name="fedora_setup">Configurazione Fedora</string>
   <string name="linux_setup">Configurazione Linux</string>
   <string name="run_commands">Esegui i comandi</string>
+  <string name="change_selection">Change Selection</string>
   <string name="which_os">Quale sistema operativo hai sul tuo computer?</string>
   <string name="on_device">Segui queste istruzioni sul tuo device.</string>
   <string name="on_computer">Segui queste istruzioni sul tuo computer.</string>
