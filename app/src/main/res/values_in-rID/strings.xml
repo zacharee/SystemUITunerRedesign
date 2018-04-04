@@ -229,6 +229,7 @@
   <string name="fedora_setup">Mempersiapkan Fedora</string>
   <string name="linux_setup">Mempersiapkan Linux</string>
   <string name="run_commands">Jalankan Perintah</string>
+  <string name="change_selection">Change Selection</string>
   <string name="which_os">Sistem operasi mana komputer Anda berjalan?</string>
   <string name="on_device">Ikuti petunjuk ini pada perangkat Anda.</string>
   <string name="on_computer">Ikuti petunjuk ini pada komputer Anda.</string>
