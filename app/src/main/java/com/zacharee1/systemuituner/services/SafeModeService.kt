@@ -16,12 +16,13 @@ import com.zacharee1.systemuituner.activites.settings.SettingsActivity
 import com.zacharee1.systemuituner.util.SettingsUtils
 
 class SafeModeService : Service() {
-    private var mShutDownReceiver: ShutDownReceiver? = null
-    private var mThemeReceiver: ThemeChangeReceiver? = null
+    private var shutDownReceiver: ShutDownReceiver? = null
+    private var themeReceiver: ThemeChangeReceiver? = null
+    private var immersiveReceiver: ImmersiveReceiver? = null
 
-    private var mResListener: ResolutionChangeListener? = null
+    private var resListener: ResolutionChangeListener? = null
 
-    private var mHandler: Handler? = null
+    private var handler: Handler? = null
     private var observer: ContentObserver? = null
     private var preferences: SharedPreferences? = null
 
@@ -43,7 +44,7 @@ class SafeModeService : Service() {
     }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
-        mHandler = Handler(Looper.getMainLooper())
+        handler = Handler(Looper.getMainLooper())
         preferences = PreferenceManager.getDefaultSharedPreferences(this)
         preferences?.registerOnSharedPreferenceChangeListener(prefsListener)
 
@@ -54,6 +55,7 @@ class SafeModeService : Service() {
         setUpReceivers()
         setUpContentObserver()
         restoreSnoozeState()
+        restoreImmersive()
         return Service.START_STICKY
     }
 
@@ -61,15 +63,19 @@ class SafeModeService : Service() {
         super.onDestroy()
 
         try {
-            unregisterReceiver(mThemeReceiver)
+            unregisterReceiver(themeReceiver)
         } catch (e: Exception) {}
 
         try {
-            unregisterReceiver(mShutDownReceiver)
+            unregisterReceiver(shutDownReceiver)
         } catch (e: Exception) {}
 
         try {
-            contentResolver.unregisterContentObserver(mResListener!!)
+            unregisterReceiver(immersiveReceiver)
+        } catch (e: Exception) {}
+
+        try {
+            contentResolver.unregisterContentObserver(resListener!!)
         } catch (e: Exception) {}
 
         try {
@@ -102,9 +108,10 @@ class SafeModeService : Service() {
     }
 
     private fun setUpReceivers() {
-        mShutDownReceiver = ShutDownReceiver()
-        mThemeReceiver = ThemeChangeReceiver()
-        mResListener = ResolutionChangeListener(mHandler)
+        shutDownReceiver = ShutDownReceiver()
+        themeReceiver = ThemeChangeReceiver()
+        resListener = ResolutionChangeListener(handler)
+        immersiveReceiver = ImmersiveReceiver()
     }
 
     private fun restoreStateOnStartup() {
@@ -203,8 +210,23 @@ class SafeModeService : Service() {
         SettingsUtils.writeSecure(this, "icon_blacklist", "")
 
         if (restore) {
-            mHandler!!.postDelayed({ SettingsUtils.writeSecure(this@SafeModeService, "icon_blacklist", blacklist) }, 400)
+            handler!!.postDelayed({ SettingsUtils.writeSecure(this@SafeModeService, "icon_blacklist", blacklist) }, 400)
         }
+    }
+
+    private fun restoreImmersive() {
+        val savedPolicy = Settings.Global.getString(contentResolver, "policy_control_backup")
+
+        if (!savedPolicy.isNullOrEmpty()) {
+            SettingsUtils.writeGlobal(this, Settings.Global.POLICY_CONTROL, savedPolicy)
+        }
+    }
+
+    private fun saveResetImmersive() {
+        val currentPolicy = Settings.Global.getString(contentResolver, Settings.Global.POLICY_CONTROL)
+
+        SettingsUtils.writeGlobal(this, "policy_control_backup", currentPolicy)
+        SettingsUtils.writeGlobal(this, Settings.Global.POLICY_CONTROL, "")
     }
 
     inner class ShutDownReceiver : BroadcastReceiver() {
@@ -223,18 +245,47 @@ class SafeModeService : Service() {
             saveQSHeaderCount()
             saveQSRowColCount()
             saveSnoozeState()
+            saveResetImmersive()
         }
     }
 
     inner class ThemeChangeReceiver : BroadcastReceiver() {
         init {
-            val filter = IntentFilter("broadcast com.samsung.android.theme.themecenter.THEME_APPLY")
+            val filter = IntentFilter("com.samsung.android.theme.themecenter.THEME_APPLY")
 
             registerReceiver(this, filter)
         }
 
         override fun onReceive(context: Context, intent: Intent) {
             resetBlacklist(true)
+        }
+    }
+
+    inner class ImmersiveReceiver : BroadcastReceiver() {
+        init {
+            val filter = IntentFilter()
+            filter.addAction(Intent.ACTION_SCREEN_OFF)
+            filter.addAction(Intent.ACTION_USER_PRESENT)
+            filter.addAction(Intent.ACTION_SCREEN_ON)
+
+            registerReceiver(this, filter)
+        }
+
+        override fun onReceive(context: Context?, intent: Intent?) {
+            if (intent?.action == Intent.ACTION_SCREEN_OFF) {
+                saveResetImmersive()
+            }
+
+            if (intent?.action == Intent.ACTION_USER_PRESENT) {
+                restoreImmersive()
+            }
+
+            if (intent?.action == Intent.ACTION_SCREEN_ON) {
+                val kgm = getSystemService(Context.KEYGUARD_SERVICE) as KeyguardManager
+                if (!kgm.isDeviceLocked && !kgm.isKeyguardLocked) {
+                    restoreImmersive()
+                }
+            }
         }
     }
 
