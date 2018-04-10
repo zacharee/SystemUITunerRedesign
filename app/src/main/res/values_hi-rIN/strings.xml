@@ -3,15 +3,15 @@
 <resources>
   <string name="app_name">SystemUI ट्यूनर</string>
   <string name="to_the_tweaks">Tweaks करने के लिए!</string>
-  <string name="sorry_explain">Something went wrong while setting this toggle.</string>
-  <string name="sorry_option">Try executing the following command from a computer (it\'s one line):</string>
-  <string name="more">More</string>
-  <string name="grant_dump_perm">You need to grant the permission \"android.permission.DUMP\" to use this feature.</string>
-  <string name="safe_mode_auto_enabled">Samsung device detected! Safe Mode has been automatically enabled for your safety. Be warned that modifying any status bar icons has the potential to BREAK SYSTEM UI! Please follow the link in the Play Store description for more information.</string>
-  <string name="notice">NOTICE</string>
-  <string name="fancy_pulldown_notice">Toggling this option off can cause issues after a reboot. Manually toggle this option on and off after a reboot, or enable Safe Mode.</string>
-  <string name="safe_mode_summary">SAMSUNG USERS KEEP THIS TURNED ON UNLESS YOU HAVE AN AOSP ROM!</string>
-  <string name="safe_mode_summary_1">Clears any status bar customizations on reboot and restores them after boot completes.</string>
+  <string name="sorry_explain">इस टॉगल को सेट करते समय कुछ गलत हो गया</string>
+  <string name="sorry_option">किसी कंप्यूटर से निंन आदेश निष्पादित करने का प्रयास करें (यह एक पंक्ति है):</string>
+  <string name="more">अतिरिक्त</string>
+  <string name="grant_dump_perm">इस सुविधा का उपयोग करने के लिए आपको \"android.permission.DUMP\" अनुमति प्रदान करने की आवश्यकता है ।</string>
+  <string name="safe_mode_auto_enabled">सैमसंग डिवाइस का पता चला! सुरक्षित मोड स्वचालित रूप से आपकी सुरक्षा के लिए सक्षम किया गया है । चेतावनी दी जाती है कि किसी भी स्थिति में पट्टी माउस को संशोधित करने के लिए प्रणाली यूआई को तोड़ने की क्षमता रखता है! कृपया अधिक जानकारी के लिए प्ले स्टोर विवरण में लिंक का अनुसरण करें।</string>
+  <string name="notice">सूचना</string>
+  <string name="fancy_pulldown_notice">इस विकल्प को बंद करने से रिबूट के बाद समस्याएं हो सकती हैं। रीबूट के बाद मैन्युअल रूप से इस विकल्प को चालू या बंद करें, या सुरक्षित मोड सक्षम करें।</string>
+  <string name="safe_mode_summary">सैमसंग उपयोगकर्ताओं को यह चालू रखें जब तक की आप एक AOSP ROM पर है!</string>
+  <string name="safe_mode_summary_1">रिबूट पर किसी भी स्थिति पट्टी अनुकूलन को साफ करता है और बूट पूर्ण होने के बाद उन्हें पुनर्स्थापित करता है।</string>
   <string name="safe_mode_summary_2">Toggles the QS Fancy Animation on boot.</string>
   <string name="safe_mode_summary_3">Restores custom QS header count value on boot (Nougat+).</string>
   <string name="safe_mode_summary_4">Restores custom QS row/column count on boot (TouchWiz, Nougat+).</string>
