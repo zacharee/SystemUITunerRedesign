@@ -220,8 +220,8 @@
   <string name="apt_get_adb"><![CDATA[- <b>sudo apt-get install adb</b>]]></string>
   <string name="make_sure_adb_installed">1. ਯਕੀਨੀ ਬਣਾਓ ਕਿ ADB ਸਥਾਪਿਤ ਹੈ:</string>
   <string name="yum_install_adb"><![CDATA[- <b>sudo yum install android-tools</b>]]></string>
-  <string name="download_adb_linux"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-linux.zip">Download the ADB ZIP for Linux.</a>]]></string>
-  <string name="cd_linux"><![CDATA[4. Enter <b>cd /path/to/extracted/folder/</b> to get to the folder you extracted ADB into. For instance, <b>cd /home/Zachary/Desktop/platform-tools/</b>.]]></string>
+  <string name="download_adb_linux"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-linux.zip"> ਲੀਨਕਸ ਲਈ ਏ. ਡੀ. ਬੀ. ਜ਼ਿਪ ਡਾਊਨਲੋਡ ਕਰੋ. </a>]]></string>
+  <string name="cd_linux"><![CDATA[4. ਤੁਹਾਡੇ ਦੁਆਰਾ ਏ. ਡੀ. ਬੀ. ਨੂੰ ਐਲਬਮ ਕਰਨ ਵਾਲੇ ਫੋਲਡਰ ਵਿੱਚ ਪ੍ਰਾਪਤ ਕਰਨ ਲਈ <b>cd /path/to/extracted/folder/</b> ਦਿਓ ਉਦਾਹਰਨ ਲਈ, <b>cd /Users/Zachary/Desktop/platform-tools/</b>.]]></string>
   <string name="choose_your_weapon">Choose your Weapon</string>
   <string name="initial_setup">Initial Setup</string>
   <string name="windows_setup">Windows Setup</string>
