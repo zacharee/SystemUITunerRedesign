@@ -9,11 +9,11 @@
   <string name="grant_dump_perm">ਤੁਹਾਨੂੰ ਇਸ ਵਿਸ਼ੇਸ਼ਤਾ ਦੀ ਵਰਤੋਂ ਕਰਨ ਲਈ \"android.permission.DUMP\" ਦੀ ਅਨੁਮਤੀ ਦੇਣ ਦੀ ਲੋੜ ਹੈ.</string>
   <string name="safe_mode_auto_enabled">ਸੈਮਸੰਗ ਡਿਵਾਈਸ ਖੋਜੀ ਗਈ! ਸੁਰੱਖਿਅਤ ਢੰਗ ਤੁਹਾਡੀ ਸੁਰੱਖਿਆ ਲਈ ਸਵੈਚਾਲਿਤ ਹੈ ਸਾਵਧਾਨ ਰਹੋ ਕਿ ਕਿਸੇ ਵੀ ਸਥਿਤੀ ਬਾਰ ਆਈਕਾਨ ਨੂੰ ਸੋਧਣਾ ਸਿਸਟਮ UI ਨੂੰ ਕਰੈਸ਼ ਕਰਣ ਦੀ ਛਮਤਾਂ ਰੱਖਦਾ ਹੈ! ਹੋਰ ਜਾਣਕਾਰੀ ਲਈ ਕਿਰਪਾ ਕਰਕੇ Play Store ਦੇ ਵੇਰਵੇ ਵਿੱਚ ਲਿੰਕ ਦਾ ਪਾਲਣ ਕਰੋ.</string>
   <string name="notice">ਨੋਟਿਸ</string>
-  <string name="fancy_pulldown_notice">Toggling this option off can cause issues after a reboot. Manually toggle this option on and off after a reboot, or enable Safe Mode.</string>
-  <string name="safe_mode_summary">SAMSUNG USERS KEEP THIS TURNED ON UNLESS YOU HAVE AN AOSP ROM!</string>
-  <string name="safe_mode_summary_1">Clears any status bar customizations on reboot and restores them after boot completes.</string>
-  <string name="safe_mode_summary_2">Toggles the QS Fancy Animation on boot.</string>
-  <string name="safe_mode_summary_3">Restores custom QS header count value on boot (Nougat+).</string>
+  <string name="fancy_pulldown_notice">ਇਸ ਚੋਣ ਨੂੰ ਬੰਦ ਕਰਨ ਨਾਲ ਰੀਬੂਟ ਤੋਂ ਬਾਅਦ ਦੇ ਮਸਲਿਆਂ ਦਾ ਕਾਰਨ ਬਣ ਸਕਦਾ ਹੈ. ਖੁਦ ਰੀਬੂਟ ਤੋਂ ਬਾਅਦ ਇਸ ਚੋਣ ਨੂੰ ਬੰਦ ਅਤੇ ਬੰਦ ਕਰਨ ਲਈ, ਜਾਂ ਸੁਰੱਖਿਅਤ ਮੋਡ ਯੋਗ ਕਰੋ.</string>
+  <string name="safe_mode_summary">ਸੈਮਸੰਗ ਦੇ ਯੂਜ਼ਰਸ ਇਸ ਨੂੰ ਚਾਲੂ ਰਾਖਿਓ ਜਦੋ ਤਕ ਤੁਸੀਂ ਕਿਸੀ AOSP ਰੋਮ ਤੇ ਨਾ ਹੋਵੋ!</string>
+  <string name="safe_mode_summary_1">ਰੀਬੂਟ ਕਰਨ ਤੇ ਕਿਸੇ ਵੀ ਸਥਿਤੀ ਪੱਟੀ ਅਨੁਕੂਲਤਾ ਨੂੰ ਸਾਫ਼ ਕਰਦਾ ਹੈ ਅਤੇ ਬੂਟ ਮੁਕੰਮਲ ਹੋਣ ਤੋਂ ਬਾਅਦ ਉਹਨਾਂ ਨੂੰ ਮੁੜ ਸਥਾਪਿਤ ਕਰਦਾ ਹੈ.</string>
+  <string name="safe_mode_summary_2">ਬੂਟ ਤੇ QS ਫੈਨਸੀ ਐਨੀਮੇਸ਼ਨ ਨੂੰ ਟੋਗਲ ਕਰਦਾ ਹੈ.</string>
+  <string name="safe_mode_summary_3">ਬੂਟ ਤੇ ਕਸਟਮ QS ਸਿਰਲੇਖ ਗਿਣਤੀ ਮੁੱਲ ਨੂੰ ਰੀਸਟੋਰ ਕਰਦਾ ਹੈ (ਨੌਗਾਟ+).</string>
   <string name="safe_mode_summary_4">Restores custom QS row/column count on boot (TouchWiz, Nougat+).</string>
   <string name="safe_mode_summary_5">Restores custom notification snooze options on boot (8.1+).</string>
   <string name="hide_welcome_screen">Hide Welcome Screen</string>
