@@ -14,31 +14,31 @@
   <string name="safe_mode_summary_1">ਰੀਬੂਟ ਕਰਨ ਤੇ ਕਿਸੇ ਵੀ ਸਥਿਤੀ ਪੱਟੀ ਅਨੁਕੂਲਤਾ ਨੂੰ ਸਾਫ਼ ਕਰਦਾ ਹੈ ਅਤੇ ਬੂਟ ਮੁਕੰਮਲ ਹੋਣ ਤੋਂ ਬਾਅਦ ਉਹਨਾਂ ਨੂੰ ਮੁੜ ਸਥਾਪਿਤ ਕਰਦਾ ਹੈ.</string>
   <string name="safe_mode_summary_2">ਬੂਟ ਤੇ QS ਫੈਨਸੀ ਐਨੀਮੇਸ਼ਨ ਨੂੰ ਟੋਗਲ ਕਰਦਾ ਹੈ.</string>
   <string name="safe_mode_summary_3">ਬੂਟ ਤੇ ਕਸਟਮ QS ਸਿਰਲੇਖ ਗਿਣਤੀ ਮੁੱਲ ਨੂੰ ਰੀਸਟੋਰ ਕਰਦਾ ਹੈ (ਨੌਗਾਟ+).</string>
-  <string name="safe_mode_summary_4">Restores custom QS row/column count on boot (TouchWiz, Nougat+).</string>
-  <string name="safe_mode_summary_5">Restores custom notification snooze options on boot (8.1+).</string>
-  <string name="hide_welcome_screen">Hide Welcome Screen</string>
-  <string name="tasker_support">Tasker Support</string>
-  <string name="instructions">Instructions</string>
-  <string name="safe_mode_android_o">Because of limitations added in Android O, this feature will not work on your device.</string>
-  <string name="requires_nougat">Requires Nougat or later.</string>
-  <string name="requires_oreo">Requires Oreo or later.</string>
-  <string name="requires_8_1">Requires Oreo 8.1 or later.</string>
-  <string name="enable_in_settings">Enable in Settings.</string>
-  <string name="about">About</string>
-  <string name="miscellaneous">Miscellaneous</string>
-  <string name="settings">Settings</string>
-  <string name="status_bar">Status Bar</string>
-  <string name="reboot_required">(Reboot Required)</string>
-  <string name="sorry">Sorry…</string>
-  <string name="created_by">App created by <a href="https://forum.xda-developers.com/member.php?u=7055541">Zacharee1</a></string>
-  <string name="lang_credit">Translations by volunteers on <a href="https://crowdin.com/project/systemui-tuner">Crowdin</a></string>
-  <string name="enabled">Enabled</string>
-  <string name="show">Show</string>
-  <string name="select_time">Select Time</string>
-  <string name="select_battery_level">Select Battery Level</string>
-  <string name="wifi_strength">WiFi Strength</string>
-  <string name="battery_charging">Battery Charging</string>
-  <string name="mobile_strength">Mobile Strength</string>
+  <string name="safe_mode_summary_4">ਬੂਟ ਤੇ ਰੀਸਟੋਰ ਕੀਤੇ ਕਸਟਮ QS ਕਤਾਰ / ਕਾਲਮ ਕਾਊਂਟ (ਟਚਵਿਜ਼, ਨੋਗਾਟ).</string>
+  <string name="safe_mode_summary_5">ਬੂਟ \'ਤੇ ਕਸਟਮ ਨੋਟੀਫਿਕੇਸ਼ਨ ਸਨੂਜ਼ ਵਿਕਲਪ ਰੀਸਟੋਰ ਕਰਦਾ ਹੈ (8.1+).</string>
+  <string name="hide_welcome_screen">ਸੁਆਗਤੀ ਸਕਰੀਨ ਲੁਕਾਓ</string>
+  <string name="tasker_support">Tasker ਸਮਰਥਨ</string>
+  <string name="instructions">ਨਿਰਦੇਸ਼</string>
+  <string name="safe_mode_android_o">ਐਂਡਰਾਇਡ ਓ ਵਿੱਚ ਜੋੜੀਆਂ ਗਈਆਂ ਕਮੀਆਂ ਦੇ ਕਾਰਨ, ਇਹ ਵਿਸ਼ੇਸ਼ਤਾ ਤੁਹਾਡੀ ਡਿਵਾਈਸ \'ਤੇ ਕੰਮ ਨਹੀਂ ਕਰੇਗੀ.</string>
+  <string name="requires_nougat">Nougat ਜ ਬਾਅਦ ਦੀ ਲੋੜ ਹੈ.</string>
+  <string name="requires_oreo">Oreo ਜਾਂ ਬਾਅਦ ਵਿੱਚ.</string>
+  <string name="requires_8_1">Oreo 8.1 ਜਾਂ ਬਾਅਦ ਦੀ ਲੋੜ ਹੈ.</string>
+  <string name="enable_in_settings">ਸੈਟਿੰਗਾਂ ਵਿੱਚ ਸਮਰੱਥ ਬਣਾਓ.</string>
+  <string name="about">ਬਾਰੇ</string>
+  <string name="miscellaneous">ਵਿਵਿਧ</string>
+  <string name="settings">ਸੈਟਿੰਗ</string>
+  <string name="status_bar">ਹਾਲਤ ਪੱਟੀ</string>
+  <string name="reboot_required">(ਰੀਬੂਟ ਜ਼ਰੂਰੀ)</string>
+  <string name="sorry">ਮਾਫ ਕਰਨਾ…</string>
+  <string name="created_by"><a href="https://forum.xda-developers.com/member.php?u=7055541"> Zacharee1 </a> ਦੁਆਰਾ ਬਣਾਇਆ ਗਿਆ ਐਪ</string>
+  <string name="lang_credit"><a href="https://crowdin.com/project/systemui-tuner"> Crowdin </a> ਤੇ ਵਾਲੰਟੀਅਰ ਦੁਆਰਾ ਅਨੁਵਾਦ</string>
+  <string name="enabled">ਚਾਲੂ ਹੈ</string>
+  <string name="show">ਦਿਖਾਓ</string>
+  <string name="select_time">ਸਮਾਂ ਚੁਣੋ</string>
+  <string name="select_battery_level">ਬੈਟਰੀ ਸਤਰ ਚੁਣੋ</string>
+  <string name="wifi_strength">ਵਾਈਫਾਈ ਸਟ੍ਰੈਂਥਥ</string>
+  <string name="battery_charging">ਬੈਟਰੀ ਚਾਰਜ ਹੋ ਰਹੀ ਹੈ</string>
+  <string name="mobile_strength">ਮੋਬਾਈਲ ਦੀ ਤਾਕਤ</string>
   <string name="mobile_type">Mobile Type</string>
   <string name="show_airplane_mode">Show Airplane Mode</string>
   <string name="show_notifications">Show Notifications</string>
