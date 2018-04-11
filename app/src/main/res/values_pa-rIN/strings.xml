@@ -214,7 +214,7 @@
   <string name="open_cmd">3. ਓਪਨ CMD.</string>
   <string name="cd_windows"><![CDATA[4. ਤੁਹਾਡੇ ਦੁਆਰਾ ਏ. ਡੀ. ਬੀ. ਨੂੰ ਐਲਬਮ ਕਰਨ ਵਾਲੇ ਫੋਲਡਰ ਵਿੱਚ ਪ੍ਰਾਪਤ ਕਰਨ ਲਈ <b>cd C:\\path\\to\\extracted\\folder\\</b> ਦਿਓ ਉਦਾਹਰਨ ਲਈ, <b>cd C:\\Users\\Zachary\\Desktop\\platform-tools\\</b>.]]></string>
   <string name="cd_further"><![CDATA[- ਇਹ ਯਕੀਨੀ ਬਣਾਓ ਕਿ ਤੁਹਾਡੇ ਦੁਆਰਾ <b> cd </b> ਫੋਲਡਰ ਵਿੱਚ ADB ਚੱਲਣਯੋਗ ਹੈ. ਜੇ ਨਹੀਂ, <b> ਸੀਡੀ </b> ਇੱਕ ਪੱਧਰ ਹੋਰ.]]></string>
-  <string name="download_adb_mac"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-darwin.zip">Download the ADB ZIP for macOS.</a>]]></string>
+  <string name="download_adb_mac"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-darwin.zip"> MacOS ਲਈ ADB ਜ਼ਿਪ ਡਾਊਨਲੋਡ ਕਰੋ. </a>]]></string>
   <string name="open_terminal">3. ਓਪਨ ਟਰਮੀਨਲ.</string>
   <string name="cd_mac"><![CDATA[4. ਤੁਹਾਡੇ ਦੁਆਰਾ ਏ. ਡੀ. ਬੀ. ਨੂੰ ਐਲਬਮ ਕਰਨ ਵਾਲੇ ਫੋਲਡਰ ਵਿੱਚ ਪ੍ਰਾਪਤ ਕਰਨ ਲਈ <b>cd /path/to/extracted/folder/</b> ਦਿਓ ਉਦਾਹਰਨ ਲਈ, <b>cd /Users/Zachary/Desktop/platform-tools/</b>.]]></string>
   <string name="apt_get_adb"><![CDATA[- <b>sudo apt-get install adb</b>]]></string>
@@ -265,9 +265,9 @@
   <string name="miui_warning">ਅਜਿਹਾ ਲਗਦਾ ਹੈ ਕਿ ਤੁਸੀਂ ਇੱਕ MIUI ਡਿਵਾਈਸ ਦੀ ਵਰਤੋਂ ਕਰ ਰਹੇ ਹੋ ਕਿਰਪਾ ਕਰਕੇ ਨੋਟ ਕਰੋ ਕਿ ਕੁਝ, ਜੇ ਕੋਈ ਹੈ, ਤਾਂ ਇਸ ਐਪ ਦੀਆਂ ਵਿਸ਼ੇਸ਼ਤਾਵਾਂ ਤੁਹਾਡੇ ਲਈ ਕੰਮ ਕਰੇਗੀ. ਇਹ ਠੀਕ ਨਹੀਂ ਹੈ!</string>
   <string name="intent">ਇੰਟੈਂਟ</string>
   <string name="removing_tile">ਟਾਇਲ ਨੂੰ ਹਟਾਉ</string>
-  <string name="remove_tile">Remove %s?</string>
-  <string name="allow_deep_sleep">Enable Automatic Deep Sleep</string>
-  <string name="yes">Yes</string>
+  <string name="remove_tile">ਹਟਾਓ %s?</string>
+  <string name="allow_deep_sleep">ਆਟੋਮੈਟਿਕ ਡਬਲ ਸਲੀਪ ਨੂੰ ਸਮਰੱਥ ਬਣਾਓ</string>
+  <string name="yes">ਹਾਂ</string>
   <string name="no">ਨਹੀਂ</string>
   <string name="warn_message">ਇਹ ਐਪ ਸਿਸਟਮ ਸੈਟਿੰਗਜ਼ ਨੂੰ ਸੋਧਦਾ ਹੈ ਅਣਇੰਸਟੌਲ ਕਰਨਾ ਕਿਸੇ ਵੀ ਚੀਜ ਨੂੰ ਵਾਪਸ ਨਹੀਂ ਕਰੇਗਾ, ਨਾ ਹੀ ਮੈਂ ਅਜਿਹਾ ਕਰ ਸਕਦਾ ਹਾਂ. ਜਦੋਂ ਤੱਕ ਤੁਸੀਂ ਦਸਤੀ ਰਿਕਵਰੀ ਦੇ ਨਾਲ ਆਰਾਮਦਾਇਕ ਨਹੀਂ ਹੋ, ਐਪ ਨੂੰ ਨਾ ਵਰਤੋ. ਤੁਹਾਨੂੰ ਚੇਤਾਵਨੀ ਦਿੱਤੀ ਗਈ ਹੈ!</string>
   <string name="notif_title">ਸੇਫ ਮੋਡ ਸੇਵਾ ਚੱਲ ਰਹੀ ਹੈ</string>
