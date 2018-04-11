@@ -67,11 +67,11 @@
   <string name="airplane_icon">ਏਅਰਪਲੇਨ ਆਈਕਾਨ</string>
   <string name="wifi_icon">ਵਾਈਫਾਈ ਆਈਕਨ</string>
   <string name="vpn_icon">VPN ਆਈਕਨ</string>
-  <string name="sounds_alerts"><![CDATA[Sounds & Alerts]]></string>
-  <string name="volume">Volume Icon</string>
-  <string name="headset_icon">Headset Icon</string>
-  <string name="speakerphone_icon">Speakerphone Icon</string>
-  <string name="time_such"><![CDATA[Time & Such]]></string>
+  <string name="sounds_alerts"><![CDATA[ਆਵਾਜ਼ ਅਤੇ ਚੇਤਾਵਨੀਆਂ]]></string>
+  <string name="volume">ਵੋਲਯੂਮ ਆਈਕਨ</string>
+  <string name="headset_icon">ਹੈਡਸੈਟ ਆਈਕਾਨ</string>
+  <string name="speakerphone_icon">ਸਪੀਕਰਫੋਨ ਆਈਕਨ</string>
+  <string name="time_such"><![CDATA[ਟਾਈਮ ਅਤੇ ਅਜਿਹੇ]]></string>
   <string name="clock">Clock Icon</string>
   <string name="clock_tile">Clock</string>
   <string name="show_clock_seconds">Show Clock Seconds</string>
