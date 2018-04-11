@@ -212,8 +212,8 @@
   <string name="download_adb_windows"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-windows.zip"> ਲੀਨਕਸ ਲਈ ਏ. ਡੀ. ਬੀ. ਜ਼ਿਪ ਡਾਊਨਲੋਡ ਕਰੋ. </a>]]></string>
   <string name="extract_zip">2. ਆਸਾਨੀ ਨਾਲ ਪਹੁੰਚਯੋਗ ਜਗ੍ਹਾ (ਅਰਥਾਤ ਡੈਸਕਟੌਪ) ਤੇ ਜ਼ਿਪ ਨੂੰ ਐਕਸਟਰੈਕਟ ਕਰੋ.</string>
   <string name="open_cmd">3. ਓਪਨ CMD.</string>
-  <string name="cd_windows"><![CDATA[4. Enter <b>cd C:\\path\\to\\extracted\\folder\\</b> to get to the folder where you extracted ADB. For instance, <b>cd C:\\Users\\Zachary\\Desktop\\platform-tools\\</b>.]]></string>
-  <string name="cd_further"><![CDATA[- Make sure that the folder you <b>cd</b> into contains the ADB executable. If not, <b>cd</b> one level further.]]></string>
+  <string name="cd_windows"><![CDATA[4. ਤੁਹਾਡੇ ਦੁਆਰਾ ਏ. ਡੀ. ਬੀ. ਨੂੰ ਐਲਬਮ ਕਰਨ ਵਾਲੇ ਫੋਲਡਰ ਵਿੱਚ ਪ੍ਰਾਪਤ ਕਰਨ ਲਈ <b>cd C:\\path\\to\\extracted\\folder\\</b> ਦਿਓ ਉਦਾਹਰਨ ਲਈ, <b>cd C:\\Users\\Zachary\\Desktop\\platform-tools\\</b>.]]></string>
+  <string name="cd_further"><![CDATA[- ਇਹ ਯਕੀਨੀ ਬਣਾਓ ਕਿ ਤੁਹਾਡੇ ਦੁਆਰਾ <b> cd </b> ਫੋਲਡਰ ਵਿੱਚ ADB ਚੱਲਣਯੋਗ ਹੈ. ਜੇ ਨਹੀਂ, <b> ਸੀਡੀ </b> ਇੱਕ ਪੱਧਰ ਹੋਰ.]]></string>
   <string name="download_adb_mac"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-darwin.zip">Download the ADB ZIP for macOS.</a>]]></string>
   <string name="open_terminal">3. ਓਪਨ ਟਰਮੀਨਲ.</string>
   <string name="cd_mac"><![CDATA[4. ਤੁਹਾਡੇ ਦੁਆਰਾ ਏ. ਡੀ. ਬੀ. ਨੂੰ ਐਲਬਮ ਕਰਨ ਵਾਲੇ ਫੋਲਡਰ ਵਿੱਚ ਪ੍ਰਾਪਤ ਕਰਨ ਲਈ <b>cd /path/to/extracted/folder/</b> ਦਿਓ ਉਦਾਹਰਨ ਲਈ, <b>cd /Users/Zachary/Desktop/platform-tools/</b>.]]></string>
