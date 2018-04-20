@@ -3,16 +3,16 @@
 <resources>
   <string name="app_name">Настройка системного интерфейса</string>
   <string name="to_the_tweaks">Настроить!</string>
-  <string name="sorry_explain">Something went wrong while setting this toggle.</string>
-  <string name="sorry_option">Try executing the following command from a computer (it\'s one line):</string>
-  <string name="more">More</string>
-  <string name="grant_dump_perm">You need to grant the permission \"android.permission.DUMP\" to use this feature.</string>
-  <string name="safe_mode_auto_enabled">Samsung device detected! Safe Mode has been automatically enabled for your safety. Be warned that modifying any status bar icons has the potential to BREAK SYSTEM UI! Please follow the link in the Play Store description for more information.</string>
+  <string name="sorry_explain">Что-то пошло не так во время установки этой настройки.</string>
+  <string name="sorry_option">Попробуйте выполнить следующие команды с компьютера (это всё одна строка):</string>
+  <string name="more">Больше</string>
+  <string name="grant_dump_perm">Необходимо предоставить разрешение «android.permission.DUMP» для использования этой функции.</string>
+  <string name="safe_mode_auto_enabled">Samsung устройство обнаружено! Для вашей безопасности автоматически включен безопасный режим. Имейте в виду, что изменения любых значков в строке состояния могут ПОЛОМАТЬ интерфейс системы! Пожалуйста, следуйте по ссылке в описании приложения в магазине Play для получения дополнительной информации.</string>
   <string name="notice">NOTICE</string>
-  <string name="fancy_pulldown_notice">Toggling this option off can cause issues after a reboot. Manually toggle this option on and off after a reboot, or enable Safe Mode.</string>
-  <string name="safe_mode_summary">SAMSUNG USERS KEEP THIS TURNED ON UNLESS YOU HAVE AN AOSP ROM!</string>
-  <string name="safe_mode_summary_1">Clears any status bar customizations on reboot and restores them after boot completes.</string>
-  <string name="safe_mode_summary_2">Toggles the QS Fancy Animation on boot.</string>
+  <string name="fancy_pulldown_notice">Отключение этого параметра может вызвать проблемы после перезагрузки. Включите и потом отключите вручную этот параметр после перезагрузки, или включите безопасный режим.</string>
+  <string name="safe_mode_summary">ПОЛЬЗОВАТЕЛИ SAMSUNG, ОСТАВЬТЕ ЭТО ВКЛЮЧЁННЫМ, ЕСЛИ У ВАС AOSP ROM!</string>
+  <string name="safe_mode_summary_1">Сбрасывает любые настройки статус бара при перезагрузке и восстанавливает их после завершения загрузки.</string>
+  <string name="safe_mode_summary_2">Включает QS Fancy Animation при включении.</string>
   <string name="safe_mode_summary_3">Restores custom QS header count value on boot (Nougat+).</string>
   <string name="safe_mode_summary_4">Restores custom QS row/column count on boot (TouchWiz, Nougat+).</string>
   <string name="safe_mode_summary_5">Restores custom notification snooze options on boot (8.1+).</string>
