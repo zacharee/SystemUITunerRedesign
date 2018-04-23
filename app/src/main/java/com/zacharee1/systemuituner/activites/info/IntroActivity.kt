@@ -88,9 +88,9 @@ class IntroActivity : AppIntro2() {
 
         if (ret.isNotEmpty()) {
             if (SuUtils.testSudo()) {
-                SuUtils.sudo("pm grant com.zacharee1.systemuituner android.permission.WRITE_SECURE_SETTINGS ; " +
-                        "pm grant com.zacharee1.systemuituner android.permission.DUMP ; " +
-                        "pm grant com.zacharee1.systemuituner android.permission.PACKAGE_USAGE_STATS")
+                SuUtils.sudo("pm grant com.zacharee1.systemuituner ${Manifest.permission.WRITE_SECURE_SETTINGS} ; " +
+                        "pm grant com.zacharee1.systemuituner ${Manifest.permission.DUMP} ; " +
+                        "pm grant com.zacharee1.systemuituner ${Manifest.permission.PACKAGE_USAGE_STATS}")
                 Utils.startUp(this)
                 finishAndSave()
             } else {
