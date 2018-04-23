@@ -28,8 +28,8 @@ class BatteryTile : TileService() {
 
         registerReceiver(mReceiver, IntentFilter(Intent.ACTION_BATTERY_CHANGED))
 
-        qsTile.state = Tile.STATE_ACTIVE
-        qsTile.updateTile()
+        qsTile?.state = Tile.STATE_ACTIVE
+        qsTile?.updateTile()
     }
 
     override fun onClick() {

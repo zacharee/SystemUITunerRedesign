@@ -48,12 +48,7 @@ class ImmersiveHelper(fragment: ItemDetailFragment) : BaseHelper(fragment), Pref
     }
 
     private fun setProperBoxChecked() {
-        var currentMode = ImmersiveHandler.getMode(context)
-
-        if (currentMode == null || currentMode.isEmpty()) {
-            currentMode = ImmersiveHandler.DISABLED
-        }
-
+        val currentMode = ImmersiveHandler.getMode(context)
         setAllOthersDisabled(currentMode)
     }
 

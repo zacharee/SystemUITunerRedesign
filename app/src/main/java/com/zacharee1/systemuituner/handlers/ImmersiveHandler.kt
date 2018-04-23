@@ -25,28 +25,26 @@ object ImmersiveHandler {
                 || imm.contains(PRECONF))
     }
 
-    fun getMode(context: Context?): String? {
-        var imm: String? = Settings.Global.getString(context?.contentResolver, KEY)
-        if (imm == null || imm.isEmpty()) imm = "immersive.none"
-        imm = imm.replace("=(.+?)$".toRegex(), "")
+    fun getMode(context: Context?): String {
+        var imm: String = Settings.Global.getString(context?.contentResolver, KEY) ?: DISABLED
+        if (imm.isEmpty()) imm = DISABLED
+        imm = imm.replace("=(.+?)$".toRegex(), "").trim()
 
         return imm
     }
 
-    fun setMode(context: Context?, type: String?) {
-        type?.let {
-            if (it.contains(FULL)
-                    || it.contains(STATUS)
-                    || it.contains(NAV)
-                    || it.contains(PRECONF)
-                    || it.contains(DISABLED)) {
+    fun setMode(context: Context?, type: String) {
+        if (type.contains(FULL)
+                || type.contains(STATUS)
+                || type.contains(NAV)
+                || type.contains(PRECONF)
+                || type.contains(DISABLED)) {
 
-                val typeNew = concat(context, it)
+            val typeNew = concat(context, type)
 
-                SettingsUtils.writeGlobal(context, KEY, typeNew)
-            } else {
-                throw IllegalArgumentException("Invalid Immersive Mode type: " + type)
-            }
+            SettingsUtils.writeGlobal(context, KEY, typeNew)
+        } else {
+            throw IllegalArgumentException("Invalid Immersive Mode type: $type")
         }
     }
 
