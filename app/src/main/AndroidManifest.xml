@@ -4,12 +4,15 @@
     package="com.zacharee1.systemuituner"
     android:installLocation="auto">
 
+    <permission android:name="com.zacharee1.permission.RUN_SERVICE" />
+
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="com.android.vending.BILLING" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
     <uses-permission android:name="android.permission.SET_ALARM" />
+    <uses-permission android:name="com.zacharee1.permission.RUN_SERVICE" />
 
     <uses-permission
         android:name="android.permission.WRITE_SECURE_SETTINGS"
@@ -21,7 +24,6 @@
         tools:ignore="ProtectedPermissions" />
 
     <application
-        android:name=".App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -80,6 +82,36 @@
         <activity
             android:name=".activites.instructions.SetupActivity"
             android:label="@string/setup">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activites.apppickers.AppsListActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activites.apppickers.ComponentsListActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activites.info.IntroActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activites.instructions.InstructionsActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activites.apppickers.ImmersiveSelectActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activites.QuickSettingsLayoutEditor">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
             </intent-filter>
@@ -169,7 +201,8 @@
         <receiver
             android:name=".receivers.TaskerReceiver"
             android:enabled="true"
-            android:exported="true">
+            android:exported="true"
+            tools:ignore="ExportedReceiver">
             <intent-filter>
                 <action android:name="com.zacharee1.intent.action.WRITE_GLOBAL" />
                 <action android:name="com.zacharee1.intent.action.WRITE_SECURE" />
@@ -190,7 +223,8 @@
         <service
             android:name=".services.SafeModeService"
             android:enabled="true"
-            android:exported="true" />
+            android:exported="true"
+            android:permission="com.zacharee1.permission.RUN_SERVICE" />
 
         <receiver
             android:name=".receivers.PackageReplaceReceiver"
@@ -200,13 +234,5 @@
                 <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
             </intent-filter>
         </receiver>
-
-        <activity android:name=".activites.apppickers.AppsListActivity" />
-        <activity android:name=".activites.apppickers.ComponentsListActivity" />
-        <activity android:name=".activites.info.IntroActivity" />
-        <activity android:name=".activites.instructions.InstructionsActivity" />
-        <activity android:name=".activites.apppickers.ImmersiveSelectActivity" />
-        <activity android:name=".activites.QuickSettingsLayoutEditor" />
     </application>
-
 </manifest>
