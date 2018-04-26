@@ -199,13 +199,13 @@
   <string name="permissions">Autorisations</string>
   <string name="intro_1">Merci d’avoir téléchargé mon application! SystemUI Tuner est censé remplacer/supplément l’accordeur de l’interface utilisateur système vu dans AFST. Les deux utilisateurs avec et sans système UI Tuner peuvent bénéficier de ce soft.</string>
   <string name="intro_2">Comme dans AFST, SystemUI Tuner vous permet de cacher certaines icônes barre Statut que vous ne voulez pas montrés. Toutefois, vous pouvez aussi faire d’autres choses, comme désactiver les notifications de heads-up ou encore basculer le mode immersif.</string>
-  <string name="intro_3">Il existe une pléthore d’options prédéfinies pour la barre d’état, mais si vous ne voyez pas une icône que vous souhaitez masquer, vous pouvez essayer la fonctionnalité de détection automatique, qui va tenter de détecter des icônes qui peuvent être cachés.</string>
-  <string name="intro_4">Et la meilleure partie de ce soft? Il n’a pas besoin de racine! Elle tentera d’obtenir les privilèges root, mais si elle ne peut pas vous devrez utiliser ADB. UTILISATION DE LA ADB N’EST PAS ENRACINEMENT!</string>
-  <string name="intro_5">Une fois que vous appuyez sur le bouton terminer, SystemUI Tuner tentera d’obtenir l’accès root. Si c’est possible, il accordera que tous nécessaires autorisations pour vous. Sinon, les instructions seront afficheront pour vous guider.</string>
-  <string name="adb_setup">Les autorisations ci-dessus doivent être accordées pour continuer. Accès root soit refusé ou indisponible, ce qui signifie que vous aurez à accorder ces autorisations à l’aide de la ADB.</string>
+  <string name="intro_3">Il existe une pléthore d’options prédéfinies pour la barre d’état, mais si vous ne voyez pas une icône que vous souhaitez masquer, vous pouvez essayer la fonctionnalité de détection automatique, qui va tenter de détecter des icônes qui peuvent être cachées.</string>
+  <string name="intro_4">Et la meilleure partie de cette application? Elle n’a pas besoin de Root! Elle tentera d’obtenir les privilèges root, mais si elle ne peut pas, vous devrez utiliser ADB. UTILISER ADB N’EST PAS ROOTER!</string>
+  <string name="intro_5">Une fois que vous appuyez sur le bouton terminer, SystemUI Tuner tentera d’obtenir l’accès root. Si c’est possible, il accordera toutes les autorisations nécessaires pour vous. Sinon, des instructions s\'afficheront pour vous guider.</string>
+  <string name="adb_setup">Les autorisations ci-dessus doivent être accordées pour continuer. L\'accès root a été refusé ou est indisponible, ce qui signifie que vous aurez à accorder ces autorisations à l’aide d\'ADB.</string>
   <string name="missing_perms">Autorisations manquantes!</string>
   <string name="enable_debug"><![CDATA[1. Allez dans réglages >> Options développeur et vérifiez que le débogage USB est activé.]]></string>
-  <string name="accept_auth">2. Branchez votre appareil sur votre ordinateur et acceptez la demande d\'autorisation à ce sujet.</string>
+  <string name="accept_auth">2. Branchez votre appareil sur votre ordinateur et acceptez la demande d\'autorisation affichée dessus.</string>
   <string name="enable_devops"><![CDATA[-Activer les Options de développeur en allant dans Paramètres >> À Propos, \"Build Number\" et en tapant dessus 7 fois.]]></string>
   <string name="download_drivers">- Les utilisateurs de Windows devront peut-être installer des pilotes de périphériques, disponibles sur le site du constructeur.</string>
   <string name="download_adb_windows"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-windows.zip">Télécharger le ZIP de ADB pour Windows.</a>]]></string>
@@ -275,20 +275,20 @@
   <string name="color">Couleur</string>
   <string name="notifs_snooze">Mise en veille de notifications</string>
   <string name="notifs_snooze_desc">&#160;
-    In Android 8.1 and later, you can set custom times for notification snoozing. These values reset on reboot, so make sure to enable Safe Mode if you would like them to persist across power cycles.\n\n&#160;
-    Use the options below to set the different snooze times. \"Default\" sets the time Android will use by default. The other items will be the snooze times available for you to select.
+    dans Android 8.1 et versions ultérieures, vous pouvez définir des heures personnalisés pour veille de notification. Ces valeurs se reinitialisent au redémarrage, donc veillez à activer le Mode sans échec si vous voulez qu’elles persistent après redémarrage.\n\n&#160;
+    Utilisez les options ci-dessous pour programmer les differents horaires snooze. « Par défaut » définit le temps qu\'Android va utiliser par défaut. Les autres éléments seront les temps de répétition disponibles sélectionnables.
     </string>
-  <string name="default_text">Default</string>
-  <string name="time_a">Time A</string>
-  <string name="time_b">Time B</string>
-  <string name="time_c">Time C</string>
-  <string name="time_d">Time D</string>
-  <string name="clock_tile_format">Clock Tile Format</string>
-  <string name="twelve">12-Hour</string>
-  <string name="twelve_nosec">12-Hour, No Seconds</string>
-  <string name="military">24-Hour</string>
-  <string name="military_nosec">24-Hour, No Seconds</string>
-  <string name="show_notif">Show Notification</string>
-  <string name="safe_mode_notif_desc">It is recommended that you keep this active, and hide the notification instead. Turning it off may cause Safe Mode to no longer function.</string>
-  <string name="safe_mode_notif_desc_not_supported">This setting must remain enabled on Oreo.</string>
+  <string name="default_text">Par défaut</string>
+  <string name="time_a">Temps A</string>
+  <string name="time_b">Temps B</string>
+  <string name="time_c">Temps C</string>
+  <string name="time_d">Temps D</string>
+  <string name="clock_tile_format">Format de la tuile de l\'heure</string>
+  <string name="twelve">12 heures (am/pm)</string>
+  <string name="twelve_nosec">12 heures, pas de secondes</string>
+  <string name="military">24 heures</string>
+  <string name="military_nosec">24 heures, pas de secondes</string>
+  <string name="show_notif">Afficher la Notification</string>
+  <string name="safe_mode_notif_desc">Il est recommandé de garder ceci activé et masquer la notification à la place. Le désactiver risque de ne plus pouvoir faire fonctionner le Mode sans échec.</string>
+  <string name="safe_mode_notif_desc_not_supported">Ce paramètre doit rester activé sur Oreo.</string>
 </resources>
