@@ -209,28 +209,28 @@
   <string name="enable_devops"><![CDATA[-Activer les Options de développeur en allant dans Paramètres >> À Propos, \"Build Number\" et en tapant dessus 7 fois.]]></string>
   <string name="download_drivers">- Les utilisateurs de Windows devront peut-être installer des pilotes de périphériques, disponibles sur le site du constructeur.</string>
   <string name="download_adb_windows"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-windows.zip">Télécharger le ZIP de ADB pour Windows.</a>]]></string>
-  <string name="extract_zip">2. Extract the ZIP to an easily-accessible location (ie Desktop).</string>
-  <string name="open_cmd">3. Open CMD.</string>
-  <string name="cd_windows"><![CDATA[4. Enter <b>cd C:\\path\\to\\extracted\\folder\\</b> to get to the folder where you extracted ADB. For instance, <b>cd C:\\Users\\Zachary\\Desktop\\platform-tools\\</b>.]]></string>
-  <string name="cd_further"><![CDATA[- Make sure that the folder you <b>cd</b> into contains the ADB executable. If not, <b>cd</b> one level further.]]></string>
-  <string name="download_adb_mac"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-darwin.zip">Download the ADB ZIP for macOS.</a>]]></string>
-  <string name="open_terminal">3. Open Terminal.</string>
-  <string name="cd_mac"><![CDATA[4. Enter <b>cd /path/to/extracted/folder/</b> to get to the folder you extracted ADB into. For instance, <b>cd /Users/Zachary/Desktop/platform-tools/</b>.]]></string>
+  <string name="extract_zip">2. Extrayez le fichier ZIP dans un emplacement facilement accessible (par ex.: sur le bureau).</string>
+  <string name="open_cmd">3. Ouvrez CMD.</string>
+  <string name="cd_windows"><![CDATA[4. Entrez <b>cd C:\\chemin\\vers\\le\\dossier extrait\\</b> pour arriver au dossier où vous avez extrait ADB. Par exemple, <b>cd C:\\Users\\Zachary\\Desktop\\platform-tools\\</b>.]]></string>
+  <string name="cd_further"><![CDATA[- S’assurer que le dossier vers lequel vous <b>cd</b> contient le fichier exécutable ADB. Sinon, <b>cd</b> un niveau plus loin.]]></string>
+  <string name="download_adb_mac"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-darwin.zip">Télécharger le ZIP ADB pour MacOS.</a>]]></string>
+  <string name="open_terminal">3. Ouvrir un Terminal.</string>
+  <string name="cd_mac"><![CDATA[4. Tapez <b>cd C:\\chemin\\vers\\le\\dossier extrait\\</b> pour arriver au dossier où vous avez extrait ADB. Par exemple, <b>cd C:\\Users\\Zachary\\Desktop\\platform-tools\\</b>.]]></string>
   <string name="apt_get_adb"><![CDATA[- <b>sudo apt-get install adb</b>]]></string>
-  <string name="make_sure_adb_installed">1. Make sure ADB is installed:</string>
+  <string name="make_sure_adb_installed">1. S\'assurer qu\'ADB est installé :</string>
   <string name="yum_install_adb"><![CDATA[- <b>sudo yum install android-tools</b>]]></string>
-  <string name="download_adb_linux"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-linux.zip">Download the ADB ZIP for Linux.</a>]]></string>
-  <string name="cd_linux"><![CDATA[4. Enter <b>cd /path/to/extracted/folder/</b> to get to the folder you extracted ADB into. For instance, <b>cd /home/Zachary/Desktop/platform-tools/</b>.]]></string>
-  <string name="choose_your_weapon">Choose your Weapon</string>
-  <string name="initial_setup">Initial Setup</string>
-  <string name="windows_setup">Windows Setup</string>
-  <string name="mac_setup">macOS Setup</string>
-  <string name="ubuntu_setup">Ubuntu Setup</string>
-  <string name="fedora_setup">Fedora Setup</string>
-  <string name="linux_setup">Linux Setup</string>
-  <string name="run_commands">Run the Commands</string>
-  <string name="change_selection">Change Selection</string>
-  <string name="which_os">Which operating system is your computer running?</string>
+  <string name="download_adb_linux"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-linux.zip">Télécharger le ZIP d'ADB pour Linux.</a>]]></string>
+  <string name="cd_linux"><![CDATA[4. Tapez <b>cd C:\\chemin\\vers\\le\\dossier extrait\\</b> pour arriver au dossier où vous avez extrait ADB. Par exemple, <b>cd C:\\Users\\Zachary\\Desktop\\platform-tools\\</b>.]]></string>
+  <string name="choose_your_weapon">Choisissez votre arme</string>
+  <string name="initial_setup">Configuration initiale</string>
+  <string name="windows_setup">Installation sous Windows</string>
+  <string name="mac_setup">Installation sous MacOS</string>
+  <string name="ubuntu_setup">Installation sous Ubuntu</string>
+  <string name="fedora_setup">Installation Fedora</string>
+  <string name="linux_setup">Installation Linux</string>
+  <string name="run_commands">Lancez les commandes</string>
+  <string name="change_selection">Changer la sélection</string>
+  <string name="which_os">Quel système d\'exploitation (OS) votre ordinateur utilise-t-il ?</string>
   <string name="on_device">Follow these instructions on your device.</string>
   <string name="on_computer">Follow these instructions on your computer.</string>
   <string name="run_on_computer">Run these commands on your computer. For Linux (Other) and macOS, you will need to use \"./adb\" instead of \"adb\".</string>
