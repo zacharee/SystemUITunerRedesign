@@ -110,9 +110,9 @@
   <string name="lbs_icon">Icône de LBS</string>
   <string name="rcs_icon">Icône RCS</string>
   <string name="safezone_icon">Icône SafeZone</string>
-  <string name="smart_bonding_icon">Smart Bonding Icon</string>
-  <string name="smart_scroll_icon">SmartScroll Icon</string>
-  <string name="toddler_icon">Toddler Icon</string>
+  <string name="smart_bonding_icon">Icône Smart Bonding</string>
+  <string name="smart_scroll_icon">Icône SmartScroll</string>
+  <string name="toddler_icon">Icône nourrisson</string>
   <string name="wearable_icon">Icône de portable</string>
   <string name="wifi_ap_icon">Icône de WiFi AP</string>
   <string name="wifi_oxygen_icon">Icône de WiFi d’oxygène</string>
@@ -140,7 +140,7 @@
   <string name="sync_failing_icon">Sync ne pas icône</string>
   <string name="night_mode">Mode Nuit</string>
   <string name="night_mode_auto">Auto Mode Nuit</string>
-  <string name="night_mode_override">Night Mode Override</string>
+  <string name="night_mode_override">Substitution du Mode Nuit</string>
   <string name="night_mode_adjust_tint">Night Mode Adjust Tint</string>
   <string name="night_display_auto">Nuit affichage automatique</string>
   <string name="night_display_activated">Night Display Activated</string>
