@@ -73,8 +73,8 @@ class BatteryTile : TileService() {
             else -> if (batteryCharging) R.drawable.ic_battery_charging_20_black_24dp else R.drawable.ic_battery_alert_black_24dp
         }
 
-        batteryTile.icon = Icon.createWithResource(this, resId)
-        batteryTile.label = batteryLevel.toString() + "%"
-        batteryTile.updateTile()
+        batteryTile?.icon = Icon.createWithResource(this, resId)
+        batteryTile?.label = batteryLevel.toString() + "%"
+        batteryTile?.updateTile()
     }
 }
