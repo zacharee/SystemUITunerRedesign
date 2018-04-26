@@ -22,7 +22,7 @@
   <string name="safe_mode_android_o">En raison des limitations ajoutées dans Android O, cette fonction ne fonctionnera pas sur votre appareil.</string>
   <string name="requires_nougat">Nécessite Nougat ou version ultérieure.</string>
   <string name="requires_oreo">Nécessite Oreo ou version ultérieure.</string>
-  <string name="requires_8_1">Nécessite Oreo ou version ultérieure.</string>
+  <string name="requires_8_1">Nécessite Oreo 8.1 ou version ultérieure.</string>
   <string name="enable_in_settings">Activer dans les paramètres.</string>
   <string name="about">À propos</string>
   <string name="miscellaneous">Divers</string>
