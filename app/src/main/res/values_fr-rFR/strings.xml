@@ -271,9 +271,9 @@
   <string name="warn_message">Cette application modifie les paramètres du système. La désinstaller ne restaurera rien, ni moi-même ne peux le faire. A moins que vous ne soyez à l\'aise avec une récupération manuelle, n’utilisez pas l’application. Vous aurez été prévenu !</string>
   <string name="notif_title">Le service Safe Mode est en cours d\'exécution.</string>
   <string name="notif_desc">Cliquez pour modifier les paramètres.</string>
-  <string name="touchwiz_oreo_qqs">On TouchWiz Oreo devices, this setting is no longer reliable! Along with setting the number here, you may have to also save the value to Settings.System.apanel_number, which can only be done with ADB or root. Safe Mode attempts to implement a workaround, but I can\'t guarantee it will work!</string>
-  <string name="color">Color</string>
-  <string name="notifs_snooze">Notification Snoozing</string>
+  <string name="touchwiz_oreo_qqs">Sur les appareils Oreo TouchWiz, ce paramètre n’est plus fiable ! Ainsi que de fixer le nombre ici, vous devrez peut-être également enregistrer la valeur de Settings.System.apanel_number, ce qui ne peut se faire que via ADB ou Root. Le Mode sans échec tente d’implémenter une solution de contournement, mais je ne peux pas garantir que cela va fonctionner !</string>
+  <string name="color">Couleur</string>
+  <string name="notifs_snooze">Mise en veille de notifications</string>
   <string name="notifs_snooze_desc">&#160;
     In Android 8.1 and later, you can set custom times for notification snoozing. These values reset on reboot, so make sure to enable Safe Mode if you would like them to persist across power cycles.\n\n&#160;
     Use the options below to set the different snooze times. \"Default\" sets the time Android will use by default. The other items will be the snooze times available for you to select.
