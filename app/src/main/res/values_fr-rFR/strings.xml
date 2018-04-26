@@ -109,7 +109,7 @@
   <string name="keyguard_wakeup_icon">Icône de verrou Wakeup</string>
   <string name="lbs_icon">Icône de LBS</string>
   <string name="rcs_icon">Icône RCS</string>
-  <string name="safezone_icon">Safezone Icon</string>
+  <string name="safezone_icon">Icône SafeZone</string>
   <string name="smart_bonding_icon">Smart Bonding Icon</string>
   <string name="smart_scroll_icon">SmartScroll Icon</string>
   <string name="toddler_icon">Toddler Icon</string>
@@ -231,8 +231,8 @@
   <string name="run_commands">Lancez les commandes</string>
   <string name="change_selection">Changer la sélection</string>
   <string name="which_os">Quel système d\'exploitation (OS) votre ordinateur utilise-t-il ?</string>
-  <string name="on_device">Follow these instructions on your device.</string>
-  <string name="on_computer">Follow these instructions on your computer.</string>
+  <string name="on_device">Suivez ces instructions sur votre appareil.</string>
+  <string name="on_computer">Suivez ces instructions sur votre ordinateur.</string>
   <string name="run_on_computer">Run these commands on your computer. For Linux (Other) and macOS, you will need to use \"./adb\" instead of \"adb\".</string>
   <string name="windows">Windows</string>
   <string name="mac">macOS</string>
