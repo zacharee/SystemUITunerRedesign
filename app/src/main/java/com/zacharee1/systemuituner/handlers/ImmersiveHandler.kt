@@ -1,9 +1,11 @@
 package com.zacharee1.systemuituner.handlers
 
 import android.content.Context
+import android.os.Bundle
 import android.preference.PreferenceManager
 import android.provider.Settings
 import android.util.Log
+import com.google.firebase.analytics.FirebaseAnalytics
 import com.zacharee1.systemuituner.util.SettingsUtils
 import java.util.*
 
@@ -27,8 +29,9 @@ object ImmersiveHandler {
     }
 
     fun getMode(context: Context?): String {
-        var imm: String = Settings.Global.getString(context?.contentResolver, KEY) ?: ""
-        imm = imm.replace("=(.+?)$".toRegex(), "").trim()
+        var imm = Settings.Global.getString(context?.contentResolver, KEY) ?: DISABLED
+        if (imm.isEmpty()) imm = DISABLED
+        imm = imm.replace("=(.+?)$".toRegex(), "")
 
         return imm
     }
@@ -44,6 +47,9 @@ object ImmersiveHandler {
 
             SettingsUtils.writeGlobal(context, KEY, typeNew)
         } else {
+            val bundle = Bundle()
+            bundle.putString("mode", type)
+            FirebaseAnalytics.getInstance(context!!).logEvent("bad_immersive", bundle)
             Log.w("SystemUITuner", "Invalid Immersive Mode Type: $type")
         }
     }

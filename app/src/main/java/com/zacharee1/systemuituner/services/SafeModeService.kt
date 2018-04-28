@@ -18,7 +18,6 @@ import com.zacharee1.systemuituner.util.SettingsUtils
 class SafeModeService : Service() {
     private var shutDownReceiver: ShutDownReceiver? = null
     private var themeReceiver: ThemeChangeReceiver? = null
-    private var immersiveReceiver: ImmersiveReceiver? = null
 
     private var resListener: ResolutionChangeListener? = null
 
@@ -55,7 +54,6 @@ class SafeModeService : Service() {
         setUpReceivers()
         setUpContentObserver()
         restoreSnoozeState()
-        restoreImmersive()
         return Service.START_STICKY
     }
 
@@ -68,10 +66,6 @@ class SafeModeService : Service() {
 
         try {
             unregisterReceiver(shutDownReceiver)
-        } catch (e: Exception) {}
-
-        try {
-            unregisterReceiver(immersiveReceiver)
         } catch (e: Exception) {}
 
         try {
@@ -111,7 +105,6 @@ class SafeModeService : Service() {
         shutDownReceiver = ShutDownReceiver()
         themeReceiver = ThemeChangeReceiver()
         resListener = ResolutionChangeListener(handler)
-        immersiveReceiver = ImmersiveReceiver()
     }
 
     private fun restoreStateOnStartup() {
@@ -214,21 +207,6 @@ class SafeModeService : Service() {
         }
     }
 
-    private fun restoreImmersive() {
-        val savedPolicy = Settings.Global.getString(contentResolver, "policy_control_backup")
-
-        if (!savedPolicy.isNullOrEmpty()) {
-            SettingsUtils.writeGlobal(this, Settings.Global.POLICY_CONTROL, savedPolicy)
-        }
-    }
-
-    private fun saveResetImmersive() {
-        val currentPolicy = Settings.Global.getString(contentResolver, Settings.Global.POLICY_CONTROL)
-
-        SettingsUtils.writeGlobal(this, "policy_control_backup", currentPolicy)
-        SettingsUtils.writeGlobal(this, Settings.Global.POLICY_CONTROL, "")
-    }
-
     inner class ShutDownReceiver : BroadcastReceiver() {
         init {
             val filter = IntentFilter()
@@ -245,7 +223,6 @@ class SafeModeService : Service() {
             saveQSHeaderCount()
             saveQSRowColCount()
             saveSnoozeState()
-            saveResetImmersive()
         }
     }
 
@@ -258,34 +235,6 @@ class SafeModeService : Service() {
 
         override fun onReceive(context: Context, intent: Intent) {
             resetBlacklist(true)
-        }
-    }
-
-    inner class ImmersiveReceiver : BroadcastReceiver() {
-        init {
-            val filter = IntentFilter()
-            filter.addAction(Intent.ACTION_SCREEN_OFF)
-            filter.addAction(Intent.ACTION_USER_PRESENT)
-            filter.addAction(Intent.ACTION_SCREEN_ON)
-
-            registerReceiver(this, filter)
-        }
-
-        override fun onReceive(context: Context?, intent: Intent?) {
-            if (intent?.action == Intent.ACTION_SCREEN_OFF) {
-                saveResetImmersive()
-            }
-
-            if (intent?.action == Intent.ACTION_USER_PRESENT) {
-                restoreImmersive()
-            }
-
-            if (intent?.action == Intent.ACTION_SCREEN_ON) {
-                val kgm = getSystemService(Context.KEYGUARD_SERVICE) as KeyguardManager
-                if (!kgm.isDeviceLocked && !kgm.isKeyguardLocked) {
-                    restoreImmersive()
-                }
-            }
         }
     }
 
