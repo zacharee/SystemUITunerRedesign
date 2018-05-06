@@ -11,10 +11,10 @@
   <string name="notice">AVISO</string>
   <string name="fancy_pulldown_notice">Desactivar esta opción puede causar problemas después de reiniciar. Activa y desactiva manualmente esta opción después de reiniciar, o activa Modo Seguro.</string>
   <string name="safe_mode_summary">LOS USUARIOS DE SAMSUNG MANTIENEN ESTO ENCENDIDO A MENOS QUE TENGAN UNA ROM AOSP!</string>
-  <string name="safe_mode_summary_1">Clears any status bar customizations on reboot and restores them after boot completes.</string>
-  <string name="safe_mode_summary_2">Toggles the QS Fancy Animation on boot.</string>
-  <string name="safe_mode_summary_3">Restores custom QS header count value on boot (Nougat+).</string>
-  <string name="safe_mode_summary_4">Restores custom QS row/column count on boot (TouchWiz, Nougat+).</string>
+  <string name="safe_mode_summary_1">Limpia toda personalización de la barra de estado en reinicio y las restaura después que se complete el arranque.</string>
+  <string name="safe_mode_summary_2">Cambia la animación de lujo de QS en el arranque.</string>
+  <string name="safe_mode_summary_3">Restaura el valor del conteo de encabezado personalizado QS en el arranque (+Nougat).</string>
+  <string name="safe_mode_summary_4">Restaura el conteo de fila/columna personalizada QS en el arranque (TouchWiz, +Nougat).</string>
   <string name="safe_mode_summary_5">Restores custom notification snooze options on boot (8.1+).</string>
   <string name="hide_welcome_screen">Ocultar Ventana de Bienvenida</string>
   <string name="tasker_support">Tareas Activadas</string>
