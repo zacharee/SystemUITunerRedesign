@@ -100,7 +100,7 @@
   <string name="knox_icon">KNOX-Symbol</string>
   <string name="smart_network_icon">Smart Network Icon</string>
   <string name="glove_icon">Glove Icon</string>
-  <string name="private_mode_icon">Private Mode Icon</string>
+  <string name="private_mode_icon">Privaten Modus Symbol</string>
   <string name="face_icon">Face Icon</string>
   <string name="femtocell_icon">Femtocell-Symbol</string>
   <string name="gps_icon">GPS-Symbol</string>
@@ -151,7 +151,7 @@
   <string name="donate_dont_worry">Das ist natürlich absolut keine Pflicht. Diese App ist kostenlos und wird es immer sein.</string>
   <string name="qs_header_tile_count">QS Header Tile Count</string>
   <string name="fancy_pulldown_animation">Fancy Pulldown Animation</string>
-  <string name="move_full_rows">Move Full Rows</string>
+  <string name="move_full_rows">Vollständige Zeilen verschieben</string>
   <string name="battery">Akku</string>
   <string name="enable_fabric_io_analytics">Fabric.io Analytics</string>
   <string name="tasker_how_to">Tasker Tutorial</string>
@@ -165,10 +165,10 @@
   <string name="tasker_intro">Here\'s a quick set of instructions for Tasker. Since I don\'t know how to use Tasker, I can only build in support for intent broadcasts.</string>
   <string name="back_up_blacklist">Back Up Blacklist</string>
   <string name="restore_blacklist">Restore Blacklist</string>
-  <string name="quick_settings">Quick Settings</string>
-  <string name="demo_mode">Demo Mode</string>
-  <string name="auto_detect">Auto Detect</string>
-  <string name="auto_detect_summary">Attempts to automatically detect which status bar icons can be hidden. Does not work on all devices!</string>
+  <string name="quick_settings">Schnelleinstellungen</string>
+  <string name="demo_mode">Demo-Modus</string>
+  <string name="auto_detect">Auto Erkennung</string>
+  <string name="auto_detect_summary">Versuche automatisch zu erkennen, welche Statusleistensymbole ausgeblendet werden können. Funktioniert nicht auf allen Geräten!</string>
   <string name="sim_count">SIM Count</string>
   <string name="volume_icon_style">Volume Icon Style</string>
   <string name="bluetooth_icon_style">Bluetooth Icon Style</string>
