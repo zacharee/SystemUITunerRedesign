@@ -163,13 +163,13 @@
   <string name="desired_setting_key">Desired setting key</string>
   <string name="desired_setting_value">Desired setting value</string>
   <string name="tasker_intro">Here\'s a quick set of instructions for Tasker. Since I don\'t know how to use Tasker, I can only build in support for intent broadcasts.</string>
-  <string name="back_up_blacklist">Back Up Blacklist</string>
-  <string name="restore_blacklist">Restore Blacklist</string>
+  <string name="back_up_blacklist">Blacklisten sichern</string>
+  <string name="restore_blacklist">Blacklist wiederherstellen</string>
   <string name="quick_settings">Schnelleinstellungen</string>
   <string name="demo_mode">Demo-Modus</string>
   <string name="auto_detect">Auto Erkennung</string>
   <string name="auto_detect_summary">Versuche automatisch zu erkennen, welche Statusleistensymbole ausgeblendet werden können. Funktioniert nicht auf allen Geräten!</string>
-  <string name="sim_count">SIM Count</string>
+  <string name="sim_count">SIM Anzahl</string>
   <string name="volume_icon_style">Volume Icon Style</string>
   <string name="bluetooth_icon_style">Bluetooth Icon Style</string>
   <string name="mobile_fully">Mobile Fully Connected</string>
