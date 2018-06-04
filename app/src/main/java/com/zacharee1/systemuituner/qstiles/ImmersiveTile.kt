@@ -49,8 +49,8 @@ class ImmersiveTile : TileService() {
     }
 
     private fun setTileState() {
-        qsTile.state = if (ImmersiveHandler.isInImmersive(this)) Tile.STATE_ACTIVE else Tile.STATE_INACTIVE
-        qsTile.updateTile()
+        qsTile?.state = if (ImmersiveHandler.isInImmersive(this)) Tile.STATE_ACTIVE else Tile.STATE_INACTIVE
+        qsTile?.updateTile()
     }
 
     override fun onDestroy() {

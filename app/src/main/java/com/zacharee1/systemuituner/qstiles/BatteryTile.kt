@@ -56,7 +56,6 @@ class BatteryTile : TileService() {
     }
 
     private fun setLevel(intent: Intent) {
-        val batteryTile = qsTile
         val batteryStatus = intent.getIntExtra(BatteryManager.EXTRA_STATUS, -1)
         val batteryCharging = batteryStatus == BatteryManager.BATTERY_STATUS_CHARGING || batteryStatus == BatteryManager.BATTERY_STATUS_FULL
         val batteryLevel = intent.getIntExtra(BatteryManager.EXTRA_LEVEL, -1)
@@ -73,8 +72,8 @@ class BatteryTile : TileService() {
             else -> if (batteryCharging) R.drawable.ic_battery_charging_20_black_24dp else R.drawable.ic_battery_alert_black_24dp
         }
 
-        batteryTile?.icon = Icon.createWithResource(this, resId)
-        batteryTile?.label = batteryLevel.toString() + "%"
-        batteryTile?.updateTile()
+        qsTile?.icon = Icon.createWithResource(this, resId)
+        qsTile?.label = batteryLevel.toString() + "%"
+        qsTile?.updateTile()
     }
 }

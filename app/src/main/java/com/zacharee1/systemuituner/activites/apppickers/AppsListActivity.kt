@@ -58,7 +58,7 @@ class AppsListActivity : AppCompatActivity() {
         val extras = intent!!.extras
         if (extras == null) finish()
 
-        val isLeft = extras!!.getBoolean("isLeft")
+        val isLeft = extras.getBoolean("isLeft")
 
         val recyclerView = findViewById<RecyclerView>(R.id.app_rec)
 

@@ -46,11 +46,11 @@ class DemoTile : TileService() {
 
     private fun setState() {
         if (mDemoHandler!!.isAllowed) {
-            qsTile.state = if (mDemoHandler!!.isEnabled) Tile.STATE_ACTIVE else Tile.STATE_INACTIVE
+            qsTile?.state = if (mDemoHandler!!.isEnabled) Tile.STATE_ACTIVE else Tile.STATE_INACTIVE
         } else {
-            qsTile.state = Tile.STATE_UNAVAILABLE
+            qsTile?.state = Tile.STATE_UNAVAILABLE
         }
-        qsTile.updateTile()
+        qsTile?.updateTile()
     }
 
     override fun onClick() {

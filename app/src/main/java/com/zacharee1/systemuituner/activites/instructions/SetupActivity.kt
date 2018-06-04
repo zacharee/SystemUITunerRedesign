@@ -45,14 +45,19 @@ class SetupActivity : AppIntro2() {
     }
 
     override fun onDonePressed(currentFragment: Fragment?) {
-        val missing = Utils.checkPermissions(this, permissionsNeeded!!)
+        if (permissionsNeeded != null) {
+            val missing = Utils.checkPermissions(this, permissionsNeeded!!)
 
-        if (missing.isNotEmpty()) {
-            AlertDialog.Builder(this)
-                    .setTitle(R.string.missing_perms)
-                    .setMessage(Arrays.toString(missing))
-                    .setPositiveButton(R.string.ok, null)
-                    .show()
+            if (missing.isNotEmpty()) {
+                AlertDialog.Builder(this)
+                        .setTitle(R.string.missing_perms)
+                        .setMessage(Arrays.toString(missing))
+                        .setPositiveButton(R.string.ok, null)
+                        .show()
+            } else {
+                Utils.startUp(this)
+                finish()
+            }
         } else {
             Utils.startUp(this)
             finish()
