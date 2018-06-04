@@ -280,9 +280,9 @@ class MiscHelper(fragment: ItemDetailFragment) : BaseHelper(fragment) {
         val tranScale = Settings.Global.getFloat(activity?.contentResolver, transition.key, 1.0f)
         val winScale = Settings.Global.getFloat(activity?.contentResolver, window.key, 1.0f)
 
-        duration.progress = (durScale * 100).toInt()
-        transition.progress = (tranScale * 100).toInt()
-        window.progress = (winScale * 100).toInt()
+        duration.seekBar.progress = (durScale * 100).toInt()
+        transition.seekBar.progress = (tranScale * 100).toInt()
+        window.seekBar.progress = (winScale * 100).toInt()
 
         val listener = Preference.OnPreferenceChangeListener { preference, o ->
             SettingsUtils.writeGlobal(context, preference.key, (java.lang.Float.valueOf(o.toString())!! / 100).toString())

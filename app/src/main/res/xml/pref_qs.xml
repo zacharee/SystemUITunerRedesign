@@ -29,8 +29,7 @@
             app:seek_min="1"
             app:seek_max="20"
             app:show_text="@bool/show_slider_text"
-            app:show_popup="@bool/show_slider_popup"
-            app:scale="1"
+            android:defaultValue="5"
             android:key="sysui_qqs_count"
             android:title="@string/qs_header_tile_count" />
 

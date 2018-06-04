@@ -34,8 +34,8 @@ class TWHelper(fragment: ItemDetailFragment) : BaseHelper(fragment) {
         rows.onPreferenceChangeListener = listener
         columns.onPreferenceChangeListener = listener
 
-        rows.progress = savedRowVal
-        columns.progress = savedColVal
+        rows.seekBar.progress = savedRowVal
+        columns.seekBar.progress = savedColVal
     }
 
     private fun setUpNavBarStuff() {

@@ -9,17 +9,17 @@
             android:key="qs_tile_row"
             app:seek_min="1"
             app:seek_max="10"
-            app:scale="1"
+            android:defaultValue="3"
             app:show_text="@bool/show_slider_text"
-            app:show_popup="@bool/show_slider_popup"/>
+            />
         <com.zacharee1.sliderpreferenceembedded.SliderPreferenceEmbedded
             android:title="@string/qs_column_count"
             android:key="qs_tile_column"
             app:seek_min="2"
             app:seek_max="10"
-            app:scale="1"
+            android:defaultValue="3"
             app:show_text="@bool/show_slider_text"
-            app:show_popup="@bool/show_slider_popup"/>
+            />
     </PreferenceCategory>
 
     <PreferenceCategory
