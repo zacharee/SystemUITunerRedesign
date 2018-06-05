@@ -8,7 +8,7 @@
   <string name="more">Mais</string>
   <string name="grant_dump_perm">You need to grant the permission \"android.permission.DUMP\" to use this feature.</string>
   <string name="safe_mode_auto_enabled">Samsung device detected! Safe Mode has been automatically enabled for your safety. Be warned that modifying any status bar icons has the potential to BREAK SYSTEM UI! Please follow the link in the Play Store description for more information.</string>
-  <string name="notice">NOTICE</string>
+  <string name="notice">AVISO PRÉVIO</string>
   <string name="fancy_pulldown_notice">Toggling this option off can cause issues after a reboot. Manually toggle this option on and off after a reboot, or enable Safe Mode.</string>
   <string name="safe_mode_summary">SAMSUNG USERS KEEP THIS TURNED ON UNLESS YOU HAVE AN AOSP ROM!</string>
   <string name="safe_mode_summary_1">Clears any status bar customizations on reboot and restores them after boot completes.</string>
@@ -18,7 +18,7 @@
   <string name="safe_mode_summary_5">Restores custom notification snooze options on boot (8.1+).</string>
   <string name="hide_welcome_screen">Hide Welcome Screen</string>
   <string name="tasker_support">Tasker Support</string>
-  <string name="instructions">Instructions</string>
+  <string name="instructions">Instruções</string>
   <string name="safe_mode_android_o">Because of limitations added in Android O, this feature will not work on your device.</string>
   <string name="requires_nougat">Requer o Nougat ou+.</string>
   <string name="requires_oreo">Requires Oreo or later.</string>
