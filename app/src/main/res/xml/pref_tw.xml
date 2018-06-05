@@ -28,6 +28,7 @@
         <com.jaredrummler.android.colorpicker.ColorPreference
             android:title="@string/color"
             android:key="navigationbar_color"
+            app:cpv_showAlphaSlider="true"
             android:defaultValue="-1"/>
 
     </PreferenceCategory>
