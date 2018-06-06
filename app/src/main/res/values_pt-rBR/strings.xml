@@ -21,16 +21,16 @@
   <string name="instructions">Instruções</string>
   <string name="safe_mode_android_o">Because of limitations added in Android O, this feature will not work on your device.</string>
   <string name="requires_nougat">Requer o Nougat ou+.</string>
-  <string name="requires_oreo">Requires Oreo or later.</string>
-  <string name="requires_8_1">Requires Oreo 8.1 or later.</string>
-  <string name="enable_in_settings">Enable in Settings.</string>
-  <string name="about">About</string>
-  <string name="miscellaneous">Miscellaneous</string>
-  <string name="settings">Settings</string>
-  <string name="status_bar">Status Bar</string>
-  <string name="reboot_required">(Reboot Required)</string>
-  <string name="sorry">Sorry…</string>
-  <string name="created_by">App created by <a href="https://forum.xda-developers.com/member.php?u=7055541">Zacharee1</a></string>
+  <string name="requires_oreo">Requer Oreo ou posterior.</string>
+  <string name="requires_8_1">Requer Oreo 8.1 ou posterior.</string>
+  <string name="enable_in_settings">Ative em Configurações.</string>
+  <string name="about">Sobre</string>
+  <string name="miscellaneous">Diversos</string>
+  <string name="settings">Configurações</string>
+  <string name="status_bar">Barra de Status</string>
+  <string name="reboot_required">(Reinicialização Obrigatória)</string>
+  <string name="sorry">Desculpe…</string>
+  <string name="created_by">Aplicativo criado por <a href="https://forum.xda-developers.com/member.php?u=7055541">Zacharee1</a></string>
   <string name="lang_credit">Translations by volunteers on <a href="https://crowdin.com/project/systemui-tuner">Crowdin</a></string>
   <string name="enabled">Enabled</string>
   <string name="show">Show</string>
