@@ -31,9 +31,9 @@
   <string name="reboot_required">(Reinicialização Obrigatória)</string>
   <string name="sorry">Desculpe…</string>
   <string name="created_by">Aplicativo criado por <a href="https://forum.xda-developers.com/member.php?u=7055541">Zacharee1</a></string>
-  <string name="lang_credit">Translations by volunteers on <a href="https://crowdin.com/project/systemui-tuner">Crowdin</a></string>
-  <string name="enabled">Enabled</string>
-  <string name="show">Show</string>
+  <string name="lang_credit">Traduzido por voluntários no <a href="https://crowdin.com/project/systemui-tuner">Crowdin</a></string>
+  <string name="enabled">Ativado</string>
+  <string name="show">Exibir</string>
   <string name="select_time">Select Time</string>
   <string name="select_battery_level">Select Battery Level</string>
   <string name="wifi_strength">WiFi Strength</string>
