@@ -10,8 +10,8 @@
   <string name="safe_mode_auto_enabled">Dispositivo Samsung detectado! O modo de segurança foi ativado automaticamente para sua segurança. Esteja ciente de que a modificação de qualquer barra de status tem o potencial para interromper a Interface de Usuário do Sistema! Por favor, siga o link na descrição da Play Store para mais informações.</string>
   <string name="notice">AVISO PRÉVIO</string>
   <string name="fancy_pulldown_notice">Desativar essa opção pode causar problemas após a reinicialização. Ative e desative manualmente essa opção, após uma reinicialização ou ative o Modo de Segurança.</string>
-  <string name="safe_mode_summary">SAMSUNG USERS KEEP THIS TURNED ON UNLESS YOU HAVE AN AOSP ROM!</string>
-  <string name="safe_mode_summary_1">Clears any status bar customizations on reboot and restores them after boot completes.</string>
+  <string name="safe_mode_summary">OS USUÁRIOS DA SAMSUNG DEVEM MANTÊ-LO LIGADO, A MENOS QUE VOCÊ TENHA UMA ROM AOSP!</string>
+  <string name="safe_mode_summary_1">Remove todas as personalizações da barra de status na reinicialização e restaura-as após a conclusão da inicialização.</string>
   <string name="safe_mode_summary_2">Toggles the QS Fancy Animation on boot.</string>
   <string name="safe_mode_summary_3">Restores custom QS header count value on boot (Nougat+).</string>
   <string name="safe_mode_summary_4">Restores custom QS row/column count on boot (TouchWiz, Nougat+).</string>
