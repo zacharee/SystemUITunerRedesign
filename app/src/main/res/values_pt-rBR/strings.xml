@@ -6,10 +6,10 @@
   <string name="sorry_explain">Something went wrong while setting this toggle.</string>
   <string name="sorry_option">Try executing the following command from a computer (it\'s one line):</string>
   <string name="more">Mais</string>
-  <string name="grant_dump_perm">You need to grant the permission \"android.permission.DUMP\" to use this feature.</string>
-  <string name="safe_mode_auto_enabled">Samsung device detected! Safe Mode has been automatically enabled for your safety. Be warned that modifying any status bar icons has the potential to BREAK SYSTEM UI! Please follow the link in the Play Store description for more information.</string>
+  <string name="grant_dump_perm">Você precisa conceder a permissão \"android.permission.DUMP\", para usar este recurso.</string>
+  <string name="safe_mode_auto_enabled">Dispositivo Samsung detectado! O modo de segurança foi ativado automaticamente para sua segurança. Esteja ciente de que a modificação de qualquer barra de status tem o potencial para interromper a Interface de Usuário do Sistema! Por favor, siga o link na descrição da Play Store para mais informações.</string>
   <string name="notice">AVISO PRÉVIO</string>
-  <string name="fancy_pulldown_notice">Toggling this option off can cause issues after a reboot. Manually toggle this option on and off after a reboot, or enable Safe Mode.</string>
+  <string name="fancy_pulldown_notice">Desativar essa opção pode causar problemas após a reinicialização. Ative e desative manualmente essa opção, após uma reinicialização ou ative o Modo de Segurança.</string>
   <string name="safe_mode_summary">SAMSUNG USERS KEEP THIS TURNED ON UNLESS YOU HAVE AN AOSP ROM!</string>
   <string name="safe_mode_summary_1">Clears any status bar customizations on reboot and restores them after boot completes.</string>
   <string name="safe_mode_summary_2">Toggles the QS Fancy Animation on boot.</string>
