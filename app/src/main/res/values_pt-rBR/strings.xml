@@ -3,7 +3,7 @@
 <resources>
   <string name="app_name">SystemUI Tuner</string>
   <string name="to_the_tweaks">To The Tweaks!</string>
-  <string name="sorry_explain">Something went wrong while setting this toggle.</string>
+  <string name="sorry_explain">Algo deu errado ao definir esta alternância.</string>
   <string name="sorry_option">Try executing the following command from a computer (it\'s one line):</string>
   <string name="more">Mais</string>
   <string name="grant_dump_perm">Você precisa conceder a permissão \"android.permission.DUMP\", para usar este recurso.</string>
