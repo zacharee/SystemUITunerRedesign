@@ -1,33 +1,32 @@
-package com.zacharee1.systemuituner.fragmenthelpers
+package com.zacharee1.systemuituner.fragments
 
 import android.content.ComponentName
 import android.content.Intent
 import android.graphics.Color
 import android.graphics.PorterDuff
 import android.os.Build
+import android.os.Bundle
 import android.preference.Preference
 import android.preference.PreferenceCategory
+import android.preference.PreferenceFragment
 import android.preference.SwitchPreference
 import android.provider.Settings
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.activites.apppickers.AppsListActivity
-import com.zacharee1.systemuituner.fragments.ItemDetailFragment
 import com.zacharee1.systemuituner.util.SettingsUtils
 
-class LockHelper(fragment: ItemDetailFragment) : BaseHelper(fragment) {
-
-    init {
+class LockFragment : PreferenceFragment() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        addPreferencesFromResource(R.xml.pref_lock)
         setEnabled()
         setLockIconStuff()
         setShortcutSwitchListeners()
         setResetListeners()
     }
 
-    override fun onDestroy() {
-
-    }
-
     override fun onResume() {
+        super.onResume()
         setLockSummaryAndIcon()
     }
 
@@ -111,13 +110,13 @@ class LockHelper(fragment: ItemDetailFragment) : BaseHelper(fragment) {
         val resetLeft = findPreference(RESET_LEFT)
         val resetRight = findPreference(RESET_RIGHT)
 
-        resetLeft?.onPreferenceClickListener = Preference.OnPreferenceClickListener {
-            SettingsUtils.writeSecure(context, KEYGUARD_LEFT, "")
+        resetLeft.onPreferenceClickListener = Preference.OnPreferenceClickListener {
+            SettingsUtils.writeSecure(context, KEYGUARD_LEFT, null)
             setLockSummaryAndIcon()
             true
         }
-        resetRight?.onPreferenceClickListener = Preference.OnPreferenceClickListener {
-            SettingsUtils.writeSecure(context, KEYGUARD_RIGHT, "")
+        resetRight.onPreferenceClickListener = Preference.OnPreferenceClickListener {
+            SettingsUtils.writeSecure(context, KEYGUARD_RIGHT, null)
             setLockSummaryAndIcon()
             true
         }

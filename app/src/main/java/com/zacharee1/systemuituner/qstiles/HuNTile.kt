@@ -10,21 +10,21 @@ import android.provider.Settings
 import android.service.quicksettings.Tile
 import android.service.quicksettings.TileService
 import com.zacharee1.systemuituner.R
-import com.zacharee1.systemuituner.fragmenthelpers.MiscHelper
+import com.zacharee1.systemuituner.fragments.MiscFragment
 import com.zacharee1.systemuituner.util.SettingsUtils
 
 @TargetApi(24)
 class HuNTile : TileService() {
     private val observer = object : ContentObserver(Handler(Looper.getMainLooper())) {
         override fun onChange(selfChange: Boolean, uri: Uri) {
-            if (uri == Settings.Global.getUriFor(MiscHelper.HUD_ENABLED)) {
+            if (uri == Settings.Global.getUriFor(MiscFragment.HUD_ENABLED)) {
                 setState()
             }
         }
     }
 
     private val isEnabled: Boolean
-        get() = Settings.Global.getInt(contentResolver, MiscHelper.HUD_ENABLED, 1) == 1
+        get() = Settings.Global.getInt(contentResolver, MiscFragment.HUD_ENABLED, 1) == 1
 
     override fun onStartListening() {
         super.onStartListening()
@@ -45,7 +45,7 @@ class HuNTile : TileService() {
     }
 
     override fun onClick() {
-        SettingsUtils.writeGlobal(this, MiscHelper.HUD_ENABLED, if (isEnabled) "0" else "1")
+        SettingsUtils.writeGlobal(this, MiscFragment.HUD_ENABLED, if (isEnabled) "0" else "1")
         setState()
 
         super.onClick()

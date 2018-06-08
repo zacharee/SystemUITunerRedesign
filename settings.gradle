@@ -1,1 +1,2 @@
-include ':app'
+include ':app', ':SeekBarPref'
+project(':SeekBarPref').projectDir = new File('/mnt/AA387BDB387BA54B/StudioProjects/MaterialSeekBarPreference/library')

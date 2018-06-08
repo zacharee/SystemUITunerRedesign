@@ -1,26 +1,20 @@
-package com.zacharee1.systemuituner.fragmenthelpers
+package com.zacharee1.systemuituner.fragments
 
 import android.annotation.SuppressLint
-import android.content.SharedPreferences
 import android.content.res.Resources
 import android.os.Build
-import android.preference.EditTextPreference
-import android.preference.Preference
-import android.preference.PreferenceCategory
-import android.preference.SwitchPreference
+import android.os.Bundle
+import android.preference.*
 import android.provider.Settings
-import com.zacharee1.sliderpreferenceembedded.SliderPreferenceEmbedded
+import com.pavelsikun.seekbarpreference.SeekBarPreference
 import com.zacharee1.systemuituner.R
-import com.zacharee1.systemuituner.fragments.ItemDetailFragment
 import com.zacharee1.systemuituner.util.SettingsUtils
 import java.util.*
 
-class MiscHelper(fragment: ItemDetailFragment) : BaseHelper(fragment) {
-
-    private val mSharedPreferences: SharedPreferences = preferenceManager.sharedPreferences
-
-    init {
-
+class MiscFragment : PreferenceFragment() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        addPreferencesFromResource(R.xml.pref_misc)
         showCustomSettings()
         setGlobalSwitchStates()
         setSecureSwitchStates()
@@ -32,12 +26,12 @@ class MiscHelper(fragment: ItemDetailFragment) : BaseHelper(fragment) {
     }
 
     private fun showingCustomSettings(): Boolean {
-        return mSharedPreferences.getBoolean(ALLOW_CUSTOM_INPUT, false)
+        return preferenceManager.sharedPreferences.getBoolean(ALLOW_CUSTOM_INPUT, false)
     }
 
     private fun showCustomSettings() {
         val customSettings = findPreference(CUSTOM_SETTINGS_VALUES) as PreferenceCategory?
-        if (customSettings != null && !mSharedPreferences.getBoolean(ALLOW_CUSTOM_INPUT, false)) {
+        if (customSettings != null && !preferenceManager.sharedPreferences.getBoolean(ALLOW_CUSTOM_INPUT, false)) {
             customSettings.isEnabled = false
 
             (0 until customSettings.preferenceCount)
@@ -272,20 +266,20 @@ class MiscHelper(fragment: ItemDetailFragment) : BaseHelper(fragment) {
     }
 
     private fun setUpAnimationScales() {
-        val duration = findPreference(Settings.Global.ANIMATOR_DURATION_SCALE) as SliderPreferenceEmbedded
-        val transition = findPreference(Settings.Global.TRANSITION_ANIMATION_SCALE) as SliderPreferenceEmbedded
-        val window = findPreference(Settings.Global.WINDOW_ANIMATION_SCALE) as SliderPreferenceEmbedded
+        val duration = findPreference(Settings.Global.ANIMATOR_DURATION_SCALE) as SeekBarPreference
+        val transition = findPreference(Settings.Global.TRANSITION_ANIMATION_SCALE) as SeekBarPreference
+        val window = findPreference(Settings.Global.WINDOW_ANIMATION_SCALE) as SeekBarPreference
 
         val durScale = Settings.Global.getFloat(activity?.contentResolver, duration.key, 1.0f)
         val tranScale = Settings.Global.getFloat(activity?.contentResolver, transition.key, 1.0f)
         val winScale = Settings.Global.getFloat(activity?.contentResolver, window.key, 1.0f)
 
-        duration.seekBar.progress = (durScale * 100).toInt()
-        transition.seekBar.progress = (tranScale * 100).toInt()
-        window.seekBar.progress = (winScale * 100).toInt()
+        duration.currentScaledValue = durScale
+        transition.currentScaledValue = tranScale
+        window.currentScaledValue = winScale
 
         val listener = Preference.OnPreferenceChangeListener { preference, o ->
-            SettingsUtils.writeGlobal(context, preference.key, (java.lang.Float.valueOf(o.toString())!! / 100).toString())
+            SettingsUtils.writeGlobal(context, preference.key, o.toString())
             true
         }
 
@@ -357,7 +351,7 @@ class MiscHelper(fragment: ItemDetailFragment) : BaseHelper(fragment) {
 
     private fun saveSnoozeTimes(toSave: ArrayList<String>) {
         val base = "default=" + toSave[0] + ",options_array=" + toSave[1] + ":" + toSave[2] + ":" + toSave[3] + ":" + toSave[4]
-        mSharedPreferences.edit().putString("notification_snooze_options", base).apply()
+        preferenceManager.sharedPreferences.edit().putString("notification_snooze_options", base).apply()
         SettingsUtils.writeGlobal(context, "notification_snooze_options", base)
     }
 
@@ -381,10 +375,6 @@ class MiscHelper(fragment: ItemDetailFragment) : BaseHelper(fragment) {
         }
 
         return ret
-    }
-
-    override fun onDestroy() {
-
     }
 
     companion object {

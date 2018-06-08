@@ -8,7 +8,7 @@ import android.provider.Settings
 import com.zacharee1.systemuituner.util.SettingsUtils
 
 class DemoHandler(private val context: Context?) {
-    private val mPrefs: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(context)
+    private val prefs: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(context)
 
     val isAllowed: Boolean
         get() = Settings.Global.getInt(context?.contentResolver, "sysui_demo_allowed", 0) == 1
@@ -118,98 +118,98 @@ class DemoHandler(private val context: Context?) {
     }
 
     private fun showNotifs(): Boolean {
-        return mPrefs.getBoolean("show_notifications", false)
+        return prefs.getBoolean("show_notifications", false)
     }
 
     private fun showMobile(): Boolean {
-        return mPrefs.getBoolean("show_mobile", false)
+        return prefs.getBoolean("show_mobile", false)
     }
 
     private fun showAirplane(): Boolean {
-        return mPrefs.getBoolean("show_airplane", false)
+        return prefs.getBoolean("show_airplane", false)
     }
 
     private fun showWiFi(): Boolean {
-        return mPrefs.getBoolean("show_wifi", false)
+        return prefs.getBoolean("show_wifi", false)
     }
 
     private fun batteryCharging(): Boolean {
-        return mPrefs.getBoolean("battery_charging", false)
+        return prefs.getBoolean("battery_charging", false)
     }
 
     private fun mobileFully(): Boolean {
-        return mPrefs.getBoolean("mobile_fully_connected", false)
+        return prefs.getBoolean("mobile_fully_connected", false)
     }
 
     private fun wifiFully(): Boolean {
-        return mPrefs.getBoolean("wifi_fully_connected", false)
+        return prefs.getBoolean("wifi_fully_connected", false)
     }
 
     private fun noSim(): Boolean {
-        return mPrefs.getBoolean("no_sim", false)
+        return prefs.getBoolean("no_sim", false)
     }
 
     private fun location(): Boolean {
-        return mPrefs.getBoolean("location_demo", false)
+        return prefs.getBoolean("location_demo", false)
     }
 
     private fun alarm(): Boolean {
-        return mPrefs.getBoolean("alarm_demo", false)
+        return prefs.getBoolean("alarm_demo", false)
     }
 
     private fun sync(): Boolean {
-        return mPrefs.getBoolean("sync_demo", false)
+        return prefs.getBoolean("sync_demo", false)
     }
 
     private fun tty(): Boolean {
-        return mPrefs.getBoolean("tty_demo", false)
+        return prefs.getBoolean("tty_demo", false)
     }
 
     private fun eri(): Boolean {
-        return mPrefs.getBoolean("eri_demo", false)
+        return prefs.getBoolean("eri_demo", false)
     }
 
     private fun mute(): Boolean {
-        return mPrefs.getBoolean("mute_demo", false)
+        return prefs.getBoolean("mute_demo", false)
     }
 
     private fun spkphone(): Boolean {
-        return mPrefs.getBoolean("speakerphone_demo", false)
+        return prefs.getBoolean("speakerphone_demo", false)
     }
 
     private fun batteryLevel(): Int {
-        return mPrefs.getInt("selected_battery_level", 100)
+        return prefs.getInt("selected_battery_level", 100)
     }
 
     private fun wifiLevel(): Int {
-        return mPrefs.getInt("wifi_strength", 4)
+        return prefs.getInt("wifi_strength", 4)
     }
 
     private fun mobileLevel(): Int {
-        return mPrefs.getInt("selected_mobile_strength", 4)
+        return prefs.getInt("selected_mobile_strength", 4)
     }
 
     private fun simCount(): Int {
-        return mPrefs.getInt("sim_count", 0) + 1
+        return prefs.getInt("sim_count", 0) + 1
     }
 
     private fun time(): Long {
-        return mPrefs.getLong("selected_time", System.currentTimeMillis())
+        return prefs.getLong("selected_time", System.currentTimeMillis())
     }
 
     private fun mobileType(): String {
-        return mPrefs.getString("mobile_type", "lte")
+        return prefs.getString("mobile_type", "lte")
     }
 
     private fun statStyle(): String {
-        return mPrefs.getString("status_bar_style", "default")
+        return prefs.getString("status_bar_style", "default")
     }
 
     private fun volumeIcon(): String {
-        return mPrefs.getString("volume_icon", "hidden")
+        return prefs.getString("volume_icon", "hidden")
     }
 
     private fun btIcon(): String {
-        return mPrefs.getString("bluetooth_icon", "hidden")
+        return prefs.getString("bluetooth_icon", "hidden")
     }
 }

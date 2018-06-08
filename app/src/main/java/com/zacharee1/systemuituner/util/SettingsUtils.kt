@@ -3,11 +3,11 @@ package com.zacharee1.systemuituner.util
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.preference.PreferenceFragment
 import android.preference.SwitchPreference
 import android.provider.Settings
 import android.text.TextUtils
 import com.zacharee1.systemuituner.activites.info.SettingWriteFailed
-import com.zacharee1.systemuituner.fragments.ItemDetailFragment
 import java.util.*
 
 object SettingsUtils {
@@ -119,7 +119,7 @@ object SettingsUtils {
         }
     }
 
-    fun shouldSetSwitchChecked(fragment: ItemDetailFragment) {
+    fun shouldSetSwitchChecked(fragment: PreferenceFragment) {
         var blString: String? = Settings.Secure.getString(fragment.activity.contentResolver, "icon_blacklist")
         if (blString == null) blString = ""
 

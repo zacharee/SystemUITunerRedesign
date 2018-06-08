@@ -9,6 +9,7 @@ import android.preference.PreferenceCategory
 import android.preference.PreferenceFragment
 import android.preference.SwitchPreference
 import android.support.v4.content.LocalBroadcastManager
+import android.support.v7.app.AppCompatActivity
 import android.view.MenuItem
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.activites.instructions.TaskerInstructionActivity
@@ -16,16 +17,17 @@ import com.zacharee1.systemuituner.handlers.RecreateHandler
 import com.zacharee1.systemuituner.services.SafeModeService
 import com.zacharee1.systemuituner.util.Utils
 
-class SettingsActivity : AppCompatPreferenceActivity() {
+class SettingsActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(if (Utils.isInDarkMode(this)) R.style.AppTheme_Dark else R.style.AppTheme)
+        setContentView(R.layout.activity_item_list)
 
         RecreateHandler.onCreate(this)
 
         super.onCreate(savedInstanceState)
         setupActionBar()
-        fragmentManager.beginTransaction().replace(android.R.id.content, GeneralPreferenceFragment()).commit()
+        fragmentManager.beginTransaction().replace(R.id.content_main, GeneralPreferenceFragment()).commit()
     }
 
     override fun onDestroy() {
@@ -39,21 +41,6 @@ class SettingsActivity : AppCompatPreferenceActivity() {
     private fun setupActionBar() {
         val actionBar = supportActionBar
         actionBar?.setDisplayHomeAsUpEnabled(true)
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    override fun onIsMultiPane(): Boolean {
-        return false
-    }
-
-    /**
-     * This method stops fragment injection in malicious applications.
-     * Make sure to deny any unknown fragments here.
-     */
-    override fun isValidFragment(fragmentName: String): Boolean {
-        return PreferenceFragment::class.java.name == fragmentName || GeneralPreferenceFragment::class.java.name == fragmentName
     }
 
     /**

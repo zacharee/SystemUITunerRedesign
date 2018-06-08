@@ -11,8 +11,8 @@ import android.preference.PreferenceManager
 import android.support.v7.app.AlertDialog
 import android.util.TypedValue
 import com.zacharee1.systemuituner.R
-import com.zacharee1.systemuituner.activites.ItemListActivity
 import com.zacharee1.systemuituner.activites.MainActivity
+import com.zacharee1.systemuituner.activites.OptionsActivity
 import java.io.BufferedReader
 import java.io.DataOutputStream
 import java.io.IOException
@@ -110,7 +110,7 @@ object Utils {
         sharedPreferences.edit().putBoolean("first_start", false).apply()
 
         if (sharedPreferences.getBoolean("hide_welcome_screen", false)) {
-            context.startActivity(Intent(context, ItemListActivity::class.java))
+            context.startActivity(Intent(context, OptionsActivity::class.java))
         } else {
             context.startActivity(Intent(context, MainActivity::class.java))
         }

@@ -1,25 +1,19 @@
-package com.zacharee1.systemuituner.fragmenthelpers
+package com.zacharee1.systemuituner.fragments
 
 import android.content.Intent
 import android.database.ContentObserver
 import android.net.Uri
 import android.os.Build
+import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.preference.*
 import android.provider.Settings
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.activites.apppickers.ImmersiveSelectActivity
-import com.zacharee1.systemuituner.fragments.ItemDetailFragment
 import com.zacharee1.systemuituner.handlers.ImmersiveHandler
 
-class ImmersiveHelper(fragment: ItemDetailFragment) : BaseHelper(fragment), Preference.OnPreferenceChangeListener {
-
-    private val none = findPreference(ImmersiveHandler.DISABLED) as CheckBoxPreference?
-    private val full = findPreference(ImmersiveHandler.FULL) as CheckBoxPreference?
-    private val status = findPreference(ImmersiveHandler.STATUS) as CheckBoxPreference?
-    private val navi = findPreference(ImmersiveHandler.NAV) as CheckBoxPreference?
-    private val preconf = findPreference(ImmersiveHandler.PRECONF) as CheckBoxPreference?
+class ImmersiveFragment : PreferenceFragment(), Preference.OnPreferenceChangeListener {
     private var mObserver = object : ContentObserver(Handler(Looper.getMainLooper())) {
         override fun onChange(selfChange: Boolean, uri: Uri) {
             if (uri == ImmersiveHandler.POLICY_CONTROL) {
@@ -28,14 +22,22 @@ class ImmersiveHelper(fragment: ItemDetailFragment) : BaseHelper(fragment), Pref
         }
     }
 
-    init {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        addPreferencesFromResource(R.xml.pref_imm)
         findPreference("immersive_tile_mode")?.onPreferenceChangeListener = this
 
-        none?.onPreferenceChangeListener = this
-        full?.onPreferenceChangeListener = this
-        status?.onPreferenceChangeListener = this
-        navi?.onPreferenceChangeListener = this
-        preconf?.onPreferenceChangeListener = this
+        val none = findPreference(ImmersiveHandler.DISABLED) as CheckBoxPreference
+        val full = findPreference(ImmersiveHandler.FULL) as CheckBoxPreference
+        val status = findPreference(ImmersiveHandler.STATUS) as CheckBoxPreference
+        val navi = findPreference(ImmersiveHandler.NAV) as CheckBoxPreference
+        val preconf = findPreference(ImmersiveHandler.PRECONF) as CheckBoxPreference
+
+        none.onPreferenceChangeListener = this
+        full.onPreferenceChangeListener = this
+        status.onPreferenceChangeListener = this
+        navi.onPreferenceChangeListener = this
+        preconf.onPreferenceChangeListener = this
 
         setContentObserver()
         setProperBoxChecked()
@@ -97,11 +99,10 @@ class ImmersiveHelper(fragment: ItemDetailFragment) : BaseHelper(fragment), Pref
     }
 
     override fun onDestroy() {
+        super.onDestroy()
         try {
             activity?.contentResolver?.unregisterContentObserver(mObserver)
-        } catch (e: Exception) {
-        }
-
+        } catch (e: Exception) {}
     }
 
     override fun onPreferenceChange(preference: Preference, o: Any): Boolean {

@@ -1,4 +1,4 @@
-package com.zacharee1.systemuituner.fragmenthelpers
+package com.zacharee1.systemuituner.fragments
 
 import android.Manifest
 import android.content.BroadcastReceiver
@@ -6,23 +6,26 @@ import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
 import android.content.pm.PackageManager
+import android.os.Bundle
 import android.preference.Preference
+import android.preference.PreferenceFragment
 import android.preference.SwitchPreference
 import android.provider.Settings
 import android.widget.Toast
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.activites.instructions.SetupActivity
-import com.zacharee1.systemuituner.fragments.ItemDetailFragment
 import com.zacharee1.systemuituner.handlers.DemoHandler
 import com.zacharee1.systemuituner.util.SettingsUtils
 
-class DemoHelper(fragment: ItemDetailFragment) : BaseHelper(fragment) {
-
-    private val mDemoHandler: DemoHandler = DemoHandler(context)
+class DemoFragment : PreferenceFragment() {
     private var switchReceiver: BroadcastReceiver? = null
+    
+    private lateinit var demoHandler: DemoHandler
 
-    init {
-
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        addPreferencesFromResource(R.xml.pref_demo)
+        demoHandler = DemoHandler(context)
         if (SettingsUtils.hasSpecificPerm(context, Manifest.permission.DUMP)) {
             setPrefListeners()
             setDemoSwitchListener()
@@ -54,7 +57,7 @@ class DemoHelper(fragment: ItemDetailFragment) : BaseHelper(fragment) {
 
         switchReceiver = object : BroadcastReceiver() {
             override fun onReceive(context: Context, intent: Intent) {
-                val enabled = mDemoHandler.isEnabled
+                val enabled = demoHandler.isEnabled
 
                 demo.isChecked = enabled
                 disableOtherPreferences(enabled)
@@ -65,14 +68,14 @@ class DemoHelper(fragment: ItemDetailFragment) : BaseHelper(fragment) {
 
         activity?.registerReceiver(switchReceiver, filter)
 
-        demo.isEnabled = mDemoHandler.isAllowed
+        demo.isEnabled = demoHandler.isAllowed
 
-        demo.isChecked = mDemoHandler.isEnabled
+        demo.isChecked = demoHandler.isEnabled
 
-        disableOtherPreferences(mDemoHandler.isEnabled)
+        disableOtherPreferences(demoHandler.isEnabled)
 
         demo.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { _, o ->
-            if (java.lang.Boolean.valueOf(o.toString())) {
+            if (o.toString().toBoolean()) {
                 showDemo()
             } else {
                 hideDemo()
@@ -84,12 +87,12 @@ class DemoHelper(fragment: ItemDetailFragment) : BaseHelper(fragment) {
 
     private fun showDemo() {
         disableOtherPreferences(true)
-        mDemoHandler.showDemo()
+        demoHandler.showDemo()
     }
 
     private fun hideDemo() {
         disableOtherPreferences(false)
-        mDemoHandler.hideDemo()
+        demoHandler.hideDemo()
     }
 
     private fun disableOtherPreferences(disable: Boolean) {
@@ -101,6 +104,7 @@ class DemoHelper(fragment: ItemDetailFragment) : BaseHelper(fragment) {
     }
 
     override fun onDestroy() {
+        super.onDestroy()
         try {
             activity?.unregisterReceiver(switchReceiver)
         } catch (e: Exception) {

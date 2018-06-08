@@ -1,22 +1,24 @@
-package com.zacharee1.systemuituner.fragmenthelpers
+package com.zacharee1.systemuituner.fragments
 
 import android.Manifest
 import android.content.Intent
+import android.os.Bundle
 import android.preference.Preference
+import android.preference.PreferenceFragment
 import android.preference.SwitchPreference
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.activites.instructions.SetupActivity
-import com.zacharee1.systemuituner.fragments.ItemDetailFragment
 import com.zacharee1.systemuituner.util.SettingsUtils
 import com.zacharee1.systemuituner.util.Utils
 import java.util.*
 import java.util.regex.Pattern
 
-class AutoHelper(fragment: ItemDetailFragment) : BaseHelper(fragment) {
+class AutoFragment : PreferenceFragment() {
     private val mPrefs = TreeMap<String, Preference>()
 
-    init {
-
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        addPreferencesFromResource(R.xml.pref_auto)
         val hasUsage = SettingsUtils.hasSpecificPerm(context, Manifest.permission.PACKAGE_USAGE_STATS)
         val hasDump = SettingsUtils.hasSpecificPerm(context, Manifest.permission.DUMP)
 
@@ -88,7 +90,7 @@ class AutoHelper(fragment: ItemDetailFragment) : BaseHelper(fragment) {
                 preferenceScreen.addPreference(notSupported)
             }
 
-            SettingsUtils.shouldSetSwitchChecked(fragment)
+            SettingsUtils.shouldSetSwitchChecked(this)
         } else {
             val intent = Intent(context, SetupActivity::class.java)
             val perms = ArrayList<String>()
@@ -100,9 +102,5 @@ class AutoHelper(fragment: ItemDetailFragment) : BaseHelper(fragment) {
 
             activity?.finish()
         }
-    }
-
-    override fun onDestroy() {
-
     }
 }

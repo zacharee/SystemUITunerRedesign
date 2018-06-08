@@ -1,20 +1,17 @@
-package com.zacharee1.systemuituner.fragmenthelpers
+package com.zacharee1.systemuituner.fragments
 
-import android.content.Intent
 import android.os.Bundle
 import android.preference.Preference
+import android.preference.PreferenceFragment
 import android.preference.SwitchPreference
 import android.provider.Settings
-import android.view.View
 import com.zacharee1.systemuituner.R
-import com.zacharee1.systemuituner.activites.ItemDetailActivity
-
-import com.zacharee1.systemuituner.fragments.ItemDetailFragment
 import com.zacharee1.systemuituner.util.SettingsUtils
 
-class StatbarHelper(fragment: ItemDetailFragment) : BaseHelper(fragment) {
-
-    init {
+class StatbarFragment : PreferenceFragment() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        addPreferencesFromResource(R.xml.pref_statbar)
         preferenceListeners()
         setSwitchPreferenceStates()
         switchPreferenceListeners()
@@ -47,28 +44,14 @@ class StatbarHelper(fragment: ItemDetailFragment) : BaseHelper(fragment) {
         }
 
         auto?.setOnPreferenceClickListener {
-            if (fragment.activity.findViewById<View>(R.id.item_detail_container) != null) {
-                val arguments = Bundle()
-                arguments.putString(ItemDetailFragment.ARG_ITEM_ID, "auto")
-                val fragment = ItemDetailFragment()
-                fragment.arguments = arguments
-                activity
-                        ?.fragmentManager
-                        ?.beginTransaction()
-                        ?.replace(R.id.item_detail_container, fragment)
-                        ?.commit()
-            } else {
-                val intent = Intent(context, ItemDetailActivity::class.java)
-                intent.putExtra(ItemDetailFragment.ARG_ITEM_ID, "auto")
-
-                context?.startActivity(intent)
-            }
+            val fragment = AutoFragment()
+            fragmentManager?.beginTransaction()?.replace(R.id.content_main, fragment)?.addToBackStack("auto")?.commit()
             true
         }
     }
 
     private fun setSwitchPreferenceStates() {
-        SettingsUtils.shouldSetSwitchChecked(fragment)
+        SettingsUtils.shouldSetSwitchChecked(this)
     }
 
     private fun switchPreferenceListeners() {
@@ -84,10 +67,6 @@ class StatbarHelper(fragment: ItemDetailFragment) : BaseHelper(fragment) {
                         true
                     }
                 }
-    }
-
-    override fun onDestroy() {
-
     }
 
     companion object {

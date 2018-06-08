@@ -45,7 +45,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun launchList(v: View?) {
-        startActivity(Intent(this, ItemListActivity::class.java))
+        startActivity(Intent(this, OptionsActivity::class.java))
     }
 
     fun onDonatePayPalClicked(v: View) {

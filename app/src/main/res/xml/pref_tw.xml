@@ -4,21 +4,21 @@
 
     <PreferenceCategory
         android:title="@string/quick_settings">
-        <com.zacharee1.sliderpreferenceembedded.SliderPreferenceEmbedded
+        <com.pavelsikun.seekbarpreference.SeekBarPreference
             android:title="@string/qs_row_count"
             android:key="qs_tile_row"
-            app:seek_min="1"
-            app:seek_max="10"
+            android:persistent="false"
+            app:msbp_minValue="1"
+            app:msbp_maxValue="10"
             android:defaultValue="3"
-            app:show_text="@bool/show_slider_text"
             />
-        <com.zacharee1.sliderpreferenceembedded.SliderPreferenceEmbedded
+        <com.pavelsikun.seekbarpreference.SeekBarPreference
             android:title="@string/qs_column_count"
             android:key="qs_tile_column"
-            app:seek_min="2"
-            app:seek_max="10"
+            android:persistent="false"
+            app:msbp_minValue="2"
+            app:msbp_maxValue="10"
             android:defaultValue="3"
-            app:show_text="@bool/show_slider_text"
             />
     </PreferenceCategory>
 

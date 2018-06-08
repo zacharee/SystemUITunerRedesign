@@ -39,28 +39,22 @@
     <PreferenceCategory
         android:title="@string/animation_speeds">
 
-        <com.zacharee1.sliderpreferenceembedded.SliderPreferenceEmbedded
-            app:seek_min="0"
-            app:seek_max="500"
-            app:scale="0.01"
+        <com.pavelsikun.seekbarpreference.SeekBarPreference
+            app:msbp_maxValue="500"
+            app:msbp_scale="0.01"
             android:defaultValue="100"
-            app:show_text="true"
             android:title="@string/animator_duration_scale"
             android:key="animator_duration_scale" />
-        <com.zacharee1.sliderpreferenceembedded.SliderPreferenceEmbedded
-            app:seek_min="0"
-            app:seek_max="500"
-            app:scale="0.01"
+        <com.pavelsikun.seekbarpreference.SeekBarPreference
+            app:msbp_maxValue="500"
+            app:msbp_scale="0.01"
             android:defaultValue="100"
-            app:show_text="true"
             android:title="@string/transition_animation_scale"
             android:key="transition_animation_scale" />
-        <com.zacharee1.sliderpreferenceembedded.SliderPreferenceEmbedded
-            app:seek_min="0"
-            app:seek_max="500"
-            app:scale="0.01"
+        <com.pavelsikun.seekbarpreference.SeekBarPreference
+            app:msbp_maxValue="500"
+            app:msbp_scale="0.01"
             android:defaultValue="100"
-            app:show_text="true"
             android:title="@string/window_animation_scale"
             android:key="window_animation_scale" />
     </PreferenceCategory>

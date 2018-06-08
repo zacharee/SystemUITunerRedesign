@@ -1,21 +1,22 @@
-package com.zacharee1.systemuituner.fragmenthelpers
+package com.zacharee1.systemuituner.fragments
 
 import android.content.Intent
 import android.os.Build
+import android.os.Bundle
 import android.preference.Preference
 import android.preference.PreferenceCategory
+import android.preference.PreferenceFragment
 import android.preference.SwitchPreference
 import android.provider.Settings
-
-import com.zacharee1.sliderpreferenceembedded.SliderPreferenceEmbedded
+import com.pavelsikun.seekbarpreference.SeekBarPreference
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.activites.QuickSettingsLayoutEditor
-import com.zacharee1.systemuituner.fragments.ItemDetailFragment
 import com.zacharee1.systemuituner.util.SettingsUtils
 
-class QSHelper(fragment: ItemDetailFragment) : BaseHelper(fragment) {
-
-    init {
+class QSFragment : PreferenceFragment() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        addPreferencesFromResource(R.xml.pref_qs)
         setSwitchStates()
         setSwitchListeners()
         setSliderState()
@@ -76,15 +77,14 @@ class QSHelper(fragment: ItemDetailFragment) : BaseHelper(fragment) {
 
     private fun setSliderState() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            val pref = findPreference(QQS_COUNT) as SliderPreferenceEmbedded //find the SliderPreference
+            val pref = findPreference(QQS_COUNT) as SeekBarPreference //find the SliderPreference
             //            pref.set<in(1);
             pref.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { preference, o ->
-                preference.sharedPreferences.edit().putInt("qs_header_count", Integer.valueOf(o.toString())).apply()
-                SettingsUtils.writeSecure(context, QQS_COUNT, o.toString()) //write new value to Settings if user presses OK
+                SettingsUtils.writeSecure(context, QQS_COUNT, o.toString().toFloat().toInt().toString()) //write new value to Settings if user presses OK
                 true
             }
 
-            pref.seekBar.progress = Settings.Secure.getInt(context?.contentResolver, QQS_COUNT, 5) //set the progress/value from Settings
+            pref.currentValue = Settings.Secure.getInt(context?.contentResolver, QQS_COUNT, 5) //set the progress/value from Settings
         } else {
             val category = findPreference(COUNT_CATEGORY) as PreferenceCategory
             category.isEnabled = false
@@ -93,10 +93,6 @@ class QSHelper(fragment: ItemDetailFragment) : BaseHelper(fragment) {
                     .map { category.getPreference(it) }
                     .forEach { it.setSummary(R.string.requires_nougat) }
         }
-
-    }
-
-    override fun onDestroy() {
 
     }
 

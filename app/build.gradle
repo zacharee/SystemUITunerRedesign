@@ -42,6 +42,7 @@ android {
             renderscriptOptimLevel 3
             minifyEnabled false
             zipAlignEnabled true
+            matchingFallbacks = ['release']
         }
     }
     lintOptions {
@@ -52,7 +53,7 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation 'com.github.zacharee:SliderPreferenceEmbedded:844e69939b'
+//    implementation 'com.github.zacharee:SliderPreferenceEmbedded:844e69939b'
     implementation 'com.android.support:appcompat-v7:27.1.1'
     implementation 'com.android.support:preference-v7:27.1.1'
     implementation 'com.android.support:preference-v14:27.1.1'
@@ -74,6 +75,10 @@ dependencies {
     implementation 'com.github.zacharee:colorpicker:6428d93c3b'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'com.dinuscxj:circleprogressbar:1.1.1'
+    implementation project(':SeekBarPref')
+    implementation ('com.github.rey5137:material:1.2.4') {
+        exclude group: 'com.android.support'
+    }
 }
 
 apply plugin: 'com.google.gms.google-services'
