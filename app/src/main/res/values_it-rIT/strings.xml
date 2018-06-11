@@ -284,11 +284,11 @@
   <string name="time_c">Time C</string>
   <string name="time_d">Time D</string>
   <string name="clock_tile_format">Clock Tile Format</string>
-  <string name="twelve">12-Hour</string>
-  <string name="twelve_nosec">12-Hour, No Seconds</string>
+  <string name="twelve">12 Ore</string>
+  <string name="twelve_nosec">12 Ore, senza secondi</string>
   <string name="military">24-Hour</string>
   <string name="military_nosec">24-Hour, No Seconds</string>
-  <string name="show_notif">Show Notification</string>
+  <string name="show_notif">Mostra notifiche</string>
   <string name="safe_mode_notif_desc">It is recommended that you keep this active, and hide the notification instead. Turning it off may cause Safe Mode to no longer function.</string>
   <string name="safe_mode_notif_desc_not_supported">This setting must remain enabled on Oreo.</string>
 </resources>
