@@ -11,7 +11,7 @@
   <string name="notice">AVVISO</string>
   <string name="fancy_pulldown_notice">Abilitare/Disabilitare questa opzione potrebbe causare problemi dopo un riavvio. Abilita/disabilita manualmente questa opzione dopo il riavvio, oppure usa il SafeMode.</string>
   <string name="safe_mode_summary">Utenti Samsung, lasciare attivato almeno che abbiate una ROM AOSP!</string>
-  <string name="safe_mode_summary_1">Clears any status bar customizations on reboot and restores them after boot completes.</string>
+  <string name="safe_mode_summary_1">Rimuovi ogni personalizzazione alla barra di stato al riavvio e ripristina tutto al termine dell\'avvio.</string>
   <string name="safe_mode_summary_2">Toggles the QS Fancy Animation on boot.</string>
   <string name="safe_mode_summary_3">Restores custom QS header count value on boot (Nougat+).</string>
   <string name="safe_mode_summary_4">Restores custom QS row/column count on boot (TouchWiz, Nougat+).</string>
@@ -72,7 +72,7 @@
   <string name="speakerphone_icon">Icona del vivavoce</string>
   <string name="time_such"><![CDATA[Tempo e simili]]></string>
   <string name="clock">Icona orologio</string>
-  <string name="clock_tile">Clock</string>
+  <string name="clock_tile">Orologio</string>
   <string name="show_clock_seconds">Mostra secondi nell\'orologio</string>
   <string name="alarm_clock_icon">Icona della sveglia</string>
   <string name="zen_icon">Icona Zen</string>
@@ -272,22 +272,22 @@
   <string name="notif_title">Safe Mode Service is running</string>
   <string name="notif_desc">Tap to change settings</string>
   <string name="touchwiz_oreo_qqs">On TouchWiz Oreo devices, this setting is no longer reliable! Along with setting the number here, you may have to also save the value to Settings.System.apanel_number, which can only be done with ADB or root. Safe Mode attempts to implement a workaround, but I can\'t guarantee it will work!</string>
-  <string name="color">Color</string>
+  <string name="color">Colore</string>
   <string name="notifs_snooze">Notification Snoozing</string>
   <string name="notifs_snooze_desc">&#160;
     In Android 8.1 and later, you can set custom times for notification snoozing. These values reset on reboot, so make sure to enable Safe Mode if you would like them to persist across power cycles.\n\n&#160;
     Use the options below to set the different snooze times. \"Default\" sets the time Android will use by default. The other items will be the snooze times available for you to select.
     </string>
-  <string name="default_text">Default</string>
-  <string name="time_a">Time A</string>
-  <string name="time_b">Time B</string>
-  <string name="time_c">Time C</string>
-  <string name="time_d">Time D</string>
-  <string name="clock_tile_format">Clock Tile Format</string>
+  <string name="default_text">Predefinito</string>
+  <string name="time_a">Tempo A</string>
+  <string name="time_b">Tempo B</string>
+  <string name="time_c">Tempo C</string>
+  <string name="time_d">Tempo D</string>
+  <string name="clock_tile_format">Forma Tile Orologio</string>
   <string name="twelve">12 Ore</string>
   <string name="twelve_nosec">12 Ore, senza secondi</string>
-  <string name="military">24-Hour</string>
-  <string name="military_nosec">24-Hour, No Seconds</string>
+  <string name="military">24 Ore</string>
+  <string name="military_nosec">24 Ore, senza secondi</string>
   <string name="show_notif">Mostra notifiche</string>
   <string name="safe_mode_notif_desc">It is recommended that you keep this active, and hide the notification instead. Turning it off may cause Safe Mode to no longer function.</string>
   <string name="safe_mode_notif_desc_not_supported">This setting must remain enabled on Oreo.</string>
