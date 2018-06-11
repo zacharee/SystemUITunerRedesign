@@ -5,14 +5,14 @@ buildscript {
     }
 
     dependencies {
-        classpath 'io.fabric.tools:gradle:1.24.4'
+        classpath 'io.fabric.tools:gradle:1.25.1'
     }
 }
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'io.fabric'
 
-project.version = 258
+project.version = 259
 
 repositories {
     maven { url 'https://maven.fabric.io/public' }
@@ -75,10 +75,11 @@ dependencies {
     implementation 'com.github.zacharee:colorpicker:6428d93c3b'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'com.dinuscxj:circleprogressbar:1.1.1'
-    implementation project(':SeekBarPref')
-    implementation ('com.github.rey5137:material:1.2.4') {
-        exclude group: 'com.android.support'
-    }
+//    implementation project(':SeekBarPref')
+//    implementation ('com.github.rey5137:material:1.2.4') {
+//        exclude group: 'com.android.support'
+//    }
+    implementation 'com.github.zacharee:MaterialSeekbarPreference:c6da28e583'
 }
 
 apply plugin: 'com.google.gms.google-services'
