@@ -22,6 +22,12 @@ class DemoFragment : PreferenceFragment() {
     
     private lateinit var demoHandler: DemoHandler
 
+    override fun onResume() {
+        super.onResume()
+
+        activity.title = resources.getString(R.string.demo_mode)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         addPreferencesFromResource(R.xml.pref_demo)

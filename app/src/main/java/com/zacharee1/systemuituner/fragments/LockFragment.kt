@@ -28,6 +28,8 @@ class LockFragment : PreferenceFragment() {
     override fun onResume() {
         super.onResume()
         setLockSummaryAndIcon()
+
+        activity.title = resources.getString(R.string.lockscreen)
     }
 
     private fun setEnabled() {

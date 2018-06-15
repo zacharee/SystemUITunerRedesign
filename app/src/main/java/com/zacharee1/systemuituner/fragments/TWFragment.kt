@@ -12,6 +12,12 @@ import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.util.SettingsUtils
 
 class TWFragment : PreferenceFragment() {
+    override fun onResume() {
+        super.onResume()
+
+        activity.title = resources.getString(R.string.touchwiz)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         addPreferencesFromResource(R.xml.pref_tw)

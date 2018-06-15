@@ -22,6 +22,12 @@ class ImmersiveFragment : PreferenceFragment(), Preference.OnPreferenceChangeLis
         }
     }
 
+    override fun onResume() {
+        super.onResume()
+
+        activity.title = resources.getString(R.string.immersive_mode)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         addPreferencesFromResource(R.xml.pref_imm)

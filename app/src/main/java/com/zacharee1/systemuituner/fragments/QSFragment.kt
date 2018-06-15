@@ -14,6 +14,12 @@ import com.zacharee1.systemuituner.activites.QuickSettingsLayoutEditor
 import com.zacharee1.systemuituner.util.SettingsUtils
 
 class QSFragment : PreferenceFragment() {
+    override fun onResume() {
+        super.onResume()
+
+        activity.title = resources.getString(R.string.quick_settings)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         addPreferencesFromResource(R.xml.pref_qs)

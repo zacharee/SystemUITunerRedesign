@@ -16,6 +16,12 @@ import java.util.regex.Pattern
 class AutoFragment : PreferenceFragment() {
     private val mPrefs = TreeMap<String, Preference>()
 
+    override fun onResume() {
+        super.onResume()
+
+        activity.title = resources.getString(R.string.auto_detect)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         addPreferencesFromResource(R.xml.pref_auto)

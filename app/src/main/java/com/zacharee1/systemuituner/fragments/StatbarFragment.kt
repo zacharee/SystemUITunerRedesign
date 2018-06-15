@@ -9,6 +9,12 @@ import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.util.SettingsUtils
 
 class StatbarFragment : PreferenceFragment() {
+    override fun onResume() {
+        super.onResume()
+
+        activity.title = resources.getString(R.string.status_bar)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         addPreferencesFromResource(R.xml.pref_statbar)
