@@ -291,4 +291,6 @@
   <string name="show_notif">ਸੂਚਨਾਵਾਂ ਵੇਖਾਓ</string>
   <string name="safe_mode_notif_desc">ਇਹ ਸਿਫਾਰਸ਼ ਕੀਤੀ ਜਾਂਦੀ ਹੈ ਕਿ ਤੁਸੀਂ ਇਸ ਨੂੰ ਸਕਿਰਿਆ ਰੱਖੋ, ਅਤੇ ਇਸ ਦੀ ਬਜਾਏ ਨੋਟੀਫਿਕੇਸ਼ਨ ਓਹਲੇ ਕਰੋ. ਇਸਨੂੰ ਬੰਦ ਕਰਨ ਨਾਲ ਸੁਰੱਖਿਅਤ ਮੋਡ ਨੂੰ ਕੰਮ ਨਹੀਂ ਹੋ ਸਕਦਾ.</string>
   <string name="safe_mode_notif_desc_not_supported">ਇਹ ਸੈਟਿੰਗ Oreo ਤੇ ਸਮਰਥ ਹੋਣੀ ਚਾਹੀਦੀ ਹੈ.</string>
+  <string name="carrier_on_home">Carrier Label on Home Screen</string>
+  <string name="carrier_on_lock">Carrier Label on Lock Screen</string>
 </resources>
