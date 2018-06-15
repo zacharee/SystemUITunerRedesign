@@ -291,4 +291,6 @@
   <string name="show_notif">अधिसूचना दिखाएं</string>
   <string name="safe_mode_notif_desc">यह अनुशंसा की जाती है कि आप इसे सक्रिय रखें और इसके बजाय नोटिफिकेशन छिपाएं। इसे बंद करने से सुरक्षित मोड अब फ़ंक्शन नहीं हो सकता है।</string>
   <string name="safe_mode_notif_desc_not_supported">यह सेटिंग Oreo पर सक्षम रहना चाहिए ।</string>
+  <string name="carrier_on_home">Carrier Label on Home Screen</string>
+  <string name="carrier_on_lock">Carrier Label on Lock Screen</string>
 </resources>
