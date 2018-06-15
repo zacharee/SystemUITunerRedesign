@@ -50,6 +50,12 @@
             android:key="restore_blacklist"
             android:title="@string/restore_blacklist"/>
         <SwitchPreference
+            android:title="@string/carrier_on_home"
+            android:key="slimindicator_home_carrier" />
+        <SwitchPreference
+            android:title="@string/carrier_on_lock"
+            android:key="slimindicator_lock_carrier" />
+        <SwitchPreference
             android:key="face"
             android:title="@string/face_icon"/>
         <SwitchPreference
