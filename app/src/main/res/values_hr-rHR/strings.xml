@@ -291,4 +291,6 @@
   <string name="show_notif">Prikaži obavijest</string>
   <string name="safe_mode_notif_desc">It is recommended that you keep this active, and hide the notification instead. Turning it off may cause Safe Mode to no longer function.</string>
   <string name="safe_mode_notif_desc_not_supported">This setting must remain enabled on Oreo.</string>
+  <string name="carrier_on_home">Carrier Label on Home Screen</string>
+  <string name="carrier_on_lock">Carrier Label on Lock Screen</string>
 </resources>
