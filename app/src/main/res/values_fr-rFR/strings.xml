@@ -291,4 +291,6 @@
   <string name="show_notif">Afficher la Notification</string>
   <string name="safe_mode_notif_desc">Il est recommandé de garder ceci activé et masquer la notification à la place. Le désactiver risque de ne plus pouvoir faire fonctionner le Mode sans échec.</string>
   <string name="safe_mode_notif_desc_not_supported">Ce paramètre doit rester activé sur Oreo.</string>
+  <string name="carrier_on_home">Carrier Label on Home Screen</string>
+  <string name="carrier_on_lock">Carrier Label on Lock Screen</string>
 </resources>
