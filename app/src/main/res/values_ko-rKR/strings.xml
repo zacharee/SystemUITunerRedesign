@@ -291,4 +291,6 @@
   <string name="show_notif">알림 표시</string>
   <string name="safe_mode_notif_desc">이것을 켜는 대신, 알림을 숨길 것을 권장합니다. 이것을 끄면 안전 모드가 더 이상 작동하지 않는 원인이 될 수 있습니다.</string>
   <string name="safe_mode_notif_desc_not_supported">이 설정은 오레오에서 반드시 활성화되어야 합니다.</string>
+  <string name="carrier_on_home">Carrier Label on Home Screen</string>
+  <string name="carrier_on_lock">Carrier Label on Lock Screen</string>
 </resources>
