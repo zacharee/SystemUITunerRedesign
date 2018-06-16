@@ -26,6 +26,7 @@
   <string name="enable_in_settings">Ative em Configurações.</string>
   <string name="about">Sobre</string>
   <string name="miscellaneous">Diversos</string>
+  <string name="custom">Custom</string>
   <string name="settings">Configurações</string>
   <string name="status_bar">Barra de Status</string>
   <string name="reboot_required">(Reinicialização Obrigatória)</string>
@@ -87,7 +88,8 @@
   <string name="general">Geral</string>
   <string name="heads_up_notifications">Heads-Up Notifications</string>
   <string name="headphone_volume_warning">Headphone Volume Warning</string>
-  <string name="custom_settings_values">Custom Settings Values</string>
+  <string name="custom_settings_input">Custom Settings Input</string>
+  <string name="custom_settings_read">Read Custom Value</string>
   <string name="global">Global</string>
   <string name="secure">Secure</string>
   <string name="system">System</string>
@@ -95,7 +97,7 @@
   <string name="power_notification_controls">Power Notification Controls</string>
   <string name="danger_zone">Danger Zone</string>
   <string name="safe_mode">Safe Mode</string>
-  <string name="enable_custom_settings_input">Enable Custom Settings Input</string>
+  <string name="enable_custom_settings_input">Enable Custom Settings</string>
   <string name="enable">Enable</string>
   <string name="knox_icon">Ícone do KNOX</string>
   <string name="smart_network_icon">Smart Network Icon</string>
