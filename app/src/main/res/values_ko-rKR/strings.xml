@@ -26,6 +26,7 @@
   <string name="enable_in_settings">설정에서 활성화.</string>
   <string name="about">정보</string>
   <string name="miscellaneous">기타</string>
+  <string name="custom">Custom</string>
   <string name="settings">설정</string>
   <string name="status_bar">상태 표시줄</string>
   <string name="reboot_required">(재부팅 필요)</string>
@@ -87,7 +88,8 @@
   <string name="general">일반</string>
   <string name="heads_up_notifications">헤드 업 알림</string>
   <string name="headphone_volume_warning">헤드폰 볼륨 경고</string>
-  <string name="custom_settings_values">사용자 설정 값</string>
+  <string name="custom_settings_input">Custom Settings Input</string>
+  <string name="custom_settings_read">Read Custom Value</string>
   <string name="global">전체</string>
   <string name="secure">보안</string>
   <string name="system">시스템</string>
@@ -95,7 +97,7 @@
   <string name="power_notification_controls">강력 알림 제어</string>
   <string name="danger_zone">위험 지역</string>
   <string name="safe_mode">안전 모드</string>
-  <string name="enable_custom_settings_input">사용자 지정 설정 입력 활성화</string>
+  <string name="enable_custom_settings_input">Enable Custom Settings</string>
   <string name="enable">활성화</string>
   <string name="knox_icon">녹스 아이콘</string>
   <string name="smart_network_icon">스마트 네트워크 아이콘</string>
