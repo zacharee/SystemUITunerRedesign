@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ImageView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:srcCompat="@drawable/ic_undo_black_24dp"
+    android:tint="?android:textColorPrimary"
+    android:background="?selectableItemBackgroundBorderless"
+    android:scaleType="center"
+    android:layout_width="48dp"
+    android:layout_height="48dp"
+    android:id="@+id/reset" />

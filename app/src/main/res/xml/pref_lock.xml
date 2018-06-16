@@ -12,38 +12,21 @@
             android:title="@string/requires_oreo"
             android:selectable="false" />
 
-        <Preference
+        <com.zacharee1.systemuituner.prefs.LockPref
             android:title="@string/choose_left"
             android:summary="@string/not_set"
             android:icon="@drawable/ic_help_outline_black_24dp"
             android:layout="@layout/preference_icon"
+            android:widgetLayout="@layout/lock_pref_widget"
             android:key="choose_left" />
 
-        <SwitchPreference
-            android:title="@string/unlock_device"
-            android:key="sysui_keyguard_left_unlock" />
-
-        <Preference
-            android:title="@string/reset"
-            android:key="reset_left" />
-
-        <Preference
-            android:enabled="false"/>
-
-        <Preference
+        <com.zacharee1.systemuituner.prefs.LockPref
             android:title="@string/choose_right"
             android:summary="@string/not_set"
             android:icon="@drawable/ic_help_outline_black_24dp"
             android:layout="@layout/preference_icon"
+            android:widgetLayout="@layout/lock_pref_widget"
             android:key="choose_right" />
-
-        <SwitchPreference
-            android:title="@string/unlock_device"
-            android:key="sysui_keyguard_right_unlock" />
-
-        <Preference
-            android:title="@string/reset"
-            android:key="reset_right" />
 
     </PreferenceCategory>
 

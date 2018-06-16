@@ -9,10 +9,10 @@ import android.os.Bundle
 import android.preference.Preference
 import android.preference.PreferenceCategory
 import android.preference.PreferenceFragment
-import android.preference.SwitchPreference
 import android.provider.Settings
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.activites.apppickers.AppsListActivity
+import com.zacharee1.systemuituner.prefs.LockPref
 import com.zacharee1.systemuituner.util.SettingsUtils
 
 class LockFragment : PreferenceFragment() {
@@ -21,13 +21,12 @@ class LockFragment : PreferenceFragment() {
         addPreferencesFromResource(R.xml.pref_lock)
         setEnabled()
         setLockIconStuff()
-        setShortcutSwitchListeners()
         setResetListeners()
     }
 
     override fun onResume() {
         super.onResume()
-        setLockSummaryAndIcon()
+        setLockSummaryTitleAndIcon()
 
         activity.title = resources.getString(R.string.lockscreen)
     }
@@ -41,20 +40,8 @@ class LockFragment : PreferenceFragment() {
         if (isOreo) shortcuts.removePreference(oreoMsg)
     }
 
-    private fun setShortcutSwitchListeners() {
-        val left = findPreference(KEYGUARD_LEFT_UNLOCK) as SwitchPreference
-        val right = findPreference(KEYGUARD_RIGHT_UNLOCK) as SwitchPreference
-        val listener = Preference.OnPreferenceChangeListener { preference, newValue ->
-            SettingsUtils.writeSecure(context, preference.key, newValue.toString())
-            true
-        }
-
-        left.onPreferenceChangeListener = listener
-        right.onPreferenceChangeListener = listener
-    }
-
     private fun setLockIconStuff() {
-        setLockSummaryAndIcon()
+        setLockSummaryTitleAndIcon()
 
         val left = findPreference(CHOOSE_LEFT)
         left?.onPreferenceClickListener = Preference.OnPreferenceClickListener {
@@ -73,7 +60,7 @@ class LockFragment : PreferenceFragment() {
         }
     }
 
-    private fun setLockSummaryAndIcon() {
+    private fun setLockSummaryTitleAndIcon() {
         val leftLock = findPreference(CHOOSE_LEFT)
         val rightLock = findPreference(CHOOSE_RIGHT)
 
@@ -89,19 +76,29 @@ class LockFragment : PreferenceFragment() {
         leftLock?.summary = leftSum
         rightLock?.summary = rightSum
 
-        val pm = activity?.packageManager
+        try {
+            leftLock?.title = context.packageManager.getApplicationLabel(context.packageManager.getApplicationInfo(leftStuff!![0], 0))
+        } catch (e: Exception) {
+            leftLock?.title = context.resources.getString(R.string.choose_left)
+        }
 
-        val unknown = context?.resources?.getDrawable(R.drawable.ic_help_outline_black_24dp, null)
+        try {
+            rightLock?.title = context.packageManager.getApplicationLabel(context.packageManager.getApplicationInfo(rightStuff!![0], 0))
+        } catch (e: Exception) {
+            rightLock?.title = context.resources.getString(R.string.choose_right)
+        }
+
+        val unknown = context?.resources?.getDrawable(R.drawable.ic_help_outline_black_24dp, null)?.mutate()
         unknown?.setColorFilter(Color.WHITE, PorterDuff.Mode.SRC_ATOP)
 
         try {
-            leftLock?.icon = pm?.getActivityIcon(ComponentName(leftStuff!![0], leftStuff[1]))
+            leftLock?.icon = context.packageManager.getActivityIcon(ComponentName(leftStuff!![0], leftStuff[1]))
         } catch (e: Exception) {
             leftLock?.icon = unknown
         }
 
         try {
-            rightLock?.icon = pm?.getActivityIcon(ComponentName(rightStuff!![0], rightStuff[1]))
+            rightLock?.icon = context.packageManager.getActivityIcon(ComponentName(rightStuff!![0], rightStuff[1]))
         } catch (e: Exception) {
             rightLock?.icon = unknown
         }
@@ -109,17 +106,17 @@ class LockFragment : PreferenceFragment() {
     }
 
     private fun setResetListeners() {
-        val resetLeft = findPreference(RESET_LEFT)
-        val resetRight = findPreference(RESET_RIGHT)
+        val leftLock = findPreference(CHOOSE_LEFT) as LockPref
+        val rightLock = findPreference(CHOOSE_RIGHT) as LockPref
 
-        resetLeft.onPreferenceClickListener = Preference.OnPreferenceClickListener {
+        leftLock.resetListener = {
             SettingsUtils.writeSecure(context, KEYGUARD_LEFT, null)
-            setLockSummaryAndIcon()
+            setLockSummaryTitleAndIcon()
             true
         }
-        resetRight.onPreferenceClickListener = Preference.OnPreferenceClickListener {
+        rightLock.resetListener = {
             SettingsUtils.writeSecure(context, KEYGUARD_RIGHT, null)
-            setLockSummaryAndIcon()
+            setLockSummaryTitleAndIcon()
             true
         }
     }
@@ -127,14 +124,10 @@ class LockFragment : PreferenceFragment() {
     companion object {
         const val LOCKSCREEN_SHORTCUTS = "lockscreen_shortcuts"
         const val OREO_NEEDED = "oreo_needed"
-        const val KEYGUARD_LEFT_UNLOCK = "sysui_keyguard_left_unlock"
-        const val KEYGUARD_RIGHT_UNLOCK = "sysui_keyguard_right_unlock"
         const val KEYGUARD_LEFT = "sysui_keyguard_left"
         const val KEYGUARD_RIGHT = "sysui_keyguard_right"
         const val CHOOSE_LEFT = "choose_left"
         const val CHOOSE_RIGHT = "choose_right"
         const val EXTRA_ISLEFT = "isLeft"
-        const val RESET_LEFT = "reset_left"
-        const val RESET_RIGHT = "reset_right"
     }
 }
