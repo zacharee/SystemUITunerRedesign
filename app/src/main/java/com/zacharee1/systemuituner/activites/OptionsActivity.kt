@@ -13,6 +13,10 @@ import com.zacharee1.systemuituner.misc.OptionSelected
 import com.zacharee1.systemuituner.util.Utils
 
 class OptionsActivity : AppCompatActivity() {
+    companion object {
+        const val ALLOW_CUSTOM_INPUT = "allow_custom_settings_input"
+    }
+
     private lateinit var main: MainPrefs
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -79,6 +83,21 @@ class OptionsActivity : AppCompatActivity() {
             removeTouchWizIfNeeded()
             removeLockScreenIfNeeded()
             setListeners()
+        }
+
+        override fun onResume() {
+            super.onResume()
+
+            activity.title = resources.getString(R.string.app_name)
+            updateCustomEnabledState()
+        }
+
+        private fun updateCustomEnabledState() {
+            val customPref = findPreference("custom")
+            val enabled = preferenceManager.sharedPreferences.getBoolean(ALLOW_CUSTOM_INPUT, false)
+
+            customPref.isEnabled = enabled
+            customPref.summary = if (enabled) null else resources.getString(R.string.enable_in_settings)
         }
 
         private fun removeTouchWizIfNeeded() {

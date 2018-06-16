@@ -21,24 +21,12 @@ class MiscFragment : PreferenceFragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         addPreferencesFromResource(R.xml.pref_misc)
-        showCustomSettings()
         setGlobalSwitchStates()
         setSecureSwitchStates()
         setSystemSwitchStates()
         setNightModeSwitchStates()
         setUpAnimationScales()
         setUpSnoozeStuff()
-    }
-
-    private fun showCustomSettings() {
-        val customSettings = findPreference(CUSTOM_SETTINGS_VALUES) as PreferenceCategory?
-        if (customSettings != null && !preferenceManager.sharedPreferences.getBoolean(ALLOW_CUSTOM_INPUT, false)) {
-            customSettings.isEnabled = false
-
-            (0 until customSettings.preferenceCount)
-                    .map { customSettings.getPreference(it) }
-                    .forEach { it.setSummary(R.string.enable_in_settings) }
-        }
     }
 
     private fun setGlobalSwitchStates() {
@@ -336,8 +324,6 @@ class MiscFragment : PreferenceFragment() {
     }
 
     companion object {
-        const val ALLOW_CUSTOM_INPUT = "allow_custom_settings_input"
-        const val CUSTOM_SETTINGS_VALUES = "custom_settings_values"
         const val HUD_ENABLED = "heads_up_notifications_enabled"
         const val AUDIO_SAFE = "audio_safe_volume_state"
         const val POWER_NOTIFICATION_CONTROLS = "power_notification_controls"
@@ -353,9 +339,6 @@ class MiscFragment : PreferenceFragment() {
         const val NIGHT_DISPLAY_ACTIVATED = "night_display_activated"
         const val NIGHT_DISPLAY_AUTO = "night_display_auto"
         const val NIGHT_MODE_SETTINGS = "night_mode_settings"
-        const val GLOBAL_SETTINGS = "global_settings"
-        const val SECURE_SETTINGS = "secure_settings"
-        const val SYSTEM_SETTINGS = "system_settings"
 
         private const val TWILIGHT_MODE_INACTIVE = 0
         private const val TWILIGHT_MODE_OVERRIDE = 1

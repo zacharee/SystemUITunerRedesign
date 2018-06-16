@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <PreferenceCategory
+        android:title="@string/custom_settings_input"
+        android:key="custom_settings_input">
+        <Preference
+            android:enabled="false"
+            android:selectable="false"
+            android:title="@string/about"
+            android:summary="@string/custom_settings_input_desc" />
+
+        <com.zacharee1.systemuituner.prefs.CustomInputPreference
+            app:type="global"
+            android:key="global_settings"
+            android:title="@string/global"/>
+
+        <com.zacharee1.systemuituner.prefs.CustomInputPreference
+            app:type="secure"
+            android:key="secure_settings"
+            android:title="@string/secure"/>
+
+        <com.zacharee1.systemuituner.prefs.CustomInputPreference
+            app:type="system"
+            android:key="system_settings"
+            android:title="@string/system"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/custom_settings_read"
+        android:key="custom_settings_read">
+
+
+    </PreferenceCategory>
+</PreferenceScreen>
