@@ -26,6 +26,7 @@
   <string name="enable_in_settings">ਸੈਟਿੰਗਾਂ ਵਿੱਚ ਸਮਰੱਥ ਬਣਾਓ.</string>
   <string name="about">ਬਾਰੇ</string>
   <string name="miscellaneous">ਵਿਵਿਧ</string>
+  <string name="custom">Custom</string>
   <string name="settings">ਸੈਟਿੰਗ</string>
   <string name="status_bar">ਹਾਲਤ ਪੱਟੀ</string>
   <string name="reboot_required">(ਰੀਬੂਟ ਜ਼ਰੂਰੀ)</string>
@@ -88,7 +89,8 @@
   <string name="general">ਆਮ</string>
   <string name="heads_up_notifications">ਸਿਰ-ਮੁਖ ਸੂਚਨਾਵਾਂ</string>
   <string name="headphone_volume_warning">ਹੈਡਫੋਨ ਵਾਲੀਯੁਮ ਚੇਤਾਵਨੀ</string>
-  <string name="custom_settings_values">ਕਸਟਮ ਵਿਵਸਥਾ ਮੁੱਲ</string>
+  <string name="custom_settings_input">Custom Settings Input</string>
+  <string name="custom_settings_read">Read Custom Value</string>
   <string name="global">ਗਲੋਬਲ</string>
   <string name="secure">ਸੁਰੱਖਿਅਤ</string>
   <string name="system">ਸਿਸਟਮ</string>
@@ -96,7 +98,7 @@
   <string name="power_notification_controls">ਪਾਵਰ ਸੂਚਨਾ ਨਿਯੰਤਰਣ</string>
   <string name="danger_zone">ਖਤਰਨਾਕ ਜ਼ੋਨ</string>
   <string name="safe_mode">ਸੁਰੱਖਿਅਤ ਮੋਡ</string>
-  <string name="enable_custom_settings_input">ਕਸਟਮ ਸੈਟਿੰਗ ਇੰਪੁੱਟ ਨੂੰ ਸਮਰੱਥ ਬਣਾਓ</string>
+  <string name="enable_custom_settings_input">Enable Custom Settings</string>
   <string name="enable">ਚਾਲੂ ਕਰੋ</string>
   <string name="knox_icon">KNOX ਆਈਕਾਨ</string>
   <string name="smart_network_icon">ਸਮਾਰਟ ਨੈਟਵਰਕ ਆਈਕਨ</string>
