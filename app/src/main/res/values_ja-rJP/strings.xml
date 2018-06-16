@@ -26,6 +26,7 @@
   <string name="enable_in_settings">設定で有効にする。</string>
   <string name="about">アプリ情報</string>
   <string name="miscellaneous">その他</string>
+  <string name="custom">Custom</string>
   <string name="settings">設定</string>
   <string name="status_bar">ステータスバー</string>
   <string name="reboot_required">(再起動が必要)</string>
@@ -87,7 +88,8 @@
   <string name="general">General</string>
   <string name="heads_up_notifications">Heads-Up Notifications</string>
   <string name="headphone_volume_warning">Headphone Volume Warning</string>
-  <string name="custom_settings_values">Custom Settings Values</string>
+  <string name="custom_settings_input">Custom Settings Input</string>
+  <string name="custom_settings_read">Read Custom Value</string>
   <string name="global">Global</string>
   <string name="secure">Secure</string>
   <string name="system">System</string>
@@ -95,7 +97,7 @@
   <string name="power_notification_controls">Power Notification Controls</string>
   <string name="danger_zone">Danger Zone</string>
   <string name="safe_mode">Safe Mode</string>
-  <string name="enable_custom_settings_input">Enable Custom Settings Input</string>
+  <string name="enable_custom_settings_input">Enable Custom Settings</string>
   <string name="enable">Enable</string>
   <string name="knox_icon">KNOX Icon</string>
   <string name="smart_network_icon">Smart Network Icon</string>
