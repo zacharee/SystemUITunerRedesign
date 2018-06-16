@@ -26,6 +26,7 @@
   <string name="enable_in_settings">تَفعيلها من الإعدادات.</string>
   <string name="about">حول البرنامج</string>
   <string name="miscellaneous">خيارات متنوعة</string>
+  <string name="custom">Custom</string>
   <string name="settings">الإعدادات</string>
   <string name="status_bar">شريط المعلومات</string>
   <string name="reboot_required">(يتطلب إعادة التشغيل)</string>
@@ -88,7 +89,8 @@
   <string name="general">العام</string>
   <string name="heads_up_notifications">الإشعارات العلوية</string>
   <string name="headphone_volume_warning">تحذير حجم صوت سماعة الرأس</string>
-  <string name="custom_settings_values">قيم إعدادات مخصصة</string>
+  <string name="custom_settings_input">Custom Settings Input</string>
+  <string name="custom_settings_read">Read Custom Value</string>
   <string name="global">شامل</string>
   <string name="secure">الأمان/تأمين</string>
   <string name="system">النظام</string>
@@ -96,7 +98,7 @@
   <string name="power_notification_controls">التحكم في إشعارات التشغيل</string>
   <string name="danger_zone">منطقة خطرة</string>
   <string name="safe_mode">الوضع الآمن</string>
-  <string name="enable_custom_settings_input">تفعيل إدخال الإعدادات مخصصة</string>
+  <string name="enable_custom_settings_input">Enable Custom Settings</string>
   <string name="enable">تفعيل</string>
   <string name="knox_icon">أيقونة KNOX</string>
   <string name="smart_network_icon">أيقونة الشبكة الذكية</string>
