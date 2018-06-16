@@ -26,6 +26,7 @@
   <string name="enable_in_settings">在設定中啟用</string>
   <string name="about">關於</string>
   <string name="miscellaneous">雜項</string>
+  <string name="custom">Custom</string>
   <string name="settings">設定</string>
   <string name="status_bar">狀態列</string>
   <string name="reboot_required">（需要重啟）</string>
@@ -87,7 +88,8 @@
   <string name="general">一般</string>
   <string name="heads_up_notifications">浮動通知</string>
   <string name="headphone_volume_warning">耳機音量警示</string>
-  <string name="custom_settings_values">自訂設定值</string>
+  <string name="custom_settings_input">Custom Settings Input</string>
+  <string name="custom_settings_read">Read Custom Value</string>
   <string name="global">全域</string>
   <string name="secure">安全</string>
   <string name="system">系統</string>
@@ -95,7 +97,7 @@
   <string name="power_notification_controls">電量通知控制</string>
   <string name="danger_zone">危險地帶</string>
   <string name="safe_mode">安全模式</string>
-  <string name="enable_custom_settings_input">啟動自訂設定輸入</string>
+  <string name="enable_custom_settings_input">Enable Custom Settings</string>
   <string name="enable">啟用</string>
   <string name="knox_icon">KNOX</string>
   <string name="smart_network_icon">智慧網路</string>
