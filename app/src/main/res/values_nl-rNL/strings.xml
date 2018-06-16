@@ -26,6 +26,7 @@
   <string name="enable_in_settings">Inschakelen in de instellingen.</string>
   <string name="about">Over</string>
   <string name="miscellaneous">Diversen</string>
+  <string name="custom">Custom</string>
   <string name="settings">Instellingen</string>
   <string name="status_bar">Status Balk</string>
   <string name="reboot_required">(Opnieuw opstarten vereist)</string>
@@ -87,7 +88,8 @@
   <string name="general">Algemeen</string>
   <string name="heads_up_notifications">Heads-up meldingen</string>
   <string name="headphone_volume_warning">Hoofdtelefoon Volume waarschuwing</string>
-  <string name="custom_settings_values">Aangepaste Instellingen Waarde</string>
+  <string name="custom_settings_input">Custom Settings Input</string>
+  <string name="custom_settings_read">Read Custom Value</string>
   <string name="global">Globaal</string>
   <string name="secure">Veilig</string>
   <string name="system">System</string>
@@ -95,7 +97,7 @@
   <string name="power_notification_controls">Power Notification Controls</string>
   <string name="danger_zone">Gevaren zone</string>
   <string name="safe_mode">Veilige modus</string>
-  <string name="enable_custom_settings_input">Enable Custom Settings Input</string>
+  <string name="enable_custom_settings_input">Enable Custom Settings</string>
   <string name="enable">Inschakelen</string>
   <string name="knox_icon">KNOX pictogram</string>
   <string name="smart_network_icon">Smart Network Icon</string>
