@@ -2,15 +2,15 @@ package com.zacharee1.systemuituner.prefs
 
 import android.app.AlertDialog
 import android.content.Context
-import android.preference.DialogPreference
+import android.preference.EditTextPreference
+import android.provider.Settings
 import android.util.AttributeSet
-import android.view.LayoutInflater
 import android.view.View
-import android.widget.EditText
+import android.widget.ImageView
+import android.widget.TextView
 import com.zacharee1.systemuituner.R
-import com.zacharee1.systemuituner.util.SettingsUtils
 
-class CustomInputPreference : DialogPreference {
+class CustomReadPreference : EditTextPreference {
     companion object {
         const val UNDEFINED = -1
         const val GLOBAL = 0
@@ -19,10 +19,6 @@ class CustomInputPreference : DialogPreference {
     }
 
     var type = UNDEFINED
-
-    private lateinit var layout: View
-    private lateinit var keyBox: EditText
-    private lateinit var valueBox: EditText
 
     constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int, defStyleRes: Int) : super(context, attrs, defStyleAttr, defStyleRes) {
         init(attrs, defStyleAttr, defStyleRes)
@@ -38,6 +34,9 @@ class CustomInputPreference : DialogPreference {
     }
 
     private fun init(attrs: AttributeSet?, defStyleAttr: Int?, defStyleRes: Int?) {
+        layoutResource = R.layout.custom_read_preference
+        editText.hint = context.resources.getString(R.string.key_plaintext)
+
         if (attrs != null) {
             val array = context.theme.obtainStyledAttributes(attrs,
                     R.styleable.CustomInputPreference,
@@ -54,28 +53,35 @@ class CustomInputPreference : DialogPreference {
         }
     }
 
-    override fun onCreateDialogView(): View {
-        layout = LayoutInflater.from(context).inflate(R.layout.custom_input_preference_layout, null)
-        keyBox = layout.findViewById(R.id.key)
-        valueBox = layout.findViewById(R.id.value)
-        return layout
-    }
+    override fun onBindView(view: View) {
+        super.onBindView(view)
 
-    override fun onPrepareDialogBuilder(builder: AlertDialog.Builder) {
-        builder.setPositiveButton(R.string.ok) { _, _ ->
-            handleSave()
+        view.findViewById<ImageView>(R.id.select).setOnClickListener {
+            val key = editText.text
+
+            if (key != null && summary != null) {
+                val dialog = AlertDialog.Builder(context)
+                        .setTitle(key)
+                        .setMessage(summary)
+                        .setPositiveButton(android.R.string.ok, null)
+                        .show()
+                dialog.window.decorView.findViewById<TextView>(android.R.id.message).setTextIsSelectable(true)
+            }
         }
-        builder.setNegativeButton(R.string.cancel, null)
     }
 
-    private fun handleSave() {
-        val keyContent = keyBox.text ?: return
-        val valueContent = valueBox.text
+    override fun onDialogClosed(positiveResult: Boolean) {
+        super.onDialogClosed(positiveResult)
 
-        when (type) {
-            GLOBAL -> SettingsUtils.writeGlobal(context, keyContent.toString(), valueContent?.toString())
-            SECURE -> SettingsUtils.writeSecure(context, keyContent.toString(), valueContent?.toString())
-            SYSTEM -> SettingsUtils.writeSystem(context, keyContent.toString(), valueContent?.toString())
+        if (positiveResult) {
+            val key = editText.text
+
+            summary = when (type) {
+                GLOBAL -> Settings.Global.getString(context.contentResolver, key?.toString())
+                SECURE -> Settings.Secure.getString(context.contentResolver, key?.toString())
+                SYSTEM -> Settings.System.getString(context.contentResolver, key?.toString())
+                else -> null
+            }
         }
     }
 }

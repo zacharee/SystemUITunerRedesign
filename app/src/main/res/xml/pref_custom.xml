@@ -5,7 +5,6 @@
         android:title="@string/custom_settings_input"
         android:key="custom_settings_input">
         <Preference
-            android:enabled="false"
             android:selectable="false"
             android:title="@string/about"
             android:summary="@string/custom_settings_input_desc" />
@@ -29,7 +28,24 @@
     <PreferenceCategory
         android:title="@string/custom_settings_read"
         android:key="custom_settings_read">
+        <Preference
+            android:selectable="false"
+            android:title="@string/about"
+            android:summary="@string/custom_settings_read_desc" />
 
+        <com.zacharee1.systemuituner.prefs.CustomReadPreference
+            app:type="global"
+            android:key="global_read"
+            android:title="@string/global" />
 
+        <com.zacharee1.systemuituner.prefs.CustomReadPreference
+            app:type="secure"
+            android:key="secure_read"
+            android:title="@string/secure" />
+
+        <com.zacharee1.systemuituner.prefs.CustomReadPreference
+            app:type="system"
+            android:key="system_read"
+            android:title="@string/system" />
     </PreferenceCategory>
 </PreferenceScreen>
