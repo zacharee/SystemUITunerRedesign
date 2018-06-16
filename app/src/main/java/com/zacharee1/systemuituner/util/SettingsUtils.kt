@@ -14,7 +14,6 @@ object SettingsUtils {
     fun writeGlobal(context: Context?, key: String, value: String?): Boolean {
         return try {
             Settings.Global.putString(context?.contentResolver, key, value)
-            true
         } catch (e: Exception) {
             val baseCommand = if (value != null) "settings put global $key $value" else "settings delete global $key"
             return if (SuUtils.testSudo()) {
@@ -31,7 +30,6 @@ object SettingsUtils {
     fun writeSecure(context: Context?, key: String, value: String?): Boolean {
         return try {
             Settings.Secure.putString(context?.contentResolver, key, value)
-            true
         } catch (e: Exception) {
             val baseCommand = if (value != null) "settings put secure $key $value" else "settings delete secure $key"
             return if (SuUtils.testSudo()) {
@@ -48,7 +46,6 @@ object SettingsUtils {
     fun writeSystem(context: Context?, key: String, value: String?): Boolean {
         return try {
             Settings.System.putString(context?.contentResolver, key, value)
-            true
         } catch (e: Exception) {
             val baseCommand = if (value != null) "settings put system $key $value" else "settings delete system $key"
             return if (SuUtils.testSudo()) {

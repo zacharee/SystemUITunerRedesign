@@ -16,6 +16,8 @@ class CustomInputPreference : DialogPreference {
         const val GLOBAL = 0
         const val SECURE = 1
         const val SYSTEM = 2
+
+        const val SEPARATOR = "#$%"
     }
 
     var type = UNDEFINED
@@ -23,6 +25,9 @@ class CustomInputPreference : DialogPreference {
     private lateinit var layout: View
     private lateinit var keyBox: EditText
     private lateinit var valueBox: EditText
+
+    private var keyText: String? = null
+    private var valueText: String? = null
 
     constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int, defStyleRes: Int) : super(context, attrs, defStyleAttr, defStyleRes) {
         init(attrs, defStyleAttr, defStyleRes)
@@ -52,30 +57,58 @@ class CustomInputPreference : DialogPreference {
                 }
             }
         }
+
+        isPersistent = true
+    }
+
+    override fun onSetInitialValue(restorePersistedValue: Boolean, defaultValue: Any?) {
+        val persisted = getPersistedString(null) ?: return
+        update(persisted)
+    }
+
+    override fun persistString(value: String?): Boolean {
+        update(value)
+        return super.persistString(value)
     }
 
     override fun onCreateDialogView(): View {
         layout = LayoutInflater.from(context).inflate(R.layout.custom_input_preference_layout, null)
         keyBox = layout.findViewById(R.id.key)
         valueBox = layout.findViewById(R.id.value)
+        keyBox.setText(keyText)
+        valueBox.setText(valueText)
         return layout
     }
 
     override fun onPrepareDialogBuilder(builder: AlertDialog.Builder) {
-        builder.setPositiveButton(R.string.ok) { _, _ ->
+        builder.setPositiveButton(android.R.string.ok) { _, _ ->
             handleSave()
         }
         builder.setNegativeButton(R.string.cancel, null)
     }
 
     private fun handleSave() {
-        val keyContent = keyBox.text ?: return
-        val valueContent = valueBox.text
+        val keyContent = keyBox.text?.toString() ?: return
+        var valueContent = valueBox.text?.toString()
+
+        if (valueContent != null && (valueContent.isEmpty() || valueContent.isBlank())) valueContent = null
 
         when (type) {
-            GLOBAL -> SettingsUtils.writeGlobal(context, keyContent.toString(), valueContent?.toString())
-            SECURE -> SettingsUtils.writeSecure(context, keyContent.toString(), valueContent?.toString())
-            SYSTEM -> SettingsUtils.writeSystem(context, keyContent.toString(), valueContent?.toString())
+            GLOBAL -> SettingsUtils.writeGlobal(context, keyContent, valueContent)
+            SECURE -> SettingsUtils.writeSecure(context, keyContent, valueContent)
+            SYSTEM -> SettingsUtils.writeSystem(context, keyContent, valueContent)
+        }
+
+        val string = "$keyContent$SEPARATOR$valueContent"
+        persistString(string)
+    }
+
+    private fun update(value: String?) {
+        val split = value?.split(SEPARATOR)
+
+        if (split != null) {
+            keyText = split[0]
+            valueText = if (split[1] == "null") null else split[1]
         }
     }
 }
