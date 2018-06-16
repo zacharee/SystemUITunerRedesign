@@ -26,6 +26,7 @@
   <string name="enable_in_settings">सेटिंग्स में सक्षम करें ।</string>
   <string name="about">बारे में</string>
   <string name="miscellaneous">विविध</string>
+  <string name="custom">Custom</string>
   <string name="settings">सेटिंग्स</string>
   <string name="status_bar">स्थिति पट्टी</string>
   <string name="reboot_required">(रीबूट आवश्यक)</string>
@@ -87,7 +88,8 @@
   <string name="general">सामान्य</string>
   <string name="heads_up_notifications">सचेत करने वाली सूचनाएँ</string>
   <string name="headphone_volume_warning">हेड फोंस मात्रा चेतावनी</string>
-  <string name="custom_settings_values">कस्टम सेटिंग्स मान</string>
+  <string name="custom_settings_input">Custom Settings Input</string>
+  <string name="custom_settings_read">Read Custom Value</string>
   <string name="global">वैश्विक</string>
   <string name="secure">सुरक्षित</string>
   <string name="system">सिस्टम</string>
@@ -95,7 +97,7 @@
   <string name="power_notification_controls">अतिरिक्त सूचना नियंत्रण</string>
   <string name="danger_zone">डेंजर जोन</string>
   <string name="safe_mode">सेफ़ मोड</string>
-  <string name="enable_custom_settings_input">कस्टम सेटिंग्स इनपुट सक्षम करें</string>
+  <string name="enable_custom_settings_input">Enable Custom Settings</string>
   <string name="enable">सक्षम करें</string>
   <string name="knox_icon">KNOX आइकन</string>
   <string name="smart_network_icon">स्मार्ट नेटवर्क चिह्न</string>
