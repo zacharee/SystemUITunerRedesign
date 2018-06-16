@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import com.zacharee1.systemuituner.R
 
-class RedTextPref : Preference {
+open class RedTextPref : Preference {
     constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int, defStyleRes: Int) : super(context, attrs, defStyleAttr, defStyleRes)
     constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int) : super(context, attrs, defStyleAttr)
     constructor(context: Context, attrs: AttributeSet) : super(context, attrs)

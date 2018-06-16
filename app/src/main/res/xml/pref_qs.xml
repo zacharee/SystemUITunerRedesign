@@ -32,9 +32,7 @@
             android:key="sysui_qqs_count"
             android:title="@string/qs_header_tile_count" />
 
-        <Preference
-            android:selectable="false"
-            android:title="@string/warning"
+        <com.zacharee1.systemuituner.prefs.RedTextPref
             android:summary="@string/touchwiz_oreo_qqs" />
     </PreferenceCategory>
 

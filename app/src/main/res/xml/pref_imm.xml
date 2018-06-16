@@ -24,9 +24,7 @@
             android:title="@string/pre_confirms"
             android:key="immersive.preconfirms" />
 
-        <Preference
-            android:selectable="false"
-            android:title="@string/warning"
+        <com.zacharee1.systemuituner.prefs.RedTextPref
             android:summary="@string/imm_warn" />
 
     </PreferenceCategory>
