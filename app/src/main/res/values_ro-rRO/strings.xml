@@ -26,6 +26,7 @@
   <string name="enable_in_settings">Activați în Setări.</string>
   <string name="about">Despre</string>
   <string name="miscellaneous">Diverse</string>
+  <string name="custom">Custom</string>
   <string name="settings">Setări</string>
   <string name="status_bar">Bara de stare</string>
   <string name="reboot_required">(Repornire Necesară)</string>
@@ -87,7 +88,8 @@
   <string name="general">General</string>
   <string name="heads_up_notifications">Notificări de avertizare</string>
   <string name="headphone_volume_warning">Avertizare pentru volulmul căștilor</string>
-  <string name="custom_settings_values">Setări particularizate ale valorilor</string>
+  <string name="custom_settings_input">Custom Settings Input</string>
+  <string name="custom_settings_read">Read Custom Value</string>
   <string name="global">Global</string>
   <string name="secure">Securizare</string>
   <string name="system">Sistem</string>
@@ -95,7 +97,7 @@
   <string name="power_notification_controls">Comenzile de notificare a puterii</string>
   <string name="danger_zone">Zonă de pericol</string>
   <string name="safe_mode">Mod de siguranță</string>
-  <string name="enable_custom_settings_input">Activați introducerea setărilor personalizate</string>
+  <string name="enable_custom_settings_input">Enable Custom Settings</string>
   <string name="enable">Activează</string>
   <string name="knox_icon">Iconiță KNOX</string>
   <string name="smart_network_icon">Iconiță Rețea inteligentă</string>
