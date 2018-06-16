@@ -297,6 +297,7 @@
   <string name="carrier_on_home">Carrier Label on Home Screen</string>
   <string name="carrier_on_lock">Carrier Label on Lock Screen</string>
   <string name="custom_settings_input_desc">These fields allow you to enter your own custom settings.</string>
+  <string name="custom_settings_read_desc">These fields allow you to read the value of a specified key.</string>
   <string name="key_plaintext">Key</string>
   <string name="value_plaintext">Value</string>
 </resources>
