@@ -293,4 +293,7 @@
   <string name="safe_mode_notif_desc_not_supported">Diese Einstellung muss in Oreo aktiviert bleiben.</string>
   <string name="carrier_on_home">Carrier Label on Home Screen</string>
   <string name="carrier_on_lock">Carrier Label on Lock Screen</string>
+  <string name="custom_settings_input_desc">These fields allow you to enter your own custom settings.</string>
+  <string name="key_plaintext">Key</string>
+  <string name="value_plaintext">Value</string>
 </resources>
