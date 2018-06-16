@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.zacharee1.systemuituner.prefs.RedTextPref
+        android:summary="@string/custom_settings_warning" />
+
     <PreferenceCategory
         android:title="@string/custom_settings_input"
         android:key="custom_settings_input">

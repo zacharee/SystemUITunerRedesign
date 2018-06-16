@@ -53,15 +53,18 @@ class CustomReadPreference : EditTextPreference {
         }
     }
 
+    override fun onSetInitialValue(restoreValue: Boolean, defaultValue: Any?) {
+        super.onSetInitialValue(restoreValue, defaultValue)
+        updateSummary(text)
+    }
+
     override fun onBindView(view: View) {
         super.onBindView(view)
 
         view.findViewById<ImageView>(R.id.select).setOnClickListener {
-            val key = editText.text
-
-            if (key != null && summary != null) {
+            if (text != null && summary != null) {
                 val dialog = AlertDialog.Builder(context)
-                        .setTitle(key)
+                        .setTitle(text)
                         .setMessage(summary)
                         .setPositiveButton(android.R.string.ok, null)
                         .show()
@@ -74,14 +77,20 @@ class CustomReadPreference : EditTextPreference {
         super.onDialogClosed(positiveResult)
 
         if (positiveResult) {
-            val key = editText.text
+            updateSummary(text)
+        }
+    }
 
-            summary = when (type) {
-                GLOBAL -> Settings.Global.getString(context.contentResolver, key?.toString())
-                SECURE -> Settings.Secure.getString(context.contentResolver, key?.toString())
-                SYSTEM -> Settings.System.getString(context.contentResolver, key?.toString())
+    private fun updateSummary(key: String?) {
+        summary = try {
+            when (type) {
+                GLOBAL -> Settings.Global.getString(context.contentResolver, key)
+                SECURE -> Settings.Secure.getString(context.contentResolver, key)
+                SYSTEM -> Settings.System.getString(context.contentResolver, key)
                 else -> null
             }
+        } catch (e: NullPointerException) {
+            null
         }
     }
 }

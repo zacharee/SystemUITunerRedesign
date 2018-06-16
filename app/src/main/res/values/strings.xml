@@ -350,4 +350,6 @@
     <string name="custom_settings_read_desc">These fields allow you to read the value of a specified key.</string>
     <string name="key_plaintext">Key</string>
     <string name="value_plaintext">Value</string>
+
+    <string name="custom_settings_warning">Be careful what you do here! If you input an incorrect value, you could cause a crash loop, bootloop or worse!</string>
 </resources>
