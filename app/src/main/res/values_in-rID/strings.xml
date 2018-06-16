@@ -26,6 +26,7 @@
   <string name="enable_in_settings">Aktifkan di Setelan.</string>
   <string name="about">Tentang</string>
   <string name="miscellaneous">Lain-lain</string>
+  <string name="custom">Custom</string>
   <string name="settings">Setelan</string>
   <string name="status_bar">Bilah status</string>
   <string name="reboot_required">(Reboot Diperlukan)</string>
@@ -87,7 +88,8 @@
   <string name="general">Umum</string>
   <string name="heads_up_notifications">Pemberitahuan Heads-Up</string>
   <string name="headphone_volume_warning">Peringatan Volume Headphone</string>
-  <string name="custom_settings_values">Nilai Pengaturan Khusus</string>
+  <string name="custom_settings_input">Custom Settings Input</string>
+  <string name="custom_settings_read">Read Custom Value</string>
   <string name="global">Global</string>
   <string name="secure">Aman</string>
   <string name="system">Sistem</string>
@@ -95,7 +97,7 @@
   <string name="power_notification_controls">Kontrol Pemberitahuan Daya</string>
   <string name="danger_zone">Zona Bahaya</string>
   <string name="safe_mode">Mode Aman</string>
-  <string name="enable_custom_settings_input">Aktifkan Pengaturan Kustom Input</string>
+  <string name="enable_custom_settings_input">Enable Custom Settings</string>
   <string name="enable">Aktif</string>
   <string name="knox_icon">Ikon KNOX</string>
   <string name="smart_network_icon">Ikon Jaringan Pintar</string>
