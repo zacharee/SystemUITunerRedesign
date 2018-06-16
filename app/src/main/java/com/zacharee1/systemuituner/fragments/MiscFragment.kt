@@ -26,13 +26,8 @@ class MiscFragment : PreferenceFragment() {
         setSecureSwitchStates()
         setSystemSwitchStates()
         setNightModeSwitchStates()
-        setEditTextStates()
         setUpAnimationScales()
         setUpSnoozeStuff()
-    }
-
-    private fun showingCustomSettings(): Boolean {
-        return preferenceManager.sharedPreferences.getBoolean(ALLOW_CUSTOM_INPUT, false)
     }
 
     private fun showCustomSettings() {
@@ -226,49 +221,6 @@ class MiscFragment : PreferenceFragment() {
         else if (override) `val` = 4
 
         SettingsUtils.writeSecure(context, TWILIGHT_MODE, `val`.toString() + "")
-    }
-
-    private fun setEditTextStates() {
-        val preferences = object : ArrayList<EditTextPreference>() {
-            init {
-                if (showingCustomSettings()) {
-                    add(findPreference(GLOBAL_SETTINGS) as EditTextPreference)
-                    add(findPreference(SECURE_SETTINGS) as EditTextPreference)
-                    add(findPreference(SYSTEM_SETTINGS) as EditTextPreference)
-                }
-            }
-        }
-
-        for (preference in preferences) {
-            val key = preference.key
-            preference.isPersistent = false
-
-            if (key.contains("settings")) {
-                preference.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { _, o ->
-                    val value = o.toString()
-                    val keyVal = value.split(" ")
-
-                    var putKey = ""
-                    var putVal = ""
-
-                    when (keyVal.size) {
-                        2 -> {
-                            putVal = keyVal[1]
-                            putKey = keyVal[0]
-                        }
-                        1 -> putKey = keyVal[0]
-                    }
-
-                    when (key) {
-                        GLOBAL_SETTINGS -> SettingsUtils.writeGlobal(context, putKey, putVal)
-                        SECURE_SETTINGS -> SettingsUtils.writeSecure(context, putKey, putVal)
-                        SYSTEM_SETTINGS -> SettingsUtils.writeSystem(context, putKey, putVal)
-                    }
-
-                    true
-                }
-            }
-        }
     }
 
     private fun setUpAnimationScales() {

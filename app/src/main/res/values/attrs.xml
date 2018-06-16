@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CustomInputPreference">
+        <attr name="type" format="enum|reference">
+            <enum name="global" value="0" />
+            <enum name="secure" value="1" />
+            <enum name="system" value="2" />
+        </attr>
+    </declare-styleable>
+</resources>
