@@ -1,6 +1,9 @@
 package com.zacharee1.systemuituner.services
 
-import android.app.*
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.app.PendingIntent
+import android.app.Service
 import android.content.*
 import android.database.ContentObserver
 import android.net.Uri
@@ -82,23 +85,25 @@ class SafeModeService : Service() {
     }
 
     private fun startInForeground() {
-        val settingsIntent = PendingIntent.getActivity(this, 0, Intent(this, SettingsActivity::class.java), 0)
-        val manager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+        if (preferences?.getBoolean("show_safe_mode_notif", true) != false) {
+            val settingsIntent = PendingIntent.getActivity(this, 0, Intent(this, SettingsActivity::class.java), 0)
+            val manager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            val channel = NotificationChannel("systemuituner", "SystemUI Tuner", NotificationManager.IMPORTANCE_LOW)
-            manager.createNotificationChannel(channel)
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                val channel = NotificationChannel("systemuituner", resources.getString(R.string.app_name), NotificationManager.IMPORTANCE_LOW)
+                manager.createNotificationChannel(channel)
+            }
+
+            val notification = NotificationCompat.Builder(this, "systemuituner")
+                    .setSmallIcon(R.mipmap.ic_launcher)
+                    .setContentTitle(resources.getString(R.string.notif_title))
+                    .setContentText(resources.getString(R.string.notif_desc))
+                    .setContentIntent(settingsIntent)
+
+            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O) notification.priority = NotificationCompat.PRIORITY_MIN
+
+            startForeground(1001, notification.build())
         }
-
-        val notification = NotificationCompat.Builder(this, "systemuituner")
-                .setSmallIcon(R.mipmap.ic_launcher)
-                .setContentTitle(resources.getString(R.string.notif_title))
-                .setContentText(resources.getString(R.string.notif_desc))
-                .setContentIntent(settingsIntent)
-
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O) notification.priority = Notification.PRIORITY_MIN
-
-        startForeground(1001, notification.build())
     }
 
     private fun setUpReceivers() {
