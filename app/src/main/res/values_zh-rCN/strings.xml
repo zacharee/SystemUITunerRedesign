@@ -4,7 +4,7 @@
   <string name="app_name">系统界面调节工具</string>
   <string name="to_the_tweaks">见不得人的秘密</string>
   <string name="sorry_explain">这项设置发生错误</string>
-  <string name="sorry_option">Try executing the following command from a computer (it\'s one line):</string>
+  <string name="sorry_option">请从电脑端输入以下命令行(是一整句哦)</string>
   <string name="more">更多</string>
   <string name="grant_dump_perm">需要给 android.permission.DUMP 权限来使用此功能</string>
   <string name="safe_mode_auto_enabled">检测到三星设备! 安全模式已自动启用, 为了您的安全, 修改任何状态栏图标有可能打破系统 UI! 请参考play store中说明的链接了解更多信息。</string>
@@ -22,11 +22,11 @@
   <string name="safe_mode_android_o">由于 Android Oreo中添加了限制, 这个功能不会在你的设备上起作用。</string>
   <string name="requires_nougat">需要安卓7.0或更新版本。</string>
   <string name="requires_oreo">需要安卓8.0或更新版本。</string>
-  <string name="requires_8_1">Requires Oreo 8.1 or later.</string>
+  <string name="requires_8_1">要求 android Oreo 8.1 或更高版本。</string>
   <string name="enable_in_settings">启用设置</string>
   <string name="about">关于</string>
   <string name="miscellaneous">其他</string>
-  <string name="custom">Custom</string>
+  <string name="custom">自定义</string>
   <string name="settings">设置</string>
   <string name="status_bar">状态栏</string>
   <string name="reboot_required">(需要重启)</string>
@@ -73,7 +73,7 @@
   <string name="speakerphone_icon">扬声器图标</string>
   <string name="time_such"><![CDATA[时间和其他]]></string>
   <string name="clock">时钟图标</string>
-  <string name="clock_tile">Clock</string>
+  <string name="clock_tile">时钟</string>
   <string name="show_clock_seconds">显示时钟秒数</string>
   <string name="alarm_clock_icon">闹钟图标</string>
   <string name="zen_icon">禅图标</string>
@@ -88,8 +88,8 @@
   <string name="general">常规信息</string>
   <string name="heads_up_notifications">悬浮通知</string>
   <string name="headphone_volume_warning">耳机音量警告</string>
-  <string name="custom_settings_input">Custom Settings Input</string>
-  <string name="custom_settings_read">Read Custom Value</string>
+  <string name="custom_settings_input">输入自定义参数</string>
+  <string name="custom_settings_read">读取自定义值</string>
   <string name="global">全局</string>
   <string name="secure">安全</string>
   <string name="system">系统</string>
@@ -97,7 +97,7 @@
   <string name="power_notification_controls">电源通知控件</string>
   <string name="danger_zone">危险操作区</string>
   <string name="safe_mode">安全模式</string>
-  <string name="enable_custom_settings_input">Enable Custom Settings</string>
+  <string name="enable_custom_settings_input">启用自定义设置</string>
   <string name="enable">启用</string>
   <string name="knox_icon">KNOX图标</string>
   <string name="smart_network_icon">智能网络图标</string>
