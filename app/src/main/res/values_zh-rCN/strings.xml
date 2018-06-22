@@ -156,21 +156,21 @@
   <string name="move_full_rows">移动整行</string>
   <string name="battery">电池</string>
   <string name="enable_fabric_io_analytics">Fabric.io 分析</string>
-  <string name="tasker_how_to">Tasker How-To</string>
+  <string name="tasker_how_to">Tasker 教学</string>
   <string name="base_command_tasker">这是基本命令:</string>
-  <string name="tasker_defs">This is what everything means:</string>
+  <string name="tasker_defs">这是全部的讲解：</string>
   <string name="for_settings_global">(针对Settings.Global)</string>
   <string name="for_settings_secure">(针对Settings.Secure)</string>
   <string name="for_settings_system">(针对Settings.System)</string>
   <string name="desired_setting_key">获取设置按键</string>
   <string name="desired_setting_value">获取设置数值</string>
-  <string name="tasker_intro">Here\'s a quick set of instructions for Tasker. Since I don\'t know how to use Tasker, I can only build in support for intent broadcasts.</string>
+  <string name="tasker_intro">其实我不会用 Tasker，我只提供程序支持。下面是 Tasker 的快速攻略</string>
   <string name="back_up_blacklist">备份黑名单</string>
   <string name="restore_blacklist">恢复黑名单</string>
   <string name="quick_settings">快速设置</string>
   <string name="demo_mode">演示模式</string>
   <string name="auto_detect">自动检测</string>
-  <string name="auto_detect_summary">Attempts to automatically detect which status bar icons can be hidden. Does not work on all devices!</string>
+  <string name="auto_detect_summary">尝试自动监测可以被隐藏的状态列图标，请注意，并不是所有的设备都支持！</string>
   <string name="sim_count">SIM 计数</string>
   <string name="volume_icon_style">音量图标样式</string>
   <string name="bluetooth_icon_style">蓝牙图标样式</string>
@@ -199,12 +199,12 @@
   <string name="some_things">示例</string>
   <string name="no_root">不需Root</string>
   <string name="permissions">权限</string>
-  <string name="intro_1">Thanks for downloading my app! SystemUI Tuner is meant to replace/supplement the built-in System UI Tuner seen in AOSP. Both users with and without System UI Tuner can benefit from this app.</string>
-  <string name="intro_2">Like in AOSP, SystemUI Tuner allows you to hide certain status bar icons that you don\'t want shown. However, you also can do many other things, like turn off heads-up notifications or even toggle immersive mode.</string>
-  <string name="intro_3">There is a plethora of pre-defined options for the status bar, but if you don\'t see an icon you want to hide, you can try the Auto-Detect feature, which will attempt to detect icons that can be hidden.</string>
-  <string name="intro_4">And the best part about this app? It doesn\'t need root! It will attempt to get root privileges, but if it can\'t you will have to use ADB. USING ADB IS NOT ROOTING!</string>
-  <string name="intro_5">Once you tap the finish button, SystemUI Tuner will attempt to gain root access. If it can, it will grant all needed permissions for you. Otherwise, instructions will appear to guide you.</string>
-  <string name="adb_setup">The permissions above must be granted to continue. Root access was either denied or unavailable, which means you\'ll have to grant these permissions using ADB.</string>
+  <string name="intro_1">感谢下载我的应用！SystemUI Tuner 是款系统原生 System UI Tuner 的替代品，无论是系统是否 System UI Tuner ，这个应用都能给你带来全新的感受。</string>
+  <string name="intro_2">就像 AOSP 一样，SystemUI Tuner 可以隐藏你不想要的状态栏图标，不止如此，你可以可以开启浮动通知甚至切换沉浸模式等等。</string>
+  <string name="intro_3">我们由许多的状态栏图标可以用，如果沒有找到想要隐藏的圖示，你还可以尝试 \"自动检测\" 功能，他会尝试找出你可以隐藏的图标。</string>
+  <string name="intro_4">这个应用最历害的地方就是不用 root 也能用！它会尝试获得 root 权限，但沒有也无妨，你可以使用 ADB 给与权限，ADB 不是 ROOT ！！</string>
+  <string name="intro_5">按下完成按钮，SystemUI Tuner 会尝试获取 root 权限，若成功授权它将会自动取得所需权限，否则会显示进一步操作的说明指导你继续操作。</string>
+  <string name="adb_setup">必须授予上述权限以继续，在没有root的情况下，你需要使用ADB手动授予这些权限。</string>
   <string name="missing_perms">权限丢失！</string>
   <string name="enable_debug"><![CDATA[1.在设置>>开发者模式中，确认启用了USB调试。]]></string>
   <string name="accept_auth">2.连接手机到电脑，并且同意授权。</string>
@@ -214,15 +214,15 @@
   <string name="extract_zip">2.解压缩ZIP文件夹（比如解压缩到桌面）</string>
   <string name="open_cmd">3.打开CMD</string>
   <string name="cd_windows"><![CDATA[4.输入 <b>cd C:\\path\\to\\extracted\\folder\\</b> ADB文件所在文件夹文件夹. 比如: <b>cd C:\\Users\\Yuht\\Desktop\\platform-tools\\</b>.]]></string>
-  <string name="cd_further"><![CDATA[- Make sure that the folder you <b>cd</b> into contains the ADB executable. If not, <b>cd</b> one level further.]]></string>
-  <string name="download_adb_mac"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-darwin.zip">Download the ADB ZIP for macOS.</a>]]></string>
+  <string name="cd_further"><![CDATA[- 确认<b>cd</b>  的路径包含ADB可执行文件，如果没有包含，尝试更改路径层级。]]></string>
+  <string name="download_adb_mac"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-darwin.zip">下载苹果版的 ADB 压缩包.</a>]]></string>
   <string name="open_terminal">3. 打开终端</string>
-  <string name="cd_mac"><![CDATA[4. Enter <b>cd /path/to/extracted/folder/</b> to get to the folder you extracted ADB into. For instance, <b>cd /Users/Zachary/Desktop/platform-tools/</b>.]]></string>
+  <string name="cd_mac"><![CDATA[4.输入 <b>cd /path/to/extracted/folder/</b> ADB文件所在文件夹文件夹. 比如: <b>cd /Users/Zachary/Desktop/platform-tools</b>.]]></string>
   <string name="apt_get_adb"><![CDATA[- <b>sudo apt-get install adb</b>]]></string>
   <string name="make_sure_adb_installed">1.确认安装了ADB</string>
   <string name="yum_install_adb"><![CDATA[- <b>sudo yum install android-tools</b>]]></string>
-  <string name="download_adb_linux"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-linux.zip">Download the ADB ZIP for Linux.</a>]]></string>
-  <string name="cd_linux"><![CDATA[4. Enter <b>cd /path/to/extracted/folder/</b> to get to the folder you extracted ADB into. For instance, <b>cd /home/Zachary/Desktop/platform-tools/</b>.]]></string>
+  <string name="download_adb_linux"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-linux.zip">下载Linux系统的 ADB 压缩包.</a>]]></string>
+  <string name="cd_linux"><![CDATA[4.输入 <b>cd /path/to/extracted/folder/</b> ADB文件所在文件夹. 比如: <b>cd /home/Zachary/Desktop/platform-tools</b>.]]></string>
   <string name="choose_your_weapon">选择 Weapon</string>
   <string name="initial_setup">初始设置</string>
   <string name="windows_setup">Windows 设置</string>
@@ -235,25 +235,25 @@
   <string name="which_os">电脑运行什么操作系统？</string>
   <string name="on_device">请按照设备上的指示进行操作。</string>
   <string name="on_computer">请按照电脑上的指示进行操作。</string>
-  <string name="run_on_computer">Run these commands on your computer. For Linux (Other) and macOS, you will need to use \"./adb\" instead of \"adb\".</string>
+  <string name="run_on_computer">在电脑运行命令， Linux (Other) 和 苹果系统你需要 用\"./adb\" 替换\"adb\".</string>
   <string name="windows">Windows</string>
   <string name="mac">苹果系统</string>
   <string name="ubuntu">Ubuntu系统</string>
   <string name="fedora">Fedora</string>
   <string name="linux">Linux (Other)</string>
-  <string name="app_specific">App-Specific</string>
+  <string name="app_specific">特定 app</string>
   <string name="blacklist">黑名单</string>
   <string name="select_apps">选择应用</string>
-  <string name="app_specific_desc">Select apps to be included in or excluded from Immersive Mode. Immersive Mode must be disabled to change these settings.</string>
-  <string name="blacklist_desc">When on, selected apps will not use Immersive Mode</string>
+  <string name="app_specific_desc">选择要包含或者派出用于沉浸模式的应用。更改设定前必须停用沉浸模式。</string>
+  <string name="blacklist_desc">选项启用时，应用将不会进入沉浸模式</string>
   <string name="warning">警告！​​​​​</string>
-  <string name="imm_warn">This feature merely allows you to enable Immersive Mode. It DOES NOT do anything beyond that. Any issues you experience are the fault of your device\'s manufacturer. I CANNOT FIX IT!</string>
+  <string name="imm_warn">本功能只会启用沈浸模式，沒有別的了。若因此发生问题请联系设备制造商，我帮不了你！</string>
   <string name="target_not_found">无法运行应用</string>
   <string name="select_all">全选</string>
   <string name="deselect_all">取消所有选择</string>
   <string name="invert_selection">反向选择</string>
   <string name="statbar_rotation_lock_notif">On certain devices, modifying the status bar icons can cause an icon that looks like a phone to appear. This is the Rotation Lock icon.</string>
-  <string name="feature_not_supported">It seems your device doesn\'t support this feature :/</string>
+  <string name="feature_not_supported">看起来设备并不支持这个功能</string>
   <string name="select_app">选择应用</string>
   <string name="select_component">选择组件</string>
   <string name="reset">重置</string>
@@ -275,16 +275,16 @@
   <string name="notif_desc">点击更改设置</string>
   <string name="touchwiz_oreo_qqs">On TouchWiz Oreo devices, this setting is no longer reliable! Along with setting the number here, you may have to also save the value to Settings.System.apanel_number, which can only be done with ADB or root. Safe Mode attempts to implement a workaround, but I can\'t guarantee it will work!</string>
   <string name="color">颜色</string>
-  <string name="notifs_snooze">Notification Snoozing</string>
+  <string name="notifs_snooze">延迟通知</string>
   <string name="notifs_snooze_desc">&#160;
     In Android 8.1 and later, you can set custom times for notification snoozing. These values reset on reboot, so make sure to enable Safe Mode if you would like them to persist across power cycles.\n\n&#160;
     Use the options below to set the different snooze times. \"Default\" sets the time Android will use by default. The other items will be the snooze times available for you to select.
     </string>
   <string name="default_text">默认 </string>
-  <string name="time_a">Time A</string>
-  <string name="time_b">Time B</string>
-  <string name="time_c">Time C</string>
-  <string name="time_d">Time D</string>
+  <string name="time_a">时间A</string>
+  <string name="time_b">时间B</string>
+  <string name="time_c">时间C</string>
+  <string name="time_d">时间D</string>
   <string name="clock_tile_format">时钟块格式</string>
   <string name="twelve">12小时制</string>
   <string name="twelve_nosec">12小时制，不含秒</string>
@@ -292,7 +292,7 @@
   <string name="military_nosec">24小时制，不含秒</string>
   <string name="show_notif">显示通知</string>
   <string name="safe_mode_notif_desc">It is recommended that you keep this active, and hide the notification instead. Turning it off may cause Safe Mode to no longer function.</string>
-  <string name="safe_mode_notif_desc_not_supported">This setting must remain enabled on Oreo.</string>
+  <string name="safe_mode_notif_desc_not_supported">设个设置在Android Oreo上必须保持启用</string>
   <string name="carrier_on_home">主屏幕显示运营商标签</string>
   <string name="carrier_on_lock">锁定幕显示运营商标签</string>
   <string name="custom_settings_input_desc">下面允许你输入一些自定义设置</string>
