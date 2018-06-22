@@ -26,7 +26,7 @@
   <string name="enable_in_settings">在設定中啟用</string>
   <string name="about">關於</string>
   <string name="miscellaneous">雜項</string>
-  <string name="custom">Custom</string>
+  <string name="custom">自定義</string>
   <string name="settings">設定</string>
   <string name="status_bar">狀態列</string>
   <string name="reboot_required">（需要重啟）</string>
@@ -89,7 +89,7 @@
   <string name="heads_up_notifications">浮動通知</string>
   <string name="headphone_volume_warning">耳機音量警示</string>
   <string name="custom_settings_input">Custom Settings Input</string>
-  <string name="custom_settings_read">Read Custom Value</string>
+  <string name="custom_settings_read">讀取自定義數值</string>
   <string name="global">全域</string>
   <string name="secure">安全</string>
   <string name="system">系統</string>
@@ -97,7 +97,7 @@
   <string name="power_notification_controls">電量通知控制</string>
   <string name="danger_zone">危險地帶</string>
   <string name="safe_mode">安全模式</string>
-  <string name="enable_custom_settings_input">Enable Custom Settings</string>
+  <string name="enable_custom_settings_input">啓用自定義設置</string>
   <string name="enable">啟用</string>
   <string name="knox_icon">KNOX</string>
   <string name="smart_network_icon">智慧網路</string>
@@ -293,8 +293,8 @@
   <string name="show_notif">顯示通知</string>
   <string name="safe_mode_notif_desc">建議你保持本設定啟用，並用隱藏通知作為替代方式。停用此設定可能導致安全模式無法正常運作。</string>
   <string name="safe_mode_notif_desc_not_supported">本設定在 Oreo 中必須保持啟用</string>
-  <string name="carrier_on_home">Carrier Label on Home Screen</string>
-  <string name="carrier_on_lock">Carrier Label on Lock Screen</string>
+  <string name="carrier_on_home">主屏幕顯示運營商標簽</string>
+  <string name="carrier_on_lock">鎖定屏幕顯示運營商標簽</string>
   <string name="custom_settings_input_desc">These fields allow you to enter your own custom settings.</string>
   <string name="custom_settings_read_desc">These fields allow you to read the value of a specified key.</string>
   <string name="key_plaintext">Key</string>
