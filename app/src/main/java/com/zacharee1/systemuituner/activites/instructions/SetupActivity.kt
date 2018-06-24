@@ -17,6 +17,7 @@ import com.github.paolorotolo.appintro.AppIntro2
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.util.Utils
 import java.util.*
+import kotlin.collections.ArrayList
 
 class SetupActivity : AppIntro2() {
     private var permissionsNeeded: Array<String>? = null
@@ -69,9 +70,10 @@ class SetupActivity : AppIntro2() {
     }
 
     fun launchInstructions(v: View) {
-        //        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://zacharywander.tk/#sysuituner_adb")));
+        if (permissionsNeeded == null) return
+
         val intent = Intent(this, InstructionsActivity::class.java)
-        intent.putStringArrayListExtra(InstructionsActivity.ARG_COMMANDS, ArrayList(Arrays.asList(*permissionsNeeded!!)))
+        intent.putStringArrayListExtra(InstructionsActivity.ARG_COMMANDS, ArrayList(permissionsNeeded!!.toList()))
         startActivity(intent)
     }
 

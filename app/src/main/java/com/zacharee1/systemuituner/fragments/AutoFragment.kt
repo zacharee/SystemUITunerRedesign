@@ -80,7 +80,7 @@ class AutoFragment : PreferenceFragment() {
                     true
                 }
 
-                if (!preference.key.isEmpty() && !preference.title.toString().isEmpty()) {
+                if (!preference.key.isBlank() && !preference.title.toString().isBlank()) {
                     mPrefs[preference.key] = preference
                 }
             }

@@ -28,38 +28,46 @@ import java.util.*
 
 class InstructionsActivity : AppIntro2() {
 
-    private var mInitial: Instructions? = null
-    private var mCommands: Commands? = null
-
-    private var mInstructions: OSInstructions? = null
+    private lateinit var initial: Instructions
+    private lateinit var commands: Commands
+    private lateinit var instructions: OSInstructions
 
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(R.style.AppTheme_Intro)
         super.onCreate(savedInstanceState)
 
-        mInstructions = OSInstructions.newInstance(resources.getString(R.string.choose_your_weapon),
+        instructions = OSInstructions.newInstance(resources.getString(R.string.choose_your_weapon),
                 resources.getString(R.string.which_os),
                 R.layout.fragment_adb_select,
                 resources.getColor(R.color.intro_5, null))
 
-        mInitial = Instructions.newInstance(resources.getString(R.string.initial_setup),
+        initial = Instructions.newInstance(resources.getString(R.string.initial_setup),
                 resources.getString(R.string.on_device),
                 R.layout.fragment_adb_initial,
                 resources.getColor(R.color.intro_2, null))
 
         val intent = intent
-        val extras = intent.extras
-        val cmds = extras!!.getStringArrayList(ARG_COMMANDS)
+        if (intent == null) {
+            finish()
+            return
+        }
 
-        mCommands = Commands.newInstance(resources.getString(R.string.run_commands),
+        val extras = intent.extras
+        if (extras == null) {
+            finish()
+            return
+        }
+
+        val cmds = extras.getStringArrayList(ARG_COMMANDS)
+
+        commands = Commands.newInstance(resources.getString(R.string.run_commands),
                 resources.getString(R.string.run_on_computer),
                 resources.getColor(R.color.intro_6, null),
                 cmds)
 
-//        addSlide(mSelector!!)
-        addSlide(mInitial!!)
-        addSlide(mInstructions!!)
-        addSlide(mCommands!!)
+        addSlide(initial)
+        addSlide(instructions)
+        addSlide(commands)
 
         pager.offscreenPageLimit = 300
 

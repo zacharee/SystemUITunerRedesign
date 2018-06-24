@@ -25,12 +25,18 @@ class ComponentsListActivity : AppCompatActivity() {
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
 
         val intent = intent
-        if (intent == null) finish()
+        if (intent == null) {
+            finish()
+            return
+        }
 
-        val extras = intent!!.extras
-        if (extras == null) finish()
+        val extras = intent.extras
+        if (extras == null) {
+            finish()
+            return
+        }
 
-        val packageName = extras!!.getString("package")
+        val packageName = extras.getString("package")
         val appName = extras.getString("name")
         val isLeft = extras.getBoolean("isLeft")
 

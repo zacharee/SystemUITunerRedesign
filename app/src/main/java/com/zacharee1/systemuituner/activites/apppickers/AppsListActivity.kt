@@ -53,10 +53,16 @@ class AppsListActivity : AppCompatActivity() {
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
 
         val intent = intent
-        if (intent == null) finish()
+        if (intent == null) {
+            finish()
+            return
+        }
 
-        val extras = intent!!.extras
-        if (extras == null) finish()
+        val extras = intent.extras
+        if (extras == null) {
+            finish()
+            return
+        }
 
         val isLeft = extras.getBoolean("isLeft")
 
