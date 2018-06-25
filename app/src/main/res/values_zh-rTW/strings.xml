@@ -88,7 +88,7 @@
   <string name="general">一般</string>
   <string name="heads_up_notifications">浮動通知</string>
   <string name="headphone_volume_warning">耳機音量警示</string>
-  <string name="custom_settings_input">Custom Settings Input</string>
+  <string name="custom_settings_input">啟用自訂設定輸入</string>
   <string name="custom_settings_read">讀取自定義數值</string>
   <string name="global">全域</string>
   <string name="secure">安全</string>
@@ -295,8 +295,8 @@
   <string name="safe_mode_notif_desc_not_supported">本設定在 Oreo 中必須保持啟用</string>
   <string name="carrier_on_home">主屏幕顯示運營商標簽</string>
   <string name="carrier_on_lock">鎖定屏幕顯示運營商標簽</string>
-  <string name="custom_settings_input_desc">These fields allow you to enter your own custom settings.</string>
-  <string name="custom_settings_read_desc">These fields allow you to read the value of a specified key.</string>
+  <string name="custom_settings_input_desc">這些欄位允許您輸入自己的自訂設置。</string>
+  <string name="custom_settings_read_desc">這些欄位允許您讀取指定鍵的值。</string>
   <string name="key_plaintext">Key</string>
   <string name="value_plaintext">Value</string>
   <string name="custom_settings_warning">請小心操作！如果你輸入了錯誤的數值，可能導致一直崩潰，重啓或更糟！</string>
