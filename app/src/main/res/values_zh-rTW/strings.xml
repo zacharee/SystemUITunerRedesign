@@ -273,7 +273,7 @@
   <string name="warn_message">本 app 會修改系統設定，且移除 app 並不會復原設定，即便是作者本人也無法復原。除非你能接受否則請勿使用本 app，別說我沒警告過你！</string>
   <string name="notif_title">安全模式服務正在執行</string>
   <string name="notif_desc">點擊以變更設定</string>
-  <string name="touchwiz_oreo_qqs">在 TouchWiz 奧利利的設備, 這個設置不再可靠!在這裡設置數位的同時, 您可能還必須將該值保存到 Settings.System.apanel_number, 這只能用亞行或 root 使用者來完成。安全模式試圖實現一種變通辦法, 但我不能保證它會奏效!</string>
+  <string name="touchwiz_oreo_qqs">在 TouchWiz 奧利利的設備, 這個設置不再可靠!在這裡設置數位的同時, 您可能還必須將該值保存到 Settings.System.apanel_number, 這只能用ADB或 root 使用者來完成。安全模式試圖實現一種變通辦法, 但我不能保證它會奏效!</string>
   <string name="color">色彩</string>
   <string name="notifs_snooze">延遲通知</string>
   <string name="notifs_snooze_desc">&#160;
@@ -299,5 +299,5 @@
   <string name="custom_settings_read_desc">These fields allow you to read the value of a specified key.</string>
   <string name="key_plaintext">Key</string>
   <string name="value_plaintext">Value</string>
-  <string name="custom_settings_warning">Be careful what you do here! If you input an incorrect value, you could cause a crash loop, bootloop or worse!</string>
+  <string name="custom_settings_warning">請小心操作！如果你輸入了錯誤的數值，可能導致一直崩潰，重啓或更糟！</string>
 </resources>
