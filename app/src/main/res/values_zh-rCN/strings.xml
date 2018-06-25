@@ -258,12 +258,12 @@
   <string name="select_component">选择组件</string>
   <string name="reset">重置</string>
   <string name="pnc_desc">点亮通知控制让你可以调整每个应用程序的通知重要程度，开启本功能并长长按任意通知开始使用，若要使用滑动条请按A。</string>
-  <string name="pnc_warn">This feature is known to be unreliable on certain devices, especially on TouchWiz! It is impossible to fix, but the best workaround seems to be to tap repeatedly on the desired level. Again, I CANNOT fix it!</string>
+  <string name="pnc_warn">本功能在某些设备上不可用，特别是 TouchWiz ！可以尝试多试试，但是我无法修复。</string>
   <string name="agree">同意</string>
   <string name="cancel">取消</string>
   <string name="dont_show">不再显示</string>
   <string name="miui_detected">检测到MIUI设备！</string>
-  <string name="miui_warning">It seems that you\'re using a MIUI device. Please take note that few, if any, features of this app will work for you. It is NOT fixable!</string>
+  <string name="miui_warning">看起来你正在使用 MIUI 设备。请注意，本应用在这个设备上只有少数的功能可用，并且这是无法修复的。</string>
   <string name="intent">意图</string>
   <string name="removing_tile">正在移动块</string>
   <string name="remove_tile">移动 %s?</string>
