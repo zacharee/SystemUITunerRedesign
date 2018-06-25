@@ -270,10 +270,10 @@
   <string name="allow_deep_sleep">允许自动深度睡眠</string>
   <string name="yes">是</string>
   <string name="no">否</string>
-  <string name="warn_message">This app modifies system settings. Uninstalling won\'t revert anything, nor can I make that happen. Unless you are comfortable with manual recovery, don\'t use the app. You have been warned!</string>
+  <string name="warn_message">警告！本应用会修改系统设置，并且卸载应用后也不会恢复。我无法避免这个事情的发生，除非你能接受。否则请勿使用。</string>
   <string name="notif_title">安全模式服务已经运行</string>
   <string name="notif_desc">点击更改设置</string>
-  <string name="touchwiz_oreo_qqs">On TouchWiz Oreo devices, this setting is no longer reliable! Along with setting the number here, you may have to also save the value to Settings.System.apanel_number, which can only be done with ADB or root. Safe Mode attempts to implement a workaround, but I can\'t guarantee it will work!</string>
+  <string name="touchwiz_oreo_qqs">在 TouchWiz 奥利奥版本的设备上这个设置并不稳定！在这里设置数字的同时，你可能必须将该数值保存到Settings.System.apanel_number，这里只能用ADB或者ROOT。可以尝试安全模式里面完成，但我不能包装它可用。</string>
   <string name="color">颜色</string>
   <string name="notifs_snooze">延迟通知</string>
   <string name="notifs_snooze_desc">&#160;
@@ -291,7 +291,7 @@
   <string name="military">24小时制</string>
   <string name="military_nosec">24小时制，不含秒</string>
   <string name="show_notif">显示通知</string>
-  <string name="safe_mode_notif_desc">It is recommended that you keep this active, and hide the notification instead. Turning it off may cause Safe Mode to no longer function.</string>
+  <string name="safe_mode_notif_desc">建议你保持本设定启用，并用隐藏通知作为替代方式，停用次设定可能导致安全模式无法正常运行。</string>
   <string name="safe_mode_notif_desc_not_supported">设个设置在Android Oreo上必须保持启用</string>
   <string name="carrier_on_home">主屏幕显示运营商标签</string>
   <string name="carrier_on_lock">锁定幕显示运营商标签</string>
@@ -299,5 +299,5 @@
   <string name="custom_settings_read_desc">允许你读取或指定按键</string>
   <string name="key_plaintext">按键</string>
   <string name="value_plaintext">数值</string>
-  <string name="custom_settings_warning">Be careful what you do here! If you input an incorrect value, you could cause a crash loop, bootloop or worse!</string>
+  <string name="custom_settings_warning">请小心操作，如果你输入了错误的数值，可能导致一直崩溃或一直重启或更糟！</string>
 </resources>
