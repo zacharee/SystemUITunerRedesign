@@ -277,8 +277,8 @@
   <string name="color">颜色</string>
   <string name="notifs_snooze">延迟通知</string>
   <string name="notifs_snooze_desc">&#160;
-    In Android 8.1 and later, you can set custom times for notification snoozing. These values reset on reboot, so make sure to enable Safe Mode if you would like them to persist across power cycles.\n\n&#160;
-    Use the options below to set the different snooze times. \"Default\" sets the time Android will use by default. The other items will be the snooze times available for you to select.
+     在Android 8.1 或以后的系统中，你可以自定义延迟通知的时间，重启后重置，所以确认启用安全模式以保证数值在电源持续周期内保持不变。\n\n&#160;
+    使用下面的选项设置不同的延迟时间。“默认” 设置为Android的默认时间.其他项目是可以选择的延迟时间.
     </string>
   <string name="default_text">默认 </string>
   <string name="time_a">时间A</string>
