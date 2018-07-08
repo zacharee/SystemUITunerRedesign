@@ -54,7 +54,8 @@ class StatbarFragment : AnimFragment() {
                     ?.beginTransaction()
                     ?.setCustomAnimations(R.animator.pop_in, R.animator.pop_out, R.animator.pop_in, R.animator.pop_out)
                     ?.replace(R.id.content_main, fragment)
-                    ?.addToBackStack("auto")?.commit()
+                    ?.addToBackStack("auto")
+                    ?.commit()
             true
         }
     }

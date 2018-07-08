@@ -66,12 +66,12 @@ class OptionsActivity : AppCompatActivity() {
     private fun handleBackPressed() {
         if (fragmentManager != null) {
             if (fragmentManager.backStackEntryCount > 1) {
-                fragmentManager.popBackStack()
+                fragmentManager.popBackStackImmediate()
 
                 val hideWelcomeScreen = PreferenceManager.getDefaultSharedPreferences(this).getBoolean("hide_welcome_screen", false)
-                val isMainDetached = main.isDetached
-                supportActionBar?.setDisplayHomeAsUpEnabled(if (isMainDetached) true else !hideWelcomeScreen)
-                supportActionBar?.setDisplayShowHomeEnabled(if (isMainDetached) true else !hideWelcomeScreen)
+                val stillAboveOne = fragmentManager.backStackEntryCount > 1
+                supportActionBar?.setDisplayHomeAsUpEnabled(if (stillAboveOne) true else !hideWelcomeScreen)
+                supportActionBar?.setDisplayShowHomeEnabled(if (stillAboveOne) true else !hideWelcomeScreen)
             } else {
                 finish()
             }

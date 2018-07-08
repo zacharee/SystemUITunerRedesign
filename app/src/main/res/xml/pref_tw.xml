@@ -49,6 +49,12 @@
             android:icon="@drawable/ic_restore_black_24dp"
             android:key="restore_blacklist"
             android:title="@string/restore_blacklist"/>
+        <Preference
+            android:key="auto_detect"
+            android:title="@string/auto_detect"
+            android:summary="@string/auto_detect_summary"
+            android:icon="@drawable/ic_help_outline_black_24dp" />
+
         <SwitchPreference
             android:title="@string/carrier_on_home"
             android:key="slimindicator_home_carrier" />
