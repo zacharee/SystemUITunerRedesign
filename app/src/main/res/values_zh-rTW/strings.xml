@@ -300,4 +300,5 @@
   <string name="key_plaintext">按鍵</string>
   <string name="value_plaintext">數值</string>
   <string name="custom_settings_warning">請小心操作！如果你輸入了錯誤的數值，可能導致一直崩潰，重啓或更糟！</string>
+  <string name="hide_welcome_hint">Hint: You can hide this screen, and the donation message, by going to Settings and toggling on \"Hide Welcome Screen\".</string>
 </resources>
