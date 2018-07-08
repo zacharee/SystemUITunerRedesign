@@ -3,30 +3,33 @@ package com.zacharee1.systemuituner.fragments
 import android.annotation.SuppressLint
 import android.content.res.Resources
 import android.os.Build
-import android.os.Bundle
-import android.preference.*
+import android.preference.EditTextPreference
+import android.preference.Preference
+import android.preference.PreferenceCategory
+import android.preference.SwitchPreference
 import android.provider.Settings
 import com.pavelsikun.seekbarpreference.SeekBarPreference
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.util.SettingsUtils
 import java.util.*
 
-class MiscFragment : PreferenceFragment() {
+class MiscFragment : AnimFragment() {
     override fun onResume() {
         super.onResume()
 
         activity.title = resources.getString(R.string.miscellaneous)
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        addPreferencesFromResource(R.xml.pref_misc)
-        setGlobalSwitchStates()
-        setSecureSwitchStates()
-        setSystemSwitchStates()
-        setNightModeSwitchStates()
-        setUpAnimationScales()
-        setUpSnoozeStuff()
+    override fun onAnimationFinished(enter: Boolean) {
+        if (enter) {
+            addPreferencesFromResource(R.xml.pref_misc)
+            setGlobalSwitchStates()
+            setSecureSwitchStates()
+            setSystemSwitchStates()
+            setNightModeSwitchStates()
+            setUpAnimationScales()
+            setUpSnoozeStuff()
+        }
     }
 
     private fun setGlobalSwitchStates() {

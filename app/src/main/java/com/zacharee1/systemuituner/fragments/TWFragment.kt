@@ -1,9 +1,7 @@
 package com.zacharee1.systemuituner.fragments
 
 import android.graphics.Color
-import android.os.Bundle
 import android.preference.Preference
-import android.preference.PreferenceFragment
 import android.preference.SwitchPreference
 import android.provider.Settings
 import com.jaredrummler.android.colorpicker.ColorPreference
@@ -11,20 +9,21 @@ import com.pavelsikun.seekbarpreference.SeekBarPreference
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.util.SettingsUtils
 
-class TWFragment : PreferenceFragment() {
+class TWFragment : AnimFragment() {
     override fun onResume() {
         super.onResume()
 
         activity.title = resources.getString(R.string.touchwiz)
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        addPreferencesFromResource(R.xml.pref_tw)
-        setUpQSStuff()
-        setUpNavBarStuff()
-        preferenceListeners()
-        switchPreferenceListeners()
+    override fun onAnimationFinished(enter: Boolean) {
+        if (enter) {
+            addPreferencesFromResource(R.xml.pref_tw)
+            setUpQSStuff()
+            setUpNavBarStuff()
+            preferenceListeners()
+            switchPreferenceListeners()
+        }
     }
 
     private fun setUpQSStuff() {
@@ -86,7 +85,11 @@ class TWFragment : PreferenceFragment() {
 
         auto?.setOnPreferenceClickListener {
             val fragment = AutoFragment()
-            fragmentManager?.beginTransaction()?.replace(R.id.content_main, fragment)?.addToBackStack("auto")?.commit()
+            fragmentManager
+                    ?.beginTransaction()
+                    ?.setCustomAnimations(R.animator.pop_in, R.animator.pop_out, R.animator.pop_in, R.animator.pop_out)
+                    ?.replace(R.id.content_main, fragment)
+                    ?.addToBackStack("auto")?.commit()
             true
         }
     }

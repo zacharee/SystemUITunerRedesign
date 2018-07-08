@@ -6,9 +6,7 @@ import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
 import android.content.pm.PackageManager
-import android.os.Bundle
 import android.preference.Preference
-import android.preference.PreferenceFragment
 import android.preference.SwitchPreference
 import android.provider.Settings
 import android.widget.Toast
@@ -17,7 +15,7 @@ import com.zacharee1.systemuituner.activites.instructions.SetupActivity
 import com.zacharee1.systemuituner.handlers.DemoHandler
 import com.zacharee1.systemuituner.util.SettingsUtils
 
-class DemoFragment : PreferenceFragment() {
+class DemoFragment : AnimFragment() {
     private var switchReceiver: BroadcastReceiver? = null
     
     private lateinit var demoHandler: DemoHandler
@@ -28,19 +26,20 @@ class DemoFragment : PreferenceFragment() {
         activity.title = resources.getString(R.string.demo_mode)
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        addPreferencesFromResource(R.xml.pref_demo)
-        demoHandler = DemoHandler(context)
-        if (SettingsUtils.hasSpecificPerm(context, Manifest.permission.DUMP)) {
-            setPrefListeners()
-            setDemoSwitchListener()
-        } else {
-            val intent = Intent(context, SetupActivity::class.java)
-            intent.putExtra(PERMISSION_NEEDED, arrayOf(Manifest.permission.DUMP))
-            startActivity(intent)
+    override fun onAnimationFinished(enter: Boolean) {
+        if (enter) {
+            addPreferencesFromResource(R.xml.pref_demo)
+            demoHandler = DemoHandler(context)
+            if (SettingsUtils.hasSpecificPerm(context, Manifest.permission.DUMP)) {
+                setPrefListeners()
+                setDemoSwitchListener()
+            } else {
+                val intent = Intent(context, SetupActivity::class.java)
+                intent.putExtra(PERMISSION_NEEDED, arrayOf(Manifest.permission.DUMP))
+                startActivity(intent)
 
-            activity?.finish()
+                activity?.finish()
+            }
         }
     }
 

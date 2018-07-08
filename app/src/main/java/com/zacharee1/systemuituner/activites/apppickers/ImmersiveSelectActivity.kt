@@ -2,10 +2,8 @@ package com.zacharee1.systemuituner.activites.apppickers
 
 import android.content.pm.PackageManager
 import android.os.Bundle
-import android.os.Looper
 import android.preference.CheckBoxPreference
 import android.preference.Preference
-import android.preference.PreferenceFragment
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.Toolbar
 import android.view.LayoutInflater
@@ -15,12 +13,16 @@ import android.widget.LinearLayout
 import android.widget.Toast
 import com.dinuscxj.progressbar.CircleProgressBar
 import com.zacharee1.systemuituner.R
+import com.zacharee1.systemuituner.fragments.AnimFragment
 import com.zacharee1.systemuituner.handlers.ImmersiveHandler
 import com.zacharee1.systemuituner.misc.AppInfo
 import com.zacharee1.systemuituner.util.Utils
+import io.reactivex.Observable
+import io.reactivex.schedulers.Schedulers
 import java.util.*
 
 class ImmersiveSelectActivity : AppCompatActivity() {
+    private var toolbar: Toolbar? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,42 +32,42 @@ class ImmersiveSelectActivity : AppCompatActivity() {
         setContentView(R.layout.activity_blank_custom_toolbar)
         setTitle(R.string.select_apps)
 
-        val installedApps = Utils.getInstalledApps(this)
+        toolbar = findViewById(R.id.toolbar)
+        setSupportActionBar(toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         val bar = findViewById<CircleProgressBar>(R.id.app_load_progress)
 
-        Thread(Runnable {
-            Looper.prepare()
+        Observable.fromCallable { Utils.getInstalledApps(this) }
+                .subscribeOn(Schedulers.io())
+                .observeOn(Schedulers.io())
+                .subscribe {
+                    val appMap = TreeMap<String, AppInfo>()
 
-            val appMap = TreeMap<String, AppInfo>()
-
-            for (info in installedApps) {
-                try {
-                    if (packageManager.getPackageInfo(info.packageName, PackageManager.GET_ACTIVITIES).activities.size > 1) {
-                        appMap[info.loadLabel(packageManager).toString()] = AppInfo(info.loadLabel(packageManager).toString(),
-                                info.packageName,
-                                null,
-                                info.loadIcon(packageManager))
-                        runOnUiThread { bar.progress = 100 * (installedApps.indexOf(info) + 1) / installedApps.size }
+                    it.forEach { info ->
+                        val activities = packageManager.getPackageInfo(info.packageName, PackageManager.GET_ACTIVITIES).activities
+                        if (activities?.size?.let { it > 1 } == true) {
+                            appMap[info.loadLabel(packageManager).toString()] = AppInfo(info.loadLabel(packageManager).toString(),
+                                    info.packageName,
+                                    null,
+                                    info.loadIcon(packageManager))
+                            runOnUiThread { bar.progress = 100 * (it.indexOf(info) + 1) / it.size }
+                        }
                     }
-                } catch (e: Exception) {
+
+                    runOnUiThread {
+                        val fragment = SelectorFragment.newInstance()
+                        fragment.setInfo(appMap)
+
+                        (findViewById<View>(R.id.content_main) as LinearLayout).removeAllViews()
+                        try {
+                            fragmentManager.beginTransaction().replace(R.id.content_main, fragment).commit()
+                        } catch (e: Exception) {
+                        }
+
+                        setUpActionBar(fragment)
+                    }
                 }
-
-            }
-
-            runOnUiThread {
-                val fragment = SelectorFragment.newInstance()
-                fragment.setInfo(appMap)
-
-                (findViewById<View>(R.id.content_main) as LinearLayout).removeAllViews()
-                try {
-                    fragmentManager.beginTransaction().replace(R.id.content_main, fragment).commit()
-                } catch (e: Exception) {
-                }
-
-                setUpActionBar(fragment)
-            }
-        }).start()
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -79,17 +81,13 @@ class ImmersiveSelectActivity : AppCompatActivity() {
     }
 
     private fun setUpActionBar(fragment: SelectorFragment) {
-        val toolbar = findViewById<Toolbar>(R.id.toolbar)
-        setSupportActionBar(toolbar)
-        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
-
         val selectAll = LayoutInflater.from(this).inflate(R.layout.select_all, toolbar, false)
         val deselectAll = LayoutInflater.from(this).inflate(R.layout.deselect_all, toolbar, false)
         val invertSelection = LayoutInflater.from(this).inflate(R.layout.invert_select, toolbar, false)
 
-        toolbar.addView(selectAll)
-        toolbar.addView(deselectAll)
-        toolbar.addView(invertSelection)
+        toolbar?.addView(selectAll)
+        toolbar?.addView(deselectAll)
+        toolbar?.addView(invertSelection)
 
         selectAll.setOnClickListener { fragment.selectAllBoxes() }
         deselectAll.setOnClickListener { fragment.deselectAllBoxes() }
@@ -118,11 +116,11 @@ class ImmersiveSelectActivity : AppCompatActivity() {
         }
     }
 
-    class SelectorFragment : PreferenceFragment() {
-        private var mInfo: TreeMap<String, AppInfo>? = null
+    class SelectorFragment : AnimFragment() {
+        private var infos: TreeMap<String, AppInfo> = TreeMap()
 
         fun setInfo(info: TreeMap<String, AppInfo>) {
-            mInfo = info
+            infos.putAll(info)
         }
 
         override fun onCreate(savedInstanceState: Bundle?) {
@@ -135,14 +133,14 @@ class ImmersiveSelectActivity : AppCompatActivity() {
         private fun populateList() {
             val selectedApps = ImmersiveHandler.parseSelectedApps(activity, TreeSet())
 
-            if (mInfo != null) {
-                for (info in mInfo!!.values) {
-                    val preference = CheckBoxPreference(activity)
-                    preference.title = info.appName
-                    preference.summary = info.packageName
-                    preference.icon = info.appIcon
-                    preference.key = info.packageName
-                    preference.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { _, o ->
+            for (info in infos.values) {
+                val preference = CheckBoxPreference(activity)
+                preference.title = info.appName
+                preference.summary = info.packageName
+                preference.icon = info.appIcon
+                preference.key = info.packageName
+                preference.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { _, o ->
+                    if (activity != null) {
                         val isChecked = java.lang.Boolean.valueOf(o.toString())
                         if (isChecked) {
                             ImmersiveHandler.addApp(activity, preference.key)
@@ -151,11 +149,11 @@ class ImmersiveSelectActivity : AppCompatActivity() {
                         }
                         restartMode()
                         true
-                    }
-                    preference.isChecked = selectedApps.contains(preference.key)
-
-                    preferenceScreen.addPreference(preference)
+                    } else false
                 }
+                preference.isChecked = selectedApps.contains(preference.key)
+
+                preferenceScreen.addPreference(preference)
             }
         }
 
@@ -168,40 +166,25 @@ class ImmersiveSelectActivity : AppCompatActivity() {
         }
 
         private fun setBoxesSelected(selected: Boolean) {
-            for (i in 0 until preferenceScreen.preferenceCount) {
-                val p = preferenceScreen.getPreference(i)
-
-                if (p is CheckBoxPreference) {
-                    p.isChecked = selected
-                    p.getOnPreferenceChangeListener().onPreferenceChange(p, selected)
-                }
-            }
-        }
-
-        fun invertSelection() {
-            val selected = ArrayList<CheckBoxPreference>()
-            val unselected = ArrayList<CheckBoxPreference>()
-
             (0 until preferenceScreen.preferenceCount)
                     .map { preferenceScreen.getPreference(it) }
                     .filterIsInstance<CheckBoxPreference>()
-                    .forEach {
-                        if (it.isChecked) {
-                            selected.add(it)
-                        } else {
-                            unselected.add(it)
+                    .apply {
+                        forEach {
+                            it.isChecked = selected
                         }
                     }
+        }
 
-            for (box in selected) {
-                box.isChecked = false
-                box.onPreferenceChangeListener.onPreferenceChange(box, false)
-            }
-
-            for (box in unselected) {
-                box.isChecked = true
-                box.onPreferenceChangeListener.onPreferenceChange(box, true)
-            }
+        fun invertSelection() {
+            (0 until preferenceScreen.preferenceCount)
+                    .map { preferenceScreen.getPreference(it) }
+                    .filterIsInstance<CheckBoxPreference>()
+                    .apply {
+                        forEach {
+                            it.isChecked = !it.isChecked
+                        }
+                    }
         }
 
         private fun restartMode() {

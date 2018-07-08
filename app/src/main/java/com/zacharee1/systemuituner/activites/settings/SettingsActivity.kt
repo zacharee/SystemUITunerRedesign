@@ -5,13 +5,14 @@ import android.os.Build
 import android.os.Bundle
 import android.preference.Preference
 import android.preference.PreferenceCategory
-import android.preference.PreferenceFragment
 import android.preference.SwitchPreference
+import android.support.v4.content.ContextCompat
 import android.support.v4.content.LocalBroadcastManager
 import android.support.v7.app.AppCompatActivity
 import android.view.MenuItem
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.activites.instructions.TaskerInstructionActivity
+import com.zacharee1.systemuituner.fragments.AnimFragment
 import com.zacharee1.systemuituner.handlers.RecreateHandler
 import com.zacharee1.systemuituner.services.SafeModeService
 import com.zacharee1.systemuituner.util.Utils
@@ -46,7 +47,7 @@ class SettingsActivity : AppCompatActivity() {
      * This fragment shows general preferences only. It is used when the
      * activity is showing a two-pane settings UI.
      */
-    class GeneralPreferenceFragment : PreferenceFragment() {
+    class GeneralPreferenceFragment : AnimFragment() {
         override fun onCreate(savedInstanceState: Bundle?) {
             super.onCreate(savedInstanceState)
             addPreferencesFromResource(R.xml.settings_general)
@@ -98,11 +99,7 @@ class SettingsActivity : AppCompatActivity() {
             safeMode.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { _, newValue ->
                 if (java.lang.Boolean.valueOf(newValue.toString())) {
                     activity.stopService(Intent(activity, SafeModeService::class.java))
-                    if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O) {
-                        activity.startService(Intent(activity, SafeModeService::class.java))
-                    } else {
-                        activity.startForegroundService(Intent(activity, SafeModeService::class.java))
-                    }
+                    ContextCompat.startForegroundService(activity, Intent(activity, SafeModeService::class.java))
                 } else {
                     activity.stopService(Intent(activity, SafeModeService::class.java))
                 }

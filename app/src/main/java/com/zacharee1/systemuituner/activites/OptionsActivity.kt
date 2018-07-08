@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import com.zacharee1.systemuituner.R
+import com.zacharee1.systemuituner.fragments.AnimFragment
 import com.zacharee1.systemuituner.handlers.RecreateHandler
 import com.zacharee1.systemuituner.misc.OptionSelected
 import com.zacharee1.systemuituner.util.Utils
@@ -33,7 +34,12 @@ class OptionsActivity : AppCompatActivity() {
         supportActionBar?.setDisplayShowHomeEnabled(!hideWelcomeScreen)
 
         main = MainPrefs()
-        fragmentManager?.beginTransaction()?.replace(R.id.content_main, main)?.addToBackStack("main")?.commit()
+        fragmentManager
+                ?.beginTransaction()
+                ?.setCustomAnimations(R.animator.pop_in, R.animator.pop_out, R.animator.pop_in, R.animator.pop_out)
+                ?.replace(R.id.content_main, main)
+                ?.addToBackStack("main")
+                ?.commit()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -74,7 +80,7 @@ class OptionsActivity : AppCompatActivity() {
         }
     }
 
-    class MainPrefs : PreferenceFragment() {
+    class MainPrefs : AnimFragment() {
         override fun onCreate(savedInstanceState: Bundle?) {
             super.onCreate(savedInstanceState)
 
@@ -113,7 +119,12 @@ class OptionsActivity : AppCompatActivity() {
                 val pref = preferenceScreen.getPreference(i)
                 pref.setOnPreferenceClickListener {
                     val fragment = Class.forName(pref.fragment ?: return@setOnPreferenceClickListener false).newInstance() as PreferenceFragment
-                    fragmentManager?.beginTransaction()?.replace(R.id.content_main, fragment, it.key)?.addToBackStack(it.key)?.commit()
+                    fragmentManager
+                            ?.beginTransaction()
+                            ?.setCustomAnimations(R.animator.pop_in, R.animator.pop_out, R.animator.pop_in, R.animator.pop_out)
+                            ?.replace(R.id.content_main, fragment, it.key)
+                            ?.addToBackStack(it.key)
+                            ?.commit()
                     (activity as AppCompatActivity).supportActionBar?.setDisplayHomeAsUpEnabled(true)
                     (activity as AppCompatActivity).supportActionBar?.setDisplayShowHomeEnabled(true)
                     true

@@ -5,23 +5,22 @@ import android.content.Intent
 import android.graphics.Color
 import android.graphics.PorterDuff
 import android.os.Build
-import android.os.Bundle
 import android.preference.Preference
 import android.preference.PreferenceCategory
-import android.preference.PreferenceFragment
 import android.provider.Settings
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.activites.apppickers.AppsListActivity
 import com.zacharee1.systemuituner.prefs.LockPref
 import com.zacharee1.systemuituner.util.SettingsUtils
 
-class LockFragment : PreferenceFragment() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        addPreferencesFromResource(R.xml.pref_lock)
-        setEnabled()
-        setLockIconStuff()
-        setResetListeners()
+class LockFragment : AnimFragment() {
+    override fun onAnimationFinished(enter: Boolean) {
+        if (enter) {
+            addPreferencesFromResource(R.xml.pref_lock)
+            setEnabled()
+            setLockIconStuff()
+            setResetListeners()
+        }
     }
 
     override fun onResume() {

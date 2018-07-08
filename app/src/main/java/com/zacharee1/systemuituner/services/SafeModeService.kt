@@ -98,9 +98,8 @@ class SafeModeService : Service() {
                     .setSmallIcon(R.mipmap.ic_launcher)
                     .setContentTitle(resources.getString(R.string.notif_title))
                     .setContentText(resources.getString(R.string.notif_desc))
+                    .setPriority(NotificationCompat.PRIORITY_MIN)
                     .setContentIntent(settingsIntent)
-
-            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O) notification.priority = NotificationCompat.PRIORITY_MIN
 
             startForeground(1001, notification.build())
         }

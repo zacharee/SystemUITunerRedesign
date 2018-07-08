@@ -2,10 +2,8 @@ package com.zacharee1.systemuituner.fragments
 
 import android.content.Intent
 import android.os.Build
-import android.os.Bundle
 import android.preference.Preference
 import android.preference.PreferenceCategory
-import android.preference.PreferenceFragment
 import android.preference.SwitchPreference
 import android.provider.Settings
 import com.pavelsikun.seekbarpreference.SeekBarPreference
@@ -13,20 +11,21 @@ import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.activites.QuickSettingsLayoutEditor
 import com.zacharee1.systemuituner.util.SettingsUtils
 
-class QSFragment : PreferenceFragment() {
+class QSFragment : AnimFragment() {
     override fun onResume() {
         super.onResume()
 
         activity.title = resources.getString(R.string.quick_settings)
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        addPreferencesFromResource(R.xml.pref_qs)
-        setSwitchStates()
-        setSwitchListeners()
-        setSliderState()
-        setEditorListener()
+    override fun onAnimationFinished(enter: Boolean) {
+        if (enter) {
+            addPreferencesFromResource(R.xml.pref_qs)
+            setSwitchStates()
+            setSwitchListeners()
+            setSliderState()
+            setEditorListener()
+        }
     }
 
     private fun setEditorListener() {
