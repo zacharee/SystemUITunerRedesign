@@ -10,13 +10,9 @@ import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.util.SettingsUtils
 
 class TWFragment : AnimFragment() {
-    override fun onResume() {
-        super.onResume()
+    override fun onSetTitle() = resources.getString(R.string.touchwiz)
 
-        activity.title = resources.getString(R.string.touchwiz)
-    }
-
-    override fun onAnimationFinished(enter: Boolean) {
+    override fun onAnimationFinishedEnter(enter: Boolean) {
         if (enter) {
             addPreferencesFromResource(R.xml.pref_tw)
             setUpQSStuff()
@@ -87,7 +83,6 @@ class TWFragment : AnimFragment() {
             val fragment = AutoFragment()
             fragmentManager
                     ?.beginTransaction()
-                    ?.setCustomAnimations(R.animator.pop_in, R.animator.pop_out, R.animator.pop_in, R.animator.pop_out)
                     ?.replace(R.id.content_main, fragment)
                     ?.addToBackStack("auto")?.commit()
             true

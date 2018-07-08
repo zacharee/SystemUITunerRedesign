@@ -21,13 +21,9 @@ class ImmersiveFragment : AnimFragment(), Preference.OnPreferenceChangeListener 
         }
     }
 
-    override fun onResume() {
-        super.onResume()
+    override fun onSetTitle() = resources.getString(R.string.immersive_mode)
 
-        activity.title = resources.getString(R.string.immersive_mode)
-    }
-
-    override fun onAnimationFinished(enter: Boolean) {
+    override fun onAnimationFinishedEnter(enter: Boolean) {
         if (enter) {
             addPreferencesFromResource(R.xml.pref_imm)
             findPreference("immersive_tile_mode")?.onPreferenceChangeListener = this

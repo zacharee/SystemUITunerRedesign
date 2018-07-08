@@ -20,13 +20,9 @@ class DemoFragment : AnimFragment() {
     
     private lateinit var demoHandler: DemoHandler
 
-    override fun onResume() {
-        super.onResume()
+    override fun onSetTitle() = resources.getString(R.string.demo_mode)
 
-        activity.title = resources.getString(R.string.demo_mode)
-    }
-
-    override fun onAnimationFinished(enter: Boolean) {
+    override fun onAnimationFinishedEnter(enter: Boolean) {
         if (enter) {
             addPreferencesFromResource(R.xml.pref_demo)
             demoHandler = DemoHandler(context)

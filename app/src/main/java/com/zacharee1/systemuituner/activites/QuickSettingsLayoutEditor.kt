@@ -13,7 +13,6 @@ import android.os.Looper
 import android.provider.Settings
 import android.support.design.widget.FloatingActionButton
 import android.support.v7.app.AlertDialog
-import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.LinearLayoutManager
@@ -28,13 +27,12 @@ import com.zacharee1.systemuituner.misc.QSDragAdapter
 import com.zacharee1.systemuituner.util.Utils
 import java.util.*
 
-class QuickSettingsLayoutEditor : AppCompatActivity() {
+class QuickSettingsLayoutEditor : BaseAnimActivity() {
     private var mObserver: ContentObserver? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_blank_recycler)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
         title = resources.getString(R.string.quick_settings)
 
         findViewById<View>(R.id.root).setBackgroundColor(Color.parseColor("#ff303030"))

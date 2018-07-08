@@ -4,15 +4,15 @@ import android.Manifest
 import android.content.Intent
 import android.os.Bundle
 import android.preference.PreferenceManager
-import android.support.v7.app.AppCompatActivity
 import com.crashlytics.android.Crashlytics
+import com.zacharee1.systemuituner.activites.BaseAnimActivity
 import com.zacharee1.systemuituner.activites.info.IntroActivity
 import com.zacharee1.systemuituner.activites.instructions.SetupActivity
 import com.zacharee1.systemuituner.util.SuUtils
 import com.zacharee1.systemuituner.util.Utils
 import io.fabric.sdk.android.Fabric
 
-class LauncherActivity : AppCompatActivity() {
+class LauncherActivity : BaseAnimActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

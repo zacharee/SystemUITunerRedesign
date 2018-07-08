@@ -1,27 +1,22 @@
 package com.zacharee1.systemuituner.activites.info
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
 import android.text.method.LinkMovementMethod
 import android.view.MenuItem
 import android.view.View
 import android.widget.TextView
 import com.zacharee1.systemuituner.R
-import com.zacharee1.systemuituner.handlers.RecreateHandler
+import com.zacharee1.systemuituner.activites.BaseAnimActivity
 import com.zacharee1.systemuituner.util.BillingUtil
-import com.zacharee1.systemuituner.util.Utils
 
-class AboutActivity : AppCompatActivity() {
+class AboutActivity : BaseAnimActivity() {
     private var mBilling: BillingUtil? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        setTheme(if (Utils.isInDarkMode(this)) R.style.AppTheme_Dark else R.style.AppTheme)
-
-        RecreateHandler.onCreate(this)
-
         setContentView(R.layout.activity_about)
+        setTitle(R.string.about)
 
         mBilling = BillingUtil(this)
 
@@ -44,11 +39,6 @@ class AboutActivity : AppCompatActivity() {
         }
 
         return super.onOptionsItemSelected(item)
-    }
-
-    override fun onDestroy() {
-        RecreateHandler.onDestroy(this)
-        super.onDestroy()
     }
 
     fun onDonatePayPalClicked(v: View) {

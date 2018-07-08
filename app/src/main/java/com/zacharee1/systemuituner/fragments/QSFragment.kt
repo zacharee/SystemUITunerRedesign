@@ -12,13 +12,9 @@ import com.zacharee1.systemuituner.activites.QuickSettingsLayoutEditor
 import com.zacharee1.systemuituner.util.SettingsUtils
 
 class QSFragment : AnimFragment() {
-    override fun onResume() {
-        super.onResume()
+    override fun onSetTitle() = resources.getString(R.string.quick_settings)
 
-        activity.title = resources.getString(R.string.quick_settings)
-    }
-
-    override fun onAnimationFinished(enter: Boolean) {
+    override fun onAnimationFinishedEnter(enter: Boolean) {
         if (enter) {
             addPreferencesFromResource(R.xml.pref_qs)
             setSwitchStates()

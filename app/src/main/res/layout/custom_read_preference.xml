@@ -83,7 +83,7 @@
         <ImageView
             android:id="@+id/select"
             app:srcCompat="@drawable/ic_remove_red_eye_black_24dp"
-            android:tint="#fff"
+            android:tint="?android:attr/textColorPrimary"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:scaleType="center"

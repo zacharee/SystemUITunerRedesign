@@ -33,7 +33,6 @@ class InstructionsActivity : AppIntro2() {
     private lateinit var instructions: OSInstructions
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        setTheme(R.style.AppTheme_Intro)
         super.onCreate(savedInstanceState)
 
         instructions = OSInstructions.newInstance(resources.getString(R.string.choose_your_weapon),
@@ -74,7 +73,6 @@ class InstructionsActivity : AppIntro2() {
         backButton.visibility = View.GONE
         skipButtonEnabled = false
         doneButton.visibility = View.GONE
-        //        showPagerIndicator(false);
 
         setColorTransitionsEnabled(true)
     }

@@ -4,7 +4,6 @@ import android.app.Activity
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
@@ -12,12 +11,13 @@ import android.view.MenuItem
 import android.view.View
 import com.dinuscxj.progressbar.CircleProgressBar
 import com.zacharee1.systemuituner.R
+import com.zacharee1.systemuituner.activites.BaseAnimActivity
 import com.zacharee1.systemuituner.misc.AppInfo
 import com.zacharee1.systemuituner.misc.CustomAdapter
 import com.zacharee1.systemuituner.util.Utils
 import java.util.*
 
-class AppsListActivity : AppCompatActivity() {
+class AppsListActivity : BaseAnimActivity() {
 
     private val appInfo: ArrayList<AppInfo>
         get() {

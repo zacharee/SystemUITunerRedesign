@@ -4,8 +4,6 @@ import android.content.pm.PackageManager
 import android.os.Bundle
 import android.preference.CheckBoxPreference
 import android.preference.Preference
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.Toolbar
 import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
@@ -13,6 +11,7 @@ import android.widget.LinearLayout
 import android.widget.Toast
 import com.dinuscxj.progressbar.CircleProgressBar
 import com.zacharee1.systemuituner.R
+import com.zacharee1.systemuituner.activites.BaseAnimActivity
 import com.zacharee1.systemuituner.fragments.AnimFragment
 import com.zacharee1.systemuituner.handlers.ImmersiveHandler
 import com.zacharee1.systemuituner.misc.AppInfo
@@ -21,20 +20,12 @@ import io.reactivex.Observable
 import io.reactivex.schedulers.Schedulers
 import java.util.*
 
-class ImmersiveSelectActivity : AppCompatActivity() {
-    private var toolbar: Toolbar? = null
-
+class ImmersiveSelectActivity : BaseAnimActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        setTheme(if (Utils.isInDarkMode(this)) R.style.AppTheme_Dark_NoActionBar else R.style.AppTheme_NoActionBar)
-
-        setContentView(R.layout.activity_blank_custom_toolbar)
+        setContentView(R.layout.immersive_select)
         setTitle(R.string.select_apps)
-
-        toolbar = findViewById(R.id.toolbar)
-        setSupportActionBar(toolbar)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         val bar = findViewById<CircleProgressBar>(R.id.app_load_progress)
 
@@ -85,9 +76,9 @@ class ImmersiveSelectActivity : AppCompatActivity() {
         val deselectAll = LayoutInflater.from(this).inflate(R.layout.deselect_all, toolbar, false)
         val invertSelection = LayoutInflater.from(this).inflate(R.layout.invert_select, toolbar, false)
 
-        toolbar?.addView(selectAll)
-        toolbar?.addView(deselectAll)
-        toolbar?.addView(invertSelection)
+        toolbar.addView(selectAll)
+        toolbar.addView(deselectAll)
+        toolbar.addView(invertSelection)
 
         selectAll.setOnClickListener { fragment.selectAllBoxes() }
         deselectAll.setOnClickListener { fragment.deselectAllBoxes() }
@@ -129,6 +120,8 @@ class ImmersiveSelectActivity : AppCompatActivity() {
             addPreferencesFromResource(R.xml.pref_blank)
             populateList()
         }
+
+        override fun onSetTitle(): String? = resources.getString(R.string.select_apps)
 
         private fun populateList() {
             val selectedApps = ImmersiveHandler.parseSelectedApps(activity, TreeSet())

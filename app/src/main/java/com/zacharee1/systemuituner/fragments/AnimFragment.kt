@@ -13,11 +13,19 @@ open class AnimFragment : PreferenceFragment() {
         val anim = AnimatorInflater.loadAnimator(activity, res)
 
         anim.addListener(object : Animator.AnimatorListener {
-            override fun onAnimationStart(animation: Animator?) {}
+            override fun onAnimationStart(animation: Animator?) {
+                if (enter) {
+                    val title = onSetTitle()
+                    if (title != null) {
+                        activity.runOnUiThread { activity.title = title }
+                    }
+                }
+            }
             override fun onAnimationRepeat(animation: Animator?) {}
             override fun onAnimationCancel(animation: Animator?) {}
             override fun onAnimationEnd(animation: Animator?) {
-                onAnimationFinished(enter)
+                if (enter && !isRemoving) onAnimationFinishedEnter(enter)
+                if (!enter) onAnimationFinishedExit(enter)
             }
         })
 
@@ -26,5 +34,9 @@ open class AnimFragment : PreferenceFragment() {
 
     internal open fun onAnimationCreated(enter: Boolean) {}
 
-    internal open fun onAnimationFinished(enter: Boolean) {}
+    internal open fun onAnimationFinishedEnter(enter: Boolean) {}
+
+    internal open fun onAnimationFinishedExit(enter: Boolean) {}
+
+    internal open fun onSetTitle(): String? = null
 }

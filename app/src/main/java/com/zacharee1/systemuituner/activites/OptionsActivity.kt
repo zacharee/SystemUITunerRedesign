@@ -1,19 +1,19 @@
 package com.zacharee1.systemuituner.activites
 
+import android.app.FragmentManager
 import android.os.Build
 import android.os.Bundle
 import android.preference.PreferenceFragment
 import android.preference.PreferenceManager
-import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.fragments.AnimFragment
-import com.zacharee1.systemuituner.handlers.RecreateHandler
 import com.zacharee1.systemuituner.misc.OptionSelected
 import com.zacharee1.systemuituner.util.Utils
 
-class OptionsActivity : AppCompatActivity() {
+class OptionsActivity : BaseAnimActivity() {
     companion object {
         const val ALLOW_CUSTOM_INPUT = "allow_custom_settings_input"
     }
@@ -23,23 +23,26 @@ class OptionsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        setTheme(if (Utils.isInDarkMode(this)) R.style.AppTheme_Dark else R.style.AppTheme)
-
-        RecreateHandler.onCreate(this)
-
         setContentView(R.layout.activity_item_list)
 
         val hideWelcomeScreen = PreferenceManager.getDefaultSharedPreferences(this).getBoolean("hide_welcome_screen", false)
-        supportActionBar?.setDisplayHomeAsUpEnabled(!hideWelcomeScreen)
-        supportActionBar?.setDisplayShowHomeEnabled(!hideWelcomeScreen)
+        setBackClickable(!hideWelcomeScreen)
 
         main = MainPrefs()
+
+        fragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
         fragmentManager
                 ?.beginTransaction()
-                ?.setCustomAnimations(R.animator.pop_in, R.animator.pop_out, R.animator.pop_in, R.animator.pop_out)
                 ?.replace(R.id.content_main, main)
                 ?.addToBackStack("main")
                 ?.commit()
+    }
+
+    override fun onResume() {
+        super.onResume()
+
+        val hideWelcomeScreen = PreferenceManager.getDefaultSharedPreferences(this).getBoolean("hide_welcome_screen", false)
+        setBackClickable(fragmentManager.backStackEntryCount > 1 || !hideWelcomeScreen)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -64,19 +67,20 @@ class OptionsActivity : AppCompatActivity() {
     }
 
     private fun handleBackPressed() {
-        if (fragmentManager != null) {
-            if (fragmentManager.backStackEntryCount > 1) {
-                fragmentManager.popBackStackImmediate()
+        val hideWelcomeScreen = PreferenceManager.getDefaultSharedPreferences(this).getBoolean("hide_welcome_screen", false)
 
-                val hideWelcomeScreen = PreferenceManager.getDefaultSharedPreferences(this).getBoolean("hide_welcome_screen", false)
-                val stillAboveOne = fragmentManager.backStackEntryCount > 1
-                supportActionBar?.setDisplayHomeAsUpEnabled(if (stillAboveOne) true else !hideWelcomeScreen)
-                supportActionBar?.setDisplayShowHomeEnabled(if (stillAboveOne) true else !hideWelcomeScreen)
-            } else {
-                finish()
+        when {
+            fragmentManager != null -> when {
+                fragmentManager.backStackEntryCount > 1 -> {
+                    fragmentManager.popBackStackImmediate()
+
+                    val stillAboveOne = fragmentManager.backStackEntryCount > 1
+
+                    setBackClickable(stillAboveOne || !hideWelcomeScreen)
+                }
+                else -> finish()
             }
-        } else {
-            finish()
+            else -> finish()
         }
     }
 
@@ -85,6 +89,10 @@ class OptionsActivity : AppCompatActivity() {
             super.onCreate(savedInstanceState)
 
             addPreferencesFromResource(R.xml.prefs_main)
+        }
+
+        override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
+            super.onViewCreated(view, savedInstanceState)
 
             removeTouchWizIfNeeded()
             removeLockScreenIfNeeded()
@@ -93,10 +101,10 @@ class OptionsActivity : AppCompatActivity() {
 
         override fun onResume() {
             super.onResume()
-
-            activity.title = resources.getString(R.string.app_name)
             updateCustomEnabledState()
         }
+
+        override fun onSetTitle() = resources.getString(R.string.app_name)
 
         private fun updateCustomEnabledState() {
             val customPref = findPreference("custom")
@@ -118,15 +126,14 @@ class OptionsActivity : AppCompatActivity() {
             for (i in 0 until preferenceScreen.preferenceCount) {
                 val pref = preferenceScreen.getPreference(i)
                 pref.setOnPreferenceClickListener {
+                    (activity as BaseAnimActivity).setBackClickable(true)
+
                     val fragment = Class.forName(pref.fragment ?: return@setOnPreferenceClickListener false).newInstance() as PreferenceFragment
                     fragmentManager
                             ?.beginTransaction()
-                            ?.setCustomAnimations(R.animator.pop_in, R.animator.pop_out, R.animator.pop_in, R.animator.pop_out)
                             ?.replace(R.id.content_main, fragment, it.key)
                             ?.addToBackStack(it.key)
                             ?.commit()
-                    (activity as AppCompatActivity).supportActionBar?.setDisplayHomeAsUpEnabled(true)
-                    (activity as AppCompatActivity).supportActionBar?.setDisplayShowHomeEnabled(true)
                     true
                 }
             }

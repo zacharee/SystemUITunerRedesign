@@ -11,22 +11,22 @@ import com.zacharee1.systemuituner.activites.instructions.SetupActivity
 import com.zacharee1.systemuituner.util.SettingsUtils
 import com.zacharee1.systemuituner.util.Utils
 import io.reactivex.Observable
+import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 import java.util.*
 import java.util.regex.Pattern
 
 class AutoFragment : AnimFragment() {
-    private val mPrefs = TreeMap<String, Preference>()
+    private val prefs = TreeMap<String, Preference>()
 
-    override fun onResume() {
-        super.onResume()
+    private lateinit var observable: Disposable
 
-        activity.title = resources.getString(R.string.auto_detect)
-    }
+    override fun onSetTitle() = resources.getString(R.string.auto_detect)
 
-    override fun onAnimationFinished(enter: Boolean) {
+    override fun onAnimationFinishedEnter(enter: Boolean) {
+        val content = activity.findViewById<ConstraintLayout>(R.id.content_main)
+
         if (enter) {
-            val content = activity.findViewById<ConstraintLayout>(R.id.content_main)
             LayoutInflater.from(activity).inflate(R.layout.indet_circle_prog, content, true)
 
             addPreferencesFromResource(R.xml.pref_auto)
@@ -35,7 +35,7 @@ class AutoFragment : AnimFragment() {
             val hasDump = SettingsUtils.hasSpecificPerm(context, Manifest.permission.DUMP)
 
             if (hasDump && hasUsage) {
-                Observable.fromCallable { Utils.runCommand("dumpsys activity service com.android.systemui/.SystemUIService") }
+                observable = Observable.fromCallable { Utils.runCommand("dumpsys activity service com.android.systemui/.SystemUIService") }
                         .subscribeOn(Schedulers.io())
                         .observeOn(Schedulers.io())
                         .subscribe { dump ->
@@ -51,6 +51,7 @@ class AutoFragment : AnimFragment() {
                                             val m = p.matcher(slot)
 
                                             while (!m.hitEnd()) {
+                                                if (activity == null) return@subscribe
                                                 if (m.find()) {
                                                     val result = m.group().replace("(", "").replace(")", "")
 
@@ -62,7 +63,7 @@ class AutoFragment : AnimFragment() {
                                                         true
                                                     }
 
-                                                    mPrefs[preference.key] = preference
+                                                    prefs[preference.key] = preference
                                                     break
                                                 }
                                             }
@@ -90,12 +91,12 @@ class AutoFragment : AnimFragment() {
                                     }
 
                                     if (!preference.key.isBlank() && !preference.title.toString().isBlank()) {
-                                        mPrefs[preference.key] = preference
+                                        prefs[preference.key] = preference
                                     }
                                 }
 
-                                if (mPrefs.values.isNotEmpty()) {
-                                    for (preference in mPrefs.values) {
+                                if (prefs.values.isNotEmpty()) {
+                                    for (preference in prefs.values) {
                                         preferenceScreen.addPreference(preference)
                                     }
                                 } else {
@@ -125,6 +126,20 @@ class AutoFragment : AnimFragment() {
 
                 activity?.finish()
             }
+        }
+    }
+
+    override fun onAnimationCreated(enter: Boolean) {
+        val content = activity.findViewById<ConstraintLayout>(R.id.content_main)
+
+        if (!enter) {
+            Thread {
+                try {
+                    observable.dispose()
+                } catch (e: Exception) {}
+            }.start()
+
+            content.removeView(content.findViewById(R.id.progress))
         }
     }
 }

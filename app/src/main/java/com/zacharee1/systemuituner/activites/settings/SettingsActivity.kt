@@ -7,40 +7,22 @@ import android.preference.Preference
 import android.preference.PreferenceCategory
 import android.preference.SwitchPreference
 import android.support.v4.content.ContextCompat
-import android.support.v4.content.LocalBroadcastManager
-import android.support.v7.app.AppCompatActivity
 import android.view.MenuItem
 import com.zacharee1.systemuituner.R
+import com.zacharee1.systemuituner.activites.BaseAnimActivity
 import com.zacharee1.systemuituner.activites.instructions.TaskerInstructionActivity
 import com.zacharee1.systemuituner.fragments.AnimFragment
-import com.zacharee1.systemuituner.handlers.RecreateHandler
 import com.zacharee1.systemuituner.services.SafeModeService
-import com.zacharee1.systemuituner.util.Utils
 
-class SettingsActivity : AppCompatActivity() {
+class SettingsActivity : BaseAnimActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        setTheme(if (Utils.isInDarkMode(this)) R.style.AppTheme_Dark else R.style.AppTheme)
-        setContentView(R.layout.activity_item_list)
-
-        RecreateHandler.onCreate(this)
-
         super.onCreate(savedInstanceState)
-        setupActionBar()
+
+        setContentView(R.layout.activity_item_list)
+        setTitle(R.string.settings)
+
         fragmentManager.beginTransaction().replace(R.id.content_main, GeneralPreferenceFragment()).commit()
-    }
-
-    override fun onDestroy() {
-        RecreateHandler.onDestroy(this)
-        super.onDestroy()
-    }
-
-    /**
-     * Set up the [android.app.ActionBar], if the API is available.
-     */
-    private fun setupActionBar() {
-        val actionBar = supportActionBar
-        actionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
     /**
@@ -78,17 +60,9 @@ class SettingsActivity : AppCompatActivity() {
         }
 
         private fun setSwitchListeners() {
-            val darkMode = findPreference("dark_mode") as SwitchPreference
             val taskerEnabled = findPreference("tasker_support_enabled") as SwitchPreference
             val safeMode = findPreference("safe_mode") as SwitchPreference
             val safeNotif = findPreference("show_safe_mode_notif") as SwitchPreference
-
-            darkMode.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { _, _ ->
-                val intent = Intent()
-                intent.action = RECREATE_ACTIVITY
-                LocalBroadcastManager.getInstance(context).sendBroadcast(intent)
-                true
-            }
 
             taskerEnabled.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { _, o ->
                 val enabled = java.lang.Boolean.valueOf(o.toString())

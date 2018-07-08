@@ -14,7 +14,7 @@ import com.zacharee1.systemuituner.prefs.LockPref
 import com.zacharee1.systemuituner.util.SettingsUtils
 
 class LockFragment : AnimFragment() {
-    override fun onAnimationFinished(enter: Boolean) {
+    override fun onAnimationFinishedEnter(enter: Boolean) {
         if (enter) {
             addPreferencesFromResource(R.xml.pref_lock)
             setEnabled()
@@ -26,9 +26,9 @@ class LockFragment : AnimFragment() {
     override fun onResume() {
         super.onResume()
         setLockSummaryTitleAndIcon()
-
-        activity.title = resources.getString(R.string.lockscreen)
     }
+
+    override fun onSetTitle() = resources.getString(R.string.lockscreen)
 
     private fun setEnabled() {
         val shortcuts = findPreference(LOCKSCREEN_SHORTCUTS) as PreferenceCategory

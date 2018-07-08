@@ -1,38 +1,30 @@
 <resources>
 
-    <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-    </style>
-
-    <style name="AppTheme.NoActionBar" parent="AppTheme">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+        <item name="actionBarTheme">@style/AppTheme.AppBarOverlay</item>
     </style>
 
-    <style name="AppTheme.Intro" parent="AppTheme.Dark.NoActionBar">
-        <!--<item name="android:textColorLink">@android:color/primary_text_dark</item>-->
-        <!--<item name="android:textColor">@android:color/primary_text_dark</item>-->
+    <style name="AppTheme.Intro" parent="AppTheme.Dark" />
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="android:colorControlNormal">@android:color/white</item>
     </style>
 
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
-    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="AppTheme.PopupTheme.Dark" parent="AppTheme.Dark" />
+    <style name="AppTheme.PopupTheme.Light" parent="AppTheme" />
 
     <style name="AppTheme.Dark" parent="Theme.AppCompat">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccentDark</item>
         <item name="android:statusBarColor">@color/colorPrimaryDark</item>
-    </style>
-
-    <style name="AppTheme.Dark.NoActionBar" parent="AppTheme.Dark">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
-
-    <style name="AppTheme.Dark.PopupOverlay" parent="ThemeOverlay.AppCompat.Dark" />
 
 </resources>

@@ -14,13 +14,9 @@ import com.zacharee1.systemuituner.util.SettingsUtils
 import java.util.*
 
 class MiscFragment : AnimFragment() {
-    override fun onResume() {
-        super.onResume()
+    override fun onSetTitle() = resources.getString(R.string.miscellaneous)
 
-        activity.title = resources.getString(R.string.miscellaneous)
-    }
-
-    override fun onAnimationFinished(enter: Boolean) {
+    override fun onAnimationFinishedEnter(enter: Boolean) {
         if (enter) {
             addPreferencesFromResource(R.xml.pref_misc)
             setGlobalSwitchStates()

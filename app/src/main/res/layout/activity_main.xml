@@ -32,10 +32,7 @@
                 android:layout_marginTop="16dp"
                 android:text="@string/app_name"
                 android:textAlignment="center"
-                android:textAppearance="@style/TextAppearance.AppCompat.Title"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:textAppearance="@style/TextAppearance.AppCompat.Title" />
 
             <TextView
                 android:id="@+id/app_desc"
@@ -45,10 +42,7 @@
                 android:layout_marginStart="32dp"
                 android:text="@string/home_desc"
                 android:textAlignment="center"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/app_title" />
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
             <TextView
                 android:id="@+id/app_joke"
@@ -58,10 +52,7 @@
                 android:layout_marginStart="32dp"
                 android:text="@string/home_joke"
                 android:textAlignment="center"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/app_desc" />
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
             <TextView
                 android:id="@+id/app_subdesc"
@@ -72,10 +63,7 @@
                 android:layout_marginTop="8dp"
                 android:text="@string/home_extra"
                 android:textAlignment="center"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/app_joke" />
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
             <Button
                 android:id="@+id/open_tweaks"
@@ -87,10 +75,18 @@
                 android:text="@string/to_the_tweaks"
                 android:textAlignment="center"
                 android:textColor="@drawable/button_text_dark_theme"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/app_subdesc"
                 tools:layout_editor_absoluteX="8dp" />
+
+            <TextView
+                android:id="@+id/hide_welcome_hint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="32dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/hide_welcome_hint"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
@@ -98,10 +94,7 @@
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="16dp"
-                app:cardElevation="1dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/open_tweaks">
+                app:cardElevation="1dp" >
 
                 <include layout="@layout/layout_donate" />
             </android.support.v7.widget.CardView>
