@@ -301,4 +301,9 @@
   <string name="value_plaintext">数值</string>
   <string name="custom_settings_warning">请小心操作，如果你输入了错误的数值，可能导致一直崩溃或一直重启或更糟！</string>
   <string name="hide_welcome_hint">Hint: You can hide this screen, and the donation message, by going to Settings and toggling on \"Hide Welcome Screen\".</string>
+  <string name="safe_mode_status_bar">Status Bar</string>
+  <string name="safe_mode_fancy_anim">Fancy Animation</string>
+  <string name="safe_mode_header_count">QS Header Count</string>
+  <string name="safe_mode_row_col_tw">QS Row/Column Count</string>
+  <string name="safe_mode_snooze_options">Snooze Options</string>
 </resources>
