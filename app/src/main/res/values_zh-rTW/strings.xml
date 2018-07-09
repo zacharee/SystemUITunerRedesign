@@ -9,7 +9,7 @@
   <string name="grant_dump_perm">你需要授予 \"android.permission.DUMP\" 權限才可使用本功能</string>
   <string name="safe_mode_auto_enabled">偵測到 Samsung 裝置！保險起見安全模式已自動開啟。請注意更動任何狀態列圖示可能導致系統損毀！詳細資訊請見 Play 商店中的敘述。</string>
   <string name="notice">注意</string>
-  <string name="fancy_pulldown_notice">關閉本功能可能導致重啟後發生問題。請於重啟後手動開啟再關閉,，或啟用安全模式。</string>
+  <string name="fancy_pulldown_notice">關閉本功能可能導致重啟後發生問題。請於重啟後手動開啟再關閉，或啟用安全模式。</string>
   <string name="safe_mode_summary">三星用戶應保持本設定啟用，除非你有 AOSP ROM！</string>
   <string name="safe_mode_summary_1">重啟時清除任何狀態列個人化設定，且於開機後還原。</string>
   <string name="safe_mode_summary_2">開機時切換快速設定動畫。</string>
@@ -32,7 +32,7 @@
   <string name="reboot_required">（需要重啟）</string>
   <string name="sorry">抱歉⋯</string>
   <string name="created_by">App 由 <a href=\'https://forum.xda-developers.com/member.php?u=7055541\'>Zacharee1</a> 製作</string>
-  <string name="lang_credit"><a href="https://crowdin.com/project/systemui-tuner">Crowdin</a> 志願者的翻譯</string>
+  <string name="lang_credit"><a href="https://crowdin.com/project/systemui-tuner">Crowdin</a> 上的志工們提供的翻譯</string>
   <string name="enabled">已啟用</string>
   <string name="show">顯示</string>
   <string name="select_time">選擇時間</string>
@@ -300,5 +300,5 @@
   <string name="key_plaintext">按鍵</string>
   <string name="value_plaintext">數值</string>
   <string name="custom_settings_warning">請小心操作！如果你輸入了錯誤的數值，可能導致一直崩潰，重啓或更糟！</string>
-  <string name="hide_welcome_hint">Hint: You can hide this screen, and the donation message, by going to Settings and toggling on \"Hide Welcome Screen\".</string>
+  <string name="hide_welcome_hint">提示：你可以到設定關閉 \"隱藏歡迎畫面\" 以隱藏本畫面及贊助訊息。</string>
 </resources>
