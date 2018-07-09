@@ -9,10 +9,8 @@ class TaskerInstructionActivity : BaseAnimActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_tasker_instruction)
 
-        assert(supportActionBar != null)
-        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+        setContentView(R.layout.activity_tasker_instruction)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

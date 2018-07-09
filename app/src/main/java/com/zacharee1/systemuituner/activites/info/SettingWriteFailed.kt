@@ -22,9 +22,6 @@ class SettingWriteFailed : BaseAnimActivity() {
                 textView.text = command
             }
         }
-
-        assert(supportActionBar != null)
-        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

@@ -20,9 +20,6 @@ class AboutActivity : BaseAnimActivity() {
 
         mBilling = BillingUtil(this)
 
-        assert(supportActionBar != null)
-        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
-
         val appCred = findViewById<TextView>(R.id.app_credit)
         val langCred = findViewById<TextView>(R.id.lang_credit)
 

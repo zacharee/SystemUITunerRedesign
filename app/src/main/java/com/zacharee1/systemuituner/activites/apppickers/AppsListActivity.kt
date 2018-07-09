@@ -50,8 +50,6 @@ class AppsListActivity : BaseAnimActivity() {
         setContentView(R.layout.activity_apps_list)
         setTitle(R.string.select_app)
 
-        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
-
         val intent = intent
         if (intent == null) {
             finish()

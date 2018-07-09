@@ -29,7 +29,7 @@ class SetupActivity : AppIntro2() {
         showSkipButton(true)
         showPagerIndicator(false)
 
-        supportActionBar!!.hide()
+        supportActionBar?.hide()
 
         val intent = intent
 

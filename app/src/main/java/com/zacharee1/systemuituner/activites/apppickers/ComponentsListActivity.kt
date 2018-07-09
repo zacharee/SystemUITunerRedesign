@@ -22,8 +22,6 @@ class ComponentsListActivity : BaseAnimActivity() {
         setContentView(R.layout.activity_apps_list)
         setTitle(R.string.select_component)
 
-        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
-
         val intent = intent
         if (intent == null) {
             finish()
