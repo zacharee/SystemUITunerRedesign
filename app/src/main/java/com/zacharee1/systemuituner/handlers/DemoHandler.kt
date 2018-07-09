@@ -27,7 +27,6 @@ class DemoHandler(private val context: Context?) {
 
             intent = Intent("com.android.systemui.demo")
             intent.putExtra("command", "clock")
-            //            intent.putExtra("hhmm", (timeHour() < 10 ? "0" + timeHour() : timeHour()) + "" + (timeMinute() < 10 ? "0" + timeMinute() : timeMinute()));
             intent.putExtra("millis", time().toString() + "")
             context?.sendBroadcast(intent)
 

@@ -115,7 +115,7 @@ class OptionsActivity : BaseAnimActivity() {
         }
 
         private fun removeTouchWizIfNeeded() {
-            if (!Utils.checkSamsung()) preferenceScreen.removePreference(findPreference("touchwiz") ?: return)
+            if (!Utils.checkSamsung(activity)) preferenceScreen.removePreference(findPreference("touchwiz") ?: return)
         }
 
         private fun removeLockScreenIfNeeded() {

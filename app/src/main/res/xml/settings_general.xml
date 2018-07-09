@@ -36,35 +36,55 @@
         android:title="@string/safe_mode" >
 
         <SwitchPreference
-            android:title="@string/enable"
-            android:key="safe_mode"
-            android:summary="@string/safe_mode_summary"/>
-
-        <SwitchPreference
             android:title="@string/show_notif"
             android:key="show_safe_mode_notif"
             android:defaultValue="true"
             android:summary="@string/safe_mode_notif_desc" />
 
-        <Preference
-            android:selectable="false"
-            android:summary="@string/safe_mode_summary_1" />
+        <SwitchPreference
+            android:title="@string/enable"
+            android:key="safe_mode"
+            android:summary="@string/safe_mode_summary"/>
 
-        <Preference
-            android:selectable="false"
-            android:summary="@string/safe_mode_summary_2" />
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:dependency="safe_mode"
+            android:key="safe_mode_status_bar"
+            android:title="@string/safe_mode_status_bar"
+            android:summary="@string/safe_mode_summary_1"
+            />
 
-        <Preference
-            android:selectable="false"
-            android:summary="@string/safe_mode_summary_3" />
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:dependency="safe_mode"
+            android:key="safe_mode_fancy_anim"
+            android:title="@string/safe_mode_fancy_anim"
+            android:summary="@string/safe_mode_summary_2"
+            />
 
-        <Preference
-            android:selectable="false"
-            android:summary="@string/safe_mode_summary_4" />
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:dependency="safe_mode"
+            android:key="safe_mode_header_count"
+            android:title="@string/safe_mode_header_count"
+            android:summary="@string/safe_mode_summary_3"
+            />
 
-        <Preference
-            android:selectable="false"
-            android:summary="@string/safe_mode_summary_5" />
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:dependency="safe_mode"
+            android:key="safe_mode_row_col"
+            android:title="@string/safe_mode_row_col_tw"
+            android:summary="@string/safe_mode_summary_4"
+            />
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:dependency="safe_mode"
+            android:key="safe_mode_snooze_options"
+            android:title="@string/safe_mode_snooze_options"
+            android:summary="@string/safe_mode_summary_5"
+            />
 
     </PreferenceCategory>
 

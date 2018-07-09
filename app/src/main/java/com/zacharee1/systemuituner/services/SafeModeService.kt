@@ -21,12 +21,33 @@ import com.zacharee1.systemuituner.util.SettingsUtils
 class SafeModeService : Service() {
     private var shutDownReceiver: ShutDownReceiver? = null
     private var themeReceiver: ThemeChangeReceiver? = null
-
     private var resListener: ResolutionChangeListener? = null
 
-    private var handler: Handler? = null
-    private var observer: ContentObserver? = null
-    private var preferences: SharedPreferences? = null
+    private val handler: Handler = Handler(Looper.getMainLooper())
+    private val observer: ContentObserver = object : ContentObserver(handler) {
+        override fun onChange(selfChange: Boolean, uri: Uri) {
+            if (uri == Settings.Secure.getUriFor("sysui_qqs_count")) {
+                restoreQSHeaderCount()
+            } else if (uri == Settings.Secure.getUriFor("qs_tile_row") || uri == Settings.Secure.getUriFor("qs_tile_column")) {
+                restoreQSRowColCount()
+            } else if (uri == Settings.Global.getUriFor("notification_snooze_options")) {
+                restoreSnoozeState()
+            }
+        }
+    }
+
+    private lateinit var preferences: SharedPreferences
+
+    private val statusBar: Boolean
+        get() = preferences.getBoolean("safe_mode_status_bar", true)
+    private val fancyAnim: Boolean
+        get() = preferences.getBoolean("safe_mode_fancy_anim", true)
+    private val headerCount: Boolean
+        get() = preferences.getBoolean("safe_mode_header_count", true)
+    private val rowCol: Boolean
+        get() = preferences.getBoolean("safe_mode_row_col", true)
+    private val snoozeOptions: Boolean
+        get() = preferences.getBoolean("safe_mode_snooze_options", true)
 
     private val prefsListener: SharedPreferences.OnSharedPreferenceChangeListener = SharedPreferences.OnSharedPreferenceChangeListener { preferences, key ->
         when (key) {
@@ -46,9 +67,8 @@ class SafeModeService : Service() {
     }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
-        handler = Handler(Looper.getMainLooper())
         preferences = PreferenceManager.getDefaultSharedPreferences(this)
-        preferences?.registerOnSharedPreferenceChangeListener(prefsListener)
+        preferences.registerOnSharedPreferenceChangeListener(prefsListener)
 
         startInForeground()
         restoreStateOnStartup()
@@ -72,20 +92,20 @@ class SafeModeService : Service() {
         } catch (e: Exception) {}
 
         try {
-            contentResolver.unregisterContentObserver(resListener!!)
+            contentResolver.unregisterContentObserver(resListener)
         } catch (e: Exception) {}
 
         try {
-            contentResolver.unregisterContentObserver(observer!!)
+            contentResolver.unregisterContentObserver(observer)
         } catch (e: Exception) {}
 
         try {
-            preferences?.unregisterOnSharedPreferenceChangeListener(prefsListener)
+            preferences.unregisterOnSharedPreferenceChangeListener(prefsListener)
         } catch (e: Exception) {}
     }
 
     private fun startInForeground() {
-        if (preferences?.getBoolean("show_safe_mode_notif", true) != false) {
+        if (preferences.getBoolean("show_safe_mode_notif", true)) {
             val settingsIntent = PendingIntent.getActivity(this, 0, Intent(this, SettingsActivity::class.java), 0)
             val manager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
 
@@ -112,61 +132,76 @@ class SafeModeService : Service() {
     }
 
     private fun restoreStateOnStartup() {
-        val blacklist = Settings.Secure.getString(contentResolver, "icon_blacklist")
-
-        if (blacklist == null || blacklist.isEmpty()) {
-            val blacklistBackup = Settings.Global.getString(contentResolver, "icon_blacklist_backup")
-
-            if (blacklistBackup != null && !blacklistBackup.isEmpty()) {
-                SettingsUtils.writeSecure(this, "icon_blacklist", blacklistBackup)
-            }
-        }
-
-        val qsAnimState = Settings.Secure.getString(contentResolver, "sysui_qs_fancy_anim")
-
-        if (qsAnimState == null || qsAnimState.isEmpty() || qsAnimState == "1") {
-            val backupState = Settings.Global.getString(contentResolver, "sysui_qs_fancy_anim_backup")
-
-            if (backupState != null && !backupState.isEmpty()) {
-                SettingsUtils.writeSecure(this, "sysui_qs_fancy_anim", backupState)
-            }
-        }
+        restoreBlacklist()
+        restoreFancyAnim()
 
         SettingsUtils.writeGlobal(this, "system_booted", "1")
     }
 
+    private fun restoreBlacklist() {
+        if (statusBar) {
+            val blacklist = Settings.Secure.getString(contentResolver, "icon_blacklist")
+
+            if (blacklist == null || blacklist.isEmpty()) {
+                val blacklistBackup = Settings.Global.getString(contentResolver, "icon_blacklist_backup")
+
+                if (blacklistBackup != null && !blacklistBackup.isEmpty()) {
+                    SettingsUtils.writeSecure(this, "icon_blacklist", blacklistBackup)
+                }
+            }
+        }
+    }
+
+    private fun restoreFancyAnim() {
+        if (fancyAnim) {
+            val qsAnimState = Settings.Secure.getString(contentResolver, "sysui_qs_fancy_anim")
+
+            if (qsAnimState == null || qsAnimState.isEmpty() || qsAnimState == "1") {
+                val backupState = Settings.Global.getString(contentResolver, "sysui_qs_fancy_anim_backup")
+
+                if (backupState != null && !backupState.isEmpty()) {
+                    SettingsUtils.writeSecure(this, "sysui_qs_fancy_anim", backupState)
+                }
+            }
+        }
+    }
+
     private fun restoreQSHeaderCount() {
-        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M) {
-            val count = preferences!!.getInt("qs_header_count", -1)
+        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M && headerCount) {
+            val count = preferences.getInt("qs_header_count", -1)
             if (count != -1) SettingsUtils.writeSecure(this, "sysui_qqs_count", count.toString())
         }
     }
 
     private fun saveQSHeaderCount() {
-        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M) {
+        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M && headerCount) {
             val count = Settings.Secure.getInt(contentResolver, "sysui_qqs_count", -1)
-            if (count != -1) preferences!!.edit().putInt("qs_header_count", count).apply()
+            if (count != -1) preferences.edit().putInt("qs_header_count", count).apply()
         }
     }
 
     private fun saveQSRowColCount() {
-        val row = Settings.Secure.getInt(contentResolver, "qs_tile_row", -1)
-        val col = Settings.Secure.getInt(contentResolver, "qs_tile_column", -1)
-        if (row != -1) preferences!!.edit().putInt("qs_tile_row", row).apply()
-        if (col != -1) preferences!!.edit().putInt("qs_tile_column", col).apply()
+        if (rowCol) {
+            val row = Settings.Secure.getInt(contentResolver, "qs_tile_row", -1)
+            val col = Settings.Secure.getInt(contentResolver, "qs_tile_column", -1)
+            if (row != -1) preferences.edit().putInt("qs_tile_row", row).apply()
+            if (col != -1) preferences.edit().putInt("qs_tile_column", col).apply()
+        }
     }
 
     private fun restoreQSRowColCount() {
-        val row = preferences!!.getInt("qs_tile_row", -1)
-        val col = preferences!!.getInt("qs_tile_column", -1)
+        if (rowCol) {
+            val row = preferences.getInt("qs_tile_row", -1)
+            val col = preferences.getInt("qs_tile_column", -1)
 
-        if (row != -1) SettingsUtils.writeSecure(this, "qs_tile_row", row.toString() + "")
-        if (col != -1) SettingsUtils.writeSecure(this, "qs_tile_column", col.toString() + "")
+            if (row != -1) SettingsUtils.writeSecure(this, "qs_tile_row", row.toString() + "")
+            if (col != -1) SettingsUtils.writeSecure(this, "qs_tile_column", col.toString() + "")
+        }
     }
 
     private fun restoreSnoozeState() {
-        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.O) {
-            val saved = preferences!!.getString("notification_snooze_options", "")
+        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.O && snoozeOptions) {
+            val saved = preferences.getString("notification_snooze_options", "")
 
             if (!saved.isEmpty()) {
                 SettingsUtils.writeGlobal(this, "notification_snooze_options", saved)
@@ -175,39 +210,37 @@ class SafeModeService : Service() {
     }
 
     private fun saveSnoozeState() {
-        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.O) {
+        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.O && snoozeOptions) {
             val set = Settings.Global.getString(contentResolver, "notification_snooze_options")
-            if (set != null && !set.isEmpty()) preferences!!.edit().putString("notification_snooze_options", set).apply()
+            if (set != null && !set.isEmpty()) preferences.edit().putString("notification_snooze_options", set).apply()
+        }
+    }
+
+    private fun saveFancyAnim() {
+        if (fancyAnim) {
+            val anim = Settings.Secure.getString(contentResolver, "sysui_qs_fancy_anim")
+            SettingsUtils.writeGlobal(this, "sysui_qs_fancy_anim_backup", anim)
+            SettingsUtils.writeSecure(this, "sysui_qs_fancy_anim", null)
         }
     }
 
     private fun setUpContentObserver() {
         if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M) {
-            observer = object : ContentObserver(Handler(Looper.getMainLooper())) {
-                override fun onChange(selfChange: Boolean, uri: Uri) {
-                    if (uri == Settings.Secure.getUriFor("sysui_qqs_count")) {
-                        restoreQSHeaderCount()
-                    } else if (uri == Settings.Secure.getUriFor("qs_tile_row") || uri == Settings.Secure.getUriFor("qs_tile_column")) {
-                        restoreQSRowColCount()
-                    } else if (uri == Settings.Global.getUriFor("notification_snooze_options")) {
-                        restoreSnoozeState()
-                    }
-                }
-            }
-
             contentResolver.registerContentObserver(Settings.Global.CONTENT_URI, true, observer)
             contentResolver.registerContentObserver(Settings.Secure.CONTENT_URI, true, observer)
         }
     }
 
     private fun resetBlacklist(restore: Boolean) {
-        val blacklist = Settings.Secure.getString(contentResolver, "icon_blacklist")
+        if (statusBar) {
+            val blacklist = Settings.Secure.getString(contentResolver, "icon_blacklist")
 
-        SettingsUtils.writeGlobal(this, "icon_blacklist_backup", blacklist)
-        SettingsUtils.writeSecure(this, "icon_blacklist", "")
+            SettingsUtils.writeGlobal(this, "icon_blacklist_backup", blacklist)
+            SettingsUtils.writeSecure(this, "icon_blacklist", "")
 
-        if (restore) {
-            handler!!.postDelayed({ SettingsUtils.writeSecure(this@SafeModeService, "icon_blacklist", blacklist) }, 400)
+            if (restore) {
+                handler.postDelayed({ SettingsUtils.writeSecure(this@SafeModeService, "icon_blacklist", blacklist) }, 400)
+            }
         }
     }
 
@@ -227,6 +260,7 @@ class SafeModeService : Service() {
             saveQSHeaderCount()
             saveQSRowColCount()
             saveSnoozeState()
+            saveFancyAnim()
         }
     }
 

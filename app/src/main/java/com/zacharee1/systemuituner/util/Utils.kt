@@ -6,7 +6,6 @@ import android.content.Context
 import android.content.Intent
 import android.content.pm.ApplicationInfo
 import android.content.pm.PackageManager
-import android.os.Build
 import android.preference.PreferenceManager
 import android.support.v7.app.AlertDialog
 import android.util.TypedValue
@@ -97,7 +96,7 @@ object Utils {
         val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context)
 
         val firstStart = sharedPreferences.getBoolean("first_start", true)
-        if (firstStart && checkSamsung()) {
+        if (firstStart && checkSamsung(context)) {
             sharedPreferences.edit().putBoolean("safe_mode", true).apply()
             try {
                 AlertDialog.Builder(context)
@@ -158,16 +157,7 @@ object Utils {
         return false
     }
 
-    fun checkSamsung(): Boolean {
-        val check = arrayListOf(
-                Build.MANUFACTURER,
-                Build.BRAND
-        )
-
-        for (s in check) {
-            if (s.toLowerCase().contains("samsung")) return true
-        }
-
-        return false
-    }
+    fun checkSamsung(context: Context) =
+            context.packageManager
+                    .hasSystemFeature("com.samsung.feature.samsung_experience_mobile")
 }

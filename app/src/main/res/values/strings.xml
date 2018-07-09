@@ -353,4 +353,10 @@
 
     <string name="custom_settings_warning">Be careful what you do here! If you input an incorrect value, you could cause a crash loop, bootloop or worse!</string>
     <string name="hide_welcome_hint">Hint: You can hide this screen, and the donation message, by going to Settings and toggling on \"Hide Welcome Screen\".</string>
+
+    <string name="safe_mode_status_bar">Status Bar</string>
+    <string name="safe_mode_fancy_anim">Fancy Animation</string>
+    <string name="safe_mode_header_count">QS Header Count</string>
+    <string name="safe_mode_row_col_tw">QS Row/Column Count</string>
+    <string name="safe_mode_snooze_options">Snooze Options</string>
 </resources>
