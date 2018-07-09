@@ -301,4 +301,9 @@
   <string name="value_plaintext">數值</string>
   <string name="custom_settings_warning">請小心操作！如果你輸入了錯誤的數值，可能導致一直崩潰，重啓或更糟！</string>
   <string name="hide_welcome_hint">提示：你可以到設定關閉 \"隱藏歡迎畫面\" 以隱藏本畫面及贊助訊息。</string>
+  <string name="safe_mode_status_bar">Status Bar</string>
+  <string name="safe_mode_fancy_anim">Fancy Animation</string>
+  <string name="safe_mode_header_count">QS Header Count</string>
+  <string name="safe_mode_row_col_tw">QS Row/Column Count</string>
+  <string name="safe_mode_snooze_options">Snooze Options</string>
 </resources>
