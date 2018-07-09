@@ -119,7 +119,7 @@ class OptionsActivity : BaseAnimActivity() {
         }
 
         private fun removeLockScreenIfNeeded() {
-            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O) preferenceScreen.removePreference(findPreference("lockscreen"))
+            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O) preferenceScreen.removePreference(findPreference("lockscreen") ?: return)
         }
 
         private fun setListeners() {

@@ -22,7 +22,7 @@ class IntroActivity : AppIntro2() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        supportActionBar!!.hide()
+        supportActionBar?.hide()
 
         backButton.visibility = View.GONE
         skipButton.visibility = View.VISIBLE
