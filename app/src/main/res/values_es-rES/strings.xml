@@ -159,6 +159,7 @@
   <string name="tasker_how_to">Actividad Cómo Configurar</string>
   <string name="base_command_tasker">Éste es el comando base:</string>
   <string name="tasker_defs">Aquí algunos Ejemplos:</string>
+  <string name="type_plaintext">Type</string>
   <string name="for_settings_global">(para Ajustes.Globales)</string>
   <string name="for_settings_secure">(para Ajustes.Seguro)</string>
   <string name="for_settings_system">(para Ajustes.Sistema)</string>
