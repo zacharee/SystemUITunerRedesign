@@ -17,7 +17,6 @@
   <string name="safe_mode_summary_4">在啟動時還原自訂 QS 行/列計數 (TouchWiz、Nougat+)。</string>
   <string name="safe_mode_summary_5">啟動時，恢復自訂的通知暫停選項 (8.1 +)。</string>
   <string name="hide_welcome_screen">隱藏歡迎畫面</string>
-  <string name="tasker_support">Tasker 支援</string>
   <string name="instructions">操作指南</string>
   <string name="safe_mode_android_o">由於 Android O 的限制，此功能無法在本裝置使用</string>
   <string name="requires_nougat">需要 Android Nougat 以上的版本</string>
@@ -156,7 +155,6 @@
   <string name="move_full_rows">移動完整選單</string>
   <string name="battery">電池</string>
   <string name="enable_fabric_io_analytics">Fabric.io 分析</string>
-  <string name="tasker_how_to">Tasker 教學</string>
   <string name="base_command_tasker">這是基礎指令：</string>
   <string name="tasker_defs">這是全部的講解：</string>
   <string name="type_plaintext">Type</string>
@@ -300,6 +298,7 @@
   <string name="custom_settings_read_desc">這些欄位允許您讀取指定鍵的值。</string>
   <string name="key_plaintext">按鍵</string>
   <string name="value_plaintext">數值</string>
+  <string name="remove_from_blacklist">Remove From Blacklist?</string>
   <string name="custom_settings_warning">請小心操作！如果你輸入了錯誤的數值，可能導致一直崩潰，重啓或更糟！</string>
   <string name="hide_welcome_hint">提示：你可以到設定關閉 \"隱藏歡迎畫面\" 以隱藏本畫面及贊助訊息。</string>
   <string name="safe_mode_status_bar">Status Bar</string>
