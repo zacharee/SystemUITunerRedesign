@@ -6,6 +6,7 @@ import android.content.SharedPreferences
 import android.preference.PreferenceManager
 import android.provider.Settings
 import com.zacharee1.systemuituner.util.SettingsUtils
+import java.util.concurrent.TimeUnit
 
 class DemoHandler(private val context: Context?) {
     private val prefs: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(context)
@@ -18,19 +19,14 @@ class DemoHandler(private val context: Context?) {
 
     fun showDemo() {
         try {
-            //create new Intent and add relevant data to show Demo Mode with specified options
             var intent = Intent("com.android.systemui.demo")
             intent.putExtra("command", "enter")
             context?.sendBroadcast(intent)
 
-            //            logIntent(intent);
-
             intent = Intent("com.android.systemui.demo")
             intent.putExtra("command", "clock")
-            intent.putExtra("millis", time().toString() + "")
+            intent.putExtra("hhmm", String.format("%02d%02d", time().hour(), time().minute()))
             context?.sendBroadcast(intent)
-
-            //            logIntent(intent);
 
             intent = Intent("com.android.systemui.demo")
             intent.putExtra("command", "network")
@@ -40,15 +36,11 @@ class DemoHandler(private val context: Context?) {
             intent.putExtra("datatype", mobileType())
             context?.sendBroadcast(intent)
 
-            //            logIntent(intent);
-
-            intent = Intent("com.android.systemuui.demo")
+            intent = Intent("com.android.systemui.demo")
             intent.putExtra("command", "network")
             intent.putExtra("sims", simCount().toString() + "")
             intent.putExtra("nosim", if (noSim()) "show" else "hide")
             context?.sendBroadcast(intent)
-
-            //            logIntent(intent);
 
             intent = Intent("com.android.systemui.demo")
             intent.putExtra("command", "network")
@@ -57,14 +49,10 @@ class DemoHandler(private val context: Context?) {
             intent.putExtra("level", wifiLevel().toString() + "")
             context?.sendBroadcast(intent)
 
-            //            logIntent(intent);
-
             intent = Intent("com.android.systemui.demo")
             intent.putExtra("command", "network")
             intent.putExtra("airplane", if (showAirplane()) "show" else "hide")
             context?.sendBroadcast(intent)
-
-            //            logIntent(intent);
 
             intent = Intent("com.android.systemui.demo")
             intent.putExtra("command", "battery")
@@ -72,21 +60,15 @@ class DemoHandler(private val context: Context?) {
             intent.putExtra("plugged", batteryCharging().toString() + "")
             context?.sendBroadcast(intent)
 
-            //            logIntent(intent);
-
             intent = Intent("com.android.systemui.demo")
             intent.putExtra("command", "notifications")
             intent.putExtra("visible", showNotifs().toString() + "")
             context?.sendBroadcast(intent)
 
-            //            logIntent(intent);
-
             intent = Intent("com.android.systemui.demo")
             intent.putExtra("command", "bars")
             intent.putExtra("mode", statStyle())
             context?.sendBroadcast(intent)
-
-            //            logIntent(intent);
 
             intent = Intent("com.android.systemui.demo")
             intent.putExtra("command", "status")
@@ -195,6 +177,10 @@ class DemoHandler(private val context: Context?) {
     private fun time(): Long {
         return prefs.getLong("selected_time", System.currentTimeMillis())
     }
+
+    private fun Long.hour(): Long = TimeUnit.MILLISECONDS.toHours(this)
+
+    private fun Long.minute(): Long = TimeUnit.MILLISECONDS.toMinutes(this)
 
     private fun mobileType(): String {
         return prefs.getString("mobile_type", "lte")
