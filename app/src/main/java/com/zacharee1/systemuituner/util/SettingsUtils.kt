@@ -94,29 +94,20 @@ object SettingsUtils {
         return permissions.none { context?.checkCallingOrSelfPermission(it) == PackageManager.PERMISSION_DENIED }
     }
 
-    fun changeBlacklist(key: String?, value: Boolean, context: Context?) {
-        if (key != null) {
+    fun changeBlacklist(key: String?, remove: Boolean, context: Context?): Boolean {
+        return if (key != null) {
             var currentBL: String = Settings.Secure.getString(context?.contentResolver, "icon_blacklist") ?: ""
+            val blItems = ArrayList(currentBL.split(","))
+            val keyItems = ArrayList(key.split(","))
 
-            if (!value) {
-                currentBL += if (currentBL.isEmpty()) {
-                    key
-                } else {
-                    ",$key"
-                }
-            } else {
-                val blItems = ArrayList(currentBL.split(","))
-                val keyItems = ArrayList(key.split(","))
+            keyItems
+                    .filter { if (remove) blItems.contains(it) else !blItems.contains(it) }
+                    .forEach { if (remove) blItems.remove(it) else blItems.add(it) }
 
-                keyItems
-                        .filter { blItems.contains(it) }
-                        .forEach { blItems.remove(it) }
-
-                currentBL = TextUtils.join(",", blItems) ?: ""
-            }
+            currentBL = TextUtils.join(",", blItems) ?: ""
 
             SettingsUtils.writeSecure(context, "icon_blacklist", currentBL)
-        }
+        } else false
     }
 
     fun shouldSetSwitchChecked(fragment: PreferenceFragment) {

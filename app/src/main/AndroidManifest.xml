@@ -103,7 +103,7 @@
             android:name=".activites.info.AboutActivity"
             android:label="@string/about" />
         <activity
-            android:name=".tasker.EditGlobalActivity"
+            android:name=".tasker.activities.EditGlobalActivity"
             android:exported="true"
             android:icon="@mipmap/ic_launcher"
             android:label="@string/global">
@@ -112,7 +112,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".tasker.EditSecureActivity"
+            android:name=".tasker.activities.EditSecureActivity"
             android:exported="true"
             android:icon="@mipmap/ic_launcher"
             android:label="@string/secure">
@@ -121,10 +121,19 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".tasker.EditSystemActivity"
+            android:name=".tasker.activities.EditSystemActivity"
             android:exported="true"
             android:icon="@mipmap/ic_launcher"
             android:label="@string/system">
+            <intent-filter>
+                <action android:name="com.twofortyfouram.locale.intent.action.EDIT_SETTING" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".tasker.activities.EditBlacklistActivity"
+            android:exported="true"
+            android:icon="@mipmap/ic_launcher"
+            android:label="@string/blacklist">
             <intent-filter>
                 <action android:name="com.twofortyfouram.locale.intent.action.EDIT_SETTING" />
             </intent-filter>

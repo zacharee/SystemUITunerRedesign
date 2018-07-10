@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <EditTextPreference
+        android:title="@string/key_plaintext"
+        android:persistent="false"
+        android:key="key" />
+
+    <SwitchPreference
+        android:title="@string/remove_from_blacklist"
+        android:persistent="false"
+        android:key="remove" />
+
+</PreferenceScreen>

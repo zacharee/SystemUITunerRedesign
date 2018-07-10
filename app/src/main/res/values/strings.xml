@@ -351,6 +351,7 @@
     <string name="custom_settings_read_desc">These fields allow you to read the value of a specified key.</string>
     <string name="key_plaintext">Key</string>
     <string name="value_plaintext">Value</string>
+    <string name="remove_from_blacklist">Remove From Blacklist?</string>
 
     <string name="custom_settings_warning">Be careful what you do here! If you input an incorrect value, you could cause a crash loop, bootloop or worse!</string>
     <string name="hide_welcome_hint">Hint: You can hide this screen, and the donation message, by going to Settings and toggling on \"Hide Welcome Screen\".</string>
