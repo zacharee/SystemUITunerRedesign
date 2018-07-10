@@ -9,7 +9,6 @@ import android.os.Bundle
 import android.preference.EditTextPreference
 import android.preference.Preference
 import android.support.v4.content.LocalBroadcastManager
-import com.joaomgcd.taskerpluginlibrary.TaskerPluginConstants
 import com.joaomgcd.taskerpluginlibrary.action.TaskerPluginRunnerActionNoOutput
 import com.joaomgcd.taskerpluginlibrary.config.TaskerPluginConfig
 import com.joaomgcd.taskerpluginlibrary.config.TaskerPluginConfigHelperNoOutput
@@ -43,10 +42,7 @@ abstract class BaseEditActivity : BaseAnimActivity(), TaskerPluginConfig<Input> 
     override val inputForTasker: TaskerInput<Input>
         get() = TaskerInput(Input(key, value, type))
 
-    val helper = object : TaskerPluginConfigHelperNoOutput<Input, EditBase>(this) {
-        override val runnerClass = EditBase::class.java
-        override val inputClass = Input::class.java
-    }
+    lateinit var helper: TaskerPluginConfigHelperNoOutput<Input, EditBase>
 
     internal var key: String? = null
     internal var value: String? = null
@@ -54,8 +50,10 @@ abstract class BaseEditActivity : BaseAnimActivity(), TaskerPluginConfig<Input> 
     private val updateReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context?, intent: Intent?) {
             if (intent?.action == UPDATE) {
-                key = intent.getStringExtra(KEY)
-                value = intent.getStringExtra(VALUE)
+                when (intent.getStringExtra(TYPE)) {
+                    KEY -> key = intent.getStringExtra(KEY)
+                    VALUE -> value = intent.getStringExtra(VALUE)
+                }
             }
         }
     }
@@ -70,9 +68,13 @@ abstract class BaseEditActivity : BaseAnimActivity(), TaskerPluginConfig<Input> 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        helper.onCreate()
 
-        val bundle = intent?.getBundleExtra(TaskerPluginConstants.EXTRA_BUNDLE)
+        helper = object : TaskerPluginConfigHelperNoOutput<Input, EditBase>(this) {
+            override val runnerClass = EditBase::class.java
+            override val inputClass = Input::class.java
+        }
+
+        helper.onCreate()
 
         setContentView(R.layout.activity_item_list)
 
@@ -114,6 +116,7 @@ abstract class BaseEditActivity : BaseAnimActivity(), TaskerPluginConfig<Input> 
                 preference.summary = newValue.toString()
 
                 val update = Intent(UPDATE)
+                update.putExtra(TYPE, preference.key)
 
                 when (preference.key) {
                     KEY -> update.putExtra(KEY, newValue.toString())
@@ -164,13 +167,13 @@ class EditBase: TaskerPluginRunnerActionNoOutput<Input>() {
 }
 
 @TaskerInputRoot
-open class Input @JvmOverloads constructor (
+class Input @JvmOverloads constructor (
         @field:TaskerInputField("key") var key: String? = null,
         @field:TaskerInputField("value") var value: String? = null,
         @field:TaskerInputField("type") var type: String? = null)
 
 object Type : Serializable {
-    const val GLOBAL = "global"
-    const val SECURE = "secure"
-    const val SYSTEM = "system"
+    const val GLOBAL = "Settings\$Global"
+    const val SECURE = "Settings\$Secure"
+    const val SYSTEM = "Settings\$System"
 }
