@@ -17,7 +17,6 @@
   <string name="safe_mode_summary_4">부팅 시 빠른 설정 열/행 갯수에 대한 사용자 지정 값을 복원합니다(터치위즈, 누가+).</string>
   <string name="safe_mode_summary_5">부팅 시 사용자 지정 알림 지연 옵션을 복원합니다(8.1+).</string>
   <string name="hide_welcome_screen">환영 화면 숨기기</string>
-  <string name="tasker_support">태스커 지원</string>
   <string name="instructions">사용법</string>
   <string name="safe_mode_android_o">안드로이드 O에 추가된 제한으로 인해, 이 기능은 장치에서 작동하지 않습니다.</string>
   <string name="requires_nougat">누가 이상 필요.</string>
@@ -156,7 +155,6 @@
   <string name="move_full_rows">전체 행 이동</string>
   <string name="battery">배터리</string>
   <string name="enable_fabric_io_analytics">Fabric.io 분석</string>
-  <string name="tasker_how_to">태스커 사용법</string>
   <string name="base_command_tasker">이것은 기본 명령입니다:</string>
   <string name="tasker_defs">모든 것의 의미는 다음과 같습니다:</string>
   <string name="type_plaintext">Type</string>
@@ -300,6 +298,7 @@
   <string name="custom_settings_read_desc">These fields allow you to read the value of a specified key.</string>
   <string name="key_plaintext">Key</string>
   <string name="value_plaintext">Value</string>
+  <string name="remove_from_blacklist">Remove From Blacklist?</string>
   <string name="custom_settings_warning">Be careful what you do here! If you input an incorrect value, you could cause a crash loop, bootloop or worse!</string>
   <string name="hide_welcome_hint">Hint: You can hide this screen, and the donation message, by going to Settings and toggling on \"Hide Welcome Screen\".</string>
   <string name="safe_mode_status_bar">Status Bar</string>
