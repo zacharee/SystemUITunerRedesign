@@ -160,6 +160,7 @@
   <string name="tasker_how_to">Tasker - ਕਿਵੇਂ</string>
   <string name="base_command_tasker">ਇਹ ਬੇਸ ਕਮਾਂਡ ਹੈ:</string>
   <string name="tasker_defs">ਇਹ ਸਭ ਕੁਝ ਹੈ:</string>
+  <string name="type_plaintext">Type</string>
   <string name="for_settings_global">(ਗਲੋਬਲ ਸੈਟਿੰਗਾਂ ਲਈ.)</string>
   <string name="for_settings_secure">(ਸੁਰੱਖਿਆ ਸੈਟਿੰਗਾਂ ਲਈ.)</string>
   <string name="for_settings_system">(ਸਿਸਟਮ ਸੈਟਿੰਗਾਂ ਲਈ.)</string>
