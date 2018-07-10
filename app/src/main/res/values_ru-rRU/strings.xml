@@ -17,7 +17,6 @@
   <string name="safe_mode_summary_4">Восстанавливает пользовательский QS счетчик строк/столбцов при загрузке (TouchWiz, Nougat и выше).</string>
   <string name="safe_mode_summary_5">Восстанавливает пользовательские параметры откладывания уведомлений при загрузке (8.1 и выше).</string>
   <string name="hide_welcome_screen">Скрыть экран приветствия</string>
-  <string name="tasker_support">Поддержка приложения Tasker</string>
   <string name="instructions">Инструкции</string>
   <string name="safe_mode_android_o">Из-за ограничений в Android O, эта функция не будет работать на вашем устройстве.</string>
   <string name="requires_nougat">Требует версии ПО Nougat или выше.</string>
@@ -156,7 +155,6 @@
   <string name="move_full_rows">Move Full Rows</string>
   <string name="battery">Battery</string>
   <string name="enable_fabric_io_analytics">Fabric.io Analytics</string>
-  <string name="tasker_how_to">Tasker How-To</string>
   <string name="base_command_tasker">This is the base command:</string>
   <string name="tasker_defs">This is what everything means:</string>
   <string name="type_plaintext">Type</string>
@@ -300,6 +298,7 @@
   <string name="custom_settings_read_desc">These fields allow you to read the value of a specified key.</string>
   <string name="key_plaintext">Key</string>
   <string name="value_plaintext">Value</string>
+  <string name="remove_from_blacklist">Remove From Blacklist?</string>
   <string name="custom_settings_warning">Be careful what you do here! If you input an incorrect value, you could cause a crash loop, bootloop or worse!</string>
   <string name="hide_welcome_hint">Hint: You can hide this screen, and the donation message, by going to Settings and toggling on \"Hide Welcome Screen\".</string>
   <string name="safe_mode_status_bar">Status Bar</string>
