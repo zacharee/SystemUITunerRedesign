@@ -160,6 +160,7 @@
   <string name="tasker_how_to">كيف تاسكر</string>
   <string name="base_command_tasker">هذا هو الأمر الأساسي:</string>
   <string name="tasker_defs">هذا ما يعنيه كل شيء:</string>
+  <string name="type_plaintext">Type</string>
   <string name="for_settings_global">(بالنسبة ل Settings.Global)</string>
   <string name="for_settings_secure">(بالنسبة ل Settings.Secure)</string>
   <string name="for_settings_system">(بالنسبة ل Settings.System)</string>
