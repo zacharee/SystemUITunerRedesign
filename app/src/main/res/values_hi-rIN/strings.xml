@@ -159,6 +159,7 @@
   <string name="tasker_how_to">Tasker - कैसे करने के लिए</string>
   <string name="base_command_tasker">यह है आधार कमान:</string>
   <string name="tasker_defs">यह सब कुछ इसका मतलब है:</string>
+  <string name="type_plaintext">Type</string>
   <string name="for_settings_global">(ग्लोबल सेटिंग्स के लिए।)</string>
   <string name="for_settings_secure">(सिक्योर सेटिंग्स के लिए।)</string>
   <string name="for_settings_system">(सिस्टम सेटिंग्स के लिए।)</string>
