@@ -17,7 +17,6 @@
   <string name="safe_mode_summary_4">在启动时还原自定义 QS 行/列计数 (TouchWiz、 Nougat+)。</string>
   <string name="safe_mode_summary_5">恢复启动时的自定义通知暂停选项 (android 8.1 +)。</string>
   <string name="hide_welcome_screen">隐藏欢迎屏幕</string>
-  <string name="tasker_support">任务支持</string>
   <string name="instructions">说明</string>
   <string name="safe_mode_android_o">由于 Android Oreo中添加了限制, 这个功能不会在你的设备上起作用。</string>
   <string name="requires_nougat">需要安卓7.0或更新版本。</string>
@@ -156,7 +155,6 @@
   <string name="move_full_rows">移动整行</string>
   <string name="battery">电池</string>
   <string name="enable_fabric_io_analytics">Fabric.io 分析</string>
-  <string name="tasker_how_to">Tasker 教学</string>
   <string name="base_command_tasker">这是基本命令:</string>
   <string name="tasker_defs">这是全部的讲解：</string>
   <string name="type_plaintext">Type</string>
@@ -300,6 +298,7 @@
   <string name="custom_settings_read_desc">允许你读取或指定按键</string>
   <string name="key_plaintext">按键</string>
   <string name="value_plaintext">数值</string>
+  <string name="remove_from_blacklist">Remove From Blacklist?</string>
   <string name="custom_settings_warning">请小心操作，如果你输入了错误的数值，可能导致一直崩溃或一直重启或更糟！</string>
   <string name="hide_welcome_hint">Hint: You can hide this screen, and the donation message, by going to Settings and toggling on \"Hide Welcome Screen\".</string>
   <string name="safe_mode_status_bar">Status Bar</string>
