@@ -10,7 +10,6 @@ import android.support.v4.content.ContextCompat
 import android.view.MenuItem
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.activites.BaseAnimActivity
-import com.zacharee1.systemuituner.activites.instructions.TaskerInstructionActivity
 import com.zacharee1.systemuituner.fragments.AnimFragment
 import com.zacharee1.systemuituner.services.SafeModeService
 
@@ -36,7 +35,6 @@ class SettingsActivity : BaseAnimActivity() {
             setHasOptionsMenu(true)
             setUpQSStuff()
             setSwitchListeners()
-            setPreferenceListeners()
         }
 
         override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -60,15 +58,8 @@ class SettingsActivity : BaseAnimActivity() {
         }
 
         private fun setSwitchListeners() {
-            val taskerEnabled = findPreference("tasker_support_enabled") as SwitchPreference
             val safeMode = findPreference("safe_mode") as SwitchPreference
             val safeNotif = findPreference("show_safe_mode_notif") as SwitchPreference
-
-            taskerEnabled.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { _, o ->
-                val enabled = java.lang.Boolean.valueOf(o.toString())
-                findPreference("tasker_instructions").isEnabled = enabled
-                true
-            }
 
             safeMode.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { _, newValue ->
                 if (java.lang.Boolean.valueOf(newValue.toString())) {
@@ -85,17 +76,6 @@ class SettingsActivity : BaseAnimActivity() {
                 safeNotif.isEnabled = false
                 safeNotif.summary = resources.getText(R.string.safe_mode_notif_desc_not_supported)
             }
-        }
-
-        private fun setPreferenceListeners() {
-            val tasker = findPreference("tasker_instructions")
-
-            tasker.onPreferenceClickListener = Preference.OnPreferenceClickListener {
-                startActivity(Intent(context, TaskerInstructionActivity::class.java))
-                true
-            }
-
-            tasker.isEnabled = preferenceManager.sharedPreferences.getBoolean("tasker_support_enabled", false)
         }
     }
 

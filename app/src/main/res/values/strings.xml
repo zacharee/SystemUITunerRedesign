@@ -15,7 +15,6 @@
     <string name="safe_mode_summary_4">Restores custom QS row/column count on boot (TouchWiz, Nougat+).</string>
     <string name="safe_mode_summary_5">Restores custom notification snooze options on boot (8.1+).</string>
     <string name="hide_welcome_screen">Hide Welcome Screen</string>
-    <string name="tasker_support">Tasker Support</string>
     <string name="instructions">Instructions</string>
     <string name="safe_mode_android_o">Because of limitations added in Android O, this feature will not work on your device.</string>
     <string name="requires_nougat">Requires Nougat or later.</string>
@@ -165,7 +164,6 @@
     <string name="move_full_rows">Move Full Rows</string>
     <string name="battery">Battery</string>
     <string name="enable_fabric_io_analytics">Fabric.io Analytics</string>
-    <string name="tasker_how_to">Tasker How-To</string>
     <string name="base_command_tasker">This is the base command:</string>
     <string name="tasker_command" translatable="false"><![CDATA[am broadcast -a <TYPE> -d SETTING:<KEY>/<VALUE>]]></string>
     <string name="tasker_defs">This is what everything means:</string>

@@ -97,9 +97,6 @@
         <activity android:name=".activites.OptionsActivity"
             android:configChanges="screenLayout|orientation|screenSize"/>
         <activity
-            android:name=".activites.instructions.TaskerInstructionActivity"
-            android:label="@string/tasker_how_to" />
-        <activity
             android:name=".activites.info.AboutActivity"
             android:label="@string/about" />
         <activity
@@ -214,19 +211,6 @@
                 <action android:name="android.intent.action.REBOOT" />
                 <action android:name="android.intent.action.QUICKBOOT_POWERON" />
                 <action android:name="com.htc.intent.action.QUICKBOOT_POWERON" />
-            </intent-filter>
-        </receiver>
-        <receiver
-            android:name=".receivers.TaskerReceiver"
-            android:enabled="true"
-            android:exported="true"
-            tools:ignore="ExportedReceiver">
-            <intent-filter>
-                <action android:name="com.zacharee1.intent.action.WRITE_GLOBAL" />
-                <action android:name="com.zacharee1.intent.action.WRITE_SECURE" />
-                <action android:name="com.zacharee1.intent.action.WRITE_SYSTEM" />
-
-                <data android:scheme="SETTING" />
             </intent-filter>
         </receiver>
 
