@@ -96,7 +96,7 @@ class QuickSettingsLayoutEditor : BaseAnimActivity() {
         contentResolver.registerContentObserver(Settings.Secure.CONTENT_URI, true, mObserver!!)
     }
 
-    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
         item?.let {
             when (it.itemId) {
                 android.R.id.home -> finish()

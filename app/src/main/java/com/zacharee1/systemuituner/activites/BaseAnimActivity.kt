@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.AppCompatTextView
 import android.support.v7.widget.Toolbar
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
@@ -70,6 +71,14 @@ open class BaseAnimActivity : AppCompatActivity(), SharedPreferences.OnSharedPre
 
     override fun onAttachedToWindow() {
         if (super.getTitle() != null) setTitle(super.getTitle())
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            android.R.id.home -> onBackPressed()
+        }
+
+        return super.onOptionsItemSelected(item)
     }
 
     override fun setTitle(titleId: Int) {

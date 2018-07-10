@@ -12,7 +12,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'io.fabric'
 
-project.version = 262
+project.version = 263
 
 repositories {
     maven { url 'https://maven.fabric.io/public' }
@@ -76,6 +76,7 @@ dependencies {
 //    implementation project(':SeekBarPref')
     implementation 'io.reactivex.rxjava2:rxandroid:2.0.2'
     implementation 'io.reactivex.rxjava2:rxjava:2.1.16'
+    implementation 'com.joaomgcd:taskerpluginlibrary:0.0.3'
 }
 
 apply plugin: 'com.google.gms.google-services'

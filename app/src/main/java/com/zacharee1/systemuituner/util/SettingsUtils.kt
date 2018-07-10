@@ -11,7 +11,8 @@ import com.zacharee1.systemuituner.activites.info.SettingWriteFailed
 import java.util.*
 
 object SettingsUtils {
-    fun writeGlobal(context: Context?, key: String, value: String?): Boolean {
+    fun writeGlobal(context: Context?, key: String?, value: String?): Boolean {
+        if (key == null) return false
         return try {
             Settings.Global.putString(context?.contentResolver, key, value)
         } catch (e: Exception) {
@@ -27,7 +28,8 @@ object SettingsUtils {
 
     }
 
-    fun writeSecure(context: Context?, key: String, value: String?): Boolean {
+    fun writeSecure(context: Context?, key: String?, value: String?): Boolean {
+        if (key == null) return false
         return try {
             Settings.Secure.putString(context?.contentResolver, key, value)
         } catch (e: Exception) {
@@ -43,7 +45,8 @@ object SettingsUtils {
 
     }
 
-    fun writeSystem(context: Context?, key: String, value: String?): Boolean {
+    fun writeSystem(context: Context?, key: String?, value: String?): Boolean {
+        if (key == null) return false
         return try {
             Settings.System.putString(context?.contentResolver, key, value)
         } catch (e: Exception) {
