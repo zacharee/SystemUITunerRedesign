@@ -159,6 +159,7 @@
   <string name="tasker_how_to">Tasker 教學</string>
   <string name="base_command_tasker">這是基礎指令：</string>
   <string name="tasker_defs">這是全部的講解：</string>
+  <string name="type_plaintext">Type</string>
   <string name="for_settings_global">(用於 Settings.Global)</string>
   <string name="for_settings_secure">(用於 Settings.Secure)</string>
   <string name="for_settings_system">(用於 Settings.System)</string>
