@@ -159,6 +159,7 @@
   <string name="tasker_how_to">Bagaimana Untuk Tasker</string>
   <string name="base_command_tasker">Ini adalah perintah dasar:</string>
   <string name="tasker_defs">Ini adalah apa yang semuanya berarti:</string>
+  <string name="type_plaintext">Type</string>
   <string name="for_settings_global">(untuk Setelan.Global)</string>
   <string name="for_settings_secure">(Untuk Pengaturan.Aman)</string>
   <string name="for_settings_system">(untuk Pengaturan.Sistem)</string>
