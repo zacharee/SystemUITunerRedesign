@@ -159,6 +159,7 @@
   <string name="tasker_how_to">Tasker How-to</string>
   <string name="base_command_tasker">Voici la commande de base :</string>
   <string name="tasker_defs">Voici ce que tout ceci signifie :</string>
+  <string name="type_plaintext">Type</string>
   <string name="for_settings_global">(pour Settings.Global)</string>
   <string name="for_settings_secure">(pour Settings.Secure)</string>
   <string name="for_settings_system">(pour Settings.System)</string>
