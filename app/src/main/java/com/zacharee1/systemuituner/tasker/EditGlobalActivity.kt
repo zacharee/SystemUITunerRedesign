@@ -25,7 +25,7 @@ import com.zacharee1.systemuituner.util.SettingsUtils
 import java.io.Serializable
 
 @SuppressLint("Registered")
-open class BaseEditActivity : BaseAnimActivity(), TaskerPluginConfig<Input> {
+abstract class BaseEditActivity : BaseAnimActivity(), TaskerPluginConfig<Input> {
     companion object {
         const val KEY = "key"
         const val VALUE = "value"
@@ -34,27 +34,22 @@ open class BaseEditActivity : BaseAnimActivity(), TaskerPluginConfig<Input> {
         const val UPDATE = "update"
     }
 
+    internal abstract val type: String?
+
     override val context: Context
         get() = this
 
     override val inputForTasker: TaskerInput<Input>
         get() = TaskerInput(Input(key, value, type))
 
-    var helper =
-            object : TaskerPluginConfigHelperNoOutput<Input, EditBase>(this) {
-                override val runnerClass = EditBase::class.java
-                override val inputClass = Input::class.java
-            }
+    val helper: TaskerPluginConfigHelperNoOutput<Input, EditBase>
+        get() = object : TaskerPluginConfigHelperNoOutput<Input, EditBase>(this) {
+            override val runnerClass = EditBase::class.java
+            override val inputClass = Input::class.java
+        }
 
     internal var key: String? = null
     internal var value: String? = null
-    internal val type: Type?
-        get() = when (this) {
-            is EditGlobalActivity -> Type.GLOBAL
-            is EditSecureActivity -> Type.SECURE
-            is EditSystemActivity -> Type.SYSTEM
-            else -> null
-        }
 
     private val updateReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context?, intent: Intent?) {
@@ -64,10 +59,13 @@ open class BaseEditActivity : BaseAnimActivity(), TaskerPluginConfig<Input> {
             }
         }
     }
+    private val fragment = ConfigFragment()
 
     override fun assignFromInput(input: TaskerInput<Input>) {
         key = input.regular.key
         value = input.regular.value
+
+        fragment.setText(key, value)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -77,11 +75,10 @@ open class BaseEditActivity : BaseAnimActivity(), TaskerPluginConfig<Input> {
 
         LocalBroadcastManager.getInstance(this).registerReceiver(updateReceiver, IntentFilter(UPDATE))
 
-        val fragment = ConfigFragment()
         val args = Bundle()
         args.putString(KEY, key)
         args.putString(VALUE, value)
-        args.putSerializable(TYPE, type)
+        args.putString(TYPE, type)
         fragment.arguments = args
 
         fragmentManager
@@ -93,9 +90,9 @@ open class BaseEditActivity : BaseAnimActivity(), TaskerPluginConfig<Input> {
     override fun onDestroy() {
         super.onDestroy()
 
-
-
         LocalBroadcastManager.getInstance(this).unregisterReceiver(updateReceiver)
+
+        helper.finishForTasker()
     }
 
     class ConfigFragment : AnimFragment() {
@@ -105,14 +102,10 @@ open class BaseEditActivity : BaseAnimActivity(), TaskerPluginConfig<Input> {
             val key = arguments.getString(KEY)
             val value = arguments.getString(VALUE)
 
+            setText(key, value)
+
             val keyPref = findPreference(KEY) as EditTextPreference
             val valPref = findPreference(VALUE) as EditTextPreference
-
-            keyPref.summary = key
-            valPref.summary = value
-
-            keyPref.text = key
-            valPref.text = value
 
             val listener = Preference.OnPreferenceChangeListener { preference, newValue ->
                 preference.summary = newValue.toString()
@@ -132,14 +125,25 @@ open class BaseEditActivity : BaseAnimActivity(), TaskerPluginConfig<Input> {
             keyPref.onPreferenceChangeListener = listener
             valPref.onPreferenceChangeListener = listener
         }
+
+        fun setText(key: String?, value: String?) {
+            val keyPref = findPreference(KEY) as EditTextPreference
+            val valPref = findPreference(VALUE) as EditTextPreference
+
+            keyPref.summary = key
+            valPref.summary = value
+
+            keyPref.text = key
+            valPref.text = value
+        }
     }
 }
 
-class EditGlobalActivity : BaseEditActivity()
-class EditSecureActivity : BaseEditActivity()
-class EditSystemActivity : BaseEditActivity()
+class EditGlobalActivity(override val type: String? = Type.GLOBAL) : BaseEditActivity()
+class EditSecureActivity(override val type: String? = Type.SECURE) : BaseEditActivity()
+class EditSystemActivity(override val type: String? = Type.SYSTEM) : BaseEditActivity()
 
-abstract class EditBase: TaskerPluginRunnerActionNoOutput<Input>() {
+class EditBase: TaskerPluginRunnerActionNoOutput<Input>() {
     override fun run(context: Context, input: TaskerInput<Input>): TaskerPluginResult<Unit> {
         val actualInput = input.regular
         val key = actualInput.key
@@ -152,7 +156,7 @@ abstract class EditBase: TaskerPluginRunnerActionNoOutput<Input>() {
         else TaskerPluginResultError(SecurityException("Permission denied or incorrect parameter(s)"))
     }
 
-    private fun write(context: Context, key: String, value: String?, type: Type?): Boolean {
+    private fun write(context: Context, key: String, value: String?, type: String?): Boolean {
         return when (type) {
             Type.GLOBAL -> SettingsUtils.writeGlobal(context, key, value)
             Type.SECURE -> SettingsUtils.writeSecure(context, key, value)
@@ -166,10 +170,10 @@ abstract class EditBase: TaskerPluginRunnerActionNoOutput<Input>() {
 open class Input(
         @field:TaskerInputField("key") open var key: String? = null,
         @field:TaskerInputField("value") open var value: String? = null,
-        @field:TaskerInputField("type") open var type: Type? = null)
+        @field:TaskerInputField("type") open var type: String? = null)
 
-enum class Type : Serializable {
-    GLOBAL,
-    SECURE,
-    SYSTEM
+object Type : Serializable {
+    const val GLOBAL = "global"
+    const val SECURE = "secure"
+    const val SYSTEM = "system"
 }

@@ -170,6 +170,7 @@
     <string name="tasker_command" translatable="false"><![CDATA[am broadcast -a <TYPE> -d SETTING:<KEY>/<VALUE>]]></string>
     <string name="tasker_defs">This is what everything means:</string>
     <string name="type" translatable="false"><![CDATA[<TYPE>]]></string>
+    <string name="type_plaintext">Type</string>
     <string name="custom_settings_global" translatable="false">com.zacharee1.intent.action.WRITE_GLOBAL</string>
     <string name="for_settings_global">(for Settings.Global)</string>
     <string name="custom_settings_secure" translatable="false">com.zacharee1.intent.action.WRITE_SECURE</string>
