@@ -17,7 +17,6 @@
   <string name="safe_mode_summary_4">Restores custom QS row/column count on boot (TouchWiz, Nougat+).</string>
   <string name="safe_mode_summary_5">Restores custom notification snooze options on boot (8.1+).</string>
   <string name="hide_welcome_screen">Hoş Geldiniz Ekranını Gizle</string>
-  <string name="tasker_support">Görevler destek</string>
   <string name="instructions">Talimatlar</string>
   <string name="safe_mode_android_o">Android O\'da eklenen sınırlamalar nedeniyle bu özellik cihazınızda çalışmaz.</string>
   <string name="requires_nougat">Nougat veya daha ileri bir sürümü gerektirir.</string>
@@ -156,7 +155,6 @@
   <string name="move_full_rows">Tam Satırları Taşı</string>
   <string name="battery">Batarya</string>
   <string name="enable_fabric_io_analytics">Fabric.io Analiz</string>
-  <string name="tasker_how_to">Görevler Nasıl Yapılır</string>
   <string name="base_command_tasker">Bu temel komuttur:</string>
   <string name="tasker_defs">Her şeyin anlamı buydu:</string>
   <string name="type_plaintext">Type</string>
@@ -301,6 +299,7 @@
   <string name="custom_settings_read_desc">These fields allow you to read the value of a specified key.</string>
   <string name="key_plaintext">Key</string>
   <string name="value_plaintext">Value</string>
+  <string name="remove_from_blacklist">Remove From Blacklist?</string>
   <string name="custom_settings_warning">Be careful what you do here! If you input an incorrect value, you could cause a crash loop, bootloop or worse!</string>
   <string name="hide_welcome_hint">Hint: You can hide this screen, and the donation message, by going to Settings and toggling on \"Hide Welcome Screen\".</string>
   <string name="safe_mode_status_bar">Status Bar</string>
