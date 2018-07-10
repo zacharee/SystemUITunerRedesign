@@ -17,7 +17,6 @@
   <string name="safe_mode_summary_4">Restaura el conteo de fila/columna personalizada QS en el arranque (TouchWiz, +Nougat).</string>
   <string name="safe_mode_summary_5">Restores custom notification snooze options on boot (8.1+).</string>
   <string name="hide_welcome_screen">Ocultar Ventana de Bienvenida</string>
-  <string name="tasker_support">Tareas Activadas</string>
   <string name="instructions">Instrucciones</string>
   <string name="safe_mode_android_o">Debido a las limitaciones en Android Oreo, ésta característica podría no activarse en tu dispositivo</string>
   <string name="requires_nougat">Requiere Nougat u más actual.</string>
@@ -156,7 +155,6 @@
   <string name="move_full_rows">Mover Filas Completas</string>
   <string name="battery">Batería</string>
   <string name="enable_fabric_io_analytics">Monitor de Fábrica</string>
-  <string name="tasker_how_to">Actividad Cómo Configurar</string>
   <string name="base_command_tasker">Éste es el comando base:</string>
   <string name="tasker_defs">Aquí algunos Ejemplos:</string>
   <string name="type_plaintext">Type</string>
@@ -300,6 +298,7 @@
   <string name="custom_settings_read_desc">These fields allow you to read the value of a specified key.</string>
   <string name="key_plaintext">Key</string>
   <string name="value_plaintext">Value</string>
+  <string name="remove_from_blacklist">Remove From Blacklist?</string>
   <string name="custom_settings_warning">Be careful what you do here! If you input an incorrect value, you could cause a crash loop, bootloop or worse!</string>
   <string name="hide_welcome_hint">Hint: You can hide this screen, and the donation message, by going to Settings and toggling on \"Hide Welcome Screen\".</string>
   <string name="safe_mode_status_bar">Status Bar</string>
