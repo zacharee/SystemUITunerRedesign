@@ -9,6 +9,7 @@ import android.os.Bundle
 import android.preference.EditTextPreference
 import android.preference.Preference
 import android.support.v4.content.LocalBroadcastManager
+import android.util.Log
 import com.joaomgcd.taskerpluginlibrary.action.TaskerPluginRunnerActionNoOutput
 import com.joaomgcd.taskerpluginlibrary.config.TaskerPluginConfig
 import com.joaomgcd.taskerpluginlibrary.config.TaskerPluginConfigHelperNoOutput
@@ -42,11 +43,10 @@ abstract class BaseEditActivity : BaseAnimActivity(), TaskerPluginConfig<Input> 
     override val inputForTasker: TaskerInput<Input>
         get() = TaskerInput(Input(key, value, type))
 
-    val helper: TaskerPluginConfigHelperNoOutput<Input, EditBase>
-        get() = object : TaskerPluginConfigHelperNoOutput<Input, EditBase>(this) {
-            override val runnerClass = EditBase::class.java
-            override val inputClass = Input::class.java
-        }
+    val helper = object : TaskerPluginConfigHelperNoOutput<Input, EditBase>(this) {
+        override val runnerClass = EditBase::class.java
+        override val inputClass = Input::class.java
+    }
 
     internal var key: String? = null
     internal var value: String? = null
@@ -65,6 +65,8 @@ abstract class BaseEditActivity : BaseAnimActivity(), TaskerPluginConfig<Input> 
         key = input.regular.key
         value = input.regular.value
 
+        Log.e("SystemUITuner", "$key, $value")
+
         fragment.setText(key, value)
     }
 
@@ -75,37 +77,39 @@ abstract class BaseEditActivity : BaseAnimActivity(), TaskerPluginConfig<Input> 
 
         LocalBroadcastManager.getInstance(this).registerReceiver(updateReceiver, IntentFilter(UPDATE))
 
-        val args = Bundle()
-        args.putString(KEY, key)
-        args.putString(VALUE, value)
-        args.putString(TYPE, type)
-        fragment.arguments = args
-
         fragmentManager
                 ?.beginTransaction()
                 ?.replace(R.id.content_main, fragment, "tasker")
                 ?.commit()
+
+        helper.onCreate()
+    }
+
+    override fun onBackPressed() {
+        helper.finishForTasker()
     }
 
     override fun onDestroy() {
         super.onDestroy()
 
         LocalBroadcastManager.getInstance(this).unregisterReceiver(updateReceiver)
-
-        helper.finishForTasker()
     }
 
     class ConfigFragment : AnimFragment() {
+        var preInitKey: String? = null
+        var preInitValue: String? = null
+
         override fun onAnimationFinishedEnter(enter: Boolean) {
             addPreferencesFromResource(R.xml.pref_tasker_plugin)
 
-            val key = arguments.getString(KEY)
-            val value = arguments.getString(VALUE)
-
-            setText(key, value)
-
             val keyPref = findPreference(KEY) as EditTextPreference
             val valPref = findPreference(VALUE) as EditTextPreference
+
+            keyPref.summary = preInitKey
+            valPref.summary = preInitValue
+
+            keyPref.text = preInitKey
+            valPref.text = preInitValue
 
             val listener = Preference.OnPreferenceChangeListener { preference, newValue ->
                 preference.summary = newValue.toString()
@@ -127,14 +131,8 @@ abstract class BaseEditActivity : BaseAnimActivity(), TaskerPluginConfig<Input> 
         }
 
         fun setText(key: String?, value: String?) {
-            val keyPref = findPreference(KEY) as EditTextPreference
-            val valPref = findPreference(VALUE) as EditTextPreference
-
-            keyPref.summary = key
-            valPref.summary = value
-
-            keyPref.text = key
-            valPref.text = value
+            preInitKey = key
+            preInitValue = value
         }
     }
 }
