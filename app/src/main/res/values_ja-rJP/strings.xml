@@ -159,6 +159,7 @@
   <string name="tasker_how_to">Taskerの使い方</string>
   <string name="base_command_tasker">これが基本的なコマンドです:</string>
   <string name="tasker_defs">これがすべての意味です:</string>
+  <string name="type_plaintext">Type</string>
   <string name="for_settings_global">(Settings.Global向け)</string>
   <string name="for_settings_secure">(Settings.Secure向け)</string>
   <string name="for_settings_system">(for Settings.System)</string>
