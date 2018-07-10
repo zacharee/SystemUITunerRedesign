@@ -17,7 +17,6 @@
   <string name="safe_mode_summary_4">ਬੂਟ ਤੇ ਰੀਸਟੋਰ ਕੀਤੇ ਕਸਟਮ QS ਕਤਾਰ / ਕਾਲਮ ਕਾਊਂਟ (ਟਚਵਿਜ਼, ਨੋਗਾਟ).</string>
   <string name="safe_mode_summary_5">ਬੂਟ \'ਤੇ ਕਸਟਮ ਨੋਟੀਫਿਕੇਸ਼ਨ ਸਨੂਜ਼ ਵਿਕਲਪ ਰੀਸਟੋਰ ਕਰਦਾ ਹੈ (8.1+).</string>
   <string name="hide_welcome_screen">ਸੁਆਗਤੀ ਸਕਰੀਨ ਲੁਕਾਓ</string>
-  <string name="tasker_support">Tasker ਸਮਰਥਨ</string>
   <string name="instructions">ਨਿਰਦੇਸ਼</string>
   <string name="safe_mode_android_o">ਐਂਡਰਾਇਡ ਓ ਵਿੱਚ ਜੋੜੀਆਂ ਗਈਆਂ ਕਮੀਆਂ ਦੇ ਕਾਰਨ, ਇਹ ਵਿਸ਼ੇਸ਼ਤਾ ਤੁਹਾਡੀ ਡਿਵਾਈਸ \'ਤੇ ਕੰਮ ਨਹੀਂ ਕਰੇਗੀ.</string>
   <string name="requires_nougat">Nougat ਜ ਬਾਅਦ ਦੀ ਲੋੜ ਹੈ.</string>
@@ -157,7 +156,6 @@
   <string name="move_full_rows">ਪੂਰੀ ਕਤਾਰ ਭੇਜੋ</string>
   <string name="battery">ਬੈਟਰੀ</string>
   <string name="enable_fabric_io_analytics">Fabric.io ਵਿਸ਼ਲੇਸ਼ਣ</string>
-  <string name="tasker_how_to">Tasker - ਕਿਵੇਂ</string>
   <string name="base_command_tasker">ਇਹ ਬੇਸ ਕਮਾਂਡ ਹੈ:</string>
   <string name="tasker_defs">ਇਹ ਸਭ ਕੁਝ ਹੈ:</string>
   <string name="type_plaintext">Type</string>
@@ -300,6 +298,7 @@
   <string name="custom_settings_read_desc">These fields allow you to read the value of a specified key.</string>
   <string name="key_plaintext">Key</string>
   <string name="value_plaintext">Value</string>
+  <string name="remove_from_blacklist">Remove From Blacklist?</string>
   <string name="custom_settings_warning">Be careful what you do here! If you input an incorrect value, you could cause a crash loop, bootloop or worse!</string>
   <string name="hide_welcome_hint">Hint: You can hide this screen, and the donation message, by going to Settings and toggling on \"Hide Welcome Screen\".</string>
   <string name="safe_mode_status_bar">Status Bar</string>
