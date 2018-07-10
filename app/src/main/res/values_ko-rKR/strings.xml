@@ -159,6 +159,7 @@
   <string name="tasker_how_to">태스커 사용법</string>
   <string name="base_command_tasker">이것은 기본 명령입니다:</string>
   <string name="tasker_defs">모든 것의 의미는 다음과 같습니다:</string>
+  <string name="type_plaintext">Type</string>
   <string name="for_settings_global">(Settings.Global 전용)</string>
   <string name="for_settings_secure"> (Settings.Secure 전용)</string>
   <string name="for_settings_system">(Settings.System 전용)</string>
