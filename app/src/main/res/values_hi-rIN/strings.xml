@@ -17,7 +17,6 @@
   <string name="safe_mode_summary_4">बूट पर कस्टम QS पंक्ति/स्तंभ गणना पुनर्स्थापित करता है (TouchWiz, नूगा +) ।</string>
   <string name="safe_mode_summary_5">बूट पर कस्टम अधिसूचना स्नूज़ विकल्प पुनर्स्थापित करता है (8.1+)</string>
   <string name="hide_welcome_screen">स्वागत स्क्रीन छुपाएं</string>
-  <string name="tasker_support">टास्कर समर्थन</string>
   <string name="instructions">निर्देश</string>
   <string name="safe_mode_android_o">एंड्रॉयड ओ में जोड़ा सीमाओं के कारण, यह सुविधा आपके डिवाइस पर काम नहीं करेगा.</string>
   <string name="requires_nougat">नौगेट या बाद की आवश्यकता होती है</string>
@@ -156,7 +155,6 @@
   <string name="move_full_rows">पूर्ण पंक्तियों को स्थानांतरित करें</string>
   <string name="battery">बैटरी</string>
   <string name="enable_fabric_io_analytics">Fabric.io एनालिटिक्स</string>
-  <string name="tasker_how_to">Tasker - कैसे करने के लिए</string>
   <string name="base_command_tasker">यह है आधार कमान:</string>
   <string name="tasker_defs">यह सब कुछ इसका मतलब है:</string>
   <string name="type_plaintext">Type</string>
@@ -300,6 +298,7 @@
   <string name="custom_settings_read_desc">These fields allow you to read the value of a specified key.</string>
   <string name="key_plaintext">Key</string>
   <string name="value_plaintext">Value</string>
+  <string name="remove_from_blacklist">Remove From Blacklist?</string>
   <string name="custom_settings_warning">Be careful what you do here! If you input an incorrect value, you could cause a crash loop, bootloop or worse!</string>
   <string name="hide_welcome_hint">Hint: You can hide this screen, and the donation message, by going to Settings and toggling on \"Hide Welcome Screen\".</string>
   <string name="safe_mode_status_bar">Status Bar</string>
