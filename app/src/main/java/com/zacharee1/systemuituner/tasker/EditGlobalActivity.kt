@@ -9,7 +9,7 @@ import android.os.Bundle
 import android.preference.EditTextPreference
 import android.preference.Preference
 import android.support.v4.content.LocalBroadcastManager
-import android.util.Log
+import com.joaomgcd.taskerpluginlibrary.TaskerPluginConstants
 import com.joaomgcd.taskerpluginlibrary.action.TaskerPluginRunnerActionNoOutput
 import com.joaomgcd.taskerpluginlibrary.config.TaskerPluginConfig
 import com.joaomgcd.taskerpluginlibrary.config.TaskerPluginConfigHelperNoOutput
@@ -54,8 +54,8 @@ abstract class BaseEditActivity : BaseAnimActivity(), TaskerPluginConfig<Input> 
     private val updateReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context?, intent: Intent?) {
             if (intent?.action == UPDATE) {
-                key = intent.getStringExtra(KEY) ?: key
-                value = intent.getStringExtra(VALUE) ?: value
+                key = intent.getStringExtra(KEY)
+                value = intent.getStringExtra(VALUE)
             }
         }
     }
@@ -65,13 +65,14 @@ abstract class BaseEditActivity : BaseAnimActivity(), TaskerPluginConfig<Input> 
         key = input.regular.key
         value = input.regular.value
 
-        Log.e("SystemUITuner", "$key, $value")
-
         fragment.setText(key, value)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        helper.onCreate()
+
+        val bundle = intent?.getBundleExtra(TaskerPluginConstants.EXTRA_BUNDLE)
 
         setContentView(R.layout.activity_item_list)
 
@@ -81,8 +82,6 @@ abstract class BaseEditActivity : BaseAnimActivity(), TaskerPluginConfig<Input> 
                 ?.beginTransaction()
                 ?.replace(R.id.content_main, fragment, "tasker")
                 ?.commit()
-
-        helper.onCreate()
     }
 
     override fun onBackPressed() {
@@ -165,10 +164,10 @@ class EditBase: TaskerPluginRunnerActionNoOutput<Input>() {
 }
 
 @TaskerInputRoot
-open class Input(
-        @field:TaskerInputField("key") open var key: String? = null,
-        @field:TaskerInputField("value") open var value: String? = null,
-        @field:TaskerInputField("type") open var type: String? = null)
+open class Input @JvmOverloads constructor (
+        @field:TaskerInputField("key") var key: String? = null,
+        @field:TaskerInputField("value") var value: String? = null,
+        @field:TaskerInputField("type") var type: String? = null)
 
 object Type : Serializable {
     const val GLOBAL = "global"
