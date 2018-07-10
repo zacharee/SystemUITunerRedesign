@@ -159,6 +159,7 @@
   <string name="tasker_how_to">Vodič za Tasker</string>
   <string name="base_command_tasker">Ovo je osnovna naredba:</string>
   <string name="tasker_defs">This is what everything means:</string>
+  <string name="type_plaintext">Type</string>
   <string name="for_settings_global">(za Settings.Global)</string>
   <string name="for_settings_secure">(za Settings.Secure)</string>
   <string name="for_settings_system">(za Settings.System)</string>
