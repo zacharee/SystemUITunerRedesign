@@ -277,20 +277,19 @@ href="https://dl.google.com/android/repository/platform-tools-latest-linux.zip">
   <string name="touchwiz_oreo_qqs">Na zařízeních s TouchWiz Oreo není tato funkce spolehlivá! Společně nastavená čísla můžete uložit do Settings.System.apanel_number, což může být uděláno pouze s ADB nebo robotem. Safe mód se pokusí implementovat řešení, ale není garantovaná funkčnost!</string>
   <string name="color">Barva</string>
   <string name="notifs_snooze">Ztišení notifikací</string>
-  <string name="notifs_snooze_desc">&#160;
-    In Android 8.1 and later, you can set custom times for notification snoozing. These values reset on reboot, so make sure to enable Safe Mode if you would like them to persist across power cycles.\n\n&#160;
-    Use the options below to set the different snooze times. \"Default\" sets the time Android will use by default. The other items will be the snooze times available for you to select.
+  <string name="notifs_snooze_desc">&#160;    V androidu 8.1 a pozdějším můžete nastavit vlastní časy pro ztišení notifikací. Tyto hodnoty se resetují při restartu takže se ujistěte že máte zaplý Safe mód pokud je chcete uchovat napříč ciklama.\n\n&#160;
+    Použijte možnost níže k nastavení rozdílného času ztišení. \"Výchozí\" nastavení času Androidu bude použito jako výchozí. Dalšími položkami budou volné časy pro výběr.
     </string>
-  <string name="default_text">Default</string>
-  <string name="time_a">Time A</string>
-  <string name="time_b">Time B</string>
-  <string name="time_c">Time C</string>
-  <string name="time_d">Time D</string>
-  <string name="clock_tile_format">Clock Tile Format</string>
-  <string name="twelve">12-Hour</string>
-  <string name="twelve_nosec">12-Hour, No Seconds</string>
-  <string name="military">24-Hour</string>
-  <string name="military_nosec">24-Hour, No Seconds</string>
+  <string name="default_text">Výchozí</string>
+  <string name="time_a">Čas A</string>
+  <string name="time_b">Čas B</string>
+  <string name="time_c">Čas C</string>
+  <string name="time_d">Čas D</string>
+  <string name="clock_tile_format">Formát hodin</string>
+  <string name="twelve">12 hodinový</string>
+  <string name="twelve_nosec">12 hodinový, bez sekund</string>
+  <string name="military">24 hodinový</string>
+  <string name="military_nosec">24 hodinový, bez sekund</string>
   <string name="show_notif">Show Notification</string>
   <string name="safe_mode_notif_desc">It is recommended that you keep this active, and hide the notification instead. Turning it off may cause Safe Mode to no longer function.</string>
   <string name="safe_mode_notif_desc_not_supported">This setting must remain enabled on Oreo.</string>
