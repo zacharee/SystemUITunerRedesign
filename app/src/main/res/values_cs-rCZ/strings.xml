@@ -302,10 +302,10 @@ href="https://dl.google.com/android/repository/platform-tools-latest-linux.zip">
   <string name="value_plaintext">Value</string>
   <string name="remove_from_blacklist">Remove From Blacklist?</string>
   <string name="custom_settings_warning">Buďte opatrní co zde zadáváte! Špatný input můžu vést ke Crash loopu, bootloopu nebo něčemu horšímu!</string>
-  <string name="hide_welcome_hint">Hint: You can hide this screen, and the donation message, by going to Settings and toggling on \"Hide Welcome Screen\".</string>
-  <string name="safe_mode_status_bar">Status Bar</string>
-  <string name="safe_mode_fancy_anim">Fancy Animation</string>
-  <string name="safe_mode_header_count">QS Header Count</string>
-  <string name="safe_mode_row_col_tw">QS Row/Column Count</string>
-  <string name="safe_mode_snooze_options">Snooze Options</string>
+  <string name="hide_welcome_hint">Nápověda: Tuto obrazovku můžete skrýt a darovací zprávu také, a to tím že půjdete do nastavení a přepnete \"Skrýt uvítací obrazovku\".</string>
+  <string name="safe_mode_status_bar">Stavový řádek</string>
+  <string name="safe_mode_fancy_anim">Hezké animace</string>
+  <string name="safe_mode_header_count">Počítač QS Header</string>
+  <string name="safe_mode_row_col_tw">Počet QS rovin/sloupců</string>
+  <string name="safe_mode_snooze_options">Možnost ztišení</string>
 </resources>
