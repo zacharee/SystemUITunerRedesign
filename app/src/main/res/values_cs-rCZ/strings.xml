@@ -207,10 +207,10 @@
   <string name="missing_perms">Chybějící oprávnění!</string>
   <string name="enable_debug"><![CDATA[1. Přejděte do nastavení >> Možností pro vývojáře a ujistěte se že máte zaplést Ladění USB.]]></string>
   <string name="accept_auth">2. Zapojte zařízení do vašeho počítače a povolte autorizaci.</string>
-  <string name="enable_devops"><![CDATA[- Enable Developer Options by going to Settings >> About, finding \"Build Number\" and tapping it 7 times.]]></string>
-  <string name="download_drivers">- Windows users may need to install device drivers, which are available from the manufacturer\'s website.</string>
-  <string name="download_adb_windows"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-windows.zip">Download the ADB ZIP for Windows.</a>]]></string>
-  <string name="extract_zip">2. Extract the ZIP to an easily-accessible location (ie Desktop).</string>
+  <string name="enable_devops"><![CDATA[- Možnosti pro vývojáře zapnete tak že půjdete do nastavení >> o telefonu, najděte \"číslo sestavení\" a 7krát na něj kliknete.]]></string>
+  <string name="download_drivers">- Uživatelé Windows budou muset install drivery zařízení, které jsou k dispozici na stránkách výrobce.</string>
+  <string name="download_adb_windows"><![CDATA[<a href="https://dl.google.com/android/repository/platform-tools-latest-windows.zip">Stáhněte ADB ZIP pro Windows.</a>]]></string>
+  <string name="extract_zip">2. Extrahuje ZIP na lehce dosažitelné místo (například plochu).</string>
   <string name="open_cmd">3. Otevři CMD.</string>
   <string name="cd_windows"><![CDATA[Vlož <b>cd C:\\path\\to\\extract\\folder\\</b> aby ste se dostal do složky kam jste extrahoval ADB. Pro příklad <b>cd C:\\users\\Zachary\\Desktop\\platform-tools\\</b>.]]></string>
   <string name="cd_further"><![CDATA[Ujistí se že složka kde <b>cd</b> obsahuje ADB spouštěč. Pokud ne <b>cd</b> o úroveň víš.]]></string>
@@ -301,7 +301,7 @@ href="https://dl.google.com/android/repository/platform-tools-latest-linux.zip">
   <string name="key_plaintext">Key</string>
   <string name="value_plaintext">Value</string>
   <string name="remove_from_blacklist">Remove From Blacklist?</string>
-  <string name="custom_settings_warning">Be careful what you do here! If you input an incorrect value, you could cause a crash loop, bootloop or worse!</string>
+  <string name="custom_settings_warning">Buďte opatrní co zde zadáváte! Špatný input můžu vést ke Crash loopu, bootloopu nebo něčemu horšímu!</string>
   <string name="hide_welcome_hint">Hint: You can hide this screen, and the donation message, by going to Settings and toggling on \"Hide Welcome Screen\".</string>
   <string name="safe_mode_status_bar">Status Bar</string>
   <string name="safe_mode_fancy_anim">Fancy Animation</string>
