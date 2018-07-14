@@ -14,23 +14,23 @@
   <string name="safe_mode_summary_1">Při restartu vymaže jakékoli úpravy stavového řádku a navrátí je po úspěšném startu.</string>
   <string name="safe_mode_summary_2">Při startu přepne Hezké QW animace.</string>
   <string name="safe_mode_summary_3">Resetuje vlastní QS header při startu. (Nugát+).</string>
-  <string name="safe_mode_summary_4">Restores custom QS row/column count on boot (TouchWiz, Nougat+).</string>
-  <string name="safe_mode_summary_5">Restores custom notification snooze options on boot (8.1+).</string>
-  <string name="hide_welcome_screen">Hide Welcome Screen</string>
-  <string name="instructions">Instructions</string>
-  <string name="safe_mode_android_o">Because of limitations added in Android O, this feature will not work on your device.</string>
-  <string name="requires_nougat">Requires Nougat or later.</string>
-  <string name="requires_oreo">Requires Oreo or later.</string>
-  <string name="requires_8_1">Requires Oreo 8.1 or later.</string>
-  <string name="enable_in_settings">Enable in Settings.</string>
-  <string name="about">About</string>
-  <string name="miscellaneous">Miscellaneous</string>
-  <string name="custom">Custom</string>
-  <string name="settings">Settings</string>
-  <string name="status_bar">Status Bar</string>
-  <string name="reboot_required">(Reboot Required)</string>
-  <string name="sorry">Sorry…</string>
-  <string name="created_by">App created by <a href="https://forum.xda-developers.com/member.php?u=7055541">Zacharee1</a></string>
+  <string name="safe_mode_summary_4">Resetuje vlastní počet QS rovin/sloupců při startu (TouchWiz, Nugát+).</string>
+  <string name="safe_mode_summary_5">Resetuje vlastní ztišení notifikací při startu (8.1+).</string>
+  <string name="hide_welcome_screen">Zkryje Uvítací obrazovku</string>
+  <string name="instructions">Instrukce</string>
+  <string name="safe_mode_android_o">Z důvodu limitací v Androidu O, tato možnost nebude na vašem zařízení fungovat.</string>
+  <string name="requires_nougat">Vyžaduje Nugát nebo novější.</string>
+  <string name="requires_oreo">Vyžaduje Oreo nebo novější.</string>
+  <string name="requires_8_1">Vyžaduje Oreo 8.1 nebo novější.</string>
+  <string name="enable_in_settings">Aktivujte v nastavení.</string>
+  <string name="about">O aplikaci</string>
+  <string name="miscellaneous">Různé</string>
+  <string name="custom">Vlastní</string>
+  <string name="settings">Nastavení</string>
+  <string name="status_bar">Stavový řádek</string>
+  <string name="reboot_required">(Vyžaduje restart)</string>
+  <string name="sorry">Pardon…</string>
+  <string name="created_by">Aplikace vytvořena <a href="https://forum.xda-developers.com/member.php?u=7055541">Zacharee1</a></string>
   <string name="lang_credit">Translations by volunteers on <a href="https://crowdin.com/project/systemui-tuner">Crowdin</a></string>
   <string name="enabled">Enabled</string>
   <string name="show">Show</string>
