@@ -212,15 +212,17 @@
   <string name="download_adb_windows"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-windows.zip">Download the ADB ZIP for Windows.</a>]]></string>
   <string name="extract_zip">2. Extract the ZIP to an easily-accessible location (ie Desktop).</string>
   <string name="open_cmd">3. Otevři CMD.</string>
-  <string name="cd_windows"><![CDATA[4. Enter <b>cd C:\\path\\to\\extracted\\folder\\</b> to get to the folder where you extracted ADB. For instance, <b>cd C:\\Users\\Zachary\\Desktop\\platform-tools\\</b>.]]></string>
-  <string name="cd_further"><![CDATA[- Make sure that the folder you <b>cd</b> into contains the ADB executable. If not, <b>cd</b> one level further.]]></string>
-  <string name="download_adb_mac"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-darwin.zip">Download the ADB ZIP for macOS.</a>]]></string>
-  <string name="open_terminal">3. Open Terminal.</string>
-  <string name="cd_mac"><![CDATA[4. Enter <b>cd /path/to/extracted/folder/</b> to get to the folder you extracted ADB into. For instance, <b>cd /Users/Zachary/Desktop/platform-tools/</b>.]]></string>
+  <string name="cd_windows"><![CDATA[Vlož <b>cd C:\\path\\to\\extract\\folder\\</b> aby ste se dostal do složky kam jste extrahoval ADB. Pro příklad <b>cd C:\\users\\Zachary\\Desktop\\platform-tools\\</b>.]]></string>
+  <string name="cd_further"><![CDATA[Ujistí se že složka kde <b>cd</b> obsahuje ADB spouštěč. Pokud ne <b>cd</b> o úroveň víš.]]></string>
+  <string name="download_adb_mac"><![CDATA[1.<a
+href="https://dl.google.com/android/repository/platform-tools-latest-darwin.zip">Stáhni ADB ZIP pro MacOS.</a>]]></string>
+  <string name="open_terminal">3. Otevřete terminál.</string>
+  <string name="cd_mac"><![CDATA[4. Vložte <b>cd /path/to/extracted/folder/</b> do složky kam jste extrahoval ADB. Například <b>cd /usere/Zachary/desktop/platform-tools/</b>.]]></string>
   <string name="apt_get_adb"><![CDATA[- <b>sudo apt-get install adb</b>]]></string>
-  <string name="make_sure_adb_installed">1. Make sure ADB is installed:</string>
-  <string name="yum_install_adb"><![CDATA[- <b>sudo yum install android-tools</b>]]></string>
-  <string name="download_adb_linux"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-linux.zip">Download the ADB ZIP for Linux.</a>]]></string>
+  <string name="make_sure_adb_installed">1. Ujistí se že je ADB nainstalováno:</string>
+  <string name="yum_install_adb"><![CDATA[-<b>sudo yum install android-tools</b>]]></string>
+  <string name="download_adb_linux"><![CDATA[1<a
+href="https://dl.google.com/android/repository/platform-tools-latest-linux.zip"> stáhni ADB ZIP pro Linux. </a>]]></string>
   <string name="cd_linux"><![CDATA[4. Enter <b>cd /path/to/extracted/folder/</b> to get to the folder you extracted ADB into. For instance, <b>cd /home/Zachary/Desktop/platform-tools/</b>.]]></string>
   <string name="choose_your_weapon">Choose your Weapon</string>
   <string name="initial_setup">Initial Setup</string>
