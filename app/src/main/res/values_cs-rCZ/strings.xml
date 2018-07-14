@@ -13,7 +13,7 @@
   <string name="safe_mode_summary">UŽIVATELÉ SAMSUNGU SI TOTO NECHAJÍ ZAPLÉ POKUD NEMÁTE AOSP ROM!</string>
   <string name="safe_mode_summary_1">Při restartu vymaže jakékoli úpravy stavového řádku a navrátí je po úspěšném startu.</string>
   <string name="safe_mode_summary_2">Při startu přepne Hezké QW animace.</string>
-  <string name="safe_mode_summary_3">Restores custom QS header count value on boot (Nougat+).</string>
+  <string name="safe_mode_summary_3">Resetuje vlastní QS header při startu. (Nugát+).</string>
   <string name="safe_mode_summary_4">Restores custom QS row/column count on boot (TouchWiz, Nougat+).</string>
   <string name="safe_mode_summary_5">Restores custom notification snooze options on boot (8.1+).</string>
   <string name="hide_welcome_screen">Hide Welcome Screen</string>
