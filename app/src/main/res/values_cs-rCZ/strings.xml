@@ -198,15 +198,15 @@
   <string name="some_things">Příklady</string>
   <string name="no_root">Není potřeba root</string>
   <string name="permissions">Oprávnění</string>
-  <string name="intro_1">Thanks for downloading my app! SystemUI Tuner is meant to replace/supplement the built-in System UI Tuner seen in AOSP. Both users with and without System UI Tuner can benefit from this app.</string>
-  <string name="intro_2">Like in AOSP, SystemUI Tuner allows you to hide certain status bar icons that you don\'t want shown. However, you also can do many other things, like turn off heads-up notifications or even toggle immersive mode.</string>
-  <string name="intro_3">There is a plethora of pre-defined options for the status bar, but if you don\'t see an icon you want to hide, you can try the Auto-Detect feature, which will attempt to detect icons that can be hidden.</string>
-  <string name="intro_4">And the best part about this app? It doesn\'t need root! It will attempt to get root privileges, but if it can\'t you will have to use ADB. USING ADB IS NOT ROOTING!</string>
-  <string name="intro_5">Once you tap the finish button, SystemUI Tuner will attempt to gain root access. If it can, it will grant all needed permissions for you. Otherwise, instructions will appear to guide you.</string>
-  <string name="adb_setup">The permissions above must be granted to continue. Root access was either denied or unavailable, which means you\'ll have to grant these permissions using ADB.</string>
-  <string name="missing_perms">Missing Permissions!</string>
-  <string name="enable_debug"><![CDATA[1. Go to Settings >> Developer Options and make sure USB Debugging is enabled.]]></string>
-  <string name="accept_auth">2. Plug your device into your computer and accept the authorization request on it.</string>
+  <string name="intro_1">Děkuji za stažení mé aplikace! SystemUI Tuner má za úkol nahradit/doplnit vestavěný Systém UI Tuner jako v AOSP. Uživatelé jak s tak i bez System UI Tuneru můžou benefitovat z této aplikace.</string>
+  <string name="intro_2">Jako AOSP systemUI Tuner dovoluje skrýt některé položky ve stavovém řádku které nechcete. Nicméně, můžete dělat spoustu jiných věcí, například vypnout prioritní oznámení nebo zapnout dokonalý mód.</string>
+  <string name="intro_3">Je tu řada předdefinovaných možností pro stavový řádek, ale pokud nevidíte ikonu kterou chcete skrýt můžete zkusit auto-detekci která se pokusí detekovat ikony které můžou být skryty.</string>
+  <string name="intro_4">A nejlepší část aplikace? Nevyžaduje root! Pokusí se získat privilégia rootu ale pokud nemůže tak musíte použít ADB. POUŽÍVÁNÍ ADB NENÍ ROOTOVÁNÍ!</string>
+  <string name="intro_5">Až kliknete na tlačítko dokončit, systemUI Tuner se pokusí získat root access. Pokud může tak si potvrdí všechny potřebné oprávnění. Jinak se na obrazovce oběví instrukce.</string>
+  <string name="adb_setup">Oprávnění víše musí být udělena k pokračování. Root byl buď zamítnut nebo nedostupný, což znamená že vy musíte potvrdit tyto oprávnění pomocí ADB.</string>
+  <string name="missing_perms">Chybějící oprávnění!</string>
+  <string name="enable_debug"><![CDATA[1. Přejděte do nastavení >> Možností pro vývojáře a ujistěte se že máte zaplést Ladění USB.]]></string>
+  <string name="accept_auth">2. Zapojte zařízení do vašeho počítače a povolte autorizaci.</string>
   <string name="enable_devops"><![CDATA[- Enable Developer Options by going to Settings >> About, finding \"Build Number\" and tapping it 7 times.]]></string>
   <string name="download_drivers">- Windows users may need to install device drivers, which are available from the manufacturer\'s website.</string>
   <string name="download_adb_windows"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-windows.zip">Download the ADB ZIP for Windows.</a>]]></string>
