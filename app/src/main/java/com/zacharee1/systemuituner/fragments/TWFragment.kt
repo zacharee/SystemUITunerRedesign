@@ -2,14 +2,20 @@ package com.zacharee1.systemuituner.fragments
 
 import android.graphics.Color
 import android.preference.Preference
-import android.preference.SwitchPreference
 import android.provider.Settings
 import com.jaredrummler.android.colorpicker.ColorPreference
 import com.pavelsikun.seekbarpreference.SeekBarPreference
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.util.SettingsUtils
 
-class TWFragment : AnimFragment() {
+class TWFragment : StatbarFragment() {
+    companion object {
+        const val TILE_ROW = "qs_tile_row"
+        const val TILE_COLUMN = "qs_tile_column"
+        const val NAVBAR_COLOR = "navigationbar_color"
+        const val NAVBAR_CURRENT_COLOR = "navigationbar_current_color"
+    }
+
     override fun onSetTitle() = resources.getString(R.string.touchwiz)
 
     override fun onAnimationFinishedEnter(enter: Boolean) {
@@ -51,67 +57,5 @@ class TWFragment : AnimFragment() {
             SettingsUtils.writeGlobal(context, NAVBAR_CURRENT_COLOR, newValue.toString())
             true
         }
-    }
-
-    private fun preferenceListeners() {
-        val resetBL = findPreference(StatbarFragment.RESET_BLACKLIST)
-        val backupBL = findPreference(StatbarFragment.BACKUP_BLACKLIST)
-        val restoreBL = findPreference(StatbarFragment.RESTORE_BLACKLIST)
-        val auto = findPreference(StatbarFragment.AUTO_DETECT)
-
-        resetBL?.onPreferenceClickListener = Preference.OnPreferenceClickListener {
-            SettingsUtils.writeSecure(context, StatbarFragment.ICON_BLACKLIST, "")
-            setSwitchPreferenceStates()
-            true
-        }
-
-        backupBL?.onPreferenceClickListener = Preference.OnPreferenceClickListener {
-            val currentBL = Settings.Secure.getString(context?.contentResolver, StatbarFragment.ICON_BLACKLIST)
-            SettingsUtils.writeGlobal(context, StatbarFragment.ICON_BLACKLIST_BACKUP, currentBL)
-            setSwitchPreferenceStates()
-            true
-        }
-
-        restoreBL?.onPreferenceClickListener = Preference.OnPreferenceClickListener {
-            val backupBLString = Settings.Global.getString(context?.contentResolver, StatbarFragment.ICON_BLACKLIST_BACKUP)
-            SettingsUtils.writeSecure(context, StatbarFragment.ICON_BLACKLIST, backupBLString)
-            setSwitchPreferenceStates()
-            true
-        }
-
-        auto?.setOnPreferenceClickListener {
-            val fragment = AutoFragment()
-            fragmentManager
-                    ?.beginTransaction()
-                    ?.replace(R.id.content_main, fragment)
-                    ?.addToBackStack("auto")?.commit()
-            true
-        }
-    }
-
-    private fun setSwitchPreferenceStates() {
-        SettingsUtils.shouldSetSwitchChecked(this)
-    }
-
-    private fun switchPreferenceListeners() {
-        (0 until preferenceScreen.rootAdapter.count)
-                .map { preferenceScreen.rootAdapter.getItem(it) }
-                .filterIsInstance<SwitchPreference>()
-                .forEach {
-                    it.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { preference, o ->
-                        val key = preference.key
-                        val value = java.lang.Boolean.valueOf(o.toString())
-
-                        SettingsUtils.changeBlacklist(key, value, context)
-                        true
-                    }
-                }
-    }
-
-    companion object {
-        const val TILE_ROW = "qs_tile_row"
-        const val TILE_COLUMN = "qs_tile_column"
-        const val NAVBAR_COLOR = "navigationbar_color"
-        const val NAVBAR_CURRENT_COLOR = "navigationbar_current_color"
     }
 }

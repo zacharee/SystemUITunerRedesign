@@ -63,7 +63,7 @@ object SettingsUtils {
     }
 
     private fun launchErrorActivity(context: Context?, baseCommand: String) {
-        val adbCommand = "adb shell " + baseCommand
+        val adbCommand = "adb shell $baseCommand"
         val intent = Intent(context, SettingWriteFailed::class.java)
         intent.action = Intent.ACTION_VIEW
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
