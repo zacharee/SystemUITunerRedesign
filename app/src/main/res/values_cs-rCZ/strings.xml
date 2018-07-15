@@ -307,4 +307,6 @@ href="https://dl.google.com/android/repository/platform-tools-latest-linux.zip">
   <string name="safe_mode_header_count">Počítač QS Header</string>
   <string name="safe_mode_row_col_tw">Počet QS rovin/sloupců</string>
   <string name="safe_mode_snooze_options">Možnost ztišení</string>
+  <string name="invalid_blacklist_backup">Invalid blacklist backup</string>
+  <string name="backup_restored">Successfully restored backup</string>
 </resources>
