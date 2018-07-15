@@ -306,4 +306,6 @@
   <string name="safe_mode_header_count">QS Header Count</string>
   <string name="safe_mode_row_col_tw">QS Row/Column Count</string>
   <string name="safe_mode_snooze_options">Snooze Options</string>
+  <string name="invalid_blacklist_backup">Invalid blacklist backup</string>
+  <string name="backup_restored">Successfully restored backup</string>
 </resources>
