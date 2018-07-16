@@ -37,7 +37,7 @@ class ImmersiveSelectActivity : BaseAnimActivity() {
 
                     it.forEach { info ->
                         val activities = packageManager.getPackageInfo(info.packageName, PackageManager.GET_ACTIVITIES).activities
-                        if (activities?.size?.let { it > 1 } == true) {
+                        if (activities?.isNotEmpty() == true) {
                             appMap[info.loadLabel(packageManager).toString()] = AppInfo(info.loadLabel(packageManager).toString(),
                                     info.packageName,
                                     null,
