@@ -29,7 +29,7 @@ class AppsListActivity : BaseAnimActivity() {
 
             for (info in apps) {
                 try {
-                    if (packageManager.getPackageInfo(info.packageName, PackageManager.GET_ACTIVITIES).activities.size > 1) {
+                    if (packageManager.getPackageInfo(info.packageName, PackageManager.GET_ACTIVITIES).activities.isNotEmpty()) {
                         appMap[info.loadLabel(packageManager).toString()] = AppInfo(info.loadLabel(packageManager).toString(),
                                 info.packageName,
                                 null,
