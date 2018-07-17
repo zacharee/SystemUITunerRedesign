@@ -66,13 +66,18 @@ open class StatbarFragment : AnimFragment() {
         }
 
         backupBL?.onPreferenceClickListener = Preference.OnPreferenceClickListener {
-            val createIntent = Intent(Intent.ACTION_CREATE_DOCUMENT)
-            val format = SimpleDateFormat("yyyy_MM_dd_HH_mm", Locale.getDefault())
+            val blacklist = Settings.Secure.getString(activity.contentResolver, ICON_BLACKLIST)
+            if (blacklist.isNullOrBlank()) {
+                Toast.makeText(activity, R.string.nothing_to_back_up, Toast.LENGTH_SHORT).show()
+            } else {
+                val createIntent = Intent(Intent.ACTION_CREATE_DOCUMENT)
+                val format = SimpleDateFormat("yyyy_MM_dd_HH_mm", Locale.getDefault())
 
-            createIntent.addCategory(Intent.CATEGORY_OPENABLE)
-            createIntent.type = "*/*"
-            createIntent.putExtra(Intent.EXTRA_TITLE, "${format.format(Date())}.blacklist")
-            startActivityForResult(createIntent, BW_REQ)
+                createIntent.addCategory(Intent.CATEGORY_OPENABLE)
+                createIntent.type = "*/*"
+                createIntent.putExtra(Intent.EXTRA_TITLE, "${format.format(Date())}.blacklist")
+                startActivityForResult(createIntent, BW_REQ)
+            }
             true
         }
 
@@ -145,7 +150,7 @@ open class StatbarFragment : AnimFragment() {
     }
 
     private fun writeBackupFile(uri: Uri) {
-        val blacklist = Settings.Secure.getString(activity.contentResolver, ICON_BLACKLIST)
+        val blacklist = Settings.Secure.getString(activity.contentResolver, ICON_BLACKLIST) ?: return
         val descriptor = activity.contentResolver.openFileDescriptor(uri, "w")
         val stream = FileOutputStream(descriptor.fileDescriptor)
 
