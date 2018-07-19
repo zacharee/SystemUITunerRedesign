@@ -10,7 +10,7 @@
   <string name="instructions">Anleitung</string>
   <string name="about">Über</string>
   <string name="miscellaneous">Sonstiges</string>
-  <string name="custom">Custom</string>
+  <string name="custom">Benutzerdefiniert</string>
   <string name="settings">Einstellungen</string>
   <string name="status_bar">Statusleiste</string>
   <string name="sorry">Tut mir leid…</string>
@@ -64,12 +64,12 @@
   <string name="window_animation_scale">Maßstab Fensteranimation</string>
   <string name="animation_speeds">Animationsgeschwindigkeiten</string>
   <string name="general">Allgemein</string>
-  <string name="heads_up_notifications">Heads-Up Notifications</string>
-  <string name="headphone_volume_warning">Headphone Volume Warning</string>
+  <string name="heads_up_notifications">Heads-up Benachrichtigungen</string>
+  <string name="headphone_volume_warning">Kopfhörer Lautstärken Warnung</string>
   <string name="custom_settings_input">Custom Settings Input</string>
   <string name="custom_settings_read">Read Custom Value</string>
   <string name="global">Global</string>
-  <string name="secure">Secure</string>
+  <string name="secure">Sicher</string>
   <string name="system">System</string>
   <string name="ok">OK</string>
   <string name="power_notification_controls">Power Notification Controls</string>
@@ -193,7 +193,7 @@
   <string name="agree">Akzeptieren</string>
   <string name="cancel">Abbrechen</string>
   <string name="dont_show">Nicht mehr anzeigen</string>
-  <string name="miui_detected">MIUI Device Detected!</string>
+  <string name="miui_detected">MIUI Gerät erkannt!</string>
   <string name="intent">Absicht</string>
   <string name="removing_tile">Kachel entfernen</string>
   <string name="remove_tile">%s entfernen?</string>
