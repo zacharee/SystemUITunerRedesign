@@ -149,8 +149,8 @@
   <string name="pre_confirms">Pred potvrda</string>
   <string name="config_qs">Konfiguriraj brze pločice</string>
   <string name="mode">Način</string>
-  <string name="qs_column_count">QS Column Count</string>
-  <string name="qs_row_count">QS Row Count</string>
+  <string name="qs_column_count">Broj stupaca brzih postavki</string>
+  <string name="qs_row_count">Broj redaka brzih postavki</string>
   <string name="lockscreen">Zaključani zaslon</string>
   <string name="choose_left">Odaberi lijevi prečac</string>
   <string name="choose_right">Odaberi desni prečac</string>
@@ -223,7 +223,7 @@
   <string name="safe_mode_fancy_anim">Predivna animacija</string>
   <string name="safe_mode_header_count">QS Header Count</string>
   <string name="safe_mode_row_col_tw">QS Row/Column Count</string>
-  <string name="safe_mode_snooze_options">Snooze Options</string>
+  <string name="safe_mode_snooze_options">Opcije odgode</string>
   <!--Descriptions-->
   <string name="fancy_pulldown_notice">Onemogućavanjem ove opcije može doći do problema nakon ponovnog pokretanja. Ručno podesite ovu opciju nakon ponovnog pokretanja, ili omogućite Sigurni način.</string>
   <string name="safe_mode_summary">SAMSUNG KORISNICI DRŽITE OVO UKLJUČENO OSIM AKO NEMATE AOSP ROM!</string>
@@ -273,8 +273,8 @@
   <string name="miui_warning">It seems that you\'re using a MIUI device. Please take note that few, if any, features of this app will work for you. It is NOT fixable!</string>
   <string name="warn_message">This app modifies system settings. Uninstalling won\'t revert anything, nor can I make that happen. Unless you are comfortable with manual recovery, don\'t use the app. You have been warned!</string>
   <string name="safe_mode_notif_desc">It is recommended that you keep this active, and hide the notification instead. Turning it off may cause Safe Mode to no longer function.</string>
-  <string name="invalid_blacklist_backup">Invalid blacklist backup</string>
-  <string name="backup_restored">Successfully restored backup</string>
+  <string name="invalid_blacklist_backup">Nevažeća sigur. kopija crne liste</string>
+  <string name="backup_restored">Sigur. kopija je uspješno vraćena</string>
   <string name="nothing_to_back_up">Nema ništa za sigur. kopiranje</string>
   <!--Instructions-->
   <string name="enable_debug"><![CDATA[1. Go to Settings >> Developer Options and make sure USB Debugging is enabled.]]></string>
@@ -287,14 +287,14 @@
   <string name="cd_windows"><![CDATA[4. Enter <b>cd C:\\path\\to\\extracted\\folder\\</b> to get to the folder where you extracted ADB. For instance, <b>cd C:\\Users\\Zachary\\Desktop\\platform-tools\\</b>.]]></string>
   <string name="cd_further"><![CDATA[- Make sure that the folder you <b>cd</b> into contains the ADB executable. If not, <b>cd</b> one level further.]]></string>
   <string name="download_adb_mac"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-darwin.zip">Download the ADB ZIP for macOS.</a>]]></string>
-  <string name="open_terminal">3. Open Terminal.</string>
+  <string name="open_terminal">3. Otvorite terminal.</string>
   <string name="cd_mac"><![CDATA[4. Enter <b>cd /path/to/extracted/folder/</b> to get to the folder you extracted ADB into. For instance, <b>cd /Users/Zachary/Desktop/platform-tools/</b>.]]></string>
-  <string name="make_sure_adb_installed">1. Make sure ADB is installed:</string>
+  <string name="make_sure_adb_installed">1. Budite sigurni da je ADB instaliran:</string>
   <string name="download_adb_linux"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-linux.zip">Download the ADB ZIP for Linux.</a>]]></string>
   <string name="cd_linux"><![CDATA[4. Enter <b>cd /path/to/extracted/folder/</b> to get to the folder you extracted ADB into. For instance, <b>cd /home/Zachary/Desktop/platform-tools/</b>.]]></string>
   <!--Misc-->
   <string name="created_by">Aplikaciju izradio <a href="https://forum.xda-developers.com/member.php?u=7055541">Zacharee1</a></string>
-  <string name="lang_credit">Translations by volunteers on <a href="https://crowdin.com/project/systemui-tuner">Crowdin</a></string>
+  <string name="lang_credit">Volonteri su preveli aplikaciju na <a href="https://crowdin.com/project/systemui-tuner">Crowdinu</a></string>
   <string name="home_desc">Za uređaje bez ove aktivnosti</string>
   <string name="home_joke">Ili za uređaje s tim, nisam ti ja šef.</string>
   <string name="home_extra">(Ako imate ugrađeni SystemUI Tuner, ovaj pruža neke dodatne super stvari.)</string>
