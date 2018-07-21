@@ -10,7 +10,7 @@
   <string name="instructions">Upute</string>
   <string name="about">O aplikaciji</string>
   <string name="miscellaneous">Razno</string>
-  <string name="custom">Custom</string>
+  <string name="custom">Prilagođeno</string>
   <string name="settings">Postavke</string>
   <string name="status_bar">Statusna traka</string>
   <string name="sorry">Žao nam je…</string>
@@ -31,7 +31,7 @@
   <string name="managed_profile_icon">Ikona upravljanog profila</string>
   <string name="battery_icon">Ikona baterije</string>
   <string name="battery_percentage">Postotak baterije</string>
-  <string name="cast_icon">Cast Icon</string>
+  <string name="cast_icon">Ikona emitiranja</string>
   <string name="rotation_lock_icon">Ikona automatske rotacije</string>
   <string name="nfc_icon">NFC ikona</string>
   <string name="location_icon">Ikona lokacije</string>
@@ -72,10 +72,10 @@
   <string name="secure">Sigurno</string>
   <string name="system">Sustav</string>
   <string name="ok">U redu</string>
-  <string name="power_notification_controls">Power Notification Controls</string>
-  <string name="danger_zone">Danger Zone</string>
+  <string name="power_notification_controls">Kontrole obavijesti o napajanju</string>
+  <string name="danger_zone">Opasna zona</string>
   <string name="safe_mode">Siguran način rada</string>
-  <string name="enable_custom_settings_input">Enable Custom Settings</string>
+  <string name="enable_custom_settings_input">Omogući prilagođene postavke</string>
   <string name="enable">Omogući</string>
   <string name="knox_icon">KNOX ikona</string>
   <string name="smart_network_icon">Ikona pametne mreže</string>
@@ -200,7 +200,7 @@
   <string name="allow_deep_sleep">Enable Automatic Deep Sleep</string>
   <string name="yes">Da</string>
   <string name="no">Ne</string>
-  <string name="notif_title">Safe Mode Service is running</string>
+  <string name="notif_title">Servis za sigurni način je pokrenut</string>
   <string name="color">Boja</string>
   <string name="notifs_snooze">Utišavanje obavijesti</string>
   <string name="default_text">Zadano</string>
@@ -275,7 +275,7 @@
   <string name="safe_mode_notif_desc">It is recommended that you keep this active, and hide the notification instead. Turning it off may cause Safe Mode to no longer function.</string>
   <string name="invalid_blacklist_backup">Invalid blacklist backup</string>
   <string name="backup_restored">Successfully restored backup</string>
-  <string name="nothing_to_back_up">Nothing to back up</string>
+  <string name="nothing_to_back_up">Nema ništa za sigur. kopiranje</string>
   <!--Instructions-->
   <string name="enable_debug"><![CDATA[1. Go to Settings >> Developer Options and make sure USB Debugging is enabled.]]></string>
   <string name="accept_auth">2. Plug your device into your computer and accept the authorization request on it.</string>
