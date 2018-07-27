@@ -10,7 +10,7 @@
   <string name="instructions">사용법</string>
   <string name="about">정보</string>
   <string name="miscellaneous">기타</string>
-  <string name="custom">Custom</string>
+  <string name="custom">사용자 정의</string>
   <string name="settings">설정</string>
   <string name="status_bar">상태 표시줄</string>
   <string name="sorry">죄송합니다...</string>
@@ -66,8 +66,8 @@
   <string name="general">일반</string>
   <string name="heads_up_notifications">헤드 업 알림</string>
   <string name="headphone_volume_warning">헤드폰 볼륨 경고</string>
-  <string name="custom_settings_input">Custom Settings Input</string>
-  <string name="custom_settings_read">Read Custom Value</string>
+  <string name="custom_settings_input">사용자 지정 설정 입력</string>
+  <string name="custom_settings_read">사용자 지정 값을 확인하세요</string>
   <string name="global">전체</string>
   <string name="secure">보안</string>
   <string name="system">시스템</string>
@@ -75,7 +75,7 @@
   <string name="power_notification_controls">강력 알림 제어</string>
   <string name="danger_zone">위험 지역</string>
   <string name="safe_mode">안전 모드</string>
-  <string name="enable_custom_settings_input">Enable Custom Settings</string>
+  <string name="enable_custom_settings_input">사용사 설정 활성화</string>
   <string name="enable">활성화</string>
   <string name="knox_icon">녹스 아이콘</string>
   <string name="smart_network_icon">스마트 네트워크 아이콘</string>
@@ -182,7 +182,7 @@
   <string name="fedora_setup">페도라 설정</string>
   <string name="linux_setup">리눅스 설정</string>
   <string name="run_commands">명령 실행</string>
-  <string name="change_selection">Change Selection</string>
+  <string name="change_selection">선택 변경</string>
   <string name="warning">경고!</string>
   <string name="select_all">모두 선택</string>
   <string name="deselect_all">모두 선택 취소</string>
@@ -214,16 +214,16 @@
   <string name="military">24시간</string>
   <string name="military_nosec">24시간, 초 단위 없음</string>
   <string name="show_notif">알림 표시</string>
-  <string name="carrier_on_home">Carrier Label on Home Screen</string>
-  <string name="carrier_on_lock">Carrier Label on Lock Screen</string>
-  <string name="key_plaintext">Key</string>
-  <string name="value_plaintext">Value</string>
-  <string name="remove_from_blacklist">Remove From Blacklist?</string>
-  <string name="safe_mode_status_bar">Status Bar</string>
-  <string name="safe_mode_fancy_anim">Fancy Animation</string>
-  <string name="safe_mode_header_count">QS Header Count</string>
-  <string name="safe_mode_row_col_tw">QS Row/Column Count</string>
-  <string name="safe_mode_snooze_options">Snooze Options</string>
+  <string name="carrier_on_home">홈 화면에서 통신사 표시</string>
+  <string name="carrier_on_lock">잠금 화면에서 통신사 표시</string>
+  <string name="key_plaintext">키</string>
+  <string name="value_plaintext">값</string>
+  <string name="remove_from_blacklist">블랙리스트에서 삭제하시겠습니까?</string>
+  <string name="safe_mode_status_bar">상태 표시줄</string>
+  <string name="safe_mode_fancy_anim">화려한 애니메이션</string>
+  <string name="safe_mode_header_count">QS 헤더 수</string>
+  <string name="safe_mode_row_col_tw">QS 행/열 수</string>
+  <string name="safe_mode_snooze_options">스누즈 옵션</string>
   <!--Descriptions-->
   <string name="fancy_pulldown_notice">이 옵션을 끄면 재부팅 후 발생하는 문제의 원인이 될 수 있습니다. 재부팅 후 이 옵션을 수동으로 켰다 껐다 하거나, 안전 모드를 활성화하십시오.</string>
   <string name="safe_mode_summary">삼성 사용자라면 AOSP 롬이 아닌 경우 이것을 켜세요!</string>
@@ -248,9 +248,9 @@
     안드로이드 8.1 이상에서는, 알림 지연 시간을 사용자 지정할 수 있습니다. 이 설정 값들은 재부팅 시 초기화되므로, 전원을 껐다 켰다 반복하는 동안 해당 설정을 유지하기 휘애 안전 모드를 활성화했는지 확인하십시오. \n\n&#160;
     아래 옵션을 사용하여 각기 다른 지연 시간을 설정하십시오. \"기본\"은 안드로이드가 기본으로 사용하는 시간으로 설정합니다.기타 항목은 사용자가 선택 가능한 지연 시간입니다.
     </string>
-  <string name="custom_settings_input_desc">These fields allow you to enter your own custom settings.</string>
-  <string name="custom_settings_read_desc">These fields allow you to read the value of a specified key.</string>
-  <string name="custom_settings_warning">Be careful what you do here! If you input an incorrect value, you could cause a crash loop, bootloop or worse!</string>
+  <string name="custom_settings_input_desc">아래 필드를 이용해 사용자 설정을 입력할 수 있습니다.</string>
+  <string name="custom_settings_read_desc">아래 필드를 이용해 특정 키의 값을 확인할 수 있습니다.</string>
+  <string name="custom_settings_warning">잘못된 값을 입력하게 되면 무한 재부팅 이상의 문제가 발생할 수 있으니 주의하시기 바랍니다.</string>
   <string name="hide_welcome_hint">Hint: You can hide this screen, and the donation message, by going to Settings and toggling on \"Hide Welcome Screen\".</string>
   <string name="safe_mode_notif_desc_not_supported">이 설정은 오레오에서 반드시 활성화되어야 합니다.</string>
   <!--Messages-->
