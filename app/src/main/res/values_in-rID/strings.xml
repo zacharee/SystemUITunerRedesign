@@ -226,7 +226,7 @@
   <string name="safe_mode_snooze_options">Snooze Options</string>
   <!--Descriptions-->
   <string name="fancy_pulldown_notice">Toggling this option off can cause issues after a reboot. Manually toggle this option on and off after a reboot, or enable Safe Mode.</string>
-  <string name="safe_mode_summary">SAMSUNG USERS KEEP THIS TURNED ON UNLESS YOU HAVE AN AOSP ROM!</string>
+  <string name="safe_mode_summary">Pengguna Samsung harap tetap membiarkan ini menyala kecuali anda memiliki ROM AOSP!</string>
   <string name="safe_mode_summary_1">Clears any status bar customizations on reboot and restores them after boot completes.</string>
   <string name="safe_mode_summary_2">Toggles the QS Fancy Animation on boot.</string>
   <string name="safe_mode_summary_3">Restores custom QS header count value on boot (Nougat+).</string>
@@ -242,7 +242,7 @@
   <string name="statbar_rotation_lock_notif">Pada pengaturan tertentu, memodifikasi ikon bilah status dapat menyebabkan ikon yang terlihat seperti telepon muncul. Ini adalah ikon kunci rotasi.</string>
   <string name="pnc_desc">Daya Kontrol Pemberitahuan memungkinkan Anda untuk mengatur tingkat kepentingan untuk pemberitahuan pada basis per-app. Cukup aktifkan fitur dan terus ke bawah pada pemberitahuan untuk memulai. Anda mungkin perlu tekan A untuk mengaktifkan slider.</string>
   <string name="pnc_warn">Fitur ini dikenal untuk dapat diandalkan pada perangkat tertentu, terutama pada TouchWiz! Tidak mungkin untuk memperbaiki, tapi tampaknya solusi terbaik untuk tekan berulang kali pada tingkat yang diinginkan. Sekali lagi, saya tidak dapat memperbaikinya!</string>
-  <string name="notif_desc">Tap to change settings</string>
+  <string name="notif_desc">Ketuk untuk merubah pengaturan</string>
   <string name="touchwiz_oreo_qqs">On TouchWiz Oreo devices, this setting is no longer reliable! Along with setting the number here, you may have to also save the value to Settings.System.apanel_number, which can only be done with ADB or root. Safe Mode attempts to implement a workaround, but I can\'t guarantee it will work!</string>
   <string name="notifs_snooze_desc">&#160;
     In Android 8.1 and later, you can set custom times for notification snoozing. These values reset on reboot, so make sure to enable Safe Mode if you would like them to persist across power cycles.\n\n&#160;
@@ -252,7 +252,7 @@
   <string name="custom_settings_read_desc">These fields allow you to read the value of a specified key.</string>
   <string name="custom_settings_warning">Be careful what you do here! If you input an incorrect value, you could cause a crash loop, bootloop or worse!</string>
   <string name="hide_welcome_hint">Hint: You can hide this screen, and the donation message, by going to Settings and toggling on \"Hide Welcome Screen\".</string>
-  <string name="safe_mode_notif_desc_not_supported">This setting must remain enabled on Oreo.</string>
+  <string name="safe_mode_notif_desc_not_supported">Setelan ini harus tetap dinyalakan di Oreo.</string>
   <!--Messages-->
   <string name="sorry_explain">Ada sesuatu yang tidak beres saat menyetel toggle ini.</string>
   <string name="sorry_option">Try executing the following command from a computer (it\'s one line):</string>
