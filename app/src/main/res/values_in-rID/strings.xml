@@ -200,8 +200,8 @@
   <string name="allow_deep_sleep">Enable Automatic Deep Sleep</string>
   <string name="yes">Iya</string>
   <string name="no">Tidak</string>
-  <string name="notif_title">Safe Mode Service is running</string>
-  <string name="color">Color</string>
+  <string name="notif_title">Layanan Safe Mode sedang berjalan</string>
+  <string name="color">Warna</string>
   <string name="notifs_snooze">Notification Snoozing</string>
   <string name="default_text">Default</string>
   <string name="time_a">Time A</string>
@@ -210,15 +210,15 @@
   <string name="time_d">Time D</string>
   <string name="clock_tile_format">Clock Tile Format</string>
   <string name="twelve">12-Hour</string>
-  <string name="twelve_nosec">12-Hour, No Seconds</string>
+  <string name="twelve_nosec">12 Jam, Tanpa Detik</string>
   <string name="military">24-Hour</string>
   <string name="military_nosec">24-Hour, No Seconds</string>
   <string name="show_notif">Show Notification</string>
-  <string name="carrier_on_home">Carrier Label on Home Screen</string>
-  <string name="carrier_on_lock">Carrier Label on Lock Screen</string>
+  <string name="carrier_on_home">Label Operator di Layar Beranda</string>
+  <string name="carrier_on_lock">Label Operator di Layar Kunci</string>
   <string name="key_plaintext">Key</string>
   <string name="value_plaintext">Value</string>
-  <string name="remove_from_blacklist">Remove From Blacklist?</string>
+  <string name="remove_from_blacklist">Hapus dari daftar hitam?</string>
   <string name="safe_mode_status_bar">Status Bar</string>
   <string name="safe_mode_fancy_anim">Fancy Animation</string>
   <string name="safe_mode_header_count">QS Header Count</string>
@@ -260,7 +260,7 @@
   <string name="safe_mode_auto_enabled">Perangkat samsung terdeteksi! Mode aman telah secara otomatis diaktifkan untuk keselamatan Anda. Berhati-hatilah bahwa memodifikasi ikon status bar memiliki potensi untuk memecahkan sistem UI! Silahkan ikuti tautan di deskripsi Play Store untuk informasi lebih lanjut.</string>
   <string name="requires_nougat">Memerlukan Nougat atau nanti.</string>
   <string name="requires_oreo">Membutukan Oreo atau nanti.</string>
-  <string name="requires_8_1">Requires Oreo 8.1 or later.</string>
+  <string name="requires_8_1">Membutuhkan Oreo 8.1 atau lebih baru.</string>
   <string name="safe_mode_android_o">Karena keterbatasan yang ditambah di Android O, fitur ini tidak akan berfungsi pada perangkat Anda.</string>
   <string name="intro_1">Terima kasih sudah meng-unduh aplikasi saya! System UI Tuner dimaksudkan untuk menggantikan/suplemen built-in systemUI Tuner yang dilihat di AOSP. Kedua pengguna dengan dan tanpa SystemUI Tuner dapat manfaat dari aplikasi ini.</string>
   <string name="intro_2">Seperti di AOSP, SystemUI Tuner memungkinkan Anda untuk menyembunyikan ikon bilah status yang Anda tidak ingin ditampilkan. Namun, Anda juga dapat melakukan banyak hal lain, seperti menonaktifkan pemberitahuan heads-up atau bahkan beralih mode mendalam.</string>
@@ -268,14 +268,14 @@
   <string name="intro_4">Dan bagian terbaik tentang aplikasi ini? Tidak memerlukan akar! Akan berusaha mendapatkan akses root, tapi jika itu tidak bisa Anda akan memilki untuk menggunakan ADB. MENGGUNAKAN ADB TIDAK ROOTING!</string>
   <string name="intro_5">Setelah Anda menekan tombol selesai, SystemUI Tuner akan mencoba untuk mendapatkan akses root. Kalau memang bisa, itu akan memberikan semua izin yang diperlukan untuk Anda. Sebaliknya, instruksi akan muncul untuk membimbing Anda.</string>
   <string name="adb_setup">Perizina di atas harus diberikan untuk melanjutkan. Akses root baik ditolak atau tidak tersedia, yang berarti Anda akan memiliki untuk memberikan izin tersebut menggunakan ADB.</string>
-  <string name="target_not_found">Unable to launch app.</string>
+  <string name="target_not_found">Tidak dapat meluncurkan aplikasi.</string>
   <string name="feature_not_supported">Tampaknya perangkat tidak mendukung fitur ini :/</string>
   <string name="miui_warning">Tampaknya bahwa Anda menggunakan perangkat MIUI. Perlu diketahui beberapa, bahwa jika ada fitur aplikasi ini akan bekerja untuk Anda. Tidak bisa diperbaiki!</string>
   <string name="warn_message">This app modifies system settings. Uninstalling won\'t revert anything, nor can I make that happen. Unless you are comfortable with manual recovery, don\'t use the app. You have been warned!</string>
   <string name="safe_mode_notif_desc">It is recommended that you keep this active, and hide the notification instead. Turning it off may cause Safe Mode to no longer function.</string>
-  <string name="invalid_blacklist_backup">Invalid blacklist backup</string>
+  <string name="invalid_blacklist_backup">Daftar hitam cadangan tidak valid</string>
   <string name="backup_restored">Successfully restored backup</string>
-  <string name="nothing_to_back_up">Nothing to back up</string>
+  <string name="nothing_to_back_up">Tidak ada yang perlu dicadangkan</string>
   <!--Instructions-->
   <string name="enable_debug"><![CDATA[1. Pergi ke Pengaturan > Pengembang Pilihan dan membuat yakin USB Debugging diaktifkan.]]></string>
   <string name="accept_auth">2. Pasang perangkan Anda ke komputer dan menerima permintaan otoritas di atasnya.</string>
