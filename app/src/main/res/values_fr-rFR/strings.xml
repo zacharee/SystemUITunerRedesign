@@ -216,10 +216,10 @@
   <string name="show_notif">Afficher la Notification</string>
   <string name="carrier_on_home">Carrier Label on Home Screen</string>
   <string name="carrier_on_lock">Carrier Label on Lock Screen</string>
-  <string name="key_plaintext">Key</string>
-  <string name="value_plaintext">Value</string>
-  <string name="remove_from_blacklist">Remove From Blacklist?</string>
-  <string name="safe_mode_status_bar">Status Bar</string>
+  <string name="key_plaintext">Clé</string>
+  <string name="value_plaintext">Valeur</string>
+  <string name="remove_from_blacklist">Retirer de la liste noire ?</string>
+  <string name="safe_mode_status_bar">Barre de statut</string>
   <string name="safe_mode_fancy_anim">Fancy Animation</string>
   <string name="safe_mode_header_count">QS Header Count</string>
   <string name="safe_mode_row_col_tw">QS Row/Column Count</string>
@@ -275,7 +275,7 @@
   <string name="safe_mode_notif_desc">Il est recommandé de garder ceci activé et masquer la notification à la place. Le désactiver risque de ne plus pouvoir faire fonctionner le Mode sans échec.</string>
   <string name="invalid_blacklist_backup">Invalid blacklist backup</string>
   <string name="backup_restored">Successfully restored backup</string>
-  <string name="nothing_to_back_up">Nothing to back up</string>
+  <string name="nothing_to_back_up">Rien à sauvegarder</string>
   <!--Instructions-->
   <string name="enable_debug"><![CDATA[1. Allez dans réglages >> Options développeur et vérifiez que le débogage USB est activé.]]></string>
   <string name="accept_auth">2. Branchez votre appareil sur votre ordinateur et acceptez la demande d\'autorisation affichée dessus.</string>
