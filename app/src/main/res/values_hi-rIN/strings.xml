@@ -224,6 +224,8 @@
   <string name="safe_mode_header_count">QS Header Count</string>
   <string name="safe_mode_row_col_tw">QS Row/Column Count</string>
   <string name="safe_mode_snooze_options">Snooze Options</string>
+  <string name="fix_rotation_icon_dialog_title">Uninstalling?</string>
+  <string name="done">Done!</string>
   <!--Descriptions-->
   <string name="fancy_pulldown_notice">इस विकल्प को बंद करने से रिबूट के बाद समस्याएं हो सकती हैं। रीबूट के बाद मैन्युअल रूप से इस विकल्प को चालू या बंद करें, या सुरक्षित मोड सक्षम करें।</string>
   <string name="safe_mode_summary">सैमसंग उपयोगकर्ताओं को यह चालू रखें जब तक की आप एक AOSP ROM पर है!</string>
@@ -239,7 +241,7 @@
   <string name="app_specific_desc">इमर्सिव मोड से शामिल या बाहर रखा जा करने के लिए क्षुधा का चयन करें. इन सेटिंग्स को परिवर्तित करने के लिए इमर्सिव मोड अक्षम होना चाहिए ।</string>
   <string name="blacklist_desc">चालू होने पर, चयनित ऐप्स इमर्सिव मोड का उपयोग नहीं करेंगे</string>
   <string name="imm_warn">यह विशेषता केवल आपको इमर्सिव मोड सक्षम करने की अनुमति देती है। यह उस से परे कुछ भी नहीं करता है आपके द्वारा अनुभव किए गए किसी भी मुद्दे आपके डिवाइस के निर्माता की गलती हैं। मैं इसे तय नहीं कर सकता!</string>
-  <string name="statbar_rotation_lock_notif">कुछ डिवाइसों पर, स्टेटस बार आइकन को संशोधित करने के लिए ऐसा आइकन हो सकता है, जो दिखाई देने वाला फोन दिखाई देता है। यह रोटेशन लॉक आइकन है</string>
+  <string name="statbar_rotation_lock_notif">On certain devices, modifying the status bar icons can cause an icon that looks like a phone to appear. This is the rotation lock icon. Tap here to fix it.</string>
   <string name="pnc_desc">पावर सूचना नियंत्रण आपको प्रति-ऐप्लिकेशन के आधार पर सूचनाओं के लिए महत्व का स्तर सेट करने की अनुमति देते हैं. बस सुविधा चालू करें और आरंभ करने के लिए अधिसूचना पर दबाकर रखें । आपको स्लाइडर को सक्षम करने के लिए एक टैप करना पड़ सकता है.</string>
   <string name="pnc_warn">यह सुविधा विशेष रूप से टचविज़ पर कुछ डिवाइसों पर अविश्वसनीय हो जाती है! यह तय करना असंभव है, लेकिन वांछित स्तर पर बार-बार टैप करने के लिए सबसे अच्छा काम करने लगता है। दोबारा, मैं इसे ठीक नहीं कर सकता!</string>
   <string name="notif_desc">सेटिंग बदलने के लिए टैप करें</string>
@@ -252,6 +254,11 @@
   <string name="custom_settings_warning">Be careful what you do here! If you input an incorrect value, you could cause a crash loop, bootloop or worse!</string>
   <string name="hide_welcome_hint">Hint: You can hide this screen, and the donation message, by going to Settings and toggling on \"Hide Welcome Screen\".</string>
   <string name="safe_mode_notif_desc_not_supported">यह सेटिंग Oreo पर सक्षम रहना चाहिए ।</string>
+  <string name="fix_rotation_icon_dialog_desc">Are you planning to uninstall SystemUI Tuner after this?</string>
+  <string name="yes_im_uninstalling">Yes, I\'m Uninstalling</string>
+  <string name="no_im_staying">No, I\'m Staying</string>
+  <string name="fix_rotation_done_uninstall">Rotation icon removed! This won\'t take effect until you reboot.</string>
+  <string name="fix_rotation_done_stay">Rotation icon removed! If it still appears, reboot your device.</string>
   <!--Messages-->
   <string name="sorry_explain">इस टॉगल को सेट करते समय कुछ गलत हो गया</string>
   <string name="sorry_option">किसी कंप्यूटर से निंन आदेश निष्पादित करने का प्रयास करें (यह एक पंक्ति है):</string>
