@@ -224,6 +224,8 @@
   <string name="safe_mode_header_count">QS Header Count</string>
   <string name="safe_mode_row_col_tw">QS Row/Column Count</string>
   <string name="safe_mode_snooze_options">Snooze Options</string>
+  <string name="fix_rotation_icon_dialog_title">Uninstalling?</string>
+  <string name="done">Done!</string>
   <!--Descriptions-->
   <string name="fancy_pulldown_notice">關閉本功能可能導致重啟後發生問題。請於重啟後手動開啟再關閉，或啟用安全模式。</string>
   <string name="safe_mode_summary">三星用戶應保持本設定啟用，除非你有 AOSP ROM！</string>
@@ -239,7 +241,7 @@
   <string name="app_specific_desc">選擇要包含或排除於沈浸模式的 app。變更設定前必須先停用沈浸模式。</string>
   <string name="blacklist_desc">選項啟用時 app 將不會進入沈浸模式</string>
   <string name="imm_warn">本功能只會啟用沈浸模式，沒有別的了。若因此發生問題請洽裝置製造商，我幫不了你！</string>
-  <string name="statbar_rotation_lock_notif">某些裝置修改狀態列圖示後，會多出一個像手機的圖示，它是螢幕旋轉鎖定圖示。</string>
+  <string name="statbar_rotation_lock_notif">On certain devices, modifying the status bar icons can cause an icon that looks like a phone to appear. This is the rotation lock icon. Tap here to fix it.</string>
   <string name="pnc_desc">電量通知控制讓你可以調整每個 app 的通知重要程度。開啟本功能並長按任意通知即可開始使用，若要使用滑掉條可能需要按 A。</string>
   <string name="pnc_warn">本功能在某些裝置上無法使用，尤其是 TouchWiz ！多按幾次或許會成功，這我沒辦法處理。</string>
   <string name="notif_desc">點擊以變更設定</string>
@@ -253,6 +255,11 @@
   <string name="custom_settings_warning">請小心操作！如果你輸入了錯誤的數值，可能導致一直崩潰，重啓或更糟！</string>
   <string name="hide_welcome_hint">提示：你可以到設定關閉 \"隱藏歡迎畫面\" 以隱藏本畫面及贊助訊息。</string>
   <string name="safe_mode_notif_desc_not_supported">本設定在 Oreo 中必須保持啟用</string>
+  <string name="fix_rotation_icon_dialog_desc">Are you planning to uninstall SystemUI Tuner after this?</string>
+  <string name="yes_im_uninstalling">Yes, I\'m Uninstalling</string>
+  <string name="no_im_staying">No, I\'m Staying</string>
+  <string name="fix_rotation_done_uninstall">Rotation icon removed! This won\'t take effect until you reboot.</string>
+  <string name="fix_rotation_done_stay">Rotation icon removed! If it still appears, reboot your device.</string>
   <!--Messages-->
   <string name="sorry_explain">設定時發生未知錯誤</string>
   <string name="sorry_option">試著從電腦執行下列指定（單行指令）：</string>
