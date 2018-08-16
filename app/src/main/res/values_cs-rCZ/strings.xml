@@ -224,6 +224,8 @@
   <string name="safe_mode_header_count">Počítač QS Header</string>
   <string name="safe_mode_row_col_tw">Počet QS rovin/sloupců</string>
   <string name="safe_mode_snooze_options">Možnost ztišení</string>
+  <string name="fix_rotation_icon_dialog_title">Uninstalling?</string>
+  <string name="done">Done!</string>
   <!--Descriptions-->
   <string name="fancy_pulldown_notice">Přepnutí tohoto nastavení můžu po restartu působit potíže. Přepněte manuálně tuto možnost po restartu nebo zapněte Safe Mode.</string>
   <string name="safe_mode_summary">UŽIVATELÉ SAMSUNGU SI TOTO NECHAJÍ ZAPLÉ POKUD NEMÁTE AOSP ROM!</string>
@@ -239,7 +241,7 @@
   <string name="app_specific_desc">Vyberte aplikace které mají nebo nemají být zahrnuty v dokonalém režimu. Dokonalý režim musí být vypnut abyste mohly uplatnit toto nastavení.</string>
   <string name="blacklist_desc">Pokud zapnuto tak aplikace nebudou používat dokonalý režim</string>
   <string name="imm_warn">Tato funkce umožňuje zapnout dokonalý mód. NEDĚLÁ to nic kromě toho. Jakékoli problémy jsou na straně výrobce vašeho zařízení. JÁ TO NEMOHU OPRAVIT!</string>
-  <string name="statbar_rotation_lock_notif">Na některých zařízeních modifikace stavového řádku může způsobit to že některé ikony budou vypadat jako telefon. Toto je ikona rotace obrazovky.</string>
+  <string name="statbar_rotation_lock_notif">On certain devices, modifying the status bar icons can cause an icon that looks like a phone to appear. This is the rotation lock icon. Tap here to fix it.</string>
   <string name="pnc_desc">Nastavení napájení vám umožní nastavit level důležitosti pro notifikace. Prostě tuto funkci zapněte a podržet prst na notifikace a začněte. Je možné že budete muset ztisknout A k povolení jezdce.</string>
   <string name="pnc_warn">Tato možnost je na některých zařízeních nespolehlivá, hlavně na TouchWiz! Je nemožné to opravit, ale nejlepší řešení se zdá být opakované klepání na požadovanou úroveň. Znova, NEMŮŽU to opravit!</string>
   <string name="notif_desc">Kliknutím změníte mastavení</string>
@@ -252,6 +254,11 @@
   <string name="custom_settings_warning">Buďte opatrní co zde zadáváte! Špatný input můžu vést ke Crash loopu, bootloopu nebo něčemu horšímu!</string>
   <string name="hide_welcome_hint">Nápověda: Tuto obrazovku můžete skrýt a darovací zprávu také, a to tím že půjdete do nastavení a přepnete \"Skrýt uvítací obrazovku\".</string>
   <string name="safe_mode_notif_desc_not_supported">Toto nastavení musí v Oreu zůstat zaplé.</string>
+  <string name="fix_rotation_icon_dialog_desc">Are you planning to uninstall SystemUI Tuner after this?</string>
+  <string name="yes_im_uninstalling">Yes, I\'m Uninstalling</string>
+  <string name="no_im_staying">No, I\'m Staying</string>
+  <string name="fix_rotation_done_uninstall">Rotation icon removed! This won\'t take effect until you reboot.</string>
+  <string name="fix_rotation_done_stay">Rotation icon removed! If it still appears, reboot your device.</string>
   <!--Messages-->
   <string name="sorry_explain">Během nastavování se něco pokazilo.</string>
   <string name="sorry_option">Zkuste spustit následující příkaz z počítače (je to jeden řádek):</string>
