@@ -224,6 +224,8 @@
   <string name="safe_mode_header_count">QS Header Count</string>
   <string name="safe_mode_row_col_tw">QS Row/Column Count</string>
   <string name="safe_mode_snooze_options">Snooze Options</string>
+  <string name="fix_rotation_icon_dialog_title">Uninstalling?</string>
+  <string name="done">Done!</string>
   <!--Descriptions-->
   <string name="fancy_pulldown_notice">关闭此选项会导致重新启动后出现问题。在重新启动后手动切换此选项, 或启用安全模式。</string>
   <string name="safe_mode_summary">注意：！三星用户保持这个打开, 除非你有一个 AOSP ROM的系统！</string>
@@ -239,7 +241,7 @@
   <string name="app_specific_desc">选择要包含或者派出用于沉浸模式的应用。更改设定前必须停用沉浸模式。</string>
   <string name="blacklist_desc">选项启用时，应用将不会进入沉浸模式</string>
   <string name="imm_warn">本功能只会启用沈浸模式，沒有別的了。若因此发生问题请联系设备制造商，我帮不了你！</string>
-  <string name="statbar_rotation_lock_notif">某些设备修改状态栏图标后，会多处一个手机的图标，，他是锁定旋转屏幕的图标。</string>
+  <string name="statbar_rotation_lock_notif">On certain devices, modifying the status bar icons can cause an icon that looks like a phone to appear. This is the rotation lock icon. Tap here to fix it.</string>
   <string name="pnc_desc">点亮通知控制让你可以调整每个应用程序的通知重要程度，开启本功能并长长按任意通知开始使用，若要使用滑动条请按A。</string>
   <string name="pnc_warn">本功能在某些设备上不可用，特别是 TouchWiz ！可以尝试多试试，但是我无法修复。</string>
   <string name="notif_desc">点击更改设置</string>
@@ -253,6 +255,11 @@
   <string name="custom_settings_warning">请小心操作，如果你输入了错误的数值，可能导致一直崩溃或一直重启或更糟！</string>
   <string name="hide_welcome_hint">Hint: You can hide this screen, and the donation message, by going to Settings and toggling on \"Hide Welcome Screen\".</string>
   <string name="safe_mode_notif_desc_not_supported">设个设置在Android Oreo上必须保持启用</string>
+  <string name="fix_rotation_icon_dialog_desc">Are you planning to uninstall SystemUI Tuner after this?</string>
+  <string name="yes_im_uninstalling">Yes, I\'m Uninstalling</string>
+  <string name="no_im_staying">No, I\'m Staying</string>
+  <string name="fix_rotation_done_uninstall">Rotation icon removed! This won\'t take effect until you reboot.</string>
+  <string name="fix_rotation_done_stay">Rotation icon removed! If it still appears, reboot your device.</string>
   <!--Messages-->
   <string name="sorry_explain">这项设置发生错误</string>
   <string name="sorry_option">请从电脑端输入以下命令行(是一整句哦)</string>
