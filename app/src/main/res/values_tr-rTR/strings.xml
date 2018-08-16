@@ -224,6 +224,8 @@
   <string name="safe_mode_header_count">QS Header Count</string>
   <string name="safe_mode_row_col_tw">QS Row/Column Count</string>
   <string name="safe_mode_snooze_options">Snooze Options</string>
+  <string name="fix_rotation_icon_dialog_title">Uninstalling?</string>
+  <string name="done">Done!</string>
   <!--Descriptions-->
   <string name="fancy_pulldown_notice">Toggling this option off can cause issues after a reboot. Manually toggle this option on and off after a reboot, or enable Safe Mode.</string>
   <string name="safe_mode_summary">SAMSUNG USERS KEEP THIS TURNED ON UNLESS YOU HAVE AN AOSP ROM!</string>
@@ -239,7 +241,7 @@
   <string name="app_specific_desc">Uygulamaları sürükleyici moda dahil edilmek veya hariç tutmak için seçin. Sürükleyici Modu devre dışı bırakılarak bu ayarları değiştirilir. </string>
   <string name="blacklist_desc">Seçili olduğunda, seçilmiş uygulama sürükleyici modda kullanılamaz</string>
   <string name="imm_warn">Sürükleyici Modu etkinleştirmenizi, yalnızca bu özellik yapar. Bundan daha ileri bir şey yapmaz.Karşılaştığınız herhangi bir sorun cihazınızın üreticisinin suçudur. DÜZELTEMİYORUM!</string>
-  <string name="statbar_rotation_lock_notif">Kimi aygıtlarda, durum çubuğu simgelerini değiştirmek telefonda görünen bir simgeye neden olabilir. Bu Döndürme Kilit simgesidir</string>
+  <string name="statbar_rotation_lock_notif">On certain devices, modifying the status bar icons can cause an icon that looks like a phone to appear. This is the rotation lock icon. Tap here to fix it.</string>
   <string name="pnc_desc">Güç Bildirim Denetimleri uygulaması başına  olacak şekilde bildirimleri önem düzeyini ayarlamak için izin verir. Sadece bu özelliği etkinleştirmek ve başlamak için bir bildirim üzerine basılı tutun. Kaydırıcıyı aktif etmek için A harfine dokunumanız lazım olabilir.</string>
   <string name="pnc_warn">Bazı cihazlarda bu özellik güvenilmez, özellikle TouchWiz de  biliniyor. Düzeltmek mümkün değildir, ama en iyi çözüm sürekli olarak istenilen düzeyde dokunmak gibi görünüyor.  Tekrar, bunu düzeltemiyorum!</string>
   <string name="notif_desc">Tap to change settings</string>
@@ -253,6 +255,11 @@
   <string name="custom_settings_warning">Be careful what you do here! If you input an incorrect value, you could cause a crash loop, bootloop or worse!</string>
   <string name="hide_welcome_hint">Hint: You can hide this screen, and the donation message, by going to Settings and toggling on \"Hide Welcome Screen\".</string>
   <string name="safe_mode_notif_desc_not_supported">This setting must remain enabled on Oreo.</string>
+  <string name="fix_rotation_icon_dialog_desc">Are you planning to uninstall SystemUI Tuner after this?</string>
+  <string name="yes_im_uninstalling">Yes, I\'m Uninstalling</string>
+  <string name="no_im_staying">No, I\'m Staying</string>
+  <string name="fix_rotation_done_uninstall">Rotation icon removed! This won\'t take effect until you reboot.</string>
+  <string name="fix_rotation_done_stay">Rotation icon removed! If it still appears, reboot your device.</string>
   <!--Messages-->
   <string name="sorry_explain">Bu geçişi ayarlarken birşeyler yanlış gitti.</string>
   <string name="sorry_option">Try executing the following command from a computer (it\'s one line):</string>
