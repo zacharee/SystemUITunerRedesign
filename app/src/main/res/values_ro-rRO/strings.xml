@@ -224,6 +224,8 @@
   <string name="safe_mode_header_count">QS Header Count</string>
   <string name="safe_mode_row_col_tw">QS Row/Column Count</string>
   <string name="safe_mode_snooze_options">Snooze Options</string>
+  <string name="fix_rotation_icon_dialog_title">Uninstalling?</string>
+  <string name="done">Done!</string>
   <!--Descriptions-->
   <string name="fancy_pulldown_notice">Toggling this option off can cause issues after a reboot. Manually toggle this option on and off after a reboot, or enable Safe Mode.</string>
   <string name="safe_mode_summary">SAMSUNG USERS KEEP THIS TURNED ON UNLESS YOU HAVE AN AOSP ROM!</string>
@@ -239,7 +241,7 @@
   <string name="app_specific_desc">Selectează aplicații pentru a fi incluse sau excluse din Modul Imersiv. Pentru a face aceste modificări, Modul Imersiv trebuie să fie dezactivat.</string>
   <string name="blacklist_desc">Când este activ, aplicațile selecatte nu vor folosi Modul Imersiv</string>
   <string name="imm_warn">Această funcție îți permite să activezi Modul Imersiv. Nu face nimic mai mult de atât. Toate problemele pe care le întâmpini sunt din cauza producătorului aparatului tău. Nu pot repara asta!</string>
-  <string name="statbar_rotation_lock_notif">Pe anumite aparate, modificare iconițelor din bara de stare pote să ducă la apariția unei iconițe asemănătoare unui telefon. Aceasta este iconița de Blocare a Rotației.</string>
+  <string name="statbar_rotation_lock_notif">On certain devices, modifying the status bar icons can cause an icon that looks like a phone to appear. This is the rotation lock icon. Tap here to fix it.</string>
   <string name="pnc_desc">Controale de Notificare a Puterii îți permit să setezi nivelul importanței notificărilor. Activează această funcție și ține apăsat o notificare pentru a începe. Trebuie să apăsați A pentru a activa glisorul.</string>
   <string name="pnc_warn">Această funcție este nesigură pe anumite aparate, mai ales pe TouchWiz! Este imposibil de rezolvat, cea mai bună soluție pare să fie apăsarea continuă pe nivelul dorit. Nu se poate rezolva!</string>
   <string name="notif_desc">Tap to change settings</string>
@@ -253,6 +255,11 @@
   <string name="custom_settings_warning">Be careful what you do here! If you input an incorrect value, you could cause a crash loop, bootloop or worse!</string>
   <string name="hide_welcome_hint">Hint: You can hide this screen, and the donation message, by going to Settings and toggling on \"Hide Welcome Screen\".</string>
   <string name="safe_mode_notif_desc_not_supported">This setting must remain enabled on Oreo.</string>
+  <string name="fix_rotation_icon_dialog_desc">Are you planning to uninstall SystemUI Tuner after this?</string>
+  <string name="yes_im_uninstalling">Yes, I\'m Uninstalling</string>
+  <string name="no_im_staying">No, I\'m Staying</string>
+  <string name="fix_rotation_done_uninstall">Rotation icon removed! This won\'t take effect until you reboot.</string>
+  <string name="fix_rotation_done_stay">Rotation icon removed! If it still appears, reboot your device.</string>
   <!--Messages-->
   <string name="sorry_explain">Ceva nu a mers bine în timp ce setai această comutare.</string>
   <string name="sorry_option">Try executing the following command from a computer (it\'s one line):</string>
