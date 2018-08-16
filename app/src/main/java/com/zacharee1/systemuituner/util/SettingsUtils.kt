@@ -11,10 +11,10 @@ import com.zacharee1.systemuituner.activites.info.SettingWriteFailed
 import java.util.*
 
 object SettingsUtils {
-    fun writeGlobal(context: Context?, key: String?, value: String?): Boolean {
+    fun writeGlobal(context: Context?, key: String?, value: Any?): Boolean {
         if (key == null) return false
         return try {
-            Settings.Global.putString(context?.contentResolver, key, value)
+            Settings.Global.putString(context?.contentResolver, key, value?.toString())
         } catch (e: Exception) {
             val baseCommand = if (value != null) "settings put global $key $value" else "settings delete global $key"
             return if (SuUtils.testSudo()) {
@@ -28,10 +28,10 @@ object SettingsUtils {
 
     }
 
-    fun writeSecure(context: Context?, key: String?, value: String?): Boolean {
+    fun writeSecure(context: Context?, key: String?, value: Any?): Boolean {
         if (key == null) return false
         return try {
-            Settings.Secure.putString(context?.contentResolver, key, value)
+            Settings.Secure.putString(context?.contentResolver, key, value?.toString())
         } catch (e: Exception) {
             val baseCommand = if (value != null) "settings put secure $key $value" else "settings delete secure $key"
             return if (SuUtils.testSudo()) {
@@ -45,10 +45,10 @@ object SettingsUtils {
 
     }
 
-    fun writeSystem(context: Context?, key: String?, value: String?): Boolean {
+    fun writeSystem(context: Context?, key: String?, value: Any?): Boolean {
         if (key == null) return false
         return try {
-            Settings.System.putString(context?.contentResolver, key, value)
+            Settings.System.putString(context?.contentResolver, key, value?.toString())
         } catch (e: Exception) {
             val baseCommand = if (value != null) "settings put system $key $value" else "settings delete system $key"
             return if (SuUtils.testSudo()) {
@@ -71,34 +71,15 @@ object SettingsUtils {
         context?.startActivity(intent)
     }
 
-    fun hasPerms(context: Context?): Boolean {
-        try {
-            val packageInfo = context?.packageManager?.getPackageInfo(context.packageName, PackageManager.GET_PERMISSIONS)
-            val perms = ArrayList(Arrays.asList(*packageInfo?.requestedPermissions))
-
-            for (permission in perms) {
-                if (!hasSpecificPerm(context, permission)) return false
-            }
-        } catch (e: Exception) {
-            return false
-        }
-
-        return true
-    }
-
     fun hasSpecificPerm(context: Context?, permission: String): Boolean {
         return context?.checkCallingOrSelfPermission(permission) == PackageManager.PERMISSION_GRANTED
-    }
-
-    fun hasSpecificPerms(context: Context?, permissions: Array<String>): Boolean {
-        return permissions.none { context?.checkCallingOrSelfPermission(it) == PackageManager.PERMISSION_DENIED }
     }
 
     fun changeBlacklist(key: String?, remove: Boolean, context: Context?): Boolean {
         return if (key != null) {
             var currentBL: String = Settings.Secure.getString(context?.contentResolver, "icon_blacklist") ?: ""
-            val blItems = ArrayList(currentBL.split(","))
-            val keyItems = ArrayList(key.split(","))
+            val blItems = TreeSet(currentBL.split(","))
+            val keyItems = TreeSet(key.split(","))
 
             keyItems
                     .filter { if (remove) blItems.contains(it) else !blItems.contains(it) }
@@ -114,20 +95,19 @@ object SettingsUtils {
         var blString: String? = Settings.Secure.getString(fragment.activity.contentResolver, "icon_blacklist")
         if (blString == null) blString = ""
 
-        val blItems = ArrayList(blString.split(","))
+        val blItems = TreeSet(blString.split(","))
 
         for (i in 0 until fragment.preferenceScreen.rootAdapter.count) {
             val o = fragment.preferenceScreen.rootAdapter.getItem(i)
 
-            if (o is SwitchPreference && !o.title.toString().toLowerCase().contains("high brightness warning")) {
-
+            if (o is SwitchPreference) {
                 o.isChecked = true
 
                 if (!blString.isEmpty()) {
                     val key = o.key
 
                     if (key != null) {
-                        val keyItems = ArrayList(key.split(","))
+                        val keyItems = TreeSet(key.split(","))
 
                         keyItems
                                 .filter { blItems.contains(it) }

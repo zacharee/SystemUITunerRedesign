@@ -60,7 +60,7 @@ open class StatbarFragment : AnimFragment() {
         val auto = findPreference(AUTO_DETECT)
 
         resetBL?.onPreferenceClickListener = Preference.OnPreferenceClickListener {
-            SettingsUtils.writeSecure(context, ICON_BLACKLIST, "")
+            SettingsUtils.writeSecure(context, ICON_BLACKLIST, null)
             setSwitchPreferenceStates()
             true
         }

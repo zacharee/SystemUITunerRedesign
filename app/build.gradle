@@ -72,7 +72,6 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'com.dinuscxj:circleprogressbar:1.1.1'
     implementation 'com.github.zacharee:MaterialSeekbarPreference:51f6789298'
-//    implementation project(':SeekBarPref')
     implementation 'io.reactivex.rxjava2:rxandroid:2.0.2'
     implementation 'io.reactivex.rxjava2:rxjava:2.1.16'
     implementation 'com.joaomgcd:taskerpluginlibrary:0.0.3'
