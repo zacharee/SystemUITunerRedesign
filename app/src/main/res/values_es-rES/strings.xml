@@ -224,6 +224,8 @@
   <string name="safe_mode_header_count">QS Header Count</string>
   <string name="safe_mode_row_col_tw">QS Row/Column Count</string>
   <string name="safe_mode_snooze_options">Snooze Options</string>
+  <string name="fix_rotation_icon_dialog_title">Uninstalling?</string>
+  <string name="done">Done!</string>
   <!--Descriptions-->
   <string name="fancy_pulldown_notice">Desactivar esta opción puede causar problemas después de reiniciar. Activa y desactiva manualmente esta opción después de reiniciar, o activa Modo Seguro.</string>
   <string name="safe_mode_summary">LOS USUARIOS DE SAMSUNG MANTIENEN ESTO ENCENDIDO A MENOS QUE TENGAN UNA ROM AOSP!</string>
@@ -239,7 +241,7 @@
   <string name="app_specific_desc">Seleccionar aplicaciones para ser incluidos o excluidos del modo inmersivo. El Modo de inmersión debe desactivarse para cambiar la configuración.</string>
   <string name="blacklist_desc">Al estar Activo, las aplicaciones seleccionadas no usarán el modo inmersivo</string>
   <string name="imm_warn">Esta función simplemente permite activar el modo de inmersión. NO hace nada más allá de eso. Cualquier problema que usted experimenta es culpa del fabricante de su dispositivo. ¡NO PUEDO ARREGLARLO!</string>
-  <string name="statbar_rotation_lock_notif">En ciertos dispositivos, modificar los iconos de la barra de estado puede hacer aparecer un icono. Este es el icono de bloqueo de rotación.</string>
+  <string name="statbar_rotation_lock_notif">On certain devices, modifying the status bar icons can cause an icon that looks like a phone to appear. This is the rotation lock icon. Tap here to fix it.</string>
   <string name="pnc_desc">El Controlador de Notificaciones le permiten ajustar el nivel de importancia para las notificaciones por aplicación. Simplemente active la característica y pulsado una notificación para empezar. Deberá pulsar la A para activar el control deslizante.</string>
   <string name="pnc_warn">Esta característica parece no ser compatible en algunos dispositivos, especialmente en TouchWiz! Es imposible de arreglar, pero la mejor solución parece ser golpear repetidamente en el nivel deseado. ¡Una vez más, NO puedo arreglarlo!</string>
   <string name="notif_desc">Pulse para cambiar los ajustes</string>
@@ -253,6 +255,11 @@
   <string name="custom_settings_warning">Be careful what you do here! If you input an incorrect value, you could cause a crash loop, bootloop or worse!</string>
   <string name="hide_welcome_hint">Hint: You can hide this screen, and the donation message, by going to Settings and toggling on \"Hide Welcome Screen\".</string>
   <string name="safe_mode_notif_desc_not_supported">Este valor debe permanecer habilitado en Oreo.</string>
+  <string name="fix_rotation_icon_dialog_desc">Are you planning to uninstall SystemUI Tuner after this?</string>
+  <string name="yes_im_uninstalling">Yes, I\'m Uninstalling</string>
+  <string name="no_im_staying">No, I\'m Staying</string>
+  <string name="fix_rotation_done_uninstall">Rotation icon removed! This won\'t take effect until you reboot.</string>
+  <string name="fix_rotation_done_stay">Rotation icon removed! If it still appears, reboot your device.</string>
   <!--Messages-->
   <string name="sorry_explain">Something went wrong while setting this toggle.</string>
   <string name="sorry_option">Intenta ejecutar el comando desde tu computadora (una línea):</string>
