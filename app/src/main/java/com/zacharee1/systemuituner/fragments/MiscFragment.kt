@@ -40,7 +40,7 @@ class MiscFragment : AnimFragment() {
             val key = preference.key
             preference.isChecked = Settings.Global.getInt(context?.contentResolver, key, 1) == 1
             preference.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { _, o ->
-                SettingsUtils.writeGlobal(context, key, if (java.lang.Boolean.valueOf(o.toString())) "1" else "0")
+                SettingsUtils.writeGlobal(context, key, if (o.toString().toBoolean()) 1 else 0)
                 true
             }
         }
@@ -82,7 +82,7 @@ class MiscFragment : AnimFragment() {
             val key = preference.key
             preference.isChecked = Settings.Secure.getInt(context?.contentResolver, key, 0) == 1
             preference.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { _, o ->
-                SettingsUtils.writeSecure(context, key, if (java.lang.Boolean.valueOf(o.toString())) "1" else "0")
+                SettingsUtils.writeSecure(context, key, if (o.toString().toBoolean()) 1 else 0)
                 true
             }
         }
@@ -99,7 +99,7 @@ class MiscFragment : AnimFragment() {
             val key = preference.key
             preference.isChecked = Settings.System.getInt(context?.contentResolver, key, 0) == 1
             preference.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { _, o ->
-                SettingsUtils.writeSystem(context, key, if (java.lang.Boolean.valueOf(o.toString())) "1" else "0")
+                SettingsUtils.writeSystem(context, key, if (o.toString().toBoolean()) 1 else 0)
                 true
             }
         }
@@ -136,7 +136,7 @@ class MiscFragment : AnimFragment() {
                 }
 
                 tint.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { _, o ->
-                    SettingsUtils.writeSecure(context, NIGHT_MODE_TINT, if (java.lang.Boolean.valueOf(o.toString())) "1" else "0")
+                    SettingsUtils.writeSecure(context, NIGHT_MODE_TINT, if (o.toString().toBoolean()) 1 else 0)
                     true
                 }
 
@@ -186,28 +186,30 @@ class MiscFragment : AnimFragment() {
         auto.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { _, o ->
             if (Build.VERSION.SDK_INT == Build.VERSION_CODES.N)
                 evalNightModeStates(java.lang.Boolean.valueOf(o.toString()), override.isChecked)
-            else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N_MR1) SettingsUtils.writeSecure(context, NIGHT_DISPLAY_AUTO, if (java.lang.Boolean.valueOf(o.toString())) "1" else "0")
+            else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N_MR1)
+                SettingsUtils.writeSecure(context, NIGHT_DISPLAY_AUTO, if (o.toString().toBoolean()) 1 else 0)
             true
         }
 
         override.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { _, o ->
             if (Build.VERSION.SDK_INT == Build.VERSION_CODES.N)
                 evalNightModeStates(auto.isChecked, java.lang.Boolean.valueOf(o.toString()))
-            else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N_MR1) SettingsUtils.writeSecure(context, NIGHT_DISPLAY_ACTIVATED, if (java.lang.Boolean.valueOf(o.toString())) "1" else "0")
+            else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N_MR1)
+                SettingsUtils.writeSecure(context, NIGHT_DISPLAY_ACTIVATED, if (o.toString().toBoolean()) 1 else 0)
             true
         }
     }
 
     private fun evalNightModeStates(auto: Boolean, override: Boolean) {
-        var `val` = 0
+        var value = 0
 
         if (override && !auto)
-            `val` = 1
+            value = 1
         else if (!override && auto)
-            `val` = 2
-        else if (override) `val` = 4
+            value = 2
+        else if (override) value = 4
 
-        SettingsUtils.writeSecure(context, TWILIGHT_MODE, `val`.toString() + "")
+        SettingsUtils.writeSecure(context, TWILIGHT_MODE, value)
     }
 
     private fun setUpAnimationScales() {

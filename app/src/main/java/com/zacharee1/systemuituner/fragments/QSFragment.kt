@@ -56,11 +56,7 @@ class QSFragment : AnimFragment() {
                         //if current preference is a SwitchPreference
 
                         it.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { preference, o ->
-                            if (java.lang.Boolean.valueOf(o.toString())) {
-                                SettingsUtils.writeSecure(context, preference.key, "1")
-                            } else {
-                                SettingsUtils.writeSecure(context, preference.key, "0")
-                            }
+                            SettingsUtils.writeSecure(context, preference.key, if (o.toString().toBoolean()) 1 else 0)
                             true
                         }
                     }
@@ -80,8 +76,8 @@ class QSFragment : AnimFragment() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             val pref = findPreference(QQS_COUNT) as SeekBarPreference //find the SliderPreference
             //            pref.set<in(1);
-            pref.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { preference, o ->
-                SettingsUtils.writeSecure(context, QQS_COUNT, o.toString().toFloat().toInt().toString()) //write new value to Settings if user presses OK
+            pref.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { _, o ->
+                SettingsUtils.writeSecure(context, QQS_COUNT, o.toString().toFloat().toInt()) //write new value to Settings if user presses OK
                 true
             }
 

@@ -45,7 +45,7 @@ class HuNTile : TileService() {
     }
 
     override fun onClick() {
-        SettingsUtils.writeGlobal(this, MiscFragment.HUD_ENABLED, if (isEnabled) "0" else "1")
+        SettingsUtils.writeGlobal(this, MiscFragment.HUD_ENABLED, if (isEnabled) 0 else 1)
         setState()
 
         super.onClick()

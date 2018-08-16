@@ -53,14 +53,14 @@ class NightModeTile : TileService() {
 
         if (isActive) {
             if (Build.VERSION.SDK_INT == Build.VERSION_CODES.N)
-                SettingsUtils.writeSecure(this, "twilight_mode", "0")
+                SettingsUtils.writeSecure(this, "twilight_mode", 0)
             else
-                SettingsUtils.writeSecure(this, "night_display_activated", "0")
+                SettingsUtils.writeSecure(this, "night_display_activated", 0)
         } else {
             if (Build.VERSION.SDK_INT == Build.VERSION_CODES.N)
-                SettingsUtils.writeSecure(this, "twilight_mode", "1")
+                SettingsUtils.writeSecure(this, "twilight_mode", 1)
             else
-                SettingsUtils.writeSecure(this, "night_display_activated", "1")
+                SettingsUtils.writeSecure(this, "night_display_activated", 1)
         }
 
         onStartListening()

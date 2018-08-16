@@ -83,7 +83,7 @@ class DemoHandler(private val context: Context?) {
             intent.putExtra("speakerphone", if (spkphone()) "show" else "hide")
             context?.sendBroadcast(intent)
 
-            SettingsUtils.writeGlobal(context, "sysui_tuner_demo_on", "1")
+            SettingsUtils.writeGlobal(context, "sysui_tuner_demo_on", 1)
         } catch (e: Exception) {
             e.printStackTrace()
         }
@@ -95,7 +95,7 @@ class DemoHandler(private val context: Context?) {
         intent.putExtra("command", "exit")
         context?.sendBroadcast(intent)
 
-        SettingsUtils.writeGlobal(context, "sysui_tuner_demo_on", "0")
+        SettingsUtils.writeGlobal(context, "sysui_tuner_demo_on", 0)
     }
 
     private fun showNotifs(): Boolean {

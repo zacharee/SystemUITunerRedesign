@@ -66,7 +66,9 @@ class CustomAdapter(appInfos: ArrayList<AppInfo>, private val context: Context, 
 
                     (context as Activity).startActivityForResult(activity, 1337)
                 } else if (context is ComponentsListActivity) {
-                    SettingsUtils.writeSecure(context, if (isLeft) "sysui_keyguard_left" else "sysui_keyguard_right", appInfo.packageName + "/" + appInfo.componentName)
+                    SettingsUtils.writeSecure(context,
+                            if (isLeft) "sysui_keyguard_left" else "sysui_keyguard_right",
+                            appInfo.packageName + "/" + appInfo.componentName)
                     val activity = context as Activity
                     activity.setResult(Activity.RESULT_OK)
                     activity.finish()

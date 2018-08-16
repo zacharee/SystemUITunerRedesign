@@ -36,7 +36,7 @@ class TWFragment : StatbarFragment() {
         val savedColVal = Settings.Secure.getInt(activity?.contentResolver, columns.key, defVal)
 
         val listener = Preference.OnPreferenceChangeListener { preference, newValue ->
-            SettingsUtils.writeSecure(activity, preference.key, newValue.toString().toFloat().toInt().toString())
+            SettingsUtils.writeSecure(activity, preference.key, newValue.toString().toFloat().toInt())
             true
         }
 
