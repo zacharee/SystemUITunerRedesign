@@ -225,6 +225,8 @@
   <string name="safe_mode_header_count">QS Header Count</string>
   <string name="safe_mode_row_col_tw">QS Row/Column Count</string>
   <string name="safe_mode_snooze_options">Snooze Options</string>
+  <string name="fix_rotation_icon_dialog_title">Uninstalling?</string>
+  <string name="done">Done!</string>
   <!--Descriptions-->
   <string name="fancy_pulldown_notice">Toggling this option off can cause issues after a reboot. Manually toggle this option on and off after a reboot, or enable Safe Mode.</string>
   <string name="safe_mode_summary">SAMSUNG USERS KEEP THIS TURNED ON UNLESS YOU HAVE AN AOSP ROM!</string>
@@ -240,7 +242,7 @@
   <string name="app_specific_desc">حدد التطبيقات التي سيتم تضمينها أو استبعادها من \"وضع المخاطرة\". يجب تعطيل وضع المخاطرة لتغيير هذه الإعدادات.</string>
   <string name="blacklist_desc">عند التفعيل،التطبيقات المختارة لن تستخدم \"وضع المخاطرة\"</string>
   <string name="imm_warn">هذه الميزة فقط تسمح لك بتمكين \"وضع المخاطرة\". لأنه لا يفعل أي شيء أبعد من ذلك. أية مشكلات تواجهك هي خطأ من الشركة المصنعة للجهاز الخاص بك. لا أستطيع إصلاحه!</string>
-  <string name="statbar_rotation_lock_notif">في بعض الأجهزة، يمكن أن يسبب تعديل رموز شريط الحالة إلى ظهور رمز يشبه الهاتف. هذا هو رمز \"قفل الدوران\".</string>
+  <string name="statbar_rotation_lock_notif">On certain devices, modifying the status bar icons can cause an icon that looks like a phone to appear. This is the rotation lock icon. Tap here to fix it.</string>
   <string name="pnc_desc">ضوابط إعلام الطاقة تسمح لك بتعيين مستوى الأهمية للإخطارات على أساس كل تطبيق. ببساطة شغل الميزة واضغط باستمرار على إعلام للشروع في العمل. قد تحتاج إلى إدخال الرمز A لتفعيل شريط التمرير.</string>
   <string name="pnc_warn">من المعروف أن هذه الميزة يمكن الاعتماد عليها في بعض الأجهزة، لا سيما في TouchWiz! فمن المستحيل إصلاحها، ولكن يبدو أن الحل الأفضل الضغط مرارا وتكرارا على المستوى المطلوب. مرة أخرى، لا يمكن إصلاح ذلك!</string>
   <string name="notif_desc">Tap to change settings</string>
@@ -254,6 +256,11 @@
   <string name="custom_settings_warning">Be careful what you do here! If you input an incorrect value, you could cause a crash loop, bootloop or worse!</string>
   <string name="hide_welcome_hint">Hint: You can hide this screen, and the donation message, by going to Settings and toggling on \"Hide Welcome Screen\".</string>
   <string name="safe_mode_notif_desc_not_supported">This setting must remain enabled on Oreo.</string>
+  <string name="fix_rotation_icon_dialog_desc">Are you planning to uninstall SystemUI Tuner after this?</string>
+  <string name="yes_im_uninstalling">Yes, I\'m Uninstalling</string>
+  <string name="no_im_staying">No, I\'m Staying</string>
+  <string name="fix_rotation_done_uninstall">Rotation icon removed! This won\'t take effect until you reboot.</string>
+  <string name="fix_rotation_done_stay">Rotation icon removed! If it still appears, reboot your device.</string>
   <!--Messages-->
   <string name="sorry_explain">حدث خطأ أثناء تعيين هذا التبديل.</string>
   <string name="sorry_option">Try executing the following command from a computer (it\'s one line):</string>
