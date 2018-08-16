@@ -224,6 +224,8 @@
   <string name="safe_mode_header_count">QS Header Count</string>
   <string name="safe_mode_row_col_tw">QS Row/Column Count</string>
   <string name="safe_mode_snooze_options">Snooze Options</string>
+  <string name="fix_rotation_icon_dialog_title">Uninstalling?</string>
+  <string name="done">Done!</string>
   <!--Descriptions-->
   <string name="fancy_pulldown_notice">ਇਸ ਚੋਣ ਨੂੰ ਬੰਦ ਕਰਨ ਨਾਲ ਰੀਬੂਟ ਤੋਂ ਬਾਅਦ ਦੇ ਮਸਲਿਆਂ ਦਾ ਕਾਰਨ ਬਣ ਸਕਦਾ ਹੈ. ਖੁਦ ਰੀਬੂਟ ਤੋਂ ਬਾਅਦ ਇਸ ਚੋਣ ਨੂੰ ਬੰਦ ਅਤੇ ਬੰਦ ਕਰਨ ਲਈ, ਜਾਂ ਸੁਰੱਖਿਅਤ ਮੋਡ ਯੋਗ ਕਰੋ.</string>
   <string name="safe_mode_summary">ਸੈਮਸੰਗ ਦੇ ਯੂਜ਼ਰਸ ਇਸ ਨੂੰ ਚਾਲੂ ਰਾਖਿਓ ਜਦੋ ਤਕ ਤੁਸੀਂ ਕਿਸੀ AOSP ਰੋਮ ਤੇ ਨਾ ਹੋਵੋ!</string>
@@ -239,7 +241,7 @@
   <string name="app_specific_desc">ਇਮਰਸਿਵ ਮੋਡ ਤੋਂ ਸ਼ਾਮਲ ਕੀਤੇ ਜਾਂ ਬਾਹਰ ਕੱਢੇ ਜਾਣ ਲਈ ਐਪਸ ਚੁਣੋ. ਇਮਰਸ਼ਨ ਮੋਡ ਨੂੰ ਇਹਨਾਂ ਸੈਟਿੰਗਜ਼ ਨੂੰ ਬਦਲਣ ਲਈ ਅਸਮਰੱਥ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ.</string>
   <string name="blacklist_desc">ਚਾਲੂ ਹੋਣ \'ਤੇ, ਚੁਣੇ ਹੋਏ ਐਪਸ ਇਮਰਸਿਵ ਮੋਡ ਦੀ ਵਰਤੋਂ ਨਹੀਂ ਕਰਨਗੇ</string>
   <string name="imm_warn">ਇਹ ਵਿਸ਼ੇਸ਼ਤਾ ਤੁਹਾਨੂੰ ਇਮਰਸਿਵ ਮੋਡ ਨੂੰ ਸਮਰੱਥ ਕਰਨ ਲਈ ਹੀ ਸਹਾਇਕ ਹੈ. ਇਹ ਉਸ ਤੋਂ ਅੱਗੇ ਕੁਝ ਨਹੀਂ ਕਰਦਾ. ਤੁਹਾਡੇ ਦੁਆਰਾ ਅਨੁਭਵ ਕੀਤੇ ਗਏ ਕੋਈ ਵੀ ਮੁੱਦਿਆਂ ਨੂੰ ਤੁਹਾਡੇ ਡਿਵਾਈਸ ਦੇ ਨਿਰਮਾਤਾ ਦਾ ਨੁਕਸ ਹੈ. ਮੈਂ ਇਹ ਠੀਕ ਨਹੀਂ ਕਰ ਸਕਦਾ!</string>
-  <string name="statbar_rotation_lock_notif">ਕੁਝ ਡਿਵਾਈਸਾਂ ਤੇ, ਸਥਿਤੀ ਬਾਰ ਆਈਕਾਨ ਨੂੰ ਸੋਧਣ ਨਾਲ ਇੱਕ ਅਜਿਹਾ ਆਈਕਨ ਹੋ ਸਕਦਾ ਹੈ ਜੋ ਇੱਕ ਫੋਨ ਨੂੰ ਦਿਖਾਈ ਦੇਵੇ. ਇਹ ਰੋਟੇਸ਼ਨ ਲਾਕ ਆਈਕਨ ਹੈ.</string>
+  <string name="statbar_rotation_lock_notif">On certain devices, modifying the status bar icons can cause an icon that looks like a phone to appear. This is the rotation lock icon. Tap here to fix it.</string>
   <string name="pnc_desc">ਪਾਵਰ ਨੋਟੀਫਿਕੇਸ਼ਨ ਨਿਯੰਤਰਣ ਤੁਹਾਨੂੰ ਪ੍ਰਤੀ-ਐਪ ਅਧਾਰ \'ਤੇ ਨੋਟੀਫਿਕੇਸ਼ਨਾਂ ਲਈ ਮਹੱਤਵਪੂਰਣ ਪੱਧਰ ਨਿਰਧਾਰਤ ਕਰਨ ਦੀ ਆਗਿਆ ਦਿੰਦਾ ਹੈ ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਬਸ ਇਕ ਵਿਸ਼ੇਸ਼ਤਾ ਨੂੰ ਚਾਲੂ ਕਰੋ ਅਤੇ ਨੋਟੀਫਿਕੇਸ਼ਨ ਤੇ ਹੋਲਡ ਕਰੋ. ਸਲਾਈਡਰ ਨੂੰ ਸਮਰੱਥ ਬਣਾਉਣ ਲਈ ਤੁਹਾਨੂੰ ਏ ਨੂੰ ਟੈਪ ਕਰਨ ਦੀ ਲੋੜ ਹੋ ਸਕਦੀ ਹੈ.</string>
   <string name="pnc_warn">ਇਹ ਵਿਸ਼ੇਸ਼ਤਾ ਕੁਝ ਡਿਵਾਈਸਾਂ ਤੇ ਭਰੋਸੇਯੋਗ ਨਹੀਂ ਜਾਣੀ ਜਾਂਦੀ, ਵਿਸ਼ੇਸ਼ ਤੌਰ ਤੇ ਟਚਵਿਜ਼ ਉੱਤੇ! ਇਹ ਠੀਕ ਕਰਨਾ ਨਾਮੁਮਕਿਨ ਹੈ, ਪਰ ਸਭ ਤੋਂ ਵਧੀਆ ਕੰਮ ਇਹ ਹੈ ਕਿ ਲੋੜੀਦੇ ਪੱਧਰ ਤੇ ਵਾਰ ਵਾਰ ਟੈਪ ਕਰਨਾ. ਦੁਬਾਰਾ ਫਿਰ, ਮੈਂ ਇਸ ਨੂੰ ਠੀਕ ਨਹੀਂ ਕਰ ਸਕਦਾ!</string>
   <string name="notif_desc">ਸੈਟਿੰਗਜ਼ ਬਦਲਣ ਲਈ ਟੈਪ ਕਰੋ</string>
@@ -252,6 +254,11 @@
   <string name="custom_settings_warning">Be careful what you do here! If you input an incorrect value, you could cause a crash loop, bootloop or worse!</string>
   <string name="hide_welcome_hint">Hint: You can hide this screen, and the donation message, by going to Settings and toggling on \"Hide Welcome Screen\".</string>
   <string name="safe_mode_notif_desc_not_supported">ਇਹ ਸੈਟਿੰਗ Oreo ਤੇ ਸਮਰਥ ਹੋਣੀ ਚਾਹੀਦੀ ਹੈ.</string>
+  <string name="fix_rotation_icon_dialog_desc">Are you planning to uninstall SystemUI Tuner after this?</string>
+  <string name="yes_im_uninstalling">Yes, I\'m Uninstalling</string>
+  <string name="no_im_staying">No, I\'m Staying</string>
+  <string name="fix_rotation_done_uninstall">Rotation icon removed! This won\'t take effect until you reboot.</string>
+  <string name="fix_rotation_done_stay">Rotation icon removed! If it still appears, reboot your device.</string>
   <!--Messages-->
   <string name="sorry_explain">ਇਸ ਨੂੰ ਬਦਲਣ ਵੇਲੇ ਕੁਝ ਗਲਤ ਹੋ ਗਿਆ.</string>
   <string name="sorry_option">ਕੰਪਿਊਟਰ ਤੋਂ ਹੇਠਲੀ ਕਮਾਂਡ ਚਲਾਉਣ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰੋ (ਇਹ ਇੱਕ ਲਾਈਨ ਹੈ):</string>
