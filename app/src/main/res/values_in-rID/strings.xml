@@ -224,6 +224,8 @@
   <string name="safe_mode_header_count">QS Header Count</string>
   <string name="safe_mode_row_col_tw">QS Row/Column Count</string>
   <string name="safe_mode_snooze_options">Snooze Options</string>
+  <string name="fix_rotation_icon_dialog_title">Uninstalling?</string>
+  <string name="done">Done!</string>
   <!--Descriptions-->
   <string name="fancy_pulldown_notice">Toggling this option off can cause issues after a reboot. Manually toggle this option on and off after a reboot, or enable Safe Mode.</string>
   <string name="safe_mode_summary">Pengguna Samsung harap tetap membiarkan ini menyala kecuali anda memiliki ROM AOSP!</string>
@@ -239,7 +241,7 @@
   <string name="app_specific_desc">Pilih aplikasi untuk dimasukkan dalam atau dikecualikan dari mode yang mendalam. Mode mendalam harus dinonaktifkan untuk mengubah pengaturan ini.</string>
   <string name="blacklist_desc">Ketika hidup, aplikasi yang dipilih tidak akan menggunakan mode mendalam</string>
   <string name="imm_warn">Fitur ini hanya memungkinkan Anda untuk mengaktifkan mode malam. Itu tidak apa-apa lebih dari itu. Masalah yang Anda alami adalah kesalahan dari produsen perangkat Anda. SAYA TIDAK DAPAT MEMPERBAIKINYA!</string>
-  <string name="statbar_rotation_lock_notif">Pada pengaturan tertentu, memodifikasi ikon bilah status dapat menyebabkan ikon yang terlihat seperti telepon muncul. Ini adalah ikon kunci rotasi.</string>
+  <string name="statbar_rotation_lock_notif">On certain devices, modifying the status bar icons can cause an icon that looks like a phone to appear. This is the rotation lock icon. Tap here to fix it.</string>
   <string name="pnc_desc">Daya Kontrol Pemberitahuan memungkinkan Anda untuk mengatur tingkat kepentingan untuk pemberitahuan pada basis per-app. Cukup aktifkan fitur dan terus ke bawah pada pemberitahuan untuk memulai. Anda mungkin perlu tekan A untuk mengaktifkan slider.</string>
   <string name="pnc_warn">Fitur ini dikenal untuk dapat diandalkan pada perangkat tertentu, terutama pada TouchWiz! Tidak mungkin untuk memperbaiki, tapi tampaknya solusi terbaik untuk tekan berulang kali pada tingkat yang diinginkan. Sekali lagi, saya tidak dapat memperbaikinya!</string>
   <string name="notif_desc">Ketuk untuk merubah pengaturan</string>
@@ -253,6 +255,11 @@
   <string name="custom_settings_warning">Be careful what you do here! If you input an incorrect value, you could cause a crash loop, bootloop or worse!</string>
   <string name="hide_welcome_hint">Hint: You can hide this screen, and the donation message, by going to Settings and toggling on \"Hide Welcome Screen\".</string>
   <string name="safe_mode_notif_desc_not_supported">Setelan ini harus tetap dinyalakan di Oreo.</string>
+  <string name="fix_rotation_icon_dialog_desc">Are you planning to uninstall SystemUI Tuner after this?</string>
+  <string name="yes_im_uninstalling">Yes, I\'m Uninstalling</string>
+  <string name="no_im_staying">No, I\'m Staying</string>
+  <string name="fix_rotation_done_uninstall">Rotation icon removed! This won\'t take effect until you reboot.</string>
+  <string name="fix_rotation_done_stay">Rotation icon removed! If it still appears, reboot your device.</string>
   <!--Messages-->
   <string name="sorry_explain">Ada sesuatu yang tidak beres saat menyetel toggle ini.</string>
   <string name="sorry_option">Try executing the following command from a computer (it\'s one line):</string>
