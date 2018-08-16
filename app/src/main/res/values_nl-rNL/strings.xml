@@ -224,6 +224,8 @@
   <string name="safe_mode_header_count">QS Header Count</string>
   <string name="safe_mode_row_col_tw">QS Row/Column Count</string>
   <string name="safe_mode_snooze_options">Snooze Options</string>
+  <string name="fix_rotation_icon_dialog_title">Uninstalling?</string>
+  <string name="done">Done!</string>
   <!--Descriptions-->
   <string name="fancy_pulldown_notice">Toggling this option off can cause issues after a reboot. Manually toggle this option on and off after a reboot, or enable Safe Mode.</string>
   <string name="safe_mode_summary">SAMSUNG USERS KEEP THIS TURNED ON UNLESS YOU HAVE AN AOSP ROM!</string>
@@ -239,7 +241,7 @@
   <string name="app_specific_desc">Selecteer applicaties om in Immersive Mode op te nemen of uit te sluiten. De meeslepende modus moet worden uitgeschakeld om deze instellingen te wijzigen.</string>
   <string name="blacklist_desc">Wanneer ingeschakeld, zullen geselecteerde apps de Immersive-modus niet gebruiken</string>
   <string name="imm_warn">Met deze functie kunt u eenvoudig de Immersive-modus activeren. Het doet Niets anders dan dat. Elk probleem dat u ervaart, is de schuld van de fabrikant van uw apparaat. IK KAN HET NIET VASTSTELLEN!</string>
-  <string name="statbar_rotation_lock_notif">Op bepaalde apparaten kan het wijzigen van de statusbalkpictogrammen ertoe leiden dat er een pictogram verschijnt dat eruitziet als een telefoon. Dit is het Rotation Lock-pictogram.</string>
+  <string name="statbar_rotation_lock_notif">On certain devices, modifying the status bar icons can cause an icon that looks like a phone to appear. This is the rotation lock icon. Tap here to fix it.</string>
   <string name="pnc_desc">Met de meldingscontroller kunt u het belang van notificaties per toepassing aanpassen. Activeer eenvoudig de functie en druk op een melding om te starten. U moet op A drukken om de schuifregelaar te activeren.</string>
   <string name="pnc_warn">Deze functie lijkt niet compatibel te zijn op sommige apparaten, vooral op TouchWiz! Het is onmogelijk om te repareren, maar de beste oplossing lijkt te zijn om herhaaldelijk op het gewenste niveau te tappen. Nogmaals, ik KAN het niet repareren!</string>
   <string name="notif_desc">Tap to change settings</string>
@@ -253,6 +255,11 @@
   <string name="custom_settings_warning">Be careful what you do here! If you input an incorrect value, you could cause a crash loop, bootloop or worse!</string>
   <string name="hide_welcome_hint">Hint: You can hide this screen, and the donation message, by going to Settings and toggling on \"Hide Welcome Screen\".</string>
   <string name="safe_mode_notif_desc_not_supported">This setting must remain enabled on Oreo.</string>
+  <string name="fix_rotation_icon_dialog_desc">Are you planning to uninstall SystemUI Tuner after this?</string>
+  <string name="yes_im_uninstalling">Yes, I\'m Uninstalling</string>
+  <string name="no_im_staying">No, I\'m Staying</string>
+  <string name="fix_rotation_done_uninstall">Rotation icon removed! This won\'t take effect until you reboot.</string>
+  <string name="fix_rotation_done_stay">Rotation icon removed! If it still appears, reboot your device.</string>
   <!--Messages-->
   <string name="sorry_explain">Tijdens het instellen van deze schakelaar is iets misgegaan.</string>
   <string name="sorry_option">Try executing the following command from a computer (it\'s one line):</string>
