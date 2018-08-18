@@ -8,6 +8,7 @@
   <string name="notice">공지</string>
   <string name="hide_welcome_screen">환영 화면 숨기기</string>
   <string name="instructions">사용법</string>
+  <string name="need_help">Need Help?</string>
   <string name="about">정보</string>
   <string name="miscellaneous">기타</string>
   <string name="custom">사용자 정의</string>
@@ -274,7 +275,7 @@
   <string name="intro_3">상태 표시줄에 사전 정의 옵션이 과다하지만, 숨기길 원하는 아이콘이 없을 경우, 자동 감지 기능으로 숨길 수 있는 아이콘에 대한 감지를 시도할 수 있습니다.</string>
   <string name="intro_4">이 앱의 가장 좋은 점은? 바로 루팅이 필요없다는 것입니다! 루트 권한을 얻으려는 시도는 하지만, 할 수 없다면 ADB를 사용해야 합니다. ADB 사용은 루팅이 아닙니다!</string>
   <string name="intro_5">마침 버튼을 누르면, SystemUI 튜너는 루트 접근을 시도합니다. 이것이 가능하다면 모든 필수 권한을 알아서 부여합니다. 그렇지 않으면, 안내를 위한 사용법이 나타납니다.</string>
-  <string name="adb_setup">계속하려면 위의 권한이 부여되어야 합니다. 루트 접근이 거부되었거나 사용할 수 없었으며, 따라서 ADB를 사용하여 이러한 사용 권한을 부여해야 합니다.</string>
+  <string name="adb_setup">The permissions above must be granted to continue. You\'ll need to use ADB. Please note: PACKAGE_USAGE_STATS and DUMP are optional for most features. SystemUI Tuner will prompt you if either or both is needed.</string>
   <string name="target_not_found">앱을 시작할 수 없습니다.</string>
   <string name="feature_not_supported">장치가 이 기능을 지원 하지 않는 것 같습니다. :/</string>
   <string name="miui_warning">MIUI 장치를 사용하시는 것 같습니다. 이 앱의 기능들이 아예 작동하지 않거나 극히 일부 기능만 작동할 것입니다. 문제 해결이 불가능합니다!</string>
@@ -283,6 +284,7 @@
   <string name="invalid_blacklist_backup">Invalid blacklist backup</string>
   <string name="backup_restored">Successfully restored backup</string>
   <string name="nothing_to_back_up">Nothing to back up</string>
+  <string name="grant_usage">Please grant SystemUI Tuner access to Usage.</string>
   <!--Instructions-->
   <string name="enable_debug"><![CDATA[1. 설정 >> 개발자 옵션으로 이동하여 USB 디버깅이 활성화되었는지 확인하십시오.]]></string>
   <string name="accept_auth">2. 장치를 컴퓨터와 연결하여 인증 요청을 승인하십시오.</string>
