@@ -8,6 +8,7 @@
   <string name="notice">AVIS</string>
   <string name="hide_welcome_screen">Cacher l\'écran d\'accueil.</string>
   <string name="instructions">Instructions</string>
+  <string name="need_help">Need Help?</string>
   <string name="about">À propos</string>
   <string name="miscellaneous">Divers</string>
   <string name="custom">Custom</string>
@@ -274,7 +275,7 @@
   <string name="intro_3">Il existe une pléthore d’options prédéfinies pour la barre d’état, mais si vous ne voyez pas une icône que vous souhaitez masquer, vous pouvez essayer la fonctionnalité de détection automatique, qui va tenter de détecter des icônes qui peuvent être cachées.</string>
   <string name="intro_4">Et la meilleure partie de cette application? Elle n’a pas besoin de Root! Elle tentera d’obtenir les privilèges root, mais si elle ne peut pas, vous devrez utiliser ADB. UTILISER ADB N’EST PAS ROOTER!</string>
   <string name="intro_5">Une fois que vous appuyez sur le bouton terminer, SystemUI Tuner tentera d’obtenir l’accès root. Si c’est possible, il accordera toutes les autorisations nécessaires pour vous. Sinon, des instructions s\'afficheront pour vous guider.</string>
-  <string name="adb_setup">Les autorisations ci-dessus doivent être accordées pour continuer. L\'accès root a été refusé ou est indisponible, ce qui signifie que vous aurez à accorder ces autorisations à l’aide d\'ADB.</string>
+  <string name="adb_setup">The permissions above must be granted to continue. You\'ll need to use ADB. Please note: PACKAGE_USAGE_STATS and DUMP are optional for most features. SystemUI Tuner will prompt you if either or both is needed.</string>
   <string name="target_not_found">Impossible de lancer l’application.</string>
   <string name="feature_not_supported">Il semble que votre appareil ne supporte pas cette fonctionnalité :/</string>
   <string name="miui_warning">Il semble que vous utilisez un appareil MIUI. Veuillez prendre note que peu, voire aucune, caractéristiques de cette application fonctionnera pour vous. Il n’est pas réparable!</string>
@@ -283,6 +284,7 @@
   <string name="invalid_blacklist_backup">Invalid blacklist backup</string>
   <string name="backup_restored">Successfully restored backup</string>
   <string name="nothing_to_back_up">Rien à sauvegarder</string>
+  <string name="grant_usage">Please grant SystemUI Tuner access to Usage.</string>
   <!--Instructions-->
   <string name="enable_debug"><![CDATA[1. Allez dans réglages >> Options développeur et vérifiez que le débogage USB est activé.]]></string>
   <string name="accept_auth">2. Branchez votre appareil sur votre ordinateur et acceptez la demande d\'autorisation affichée dessus.</string>
