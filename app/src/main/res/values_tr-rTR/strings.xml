@@ -8,6 +8,7 @@
   <string name="notice">DİKKAT</string>
   <string name="hide_welcome_screen">Hoş Geldiniz Ekranını Gizle</string>
   <string name="instructions">Talimatlar</string>
+  <string name="need_help">Need Help?</string>
   <string name="about">Hakkında</string>
   <string name="miscellaneous">Çeşitli</string>
   <string name="custom">Custom</string>
@@ -274,7 +275,7 @@
   <string name="intro_3">Önceden belirlenmiş bir çok seçenek durum çubuğu için  bulunmaktadır, fakat gizlemek istediğiniz bir simge göremiyosanız, Otomatik Algılama özelliğini gizlenebilir simgeleri algılamaya çalışacak  şekilde kullanabilirsiniz.</string>
   <string name="intro_4">Ve en iyi tarafı bu uygulamanın nedir? Köke ihtiyaç duyulamamaktadır! Kök ayrıcalıkları almaya çalışacak, fakat alamaz ise  ADB\'yi kullanmak zorunda kalacaksınız. ADB\'nin KULLANIMI, ROOTING DEĞİLDİR!</string>
   <string name="intro_5">Bir kez bitir düğmesine dokunun, SystemUI Tuner kök erişimini sağlamaya çalışacaktır. Olabilirse,  gerekli tüm izinleri sizin için verecektir. Aksi halde, size yol gösterici talimatları görüntüleyecektir.</string>
-  <string name="adb_setup">Yukarıdaki izinleri devam edebilmek için  kabul etmelisiniz. ADB kullanarak bu izinleri vermek zorundasınız anlamına gelir, bu  kök erişimi engellendi ya da ulaşılamıyor kısmı.</string>
+  <string name="adb_setup">The permissions above must be granted to continue. You\'ll need to use ADB. Please note: PACKAGE_USAGE_STATS and DUMP are optional for most features. SystemUI Tuner will prompt you if either or both is needed.</string>
   <string name="target_not_found">Unable to launch app.</string>
   <string name="feature_not_supported">Cihazınızın bu özelliği desteklemediği görünüyor :/</string>
   <string name="miui_warning">MIUI bir cihaz kullanıyorsun gibi görünüyor.Bu uygulamayı varsa birkaç, özellikleri sizin için çalışacak not alın lütfen. Düzeltilecek bir şey DEĞİL! </string>
@@ -283,6 +284,7 @@
   <string name="invalid_blacklist_backup">Invalid blacklist backup</string>
   <string name="backup_restored">Successfully restored backup</string>
   <string name="nothing_to_back_up">Nothing to back up</string>
+  <string name="grant_usage">Please grant SystemUI Tuner access to Usage.</string>
   <!--Instructions-->
   <string name="enable_debug"><![CDATA[1. Ayarlar'a gidin >>Geliştirici Seçenekleri'ni seçin ve USB Hata Ayıklama'nın etkinleştirildiğinden emin olun.]]></string>
   <string name="accept_auth">2. Cihazınızı bilgisayarınıza takın ve üzerindeki yetkilendirme izin talebini kabul edin.</string>
