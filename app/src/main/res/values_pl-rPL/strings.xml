@@ -8,6 +8,7 @@
   <string name="notice">UWAGA</string>
   <string name="hide_welcome_screen">Ukryj ekran powitalny</string>
   <string name="instructions">Instrukcja</string>
+  <string name="need_help">Need Help?</string>
   <string name="about">Informacje</string>
   <string name="miscellaneous">Inne</string>
   <string name="custom">Custom</string>
@@ -274,7 +275,7 @@
   <string name="intro_3">Jest mnóstwo przykładowych ustawień paska stanu, ale jeśli nie widzisz ikony, którą chcesz usunąć możesz użyć opcji automatycznego wykrywania.</string>
   <string name="intro_4">A najlepsza zaleta tej aplikacji? Nie potrzebny jest root! Będzie podjęta próba otrzymania uprawnień, lecz jeśli nie będzie to możliwe, konieczne będzie użycie ADB. UŻYWANIE ADB NIE OZNACZA ROOT!</string>
   <string name="intro_5">Jak tylko naciśniesz na zakończ, SystemUI Tuner podejmie próbę dostępu do roota. Jeśli będzie mógł, przypisze wszystkie potrzebne uprawnienia dla ciebie. W innym przypadku instrukcje poprowadzą i pomogą ci z tym.</string>
-  <string name="adb_setup">Powyższe uprawnienia są wymagane do kontynuowania. Dostęp do roota został odrzucony lub jest niedostępny. Wymagane uprawnienia musisz nadać używając ADB.</string>
+  <string name="adb_setup">The permissions above must be granted to continue. You\'ll need to use ADB. Please note: PACKAGE_USAGE_STATS and DUMP are optional for most features. SystemUI Tuner will prompt you if either or both is needed.</string>
   <string name="target_not_found">Nie można uruchomić aplikacji.</string>
   <string name="feature_not_supported">Twoje urządzenie nie obsługuje tej funkcji ;/</string>
   <string name="miui_warning">It seems that you\'re using a MIUI device. Please take note that few, if any, features of this app will work for you. It is NOT fixable!</string>
@@ -283,6 +284,7 @@
   <string name="invalid_blacklist_backup">Invalid blacklist backup</string>
   <string name="backup_restored">Successfully restored backup</string>
   <string name="nothing_to_back_up">Nothing to back up</string>
+  <string name="grant_usage">Please grant SystemUI Tuner access to Usage.</string>
   <!--Instructions-->
   <string name="enable_debug"><![CDATA[1. Wejdź w Ustawienia telefonu >> Opcje programistyczne i upewnij się, że Debugowanie USB jest włączone.]]></string>
   <string name="accept_auth">2. Podłącz urządzenie do komputera i zaakceptuj autoryzację.</string>
