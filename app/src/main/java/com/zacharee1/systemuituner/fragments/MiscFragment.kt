@@ -10,7 +10,9 @@ import android.preference.SwitchPreference
 import android.provider.Settings
 import com.pavelsikun.seekbarpreference.SeekBarPreference
 import com.zacharee1.systemuituner.R
-import com.zacharee1.systemuituner.util.SettingsUtils
+import com.zacharee1.systemuituner.util.writeGlobal
+import com.zacharee1.systemuituner.util.writeSecure
+import com.zacharee1.systemuituner.util.writeSystem
 import java.util.*
 
 class MiscFragment : AnimFragment() {
@@ -40,7 +42,7 @@ class MiscFragment : AnimFragment() {
             val key = preference.key
             preference.isChecked = Settings.Global.getInt(context?.contentResolver, key, 1) == 1
             preference.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { _, o ->
-                SettingsUtils.writeGlobal(context, key, if (o.toString().toBoolean()) 1 else 0)
+                context.writeGlobal(key, if (o.toString().toBoolean()) 1 else 0)
                 true
             }
         }
@@ -82,7 +84,7 @@ class MiscFragment : AnimFragment() {
             val key = preference.key
             preference.isChecked = Settings.Secure.getInt(context?.contentResolver, key, 0) == 1
             preference.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { _, o ->
-                SettingsUtils.writeSecure(context, key, if (o.toString().toBoolean()) 1 else 0)
+                context.writeSecure(key, if (o.toString().toBoolean()) 1 else 0)
                 true
             }
         }
@@ -99,7 +101,7 @@ class MiscFragment : AnimFragment() {
             val key = preference.key
             preference.isChecked = Settings.System.getInt(context?.contentResolver, key, 0) == 1
             preference.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { _, o ->
-                SettingsUtils.writeSystem(context, key, if (o.toString().toBoolean()) 1 else 0)
+                context.writeSystem(key, if (o.toString().toBoolean()) 1 else 0)
                 true
             }
         }
@@ -136,7 +138,7 @@ class MiscFragment : AnimFragment() {
                 }
 
                 tint.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { _, o ->
-                    SettingsUtils.writeSecure(context, NIGHT_MODE_TINT, if (o.toString().toBoolean()) 1 else 0)
+                    context.writeSecure(NIGHT_MODE_TINT, if (o.toString().toBoolean()) 1 else 0)
                     true
                 }
 
@@ -187,7 +189,7 @@ class MiscFragment : AnimFragment() {
             if (Build.VERSION.SDK_INT == Build.VERSION_CODES.N)
                 evalNightModeStates(java.lang.Boolean.valueOf(o.toString()), override.isChecked)
             else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N_MR1)
-                SettingsUtils.writeSecure(context, NIGHT_DISPLAY_AUTO, if (o.toString().toBoolean()) 1 else 0)
+                context.writeSecure(NIGHT_DISPLAY_AUTO, if (o.toString().toBoolean()) 1 else 0)
             true
         }
 
@@ -195,7 +197,7 @@ class MiscFragment : AnimFragment() {
             if (Build.VERSION.SDK_INT == Build.VERSION_CODES.N)
                 evalNightModeStates(auto.isChecked, java.lang.Boolean.valueOf(o.toString()))
             else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N_MR1)
-                SettingsUtils.writeSecure(context, NIGHT_DISPLAY_ACTIVATED, if (o.toString().toBoolean()) 1 else 0)
+                context.writeSecure(NIGHT_DISPLAY_ACTIVATED, if (o.toString().toBoolean()) 1 else 0)
             true
         }
     }
@@ -209,7 +211,7 @@ class MiscFragment : AnimFragment() {
             value = 2
         else if (override) value = 4
 
-        SettingsUtils.writeSecure(context, TWILIGHT_MODE, value)
+        context.writeSecure(TWILIGHT_MODE, value)
     }
 
     private fun setUpAnimationScales() {
@@ -226,7 +228,7 @@ class MiscFragment : AnimFragment() {
         window.currentScaledValue = winScale
 
         val listener = Preference.OnPreferenceChangeListener { preference, o ->
-            SettingsUtils.writeGlobal(context, preference.key, o.toString())
+            context.writeGlobal(preference.key, o.toString())
             true
         }
 
@@ -299,7 +301,7 @@ class MiscFragment : AnimFragment() {
     private fun saveSnoozeTimes(toSave: ArrayList<String>) {
         val base = "default=" + toSave[0] + ",options_array=" + toSave[1] + ":" + toSave[2] + ":" + toSave[3] + ":" + toSave[4]
         preferenceManager.sharedPreferences.edit().putString("notification_snooze_options", base).apply()
-        SettingsUtils.writeGlobal(context, "notification_snooze_options", base)
+        context.writeGlobal("notification_snooze_options", base)
     }
 
     private fun parseSnoozeTimes(): ArrayList<String> {

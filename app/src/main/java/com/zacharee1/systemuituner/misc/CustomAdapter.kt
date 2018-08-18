@@ -12,7 +12,7 @@ import android.widget.TextView
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.activites.apppickers.AppsListActivity
 import com.zacharee1.systemuituner.activites.apppickers.ComponentsListActivity
-import com.zacharee1.systemuituner.util.SettingsUtils
+import com.zacharee1.systemuituner.util.writeSecure
 import java.util.*
 
 class CustomAdapter(appInfos: ArrayList<AppInfo>, private val context: Context, private val isLeft: Boolean) : RecyclerView.Adapter<CustomAdapter.CustomHolder>() {
@@ -66,9 +66,10 @@ class CustomAdapter(appInfos: ArrayList<AppInfo>, private val context: Context, 
 
                     (context as Activity).startActivityForResult(activity, 1337)
                 } else if (context is ComponentsListActivity) {
-                    SettingsUtils.writeSecure(context,
+                    context.writeSecure(
                             if (isLeft) "sysui_keyguard_left" else "sysui_keyguard_right",
-                            appInfo.packageName + "/" + appInfo.componentName)
+                            appInfo.packageName + "/" + appInfo.componentName
+                    )
                     val activity = context as Activity
                     activity.setResult(Activity.RESULT_OK)
                     activity.finish()

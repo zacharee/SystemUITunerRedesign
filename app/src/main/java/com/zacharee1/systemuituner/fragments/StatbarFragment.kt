@@ -8,7 +8,9 @@ import android.preference.SwitchPreference
 import android.provider.Settings
 import android.widget.Toast
 import com.zacharee1.systemuituner.R
-import com.zacharee1.systemuituner.util.SettingsUtils
+import com.zacharee1.systemuituner.util.changeBlacklist
+import com.zacharee1.systemuituner.util.updateBlacklistSwitches
+import com.zacharee1.systemuituner.util.writeSecure
 import java.io.BufferedReader
 import java.io.FileOutputStream
 import java.io.InputStreamReader
@@ -60,7 +62,7 @@ open class StatbarFragment : AnimFragment() {
         val auto = findPreference(AUTO_DETECT)
 
         resetBL?.onPreferenceClickListener = Preference.OnPreferenceClickListener {
-            SettingsUtils.writeSecure(context, ICON_BLACKLIST, null)
+            context.writeSecure(ICON_BLACKLIST, null)
             setSwitchPreferenceStates()
             true
         }
@@ -101,7 +103,7 @@ open class StatbarFragment : AnimFragment() {
     }
 
     private fun setSwitchPreferenceStates() {
-        SettingsUtils.shouldSetSwitchChecked(this)
+        updateBlacklistSwitches()
     }
 
     internal fun switchPreferenceListeners() {
@@ -113,7 +115,7 @@ open class StatbarFragment : AnimFragment() {
                         val key = preference.key
                         val value = java.lang.Boolean.valueOf(o.toString())
 
-                        SettingsUtils.changeBlacklist(key, value, context)
+                        context.changeBlacklist(key, value)
                         true
                     }
                 }
@@ -145,7 +147,7 @@ open class StatbarFragment : AnimFragment() {
         Toast.makeText(activity, R.string.backup_restored, Toast.LENGTH_SHORT).show()
 
         stream.close()
-        SettingsUtils.writeSecure(activity, ICON_BLACKLIST, bl)
+        context.writeSecure(ICON_BLACKLIST, bl)
         setSwitchPreferenceStates()
     }
 

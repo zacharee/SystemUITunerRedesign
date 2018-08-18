@@ -15,7 +15,7 @@ import com.zacharee1.systemuituner.activites.BaseAnimActivity
 import com.zacharee1.systemuituner.fragments.AnimFragment
 import com.zacharee1.systemuituner.handlers.ImmersiveHandler
 import com.zacharee1.systemuituner.misc.AppInfo
-import com.zacharee1.systemuituner.util.Utils
+import com.zacharee1.systemuituner.util.getInstalledApps
 import io.reactivex.Observable
 import io.reactivex.schedulers.Schedulers
 import java.util.*
@@ -29,7 +29,7 @@ class ImmersiveSelectActivity : BaseAnimActivity() {
 
         val bar = findViewById<CircleProgressBar>(R.id.app_load_progress)
 
-        Observable.fromCallable { Utils.getInstalledApps(this) }
+        Observable.fromCallable { getInstalledApps() }
                 .subscribeOn(Schedulers.io())
                 .observeOn(Schedulers.io())
                 .subscribe {

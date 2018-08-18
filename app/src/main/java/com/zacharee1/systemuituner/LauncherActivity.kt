@@ -9,7 +9,8 @@ import com.zacharee1.systemuituner.activites.BaseAnimActivity
 import com.zacharee1.systemuituner.activites.info.IntroActivity
 import com.zacharee1.systemuituner.activites.instructions.SetupActivity
 import com.zacharee1.systemuituner.util.SuUtils
-import com.zacharee1.systemuituner.util.Utils
+import com.zacharee1.systemuituner.util.checkPermissions
+import com.zacharee1.systemuituner.util.startUp
 import io.fabric.sdk.android.Fabric
 
 class LauncherActivity : BaseAnimActivity() {
@@ -24,25 +25,24 @@ class LauncherActivity : BaseAnimActivity() {
         if (preferences.getBoolean("show_intro", true)) {
             startActivity(Intent(this, IntroActivity::class.java))
         } else {
-            val perms = arrayOf(Manifest.permission.WRITE_SECURE_SETTINGS, Manifest.permission.DUMP, Manifest.permission.PACKAGE_USAGE_STATS)
+            val perms = arrayListOf(Manifest.permission.WRITE_SECURE_SETTINGS, Manifest.permission.DUMP, Manifest.permission.PACKAGE_USAGE_STATS)
 
-            val ret = Utils.checkPermissions(this, perms)
+            val ret = checkPermissions(perms)
+            ret.removeAll(SetupActivity.NOT_REQUIRED)
 
             if (ret.isNotEmpty()) {
                 if (SuUtils.testSudo()) {
-                    SuUtils.sudo("pm grant com.zacharee1.systemuituner android.permission.WRITE_SECURE_SETTINGS ; " +
-                            "pm grant com.zacharee1.systemuituner android.permission.DUMP ; " +
-                            "pm grant com.zacharee1.systemuituner android.permission.PACKAGE_USAGE_STATS")
-                    Utils.startUp(this)
+                    SuUtils.sudo("pm grant $packageName ${Manifest.permission.WRITE_SECURE_SETTINGS} ; " +
+                            "pm grant $packageName ${Manifest.permission.DUMP} ; " +
+                            "pm grant $packageName ${Manifest.permission.PACKAGE_USAGE_STATS}")
+                    startUp()
                     finish()
                 } else {
-                    val intent = Intent(this, SetupActivity::class.java)
-                    intent.putExtra("permission_needed", ret)
-                    startActivity(intent)
+                    SetupActivity.make(this, ret)
                     finish()
                 }
             } else {
-                Utils.startUp(this)
+                startUp()
                 finish()
             }
         }

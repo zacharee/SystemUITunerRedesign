@@ -7,7 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.fragments.StatbarFragment
-import com.zacharee1.systemuituner.util.SettingsUtils
+import com.zacharee1.systemuituner.util.changeBlacklist
+import com.zacharee1.systemuituner.util.writeSecure
 
 class StatBarWarnPref : RedTextPref {
     constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int, defStyleRes: Int) : super(context, attrs, defStyleAttr, defStyleRes)
@@ -45,8 +46,8 @@ class StatBarWarnPref : RedTextPref {
         }
 
         private fun performUninstall() {
-            SettingsUtils.writeSecure(context, "sysui_tuner_version", 0)
-            SettingsUtils.writeSecure(context, StatbarFragment.ICON_BLACKLIST, null)
+            context.writeSecure("sysui_tuner_version", 0)
+            context.writeSecure(StatbarFragment.ICON_BLACKLIST, null)
 
             setTitle(context.resources.getString(R.string.done))
             setMessage(context.resources.getString(R.string.fix_rotation_done_uninstall))
@@ -60,7 +61,7 @@ class StatBarWarnPref : RedTextPref {
         }
 
         private fun performStay() {
-            SettingsUtils.changeBlacklist("rotate", false, context)
+            context.changeBlacklist("rotate", false)
 
             setTitle(context.resources.getString(R.string.done))
             setMessage(context.resources.getString(R.string.fix_rotation_done_stay))

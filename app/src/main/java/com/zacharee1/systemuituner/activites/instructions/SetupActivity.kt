@@ -1,7 +1,10 @@
 package com.zacharee1.systemuituner.activites.instructions
 
+import android.Manifest
 import android.annotation.SuppressLint
+import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.content.res.ColorStateList
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -15,12 +18,28 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import com.github.paolorotolo.appintro.AppIntro2
 import com.zacharee1.systemuituner.R
-import com.zacharee1.systemuituner.util.Utils
-import java.util.*
-import kotlin.collections.ArrayList
+import com.zacharee1.systemuituner.util.checkPermissions
+import com.zacharee1.systemuituner.util.pxToDp
+import com.zacharee1.systemuituner.util.startUp
 
 class SetupActivity : AppIntro2() {
-    private var permissionsNeeded: Array<String>? = null
+    companion object {
+        const val PERMISSION_NEEDED = "permission_needed"
+
+        val NOT_REQUIRED = arrayListOf(
+                Manifest.permission.DUMP,
+                Manifest.permission.PACKAGE_USAGE_STATS
+        )
+
+        fun make(context: Context, permissions: ArrayList<String>) {
+            val intent = Intent(context, SetupActivity::class.java)
+            intent.putStringArrayListExtra(PERMISSION_NEEDED, permissions)
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            context.startActivity(intent)
+        }
+    }
+
+    private var permissionsNeeded: ArrayList<String>? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,7 +53,7 @@ class SetupActivity : AppIntro2() {
         val intent = intent
 
         if (intent != null) {
-            permissionsNeeded = intent.getStringArrayExtra("permission_needed")
+            permissionsNeeded = ArrayList(intent.getStringArrayListExtra(PERMISSION_NEEDED).filterNot { checkCallingOrSelfPermission(it) == PackageManager.PERMISSION_GRANTED })
 
             addSlide(PermsFragment.newInstance(
                     resources.getString(R.string.permissions),
@@ -47,20 +66,21 @@ class SetupActivity : AppIntro2() {
 
     override fun onDonePressed(currentFragment: Fragment?) {
         if (permissionsNeeded != null) {
-            val missing = Utils.checkPermissions(this, permissionsNeeded!!)
+            val missing = checkPermissions(permissionsNeeded!!)
+            missing.removeAll(NOT_REQUIRED)
 
             if (missing.isNotEmpty()) {
                 AlertDialog.Builder(this)
                         .setTitle(R.string.missing_perms)
-                        .setMessage(Arrays.toString(missing))
+                        .setMessage(missing.toString())
                         .setPositiveButton(R.string.ok, null)
                         .show()
             } else {
-                Utils.startUp(this)
+                startUp()
                 finish()
             }
         } else {
-            Utils.startUp(this)
+            startUp()
             finish()
         }
     }
@@ -73,7 +93,7 @@ class SetupActivity : AppIntro2() {
         if (permissionsNeeded == null) return
 
         val intent = Intent(this, InstructionsActivity::class.java)
-        intent.putStringArrayListExtra(InstructionsActivity.ARG_COMMANDS, ArrayList(permissionsNeeded!!.toList()))
+        intent.putStringArrayListExtra(InstructionsActivity.ARG_COMMANDS, permissionsNeeded)
         startActivity(intent)
     }
 
@@ -96,7 +116,7 @@ class SetupActivity : AppIntro2() {
             desc.text = args.getString("description", "")
 
             val text = mView!!.findViewById<LinearLayout>(R.id.perms_layout)
-            val perms = args.getStringArray("permissions")
+            val perms = args.getStringArrayList("permissions")
 
             if (perms != null) {
                 for (perm in perms) {
@@ -109,7 +129,7 @@ class SetupActivity : AppIntro2() {
                     textView.text = command + perm
                     textView.setPadding(
                             0,
-                            Utils.pxToDp(activity!!, 8f).toInt(),
+                            activity!!.pxToDp(8f).toInt(),
                             0,
                             0
                     )
@@ -122,14 +142,13 @@ class SetupActivity : AppIntro2() {
         }
 
         companion object {
-
-            fun newInstance(title: String, description: String, permissions: Array<String>?, color: Int): PermsFragment {
+            fun newInstance(title: String, description: String, permissions: ArrayList<String>?, color: Int): PermsFragment {
                 val fragment = PermsFragment()
                 val args = Bundle()
                 args.putString("title", title)
                 args.putString("description", description)
                 args.putInt("color", color)
-                args.putStringArray("permissions", permissions)
+                args.putStringArrayList("permissions", permissions)
                 fragment.arguments = args
                 return fragment
             }

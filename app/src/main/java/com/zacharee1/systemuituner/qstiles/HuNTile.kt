@@ -11,7 +11,7 @@ import android.service.quicksettings.Tile
 import android.service.quicksettings.TileService
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.fragments.MiscFragment
-import com.zacharee1.systemuituner.util.SettingsUtils
+import com.zacharee1.systemuituner.util.writeGlobal
 
 @TargetApi(24)
 class HuNTile : TileService() {
@@ -45,7 +45,7 @@ class HuNTile : TileService() {
     }
 
     override fun onClick() {
-        SettingsUtils.writeGlobal(this, MiscFragment.HUD_ENABLED, if (isEnabled) 0 else 1)
+        writeGlobal(MiscFragment.HUD_ENABLED, if (isEnabled) 0 else 1)
         setState()
 
         super.onClick()

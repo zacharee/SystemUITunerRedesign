@@ -1,7 +1,6 @@
 package com.zacharee1.systemuituner.activites.info
 
 import android.Manifest
-import android.content.Intent
 import android.os.Bundle
 import android.preference.PreferenceManager
 import android.support.v4.app.Fragment
@@ -15,7 +14,8 @@ import com.github.paolorotolo.appintro.ISlideBackgroundColorHolder
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.activites.instructions.SetupActivity
 import com.zacharee1.systemuituner.util.SuUtils
-import com.zacharee1.systemuituner.util.Utils
+import com.zacharee1.systemuituner.util.checkPermissions
+import com.zacharee1.systemuituner.util.startUp
 
 class IntroActivity : AppIntro2() {
 
@@ -82,25 +82,23 @@ class IntroActivity : AppIntro2() {
     }
 
     override fun onDonePressed(currentFragment: Fragment?) {
-        val perms = arrayOf(Manifest.permission.WRITE_SECURE_SETTINGS, Manifest.permission.DUMP, Manifest.permission.PACKAGE_USAGE_STATS)
+        val perms = arrayListOf(Manifest.permission.WRITE_SECURE_SETTINGS, Manifest.permission.DUMP, Manifest.permission.PACKAGE_USAGE_STATS)
 
-        val ret = Utils.checkPermissions(this, perms)
+        val ret = checkPermissions(perms)
 
         if (ret.isNotEmpty()) {
             if (SuUtils.testSudo()) {
-                SuUtils.sudo("pm grant com.zacharee1.systemuituner ${Manifest.permission.WRITE_SECURE_SETTINGS} ; " +
-                        "pm grant com.zacharee1.systemuituner ${Manifest.permission.DUMP} ; " +
-                        "pm grant com.zacharee1.systemuituner ${Manifest.permission.PACKAGE_USAGE_STATS}")
-                Utils.startUp(this)
+                SuUtils.sudo("pm grant $packageName ${Manifest.permission.WRITE_SECURE_SETTINGS} ; " +
+                        "pm grant $packageName ${Manifest.permission.DUMP} ; " +
+                        "pm grant $packageName ${Manifest.permission.PACKAGE_USAGE_STATS}")
+                startUp()
                 finishAndSave()
             } else {
-                val intent = Intent(this, SetupActivity::class.java)
-                intent.putExtra("permission_needed", ret)
-                startActivity(intent)
+                SetupActivity.make(this, ret)
                 finishAndSave()
             }
         } else {
-            Utils.startUp(this)
+            startUp()
             finishAndSave()
         }
     }

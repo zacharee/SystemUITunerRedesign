@@ -7,7 +7,7 @@ import android.os.Build
 import android.provider.Settings
 import android.service.quicksettings.Tile
 import android.service.quicksettings.TileService
-import com.zacharee1.systemuituner.util.SettingsUtils
+import com.zacharee1.systemuituner.util.writeSecure
 
 @TargetApi(24)
 class NightModeTile : TileService() {
@@ -53,14 +53,14 @@ class NightModeTile : TileService() {
 
         if (isActive) {
             if (Build.VERSION.SDK_INT == Build.VERSION_CODES.N)
-                SettingsUtils.writeSecure(this, "twilight_mode", 0)
+                writeSecure("twilight_mode", 0)
             else
-                SettingsUtils.writeSecure(this, "night_display_activated", 0)
+                writeSecure("night_display_activated", 0)
         } else {
             if (Build.VERSION.SDK_INT == Build.VERSION_CODES.N)
-                SettingsUtils.writeSecure(this, "twilight_mode", 1)
+                writeSecure("twilight_mode", 1)
             else
-                SettingsUtils.writeSecure(this, "night_display_activated", 1)
+                writeSecure("night_display_activated", 1)
         }
 
         onStartListening()

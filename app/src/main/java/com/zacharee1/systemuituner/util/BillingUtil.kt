@@ -78,7 +78,7 @@ class BillingUtil(private val mActivity: Activity) {
     companion object {
 
         fun onDonatePayPalClicked(activity: Activity) {
-            val labsInstalled = Utils.isPackageInstalled("com.xda.labs", activity.packageManager)
+            val labsInstalled = activity.packageManager.isPackageInstalled("com.xda.labs")
             val uri = Uri.parse(if (labsInstalled) "https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=zachary.wander@gmail.com" else "https://forum.xda-developers.com/donatetome.php?u=7055541")
             val intent = Intent(Intent.ACTION_VIEW, uri)
             activity.startActivity(intent)

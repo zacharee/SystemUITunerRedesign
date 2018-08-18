@@ -11,7 +11,7 @@ import android.view.View
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.fragments.AnimFragment
 import com.zacharee1.systemuituner.misc.OptionSelected
-import com.zacharee1.systemuituner.util.Utils
+import com.zacharee1.systemuituner.util.checkSamsung
 
 class OptionsActivity : BaseAnimActivity() {
     companion object {
@@ -115,7 +115,7 @@ class OptionsActivity : BaseAnimActivity() {
         }
 
         private fun removeTouchWizIfNeeded() {
-            if (!Utils.checkSamsung(activity)) preferenceScreen.removePreference(findPreference("touchwiz") ?: return)
+            if (!activity.checkSamsung()) preferenceScreen.removePreference(findPreference("touchwiz") ?: return)
         }
 
         private fun removeLockScreenIfNeeded() {

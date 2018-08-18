@@ -16,11 +16,11 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import com.zacharee1.systemuituner.R
-import com.zacharee1.systemuituner.util.SettingsUtils
+import com.zacharee1.systemuituner.util.writeSecure
 import java.util.*
 import java.util.regex.Pattern
 
-class QSDragAdapter(private val mContext: Context) : RecyclerView.Adapter<QSDragAdapter.QSViewHolder>() {
+class QSDragAdapter(private val context: Context) : RecyclerView.Adapter<QSDragAdapter.QSViewHolder>() {
     var mTiles = ArrayList<QSTile>()
 
     var mAvailableTiles = ArrayList<QSTile>()
@@ -30,12 +30,12 @@ class QSDragAdapter(private val mContext: Context) : RecyclerView.Adapter<QSDrag
             val order = defaultTileOrder
             val array = order.split(",")
 
-            return array.mapTo(ArrayList()) { QSTile(it, mContext) }
+            return array.mapTo(ArrayList()) { QSTile(it, context) }
         }
 
     private val defaultTileOrder: String
         get() {
-            val pm = mContext.packageManager
+            val pm = context.packageManager
 
             return try {
                 val resources = pm.getResourcesForApplication("com.android.systemui")
@@ -53,7 +53,7 @@ class QSDragAdapter(private val mContext: Context) : RecyclerView.Adapter<QSDrag
     }
 
     fun parseTileList() {
-        var tiles: String? = Settings.Secure.getString(mContext.contentResolver, "sysui_qs_tiles")
+        var tiles: String? = Settings.Secure.getString(context.contentResolver, "sysui_qs_tiles")
 
         if (tiles == null || tiles.isEmpty()) {
             tiles = defaultTileOrder
@@ -61,7 +61,7 @@ class QSDragAdapter(private val mContext: Context) : RecyclerView.Adapter<QSDrag
 
         val tileArray = tiles.split(",")
 
-        val tempTiles = tileArray.map { QSTile(it, mContext) }
+        val tempTiles = tileArray.map { QSTile(it, context) }
 
         mTiles.clear()
         mTiles.addAll(tempTiles)
@@ -93,7 +93,7 @@ class QSDragAdapter(private val mContext: Context) : RecyclerView.Adapter<QSDrag
 
         val tileString = TextUtils.join(",", keys)
 
-        SettingsUtils.writeSecure(mContext, "sysui_qs_tiles", tileString)
+        context.writeSecure("sysui_qs_tiles", tileString)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): QSViewHolder {
@@ -105,14 +105,14 @@ class QSDragAdapter(private val mContext: Context) : RecyclerView.Adapter<QSDrag
         holder.setTitle(mTiles[holder.adapterPosition].title)
         holder.setIcon(mTiles[holder.adapterPosition].icon)
         holder.setCloseListener(View.OnClickListener {
-            AlertDialog.Builder(mContext)
+            AlertDialog.Builder(context)
                     .setTitle(R.string.removing_tile)
                     .setMessage(String.format(holder.context.resources.getString(R.string.remove_tile), mTiles[holder.adapterPosition].title))
-                    .setPositiveButton(R.string.yes, { _, _ ->
+                    .setPositiveButton(R.string.yes) { _, _ ->
                         mTiles.removeAt(holder.adapterPosition)
                         setOrder(mTiles)
                         notifyItemRemoved(holder.adapterPosition)
-                    })
+                    }
                     .setNegativeButton(R.string.no, null)
                     .show()
         })

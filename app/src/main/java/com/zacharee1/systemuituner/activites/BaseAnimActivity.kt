@@ -18,7 +18,7 @@ import android.widget.LinearLayout
 import android.widget.TextSwitcher
 import android.widget.TextView
 import com.zacharee1.systemuituner.R
-import com.zacharee1.systemuituner.util.Utils
+import com.zacharee1.systemuituner.util.isInDarkMode
 
 @SuppressLint("Registered")
 open class BaseAnimActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferenceChangeListener {
@@ -29,7 +29,7 @@ open class BaseAnimActivity : AppCompatActivity(), SharedPreferences.OnSharedPre
     var title: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        setTheme(if (Utils.isInDarkMode(this)) R.style.AppTheme_Dark else R.style.AppTheme)
+        setTheme(if (isInDarkMode()) R.style.AppTheme_Dark else R.style.AppTheme)
 
         super.onCreate(savedInstanceState)
 
@@ -43,7 +43,7 @@ open class BaseAnimActivity : AppCompatActivity(), SharedPreferences.OnSharedPre
         setSupportActionBar(toolbar)
         hideTitleView()
 
-        toolbar.popupTheme = if (Utils.isInDarkMode(this)) R.style.AppTheme_PopupTheme_Dark else R.style.AppTheme_PopupTheme_Light
+        toolbar.popupTheme = if (isInDarkMode()) R.style.AppTheme_PopupTheme_Dark else R.style.AppTheme_PopupTheme_Light
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowHomeEnabled(true)

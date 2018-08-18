@@ -16,7 +16,8 @@ import android.provider.Settings
 import android.support.v4.app.NotificationCompat
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.activites.settings.SettingsActivity
-import com.zacharee1.systemuituner.util.SettingsUtils
+import com.zacharee1.systemuituner.util.writeGlobal
+import com.zacharee1.systemuituner.util.writeSecure
 
 class SafeModeService : Service() {
     private var shutDownReceiver: ShutDownReceiver? = null
@@ -135,7 +136,7 @@ class SafeModeService : Service() {
         restoreBlacklist()
         restoreFancyAnim()
 
-        SettingsUtils.writeGlobal(this, "system_booted", 0)
+        writeGlobal("system_booted", 0)
     }
 
     private fun restoreBlacklist() {
@@ -146,7 +147,7 @@ class SafeModeService : Service() {
                 val blacklistBackup = Settings.Global.getString(contentResolver, "icon_blacklist_backup")
 
                 if (blacklistBackup != null && !blacklistBackup.isEmpty()) {
-                    SettingsUtils.writeSecure(this, "icon_blacklist", blacklistBackup)
+                    writeSecure("icon_blacklist", blacklistBackup)
                 }
             }
         }
@@ -160,7 +161,7 @@ class SafeModeService : Service() {
                 val backupState = Settings.Global.getString(contentResolver, "sysui_qs_fancy_anim_backup")
 
                 if (backupState != null && !backupState.isEmpty()) {
-                    SettingsUtils.writeSecure(this, "sysui_qs_fancy_anim", backupState)
+                    writeSecure("sysui_qs_fancy_anim", backupState)
                 }
             }
         }
@@ -169,7 +170,7 @@ class SafeModeService : Service() {
     private fun restoreQSHeaderCount() {
         if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M && headerCount) {
             val count = preferences.getInt("qs_header_count", -1)
-            if (count != -1) SettingsUtils.writeSecure(this, "sysui_qqs_count", count)
+            if (count != -1) writeSecure("sysui_qqs_count", count)
         }
     }
 
@@ -194,8 +195,8 @@ class SafeModeService : Service() {
             val row = preferences.getInt("qs_tile_row", -1)
             val col = preferences.getInt("qs_tile_column", -1)
 
-            if (row != -1) SettingsUtils.writeSecure(this, "qs_tile_row", row)
-            if (col != -1) SettingsUtils.writeSecure(this, "qs_tile_column", col)
+            if (row != -1) writeSecure("qs_tile_row", row)
+            if (col != -1) writeSecure("qs_tile_column", col)
         }
     }
 
@@ -204,7 +205,7 @@ class SafeModeService : Service() {
             val saved = preferences.getString("notification_snooze_options", "")
 
             if (!saved.isEmpty()) {
-                SettingsUtils.writeGlobal(this, "notification_snooze_options", saved)
+                writeGlobal("notification_snooze_options", saved)
             }
         }
     }
@@ -219,8 +220,8 @@ class SafeModeService : Service() {
     private fun saveFancyAnim() {
         if (fancyAnim) {
             val anim = Settings.Secure.getString(contentResolver, "sysui_qs_fancy_anim")
-            SettingsUtils.writeGlobal(this, "sysui_qs_fancy_anim_backup", anim)
-            SettingsUtils.writeSecure(this, "sysui_qs_fancy_anim", null)
+            writeGlobal("sysui_qs_fancy_anim_backup", anim)
+            writeSecure("sysui_qs_fancy_anim", null)
         }
     }
 
@@ -235,11 +236,11 @@ class SafeModeService : Service() {
         if (statusBar) {
             val blacklist = Settings.Secure.getString(contentResolver, "icon_blacklist")
 
-            SettingsUtils.writeGlobal(this, "icon_blacklist_backup", blacklist)
-            SettingsUtils.writeSecure(this, "icon_blacklist", null)
+            writeGlobal("icon_blacklist_backup", blacklist)
+            writeSecure("icon_blacklist", null)
 
             if (restore) {
-                handler.postDelayed({ SettingsUtils.writeSecure(this@SafeModeService, "icon_blacklist", blacklist) }, 400)
+                handler.postDelayed({ writeSecure("icon_blacklist", blacklist) }, 400)
             }
         }
     }

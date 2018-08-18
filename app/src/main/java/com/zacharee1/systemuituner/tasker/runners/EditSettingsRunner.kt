@@ -7,7 +7,9 @@ import com.joaomgcd.taskerpluginlibrary.runner.TaskerPluginResult
 import com.joaomgcd.taskerpluginlibrary.runner.TaskerPluginResultError
 import com.joaomgcd.taskerpluginlibrary.runner.TaskerPluginResultSucess
 import com.zacharee1.systemuituner.tasker.inputs.SettingsInput
-import com.zacharee1.systemuituner.util.SettingsUtils
+import com.zacharee1.systemuituner.util.writeGlobal
+import com.zacharee1.systemuituner.util.writeSecure
+import com.zacharee1.systemuituner.util.writeSystem
 
 class EditSettingsRunner: TaskerPluginRunnerActionNoOutput<SettingsInput>() {
     companion object {
@@ -30,9 +32,9 @@ class EditSettingsRunner: TaskerPluginRunnerActionNoOutput<SettingsInput>() {
 
     private fun write(context: Context, key: String, value: String?, type: String?): Boolean {
         return when (type) {
-            GLOBAL -> SettingsUtils.writeGlobal(context, key, value)
-            SECURE -> SettingsUtils.writeSecure(context, key, value)
-            SYSTEM -> SettingsUtils.writeSystem(context, key, value)
+            GLOBAL -> context.writeGlobal(key, value)
+            SECURE -> context.writeSecure(key, value)
+            SYSTEM -> context.writeSystem(key, value)
             else -> false
         }
     }

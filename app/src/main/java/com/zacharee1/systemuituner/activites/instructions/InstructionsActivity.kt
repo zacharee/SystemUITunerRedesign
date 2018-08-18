@@ -23,7 +23,7 @@ import android.widget.TextView
 import com.github.paolorotolo.appintro.AppIntro2
 import com.github.paolorotolo.appintro.ISlideBackgroundColorHolder
 import com.zacharee1.systemuituner.R
-import com.zacharee1.systemuituner.util.Utils
+import com.zacharee1.systemuituner.util.pxToDp
 import java.util.*
 
 class InstructionsActivity : AppIntro2() {
@@ -322,7 +322,7 @@ class InstructionsActivity : AppIntro2() {
                 textView.text = PREFIX + command
                 textView.setPadding(
                         0,
-                        Utils.pxToDp(activity!!, 8f).toInt(),
+                        activity!!.pxToDp(8f).toInt(),
                         0,
                         0
                 )

@@ -53,7 +53,7 @@
             android:layout_height="wrap_content"
             android:onClick="launchInstructions"
             android:layout_gravity="center_horizontal"
-            android:text="@string/instructions"/>
+            android:text="@string/need_help"/>
 
     </LinearLayout>
 </LinearLayout>

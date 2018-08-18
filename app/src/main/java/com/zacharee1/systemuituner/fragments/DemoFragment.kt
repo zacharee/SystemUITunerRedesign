@@ -11,9 +11,10 @@ import android.preference.SwitchPreference
 import android.provider.Settings
 import android.widget.Toast
 import com.zacharee1.systemuituner.R
-import com.zacharee1.systemuituner.activites.instructions.SetupActivity
+import com.zacharee1.systemuituner.activites.instructions.SetupActivity.Companion.make
 import com.zacharee1.systemuituner.handlers.DemoHandler
-import com.zacharee1.systemuituner.util.SettingsUtils
+import com.zacharee1.systemuituner.util.hasSpecificPerm
+import com.zacharee1.systemuituner.util.writeGlobal
 
 class DemoFragment : AnimFragment() {
     private var switchReceiver: BroadcastReceiver? = null
@@ -26,13 +27,11 @@ class DemoFragment : AnimFragment() {
         if (enter) {
             addPreferencesFromResource(R.xml.pref_demo)
             demoHandler = DemoHandler(context)
-            if (SettingsUtils.hasSpecificPerm(context, Manifest.permission.DUMP)) {
+            if (context.hasSpecificPerm(Manifest.permission.DUMP)) {
                 setPrefListeners()
                 setDemoSwitchListener()
             } else {
-                val intent = Intent(context, SetupActivity::class.java)
-                intent.putExtra(PERMISSION_NEEDED, arrayOf(Manifest.permission.DUMP))
-                startActivity(intent)
+                make(context, arrayListOf(Manifest.permission.DUMP))
 
                 activity?.finish()
             }
@@ -44,7 +43,7 @@ class DemoFragment : AnimFragment() {
         enableDemo?.isEnabled = Settings.Global.getInt(context?.contentResolver, DEMO_ALLOWED, 0) == 0
         enableDemo?.onPreferenceClickListener = Preference.OnPreferenceClickListener { preference ->
             if (activity?.checkCallingOrSelfPermission(Manifest.permission.DUMP) == PackageManager.PERMISSION_GRANTED) {
-                SettingsUtils.writeGlobal(context, preference.key, 1)
+                context.writeGlobal(preference.key, 1)
                 findPreference(SHOW_DEMO)?.isEnabled = true
             } else {
                 Toast.makeText(context, resources?.getString(R.string.grant_dump_perm), Toast.LENGTH_LONG).show()
@@ -114,7 +113,6 @@ class DemoFragment : AnimFragment() {
     }
 
     companion object {
-        const val PERMISSION_NEEDED = "permission_needed"
         const val DEMO_ALLOWED = "sysui_demo_allowed"
         const val SHOW_DEMO = "show_demo"
 

@@ -6,7 +6,8 @@ import android.provider.Settings
 import com.jaredrummler.android.colorpicker.ColorPreference
 import com.pavelsikun.seekbarpreference.SeekBarPreference
 import com.zacharee1.systemuituner.R
-import com.zacharee1.systemuituner.util.SettingsUtils
+import com.zacharee1.systemuituner.util.writeGlobal
+import com.zacharee1.systemuituner.util.writeSecure
 
 class TWFragment : StatbarFragment() {
     companion object {
@@ -36,7 +37,7 @@ class TWFragment : StatbarFragment() {
         val savedColVal = Settings.Secure.getInt(activity?.contentResolver, columns.key, defVal)
 
         val listener = Preference.OnPreferenceChangeListener { preference, newValue ->
-            SettingsUtils.writeSecure(activity, preference.key, newValue.toString().toFloat().toInt())
+            activity.writeSecure(preference.key, newValue.toString().toFloat().toInt())
             true
         }
 
@@ -53,8 +54,8 @@ class TWFragment : StatbarFragment() {
 
         preference.saveValue(savedVal)
         preference.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { _, newValue ->
-            SettingsUtils.writeGlobal(context, NAVBAR_COLOR, newValue.toString())
-            SettingsUtils.writeGlobal(context, NAVBAR_CURRENT_COLOR, newValue.toString())
+            context.writeGlobal(NAVBAR_COLOR, newValue.toString())
+            context.writeGlobal(NAVBAR_CURRENT_COLOR, newValue.toString())
             true
         }
     }

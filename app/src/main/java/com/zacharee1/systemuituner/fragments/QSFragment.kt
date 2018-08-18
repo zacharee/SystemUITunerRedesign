@@ -9,7 +9,7 @@ import android.provider.Settings
 import com.pavelsikun.seekbarpreference.SeekBarPreference
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.activites.QuickSettingsLayoutEditor
-import com.zacharee1.systemuituner.util.SettingsUtils
+import com.zacharee1.systemuituner.util.writeSecure
 
 class QSFragment : AnimFragment() {
     override fun onSetTitle() = resources.getString(R.string.quick_settings)
@@ -56,7 +56,7 @@ class QSFragment : AnimFragment() {
                         //if current preference is a SwitchPreference
 
                         it.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { preference, o ->
-                            SettingsUtils.writeSecure(context, preference.key, if (o.toString().toBoolean()) 1 else 0)
+                            context.writeSecure(preference.key, if (o.toString().toBoolean()) 1 else 0)
                             true
                         }
                     }
@@ -77,7 +77,7 @@ class QSFragment : AnimFragment() {
             val pref = findPreference(QQS_COUNT) as SeekBarPreference //find the SliderPreference
             //            pref.set<in(1);
             pref.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { _, o ->
-                SettingsUtils.writeSecure(context, QQS_COUNT, o.toString().toFloat().toInt()) //write new value to Settings if user presses OK
+                context.writeSecure(QQS_COUNT, o.toString().toFloat().toInt()) //write new value to Settings if user presses OK
                 true
             }
 

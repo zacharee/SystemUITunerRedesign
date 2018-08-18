@@ -14,7 +14,7 @@ import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.activites.BaseAnimActivity
 import com.zacharee1.systemuituner.misc.AppInfo
 import com.zacharee1.systemuituner.misc.CustomAdapter
-import com.zacharee1.systemuituner.util.Utils
+import com.zacharee1.systemuituner.util.getInstalledApps
 import java.util.*
 
 class AppsListActivity : BaseAnimActivity() {
@@ -23,7 +23,7 @@ class AppsListActivity : BaseAnimActivity() {
         get() {
             val appMap = TreeMap<String, AppInfo>()
 
-            val apps = Utils.getInstalledApps(this)
+            val apps = getInstalledApps()
 
             val bar = findViewById<CircleProgressBar>(R.id.progress)
 

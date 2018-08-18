@@ -24,7 +24,7 @@ import android.widget.FrameLayout
 import android.widget.TextView
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.misc.QSDragAdapter
-import com.zacharee1.systemuituner.util.Utils
+import com.zacharee1.systemuituner.util.pxToDp
 import java.util.*
 
 class QuickSettingsLayoutEditor : BaseAnimActivity() {
@@ -112,24 +112,24 @@ class QuickSettingsLayoutEditor : BaseAnimActivity() {
     }
 
     private class AddTileView(context: Context, private val mDragAdapter: QSDragAdapter) : AlertDialog(context) {
-        private val mAvailableTiles: ArrayList<QSDragAdapter.QSTile>
+        private val availableTiles: ArrayList<QSDragAdapter.QSTile>
         @SuppressLint("InflateParams")
-        private val mView: View = LayoutInflater.from(context).inflate(R.layout.activity_blank_recycler, null, false)
+        private val view: View = LayoutInflater.from(context).inflate(R.layout.activity_blank_recycler, null, false)
 
         init {
-            mView.setPadding(0, Utils.pxToDp(context, 16f).toInt(), 0, Utils.pxToDp(context, 16f).toInt())
+            view.setPadding(0, context.pxToDp(16f).toInt(), 0, context.pxToDp(16f).toInt())
 
-            setView(mView)
+            setView(view)
 
-            mAvailableTiles = ArrayList(mDragAdapter.mAvailableTiles)
+            availableTiles = ArrayList(mDragAdapter.mAvailableTiles)
             val intent = QSDragAdapter.QSTile("intent()", context)
             intent.title = getContext().resources.getString(R.string.intent)
-            mAvailableTiles.add(intent)
+            availableTiles.add(intent)
             setUpRecView()
         }
 
         private fun setUpRecView() {
-            val recyclerView = mView.findViewById<RecyclerView>(R.id.content_main)
+            val recyclerView = view.findViewById<RecyclerView>(R.id.content_main)
             recyclerView.adapter = AddAdapter()
             recyclerView.layoutManager = LinearLayoutManager(context)
             recyclerView.addItemDecoration(DividerItemDecoration(context, DividerItemDecoration.VERTICAL))
@@ -144,7 +144,7 @@ class QuickSettingsLayoutEditor : BaseAnimActivity() {
             @SuppressLint("InflateParams")
             override fun onBindViewHolder(holder: AddVH, position: Int) {
                 holder.mView.setOnClickListener {
-                    if (!mAvailableTiles[holder.adapterPosition].key.contains("intent(")) {
+                    if (!availableTiles[holder.adapterPosition].key.contains("intent(")) {
                         addTile(holder, true)
                     } else {
                         val dialogView = LayoutInflater.from(context).inflate(R.layout.dialog_text_input, null, false)
@@ -153,24 +153,24 @@ class QuickSettingsLayoutEditor : BaseAnimActivity() {
                                 .setView(dialogView)
                                 .setPositiveButton(R.string.ok) { _, _ ->
                                     val editText = dialogView.findViewById<EditText>(R.id.editText)
-                                    mAvailableTiles[holder.adapterPosition] = QSDragAdapter.QSTile("intent(" + editText.text.toString() + ")", context)
+                                    availableTiles[holder.adapterPosition] = QSDragAdapter.QSTile("intent(" + editText.text.toString() + ")", context)
                                     addTile(holder, false)
                                 }
                                 .setNegativeButton(R.string.cancel, null)
                                 .show()
                     }
                 }
-                holder.setText(mAvailableTiles[holder.adapterPosition].title)
+                holder.setText(availableTiles[holder.adapterPosition].title)
             }
 
             private fun addTile(holder: AddVH, removeFromAvail: Boolean) {
-                mDragAdapter.addTile(mAvailableTiles[holder.adapterPosition])
-                if (removeFromAvail) mDragAdapter.mAvailableTiles.remove(mAvailableTiles[holder.adapterPosition])
+                mDragAdapter.addTile(availableTiles[holder.adapterPosition])
+                if (removeFromAvail) mDragAdapter.mAvailableTiles.remove(availableTiles[holder.adapterPosition])
                 dismiss()
             }
 
             override fun getItemCount(): Int {
-                return mAvailableTiles.size
+                return availableTiles.size
             }
 
             inner class AddVH(internal var mView: View) : RecyclerView.ViewHolder(mView) {

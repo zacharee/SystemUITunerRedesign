@@ -6,7 +6,7 @@ import android.preference.PreferenceManager
 import android.provider.Settings
 import android.util.Log
 import com.google.firebase.analytics.FirebaseAnalytics
-import com.zacharee1.systemuituner.util.SettingsUtils
+import com.zacharee1.systemuituner.util.writeGlobal
 import java.util.*
 
 object ImmersiveHandler {
@@ -45,7 +45,7 @@ object ImmersiveHandler {
 
             val typeNew = concat(context, type)
 
-            SettingsUtils.writeGlobal(context, KEY, typeNew)
+            context?.writeGlobal(KEY, typeNew)
         } else {
             val bundle = Bundle()
             bundle.putString("mode", type)

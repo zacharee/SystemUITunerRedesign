@@ -5,7 +5,7 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.preference.PreferenceManager
 import android.provider.Settings
-import com.zacharee1.systemuituner.util.SettingsUtils
+import com.zacharee1.systemuituner.util.writeGlobal
 import java.util.concurrent.TimeUnit
 
 class DemoHandler(private val context: Context?) {
@@ -83,7 +83,7 @@ class DemoHandler(private val context: Context?) {
             intent.putExtra("speakerphone", if (spkphone()) "show" else "hide")
             context?.sendBroadcast(intent)
 
-            SettingsUtils.writeGlobal(context, "sysui_tuner_demo_on", 1)
+            context?.writeGlobal("sysui_tuner_demo_on", 1)
         } catch (e: Exception) {
             e.printStackTrace()
         }
@@ -95,7 +95,7 @@ class DemoHandler(private val context: Context?) {
         intent.putExtra("command", "exit")
         context?.sendBroadcast(intent)
 
-        SettingsUtils.writeGlobal(context, "sysui_tuner_demo_on", 0)
+        context?.writeGlobal("sysui_tuner_demo_on", 0)
     }
 
     private fun showNotifs(): Boolean {

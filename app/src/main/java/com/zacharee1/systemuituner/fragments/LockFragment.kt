@@ -11,7 +11,7 @@ import android.provider.Settings
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.activites.apppickers.AppsListActivity
 import com.zacharee1.systemuituner.prefs.LockPref
-import com.zacharee1.systemuituner.util.SettingsUtils
+import com.zacharee1.systemuituner.util.writeSecure
 
 class LockFragment : AnimFragment() {
     override fun onAnimationFinishedEnter(enter: Boolean) {
@@ -109,12 +109,12 @@ class LockFragment : AnimFragment() {
         val rightLock = findPreference(CHOOSE_RIGHT) as LockPref
 
         leftLock.resetListener = {
-            SettingsUtils.writeSecure(context, KEYGUARD_LEFT, null)
+            context.writeSecure(KEYGUARD_LEFT, null)
             setLockSummaryTitleAndIcon()
             true
         }
         rightLock.resetListener = {
-            SettingsUtils.writeSecure(context, KEYGUARD_RIGHT, null)
+            context.writeSecure(KEYGUARD_RIGHT, null)
             setLockSummaryTitleAndIcon()
             true
         }

@@ -8,7 +8,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.widget.EditText
 import com.zacharee1.systemuituner.R
-import com.zacharee1.systemuituner.util.SettingsUtils
+import com.zacharee1.systemuituner.util.writeGlobal
+import com.zacharee1.systemuituner.util.writeSecure
+import com.zacharee1.systemuituner.util.writeSystem
 
 class CustomInputPreference : DialogPreference {
     companion object {
@@ -94,9 +96,9 @@ class CustomInputPreference : DialogPreference {
         if (valueContent != null && (valueContent.isEmpty() || valueContent.isBlank())) valueContent = null
 
         when (type) {
-            GLOBAL -> SettingsUtils.writeGlobal(context, keyContent, valueContent)
-            SECURE -> SettingsUtils.writeSecure(context, keyContent, valueContent)
-            SYSTEM -> SettingsUtils.writeSystem(context, keyContent, valueContent)
+            GLOBAL -> context.writeGlobal(keyContent, valueContent)
+            SECURE -> context.writeSecure(keyContent, valueContent)
+            SYSTEM -> context.writeSystem(keyContent, valueContent)
         }
 
         val string = "$keyContent$SEPARATOR$valueContent"
