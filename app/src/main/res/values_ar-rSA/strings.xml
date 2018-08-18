@@ -8,6 +8,7 @@
   <string name="notice">إشعار</string>
   <string name="hide_welcome_screen">إخفاء شاشة الترحيب</string>
   <string name="instructions">التعليمات</string>
+  <string name="need_help">Need Help?</string>
   <string name="about">حول البرنامج</string>
   <string name="miscellaneous">خيارات متنوعة</string>
   <string name="custom">Custom</string>
@@ -275,7 +276,7 @@
   <string name="intro_3">هناك وفرة في الخيارات المحددة مسبقاً لشريط المعلومات، ولكن إذا لم تشاهد الرمز الذي تريد إخفاءه، فيمكنك محاولة ميزة الكشف التلقائي، الذي سيحاول الكشف عن الرموز التي يمكن أن تكون مخفية.</string>
   <string name="intro_4">وأفضل جزء عن هذا التطبيق؟ أنه لا حاجة إلى الجذر! وستسعى إلى الحصول على امتيازات الجذر، ولكن إذا لم يتمكن سوف تضطر إلى استخدام ADB. لا يتم استئصال الجذر عند استخدام ADB!</string>
   <string name="intro_5">بمجرد النقر على الزر \"إنهاء\"، سيحاول System Tuner الوصول للجذر. إذا كان بالإمكان، فإنها ستمنح كل الأذونات التي أنت بحاجة إليها. خلاف ذلك، سوف تظهر إرشادات لإرشادك.</string>
-  <string name="adb_setup">يجب منح الأذونات المذكورة أعلاه للإستمرار. تم رفض الوصول إلى الجذر أو غير متوفر، مما يعني أنك سوف تضطر إلى منح هذه الأذونات باستخدام ADB.</string>
+  <string name="adb_setup">The permissions above must be granted to continue. You\'ll need to use ADB. Please note: PACKAGE_USAGE_STATS and DUMP are optional for most features. SystemUI Tuner will prompt you if either or both is needed.</string>
   <string name="target_not_found">Unable to launch app.</string>
   <string name="feature_not_supported">يبدو أن جهازك لا يدعم هذه الميزة</string>
   <string name="miui_warning">يبدو أنك تستخدم جهاز MIUI. يرجى الإحاطة علما أن ميزات قليلة إن وجدت لهذا التطبيق سوف تعمل. لا يمكن حلها!</string>
@@ -284,6 +285,7 @@
   <string name="invalid_blacklist_backup">Invalid blacklist backup</string>
   <string name="backup_restored">Successfully restored backup</string>
   <string name="nothing_to_back_up">Nothing to back up</string>
+  <string name="grant_usage">Please grant SystemUI Tuner access to Usage.</string>
   <!--Instructions-->
   <string name="enable_debug"><![CDATA[1. انتقل إلى إعدادات >> "خيارات المطور" و إجعل تمكين تصحيح USB مفعل.]]></string>
   <string name="accept_auth">2. قم بتوصيل الجهاز إلى جهاز الكمبيوتر الخاص بك وقبول طلب الإذن.</string>
