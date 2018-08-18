@@ -261,6 +261,7 @@
   <string name="no_im_staying">No, I\'m Staying</string>
   <string name="fix_rotation_done_uninstall">Rotation icon removed! This won\'t take effect until you reboot.</string>
   <string name="fix_rotation_done_stay">Rotation icon removed! If it still appears, reboot your device.</string>
+  <string name="missing_not_required_perms_desc">Are you sure you want to continue? At least one optional permission wasn\'t granted, which means you will need a computer again to grant them later.</string>
   <!--Messages-->
   <string name="sorry_explain">Ada sesuatu yang tidak beres saat menyetel toggle ini.</string>
   <string name="sorry_option">Try executing the following command from a computer (it\'s one line):</string>
