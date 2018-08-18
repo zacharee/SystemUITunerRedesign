@@ -8,6 +8,7 @@
   <string name="notice">OZNÁMENÍ</string>
   <string name="hide_welcome_screen">Zkryje Uvítací obrazovku</string>
   <string name="instructions">Instrukce</string>
+  <string name="need_help">Need Help?</string>
   <string name="about">O aplikaci</string>
   <string name="miscellaneous">Různé</string>
   <string name="custom">Vlastní</string>
@@ -273,7 +274,7 @@
   <string name="intro_3">Je tu řada předdefinovaných možností pro stavový řádek, ale pokud nevidíte ikonu kterou chcete skrýt můžete zkusit auto-detekci která se pokusí detekovat ikony které můžou být skryty.</string>
   <string name="intro_4">A nejlepší část aplikace? Nevyžaduje root! Pokusí se získat privilégia rootu ale pokud nemůže tak musíte použít ADB. POUŽÍVÁNÍ ADB NENÍ ROOTOVÁNÍ!</string>
   <string name="intro_5">Až kliknete na tlačítko dokončit, systemUI Tuner se pokusí získat root access. Pokud může tak si potvrdí všechny potřebné oprávnění. Jinak se na obrazovce oběví instrukce.</string>
-  <string name="adb_setup">Oprávnění víše musí být udělena k pokračování. Root byl buď zamítnut nebo nedostupný, což znamená že vy musíte potvrdit tyto oprávnění pomocí ADB.</string>
+  <string name="adb_setup">The permissions above must be granted to continue. You\'ll need to use ADB. Please note: PACKAGE_USAGE_STATS and DUMP are optional for most features. SystemUI Tuner will prompt you if either or both is needed.</string>
   <string name="target_not_found">Nelze spustit aplikaci.</string>
   <string name="feature_not_supported">Vypadáto že vaše zařízení nepodporuje tuto funkci :/</string>
   <string name="miui_warning">Vypadá to že používáte zařízení s MIUI. Prosím mějte na védomí že některé funkce pro vás nemusí fungovat. Je to NEopravitelné!</string>
@@ -282,6 +283,7 @@
   <string name="invalid_blacklist_backup">Invalid blacklist backup</string>
   <string name="backup_restored">Successfully restored backup</string>
   <string name="nothing_to_back_up">Nothing to back up</string>
+  <string name="grant_usage">Please grant SystemUI Tuner access to Usage.</string>
   <!--Instructions-->
   <string name="enable_debug"><![CDATA[1. Přejděte do nastavení >> Možností pro vývojáře a ujistěte se že máte zaplést Ladění USB.]]></string>
   <string name="accept_auth">2. Zapojte zařízení do vašeho počítače a povolte autorizaci.</string>
