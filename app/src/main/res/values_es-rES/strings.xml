@@ -8,6 +8,7 @@
   <string name="notice">AVISO</string>
   <string name="hide_welcome_screen">Ocultar Ventana de Bienvenida</string>
   <string name="instructions">Instrucciones</string>
+  <string name="need_help">Need Help?</string>
   <string name="about">Acerca de</string>
   <string name="miscellaneous">Varios</string>
   <string name="custom">Custom</string>
@@ -274,7 +275,7 @@
   <string name="intro_3">Hay una Ventana de opciones predefinidas para la barra de estado, pero si no ve un icono que desea ocultar, puede probar la función de detección automática, que intentará detectar los iconos que se pueden ocultar.</string>
   <string name="intro_4">¿Y la mejor parte acerca de esta aplicación? ¡No necesita root! Tratará de obtener privilegios de root, pero si no; podrías usar ADB. USAR ADB NO ROOTEA TU DISPOSITIVO!</string>
   <string name="intro_5">Una vez que usted pulse el botón finalizar, Modificador SystemUI intentará obtener acceso root. De ser así, se conceden todos los permisos necesarios para usarlo. De lo contrario, las instrucciones aparecerán para guiarlo.</string>
-  <string name="adb_setup">Deben concederse los permisos anteriores para continuar. El acceso raíz fue denegado o no está disponible, lo que significa que tendrá que otorgar estos permisos utilizando ADB.</string>
+  <string name="adb_setup">The permissions above must be granted to continue. You\'ll need to use ADB. Please note: PACKAGE_USAGE_STATS and DUMP are optional for most features. SystemUI Tuner will prompt you if either or both is needed.</string>
   <string name="target_not_found">No se pudo abrir la aplicación.</string>
   <string name="feature_not_supported">Al parecer su dispositivo no soporta ésta característica</string>
   <string name="miui_warning">Parece que usted está usando un dispositivo MIUI. Tenga en cuenta que pocos o ningúna característica de esta aplicación funcionará para usted. NO se puede arreglar!</string>
@@ -283,6 +284,7 @@
   <string name="invalid_blacklist_backup">Invalid blacklist backup</string>
   <string name="backup_restored">Successfully restored backup</string>
   <string name="nothing_to_back_up">Nothing to back up</string>
+  <string name="grant_usage">Please grant SystemUI Tuner access to Usage.</string>
   <!--Instructions-->
   <string name="enable_debug"><![CDATA[1. ir a Ajustes >> Opciones de Desarrollador y activar la depuración USB.]]></string>
   <string name="accept_auth">2. Conecte su dispositivo al ordenador y acepte la solicitud de autorización en él.</string>
