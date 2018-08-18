@@ -8,6 +8,7 @@
   <string name="notice">NOTIFICARE</string>
   <string name="hide_welcome_screen">Ascunde Ecranul de Întâmpinare</string>
   <string name="instructions">Instrucțiuni</string>
+  <string name="need_help">Need Help?</string>
   <string name="about">Despre</string>
   <string name="miscellaneous">Diverse</string>
   <string name="custom">Custom</string>
@@ -274,7 +275,7 @@
   <string name="intro_3">Există o multitudine de opțiuni predefinite în bara de stare iar dacă vrei să ascunzi o iconiță, poți încerca funcția de auto-detectare, care va încerca să detecteze iconițe care pot fi ascunse.</string>
   <string name="intro_4">Cea mai bună parte la această aplicație? Nu are nevoie de root! O să încerce să să obțină beneficii root, dar dacă nu reușește, poți folosi ADB. FOLOSIREA ADB NU ESTE ROOTING!</string>
   <string name="intro_5">Odatã ce atingeti butonul de finalizare, SystemUI Tuner o sã încerce sã acceseze root. Dacã se poate, va acorda toate permisiunile necesare. Altfel, veti primii instructiuni de ghidare.</string>
-  <string name="adb_setup">Pentru continuare, trebuie sã acordati permisiune cerintei de mai sus. Accesul Root a fost fie respins, fie indisponibil, ceea ce însemnã cã trebuie sã oferiti permisiune folosind ADB.</string>
+  <string name="adb_setup">The permissions above must be granted to continue. You\'ll need to use ADB. Please note: PACKAGE_USAGE_STATS and DUMP are optional for most features. SystemUI Tuner will prompt you if either or both is needed.</string>
   <string name="target_not_found">Unable to launch app.</string>
   <string name="feature_not_supported">Se pare că aparatul tău nu acceptă această caracteristică :/</string>
   <string name="miui_warning">Se pare că folosești un aparat MIUI. Puține cacacteristi ale acestei aplicații vor funcționa pentru tine. Nu se poate repara!</string>
@@ -283,6 +284,7 @@
   <string name="invalid_blacklist_backup">Invalid blacklist backup</string>
   <string name="backup_restored">Successfully restored backup</string>
   <string name="nothing_to_back_up">Nothing to back up</string>
+  <string name="grant_usage">Please grant SystemUI Tuner access to Usage.</string>
   <!--Instructions-->
   <string name="enable_debug"><![CDATA[1. Du-te la Setãri >> Optiuni Developer si asigurã-te cã USB Debugging este dezactivat.]]></string>
   <string name="accept_auth">2. Conectați aparatul în computer și acceptați cererea de autorizare.</string>
