@@ -8,6 +8,7 @@
   <string name="notice">LET OP</string>
   <string name="hide_welcome_screen">Welkom-scherm verbergen</string>
   <string name="instructions">Instructies</string>
+  <string name="need_help">Need Help?</string>
   <string name="about">Over</string>
   <string name="miscellaneous">Diversen</string>
   <string name="custom">Custom</string>
@@ -274,7 +275,7 @@
   <string name="intro_3">Er is een venster met vooraf gedefinieerde opties voor de statusbalk, maar als u geen pictogram ziet dat u wilt verbergen, kunt u de automatische detectiefunctie proberen, die probeert de pictogrammen te vinden die verborgen kunnen zijn.</string>
   <string name="intro_4">En het beste deel over deze applicatie? Je hebt geen root nodig! Het zal proberen root-privileges te verkrijgen, maar zo niet; Je zou ADB kunnen gebruiken. HET GEBRUIK VAN ADB IS GEEN ROOT!</string>
   <string name="intro_5">Nadat u op de knop Einde hebt gedrukt, probeert Modifier SystemUI roottoegang te verkrijgen. Als dat het geval is, worden alle benodigde vergunningen verleend om het te gebruiken. Anders verschijnen de instructies om u te begeleiden.</string>
-  <string name="adb_setup">De bovenstaande machtigingen moeten worden verleend om door te gaan. Root-toegang is geweigerd of niet beschikbaar, dat betekent dat u deze machtigingen moet verlenen met behulp van ADB.</string>
+  <string name="adb_setup">The permissions above must be granted to continue. You\'ll need to use ADB. Please note: PACKAGE_USAGE_STATS and DUMP are optional for most features. SystemUI Tuner will prompt you if either or both is needed.</string>
   <string name="target_not_found">Unable to launch app.</string>
   <string name="feature_not_supported">Het lijkt erop dat uw apparaat deze functie niet ondersteunt :/</string>
   <string name="miui_warning">Het lijkt erop dat u een MIUI-apparaat gebruikt. Houd er rekening mee dat enkele, indien aanwezig, functies van deze applicatie voor u werken. Het is niet repareerbaar!</string>
@@ -283,6 +284,7 @@
   <string name="invalid_blacklist_backup">Invalid blacklist backup</string>
   <string name="backup_restored">Successfully restored backup</string>
   <string name="nothing_to_back_up">Nothing to back up</string>
+  <string name="grant_usage">Please grant SystemUI Tuner access to Usage.</string>
   <!--Instructions-->
   <string name="enable_debug"><![CDATA[1. Go to Settings >> Developer Options and make sure USB Debugging is enabled.]]></string>
   <string name="accept_auth">2. Plug your device into your computer and accept the authorization request on it.</string>
