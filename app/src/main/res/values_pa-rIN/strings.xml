@@ -8,6 +8,7 @@
   <string name="notice">ਨੋਟਿਸ</string>
   <string name="hide_welcome_screen">ਸੁਆਗਤੀ ਸਕਰੀਨ ਲੁਕਾਓ</string>
   <string name="instructions">ਨਿਰਦੇਸ਼</string>
+  <string name="need_help">Need Help?</string>
   <string name="about">ਬਾਰੇ</string>
   <string name="miscellaneous">ਵਿਵਿਧ</string>
   <string name="custom">Custom</string>
@@ -273,7 +274,7 @@
   <string name="intro_3">ਸਥਿਤੀ ਪੱਟੀ ਲਈ ਪ੍ਰੀ-ਪ੍ਰਭਾਸ਼ਿਤ ਚੋਣਾਂ ਦੇ ਬਹੁਤ ਸਾਰੇ ਹਿੱਸੇ ਹਨ, ਪਰ ਜੇ ਤੁਸੀਂ ਕੋਈ ਆਈਕਾਨ ਨਹੀਂ ਵੇਖਦੇ ਜਿਸ ਨੂੰ ਤੁਸੀਂ ਲੁਕਾਉਣਾ ਚਾਹੁੰਦੇ ਹੋ, ਤਾਂ ਤੁਸੀਂ ਆਟੋ-ਡੀਟ ਫੀਚਰ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰ ਸਕਦੇ ਹੋ, ਜੋ ਆਈਕਨਾਂ ਨੂੰ ਖੋਜਣ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰੇਗਾ ਜੋ ਓਹਲੇ ਕੀਤੇ ਜਾ ਸਕਦੇ ਹਨ.</string>
   <string name="intro_4">ਅਤੇ ਇਸ ਐਪ ਬਾਰੇ ਸਭ ਤੋਂ ਵਧੀਆ ਹਿੱਸਾ ਹੈ? ਇਹ ਰੂਟ ਦੀ ਲੋੜ ਨਹੀਂ ਹੈ! ਇਹ ਰੂਟ ਦੇ ਅਧਿਕਾਰ ਪ੍ਰਾਪਤ ਕਰਨ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰੇਗਾ, ਪਰ ਜੇਕਰ ਤੁਸੀਂ ਇਹ ਨਹੀਂ ਕਰ ਸਕਦੇ ਤਾਂ ਤੁਹਾਨੂੰ ਏ. ਡੀ. ਬੀ. ਏ. ਡੀ. ਬੀ. ਦੀ ਵਰਤੋਂ ਕਰਨਾ ਰੂਟ ਕਰਣਾ ਨਹੀਂ ਹੈ!</string>
   <string name="intro_5">ਇੱਕ ਵਾਰ ਜਦੋਂ ਤੁਸੀਂ ਮੁਕੰਮਲ ਬਟਨ ਨੂੰ ਟੈਪ ਕਰਦੇ ਹੋ, ਤਾਂ SystemUI ਟਿਊਨਰ ਰੂਟ ਪਹੁੰਚ ਪ੍ਰਾਪਤ ਕਰਨ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰੇਗਾ. ਜੇ ਇਹ ਕਰ ਸਕਦੀ ਹੈ, ਤਾਂ ਇਹ ਤੁਹਾਡੇ ਲਈ ਸਾਰੀਆਂ ਲੋੜੀਂਦੀਆਂ ਅਨੁਮਤੀਆਂ ਨੂੰ ਪ੍ਰਦਾਨ ਕਰੇਗਾ. ਨਹੀਂ ਤਾਂ, ਤੁਹਾਨੂੰ ਸੇਧ ਦੇਣ ਲਈ ਹਦਾਇਤਾਂ ਦਿਖਾਈਆਂ ਜਾਣਗੀਆਂ.</string>
-  <string name="adb_setup">ਉਪਰੋਕਤ ਅਧਿਕਾਰਾਂ ਨੂੰ ਜਾਰੀ ਰੱਖਣ ਲਈ ਦਿੱਤੀ ਜਾਣੀ ਚਾਹੀਦੀ ਹੈ. ਰੂਟ ਐਕਸੈਸ ਜਾਂ ਤਾਂ ਇਨਕਾਰ ਕਰ ਦਿੱਤਾ ਗਿਆ ਸੀ ਜਾਂ ਅਣਉਪਲਬਧ ਸੀ, ਜਿਸਦਾ ਮਤਲਬ ਹੈ ਕਿ ਤੁਹਾਨੂੰ ਏ. ਡੀ. ਬੀ.</string>
+  <string name="adb_setup">The permissions above must be granted to continue. You\'ll need to use ADB. Please note: PACKAGE_USAGE_STATS and DUMP are optional for most features. SystemUI Tuner will prompt you if either or both is needed.</string>
   <string name="target_not_found">ਐਪ ਨੂੰ ਲੌਂਚ ਕਰਨ ਵਿੱਚ ਅਸਮਰੱਥ.</string>
   <string name="feature_not_supported">ਇਹ ਲਗਦਾ ਹੈ ਕਿ ਤੁਹਾਡੀ ਡਿਵਾਈਸ ਇਸ ਵਿਸ਼ੇਸ਼ਤਾ ਦਾ ਸਮਰਥਨ ਨਹੀਂ ਕਰਦੀ: /</string>
   <string name="miui_warning">ਅਜਿਹਾ ਲਗਦਾ ਹੈ ਕਿ ਤੁਸੀਂ ਇੱਕ MIUI ਡਿਵਾਈਸ ਦੀ ਵਰਤੋਂ ਕਰ ਰਹੇ ਹੋ ਕਿਰਪਾ ਕਰਕੇ ਨੋਟ ਕਰੋ ਕਿ ਕੁਝ, ਜੇ ਕੋਈ ਹੈ, ਤਾਂ ਇਸ ਐਪ ਦੀਆਂ ਵਿਸ਼ੇਸ਼ਤਾਵਾਂ ਤੁਹਾਡੇ ਲਈ ਕੰਮ ਕਰੇਗੀ. ਇਹ ਠੀਕ ਨਹੀਂ ਹੈ!</string>
@@ -282,6 +283,7 @@
   <string name="invalid_blacklist_backup">Invalid blacklist backup</string>
   <string name="backup_restored">Successfully restored backup</string>
   <string name="nothing_to_back_up">Nothing to back up</string>
+  <string name="grant_usage">Please grant SystemUI Tuner access to Usage.</string>
   <!--Instructions-->
   <string name="enable_debug"><![CDATA[1. ਸੈਟਿੰਗਾਂ> ਵਿਕਾਸਕਾਰ ਦੀਆਂ ਚੋਣਾਂ ਤੇ ਜਾਓ ਅਤੇ ਯਕੀਨੀ ਬਣਾਓ ਕਿ USB ਡੀਬੱਗਿੰਗ ਸਮਰਥਿਤ ਹੈ.]]></string>
   <string name="accept_auth">2. ਆਪਣੀ ਡਿਵਾਈਸ ਨੂੰ ਆਪਣੇ ਕੰਪਿਊਟਰ ਵਿੱਚ ਜੋੜੋ ਅਤੇ ਇਸ \'ਤੇ ਪ੍ਰਮਾਣਿਕਤਾ ਦੀ ਬੇਨਤੀ ਨੂੰ ਸਵੀਕਾਰ ਕਰੋ.</string>
