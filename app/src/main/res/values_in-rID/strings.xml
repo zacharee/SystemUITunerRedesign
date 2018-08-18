@@ -8,6 +8,7 @@
   <string name="notice">PEMBERITAHUAN</string>
   <string name="hide_welcome_screen">Sembunyikan Layar Selamat Datang</string>
   <string name="instructions">Instruksi</string>
+  <string name="need_help">Need Help?</string>
   <string name="about">Tentang</string>
   <string name="miscellaneous">Lain-lain</string>
   <string name="custom">Custom</string>
@@ -274,7 +275,7 @@
   <string name="intro_3">Ada sejumlah pilihan yang ditetapkan untuk bilah status, tapi jika Anda tidak melihat ikon Anda ingin menyembunyikan, Anda dapat mencoba fitur Otomatis Terdeteksi, yang akan mencoba untuk mendeteksi ikon yang dapat disembunyikan.</string>
   <string name="intro_4">Dan bagian terbaik tentang aplikasi ini? Tidak memerlukan akar! Akan berusaha mendapatkan akses root, tapi jika itu tidak bisa Anda akan memilki untuk menggunakan ADB. MENGGUNAKAN ADB TIDAK ROOTING!</string>
   <string name="intro_5">Setelah Anda menekan tombol selesai, SystemUI Tuner akan mencoba untuk mendapatkan akses root. Kalau memang bisa, itu akan memberikan semua izin yang diperlukan untuk Anda. Sebaliknya, instruksi akan muncul untuk membimbing Anda.</string>
-  <string name="adb_setup">Perizina di atas harus diberikan untuk melanjutkan. Akses root baik ditolak atau tidak tersedia, yang berarti Anda akan memiliki untuk memberikan izin tersebut menggunakan ADB.</string>
+  <string name="adb_setup">The permissions above must be granted to continue. You\'ll need to use ADB. Please note: PACKAGE_USAGE_STATS and DUMP are optional for most features. SystemUI Tuner will prompt you if either or both is needed.</string>
   <string name="target_not_found">Tidak dapat meluncurkan aplikasi.</string>
   <string name="feature_not_supported">Tampaknya perangkat tidak mendukung fitur ini :/</string>
   <string name="miui_warning">Tampaknya bahwa Anda menggunakan perangkat MIUI. Perlu diketahui beberapa, bahwa jika ada fitur aplikasi ini akan bekerja untuk Anda. Tidak bisa diperbaiki!</string>
@@ -283,6 +284,7 @@
   <string name="invalid_blacklist_backup">Daftar hitam cadangan tidak valid</string>
   <string name="backup_restored">Successfully restored backup</string>
   <string name="nothing_to_back_up">Tidak ada yang perlu dicadangkan</string>
+  <string name="grant_usage">Please grant SystemUI Tuner access to Usage.</string>
   <!--Instructions-->
   <string name="enable_debug"><![CDATA[1. Pergi ke Pengaturan > Pengembang Pilihan dan membuat yakin USB Debugging diaktifkan.]]></string>
   <string name="accept_auth">2. Pasang perangkan Anda ke komputer dan menerima permintaan otoritas di atasnya.</string>
