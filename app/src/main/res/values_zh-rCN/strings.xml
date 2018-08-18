@@ -8,6 +8,7 @@
   <string name="notice">注意</string>
   <string name="hide_welcome_screen">隐藏欢迎屏幕</string>
   <string name="instructions">说明</string>
+  <string name="need_help">Need Help?</string>
   <string name="about">关于</string>
   <string name="miscellaneous">其他</string>
   <string name="custom">自定义</string>
@@ -274,7 +275,7 @@
   <string name="intro_3">我们由许多的状态栏图标可以用，如果沒有找到想要隐藏的圖示，你还可以尝试 \"自动检测\" 功能，他会尝试找出你可以隐藏的图标。</string>
   <string name="intro_4">这个应用最历害的地方就是不用 root 也能用！它会尝试获得 root 权限，但沒有也无妨，你可以使用 ADB 给与权限，ADB 不是 ROOT ！！</string>
   <string name="intro_5">按下完成按钮，SystemUI Tuner 会尝试获取 root 权限，若成功授权它将会自动取得所需权限，否则会显示进一步操作的说明指导你继续操作。</string>
-  <string name="adb_setup">必须授予上述权限以继续，在没有root的情况下，你需要使用ADB手动授予这些权限。</string>
+  <string name="adb_setup">The permissions above must be granted to continue. You\'ll need to use ADB. Please note: PACKAGE_USAGE_STATS and DUMP are optional for most features. SystemUI Tuner will prompt you if either or both is needed.</string>
   <string name="target_not_found">无法运行应用</string>
   <string name="feature_not_supported">看起来设备并不支持这个功能</string>
   <string name="miui_warning">看起来你正在使用 MIUI 设备。请注意，本应用在这个设备上只有少数的功能可用，并且这是无法修复的。</string>
@@ -283,6 +284,7 @@
   <string name="invalid_blacklist_backup">Invalid blacklist backup</string>
   <string name="backup_restored">Successfully restored backup</string>
   <string name="nothing_to_back_up">Nothing to back up</string>
+  <string name="grant_usage">Please grant SystemUI Tuner access to Usage.</string>
   <!--Instructions-->
   <string name="enable_debug"><![CDATA[1.在设置>>开发者模式中，确认启用了USB调试。]]></string>
   <string name="accept_auth">2.连接手机到电脑，并且同意授权。</string>
