@@ -261,6 +261,7 @@
   <string name="no_im_staying">No, I\'m Staying</string>
   <string name="fix_rotation_done_uninstall">Rotation icon removed! This won\'t take effect until you reboot.</string>
   <string name="fix_rotation_done_stay">Rotation icon removed! If it still appears, reboot your device.</string>
+  <string name="missing_not_required_perms_desc">Are you sure you want to continue? At least one optional permission wasn\'t granted, which means you will need a computer again to grant them later.</string>
   <!--Messages-->
   <string name="sorry_explain">이 토글을 설정하는 도중 문제가 발생했습니다.</string>
   <string name="sorry_option">컴퓨터에서 다음 명령어를 실행해보십시오(한 줄):</string>
