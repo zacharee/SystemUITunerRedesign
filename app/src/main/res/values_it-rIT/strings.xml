@@ -8,6 +8,7 @@
   <string name="notice">AVVISO</string>
   <string name="hide_welcome_screen">Nascondi la schermata di benvenuto</string>
   <string name="instructions">Istruzioni</string>
+  <string name="need_help">Need Help?</string>
   <string name="about">Informazioni</string>
   <string name="miscellaneous">Varie</string>
   <string name="custom">Custom</string>
@@ -274,7 +275,7 @@
   <string name="intro_3">C\'è una pletora di opzioni pre-definite per la barra di stato, ma se non vedi un icona che vuoi nascondere, puoi provare la modalità Auto-Detect, che proverà a rilevare le icone che possono essere nascoste.</string>
   <string name="intro_4">E la parte migliore di questa app? Non ha bisogno di root! Tenterà di ottenere i privilegi di root, ma nel caso non sia possibile si dovra utilizzare ADB. UTILIZZARE ADB NON È ROOTARE!</string>
   <string name="intro_5">Una volta premuto il pulsante fine, SystemUI Tuner tenterà di ottenere l\'accesso root. Se possibile, concederà tutte le autorizzazioni per voi. In caso contrario, compariranno delle istruzioni per guidarvi.</string>
-  <string name="adb_setup">Per continuare devi concedere l\'autorizzazione qui sopra. L\'accesso root è stato negato o non è disponibile, il che significa che sarà necessario concedere queste autorizzazione tramite ADB.</string>
+  <string name="adb_setup">The permissions above must be granted to continue. You\'ll need to use ADB. Please note: PACKAGE_USAGE_STATS and DUMP are optional for most features. SystemUI Tuner will prompt you if either or both is needed.</string>
   <string name="target_not_found">Impossibile avviare l\'app.</string>
   <string name="feature_not_supported">Sembra che il tuo dispositivo non supporti questa funzione :/</string>
   <string name="miui_warning">Sembra che tu stia utilizzando un dispositivo MIUI. Nel caso in cui sia disponibile qualche funzione, e ques\'ultima vada, se causa problemi NON POSSO SISTEMARLO!</string>
@@ -283,6 +284,7 @@
   <string name="invalid_blacklist_backup">Invalid blacklist backup</string>
   <string name="backup_restored">Successfully restored backup</string>
   <string name="nothing_to_back_up">Nothing to back up</string>
+  <string name="grant_usage">Please grant SystemUI Tuner access to Usage.</string>
   <!--Instructions-->
   <string name="enable_debug"><![CDATA[1. Vai nelle impostazioni >> Opzioni sviluppatore e assicurati che Debug Android sia attivo.]]></string>
   <string name="accept_auth">2. Collega il tuo telefono al tuo pc e accetta l\'autorizzazione che comparirà su di esso.</string>
