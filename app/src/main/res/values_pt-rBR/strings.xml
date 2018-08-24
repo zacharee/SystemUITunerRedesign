@@ -253,15 +253,15 @@
     </string>
   <string name="custom_settings_input_desc">Estes campos permitem que você insira suas próprias configurações personalizadas.</string>
   <string name="custom_settings_read_desc">Estes campos permitem que você leia o valor de uma chave especificada.</string>
-  <string name="custom_settings_warning">Be careful what you do here! If you input an incorrect value, you could cause a crash loop, bootloop or worse!</string>
-  <string name="hide_welcome_hint">Hint: You can hide this screen, and the donation message, by going to Settings and toggling on \"Hide Welcome Screen\".</string>
-  <string name="safe_mode_notif_desc_not_supported">This setting must remain enabled on Oreo.</string>
-  <string name="fix_rotation_icon_dialog_desc">Are you planning to uninstall SystemUI Tuner after this?</string>
-  <string name="yes_im_uninstalling">Yes, I\'m Uninstalling</string>
-  <string name="no_im_staying">No, I\'m Staying</string>
-  <string name="fix_rotation_done_uninstall">Rotation icon removed! This won\'t take effect until you reboot.</string>
-  <string name="fix_rotation_done_stay">Rotation icon removed! If it still appears, reboot your device.</string>
-  <string name="missing_not_required_perms_desc">Are you sure you want to continue? At least one optional permission wasn\'t granted, which means you will need a computer again to grant them later.</string>
+  <string name="custom_settings_warning">Cuidado com o que você faz aqui! Se você inserir um valor incorreto, você pode causar travamentos, bootloop ou pior!</string>
+  <string name="hide_welcome_hint">Dica: você pode ocultar essa tela e a mensagem de doação indo para Configurações e alternando em \"Ocultar tela de boas-vindas\".</string>
+  <string name="safe_mode_notif_desc_not_supported">Essa configuração deve permanecer ativada no Android Oreo.</string>
+  <string name="fix_rotation_icon_dialog_desc">Você está planejando desinstalar o SystemUI Tuner depois disso?</string>
+  <string name="yes_im_uninstalling">Sim, estou desinstalando</string>
+  <string name="no_im_staying">Não, eu vou ficar</string>
+  <string name="fix_rotation_done_uninstall">Ícone de rotação removido! Isso não terá efeito até que você reinicie.</string>
+  <string name="fix_rotation_done_stay">Ícone de rotação removido! Se ele ainda aparece, reinicie o dispositivo.</string>
+  <string name="missing_not_required_perms_desc">Tem certeza de que quer continuar? Pelo menos uma permissão opcional não foi concedida, o que significa que você precisará de um computador novamente para concedê-las mais tarde.</string>
   <!--Messages-->
   <string name="sorry_explain">Algo deu errado ao definir esta alternância.</string>
   <string name="sorry_option">Try executing the following command from a computer (it\'s one line):</string>
