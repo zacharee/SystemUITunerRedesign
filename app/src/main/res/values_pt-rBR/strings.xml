@@ -238,10 +238,10 @@
   <string name="enable_in_settings">Ative em Configurações.</string>
   <string name="reboot_required">(Reinicialização Obrigatória)</string>
   <string name="auto_detect_summary">Attempts to automatically detect which status bar icons can be hidden. Does not work on all devices!</string>
-  <string name="night_display_not_avail">Night Display is not available on this device.</string>
-  <string name="app_specific_desc">Select apps to be included in or excluded from Immersive Mode. Immersive Mode must be disabled to change these settings.</string>
-  <string name="blacklist_desc">When on, selected apps will not use Immersive Mode</string>
-  <string name="imm_warn">This feature merely allows you to enable Immersive Mode. It DOES NOT do anything beyond that. Any issues you experience are the fault of your device\'s manufacturer. I CANNOT FIX IT!</string>
+  <string name="night_display_not_avail">Display noturno não está disponível neste dispositivo.</string>
+  <string name="app_specific_desc">Selecione os aplicativos a serem incluídos em ou excluídos do modo imersivo. O Modo imersivo deve ser desabilitado para alterar essas configurações.</string>
+  <string name="blacklist_desc">Quando selecionados apps, não usará o modo Imersivo</string>
+  <string name="imm_warn">Esse recurso apenas permite que você ative o modo imersivo. Ele não faz nada além disso. Quaisquer problemas que você sofrer são culpa do fabricante do seu dispositivo. NÃO CONSIGO CORRIGIR!</string>
   <string name="statbar_rotation_lock_notif">On certain devices, modifying the status bar icons can cause an icon that looks like a phone to appear. This is the rotation lock icon. Tap here to fix it.</string>
   <string name="pnc_desc">Power Notification Controls allow you to set the level of importance for notifications on a per-app basis. Simply turn the feature on and hold down on a notification to get started. You may need to tap the A to enable the slider.</string>
   <string name="pnc_warn">This feature is known to be unreliable on certain devices, especially on TouchWiz! It is impossible to fix, but the best workaround seems to be to tap repeatedly on the desired level. Again, I CANNOT fix it!</string>
@@ -301,15 +301,15 @@
   <string name="cd_mac"><![CDATA[4. Enter <b>cd /path/to/extracted/folder/</b> to get to the folder you extracted ADB into. For instance, <b>cd /Users/Zachary/Desktop/platform-tools/</b>.]]></string>
   <string name="make_sure_adb_installed">1. tenha certeza que o ADB está instalado:</string>
   <string name="download_adb_linux"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-linux.zip">baixar o ZIP ADB para Linux.</a>]]></string>
-  <string name="cd_linux"><![CDATA[4. Enter <b>cd /path/to/extracted/folder/</b> to get to the folder you extracted ADB into. For instance, <b>cd /home/Zachary/Desktop/platform-tools/</b>.]]></string>
+  <string name="cd_linux"><![CDATA[4. digite <b></b> para chegar até a pasta que ADB que você extraiu. Por exemplo, /home/Zachary/Desktop/platform-tools de cd de <b>/</b>.]]></string>
   <!--Misc-->
   <string name="created_by">Aplicativo criado por <a href="https://forum.xda-developers.com/member.php?u=7055541">Zacharee1</a></string>
   <string name="lang_credit">Traduzido por voluntários no <a href="https://crowdin.com/project/systemui-tuner">Crowdin</a></string>
   <string name="home_desc">Para dispositivos sem esta atividade</string>
-  <string name="home_joke">Or for devices with it, I\'m not your boss.</string>
+  <string name="home_joke">Ou para dispositivos com ele, eu não sou seu chefe.</string>
   <string name="home_extra">(Se você estiver no SystemUI Tuner padrão, este fornecá alguns extras.)</string>
   <string name="donate_hook">Ei, vejo que você está usando meu app.</string>
-  <string name="donate_joke">How, you ask? Magic.</string>
+  <string name="donate_joke">Como, você pergunta? Magica.</string>
   <string name="donate_request">Se você está aproveitando seu tempo aqui, seria absolutamente incrível se você pudesse me ajuda com um dólar ou dois.</string>
   <string name="donate_dont_worry">Não há absolutamente nenhuma obrigação. Este app é grátis e sempre será.</string>
 </resources>
