@@ -246,13 +246,13 @@
   <string name="pnc_desc">Controles de notificação de energia permitem que você defina o nível de importância para as notificações em uma base por aplicativo. Basta ativar o recurso e mantenha pressionada em uma notificação para começar. Você pode precisar tocar o A para ativar o controle deslizante.</string>
   <string name="pnc_warn">Esse recurso é conhecido por ser instável em certos dispositivos, especialmente sobre o TouchWiz! É impossível de corrigir, mas a melhor solução parece ser tocar repetidamente no nível desejado. Novamente, não posso CORRIGI-LO!</string>
   <string name="notif_desc">Toque para alterar as configurações</string>
-  <string name="touchwiz_oreo_qqs">On TouchWiz Oreo devices, this setting is no longer reliable! Along with setting the number here, you may have to also save the value to Settings.System.apanel_number, which can only be done with ADB or root. Safe Mode attempts to implement a workaround, but I can\'t guarantee it will work!</string>
+  <string name="touchwiz_oreo_qqs">Em dispositivos TouchWiz Oreo, essa configuração não é mais confiável! Juntamente com a configuração do número aqui, você pode precisar salvar também o valor Settings.System.apanel_number, que só pode ser feito com ADB ou root. O Modo de seguro tenta implementar uma solução alternativa, mas não posso garantir que funcione!</string>
   <string name="notifs_snooze_desc">&#160;
-    In Android 8.1 and later, you can set custom times for notification snoozing. These values reset on reboot, so make sure to enable Safe Mode if you would like them to persist across power cycles.\n\n&#160;
-    Use the options below to set the different snooze times. \"Default\" sets the time Android will use by default. The other items will be the snooze times available for you to select.
+    No Android 8.1 e posterior, você pode definir horários personalizados para adiar a notificação. Esses valores são redefinidos na reinicialização, então certifique-se de habilitar o modo seguro se quiser que eles persistam em ciclos de energia.\n\n&#160;
+    Use as opções abaixo para definir os diferentes tempos de soneca. \"Padrão\" define o horário que o Android usará por padrão. Os outros itens serão os tempos de soneca disponíveis para você selecionar.
     </string>
-  <string name="custom_settings_input_desc">These fields allow you to enter your own custom settings.</string>
-  <string name="custom_settings_read_desc">These fields allow you to read the value of a specified key.</string>
+  <string name="custom_settings_input_desc">Estes campos permitem que você insira suas próprias configurações personalizadas.</string>
+  <string name="custom_settings_read_desc">Estes campos permitem que você leia o valor de uma chave especificada.</string>
   <string name="custom_settings_warning">Be careful what you do here! If you input an incorrect value, you could cause a crash loop, bootloop or worse!</string>
   <string name="hide_welcome_hint">Hint: You can hide this screen, and the donation message, by going to Settings and toggling on \"Hide Welcome Screen\".</string>
   <string name="safe_mode_notif_desc_not_supported">This setting must remain enabled on Oreo.</string>
