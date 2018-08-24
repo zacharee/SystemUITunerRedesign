@@ -130,7 +130,7 @@
   <string name="fancy_pulldown_animation">Fancy Pulldown Animation</string>
   <string name="move_full_rows">Mover todas as linhas</string>
   <string name="battery">Bateria</string>
-  <string name="back_up_blacklist">Back Up Blacklist</string>
+  <string name="back_up_blacklist">Fazer backup da lista negra</string>
   <string name="restore_blacklist">Restaurar lista negra</string>
   <string name="quick_settings">Configurações rápidas</string>
   <string name="demo_mode">Modo de demonstração</string>
@@ -203,7 +203,7 @@
   <string name="no">Não</string>
   <string name="notif_title">Modo seguro está em execução</string>
   <string name="color">Cores</string>
-  <string name="notifs_snooze">Notification Snoozing</string>
+  <string name="notifs_snooze">Notificação de soneca</string>
   <string name="default_text">Padrão</string>
   <string name="time_a">Tempo A</string>
   <string name="time_b">Tempo B</string>
@@ -231,7 +231,7 @@
   <string name="fancy_pulldown_notice">Desativar essa opção pode causar problemas após a reinicialização. Ative e desative manualmente essa opção, após uma reinicialização ou ative o Modo de Segurança.</string>
   <string name="safe_mode_summary">OS USUÁRIOS DA SAMSUNG DEVEM MANTÊ-LO LIGADO, A MENOS QUE VOCÊ TENHA UMA ROM AOSP!</string>
   <string name="safe_mode_summary_1">Remove todas as personalizações da barra de status na reinicialização e restaura-as após a conclusão da inicialização.</string>
-  <string name="safe_mode_summary_2">Toggles the QS Fancy Animation on boot.</string>
+  <string name="safe_mode_summary_2">Ativa/desativa a animação elegante QS na inicialização.</string>
   <string name="safe_mode_summary_3">Restores custom QS header count value on boot (Nougat+).</string>
   <string name="safe_mode_summary_4">Restores custom QS row/column count on boot (TouchWiz, Nougat+).</string>
   <string name="safe_mode_summary_5">Restores custom notification snooze options on boot (8.1+).</string>
