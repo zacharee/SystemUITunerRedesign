@@ -237,7 +237,7 @@
   <string name="safe_mode_summary_5">Restores custom notification snooze options on boot (8.1+).</string>
   <string name="enable_in_settings">Ative em Configurações.</string>
   <string name="reboot_required">(Reinicialização Obrigatória)</string>
-  <string name="auto_detect_summary">Attempts to automatically detect which status bar icons can be hidden. Does not work on all devices!</string>
+  <string name="auto_detect_summary">Tenta detectar automaticamente quais ícones da barra de status podem estar ocultos. Não funciona em todos os dispositivos!</string>
   <string name="night_display_not_avail">Display noturno não está disponível neste dispositivo.</string>
   <string name="app_specific_desc">Selecione os aplicativos a serem incluídos em ou excluídos do modo imersivo. O Modo imersivo deve ser desabilitado para alterar essas configurações.</string>
   <string name="blacklist_desc">Quando selecionados, os aplicativos não usaram o modo Imersivo</string>
@@ -271,7 +271,7 @@
   <string name="requires_oreo">Requer Oreo ou posterior.</string>
   <string name="requires_8_1">Requer Oreo 8.1 ou posterior.</string>
   <string name="safe_mode_android_o">Devido às limitações adicionadas no Android O, esse recurso não funcionará no seu dispositivo.</string>
-  <string name="intro_1">Thanks for downloading my app! SystemUI Tuner is meant to replace/supplement the built-in System UI Tuner seen in AOSP. Both users with and without System UI Tuner can benefit from this app.</string>
+  <string name="intro_1">Obrigado por baixar meu aplicativo! O SystemUI tuner destina-se a substituir / suplementar a construção do IU do Sistema integrado visto no AOSP. Ambos os usuários com e sem o System UI Tuner podem se beneficiar deste aplicativo.</string>
   <string name="intro_2">Como no AOSP, o SystemUI tuner permite ocultar certos ícones da barra de status que você não deseja mostrar. No entanto, você também pode fazer muitas outras coisas, como desativar as notificações heads-up ou até alternar o modo imersivo.</string>
   <string name="intro_3">Há uma infinidade de opções pré-definidas para a barra de status, mas se você não ver um ícone que deseja ocultar, poderá tentar o recurso Detectar automaticamente, que tentará detectar ícones que podem estar ocultos.</string>
   <string name="intro_4">E a melhor parte sobre este app? Não precisa de root! Ele tentará obter privilégios de root, mas se não você não tem root terá que usar o ADB. USAR O ADB NÃO É ROOTEAR!</string>
