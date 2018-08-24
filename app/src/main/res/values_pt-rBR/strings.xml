@@ -27,9 +27,9 @@
   <string name="show_notifications">Mostrar notificações</string>
   <string name="status_bar_style">Estilo da barra de status</string>
   <string name="setup">Configuração</string>
-  <string name="dnd_switch_in_vol_slider">DND Switch in Vol Slider</string>
+  <string name="dnd_switch_in_vol_slider">Não perturbar no controle de volume</string>
   <string name="dark_mode">Modo Escuro</string>
-  <string name="managed_profile_icon">Managed Profile Icon</string>
+  <string name="managed_profile_icon">Ícone de Perfil gerenciado</string>
   <string name="battery_icon">Ícone da Bateria</string>
   <string name="battery_percentage">Percentagem da Bateria</string>
   <string name="cast_icon">Cast Icon</string>
