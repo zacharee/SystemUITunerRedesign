@@ -122,7 +122,7 @@
   <string name="night_mode">Modo noturno</string>
   <string name="night_mode_auto">Modo noturno automático</string>
   <string name="night_mode_override">Substituição do Modo Noturno</string>
-  <string name="night_mode_adjust_tint">Modo Noturno Ajustar Matiz</string>
+  <string name="night_mode_adjust_tint">Ajustar tom do Modo Noturno</string>
   <string name="night_display_auto">Visor Noturno</string>
   <string name="night_display_activated">Visor Noturno Ativado</string>
   <string name="night_display">Visor Noturno</string>
@@ -135,7 +135,7 @@
   <string name="quick_settings">Configurações rápidas</string>
   <string name="demo_mode">Modo de demonstração</string>
   <string name="auto_detect">Detecção automática</string>
-  <string name="sim_count">Contagem de SIM</string>
+  <string name="sim_count">Número de SIMs</string>
   <string name="volume_icon_style">Estilo do ícone de volume</string>
   <string name="bluetooth_icon_style">Estilo do ícone do Bluetooth</string>
   <string name="mobile_fully">Celular totalmente conectado</string>
