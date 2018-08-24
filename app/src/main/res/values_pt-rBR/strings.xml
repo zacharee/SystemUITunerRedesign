@@ -93,8 +93,8 @@
   <string name="safezone_icon">Ícone de SafeZone</string>
   <string name="smart_bonding_icon">Ícone de ligação inteligente</string>
   <string name="smart_scroll_icon">Ícone SmartScroll</string>
-  <string name="toddler_icon">Toddler Icon</string>
-  <string name="wearable_icon">Wearable Icon</string>
+  <string name="toddler_icon">Ícone da criança</string>
+  <string name="wearable_icon">Ícone de wearable</string>
   <string name="wifi_ap_icon">Ícone de WiFi AP</string>
   <string name="wifi_oxygen_icon">Ícone Oxigen WiFi</string>
   <string name="wifi_p2p_icon">Ícone WiFi P2P</string>
@@ -109,7 +109,7 @@
   <string name="volte">VoLTE</string>
   <string name="vowifi">VoWiFi</string>
   <string name="wifi_calling_icon">Ícone de chamada WiFi</string>
-  <string name="answering_memo_icon">Answering Memo Icon</string>
+  <string name="answering_memo_icon">Ícone Answering Memo</string>
   <string name="felica_lock_icon">Ícone de bloqueio de Felica</string>
   <string name="ime_icon">Ícone IME</string>
   <string name="nfc_lock_icon">Ícone de bloqueio de NFC</string>
@@ -126,8 +126,8 @@
   <string name="night_display_auto">Visor Noturno</string>
   <string name="night_display_activated">Visor Noturno Ativado</string>
   <string name="night_display">Visor Noturno</string>
-  <string name="qs_header_tile_count">QS Header Tile Count</string>
-  <string name="fancy_pulldown_animation">Fancy Pulldown Animation</string>
+  <string name="qs_header_tile_count">Número de botões na grade QS</string>
+  <string name="fancy_pulldown_animation">Animação elegante ao puxa para baixo</string>
   <string name="move_full_rows">Mover todas as linhas</string>
   <string name="battery">Bateria</string>
   <string name="back_up_blacklist">Fazer backup da lista negra</string>
@@ -215,8 +215,8 @@
   <string name="military">24 horas</string>
   <string name="military_nosec">24 horas, sem segundos</string>
   <string name="show_notif">Mostrar notificação</string>
-  <string name="carrier_on_home">Carrier Label on Home Screen</string>
-  <string name="carrier_on_lock">Carrier Label on Lock Screen</string>
+  <string name="carrier_on_home">Nome da operadora na tela inicial</string>
+  <string name="carrier_on_lock">Nome da operadora na tela de bloqueio</string>
   <string name="key_plaintext">Chave</string>
   <string name="value_plaintext">Valor</string>
   <string name="remove_from_blacklist">Remover da lista negra?</string>
