@@ -5,7 +5,7 @@
   <string name="app_name">SystemUI Tuner</string>
   <string name="to_the_tweaks">Para os ajustes!</string>
   <string name="more">Mais</string>
-  <string name="notice">AVISO PRÉVIO</string>
+  <string name="notice">AVISO</string>
   <string name="hide_welcome_screen">Ocultar tela de boas-vindas</string>
   <string name="instructions">Instruções</string>
   <string name="need_help">Precisa de ajuda?</string>
@@ -75,7 +75,7 @@
   <string name="ok">OK</string>
   <string name="power_notification_controls">Controles de notificação de energia</string>
   <string name="danger_zone">Zona de perigo</string>
-  <string name="safe_mode">Modo seguro</string>
+  <string name="safe_mode">Modo de Segurança</string>
   <string name="enable_custom_settings_input">Ativar configurações personalizadas</string>
   <string name="enable">Ativar</string>
   <string name="knox_icon">Ícone do KNOX</string>
@@ -224,7 +224,7 @@
   <string name="safe_mode_fancy_anim">Fancy Animation</string>
   <string name="safe_mode_header_count">QS Header Count</string>
   <string name="safe_mode_row_col_tw">QS Row/Column Count</string>
-  <string name="safe_mode_snooze_options">Snooze Options</string>
+  <string name="safe_mode_snooze_options">Opções de soneca</string>
   <string name="fix_rotation_icon_dialog_title">Desinstalando?</string>
   <string name="done">Feito!</string>
   <!--Descriptions-->
@@ -240,7 +240,7 @@
   <string name="auto_detect_summary">Attempts to automatically detect which status bar icons can be hidden. Does not work on all devices!</string>
   <string name="night_display_not_avail">Display noturno não está disponível neste dispositivo.</string>
   <string name="app_specific_desc">Selecione os aplicativos a serem incluídos em ou excluídos do modo imersivo. O Modo imersivo deve ser desabilitado para alterar essas configurações.</string>
-  <string name="blacklist_desc">Quando selecionados apps, não usará o modo Imersivo</string>
+  <string name="blacklist_desc">Quando selecionados, os aplicativos não usaram o modo Imersivo</string>
   <string name="imm_warn">Esse recurso apenas permite que você ative o modo imersivo. Ele não faz nada além disso. Quaisquer problemas que você sofrer são culpa do fabricante do seu dispositivo. NÃO CONSIGO CORRIGIR!</string>
   <string name="statbar_rotation_lock_notif">Em certos dispositivos, modificando os ícones da barra de status pode aparecer um ícone que parece um telefone. Este é o ícone de bloqueio de rotação. Toque aqui para corrigi-lo.</string>
   <string name="pnc_desc">Controles de notificação de energia permitem que você defina o nível de importância para as notificações em uma base por aplicativo. Basta ativar o recurso e mantenha pressionada em uma notificação para começar. Você pode precisar tocar o A para ativar o controle deslizante.</string>
