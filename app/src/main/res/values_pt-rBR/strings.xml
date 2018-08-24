@@ -81,7 +81,7 @@
   <string name="knox_icon">Ícone do KNOX</string>
   <string name="smart_network_icon">Ícone de rede inteligente</string>
   <string name="glove_icon">Ícone de luva</string>
-  <string name="private_mode_icon">Ícone do modo privado</string>
+  <string name="private_mode_icon">Ícone modo privado</string>
   <string name="face_icon">Face Icon</string>
   <string name="femtocell_icon">Femtocell Icon</string>
   <string name="gps_icon">GPS Icon</string>
