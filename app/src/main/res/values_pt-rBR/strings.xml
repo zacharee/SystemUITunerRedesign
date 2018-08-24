@@ -209,7 +209,7 @@
   <string name="time_b">Tempo B</string>
   <string name="time_c">Tempo C</string>
   <string name="time_d">Tempo D</string>
-  <string name="clock_tile_format">Clock Tile Format</string>
+  <string name="clock_tile_format">Formato do relógio</string>
   <string name="twelve">12 horas</string>
   <string name="twelve_nosec">12 horas, sem segundos</string>
   <string name="military">24 horas</string>
