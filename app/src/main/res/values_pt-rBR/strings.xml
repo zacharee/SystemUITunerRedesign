@@ -77,7 +77,7 @@
   <string name="danger_zone">Zona de perigo</string>
   <string name="safe_mode">Modo de Segurança</string>
   <string name="enable_custom_settings_input">Ativar configurações personalizadas</string>
-  <string name="enable">Ativar</string>
+  <string name="enable">Habilitar</string>
   <string name="knox_icon">Ícone do KNOX</string>
   <string name="smart_network_icon">Ícone de rede inteligente</string>
   <string name="glove_icon">Ícone de luva</string>
@@ -92,7 +92,7 @@
   <string name="rcs_icon">Ícone RCS</string>
   <string name="safezone_icon">Ícone de SafeZone</string>
   <string name="smart_bonding_icon">Ícone de ligação inteligente</string>
-  <string name="smart_scroll_icon">Ícone SmartScroll</string>
+  <string name="smart_scroll_icon">Ícone de Rolagem inteligente</string>
   <string name="toddler_icon">Ícone da criança</string>
   <string name="wearable_icon">Ícone de wearable</string>
   <string name="wifi_ap_icon">Ícone de WiFi AP</string>
@@ -148,7 +148,7 @@
   <string name="full">Cheio</string>
   <string name="navigation_bar">Barra de navegação</string>
   <string name="pre_confirms">Pré-confirma</string>
-  <string name="config_qs">Configurar o Quick Tile</string>
+  <string name="config_qs">Configurar os botões Rápidos</string>
   <string name="mode">Modo</string>
   <string name="qs_column_count">Número de Colunas das configurações rápidas</string>
   <string name="qs_row_count">Número de linhas das configurações rápidas,</string>
@@ -222,8 +222,8 @@
   <string name="remove_from_blacklist">Remover da lista negra?</string>
   <string name="safe_mode_status_bar">Barra de status</string>
   <string name="safe_mode_fancy_anim">Animação elegante</string>
-  <string name="safe_mode_header_count">Número de botões na grade QS</string>
-  <string name="safe_mode_row_col_tw">Número de linha/coluna QS</string>
+  <string name="safe_mode_header_count">Número de botões na grade de configurações rápidas</string>
+  <string name="safe_mode_row_col_tw">Número de linha/coluna em configurações rápidas,</string>
   <string name="safe_mode_snooze_options">Opções de soneca</string>
   <string name="fix_rotation_icon_dialog_title">Desinstalando?</string>
   <string name="done">Feito!</string>
@@ -231,7 +231,7 @@
   <string name="fancy_pulldown_notice">Desativar essa opção pode causar problemas após a reinicialização. Ative e desative manualmente essa opção, após uma reinicialização ou ative o Modo de Segurança.</string>
   <string name="safe_mode_summary">OS USUÁRIOS DA SAMSUNG DEVEM MANTÊ-LO LIGADO, A MENOS QUE VOCÊ TENHA UMA ROM AOSP!</string>
   <string name="safe_mode_summary_1">Remove todas as personalizações da barra de status na reinicialização e restaura-as após a conclusão da inicialização.</string>
-  <string name="safe_mode_summary_2">Ativa/desativa a animação elegante na inicialização.</string>
+  <string name="safe_mode_summary_2">Ativa/desativa a animação elegante em configurações rápidas, na inicialização.</string>
   <string name="safe_mode_summary_3">Restaura os valores da grade personalizada das configurações rápidas, na inicialização (Nougat +).</string>
   <string name="safe_mode_summary_4">Restaura o número de linha/coluna personalizada das configurações rápidas, na inicialização (TouchWiz, Nougat +).</string>
   <string name="safe_mode_summary_5">Restaura as opções de notificação de soneca personalizada na inicialização (8.1 +).</string>
