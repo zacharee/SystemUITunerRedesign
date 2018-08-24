@@ -299,17 +299,17 @@
   <string name="download_adb_mac"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-darwin.zip">Download the ADB ZIP for macOS.</a>]]></string>
   <string name="open_terminal">3. Open Terminal.</string>
   <string name="cd_mac"><![CDATA[4. Enter <b>cd /path/to/extracted/folder/</b> to get to the folder you extracted ADB into. For instance, <b>cd /Users/Zachary/Desktop/platform-tools/</b>.]]></string>
-  <string name="make_sure_adb_installed">1. Make sure ADB is installed:</string>
-  <string name="download_adb_linux"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-linux.zip">Download the ADB ZIP for Linux.</a>]]></string>
+  <string name="make_sure_adb_installed">1. tenha certeza que o ADB está instalado:</string>
+  <string name="download_adb_linux"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-linux.zip">baixar o ZIP ADB para Linux.</a>]]></string>
   <string name="cd_linux"><![CDATA[4. Enter <b>cd /path/to/extracted/folder/</b> to get to the folder you extracted ADB into. For instance, <b>cd /home/Zachary/Desktop/platform-tools/</b>.]]></string>
   <!--Misc-->
   <string name="created_by">Aplicativo criado por <a href="https://forum.xda-developers.com/member.php?u=7055541">Zacharee1</a></string>
   <string name="lang_credit">Traduzido por voluntários no <a href="https://crowdin.com/project/systemui-tuner">Crowdin</a></string>
-  <string name="home_desc">For Devices without this Activity</string>
+  <string name="home_desc">Para dispositivos sem esta atividade</string>
   <string name="home_joke">Or for devices with it, I\'m not your boss.</string>
-  <string name="home_extra">(If you do have the stock SystemUI Tuner, this one provides some extra goodies.)</string>
-  <string name="donate_hook">Hey, I see you\'re using my app.</string>
+  <string name="home_extra">(Se você estiver no SystemUI Tuner padrão, este fornecá alguns extras.)</string>
+  <string name="donate_hook">Ei, vejo que você está usando meu app.</string>
   <string name="donate_joke">How, you ask? Magic.</string>
-  <string name="donate_request">If you\'re enjoying your time here, it\'d be absolutely amazing if you could spare a dollar or two.</string>
+  <string name="donate_request">Se você está aproveitando seu tempo aqui, seria absolutamente incrível se você pudesse me ajuda com um dólar ou dois.</string>
   <string name="donate_dont_worry">Não há absolutamente nenhuma obrigação. Este app é grátis e sempre será.</string>
 </resources>
