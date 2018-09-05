@@ -8,10 +8,10 @@
   <string name="notice">AVISO</string>
   <string name="hide_welcome_screen">Ocultar Ventana de Bienvenida</string>
   <string name="instructions">Instrucciones</string>
-  <string name="need_help">Need Help?</string>
+  <string name="need_help">¿Necesita ayuda?</string>
   <string name="about">Acerca de</string>
   <string name="miscellaneous">Varios</string>
-  <string name="custom">Custom</string>
+  <string name="custom">A medida</string>
   <string name="settings">Ajustes</string>
   <string name="status_bar">Barra de Estado</string>
   <string name="sorry">Lo Siento…</string>
@@ -67,7 +67,7 @@
   <string name="general">General</string>
   <string name="heads_up_notifications">Burbujas de Notificación</string>
   <string name="headphone_volume_warning">Advertencia de Volumen de Auriculares</string>
-  <string name="custom_settings_input">Custom Settings Input</string>
+  <string name="custom_settings_input">Entrada de ajustes personalizados</string>
   <string name="custom_settings_read">Read Custom Value</string>
   <string name="global">Global</string>
   <string name="secure">Seguro</string>
