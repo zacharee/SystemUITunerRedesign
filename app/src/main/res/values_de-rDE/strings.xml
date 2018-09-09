@@ -79,10 +79,10 @@
   <string name="enable_custom_settings_input">Enable Custom Settings</string>
   <string name="enable">Aktivieren</string>
   <string name="knox_icon">KNOX-Symbol</string>
-  <string name="smart_network_icon">Smart Network Icon</string>
-  <string name="glove_icon">Glove Icon</string>
+  <string name="smart_network_icon">Intelligentes Netzwerksymbol</string>
+  <string name="glove_icon">Handschuhsymbol</string>
   <string name="private_mode_icon">Privaten Modus Symbol</string>
-  <string name="face_icon">Face Icon</string>
+  <string name="face_icon">Gesichtssymbol</string>
   <string name="femtocell_icon">Femtocell-Symbol</string>
   <string name="gps_icon">GPS-Symbol</string>
   <string name="gesture_icon">Gesten-Symbol</string>
