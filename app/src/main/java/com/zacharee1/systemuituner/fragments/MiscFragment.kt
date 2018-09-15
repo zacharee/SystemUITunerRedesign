@@ -187,7 +187,7 @@ class MiscFragment : AnimFragment() {
 
         auto.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { _, o ->
             if (Build.VERSION.SDK_INT == Build.VERSION_CODES.N)
-                evalNightModeStates(java.lang.Boolean.valueOf(o.toString()), override.isChecked)
+                evalNightModeStates(o.toString().toBoolean(), override.isChecked)
             else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N_MR1)
                 context.writeSecure(NIGHT_DISPLAY_AUTO, if (o.toString().toBoolean()) 1 else 0)
             true
@@ -195,7 +195,7 @@ class MiscFragment : AnimFragment() {
 
         override.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { _, o ->
             if (Build.VERSION.SDK_INT == Build.VERSION_CODES.N)
-                evalNightModeStates(auto.isChecked, java.lang.Boolean.valueOf(o.toString()))
+                evalNightModeStates(auto.isChecked, o.toString().toBoolean())
             else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N_MR1)
                 context.writeSecure(NIGHT_DISPLAY_ACTIVATED, if (o.toString().toBoolean()) 1 else 0)
             true

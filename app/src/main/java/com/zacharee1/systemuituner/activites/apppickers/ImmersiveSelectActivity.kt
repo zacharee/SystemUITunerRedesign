@@ -134,7 +134,7 @@ class ImmersiveSelectActivity : BaseAnimActivity() {
                 preference.key = info.packageName
                 preference.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { _, o ->
                     if (activity != null) {
-                        val isChecked = java.lang.Boolean.valueOf(o.toString())
+                        val isChecked = o.toString().toBoolean()
                         if (isChecked) {
                             ImmersiveHandler.addApp(activity, preference.key)
                         } else {

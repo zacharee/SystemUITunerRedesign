@@ -113,7 +113,7 @@ open class StatbarFragment : AnimFragment() {
                 .forEach {
                     it.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { preference, o ->
                         val key = preference.key
-                        val value = java.lang.Boolean.valueOf(o.toString())
+                        val value = o.toString().toBoolean()
 
                         context.changeBlacklist(key, value)
                         true

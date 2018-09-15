@@ -62,7 +62,7 @@ class SettingsActivity : BaseAnimActivity() {
             val safeNotif = findPreference("show_safe_mode_notif") as SwitchPreference
 
             safeMode.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { _, newValue ->
-                if (java.lang.Boolean.valueOf(newValue.toString())) {
+                if (newValue.toString().toBoolean()) {
                     activity.stopService(Intent(activity, SafeModeService::class.java))
                     ContextCompat.startForegroundService(activity, Intent(activity, SafeModeService::class.java))
                 } else {
@@ -77,10 +77,5 @@ class SettingsActivity : BaseAnimActivity() {
                 safeNotif.summary = resources.getText(R.string.safe_mode_notif_desc_not_supported)
             }
         }
-    }
-
-    companion object {
-
-        const val RECREATE_ACTIVITY = "recreate_activity"
     }
 }

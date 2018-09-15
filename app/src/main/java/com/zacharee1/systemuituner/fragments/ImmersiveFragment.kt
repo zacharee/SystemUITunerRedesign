@@ -110,7 +110,7 @@ class ImmersiveFragment : AnimFragment(), Preference.OnPreferenceChangeListener 
     override fun onPreferenceChange(preference: Preference, o: Any): Boolean {
         if (preference is CheckBoxPreference) {
 
-            val isChecked = java.lang.Boolean.valueOf(o.toString())
+            val isChecked = o.toString().toBoolean()
 
             if (isChecked) {
                 setAllOthersDisabled(preference.key)
