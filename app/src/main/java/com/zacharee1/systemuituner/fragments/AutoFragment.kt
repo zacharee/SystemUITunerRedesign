@@ -73,7 +73,6 @@ class AutoFragment : AnimFragment(), AppOpsManager.OnOpChangedListener {
                     .observeOn(Schedulers.io())
                     .subscribe { dump ->
                         dump?.let {
-                            Log.e("SystemUITuner", dump)
                             val index = dump.indexOf("icon slots")
                             if (index != -1) {
                                 val icons = dump.substring(index)

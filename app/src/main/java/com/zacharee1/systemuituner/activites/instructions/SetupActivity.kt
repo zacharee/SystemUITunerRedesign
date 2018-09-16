@@ -86,6 +86,7 @@ class SetupActivity : AppIntro2() {
                                 finish()
                             }
                             .setNegativeButton(R.string.no, null)
+                            .show()
                 } else {
                     startUp()
                     finish()
