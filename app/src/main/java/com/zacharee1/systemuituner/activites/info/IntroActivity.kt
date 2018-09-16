@@ -1,6 +1,7 @@
 package com.zacharee1.systemuituner.activites.info
 
 import android.Manifest
+import android.graphics.Color
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.preference.PreferenceManager
@@ -32,42 +33,42 @@ class IntroActivity : AppIntro2() {
         addSlide(WarningSlideFragment.newInstance(
                 resources.getString(R.string.warning),
                 resources.getString(R.string.warn_message),
-                0,
+                R.drawable.ic_warning_black_24dp,
                 resources.getColor(android.R.color.holo_red_dark, null)
         ))
 
         addSlide(SlideFragment.newInstance(
                 resources.getString(R.string.welcome),
                 resources.getString(R.string.intro_1),
-                0,
+                R.drawable.ic_hand_black_24dp,
                 resources.getColor(R.color.intro_1, null)
         ))
 
         addSlide(SlideFragment.newInstance(
                 resources.getString(R.string.some_things),
                 resources.getString(R.string.intro_2),
-                0,
+                R.drawable.ic_brush_black_24dp,
                 resources.getColor(R.color.intro_2, null)
         ))
 
         addSlide(SlideFragment.newInstance(
                 resources.getString(R.string.auto_detect),
                 resources.getString(R.string.intro_3),
-                0,
+                R.drawable.ic_track_changes_black_24dp,
                 resources.getColor(R.color.intro_3, null)
         ))
 
         addSlide(SlideFragment.newInstance(
                 resources.getString(R.string.no_root),
                 resources.getString(R.string.intro_4),
-                0,
+                R.drawable.ic_sudo_black_24dp,
                 resources.getColor(R.color.intro_4, null)
         ))
 
         addSlide(SlideFragment.newInstance(
                 resources.getString(R.string.permissions),
                 resources.getString(R.string.intro_5),
-                0,
+                R.drawable.ic_check_black_24dp,
                 resources.getColor(R.color.intro_5, null)
         ))
 
@@ -145,6 +146,13 @@ class IntroActivity : AppIntro2() {
             val drawable = view.findViewById<ImageView>(R.id.image)
             val drawableId = args.getInt("drawableId")
             if (drawableId != 0) drawable.setImageResource(drawableId)
+
+            val image = view?.findViewById<ImageView>(R.id.image)
+            image?.setColorFilter(Color.WHITE)
+
+            val params = image?.layoutParams
+            params?.width = ViewGroup.LayoutParams.MATCH_PARENT
+            params?.height = ViewGroup.LayoutParams.MATCH_PARENT
 
             return view
         }
