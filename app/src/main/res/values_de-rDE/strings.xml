@@ -261,7 +261,7 @@
   <string name="no_im_staying">Nein, behalten</string>
   <string name="fix_rotation_done_uninstall">Rotationssymbol entfernt! Einstellung wird erst nach einem Neustart wirksam.</string>
   <string name="fix_rotation_done_stay">Rotationssymbol entfernt! Wenn es immer noch angezeigt wird, starten Sie Ihr Gerät neu.</string>
-  <string name="missing_not_required_perms_desc">Are you sure you want to continue? At least one optional permission wasn\'t granted, which means you will need a computer again to grant them later.</string>
+  <string name="missing_not_required_perms_desc">Möchten Sie wirklich fortfahren? Mindestens eine optionale Berechtigung wurde nicht erteilt, was bedeutet, dass Sie erneut einen Computer benötigen, um sie später zu gewähren.</string>
   <!--Messages-->
   <string name="sorry_explain">Irgendetwas ist beim Setzen dieses Schalters schiefgelaufen.</string>
   <string name="sorry_option">Versuche den folgenden Befehl von einem Computer aus auszuführen (es ist eine Zeile):</string>
