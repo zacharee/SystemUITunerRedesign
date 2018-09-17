@@ -252,7 +252,7 @@
     Use the options below to set the different snooze times. \"Default\" sets the time Android will use by default. The other items will be the snooze times available for you to select.
     </string>
   <string name="custom_settings_input_desc">These fields allow you to enter your own custom settings.</string>
-  <string name="custom_settings_read_desc">These fields allow you to read the value of a specified key.</string>
+  <string name="custom_settings_read_desc">Diese Felder ermöglichen es Ihnen, den Wert eines bestimmten Schlüssels zu lesen.</string>
   <string name="custom_settings_warning">Be careful what you do here! If you input an incorrect value, you could cause a crash loop, bootloop or worse!</string>
   <string name="hide_welcome_hint">Hint: You can hide this screen, and the donation message, by going to Settings and toggling on \"Hide Welcome Screen\".</string>
   <string name="safe_mode_notif_desc_not_supported">Diese Einstellung muss in Oreo aktiviert bleiben.</string>
@@ -282,7 +282,7 @@
   <string name="miui_warning">It seems that you\'re using a MIUI device. Please take note that few, if any, features of this app will work for you. It is NOT fixable!</string>
   <string name="warn_message">Diese App ändert Systemeinstellungen. Deinstallieren wird nichts rückgängig machen, noch kann ich dies geschehen lassen. Sofern Sie nicht mit der manuellen Wiederherstellung vertraut sind, verwenden Sie die App nicht. Du wurdest gewarnt!</string>
   <string name="safe_mode_notif_desc">It is recommended that you keep this active, and hide the notification instead. Turning it off may cause Safe Mode to no longer function.</string>
-  <string name="invalid_blacklist_backup">Invalid blacklist backup</string>
+  <string name="invalid_blacklist_backup">Ungültige Sicherung der Negativliste</string>
   <string name="backup_restored">Sicherung erfolgreich wiederhergestellt</string>
   <string name="nothing_to_back_up">Keine Sicherung erforderlich</string>
   <string name="grant_usage">Please grant SystemUI Tuner access to Usage.</string>
@@ -294,17 +294,17 @@
   <string name="download_adb_windows"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-windows.zip">ADB ZIP für Windows herunterladen.</a>]]></string>
   <string name="extract_zip">2. Entpacken Sie die ZIP-Datei an einem leicht zugänglichen Ort (z.B. Desktop).</string>
   <string name="open_cmd">3. Öffne CMD.</string>
-  <string name="cd_windows"><![CDATA[4. Enter <b>cd C:\\path\\to\\extracted\\folder\\</b> to get to the folder where you extracted ADB. For instance, <b>cd C:\\Users\\Zachary\\Desktop\\platform-tools\\</b>.]]></string>
-  <string name="cd_further"><![CDATA[- Make sure that the folder you <b>cd</b> into contains the ADB executable. If not, <b>cd</b> one level further.]]></string>
-  <string name="download_adb_mac"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-darwin.zip">Download the ADB ZIP for macOS.</a>]]></string>
+  <string name="cd_windows"><![CDATA[4. Geben Sie <b>cd C:\\path\\to\\extrahiert\\ordner\\</b> ein, um den Ordner zu öffnen, in dem Sie ADB extrahiert haben. Zum Beispiel, <b>cd C:\\Users\\Zachary\\Desktop\\Plattform-Tools\\</b>.]]></string>
+  <string name="cd_further"><![CDATA[• Stellen Sie sicher, dass der Ordner, in den Sie mit <b>cd</b> wechseln, die ausführbare Datei ADB. Wenn nicht, <b>cd</b> wechselt eine Ebene weiter.]]></string>
+  <string name="download_adb_mac"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-darwin.zip">ADB ZIP für macOS herunterladen.</a>]]></string>
   <string name="open_terminal">3. Öffne den Terminal.</string>
-  <string name="cd_mac"><![CDATA[4. Enter <b>cd /path/to/extracted/folder/</b> to get to the folder you extracted ADB into. For instance, <b>cd /Users/Zachary/Desktop/platform-tools/</b>.]]></string>
-  <string name="make_sure_adb_installed">1. Make sure ADB is installed:</string>
-  <string name="download_adb_linux"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-linux.zip">Download the ADB ZIP for Linux.</a>]]></string>
-  <string name="cd_linux"><![CDATA[4. Enter <b>cd /path/to/extracted/folder/</b> to get to the folder you extracted ADB into. For instance, <b>cd /home/Zachary/Desktop/platform-tools/</b>.]]></string>
+  <string name="cd_mac"><![CDATA[4. Geben Sie <b>cd /path/to/extractracted/ordner/</b> ein, um den Ordner zu öffnen, in den Sie die ADB extrahiert haben. Zum Beispiel <b>cd /Users/Zachary/Desktop/plattform-tools/</b>.]]></string>
+  <string name="make_sure_adb_installed">1. Stellen Sie sicher, dass ADB installiert ist:</string>
+  <string name="download_adb_linux"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-linux.zip">ADB ZIP für Linux herunterladen.</a>]]></string>
+  <string name="cd_linux"><![CDATA[4. Geben Sie <b>cd /path/to/extractracted/ordner/</b> ein, um den Ordner zu öffnen, in den Sie die ADB extrahiert haben. Zum Beispiel <b>cd /home/Zachary/Desktop/plattform-tools/</b>.]]></string>
   <!--Misc-->
   <string name="created_by">App von <a href="https://forum.xda-developers.com/member.php?u=7055541">Zacharee1</a></string>
-  <string name="lang_credit">Translations by volunteers on <a href="https://crowdin.com/project/systemui-tuner">Crowdin</a></string>
+  <string name="lang_credit">Übersetzungen von Freiwilligen auf <a href="https://crowdin.com/project/systemui-tuner">Crowdin</a></string>
   <string name="home_desc">Für Geräte ohne diese Aktivität</string>
   <string name="home_joke">Oder für Geräte mit ihr. Ich bin nicht dein Chef.</string>
   <string name="home_extra">(Wenn du den normalen SystemUI Tuner hast, bietet dir dies ein paar extra Vorteile.)</string>
