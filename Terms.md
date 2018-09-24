@@ -41,4 +41,36 @@ DUMP
 PACKAGE_USAGE_STATS
  - This permission is needed for the Status Bar icon auto-detect feature.
  
-I have attempted to modularize when these permissions are requested. All three are requested during setup, but *only* WRITE_SECURE_SETTINGS is required at this point. If you skip the other permissions
+I have attempted to modularize when these permissions are requested. All three are requested during setup, but *only* WRITE_SECURE_SETTINGS is required at this point. If you skip the other permissions at this time, they will be requested when you attempt to use a function that requires them.
+
+While each of these permissions requires a special process to grant them, they are no different from permissions such as CAMERA or MICROPHONE. That is, as soon as you uninstall SystemUI Tuner or clear its data, these permissions are revoked by Android.
+
+# Uninstallation/Reset
+SystemUI Tuner has absolutely no way to detect when you uninstall it. SystemUI Tuner also has no way to know what the settings on your device originally were. This means a few things:
+ - if you uninstall SystemUI Tuner, none of your settings will be reverted or undone.
+ - there is no "Reset to Defaults" option in SystemUI Tuner, nor can there be.
+ 
+It is up to you to remember what you have modified while using SystemUI Tuner. If you decide to uninstall it or you want to go back to default settings, you have to do that yourself. It is simply impossible for SystemUI Tuner to work out what your default settings were.
+ 
+# Safety/Warnings
+As mentioned in the introduction, I take no responsibility if you break your device. That said, I will lay out some warnings below, to supplement the many, _many_, **many** already present in the app:
+ 
+TouchWiz might break while using this app. See the TouchWiz section for details.
+
+This app modifies system settings, and gives you the power to break your device. Use caution and only use this app if you are comfortable with manual recovery.
+
+Immersive Mode is a **system** function. I did not make it and I do not control it. If problems arise through usage, **THIS IS THE FAULT OF YOUR MANUFACTURER*.
+
+# Limitations
+Since this app is **not** a system app, and does **not** have full system access, it has quite a few limitations.
+ - This is **not** a theming app, nor is it meant to be! It cannot change the position, color or size of any system elements.
+ - Some things simply will **not** function on your device! If certain status bar icon toggles have no effect, or Demo Mode does not function, there is absolutely nothing I can do.
+ - SystemUI Tuner simply modifies system settings. It is not a "magic wand" that can do anything without root.
+
+Explicit list of examples of functions SystemUI Tuner cannot do:
+ - Move the clock
+ - Fix icon toggles that have no effect
+ - Remove the carrier label (except on TouchWiz Oreo and above)
+ - Remove the dual-SIM icon on some devices
+ - Remove the VoLTE icon on some devices
+ - 
