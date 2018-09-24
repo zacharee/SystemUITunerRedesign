@@ -71,6 +71,36 @@ Explicit list of examples of functions SystemUI Tuner cannot do:
  - Move the clock
  - Fix icon toggles that have no effect
  - Remove the carrier label (except on TouchWiz Oreo and above)
- - Remove the dual-SIM icon on some devices
- - Remove the VoLTE icon on some devices
- - 
+ - Add custom Quick Settings on Marshmallow devices that are more advanced than a simple broadcast
+ - Change the color of status bar icons, Quick Settings, etc
+
+Explicit list of examples of functions SystemUI Tuner cannot do on all devices:
+ - Remove the dual-SIM icon
+ - Remove the VoLTE icon
+ - Modify the Quick Settings row and column counts
+ - Modify the QS header count
+ - Auto detect which status bar icons to hide
+ - Hide any status bar icons
+ - Enable Demo Mode
+ - Change lockscreen shortcuts
+ - Enable clock seconds
+ - Enable in-battery percentage
+ - Enable Night Mode/Display
+ - etc
+ 
+Neither list is exhaustive. The point is that SystemUI Tuner **CANNOT** do everything. If you email me asking (or demanding) that I "fix" something that does not work, I will simply ignore it.
+ 
+# TouchWiz
+TouchWiz is weird:
+  - SystemUI Tuner **WILL NOT WORK** on TouchWiz Marshmallow.
+  - Modifying status bar icons may cause crashes on TouchWiz Nougat.
+  - The Rotation Lock icon may appear when modifying status bar icons. **READ THE WARNING IN THE APP TO LEARN HOW TO FIX THIS**
+  
+Since TouchWiz is so heavily modified from AOSP, this is simply how things are.
+ 
+# MIUI
+**DO NOT EXPECT THAT SYSTEMUI TUNER WILL WORK ON MIUI**
+You may get lucky with a version where at least some functions work, but there is absolutely no guarantee, nor is there anything I can do about it.
+
+# EMUI
+EMUI Oreo and Pie have had decreasing compatibility with SystemUI Tuner. As with MIUI, this is out of my control.
