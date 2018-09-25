@@ -227,6 +227,8 @@
   <string name="safe_mode_snooze_options">Snooze Options</string>
   <string name="fix_rotation_icon_dialog_title">Uninstalling?</string>
   <string name="done">Done!</string>
+  <string name="high_brightness_warning">High Brightness Warning</string>
+  <string name="grant">Grant</string>
   <!--Descriptions-->
   <string name="fancy_pulldown_notice">Toggling this option off can cause issues after a reboot. Manually toggle this option on and off after a reboot, or enable Safe Mode.</string>
   <string name="safe_mode_summary">SAMSUNG USERS KEEP THIS TURNED ON UNLESS YOU HAVE AN AOSP ROM!</string>
@@ -262,6 +264,9 @@
   <string name="fix_rotation_done_uninstall">Rotation icon removed! This won\'t take effect until you reboot.</string>
   <string name="fix_rotation_done_stay">Rotation icon removed! If it still appears, reboot your device.</string>
   <string name="missing_not_required_perms_desc">Are you sure you want to continue? At least one optional permission wasn\'t granted, which means you will need a computer again to grant them later.</string>
+  <string name="ws_needed_desc">WRITE_SETTINGS is needed to change this setting. Tap the button above to grant it.\n (This unfortunately doesn\'t guarantee that the toggle will work.)</string>
+  <string name="safe_mode_high_brightness_warning_desc">Attempt to restore the currently set High Brightness Warning status on boot. This is only for TouchWiz devices and won\'t work without root.</string>
+  <string name="safe_mode_volume_warning_desc">Restores current High Volume Warning state on boot.</string>
   <!--Messages-->
   <string name="sorry_explain">Bu geçişi ayarlarken birşeyler yanlış gitti.</string>
   <string name="sorry_option">Try executing the following command from a computer (it\'s one line):</string>
