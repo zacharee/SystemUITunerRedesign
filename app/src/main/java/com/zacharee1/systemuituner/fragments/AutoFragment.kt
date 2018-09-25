@@ -1,12 +1,9 @@
 package com.zacharee1.systemuituner.fragments
 
 import android.Manifest
-import android.app.AppOpsManager
-import android.content.Context
 import android.preference.Preference
 import android.preference.SwitchPreference
 import android.support.constraint.ConstraintLayout
-import android.util.Log
 import android.view.LayoutInflater
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.activites.instructions.SetupActivity
@@ -20,23 +17,15 @@ import io.reactivex.schedulers.Schedulers
 import java.util.*
 import java.util.regex.Pattern
 
-class AutoFragment : AnimFragment(), AppOpsManager.OnOpChangedListener {
+class AutoFragment : AnimFragment() {
     private val prefs = TreeMap<String, Preference>()
-    private val appOpsManager by lazy { activity.getSystemService(Context.APP_OPS_SERVICE) as AppOpsManager }
 
     private lateinit var observable: Disposable
 
     override fun onSetTitle() = resources.getString(R.string.auto_detect)
 
     override fun onAnimationFinishedEnter(enter: Boolean) {
-        appOpsManager.startWatchingMode(AppOpsManager.OPSTR_GET_USAGE_STATS, activity.packageName, this)
         verifyUsage(enter)
-    }
-
-    override fun onOpChanged(op: String?, packageName: String?) {
-        when (op) {
-            AppOpsManager.OPSTR_GET_USAGE_STATS -> verifyUsage(true)
-        }
     }
 
     override fun onAnimationCreated(enter: Boolean) {

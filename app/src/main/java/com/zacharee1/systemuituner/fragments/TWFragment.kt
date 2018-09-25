@@ -1,20 +1,26 @@
 package com.zacharee1.systemuituner.fragments
 
 import android.graphics.Color
+import android.os.Bundle
 import android.preference.Preference
+import android.preference.SwitchPreference
 import android.provider.Settings
 import com.jaredrummler.android.colorpicker.ColorPreference
 import com.pavelsikun.seekbarpreference.SeekBarPreference
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.util.writeGlobal
 import com.zacharee1.systemuituner.util.writeSecure
+import com.zacharee1.systemuituner.util.writeSystem
 
 class TWFragment : StatbarFragment() {
+    private var origRowCol = false
+
     companion object {
         const val TILE_ROW = "qs_tile_row"
         const val TILE_COLUMN = "qs_tile_column"
         const val NAVBAR_COLOR = "navigationbar_color"
         const val NAVBAR_CURRENT_COLOR = "navigationbar_current_color"
+        const val HIGH_BRIGHTNESS_WARNING = "shown_max_brightness_dialog"
     }
 
     override fun onSetTitle() = resources.getString(R.string.touchwiz)
@@ -27,6 +33,26 @@ class TWFragment : StatbarFragment() {
             preferenceListeners()
             switchPreferenceListeners()
         }
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        preferenceManager.sharedPreferences.apply {
+            origRowCol = getBoolean("safe_mode_row_col", true)
+
+            edit().apply {
+                putBoolean("safe_mode_row_col", false)
+            }.apply()
+        }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+
+        preferenceManager.sharedPreferences.edit().apply {
+            putBoolean("safe_mode_row_col", origRowCol)
+        }.apply()
     }
 
     private fun setUpQSStuff() {
@@ -57,6 +83,17 @@ class TWFragment : StatbarFragment() {
             context.writeGlobal(NAVBAR_COLOR, newValue.toString())
             context.writeGlobal(NAVBAR_CURRENT_COLOR, newValue.toString())
             true
+        }
+    }
+
+    override fun switchPreferenceListeners() {
+        super.switchPreferenceListeners()
+
+        val hbw = findPreference(HIGH_BRIGHTNESS_WARNING) as SwitchPreference
+        hbw.isChecked = Settings.System.getInt(activity.contentResolver, hbw.key, 0) == 0
+
+        hbw.setOnPreferenceChangeListener { pref, newValue ->
+            activity.writeSystem(pref.key, if (newValue.toString().toBoolean()) 0 else 1)
         }
     }
 }

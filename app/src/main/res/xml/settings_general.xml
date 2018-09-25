@@ -81,6 +81,22 @@
             android:summary="@string/safe_mode_summary_5"
             />
 
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:dependency="safe_mode"
+            android:key="safe_mode_high_brightness_warning"
+            android:title="@string/high_brightness_warning"
+            android:summary="@string/safe_mode_high_brightness_warning_desc"
+            />
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:dependency="safe_mode"
+            android:key="safe_mode_volume_warning"
+            android:title="@string/headphone_volume_warning"
+            android:summary="@string/safe_mode_volume_warning_desc"
+            />
+
     </PreferenceCategory>
 
     <PreferenceCategory

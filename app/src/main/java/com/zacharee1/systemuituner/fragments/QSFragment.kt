@@ -2,6 +2,7 @@ package com.zacharee1.systemuituner.fragments
 
 import android.content.Intent
 import android.os.Build
+import android.os.Bundle
 import android.preference.Preference
 import android.preference.PreferenceCategory
 import android.preference.SwitchPreference
@@ -12,6 +13,8 @@ import com.zacharee1.systemuituner.activites.QuickSettingsLayoutEditor
 import com.zacharee1.systemuituner.util.writeSecure
 
 class QSFragment : AnimFragment() {
+    private var origHeader = false
+
     override fun onSetTitle() = resources.getString(R.string.quick_settings)
 
     override fun onAnimationFinishedEnter(enter: Boolean) {
@@ -22,6 +25,25 @@ class QSFragment : AnimFragment() {
             setSliderState()
             setEditorListener()
         }
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        preferenceManager.sharedPreferences.apply {
+            origHeader = getBoolean("safe_mode_header_count", true)
+            edit().apply {
+                putBoolean("safe_mode_header_count", false)
+            }.apply()
+        }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+
+        preferenceManager.sharedPreferences.edit().apply {
+            putBoolean("safe_mode_header_count", origHeader)
+        }.apply()
     }
 
     private fun setEditorListener() {
@@ -97,5 +119,6 @@ class QSFragment : AnimFragment() {
         const val GENERAL_QS = "general_qs"
         const val QQS_COUNT = "sysui_qqs_count"
         const val COUNT_CATEGORY = "qqs_count_category"
+        const val FANCY_ANIM = "sysui_qs_fancy_anim"
     }
 }

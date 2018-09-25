@@ -106,7 +106,7 @@ open class StatbarFragment : AnimFragment() {
         updateBlacklistSwitches()
     }
 
-    internal fun switchPreferenceListeners() {
+    internal open fun switchPreferenceListeners() {
         (0 until preferenceScreen.rootAdapter.count)
                 .map { preferenceScreen.rootAdapter.getItem(it) }
                 .filterIsInstance<SwitchPreference>()

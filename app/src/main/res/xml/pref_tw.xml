@@ -34,6 +34,16 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+        android:title="@string/miscellaneous">
+
+        <SwitchPreference
+            android:title="@string/high_brightness_warning"
+            android:defaultValue="true"
+            android:key="shown_max_brightness_dialog" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:title="@string/status_bar">
         <com.zacharee1.systemuituner.prefs.StatBarWarnPref />
 

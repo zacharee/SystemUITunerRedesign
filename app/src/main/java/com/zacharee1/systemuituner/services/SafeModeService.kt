@@ -16,8 +16,13 @@ import android.provider.Settings
 import android.support.v4.app.NotificationCompat
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.activites.settings.SettingsActivity
+import com.zacharee1.systemuituner.fragments.MiscFragment
+import com.zacharee1.systemuituner.fragments.QSFragment
+import com.zacharee1.systemuituner.fragments.TWFragment
+import com.zacharee1.systemuituner.util.checkSamsung
 import com.zacharee1.systemuituner.util.writeGlobal
 import com.zacharee1.systemuituner.util.writeSecure
+import com.zacharee1.systemuituner.util.writeSystem
 
 class SafeModeService : Service() {
     private var shutDownReceiver: ShutDownReceiver? = null
@@ -29,7 +34,8 @@ class SafeModeService : Service() {
         override fun onChange(selfChange: Boolean, uri: Uri) {
             if (uri == Settings.Secure.getUriFor("sysui_qqs_count")) {
                 restoreQSHeaderCount()
-            } else if (uri == Settings.Secure.getUriFor("qs_tile_row") || uri == Settings.Secure.getUriFor("qs_tile_column")) {
+            } else if (uri == Settings.Secure.getUriFor("qs_tile_row")
+                    || uri == Settings.Secure.getUriFor("qs_tile_column")) {
                 restoreQSRowColCount()
             } else if (uri == Settings.Global.getUriFor("notification_snooze_options")) {
                 restoreSnoozeState()
@@ -49,6 +55,10 @@ class SafeModeService : Service() {
         get() = preferences.getBoolean("safe_mode_row_col", true)
     private val snoozeOptions: Boolean
         get() = preferences.getBoolean("safe_mode_snooze_options", true)
+    private val hbw: Boolean
+        get() = preferences.getBoolean("safe_mode_high_brightness_warning", true)
+    private val volumeWarning: Boolean
+        get() = preferences.getBoolean("safe_mode_volume_warning", true)
 
     private val prefsListener: SharedPreferences.OnSharedPreferenceChangeListener = SharedPreferences.OnSharedPreferenceChangeListener { preferences, key ->
         when (key) {
@@ -74,10 +84,12 @@ class SafeModeService : Service() {
         startInForeground()
         restoreStateOnStartup()
         restoreQSHeaderCount()
+        restoreHBWState()
         restoreQSRowColCount()
         setUpReceivers()
         setUpContentObserver()
         restoreSnoozeState()
+        restoreVolumeWarning()
         return Service.START_STICKY
     }
 
@@ -135,8 +147,13 @@ class SafeModeService : Service() {
     private fun restoreStateOnStartup() {
         restoreBlacklist()
         restoreFancyAnim()
+    }
 
-        writeGlobal("system_booted", 0)
+    private fun restoreHBWState() {
+        if (hbw && checkSamsung()) {
+            val restoreState = preferences.getBoolean(TWFragment.HIGH_BRIGHTNESS_WARNING, true)
+            writeSystem(TWFragment.HIGH_BRIGHTNESS_WARNING, if (restoreState) 0 else 1, false)
+        }
     }
 
     private fun restoreBlacklist() {
@@ -155,15 +172,17 @@ class SafeModeService : Service() {
 
     private fun restoreFancyAnim() {
         if (fancyAnim) {
-            val qsAnimState = Settings.Secure.getString(contentResolver, "sysui_qs_fancy_anim")
+            val fancyAnim = preferences.getBoolean(QSFragment.FANCY_ANIM, true)
 
-            if (qsAnimState == null || qsAnimState.isEmpty() || qsAnimState == "1") {
-                val backupState = Settings.Global.getString(contentResolver, "sysui_qs_fancy_anim_backup")
+            writeSecure(QSFragment.FANCY_ANIM, if (fancyAnim) 1 else 0)
+        }
+    }
 
-                if (backupState != null && !backupState.isEmpty()) {
-                    writeSecure("sysui_qs_fancy_anim", backupState)
-                }
-            }
+    private fun restoreVolumeWarning() {
+        if (volumeWarning) {
+            val warn = preferences.getBoolean(MiscFragment.AUDIO_SAFE, true)
+
+            writeGlobal(MiscFragment.AUDIO_SAFE, if (warn) 3 else 2)
         }
     }
 
@@ -204,7 +223,7 @@ class SafeModeService : Service() {
         if (Build.VERSION.SDK_INT > Build.VERSION_CODES.O && snoozeOptions) {
             val saved = preferences.getString("notification_snooze_options", "")
 
-            if (!saved.isEmpty()) {
+            if (saved?.isEmpty() == false) {
                 writeGlobal("notification_snooze_options", saved)
             }
         }

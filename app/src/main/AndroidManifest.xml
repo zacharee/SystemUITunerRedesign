@@ -22,6 +22,9 @@
     <uses-permission
         android:name="android.permission.PACKAGE_USAGE_STATS"
         tools:ignore="ProtectedPermissions" />
+    <uses-permission
+        android:name="android.permission.WRITE_SETTINGS"
+        tools:ignore="ProtectedPermissions" />
 
     <application
         android:allowBackup="true"
@@ -94,8 +97,9 @@
                 <action android:name="android.intent.action.VIEW" />
             </intent-filter>
         </activity>
-        <activity android:name=".activites.OptionsActivity"
-            android:configChanges="screenLayout|orientation|screenSize"/>
+        <activity
+            android:name=".activites.OptionsActivity"
+            android:configChanges="screenLayout|orientation|screenSize" />
         <activity
             android:name=".activites.info.AboutActivity"
             android:label="@string/about" />
@@ -135,6 +139,7 @@
                 <action android:name="com.twofortyfouram.locale.intent.action.EDIT_SETTING" />
             </intent-filter>
         </activity>
+        <activity android:name=".activites.info.GrantWSActivity" />
 
         <service
             android:name=".qstiles.NightModeTile"

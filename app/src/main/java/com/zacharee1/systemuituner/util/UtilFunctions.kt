@@ -3,7 +3,6 @@ package com.zacharee1.systemuituner.util
 import android.Manifest
 import android.annotation.SuppressLint
 import android.app.Activity
-import android.app.AppOpsManager
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -15,6 +14,7 @@ import android.support.v7.app.AlertDialog
 import android.text.TextUtils
 import android.util.TypedValue
 import com.zacharee1.systemuituner.R
+import com.zacharee1.systemuituner.activites.info.GrantWSActivity
 import com.zacharee1.systemuituner.activites.MainActivity
 import com.zacharee1.systemuituner.activites.OptionsActivity
 import com.zacharee1.systemuituner.activites.info.SettingWriteFailed
@@ -88,12 +88,7 @@ fun Context.checkPermissions(permissions: ArrayList<String>) =
         })
 
 fun Context.hasUsage(): Boolean {
-    val appOpsManager = getSystemService(Context.APP_OPS_SERVICE) as AppOpsManager
-    val appInfo = packageManager.getApplicationInfo(packageName, 0)
-    val mode = appOpsManager.checkOpNoThrow(AppOpsManager.OP_GET_USAGE_STATS, appInfo.uid, packageName)
-    return if (mode == AppOpsManager.MODE_DEFAULT) {
-        checkCallingOrSelfPermission(Manifest.permission.PACKAGE_USAGE_STATS) == PackageManager.PERMISSION_GRANTED
-    } else mode == AppOpsManager.MODE_ALLOWED
+    return checkCallingOrSelfPermission(Manifest.permission.PACKAGE_USAGE_STATS) == PackageManager.PERMISSION_GRANTED
 }
 
 fun Activity.startUp() {
@@ -195,18 +190,22 @@ fun Context.writeSecure(key: String?, value: Any?): Boolean {
     }
 }
 
-fun Context.writeSystem(key: String?, value: Any?): Boolean {
-    if (key == null) return false
-    return try {
-        Settings.System.putString(contentResolver, key, value?.toString())
-    } catch (e: Exception) {
-        val baseCommand = if (value != null) "settings put system $key $value" else "settings delete system $key"
-        return if (SuUtils.testSudo()) {
-            SuUtils.sudo(baseCommand)
-            true
-        } else {
-            launchErrorActivity(baseCommand)
-            false
+fun Context.writeSystem(key: String?, value: Any?, showError: Boolean = true): Boolean {
+    return if (!Settings.System.canWrite(this)) {
+        GrantWSActivity.start(this, key ?: return false, value)
+        false
+    } else {
+        key != null && try {
+            Settings.System.putString(contentResolver, key, value?.toString())
+        } catch (e: Exception) {
+            val baseCommand = if (value != null) "settings put system $key $value" else "settings delete system $key"
+            return if (SuUtils.testSudo()) {
+                SuUtils.sudo(baseCommand)
+                true
+            } else {
+                if (showError) launchErrorActivity(baseCommand)
+                false
+            }
         }
     }
 }
@@ -220,7 +219,7 @@ fun Context.launchErrorActivity(baseCommand: String?) {
     startActivity(intent)
 }
 
-fun Context.hasSpecificPerm(permission: String?) =
+fun Context.hasSpecificPerm(permission: String) =
         checkCallingOrSelfPermission(permission) == PackageManager.PERMISSION_GRANTED
 
 fun Context.changeBlacklist(key: String?, remove: Boolean) =
@@ -258,7 +257,7 @@ fun PreferenceFragment.updateBlacklistSwitches() {
 
                     keyItems
                             .filter { blItems.contains(it) }
-                            .forEach { o.isChecked = false }
+                            .forEach { _ -> o.isChecked = false }
                 }
             }
         }

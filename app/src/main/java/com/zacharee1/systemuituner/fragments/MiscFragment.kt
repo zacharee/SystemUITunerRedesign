@@ -3,6 +3,7 @@ package com.zacharee1.systemuituner.fragments
 import android.annotation.SuppressLint
 import android.content.res.Resources
 import android.os.Build
+import android.os.Bundle
 import android.preference.EditTextPreference
 import android.preference.Preference
 import android.preference.PreferenceCategory
@@ -16,6 +17,8 @@ import com.zacharee1.systemuituner.util.writeSystem
 import java.util.*
 
 class MiscFragment : AnimFragment() {
+    private var origSnooze = false
+
     override fun onSetTitle() = resources.getString(R.string.miscellaneous)
 
     override fun onAnimationFinishedEnter(enter: Boolean) {
@@ -30,6 +33,26 @@ class MiscFragment : AnimFragment() {
         }
     }
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        preferenceManager.sharedPreferences.apply {
+            origSnooze = getBoolean("safe_mode_snooze_options", true)
+
+            edit().apply {
+                putBoolean("safe_mode_snooze_options", false)
+            }.apply()
+        }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+
+        preferenceManager.sharedPreferences.edit().apply {
+            putBoolean("safe_mode_snooze_options", origSnooze)
+        }.apply()
+    }
+
     private fun setGlobalSwitchStates() {
         val preferences = object : ArrayList<SwitchPreference>() {
             init {
@@ -40,9 +63,9 @@ class MiscFragment : AnimFragment() {
 
         for (preference in preferences) {
             val key = preference.key
-            preference.isChecked = Settings.Global.getInt(context?.contentResolver, key, 1) == 1
+            preference.isChecked = Settings.Global.getInt(context?.contentResolver, key, 2) == 3
             preference.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { _, o ->
-                context.writeGlobal(key, if (o.toString().toBoolean()) 1 else 0)
+                context.writeGlobal(key, if (o.toString().toBoolean()) 3 else 2)
                 true
             }
         }
