@@ -227,6 +227,8 @@
   <string name="safe_mode_snooze_options">Opções de soneca</string>
   <string name="fix_rotation_icon_dialog_title">Desinstalando?</string>
   <string name="done">Feito!</string>
+  <string name="high_brightness_warning">High Brightness Warning</string>
+  <string name="grant">Grant</string>
   <!--Descriptions-->
   <string name="fancy_pulldown_notice">Desativar essa opção pode causar problemas após a reinicialização. Ative e desative manualmente essa opção, após uma reinicialização ou ative o Modo de Segurança.</string>
   <string name="safe_mode_summary">OS USUÁRIOS DA SAMSUNG DEVEM MANTÊ-LO LIGADO, A MENOS QUE VOCÊ TENHA UMA ROM AOSP!</string>
@@ -262,6 +264,9 @@
   <string name="fix_rotation_done_uninstall">Ícone de rotação removido! Isso não terá efeito até que você reinicie.</string>
   <string name="fix_rotation_done_stay">Ícone de rotação removido! Se ele ainda aparece, reinicie o dispositivo.</string>
   <string name="missing_not_required_perms_desc">Tem certeza de que quer continuar? Pelo menos uma permissão opcional não foi concedida, o que significa que você precisará de um computador novamente para concedê-las mais tarde.</string>
+  <string name="ws_needed_desc">WRITE_SETTINGS is needed to change this setting. Tap the button above to grant it.\n (This unfortunately doesn\'t guarantee that the toggle will work.)</string>
+  <string name="safe_mode_high_brightness_warning_desc">Attempt to restore the currently set High Brightness Warning status on boot. This is only for TouchWiz devices and won\'t work without root.</string>
+  <string name="safe_mode_volume_warning_desc">Restores current High Volume Warning state on boot.</string>
   <!--Messages-->
   <string name="sorry_explain">Algo deu errado ao definir esta alternância.</string>
   <string name="sorry_option">Tente executar o seguinte comando a partir de um computador (é uma linha):</string>
