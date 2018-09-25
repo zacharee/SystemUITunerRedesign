@@ -227,6 +227,8 @@
   <string name="safe_mode_snooze_options">Snooze Options</string>
   <string name="fix_rotation_icon_dialog_title">Uninstalling?</string>
   <string name="done">Done!</string>
+  <string name="high_brightness_warning">High Brightness Warning</string>
+  <string name="grant">Grant</string>
   <!--Descriptions-->
   <string name="fancy_pulldown_notice">इस विकल्प को बंद करने से रिबूट के बाद समस्याएं हो सकती हैं। रीबूट के बाद मैन्युअल रूप से इस विकल्प को चालू या बंद करें, या सुरक्षित मोड सक्षम करें।</string>
   <string name="safe_mode_summary">सैमसंग उपयोगकर्ताओं को यह चालू रखें जब तक की आप एक AOSP ROM पर है!</string>
@@ -261,6 +263,9 @@
   <string name="fix_rotation_done_uninstall">Rotation icon removed! This won\'t take effect until you reboot.</string>
   <string name="fix_rotation_done_stay">Rotation icon removed! If it still appears, reboot your device.</string>
   <string name="missing_not_required_perms_desc">Are you sure you want to continue? At least one optional permission wasn\'t granted, which means you will need a computer again to grant them later.</string>
+  <string name="ws_needed_desc">WRITE_SETTINGS is needed to change this setting. Tap the button above to grant it.\n (This unfortunately doesn\'t guarantee that the toggle will work.)</string>
+  <string name="safe_mode_high_brightness_warning_desc">Attempt to restore the currently set High Brightness Warning status on boot. This is only for TouchWiz devices and won\'t work without root.</string>
+  <string name="safe_mode_volume_warning_desc">Restores current High Volume Warning state on boot.</string>
   <!--Messages-->
   <string name="sorry_explain">इस टॉगल को सेट करते समय कुछ गलत हो गया</string>
   <string name="sorry_option">किसी कंप्यूटर से निंन आदेश निष्पादित करने का प्रयास करें (यह एक पंक्ति है):</string>
