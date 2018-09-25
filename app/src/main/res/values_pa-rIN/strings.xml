@@ -227,6 +227,8 @@
   <string name="safe_mode_snooze_options">Snooze Options</string>
   <string name="fix_rotation_icon_dialog_title">Uninstalling?</string>
   <string name="done">Done!</string>
+  <string name="high_brightness_warning">High Brightness Warning</string>
+  <string name="grant">Grant</string>
   <!--Descriptions-->
   <string name="fancy_pulldown_notice">ਇਸ ਚੋਣ ਨੂੰ ਬੰਦ ਕਰਨ ਨਾਲ ਰੀਬੂਟ ਤੋਂ ਬਾਅਦ ਦੇ ਮਸਲਿਆਂ ਦਾ ਕਾਰਨ ਬਣ ਸਕਦਾ ਹੈ. ਖੁਦ ਰੀਬੂਟ ਤੋਂ ਬਾਅਦ ਇਸ ਚੋਣ ਨੂੰ ਬੰਦ ਅਤੇ ਬੰਦ ਕਰਨ ਲਈ, ਜਾਂ ਸੁਰੱਖਿਅਤ ਮੋਡ ਯੋਗ ਕਰੋ.</string>
   <string name="safe_mode_summary">ਸੈਮਸੰਗ ਦੇ ਯੂਜ਼ਰਸ ਇਸ ਨੂੰ ਚਾਲੂ ਰਾਖਿਓ ਜਦੋ ਤਕ ਤੁਸੀਂ ਕਿਸੀ AOSP ਰੋਮ ਤੇ ਨਾ ਹੋਵੋ!</string>
@@ -261,6 +263,9 @@
   <string name="fix_rotation_done_uninstall">Rotation icon removed! This won\'t take effect until you reboot.</string>
   <string name="fix_rotation_done_stay">Rotation icon removed! If it still appears, reboot your device.</string>
   <string name="missing_not_required_perms_desc">Are you sure you want to continue? At least one optional permission wasn\'t granted, which means you will need a computer again to grant them later.</string>
+  <string name="ws_needed_desc">WRITE_SETTINGS is needed to change this setting. Tap the button above to grant it.\n (This unfortunately doesn\'t guarantee that the toggle will work.)</string>
+  <string name="safe_mode_high_brightness_warning_desc">Attempt to restore the currently set High Brightness Warning status on boot. This is only for TouchWiz devices and won\'t work without root.</string>
+  <string name="safe_mode_volume_warning_desc">Restores current High Volume Warning state on boot.</string>
   <!--Messages-->
   <string name="sorry_explain">ਇਸ ਨੂੰ ਬਦਲਣ ਵੇਲੇ ਕੁਝ ਗਲਤ ਹੋ ਗਿਆ.</string>
   <string name="sorry_option">ਕੰਪਿਊਟਰ ਤੋਂ ਹੇਠਲੀ ਕਮਾਂਡ ਚਲਾਉਣ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰੋ (ਇਹ ਇੱਕ ਲਾਈਨ ਹੈ):</string>
