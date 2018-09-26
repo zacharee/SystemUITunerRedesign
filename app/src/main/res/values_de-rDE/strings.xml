@@ -227,7 +227,7 @@
   <string name="safe_mode_snooze_options">Snooze Options</string>
   <string name="fix_rotation_icon_dialog_title">Deinstallieren?</string>
   <string name="done">Fertig!</string>
-  <string name="high_brightness_warning">High Brightness Warning</string>
+  <string name="high_brightness_warning">Warnung bei hoher Helligkeit</string>
   <string name="grant">Grant</string>
   <!--Descriptions-->
   <string name="fancy_pulldown_notice">Wenn du diese Option deaktivierst, kann es nach einem Neustart zu Problemen kommen. Schalte diese Option nach einem Neustart manuell ein und aus oder aktiviere den abgesicherten Modus.</string>
