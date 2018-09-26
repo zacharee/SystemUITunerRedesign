@@ -228,7 +228,7 @@
   <string name="fix_rotation_icon_dialog_title">Deinstallieren?</string>
   <string name="done">Fertig!</string>
   <string name="high_brightness_warning">Warnung bei hoher Helligkeit</string>
-  <string name="grant">Grant</string>
+  <string name="grant">Zuweisen</string>
   <!--Descriptions-->
   <string name="fancy_pulldown_notice">Wenn du diese Option deaktivierst, kann es nach einem Neustart zu Problemen kommen. Schalte diese Option nach einem Neustart manuell ein und aus oder aktiviere den abgesicherten Modus.</string>
   <string name="safe_mode_summary">SAMSUNG-BENUTZER: LASST DIES AN, SOFERN IHR KEINE AOSP ROM HABT!</string>
@@ -264,9 +264,9 @@
   <string name="fix_rotation_done_uninstall">Rotationssymbol entfernt! Einstellung wird erst nach einem Neustart wirksam.</string>
   <string name="fix_rotation_done_stay">Rotationssymbol entfernt! Wenn es immer noch angezeigt wird, starten Sie Ihr Gerät neu.</string>
   <string name="missing_not_required_perms_desc">Möchten Sie wirklich fortfahren? Mindestens eine optionale Berechtigung wurde nicht erteilt, was bedeutet, dass Sie erneut einen Computer benötigen, um sie später zu gewähren.</string>
-  <string name="ws_needed_desc">WRITE_SETTINGS is needed to change this setting. Tap the button above to grant it.\n (This unfortunately doesn\'t guarantee that the toggle will work.)</string>
-  <string name="safe_mode_high_brightness_warning_desc">Attempt to restore the currently set High Brightness Warning status on boot. This is only for TouchWiz devices and won\'t work without root.</string>
-  <string name="safe_mode_volume_warning_desc">Restores current High Volume Warning state on boot.</string>
+  <string name="ws_needed_desc">WRITE_SETTINGS wird benötigt, um diese Einstellung zu ändern. Tippen Sie auf die Schaltfläche oben, um sie zu erlauben.\n (Dies garantiert leider nicht, dass die Umschaltung funktioniert.)</string>
+  <string name="safe_mode_high_brightness_warning_desc">Versuchen Sie, den aktuell eingestellten Warnstatus für hohe Helligkeit beim Systemstart wiederherzustellen. Dies ist nur für TouchWiz-Geräte und funktioniert nicht ohne Root.</string>
+  <string name="safe_mode_volume_warning_desc">Stellt den aktuellen Warnstatus für hohe Lautstärke beim Neustart wieder her.</string>
   <!--Messages-->
   <string name="sorry_explain">Irgendetwas ist beim Setzen dieses Schalters schiefgelaufen.</string>
   <string name="sorry_option">Versuche den folgenden Befehl von einem Computer aus auszuführen (es ist eine Zeile):</string>
