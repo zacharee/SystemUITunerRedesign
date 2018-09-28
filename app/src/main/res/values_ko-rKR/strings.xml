@@ -58,6 +58,8 @@
   <string name="zen_icon">Zen 아이콘</string>
   <string name="do_not_disturb">방해 금지 아이콘</string>
   <string name="dnd">방해 금지</string>
+  <string name="privacy_policy">Privacy Policy</string>
+  <string name="terms_of_service">Terms of Service</string>
   <string name="donate">기부</string>
   <string name="reset_blacklist">제외 목록 초기화</string>
   <string name="animator_duration_scale">애니메이터 지속 배율</string>
@@ -229,6 +231,7 @@
   <string name="done">Done!</string>
   <string name="high_brightness_warning">High Brightness Warning</string>
   <string name="grant">Grant</string>
+  <string name="attention">Attention!</string>
   <!--Descriptions-->
   <string name="fancy_pulldown_notice">이 옵션을 끄면 재부팅 후 발생하는 문제의 원인이 될 수 있습니다. 재부팅 후 이 옵션을 수동으로 켰다 껐다 하거나, 안전 모드를 활성화하십시오.</string>
   <string name="safe_mode_summary">삼성 사용자라면 AOSP 롬이 아닌 경우 이것을 켜세요!</string>
@@ -285,7 +288,7 @@
   <string name="target_not_found">앱을 시작할 수 없습니다.</string>
   <string name="feature_not_supported">장치가 이 기능을 지원 하지 않는 것 같습니다. :/</string>
   <string name="miui_warning">MIUI 장치를 사용하시는 것 같습니다. 이 앱의 기능들이 아예 작동하지 않거나 극히 일부 기능만 작동할 것입니다. 문제 해결이 불가능합니다!</string>
-  <string name="warn_message">이 앱은 시스템 설정을 수정합니다. 앱을 제거한다 해도 아무 것도 원상복귀되지 않으며, 그렇게 할 수 있는 방법 또한 없습니다. 수동 복구과정이 불편할 경우, 본 앱을 사용하지 마십시오. 분명히 경고 했습니다!</string>
+  <string name="warn_message">Please read the Terms of Service before continuing.</string>
   <string name="safe_mode_notif_desc">이것을 켜는 대신, 알림을 숨길 것을 권장합니다. 이것을 끄면 안전 모드가 더 이상 작동하지 않는 원인이 될 수 있습니다.</string>
   <string name="invalid_blacklist_backup">Invalid blacklist backup</string>
   <string name="backup_restored">Successfully restored backup</string>
