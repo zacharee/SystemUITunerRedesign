@@ -58,6 +58,8 @@
   <string name="zen_icon">禅图标</string>
   <string name="do_not_disturb">免打扰图标</string>
   <string name="dnd">消息免打扰</string>
+  <string name="privacy_policy">Privacy Policy</string>
+  <string name="terms_of_service">Terms of Service</string>
   <string name="donate">捐赠</string>
   <string name="reset_blacklist">重置黑名单</string>
   <string name="animator_duration_scale">动画持续时间</string>
@@ -229,6 +231,7 @@
   <string name="done">Done!</string>
   <string name="high_brightness_warning">High Brightness Warning</string>
   <string name="grant">Grant</string>
+  <string name="attention">Attention!</string>
   <!--Descriptions-->
   <string name="fancy_pulldown_notice">关闭此选项会导致重新启动后出现问题。在重新启动后手动切换此选项, 或启用安全模式。</string>
   <string name="safe_mode_summary">注意：！三星用户保持这个打开, 除非你有一个 AOSP ROM的系统！</string>
@@ -285,7 +288,7 @@
   <string name="target_not_found">无法运行应用</string>
   <string name="feature_not_supported">看起来设备并不支持这个功能</string>
   <string name="miui_warning">看起来你正在使用 MIUI 设备。请注意，本应用在这个设备上只有少数的功能可用，并且这是无法修复的。</string>
-  <string name="warn_message">警告！本应用会修改系统设置，并且卸载应用后也不会恢复。我无法避免这个事情的发生，除非你能接受。否则请勿使用。</string>
+  <string name="warn_message">Please read the Terms of Service before continuing.</string>
   <string name="safe_mode_notif_desc">建议你保持本设定启用，并用隐藏通知作为替代方式，停用次设定可能导致安全模式无法正常运行。</string>
   <string name="invalid_blacklist_backup">Invalid blacklist backup</string>
   <string name="backup_restored">Successfully restored backup</string>
