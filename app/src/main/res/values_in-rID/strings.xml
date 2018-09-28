@@ -58,6 +58,8 @@
   <string name="zen_icon">Ikon Zen</string>
   <string name="do_not_disturb">Ikon Jangan Ganggu</string>
   <string name="dnd">Jangan Ganggu</string>
+  <string name="privacy_policy">Privacy Policy</string>
+  <string name="terms_of_service">Terms of Service</string>
   <string name="donate">Donate</string>
   <string name="reset_blacklist">Setel Ulang Daftar Hitam</string>
   <string name="animator_duration_scale">Skala Durasi Animator</string>
@@ -229,6 +231,7 @@
   <string name="done">Done!</string>
   <string name="high_brightness_warning">High Brightness Warning</string>
   <string name="grant">Grant</string>
+  <string name="attention">Attention!</string>
   <!--Descriptions-->
   <string name="fancy_pulldown_notice">Toggling this option off can cause issues after a reboot. Manually toggle this option on and off after a reboot, or enable Safe Mode.</string>
   <string name="safe_mode_summary">Pengguna Samsung harap tetap membiarkan ini menyala kecuali anda memiliki ROM AOSP!</string>
@@ -285,7 +288,7 @@
   <string name="target_not_found">Tidak dapat meluncurkan aplikasi.</string>
   <string name="feature_not_supported">Tampaknya perangkat tidak mendukung fitur ini :/</string>
   <string name="miui_warning">Tampaknya bahwa Anda menggunakan perangkat MIUI. Perlu diketahui beberapa, bahwa jika ada fitur aplikasi ini akan bekerja untuk Anda. Tidak bisa diperbaiki!</string>
-  <string name="warn_message">This app modifies system settings. Uninstalling won\'t revert anything, nor can I make that happen. Unless you are comfortable with manual recovery, don\'t use the app. You have been warned!</string>
+  <string name="warn_message">Please read the Terms of Service before continuing.</string>
   <string name="safe_mode_notif_desc">It is recommended that you keep this active, and hide the notification instead. Turning it off may cause Safe Mode to no longer function.</string>
   <string name="invalid_blacklist_backup">Daftar hitam cadangan tidak valid</string>
   <string name="backup_restored">Successfully restored backup</string>
