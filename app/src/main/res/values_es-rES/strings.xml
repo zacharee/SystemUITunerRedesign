@@ -58,6 +58,8 @@
   <string name="zen_icon">Zen</string>
   <string name="do_not_disturb">No Molestar</string>
   <string name="dnd">No Molestar</string>
+  <string name="privacy_policy">Privacy Policy</string>
+  <string name="terms_of_service">Terms of Service</string>
   <string name="donate">Donación</string>
   <string name="reset_blacklist">Restaurar la Lista Negra</string>
   <string name="animator_duration_scale">Escala de Animación</string>
@@ -229,6 +231,7 @@
   <string name="done">Done!</string>
   <string name="high_brightness_warning">High Brightness Warning</string>
   <string name="grant">Grant</string>
+  <string name="attention">Attention!</string>
   <!--Descriptions-->
   <string name="fancy_pulldown_notice">Desactivar esta opción puede causar problemas después de reiniciar. Activa y desactiva manualmente esta opción después de reiniciar, o activa Modo Seguro.</string>
   <string name="safe_mode_summary">LOS USUARIOS DE SAMSUNG MANTIENEN ESTO ENCENDIDO A MENOS QUE TENGAN UNA ROM AOSP!</string>
@@ -285,7 +288,7 @@
   <string name="target_not_found">No se pudo abrir la aplicación.</string>
   <string name="feature_not_supported">Al parecer su dispositivo no soporta ésta característica</string>
   <string name="miui_warning">Parece que usted está usando un dispositivo MIUI. Tenga en cuenta que pocos o ningúna característica de esta aplicación funcionará para usted. NO se puede arreglar!</string>
-  <string name="warn_message">This app modifies system settings. Uninstalling won\'t revert anything, nor can I make that happen. Unless you are comfortable with manual recovery, don\'t use the app. You have been warned!</string>
+  <string name="warn_message">Please read the Terms of Service before continuing.</string>
   <string name="safe_mode_notif_desc">It is recommended that you keep this active, and hide the notification instead. Turning it off may cause Safe Mode to no longer function.</string>
   <string name="invalid_blacklist_backup">Invalid blacklist backup</string>
   <string name="backup_restored">Successfully restored backup</string>
