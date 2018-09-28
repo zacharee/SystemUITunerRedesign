@@ -58,6 +58,8 @@
   <string name="zen_icon">Zen-Symbol</string>
   <string name="do_not_disturb">\"Nicht stören\"-Symbol</string>
   <string name="dnd">Nicht stören</string>
+  <string name="privacy_policy">Privacy Policy</string>
+  <string name="terms_of_service">Terms of Service</string>
   <string name="donate">Spenden</string>
   <string name="reset_blacklist">Blacklist zurücksetzen</string>
   <string name="animator_duration_scale">Maßstab Animationsdauer</string>
@@ -229,6 +231,7 @@
   <string name="done">Fertig!</string>
   <string name="high_brightness_warning">Warnung bei hoher Helligkeit</string>
   <string name="grant">Zuweisen</string>
+  <string name="attention">Attention!</string>
   <!--Descriptions-->
   <string name="fancy_pulldown_notice">Wenn du diese Option deaktivierst, kann es nach einem Neustart zu Problemen kommen. Schalte diese Option nach einem Neustart manuell ein und aus oder aktiviere den abgesicherten Modus.</string>
   <string name="safe_mode_summary">SAMSUNG-BENUTZER: LASST DIES AN, SOFERN IHR KEINE AOSP ROM HABT!</string>
@@ -285,7 +288,7 @@
   <string name="target_not_found">App kann nicht gestartet werden.</string>
   <string name="feature_not_supported">It seems your device doesn\'t support this feature :/</string>
   <string name="miui_warning">It seems that you\'re using a MIUI device. Please take note that few, if any, features of this app will work for you. It is NOT fixable!</string>
-  <string name="warn_message">Diese App ändert Systemeinstellungen. Deinstallieren wird nichts rückgängig machen, noch kann ich dies geschehen lassen. Sofern Sie nicht mit der manuellen Wiederherstellung vertraut sind, verwenden Sie die App nicht. Du wurdest gewarnt!</string>
+  <string name="warn_message">Please read the Terms of Service before continuing.</string>
   <string name="safe_mode_notif_desc">It is recommended that you keep this active, and hide the notification instead. Turning it off may cause Safe Mode to no longer function.</string>
   <string name="invalid_blacklist_backup">Ungültige Sicherung der Negativliste</string>
   <string name="backup_restored">Sicherung erfolgreich wiederhergestellt</string>
