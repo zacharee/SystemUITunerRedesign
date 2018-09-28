@@ -58,6 +58,8 @@
   <string name="zen_icon">Icône de Zen</string>
   <string name="do_not_disturb">Ne pas déranger icône</string>
   <string name="dnd">Ne pas déranger</string>
+  <string name="privacy_policy">Privacy Policy</string>
+  <string name="terms_of_service">Terms of Service</string>
   <string name="donate">Faire un don</string>
   <string name="reset_blacklist">Réinitialiser la liste noire</string>
   <string name="animator_duration_scale">Échelle de durée Animator</string>
@@ -229,6 +231,7 @@
   <string name="done">Done!</string>
   <string name="high_brightness_warning">High Brightness Warning</string>
   <string name="grant">Grant</string>
+  <string name="attention">Attention!</string>
   <!--Descriptions-->
   <string name="fancy_pulldown_notice">Désactiver cette option peut provoquer des problèmes après un redémarrage. Activer/désactiver cette option manuellement après un redémarrage , ou activer le Mode sans échec.</string>
   <string name="safe_mode_summary">UTILISATEURS DE SAMSUNG, GARDEZ CELA ACTIVÉ, SAUF SI VOUS AVEZ UNE ROM AOSP !</string>
@@ -285,7 +288,7 @@
   <string name="target_not_found">Impossible de lancer l’application.</string>
   <string name="feature_not_supported">Il semble que votre appareil ne supporte pas cette fonctionnalité :/</string>
   <string name="miui_warning">Il semble que vous utilisez un appareil MIUI. Veuillez prendre note que peu, voire aucune, caractéristiques de cette application fonctionnera pour vous. Il n’est pas réparable!</string>
-  <string name="warn_message">Cette application modifie les paramètres du système. La désinstaller ne restaurera rien, ni moi-même ne peux le faire. A moins que vous ne soyez à l\'aise avec une récupération manuelle, n’utilisez pas l’application. Vous aurez été prévenu !</string>
+  <string name="warn_message">Please read the Terms of Service before continuing.</string>
   <string name="safe_mode_notif_desc">Il est recommandé de garder ceci activé et masquer la notification à la place. Le désactiver risque de ne plus pouvoir faire fonctionner le Mode sans échec.</string>
   <string name="invalid_blacklist_backup">Invalid blacklist backup</string>
   <string name="backup_restored">Successfully restored backup</string>
