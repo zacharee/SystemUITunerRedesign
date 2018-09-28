@@ -223,6 +223,9 @@
             android:name="io.fabric.ApiKey"
             android:value="96d80cfeac7fcf7aec8fc104086331c45258ab0e" />
 
+        <meta-data android:name="google_analytics_adid_collection_enabled"
+            android:value="false" />
+
         <service
             android:name=".services.SafeModeService"
             android:enabled="true"
