@@ -58,6 +58,8 @@
   <string name="zen_icon">Ícone Zen</string>
   <string name="do_not_disturb">Ícone Não perturbe</string>
   <string name="dnd">Não Perturbe</string>
+  <string name="privacy_policy">Privacy Policy</string>
+  <string name="terms_of_service">Terms of Service</string>
   <string name="donate">Doar</string>
   <string name="reset_blacklist">Redefinir a Lista Negra</string>
   <string name="animator_duration_scale">Escala de Duração da animação</string>
@@ -229,6 +231,7 @@
   <string name="done">Feito!</string>
   <string name="high_brightness_warning">High Brightness Warning</string>
   <string name="grant">Grant</string>
+  <string name="attention">Attention!</string>
   <!--Descriptions-->
   <string name="fancy_pulldown_notice">Desativar essa opção pode causar problemas após a reinicialização. Ative e desative manualmente essa opção, após uma reinicialização ou ative o Modo de Segurança.</string>
   <string name="safe_mode_summary">OS USUÁRIOS DA SAMSUNG DEVEM MANTÊ-LO LIGADO, A MENOS QUE VOCÊ TENHA UMA ROM AOSP!</string>
@@ -285,7 +288,7 @@
   <string name="target_not_found">Não é possível iniciar o aplicativo.</string>
   <string name="feature_not_supported">Parece que o seu dispositivo não suporta este recurso</string>
   <string name="miui_warning">Parece que você está usando um dispositivo MIUI. Por favor, tome nota que alguns, se houver, recursos deste aplicativo irá trabalhar para você. NÃO é solucionável!</string>
-  <string name="warn_message">Este aplicativo modifica as configurações do sistema. Desinstalar não irá reverter nada, nem posso fazer isso acontecer. A menos que você esteja confortável com a recuperação manual, não use o aplicativo. Você foi avisado!</string>
+  <string name="warn_message">Please read the Terms of Service before continuing.</string>
   <string name="safe_mode_notif_desc">É recomendável que você mantenha isso ativo e oculte a notificação. Desligá-lo pode fazer com que o modo de segurança não funcione mais.</string>
   <string name="invalid_blacklist_backup">Backup da lista negra inválido</string>
   <string name="backup_restored">Restaurado com êxito</string>
