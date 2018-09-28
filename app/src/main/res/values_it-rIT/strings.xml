@@ -58,6 +58,8 @@
   <string name="zen_icon">Icona Zen</string>
   <string name="do_not_disturb">Icona Non disturbare</string>
   <string name="dnd">Non Disturbare</string>
+  <string name="privacy_policy">Privacy Policy</string>
+  <string name="terms_of_service">Terms of Service</string>
   <string name="donate">Dona</string>
   <string name="reset_blacklist">Reimposta la blacklist</string>
   <string name="animator_duration_scale">Scala durata animatore</string>
@@ -229,6 +231,7 @@
   <string name="done">Done!</string>
   <string name="high_brightness_warning">High Brightness Warning</string>
   <string name="grant">Grant</string>
+  <string name="attention">Attention!</string>
   <!--Descriptions-->
   <string name="fancy_pulldown_notice">Abilitare/Disabilitare questa opzione potrebbe causare problemi dopo un riavvio. Abilita/disabilita manualmente questa opzione dopo il riavvio, oppure usa il SafeMode.</string>
   <string name="safe_mode_summary">Utenti Samsung, lasciare attivato almeno che abbiate una ROM AOSP!</string>
@@ -285,7 +288,7 @@
   <string name="target_not_found">Impossibile avviare l\'app.</string>
   <string name="feature_not_supported">Sembra che il tuo dispositivo non supporti questa funzione :/</string>
   <string name="miui_warning">Sembra che tu stia utilizzando un dispositivo MIUI. Nel caso in cui sia disponibile qualche funzione, e ques\'ultima vada, se causa problemi NON POSSO SISTEMARLO!</string>
-  <string name="warn_message">This app modifies system settings. Uninstalling won\'t revert anything, nor can I make that happen. Unless you are comfortable with manual recovery, don\'t use the app. You have been warned!</string>
+  <string name="warn_message">Please read the Terms of Service before continuing.</string>
   <string name="safe_mode_notif_desc">It is recommended that you keep this active, and hide the notification instead. Turning it off may cause Safe Mode to no longer function.</string>
   <string name="invalid_blacklist_backup">Invalid blacklist backup</string>
   <string name="backup_restored">Successfully restored backup</string>
