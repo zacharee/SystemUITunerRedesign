@@ -7,6 +7,7 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <item name="actionBarTheme">@style/AppTheme.AppBarOverlay</item>
+        <item name="textAppearanceButton">@android:style/TextAppearance.Material.Button</item>
     </style>
 
     <style name="AppTheme.Intro" parent="AppTheme.Dark" />
@@ -25,6 +26,7 @@
         <item name="android:statusBarColor">@color/colorPrimaryDark</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+        <item name="textAppearanceButton">@android:style/TextAppearance.Material.Button</item>
     </style>
 
 </resources>

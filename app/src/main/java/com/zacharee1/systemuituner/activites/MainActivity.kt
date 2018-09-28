@@ -37,7 +37,7 @@ class MainActivity : BaseAnimActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return OptionSelected.doAction(item, this)
+        return OptionSelected.doAction(item.itemId, this)
     }
 
     fun launchList(v: View?) {

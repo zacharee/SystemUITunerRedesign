@@ -3,15 +3,13 @@ package com.zacharee1.systemuituner.misc
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
-import android.view.MenuItem
-
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.activites.info.AboutActivity
 import com.zacharee1.systemuituner.activites.settings.SettingsActivity
 
 object OptionSelected {
-    fun doAction(item: MenuItem, context: Context): Boolean {
-        when (item.itemId) {
+    fun doAction(itemId: Int, context: Context): Boolean {
+        when (itemId) {
             R.id.action_settings -> {
                 val settingsIntent = Intent(context, SettingsActivity::class.java)
                 context.startActivity(settingsIntent)
@@ -40,6 +38,16 @@ object OptionSelected {
             R.id.action_xda_thread -> {
                 val xdaIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://forum.xda-developers.com/android/apps-games/app-systemui-tuner-t3588675"))
                 context.startActivity(xdaIntent)
+                return true
+            }
+            R.id.action_privacy_policy -> {
+                val policyIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/zacharee/SystemUITunerRedesign/blob/master/privacy_policy.md"))
+                context.startActivity(policyIntent)
+                return true
+            }
+            R.id.action_terms -> {
+                val termsIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/zacharee/SystemUITunerRedesign/blob/master/Terms.md"))
+                context.startActivity(termsIntent)
                 return true
             }
         }

@@ -59,7 +59,7 @@ class OptionsActivity : BaseAnimActivity() {
             return true
         }
 
-        return OptionSelected.doAction(item, this)
+        return OptionSelected.doAction(item.itemId, this)
     }
 
     override fun onBackPressed() {

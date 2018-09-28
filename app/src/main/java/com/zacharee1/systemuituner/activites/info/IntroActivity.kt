@@ -9,6 +9,7 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.CheckBox
 import android.widget.ImageView
 import android.widget.TextView
@@ -16,6 +17,7 @@ import com.github.paolorotolo.appintro.AppIntro2
 import com.github.paolorotolo.appintro.ISlideBackgroundColorHolder
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.activites.instructions.SetupActivity
+import com.zacharee1.systemuituner.misc.OptionSelected
 import com.zacharee1.systemuituner.util.SuUtils
 import com.zacharee1.systemuituner.util.checkPermissions
 import com.zacharee1.systemuituner.util.startUp
@@ -31,7 +33,7 @@ class IntroActivity : AppIntro2() {
         skipButton.visibility = View.VISIBLE
 
         addSlide(WarningSlideFragment.newInstance(
-                resources.getString(R.string.warning),
+                resources.getString(R.string.attention),
                 resources.getString(R.string.warn_message),
                 R.drawable.ic_warning_black_24dp,
                 resources.getColor(android.R.color.holo_red_dark, null)
@@ -186,6 +188,15 @@ class IntroActivity : AppIntro2() {
 
         private val agree by lazy { view?.findViewById<CheckBox>(R.id.agree) }
         private val countdown by lazy { view?.findViewById<TextView>(R.id.countdown) }
+
+        override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+            super.onViewCreated(view, savedInstanceState)
+
+            val terms = view.findViewById<Button>(R.id.terms)
+            terms.setOnClickListener {
+                OptionSelected.doAction(R.id.action_terms, activity!!)
+            }
+        }
 
         fun canGoNext(): Boolean {
             return agree?.isChecked == true
