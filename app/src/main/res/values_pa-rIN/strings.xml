@@ -58,6 +58,8 @@
   <string name="zen_icon">ਜ਼ੈਨ ਆਈਕਾਨ</string>
   <string name="do_not_disturb">ਡੂ ਨੋਟ ਡਿਸ੍ਟਰ੍ਬ ਆਈਕਨ</string>
   <string name="dnd">ਡੂ ਨੋਟ ਡਿਸ੍ਟਰ੍ਬ</string>
+  <string name="privacy_policy">Privacy Policy</string>
+  <string name="terms_of_service">Terms of Service</string>
   <string name="donate">ਦਾਨ ਕਰੋ</string>
   <string name="reset_blacklist">ਬਲੈਕਲਿਸਟ ਰੀਸੈਟ ਕਰੋ</string>
   <string name="animator_duration_scale">ਐਨੀਮੇਟਰ ਸਮਾਂ ਅਵਧੀ ਸਕੇਲ</string>
@@ -229,6 +231,7 @@
   <string name="done">Done!</string>
   <string name="high_brightness_warning">High Brightness Warning</string>
   <string name="grant">Grant</string>
+  <string name="attention">Attention!</string>
   <!--Descriptions-->
   <string name="fancy_pulldown_notice">ਇਸ ਚੋਣ ਨੂੰ ਬੰਦ ਕਰਨ ਨਾਲ ਰੀਬੂਟ ਤੋਂ ਬਾਅਦ ਦੇ ਮਸਲਿਆਂ ਦਾ ਕਾਰਨ ਬਣ ਸਕਦਾ ਹੈ. ਖੁਦ ਰੀਬੂਟ ਤੋਂ ਬਾਅਦ ਇਸ ਚੋਣ ਨੂੰ ਬੰਦ ਅਤੇ ਬੰਦ ਕਰਨ ਲਈ, ਜਾਂ ਸੁਰੱਖਿਅਤ ਮੋਡ ਯੋਗ ਕਰੋ.</string>
   <string name="safe_mode_summary">ਸੈਮਸੰਗ ਦੇ ਯੂਜ਼ਰਸ ਇਸ ਨੂੰ ਚਾਲੂ ਰਾਖਿਓ ਜਦੋ ਤਕ ਤੁਸੀਂ ਕਿਸੀ AOSP ਰੋਮ ਤੇ ਨਾ ਹੋਵੋ!</string>
@@ -284,7 +287,7 @@
   <string name="target_not_found">ਐਪ ਨੂੰ ਲੌਂਚ ਕਰਨ ਵਿੱਚ ਅਸਮਰੱਥ.</string>
   <string name="feature_not_supported">ਇਹ ਲਗਦਾ ਹੈ ਕਿ ਤੁਹਾਡੀ ਡਿਵਾਈਸ ਇਸ ਵਿਸ਼ੇਸ਼ਤਾ ਦਾ ਸਮਰਥਨ ਨਹੀਂ ਕਰਦੀ: /</string>
   <string name="miui_warning">ਅਜਿਹਾ ਲਗਦਾ ਹੈ ਕਿ ਤੁਸੀਂ ਇੱਕ MIUI ਡਿਵਾਈਸ ਦੀ ਵਰਤੋਂ ਕਰ ਰਹੇ ਹੋ ਕਿਰਪਾ ਕਰਕੇ ਨੋਟ ਕਰੋ ਕਿ ਕੁਝ, ਜੇ ਕੋਈ ਹੈ, ਤਾਂ ਇਸ ਐਪ ਦੀਆਂ ਵਿਸ਼ੇਸ਼ਤਾਵਾਂ ਤੁਹਾਡੇ ਲਈ ਕੰਮ ਕਰੇਗੀ. ਇਹ ਠੀਕ ਨਹੀਂ ਹੈ!</string>
-  <string name="warn_message">ਇਹ ਐਪ ਸਿਸਟਮ ਸੈਟਿੰਗਜ਼ ਨੂੰ ਸੋਧਦਾ ਹੈ ਅਣਇੰਸਟੌਲ ਕਰਨਾ ਕਿਸੇ ਵੀ ਚੀਜ ਨੂੰ ਵਾਪਸ ਨਹੀਂ ਕਰੇਗਾ, ਨਾ ਹੀ ਮੈਂ ਅਜਿਹਾ ਕਰ ਸਕਦਾ ਹਾਂ. ਜਦੋਂ ਤੱਕ ਤੁਸੀਂ ਦਸਤੀ ਰਿਕਵਰੀ ਦੇ ਨਾਲ ਆਰਾਮਦਾਇਕ ਨਹੀਂ ਹੋ, ਐਪ ਨੂੰ ਨਾ ਵਰਤੋ. ਤੁਹਾਨੂੰ ਚੇਤਾਵਨੀ ਦਿੱਤੀ ਗਈ ਹੈ!</string>
+  <string name="warn_message">Please read the Terms of Service before continuing.</string>
   <string name="safe_mode_notif_desc">ਇਹ ਸਿਫਾਰਸ਼ ਕੀਤੀ ਜਾਂਦੀ ਹੈ ਕਿ ਤੁਸੀਂ ਇਸ ਨੂੰ ਸਕਿਰਿਆ ਰੱਖੋ, ਅਤੇ ਇਸ ਦੀ ਬਜਾਏ ਨੋਟੀਫਿਕੇਸ਼ਨ ਓਹਲੇ ਕਰੋ. ਇਸਨੂੰ ਬੰਦ ਕਰਨ ਨਾਲ ਸੁਰੱਖਿਅਤ ਮੋਡ ਨੂੰ ਕੰਮ ਨਹੀਂ ਹੋ ਸਕਦਾ.</string>
   <string name="invalid_blacklist_backup">Invalid blacklist backup</string>
   <string name="backup_restored">Successfully restored backup</string>
