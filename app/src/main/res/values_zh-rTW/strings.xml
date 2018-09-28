@@ -58,6 +58,8 @@
   <string name="zen_icon">自訂勿擾模式</string>
   <string name="do_not_disturb">勿擾模式</string>
   <string name="dnd">勿擾模式</string>
+  <string name="privacy_policy">Privacy Policy</string>
+  <string name="terms_of_service">Terms of Service</string>
   <string name="donate">贊助</string>
   <string name="reset_blacklist">重設黑名單</string>
   <string name="animator_duration_scale">動畫持續時間</string>
@@ -229,6 +231,7 @@
   <string name="done">Done!</string>
   <string name="high_brightness_warning">High Brightness Warning</string>
   <string name="grant">Grant</string>
+  <string name="attention">Attention!</string>
   <!--Descriptions-->
   <string name="fancy_pulldown_notice">關閉本功能可能導致重啟後發生問題。請於重啟後手動開啟再關閉，或啟用安全模式。</string>
   <string name="safe_mode_summary">三星用戶應保持本設定啟用，除非你有 AOSP ROM！</string>
@@ -285,7 +288,7 @@
   <string name="target_not_found">無法啟動 app。</string>
   <string name="feature_not_supported">你的裝置好像不支援此功能 :/</string>
   <string name="miui_warning">看起來你正在使用搭載 MIUI 的裝置。請注意本裝置只可以使用 app 的少數功能，這題無解！</string>
-  <string name="warn_message">本 app 會修改系統設定，且移除 app 並不會復原設定，即便是作者本人也無法復原。除非你能接受否則請勿使用本 app，別說我沒警告過你！</string>
+  <string name="warn_message">Please read the Terms of Service before continuing.</string>
   <string name="safe_mode_notif_desc">建議你保持本設定啟用，並用隱藏通知作為替代方式。停用此設定可能導致安全模式無法正常運作。</string>
   <string name="invalid_blacklist_backup">Invalid blacklist backup</string>
   <string name="backup_restored">Successfully restored backup</string>
