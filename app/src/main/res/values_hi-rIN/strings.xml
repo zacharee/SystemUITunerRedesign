@@ -58,6 +58,8 @@
   <string name="zen_icon">ज़ेन चिह्न</string>
   <string name="do_not_disturb">परेशान मत करो</string>
   <string name="dnd">परेशान मत करो</string>
+  <string name="privacy_policy">Privacy Policy</string>
+  <string name="terms_of_service">Terms of Service</string>
   <string name="donate">दान करें</string>
   <string name="reset_blacklist">ब्लैकलिस्ट रीसेट करें</string>
   <string name="animator_duration_scale">एनिमेटर कालावधी स्केल</string>
@@ -229,6 +231,7 @@
   <string name="done">Done!</string>
   <string name="high_brightness_warning">High Brightness Warning</string>
   <string name="grant">Grant</string>
+  <string name="attention">Attention!</string>
   <!--Descriptions-->
   <string name="fancy_pulldown_notice">इस विकल्प को बंद करने से रिबूट के बाद समस्याएं हो सकती हैं। रीबूट के बाद मैन्युअल रूप से इस विकल्प को चालू या बंद करें, या सुरक्षित मोड सक्षम करें।</string>
   <string name="safe_mode_summary">सैमसंग उपयोगकर्ताओं को यह चालू रखें जब तक की आप एक AOSP ROM पर है!</string>
@@ -285,7 +288,7 @@
   <string name="target_not_found">ऐप को लॉन्च करने में असमर्थ</string>
   <string name="feature_not_supported">ऐसा लगता है कि आपकी डिवाइस इस सुविधा का समर्थन नहीं करता:/</string>
   <string name="miui_warning">ऐसा लगता है कि आप एक MIUI डिवाइस का उपयोग कर रहे हैं । कृपया ध्यान दें कि कुछ, यदि कोई हो, इस app की विशेषताएं आप के लिए काम करेंगे । यह fixable नहीं है!</string>
-  <string name="warn_message">यह ऐप सिस्टम सेटिंग्स को संशोधित करता है अनइंस्टॉलिंग कुछ भी वापस नहीं लौटेगी, न ही मैं ऐसा कर सकता हूं। जब तक आप मैन्युअल वसूली के साथ सहज नहीं होते हैं, ऐप का उपयोग न करें। आपको चेतावनी दी गई है!</string>
+  <string name="warn_message">Please read the Terms of Service before continuing.</string>
   <string name="safe_mode_notif_desc">यह अनुशंसा की जाती है कि आप इसे सक्रिय रखें और इसके बजाय नोटिफिकेशन छिपाएं। इसे बंद करने से सुरक्षित मोड अब फ़ंक्शन नहीं हो सकता है।</string>
   <string name="invalid_blacklist_backup">Invalid blacklist backup</string>
   <string name="backup_restored">Successfully restored backup</string>
