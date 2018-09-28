@@ -58,6 +58,8 @@
   <string name="zen_icon">Ikona zen</string>
   <string name="do_not_disturb">Ikona nerušit</string>
   <string name="dnd">Nerušit</string>
+  <string name="privacy_policy">Privacy Policy</string>
+  <string name="terms_of_service">Terms of Service</string>
   <string name="donate">Podpořit</string>
   <string name="reset_blacklist">Resetovat černou listinu</string>
   <string name="animator_duration_scale">Měřítko délky animace</string>
@@ -229,6 +231,7 @@
   <string name="done">Done!</string>
   <string name="high_brightness_warning">High Brightness Warning</string>
   <string name="grant">Grant</string>
+  <string name="attention">Attention!</string>
   <!--Descriptions-->
   <string name="fancy_pulldown_notice">Přepnutí tohoto nastavení můžu po restartu působit potíže. Přepněte manuálně tuto možnost po restartu nebo zapněte Safe Mode.</string>
   <string name="safe_mode_summary">UŽIVATELÉ SAMSUNGU SI TOTO NECHAJÍ ZAPLÉ POKUD NEMÁTE AOSP ROM!</string>
@@ -284,7 +287,7 @@
   <string name="target_not_found">Nelze spustit aplikaci.</string>
   <string name="feature_not_supported">Vypadáto že vaše zařízení nepodporuje tuto funkci :/</string>
   <string name="miui_warning">Vypadá to že používáte zařízení s MIUI. Prosím mějte na védomí že některé funkce pro vás nemusí fungovat. Je to NEopravitelné!</string>
-  <string name="warn_message">Tato aplikace modifikuje nastavení systému. Odinstalování nevrátí změny, ani to nemůžu udělat. Pokud nejste spokojeni s manuální opravou, nepoužívejte tuto aplikaci. Byly jste varováni!</string>
+  <string name="warn_message">Please read the Terms of Service before continuing.</string>
   <string name="safe_mode_notif_desc">Je doporučeno abyste toto měli aktivované a spíše skryly notifikace. Vypnutí může zamezit funkčnost Safe módu.</string>
   <string name="invalid_blacklist_backup">Invalid blacklist backup</string>
   <string name="backup_restored">Successfully restored backup</string>
