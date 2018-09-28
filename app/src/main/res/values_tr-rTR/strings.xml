@@ -58,6 +58,8 @@
   <string name="zen_icon">Zen simgesi</string>
   <string name="do_not_disturb">Rahatsız etme simgesi</string>
   <string name="dnd">Rahatsız Etme</string>
+  <string name="privacy_policy">Privacy Policy</string>
+  <string name="terms_of_service">Terms of Service</string>
   <string name="donate">Bağış</string>
   <string name="reset_blacklist">Kara listeyi Sıfırla</string>
   <string name="animator_duration_scale">Animatör Süresi Ölçeği</string>
@@ -229,6 +231,7 @@
   <string name="done">Done!</string>
   <string name="high_brightness_warning">High Brightness Warning</string>
   <string name="grant">Grant</string>
+  <string name="attention">Attention!</string>
   <!--Descriptions-->
   <string name="fancy_pulldown_notice">Toggling this option off can cause issues after a reboot. Manually toggle this option on and off after a reboot, or enable Safe Mode.</string>
   <string name="safe_mode_summary">SAMSUNG USERS KEEP THIS TURNED ON UNLESS YOU HAVE AN AOSP ROM!</string>
@@ -285,7 +288,7 @@
   <string name="target_not_found">Unable to launch app.</string>
   <string name="feature_not_supported">Cihazınızın bu özelliği desteklemediği görünüyor :/</string>
   <string name="miui_warning">MIUI bir cihaz kullanıyorsun gibi görünüyor.Bu uygulamayı varsa birkaç, özellikleri sizin için çalışacak not alın lütfen. Düzeltilecek bir şey DEĞİL! </string>
-  <string name="warn_message">This app modifies system settings. Uninstalling won\'t revert anything, nor can I make that happen. Unless you are comfortable with manual recovery, don\'t use the app. You have been warned!</string>
+  <string name="warn_message">Please read the Terms of Service before continuing.</string>
   <string name="safe_mode_notif_desc">It is recommended that you keep this active, and hide the notification instead. Turning it off may cause Safe Mode to no longer function.</string>
   <string name="invalid_blacklist_backup">Invalid blacklist backup</string>
   <string name="backup_restored">Successfully restored backup</string>
