@@ -58,8 +58,8 @@
   <string name="zen_icon">Zen-Symbol</string>
   <string name="do_not_disturb">\"Nicht stören\"-Symbol</string>
   <string name="dnd">Nicht stören</string>
-  <string name="privacy_policy">Privacy Policy</string>
-  <string name="terms_of_service">Terms of Service</string>
+  <string name="privacy_policy">Datenschutzerklärung</string>
+  <string name="terms_of_service">Nutzungsbedingungen</string>
   <string name="donate">Spenden</string>
   <string name="reset_blacklist">Blacklist zurücksetzen</string>
   <string name="animator_duration_scale">Maßstab Animationsdauer</string>
