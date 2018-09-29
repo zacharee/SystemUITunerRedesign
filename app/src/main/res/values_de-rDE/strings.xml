@@ -254,10 +254,10 @@ Dies ist das Rotationssperren-Symbol. Tippen Sie hier, um es zu beheben.</string
   <string name="notif_desc">Antippen, um die Einstellungen zu ändern</string>
   <string name="touchwiz_oreo_qqs">Auf TouchWiz Oreo-Geräten ist diese Einstellung nicht mehr zuverlässig! Zusammen mit dem Einstellen der Zahl hier, müssen Sie auch den Wert in Settings.System.apanel_number, speichern, was nur mit ADB oder Root-Rechten getan werden kann. Im abgesicherten Modus funktioniert es manchmal ohne das, aber dafür kann ich nicht garantieren!</string>
   <string name="notifs_snooze_desc">&#160;
-    In Android 8.1 and later, you can set custom times for notification snoozing. These values reset on reboot, so make sure to enable Safe Mode if you would like them to persist across power cycles.\n\n&#160;
-    Use the options below to set the different snooze times. \"Default\" sets the time Android will use by default. The other items will be the snooze times available for you to select.
+    in Android 8.1 und höher, können Sie eigene Zeiten für lautlose Benachrichtigungen festlegen. Diese Werte werden beim Neustart zurückgesetzt, aktivieren sie den abgesicherten Modus, wenn die Werte beim Neustart erhalten bleiben sollen.\n\n&#160;
+    Verwenden Sie die folgenden Optionen, um die verschiedenen Snooze-Zeiten einzustellen. \"Default\" setzt die Zeit, die Android standardmäßig verwendet. Die anderen Elemente sind die Snooze-Zeiten, die zur Auswahl stehen.
     </string>
-  <string name="custom_settings_input_desc">These fields allow you to enter your own custom settings.</string>
+  <string name="custom_settings_input_desc">In diesen Felder können Sie Ihre eigenen benutzerdefinierten Einstellungen eingeben.</string>
   <string name="custom_settings_read_desc">Diese Felder ermöglichen es Ihnen, den Wert eines bestimmten Schlüssels zu lesen.</string>
   <string name="custom_settings_warning">Seien Sie vorsichtig, bei dem, was Sie hier tun! Wenn Sie einen falschen Wert eingeben, können Sie eine Crash-Schleife, eine Boot-Schleife oder noch schlimmeres verursachen!</string>
   <string name="hide_welcome_hint">Hinweis: Sie können diesen Bildschirm und die Spendennachricht ausblenden, indem Sie in die Einstellungen wechseln und „Willkommensbildschirm ausblenden” umschalten.</string>
@@ -285,7 +285,7 @@ Dies ist das Rotationssperren-Symbol. Tippen Sie hier, um es zu beheben.</string
   <string name="intro_3">Es gibt eine Vielzahl von vordefinierten Optionen für die Statusleiste, aber wenn Sie kein Symbol sehen, das Sie ausblenden möchten, können Sie die Funktion Auto-Detect ausprobieren, die versucht, Symbole zu erkennen, die ausgeblendet werden können.</string>
   <string name="intro_4">Und das Beste an dieser App? Ihr Gerät muss nicht gerootet werden! Es wird versuchen, Root-Rechte zu erhalten, aber wenn es nicht geht, müssen Sie ADB verwenden. DIE VERWENDUNG VON ADB IST KEIN ROOTING!</string>
   <string name="intro_5">Sobald Sie auf die Schaltfläche „Fertigstellen” tippen, versucht SystemUI Tuner, Root-Zugriff zu erhalten. Wenn es möglich ist, gewährt es Ihnen alle erforderlichen Berechtigungen. Andernfalls erscheinen Anweisungen, die Sie anleiten.</string>
-  <string name="adb_setup">The permissions above must be granted to continue. You\'ll need to use ADB. Please note: PACKAGE_USAGE_STATS and DUMP are optional for most features. SystemUI Tuner will prompt you if either or both is needed.</string>
+  <string name="adb_setup">Die oben genannten Berechtigungen müssen gewährt werden. Sie müssen die ADB verwenden. Bitte beachten Sie: PACKAGE_USAGE_STATS und DUMP sind optional für die meisten Funktionen. SystemUI Tuner fragt Sie ggf. eine oder beide ist.</string>
   <string name="target_not_found">App kann nicht gestartet werden.</string>
   <string name="feature_not_supported">It seems your device doesn\'t support this feature :/</string>
   <string name="miui_warning">It seems that you\'re using a MIUI device. Please take note that few, if any, features of this app will work for you. It is NOT fixable!</string>
