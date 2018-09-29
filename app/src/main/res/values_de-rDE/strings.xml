@@ -128,8 +128,8 @@
   <string name="night_display_auto">Night Display Auto</string>
   <string name="night_display_activated">Night Display Activated</string>
   <string name="night_display">Nachtbildschirm</string>
-  <string name="qs_header_tile_count">QS Header Tile Count</string>
-  <string name="fancy_pulldown_animation">Fancy Pulldown Animation</string>
+  <string name="qs_header_tile_count">Quick-Settings Zeilen Anzahl</string>
+  <string name="fancy_pulldown_animation">Schöne Herunterzieh-Animation</string>
   <string name="move_full_rows">Vollständige Zeilen verschieben</string>
   <string name="battery">Akku</string>
   <string name="back_up_blacklist">Blacklisten sichern</string>
@@ -144,7 +144,7 @@
   <string name="wifi_fully">WLAN vollständig verbunden</string>
   <string name="no_sim_icon">Symbol für nicht eingelegte SIM-Karte</string>
   <string name="sync_icon">Sync-Symbol</string>
-  <string name="microphone_mute">Microphone Muted Icon</string>
+  <string name="microphone_mute">Mikrofon Stumm Icon</string>
   <string name="immersive_mode">Immersiver Modus</string>
   <string name="none">Keins</string>
   <string name="full">Full</string>
