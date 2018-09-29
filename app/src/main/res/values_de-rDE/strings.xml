@@ -212,16 +212,16 @@
   <string name="time_c">Zeit C</string>
   <string name="time_d">Zeit D</string>
   <string name="clock_tile_format">Format der Uhren-Kachel</string>
-  <string name="twelve">12-Hour</string>
+  <string name="twelve">12-Stunden</string>
   <string name="twelve_nosec">12-Stunden, keine Sekunden</string>
-  <string name="military">24-Hour</string>
-  <string name="military_nosec">24-Hour, keine Sekunden</string>
+  <string name="military">24-Stunden</string>
+  <string name="military_nosec">24-Stunden, keine Sekunden</string>
   <string name="show_notif">Benachrichtigungen anzeigen</string>
   <string name="carrier_on_home">Anbieterbezeichnung auf dem Startbildschirm</string>
   <string name="carrier_on_lock">Anbieterbezeichnung auf dem Sperrbildschirm</string>
   <string name="key_plaintext">Schlüssel</string>
   <string name="value_plaintext">Wert</string>
-  <string name="remove_from_blacklist">Aus Negativliste entfernen?</string>
+  <string name="remove_from_blacklist">Aus Blacklist entfernen?</string>
   <string name="safe_mode_status_bar">Statusleiste</string>
   <string name="safe_mode_fancy_anim">Ausgefallene Animation</string>
   <string name="safe_mode_header_count">QS-Kopfzeilenanzahl</string>
@@ -230,10 +230,10 @@
   <string name="fix_rotation_icon_dialog_title">Deinstallieren?</string>
   <string name="done">Fertig!</string>
   <string name="high_brightness_warning">Warnung bei hoher Helligkeit</string>
-  <string name="grant">Zuweisen</string>
+  <string name="grant">Erlauben</string>
   <string name="attention">Achtung!</string>
   <!--Descriptions-->
-  <string name="fancy_pulldown_notice">Wenn du diese Option deaktivierst, kann es nach einem Neustart zu Problemen kommen. Schalte diese Option nach einem Neustart manuell ein und aus oder aktiviere den abgesicherten Modus.</string>
+  <string name="fancy_pulldown_notice">Wenn Sie diese Option deaktivieren, kann es nach einem Neustart zu Problemen kommen. Schalten Sie diese Option nach einem Neustart manuell ein und aus oder aktivieren Sie den abgesicherten Modus.</string>
   <string name="safe_mode_summary">SAMSUNG-BENUTZER: LASST DIES AN, SOFERN IHR KEINE AOSP ROM HABT!</string>
   <string name="safe_mode_summary_1">Löscht jegliche Statusleistenveränderungen beim Neustart und stellt sie nach dem Start vollständig wieder her.</string>
   <string name="safe_mode_summary_2">Schaltet die QS Fancy Animation beim Hochfahren ein und aus.</string>
@@ -243,7 +243,7 @@
   <string name="enable_in_settings">In den Einstellungen aktivieren.</string>
   <string name="reboot_required">(Neustart erforderlich)</string>
   <string name="auto_detect_summary">Versuche automatisch zu erkennen, welche Statusleistensymbole ausgeblendet werden können. Funktioniert nicht auf allen Geräten!</string>
-  <string name="night_display_not_avail">Nachtanzeige ist auf diesem Gerät nicht verfügbar.</string>
+  <string name="night_display_not_avail">Nachtbildschirm ist auf diesem Gerät nicht verfügbar.</string>
   <string name="app_specific_desc">Wählen Sie, ob Apps vom immersiven Modus eingeschlossen, oder ausgeschlossen werden. Der immersive Mode muss deaktiviert werden, um diese Einstellungen zu ändern.</string>
   <string name="blacklist_desc">Wenn aktiviert, werden die ausgewählen Apps den Immersiven Modus nicht verwenden</string>
   <string name="imm_warn">Dieses Feature ermöglicht es lediglich den Immersive Modus zu aktivieren. Es tut nicht mehr. Alle Probleme die auftreten sind Schuld des Geräteherstellers. ICH KANN ES NICHT BEHEBEN!</string>
@@ -291,7 +291,7 @@ Dies ist das Rotationssperren-Symbol. Tippen Sie hier, um es zu beheben.</string
   <string name="miui_warning">Es scheint, dass Sie ein MIUI-Gerät verwenden. Bitte beachten Sie, dass wenn überhaupt, nur wenige Funktionen dieser App funktionieren. Das kann NICHT geändert werden!</string>
   <string name="warn_message">Bitte lesen Sie die Nutzungsbedingungen bevor Sie fortfahren.</string>
   <string name="safe_mode_notif_desc">Es wird empfohlen dies aktiviert zu lassen, und die Benachrichtigung auszublenden. Abgeschaltet kann es sein, dass der abgesicherte Modus nicht mehr funktioniert.</string>
-  <string name="invalid_blacklist_backup">Ungültige Sicherung der Negativliste</string>
+  <string name="invalid_blacklist_backup">Ungültige Sicherung der Blacklist</string>
   <string name="backup_restored">Sicherung erfolgreich wiederhergestellt</string>
   <string name="nothing_to_back_up">Keine Sicherung erforderlich</string>
   <string name="grant_usage">Bitte gewähren Sie SystemUI Tuner Zugriff auf \"Usage\".</string>
