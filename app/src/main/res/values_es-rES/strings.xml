@@ -239,7 +239,7 @@
   <string name="safe_mode_summary_2">Cambia la animación de lujo de QS en el arranque.</string>
   <string name="safe_mode_summary_3">Restaura el valor del conteo de encabezado personalizado QS en el arranque (+Nougat).</string>
   <string name="safe_mode_summary_4">Restaura el conteo de fila/columna personalizada QS en el arranque (TouchWiz, +Nougat).</string>
-  <string name="safe_mode_summary_5">Restores custom notification snooze options on boot (8.1+).</string>
+  <string name="safe_mode_summary_5">Restaura las opciones de repetición de notificación personalizados en el arranque (8.1 +).</string>
   <string name="enable_in_settings">Habilitar en configuración.</string>
   <string name="reboot_required">(Debe Reiniciar)</string>
   <string name="auto_detect_summary">Intenta detectar automáticamente qué iconos de la barra de estado pueden estar ocultos. ¡No funciona en todos los dispositivos!</string>
