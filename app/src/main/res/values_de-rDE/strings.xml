@@ -231,7 +231,7 @@
   <string name="done">Fertig!</string>
   <string name="high_brightness_warning">Warnung bei hoher Helligkeit</string>
   <string name="grant">Zuweisen</string>
-  <string name="attention">Attention!</string>
+  <string name="attention">Achtung!</string>
   <!--Descriptions-->
   <string name="fancy_pulldown_notice">Wenn du diese Option deaktivierst, kann es nach einem Neustart zu Problemen kommen. Schalte diese Option nach einem Neustart manuell ein und aus oder aktiviere den abgesicherten Modus.</string>
   <string name="safe_mode_summary">SAMSUNG-BENUTZER: LASST DIES AN, SOFERN IHR KEINE AOSP ROM HABT!</string>
@@ -244,9 +244,9 @@
   <string name="reboot_required">(Neustart erforderlich)</string>
   <string name="auto_detect_summary">Versuche automatisch zu erkennen, welche Statusleistensymbole ausgeblendet werden können. Funktioniert nicht auf allen Geräten!</string>
   <string name="night_display_not_avail">Nachtanzeige ist auf diesem Gerät nicht verfügbar.</string>
-  <string name="app_specific_desc">Select apps to be included in or excluded from Immersive Mode. Immersive Mode must be disabled to change these settings.</string>
-  <string name="blacklist_desc">When on, selected apps will not use Immersive Mode</string>
-  <string name="imm_warn">This feature merely allows you to enable Immersive Mode. It DOES NOT do anything beyond that. Any issues you experience are the fault of your device\'s manufacturer. I CANNOT FIX IT!</string>
+  <string name="app_specific_desc">Wählen Sie, ob Apps vom immersiven Modus eingeschlossen, oder ausgeschlossen werden. Der immersive Mode muss deaktiviert werden, um diese Einstellungen zu ändern.</string>
+  <string name="blacklist_desc">Wenn aktiviert, werden die ausgewählen Apps den Immersiven Modus nicht verwenden</string>
+  <string name="imm_warn">Dieses Feature ermöglicht es lediglich den Immersive Modus zu aktivieren. Es tut nicht mehr. Alle Probleme die auftreten sind Schuld des Geräteherstellers. ICH KANN ES NICHT BEHEBEN!</string>
   <string name="statbar_rotation_lock_notif">On certain devices, modifying the status bar icons can cause an icon that looks like a phone to appear. This is the rotation lock icon. Tap here to fix it.</string>
   <string name="pnc_desc">Power Notification Controls allow you to set the level of importance for notifications on a per-app basis. Simply turn the feature on and hold down on a notification to get started. You may need to tap the A to enable the slider.</string>
   <string name="pnc_warn">This feature is known to be unreliable on certain devices, especially on TouchWiz! It is impossible to fix, but the best workaround seems to be to tap repeatedly on the desired level. Again, I CANNOT fix it!</string>
