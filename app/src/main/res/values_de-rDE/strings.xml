@@ -7,7 +7,7 @@
   <string name="more">Mehr</string>
   <string name="notice">NOTIZ</string>
   <string name="hide_welcome_screen">Willkommensbildschirm verstecken</string>
-  <string name="instructions">Anleitung</string>
+  <string name="instructions">Anleitungen</string>
   <string name="need_help">Benötigen Sie Hilfe?</string>
   <string name="about">Über</string>
   <string name="miscellaneous">Sonstiges</string>
@@ -124,9 +124,9 @@
   <string name="night_mode">Nachtmodus</string>
   <string name="night_mode_auto">Automatischer Nachtmodus</string>
   <string name="night_mode_override">Nachtmodus überschreiben</string>
-  <string name="night_mode_adjust_tint">Night Mode Adjust Tint</string>
-  <string name="night_display_auto">Night Display Auto</string>
-  <string name="night_display_activated">Night Display Activated</string>
+  <string name="night_mode_adjust_tint">Einstellen der Nachtmodus Tönung</string>
+  <string name="night_display_auto">Nacht Modus Bildschirmautomatik</string>
+  <string name="night_display_activated">Nachtbildschirm aktiviert</string>
   <string name="night_display">Nachtbildschirm</string>
   <string name="qs_header_tile_count">Quick-Settings Zeilen Anzahl</string>
   <string name="fancy_pulldown_animation">Schöne Herunterzieh-Animation</string>
