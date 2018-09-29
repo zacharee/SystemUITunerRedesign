@@ -83,7 +83,7 @@
   <string name="knox_icon">KNOX-Symbol</string>
   <string name="smart_network_icon">Intelligentes Netzwerksymbol</string>
   <string name="glove_icon">Handschuhsymbol</string>
-  <string name="private_mode_icon">Privaten Modus Symbol</string>
+  <string name="private_mode_icon">Privatmodus Symbol</string>
   <string name="face_icon">Gesichtssymbol</string>
   <string name="femtocell_icon">Femtocell-Symbol</string>
   <string name="gps_icon">GPS-Symbol</string>
@@ -101,7 +101,7 @@
   <string name="wifi_oxygen_icon">\"WiFi Oxygen\"-Symbol</string>
   <string name="wifi_p2p_icon">WLAN P2P-Symbol</string>
   <string name="wimax_icon">\"WiMax\"-Symbol</string>
-  <string name="remote_call_icon">Fernanruf Symbol</string>
+  <string name="remote_call_icon">Fernanruf-Symbol</string>
   <string name="tty_icon">TTY-Symbol</string>
   <string name="cdma_eri_icon">CDMA ERI Symbol</string>
   <string name="dmb">DMB</string>
