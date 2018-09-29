@@ -144,7 +144,7 @@
   <string name="wifi_fully">WLAN vollständig verbunden</string>
   <string name="no_sim_icon">Symbol für nicht eingelegte SIM-Karte</string>
   <string name="sync_icon">Sync-Symbol</string>
-  <string name="microphone_mute">Mikrofon Stumm Icon</string>
+  <string name="microphone_mute">Mikrofon Stumm Symbol</string>
   <string name="immersive_mode">Immersiver Modus</string>
   <string name="none">Keins</string>
   <string name="full">Voll</string>
@@ -213,7 +213,7 @@
   <string name="time_d">Zeit D</string>
   <string name="clock_tile_format">Format der Uhren-Kachel</string>
   <string name="twelve">12-Hour</string>
-  <string name="twelve_nosec">12-Hour, keine Sekunden</string>
+  <string name="twelve_nosec">12-Stunden, keine Sekunden</string>
   <string name="military">24-Hour</string>
   <string name="military_nosec">24-Hour, keine Sekunden</string>
   <string name="show_notif">Benachrichtigungen anzeigen</string>
