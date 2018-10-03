@@ -155,6 +155,8 @@
   <string name="mode">النمط</string>
   <string name="qs_column_count">عدد أعمدة QS</string>
   <string name="qs_row_count">عدد صفوف QS</string>
+  <string name="qs_column_count_landscape">QS Column Count (Landscape)</string>
+  <string name="qs_row_count_landscape">QS Row Count (Landscape)</string>
   <string name="lockscreen">إقفال الشاشة</string>
   <string name="choose_left">اختيار الإختصار في الأيسر</string>
   <string name="choose_right">اختيار الإختصار الصحيح</string>
@@ -271,6 +273,8 @@
   <string name="ws_needed_desc">WRITE_SETTINGS is needed to change this setting. Tap the button above to grant it.\n (This unfortunately doesn\'t guarantee that the toggle will work.)</string>
   <string name="safe_mode_high_brightness_warning_desc">Attempt to restore the currently set High Brightness Warning status on boot. This is only for TouchWiz devices and won\'t work without root.</string>
   <string name="safe_mode_volume_warning_desc">Restores current High Volume Warning state on boot.</string>
+  <string name="safe_mode_needed_qs_row_col">Safe Mode must be turned on, with the Row/Column option activated, for landscape values to work.</string>
+  <string name="safe_mode_inactive_on_current_page">Safe Mode is inactive on this screen! Go back to the main menu to save changes!</string>
   <!--Messages-->
   <string name="sorry_explain">حدث خطأ أثناء تعيين هذا التبديل.</string>
   <string name="sorry_option">Try executing the following command from a computer (it\'s one line):</string>
