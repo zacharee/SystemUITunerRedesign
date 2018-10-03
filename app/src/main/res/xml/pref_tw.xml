@@ -2,12 +2,15 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <com.zacharee1.systemuituner.prefs.RedTextPref
+        android:summary="@string/safe_mode_inactive_on_current_page"
+        />
+
     <PreferenceCategory
         android:title="@string/quick_settings">
         <com.pavelsikun.seekbarpreference.SeekBarPreference
             android:title="@string/qs_row_count"
             android:key="qs_tile_row"
-            android:persistent="false"
             app:msbp_minValue="1"
             app:msbp_maxValue="10"
             android:defaultValue="3"
@@ -15,10 +18,26 @@
         <com.pavelsikun.seekbarpreference.SeekBarPreference
             android:title="@string/qs_column_count"
             android:key="qs_tile_column"
-            android:persistent="false"
             app:msbp_minValue="2"
             app:msbp_maxValue="10"
             android:defaultValue="3"
+            />
+        <com.pavelsikun.seekbarpreference.SeekBarPreference
+            android:title="@string/qs_row_count_landscape"
+            android:key="qs_tile_row_landscape"
+            app:msbp_minValue="1"
+            app:msbp_maxValue="3"
+            android:defaultValue="2"
+            />
+        <com.pavelsikun.seekbarpreference.SeekBarPreference
+            android:title="@string/qs_column_count_landscape"
+            android:key="qs_tile_column_landscape"
+            app:msbp_minValue="2"
+            app:msbp_maxValue="12"
+            android:defaultValue="8"
+            />
+        <com.zacharee1.systemuituner.prefs.RedTextPref
+            android:summary="@string/safe_mode_needed_qs_row_col"
             />
     </PreferenceCategory>
 

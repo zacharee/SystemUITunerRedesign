@@ -14,10 +14,15 @@ import android.os.Looper
 import android.preference.PreferenceManager
 import android.provider.Settings
 import android.support.v4.app.NotificationCompat
+import android.view.Surface
+import android.view.WindowManager
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.activites.settings.SettingsActivity
 import com.zacharee1.systemuituner.fragments.MiscFragment
 import com.zacharee1.systemuituner.fragments.QSFragment
+import com.zacharee1.systemuituner.fragments.StatbarFragment
+import com.zacharee1.systemuituner.fragments.StatbarFragment.Companion.ICON_BLACKLIST
+import com.zacharee1.systemuituner.fragments.StatbarFragment.Companion.ICON_BLACKLIST_BACKUP
 import com.zacharee1.systemuituner.fragments.TWFragment
 import com.zacharee1.systemuituner.util.checkSamsung
 import com.zacharee1.systemuituner.util.writeGlobal
@@ -25,6 +30,19 @@ import com.zacharee1.systemuituner.util.writeSecure
 import com.zacharee1.systemuituner.util.writeSystem
 
 class SafeModeService : Service() {
+    companion object {
+        const val NOTIFICATION_SNOOZE_OPTIONS = "notification_snooze_options"
+
+        const val SAFE_MODE_STATUS_BAR = "safe_mode_status_bar"
+        const val SAFE_MODE_FANCY_ANIM = "safe_mode_fancy_anim"
+        const val SAFE_MODE_HEADER_COUNT = "safe_mode_header_count"
+        const val SAFE_MODE_ROW_COL = "safe_mode_row_col"
+        const val SAFE_MODE_SNOOZE_OPTIONS = "safe_mode_snooze_options"
+        const val SAFE_MODE_HIGH_BRIGHTNESS_WARNING = "safe_mode_high_brightness_warning"
+        const val SAFE_MODE_VOLUME_WARNING = "safe_mode_volume_warning"
+        const val SAFE_MODE_NOTIF = "show_safe_mode_notif"
+    }
+
     private var shutDownReceiver: ShutDownReceiver? = null
     private var themeReceiver: ThemeChangeReceiver? = null
     private var resListener: ResolutionChangeListener? = null
@@ -32,12 +50,12 @@ class SafeModeService : Service() {
     private val handler: Handler = Handler(Looper.getMainLooper())
     private val observer: ContentObserver = object : ContentObserver(handler) {
         override fun onChange(selfChange: Boolean, uri: Uri) {
-            if (uri == Settings.Secure.getUriFor("sysui_qqs_count")) {
+            if (uri == Settings.Secure.getUriFor(QSFragment.QQS_COUNT)) {
                 restoreQSHeaderCount()
-            } else if (uri == Settings.Secure.getUriFor("qs_tile_row")
-                    || uri == Settings.Secure.getUriFor("qs_tile_column")) {
+            } else if (uri == Settings.Secure.getUriFor(TWFragment.TILE_ROW)
+                    || uri == Settings.Secure.getUriFor(TWFragment.TILE_COLUMN)) {
                 restoreQSRowColCount()
-            } else if (uri == Settings.Global.getUriFor("notification_snooze_options")) {
+            } else if (uri == Settings.Global.getUriFor(NOTIFICATION_SNOOZE_OPTIONS)) {
                 restoreSnoozeState()
             }
         }
@@ -46,23 +64,23 @@ class SafeModeService : Service() {
     private lateinit var preferences: SharedPreferences
 
     private val statusBar: Boolean
-        get() = preferences.getBoolean("safe_mode_status_bar", true)
+        get() = preferences.getBoolean(SAFE_MODE_STATUS_BAR, true)
     private val fancyAnim: Boolean
-        get() = preferences.getBoolean("safe_mode_fancy_anim", true)
+        get() = preferences.getBoolean(SAFE_MODE_FANCY_ANIM, true)
     private val headerCount: Boolean
-        get() = preferences.getBoolean("safe_mode_header_count", true)
+        get() = preferences.getBoolean(SAFE_MODE_HEADER_COUNT, true)
     private val rowCol: Boolean
-        get() = preferences.getBoolean("safe_mode_row_col", true)
+        get() = preferences.getBoolean(SAFE_MODE_ROW_COL, true)
     private val snoozeOptions: Boolean
-        get() = preferences.getBoolean("safe_mode_snooze_options", true)
+        get() = preferences.getBoolean(SAFE_MODE_SNOOZE_OPTIONS, true)
     private val hbw: Boolean
-        get() = preferences.getBoolean("safe_mode_high_brightness_warning", true)
+        get() = preferences.getBoolean(SAFE_MODE_HIGH_BRIGHTNESS_WARNING, true)
     private val volumeWarning: Boolean
-        get() = preferences.getBoolean("safe_mode_volume_warning", true)
+        get() = preferences.getBoolean(SAFE_MODE_VOLUME_WARNING, true)
 
     private val prefsListener: SharedPreferences.OnSharedPreferenceChangeListener = SharedPreferences.OnSharedPreferenceChangeListener { preferences, key ->
         when (key) {
-            "show_safe_mode_notif" -> {
+            SAFE_MODE_NOTIF -> {
                 val on = preferences.getBoolean(key, true)
                 if (!on) {
                     stopForeground(true)
@@ -118,16 +136,16 @@ class SafeModeService : Service() {
     }
 
     private fun startInForeground() {
-        if (preferences.getBoolean("show_safe_mode_notif", true)) {
+        if (preferences.getBoolean(SAFE_MODE_NOTIF, true)) {
             val settingsIntent = PendingIntent.getActivity(this, 0, Intent(this, SettingsActivity::class.java), 0)
             val manager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                val channel = NotificationChannel("systemuituner", resources.getString(R.string.app_name), NotificationManager.IMPORTANCE_LOW)
+                val channel = NotificationChannel("safe_mode", resources.getString(R.string.app_name), NotificationManager.IMPORTANCE_LOW)
                 manager.createNotificationChannel(channel)
             }
 
-            val notification = NotificationCompat.Builder(this, "systemuituner")
+            val notification = NotificationCompat.Builder(this, "safe_mode")
                     .setSmallIcon(R.mipmap.ic_launcher)
                     .setContentTitle(resources.getString(R.string.notif_title))
                     .setContentText(resources.getString(R.string.notif_desc))
@@ -158,13 +176,13 @@ class SafeModeService : Service() {
 
     private fun restoreBlacklist() {
         if (statusBar) {
-            val blacklist = Settings.Secure.getString(contentResolver, "icon_blacklist")
+            val blacklist = Settings.Secure.getString(contentResolver, ICON_BLACKLIST)
 
             if (blacklist == null || blacklist.isEmpty()) {
-                val blacklistBackup = Settings.Global.getString(contentResolver, "icon_blacklist_backup")
+                val blacklistBackup = Settings.Global.getString(contentResolver, ICON_BLACKLIST_BACKUP)
 
                 if (blacklistBackup != null && !blacklistBackup.isEmpty()) {
-                    writeSecure("icon_blacklist", blacklistBackup)
+                    writeSecure(ICON_BLACKLIST, blacklistBackup)
                 }
             }
         }
@@ -188,59 +206,44 @@ class SafeModeService : Service() {
 
     private fun restoreQSHeaderCount() {
         if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M && headerCount) {
-            val count = preferences.getInt("qs_header_count", -1)
-            if (count != -1) writeSecure("sysui_qqs_count", count)
-        }
-    }
-
-    private fun saveQSHeaderCount() {
-        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M && headerCount) {
-            val count = Settings.Secure.getInt(contentResolver, "sysui_qqs_count", -1)
-            if (count != -1) preferences.edit().putInt("qs_header_count", count).apply()
-        }
-    }
-
-    private fun saveQSRowColCount() {
-        if (rowCol) {
-            val row = Settings.Secure.getInt(contentResolver, "qs_tile_row", -1)
-            val col = Settings.Secure.getInt(contentResolver, "qs_tile_column", -1)
-            if (row != -1) preferences.edit().putInt("qs_tile_row", row).apply()
-            if (col != -1) preferences.edit().putInt("qs_tile_column", col).apply()
+            val count = preferences.getInt(QSFragment.QQS_COUNT, -1)
+            if (count != -1) writeSecure(QSFragment.QQS_COUNT, count)
         }
     }
 
     private fun restoreQSRowColCount() {
+        val rotation = (getSystemService(Context.WINDOW_SERVICE) as WindowManager).defaultDisplay.rotation
         if (rowCol) {
-            val row = preferences.getInt("qs_tile_row", -1)
-            val col = preferences.getInt("qs_tile_column", -1)
+            if (rotation != Surface.ROTATION_180 && rotation != Surface.ROTATION_270) {
+                val row = preferences.getInt(TWFragment.TILE_ROW, -1)
+                val col = preferences.getInt(TWFragment.TILE_COLUMN, -1)
 
-            if (row != -1) writeSecure("qs_tile_row", row)
-            if (col != -1) writeSecure("qs_tile_column", col)
+                if (row != -1) writeSecure(TWFragment.TILE_ROW, row)
+                if (col != -1) writeSecure(TWFragment.TILE_COLUMN, col)
+            } else {
+                val row = preferences.getInt(TWFragment.TILE_ROW_LANDSCAPE, -1)
+                val col = preferences.getInt(TWFragment.TILE_COLUMN_LANDSCAPE, -1)
+
+                if (row != -1) writeSecure(TWFragment.TILE_ROW, row)
+                if (col != -1) writeSecure(TWFragment.TILE_COLUMN, col)
+            }
         }
     }
 
     private fun restoreSnoozeState() {
         if (Build.VERSION.SDK_INT > Build.VERSION_CODES.O && snoozeOptions) {
-            val saved = preferences.getString("notification_snooze_options", "")
+            val saved = preferences.getString(NOTIFICATION_SNOOZE_OPTIONS, "")
 
             if (saved?.isEmpty() == false) {
-                writeGlobal("notification_snooze_options", saved)
+                writeGlobal(NOTIFICATION_SNOOZE_OPTIONS, saved)
             }
         }
     }
 
     private fun saveSnoozeState() {
         if (Build.VERSION.SDK_INT > Build.VERSION_CODES.O && snoozeOptions) {
-            val set = Settings.Global.getString(contentResolver, "notification_snooze_options")
-            if (set != null && !set.isEmpty()) preferences.edit().putString("notification_snooze_options", set).apply()
-        }
-    }
-
-    private fun saveFancyAnim() {
-        if (fancyAnim) {
-            val anim = Settings.Secure.getString(contentResolver, "sysui_qs_fancy_anim")
-            writeGlobal("sysui_qs_fancy_anim_backup", anim)
-            writeSecure("sysui_qs_fancy_anim", null)
+            val set = Settings.Global.getString(contentResolver, NOTIFICATION_SNOOZE_OPTIONS)
+            if (set != null && !set.isEmpty()) preferences.edit().putString(NOTIFICATION_SNOOZE_OPTIONS, set).apply()
         }
     }
 
@@ -253,13 +256,13 @@ class SafeModeService : Service() {
 
     private fun resetBlacklist(restore: Boolean) {
         if (statusBar) {
-            val blacklist = Settings.Secure.getString(contentResolver, "icon_blacklist")
+            val blacklist = Settings.Secure.getString(contentResolver, StatbarFragment.ICON_BLACKLIST)
 
-            writeGlobal("icon_blacklist_backup", blacklist)
-            writeSecure("icon_blacklist", null)
+            writeGlobal(StatbarFragment.ICON_BLACKLIST_BACKUP, blacklist)
+            writeSecure(StatbarFragment.ICON_BLACKLIST, null)
 
             if (restore) {
-                handler.postDelayed({ writeSecure("icon_blacklist", blacklist) }, 400)
+                handler.postDelayed({ writeSecure(StatbarFragment.ICON_BLACKLIST, blacklist) }, 400)
             }
         }
     }
@@ -277,10 +280,7 @@ class SafeModeService : Service() {
 
         override fun onReceive(context: Context, intent: Intent) {
             resetBlacklist(false)
-            saveQSHeaderCount()
-            saveQSRowColCount()
             saveSnoozeState()
-            saveFancyAnim()
         }
     }
 
