@@ -154,6 +154,8 @@
   <string name="mode">模式</string>
   <string name="qs_column_count">下拉快速設定欄位數量</string>
   <string name="qs_row_count">下拉快速設定行列數量</string>
+  <string name="qs_column_count_landscape">QS Column Count (Landscape)</string>
+  <string name="qs_row_count_landscape">QS Row Count (Landscape)</string>
   <string name="lockscreen">鎖定螢幕</string>
   <string name="choose_left">選擇左捷徑</string>
   <string name="choose_right">選擇右捷徑</string>
@@ -270,6 +272,8 @@
   <string name="ws_needed_desc">WRITE_SETTINGS is needed to change this setting. Tap the button above to grant it.\n (This unfortunately doesn\'t guarantee that the toggle will work.)</string>
   <string name="safe_mode_high_brightness_warning_desc">Attempt to restore the currently set High Brightness Warning status on boot. This is only for TouchWiz devices and won\'t work without root.</string>
   <string name="safe_mode_volume_warning_desc">Restores current High Volume Warning state on boot.</string>
+  <string name="safe_mode_needed_qs_row_col">Safe Mode must be turned on, with the Row/Column option activated, for landscape values to work.</string>
+  <string name="safe_mode_inactive_on_current_page">Safe Mode is inactive on this screen! Go back to the main menu to save changes!</string>
   <!--Messages-->
   <string name="sorry_explain">設定時發生未知錯誤</string>
   <string name="sorry_option">試著從電腦執行下列指定（單行指令）：</string>
