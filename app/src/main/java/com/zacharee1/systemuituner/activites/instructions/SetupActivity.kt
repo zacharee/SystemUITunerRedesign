@@ -53,7 +53,7 @@ class SetupActivity : AppIntro2() {
         val intent = intent
 
         if (intent != null) {
-            permissionsNeeded = ArrayList(intent.getStringArrayListExtra(PERMISSION_NEEDED).filterNot { checkCallingOrSelfPermission(it) == PackageManager.PERMISSION_GRANTED })
+            permissionsNeeded = ArrayList(intent.getStringArrayListExtra(PERMISSION_NEEDED)?.filterNot { checkCallingOrSelfPermission(it) == PackageManager.PERMISSION_GRANTED } ?: return)
 
             addSlide(PermsFragment.newInstance(
                     resources.getString(R.string.permissions),
