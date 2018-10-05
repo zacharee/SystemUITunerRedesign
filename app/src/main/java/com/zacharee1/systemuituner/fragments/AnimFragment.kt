@@ -8,6 +8,7 @@ import com.zacharee1.systemuituner.R
 
 open class AnimFragment : PreferenceFragment() {
     private var animationFinished: (() -> Unit)? = null
+    private var attached = false
 
     override fun onCreateAnimator(transit: Int, enter: Boolean, nextAnim: Int): Animator {
         onAnimationCreated(enter)
@@ -27,7 +28,10 @@ open class AnimFragment : PreferenceFragment() {
             override fun onAnimationRepeat(animation: Animator?) {}
             override fun onAnimationCancel(animation: Animator?) {}
             override fun onAnimationEnd(animation: Animator?) {
-                if (enter && !isRemoving) animationFinished = { onAnimationFinishedEnter(enter) }
+                if (enter && !isRemoving) {
+                    if (!attached) animationFinished = { onAnimationFinishedEnter(enter) }
+                    else onAnimationFinishedEnter(enter)
+                }
                 if (!enter) onAnimationFinishedExit(enter)
             }
         })
@@ -37,6 +41,8 @@ open class AnimFragment : PreferenceFragment() {
 
     override fun onAttach(context: Context?) {
         super.onAttach(context)
+
+        attached = true
 
         animationFinished?.invoke()
     }
