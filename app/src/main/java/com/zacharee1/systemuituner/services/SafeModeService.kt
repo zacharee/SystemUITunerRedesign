@@ -40,6 +40,7 @@ class SafeModeService : Service() {
         const val SAFE_MODE_SNOOZE_OPTIONS = "safe_mode_snooze_options"
         const val SAFE_MODE_HIGH_BRIGHTNESS_WARNING = "safe_mode_high_brightness_warning"
         const val SAFE_MODE_VOLUME_WARNING = "safe_mode_volume_warning"
+        const val SAFE_MODE_CALL_RECORDING = "safe_mode_call_recording"
         const val SAFE_MODE_NOTIF = "show_safe_mode_notif"
     }
 
@@ -77,6 +78,8 @@ class SafeModeService : Service() {
         get() = preferences.getBoolean(SAFE_MODE_HIGH_BRIGHTNESS_WARNING, true)
     private val volumeWarning: Boolean
         get() = preferences.getBoolean(SAFE_MODE_VOLUME_WARNING, true)
+    private val callRecorder: Boolean
+        get() = preferences.getBoolean(SAFE_MODE_CALL_RECORDING, true)
 
     private val prefsListener: SharedPreferences.OnSharedPreferenceChangeListener = SharedPreferences.OnSharedPreferenceChangeListener { preferences, key ->
         when (key) {
@@ -108,6 +111,8 @@ class SafeModeService : Service() {
         setUpContentObserver()
         restoreSnoozeState()
         restoreVolumeWarning()
+        restoreCallRecorder()
+
         return Service.START_STICKY
     }
 
@@ -201,6 +206,14 @@ class SafeModeService : Service() {
             val warn = preferences.getBoolean(MiscFragment.AUDIO_SAFE, true)
 
             writeGlobal(MiscFragment.AUDIO_SAFE, if (warn) 3 else 2)
+        }
+    }
+
+    private fun restoreCallRecorder() {
+        if (callRecorder) {
+            val callRecorder = preferences.getBoolean(MiscFragment.ONE_PLUS_CALL_RECORDER, true)
+
+            writeGlobal(MiscFragment.ONE_PLUS_CALL_RECORDER, if (callRecorder) 1 else 0)
         }
     }
 

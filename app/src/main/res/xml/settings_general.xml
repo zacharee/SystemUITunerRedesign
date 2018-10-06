@@ -97,6 +97,14 @@
             android:summary="@string/safe_mode_volume_warning_desc"
             />
 
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:dependency="safe_mode"
+            android:key="safe_mode_call_recording"
+            android:title="@string/call_recording"
+            android:summary="@string/safe_mode_call_recording_desc"
+            />
+
     </PreferenceCategory>
 
     <PreferenceCategory
