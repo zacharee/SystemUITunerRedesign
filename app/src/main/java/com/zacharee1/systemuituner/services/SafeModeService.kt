@@ -24,10 +24,7 @@ import com.zacharee1.systemuituner.fragments.StatbarFragment
 import com.zacharee1.systemuituner.fragments.StatbarFragment.Companion.ICON_BLACKLIST
 import com.zacharee1.systemuituner.fragments.StatbarFragment.Companion.ICON_BLACKLIST_BACKUP
 import com.zacharee1.systemuituner.fragments.TWFragment
-import com.zacharee1.systemuituner.util.checkSamsung
-import com.zacharee1.systemuituner.util.writeGlobal
-import com.zacharee1.systemuituner.util.writeSecure
-import com.zacharee1.systemuituner.util.writeSystem
+import com.zacharee1.systemuituner.util.*
 
 class SafeModeService : Service() {
     companion object {
@@ -210,7 +207,7 @@ class SafeModeService : Service() {
     }
 
     private fun restoreCallRecorder() {
-        if (callRecorder) {
+        if (callRecorder && checkOnePlusWithCallRecording()) {
             val callRecorder = preferences.getBoolean(MiscFragment.ONE_PLUS_CALL_RECORDER, true)
 
             writeGlobal(MiscFragment.ONE_PLUS_CALL_RECORDER, if (callRecorder) 1 else 0)

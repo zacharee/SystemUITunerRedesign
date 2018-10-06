@@ -30,6 +30,7 @@ class MiscFragment : AnimFragment() {
             setNightModeSwitchStates()
             setUpAnimationScales()
             setUpSnoozeStuff()
+            removeOnePlusIfNeeded()
         }
     }
 
@@ -74,11 +75,13 @@ class MiscFragment : AnimFragment() {
         }
 
         // OnePlus call recording
-        val preference = findPreference(ONE_PLUS_CALL_RECORDER) as SwitchPreference
-        preference.isChecked = Settings.Global.getInt(context?.contentResolver, ONE_PLUS_CALL_RECORDER, 0) == 1
-        preference.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { _, o ->
-            context.writeGlobal(ONE_PLUS_CALL_RECORDER, if (o.toString().toBoolean()) 1 else 0)
-            true
+        if (checkOnePlusWithCallRecording()) {
+            val preference = findPreference(ONE_PLUS_CALL_RECORDER) as SwitchPreference
+            preference.isChecked = Settings.Global.getInt(context?.contentResolver, ONE_PLUS_CALL_RECORDER, 0) == 1
+            preference.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { _, o ->
+                context.writeGlobal(ONE_PLUS_CALL_RECORDER, if (o.toString().toBoolean()) 1 else 0)
+                true
+            }
         }
     }
 
@@ -358,6 +361,12 @@ class MiscFragment : AnimFragment() {
         }
 
         return ret
+    }
+
+    private fun removeOnePlusIfNeeded() {
+        if (!checkOnePlusWithCallRecording()) {
+            preferenceScreen.removePreference(findPreference("call_recording") ?: return)
+        }
     }
 
     companion object {

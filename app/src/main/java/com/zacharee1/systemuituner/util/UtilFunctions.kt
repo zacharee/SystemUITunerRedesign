@@ -6,6 +6,7 @@ import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.os.Build
 import android.preference.PreferenceFragment
 import android.preference.PreferenceManager
 import android.preference.SwitchPreference
@@ -154,6 +155,13 @@ fun checkMIUI(): Boolean {
 
     return false
 }
+
+// Native call recording doesn't seem to be available on OnePlus One (A000X), OnePlus X (E100X)
+// and OnePlus 2 (A200X) models
+private val onePlusOldModels = """^(ONEPLUS\s)*[AE][02]\d{3}$""".toRegex()
+
+fun checkOnePlusWithCallRecording() =
+        Build.MANUFACTURER == "OnePlus" && !onePlusOldModels.matches(Build.MODEL)
 
 fun Context.checkSamsung() =
         packageManager.hasSystemFeature("com.samsung.feature.samsung_experience_mobile")
