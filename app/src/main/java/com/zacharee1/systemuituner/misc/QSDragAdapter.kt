@@ -23,7 +23,7 @@ import java.util.regex.Pattern
 class QSDragAdapter(private val context: Context) : RecyclerView.Adapter<QSDragAdapter.QSViewHolder>() {
     var mTiles = ArrayList<QSTile>()
 
-    var mAvailableTiles = ArrayList<QSTile>()
+    var availableTiles = ArrayList<QSTile>()
 
     private val defaultTiles: ArrayList<QSTile>
         get() {
@@ -70,12 +70,12 @@ class QSDragAdapter(private val context: Context) : RecyclerView.Adapter<QSDragA
     }
 
     private fun refreshAvailableTiles() {
-        mAvailableTiles.clear()
+        availableTiles.clear()
         for (tile in defaultTiles) {
             val hasTile = mTiles.any { it.key == tile.key }
 
             if (!hasTile) {
-                mAvailableTiles.add(tile)
+                availableTiles.add(tile)
             }
         }
     }

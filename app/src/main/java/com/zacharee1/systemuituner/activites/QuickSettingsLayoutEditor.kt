@@ -25,17 +25,18 @@ import android.widget.TextView
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.misc.QSDragAdapter
 import com.zacharee1.systemuituner.util.pxToDp
+import com.zacharee1.systemuituner.util.writeSecure
 import java.util.*
 
 class QuickSettingsLayoutEditor : BaseAnimActivity() {
-    private var mObserver: ContentObserver? = null
+    private var observer: ContentObserver? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_blank_recycler)
         title = resources.getString(R.string.quick_settings)
 
-        findViewById<View>(R.id.root).setBackgroundColor(Color.parseColor("#ff303030"))
+//        findViewById<View>(R.id.root).setBackgroundColor(Color.parseColor("#ff303030"))
 
         setUpRecyclerView()
     }
@@ -67,6 +68,7 @@ class QuickSettingsLayoutEditor : BaseAnimActivity() {
 
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.N) {
             val addTile = FloatingActionButton(this)
+
             val params = FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
             params.gravity = Gravity.BOTTOM or Gravity.END
             addTile.layoutParams = params
@@ -80,7 +82,7 @@ class QuickSettingsLayoutEditor : BaseAnimActivity() {
             root.addView(addTile)
         }
 
-        mObserver = object : ContentObserver(Handler(Looper.getMainLooper())) {
+        observer = object : ContentObserver(Handler(Looper.getMainLooper())) {
             override fun onChange(selfChange: Boolean, uri: Uri) {
                 if (uri == Settings.Secure.getUriFor("sysui_qs_tiles")) {
                     if (!recyclerView.isAnimating) {
@@ -93,13 +95,19 @@ class QuickSettingsLayoutEditor : BaseAnimActivity() {
             }
         }
 
-        contentResolver.registerContentObserver(Settings.Secure.CONTENT_URI, true, mObserver!!)
+        contentResolver.registerContentObserver(Settings.Secure.CONTENT_URI, true, observer!!)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_qs, menu)
+        return true
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        item?.let {
-            when (it.itemId) {
-                android.R.id.home -> finish()
+        when (item.itemId) {
+            android.R.id.home -> finish()
+            R.id.action_reset -> {
+                writeSecure("sysui_qs_tiles", null)
             }
         }
         return super.onOptionsItemSelected(item)
@@ -108,10 +116,10 @@ class QuickSettingsLayoutEditor : BaseAnimActivity() {
     override fun onDestroy() {
         super.onDestroy()
 
-        contentResolver.unregisterContentObserver(mObserver!!)
+        contentResolver.unregisterContentObserver(observer!!)
     }
 
-    private class AddTileView(context: Context, private val mDragAdapter: QSDragAdapter) : AlertDialog(context) {
+    private class AddTileView(context: Context, private val dragAdapter: QSDragAdapter) : AlertDialog(context) {
         private val availableTiles: ArrayList<QSDragAdapter.QSTile>
         @SuppressLint("InflateParams")
         private val view: View = LayoutInflater.from(context).inflate(R.layout.activity_blank_recycler, null, false)
@@ -121,7 +129,7 @@ class QuickSettingsLayoutEditor : BaseAnimActivity() {
 
             setView(view)
 
-            availableTiles = ArrayList(mDragAdapter.mAvailableTiles)
+            availableTiles = ArrayList(dragAdapter.availableTiles)
             val intent = QSDragAdapter.QSTile("intent()", context)
             intent.title = getContext().resources.getString(R.string.intent)
             availableTiles.add(intent)
@@ -143,7 +151,7 @@ class QuickSettingsLayoutEditor : BaseAnimActivity() {
 
             @SuppressLint("InflateParams")
             override fun onBindViewHolder(holder: AddVH, position: Int) {
-                holder.mView.setOnClickListener {
+                holder.view.setOnClickListener {
                     if (!availableTiles[holder.adapterPosition].key.contains("intent(")) {
                         addTile(holder, true)
                     } else {
@@ -164,8 +172,8 @@ class QuickSettingsLayoutEditor : BaseAnimActivity() {
             }
 
             private fun addTile(holder: AddVH, removeFromAvail: Boolean) {
-                mDragAdapter.addTile(availableTiles[holder.adapterPosition])
-                if (removeFromAvail) mDragAdapter.mAvailableTiles.remove(availableTiles[holder.adapterPosition])
+                dragAdapter.addTile(availableTiles[holder.adapterPosition])
+                if (removeFromAvail) dragAdapter.availableTiles.remove(availableTiles[holder.adapterPosition])
                 dismiss()
             }
 
@@ -173,10 +181,10 @@ class QuickSettingsLayoutEditor : BaseAnimActivity() {
                 return availableTiles.size
             }
 
-            inner class AddVH(internal var mView: View) : RecyclerView.ViewHolder(mView) {
+            inner class AddVH(internal var view: View) : RecyclerView.ViewHolder(view) {
 
                 fun setText(text: String) {
-                    val textView = mView.findViewById<TextView>(R.id.textView)
+                    val textView = view.findViewById<TextView>(R.id.textView)
                     textView.text = text
                 }
             }
