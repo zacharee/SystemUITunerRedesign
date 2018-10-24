@@ -21,7 +21,7 @@ import java.util.*
 import java.util.regex.Pattern
 
 class QSDragAdapter(private val context: Context) : RecyclerView.Adapter<QSDragAdapter.QSViewHolder>() {
-    var mTiles = ArrayList<QSTile>()
+    var tiles = ArrayList<QSTile>()
 
     var availableTiles = ArrayList<QSTile>()
 
@@ -63,8 +63,8 @@ class QSDragAdapter(private val context: Context) : RecyclerView.Adapter<QSDragA
 
         val tempTiles = tileArray.map { QSTile(it, context) }
 
-        mTiles.clear()
-        mTiles.addAll(tempTiles)
+        this.tiles.clear()
+        this.tiles.addAll(tempTiles)
 
         refreshAvailableTiles()
     }
@@ -72,7 +72,7 @@ class QSDragAdapter(private val context: Context) : RecyclerView.Adapter<QSDragA
     private fun refreshAvailableTiles() {
         availableTiles.clear()
         for (tile in defaultTiles) {
-            val hasTile = mTiles.any { it.key == tile.key }
+            val hasTile = tiles.any { it.key == tile.key }
 
             if (!hasTile) {
                 availableTiles.add(tile)
@@ -81,10 +81,10 @@ class QSDragAdapter(private val context: Context) : RecyclerView.Adapter<QSDragA
     }
 
     fun addTile(tile: QSTile) {
-        mTiles.add(tile)
+        tiles.add(tile)
         notifyDataSetChanged()
 
-        setOrder(mTiles)
+        setOrder(tiles)
         refreshAvailableTiles()
     }
 
@@ -102,15 +102,15 @@ class QSDragAdapter(private val context: Context) : RecyclerView.Adapter<QSDragA
     }
 
     override fun onBindViewHolder(holder: QSViewHolder, position: Int) {
-        holder.setTitle(mTiles[holder.adapterPosition].title)
-        holder.setIcon(mTiles[holder.adapterPosition].icon)
+        holder.setTitle(tiles[holder.adapterPosition].title)
+        holder.setIcon(tiles[holder.adapterPosition].icon)
         holder.setCloseListener(View.OnClickListener {
             AlertDialog.Builder(context)
                     .setTitle(R.string.removing_tile)
-                    .setMessage(String.format(holder.context.resources.getString(R.string.remove_tile), mTiles[holder.adapterPosition].title))
+                    .setMessage(String.format(holder.context.resources.getString(R.string.remove_tile), tiles[holder.adapterPosition].title))
                     .setPositiveButton(R.string.yes) { _, _ ->
-                        mTiles.removeAt(holder.adapterPosition)
-                        setOrder(mTiles)
+                        tiles.removeAt(holder.adapterPosition)
+                        setOrder(tiles)
                         notifyItemRemoved(holder.adapterPosition)
                     }
                     .setNegativeButton(R.string.no, null)
@@ -119,7 +119,7 @@ class QSDragAdapter(private val context: Context) : RecyclerView.Adapter<QSDragA
     }
 
     override fun getItemCount(): Int {
-        return mTiles.size
+        return tiles.size
     }
 
     class QSViewHolder(private var mView: View) : RecyclerView.ViewHolder(mView) {

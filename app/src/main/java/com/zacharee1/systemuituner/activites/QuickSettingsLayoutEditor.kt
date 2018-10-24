@@ -36,8 +36,6 @@ class QuickSettingsLayoutEditor : BaseAnimActivity() {
         setContentView(R.layout.activity_blank_recycler)
         title = resources.getString(R.string.quick_settings)
 
-//        findViewById<View>(R.id.root).setBackgroundColor(Color.parseColor("#ff303030"))
-
         setUpRecyclerView()
     }
 
@@ -58,10 +56,10 @@ class QuickSettingsLayoutEditor : BaseAnimActivity() {
             }
 
             override fun onMove(recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder, target: RecyclerView.ViewHolder): Boolean {
-                Collections.swap(adapter.mTiles, viewHolder.adapterPosition, target.adapterPosition)
+                Collections.swap(adapter.tiles, viewHolder.adapterPosition, target.adapterPosition)
                 adapter.notifyItemMoved(viewHolder.adapterPosition, target.adapterPosition)
 
-                adapter.setOrder(adapter.mTiles)
+                adapter.setOrder(adapter.tiles)
                 return true
             }
         }).attachToRecyclerView(recyclerView)
