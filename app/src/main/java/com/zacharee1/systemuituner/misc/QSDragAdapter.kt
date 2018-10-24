@@ -13,6 +13,8 @@ import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnticipateInterpolator
+import android.view.animation.OvershootInterpolator
 import android.widget.ImageView
 import android.widget.TextView
 import com.zacharee1.systemuituner.R
@@ -129,14 +131,18 @@ class QSDragAdapter(private val context: Context) : RecyclerView.Adapter<QSDragA
     }
 
     class QSViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-
         val context: Context
             get() = itemView.context
 
         init {
-
-            if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M) {
-                view.findViewById<View>(R.id.close_button).visibility = View.GONE
+            if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.M) {
+                itemView.setOnLongClickListener {
+                    showClose()
+                    true
+                }
+                itemView.setOnClickListener {
+                    hideClose()
+                }
             }
         }
 
@@ -152,6 +158,26 @@ class QSDragAdapter(private val context: Context) : RecyclerView.Adapter<QSDragA
 
         fun setCloseListener(listener: View.OnClickListener) {
             itemView.findViewById<View>(R.id.close_button).setOnClickListener(listener)
+        }
+
+        private fun showClose() {
+            val closeButton = itemView.findViewById<ImageView>(R.id.close_button)
+
+            closeButton.animate()
+                    .scaleX(1f)
+                    .scaleY(1f)
+                    .setInterpolator(OvershootInterpolator())
+                    .start()
+        }
+
+        private fun hideClose() {
+            val closeButtom = itemView.findViewById<ImageView>(R.id.close_button)
+
+            closeButtom.animate()
+                    .scaleX(0f)
+                    .scaleY(0f)
+                    .setInterpolator(AnticipateInterpolator())
+                    .start()
         }
     }
 
