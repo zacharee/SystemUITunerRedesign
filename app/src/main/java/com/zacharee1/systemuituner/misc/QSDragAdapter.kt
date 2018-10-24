@@ -88,6 +88,14 @@ class QSDragAdapter(private val context: Context) : RecyclerView.Adapter<QSDragA
         refreshAvailableTiles()
     }
 
+    fun removeTile(tile: QSTile) {
+        tiles.remove(tile)
+        notifyDataSetChanged()
+
+        setOrder(tiles)
+        refreshAvailableTiles()
+    }
+
     fun setOrder(tiles: ArrayList<QSDragAdapter.QSTile>) {
         val keys = tiles.map { it.key }
 
@@ -109,9 +117,7 @@ class QSDragAdapter(private val context: Context) : RecyclerView.Adapter<QSDragA
                     .setTitle(R.string.removing_tile)
                     .setMessage(String.format(holder.context.resources.getString(R.string.remove_tile), tiles[holder.adapterPosition].title))
                     .setPositiveButton(R.string.yes) { _, _ ->
-                        tiles.removeAt(holder.adapterPosition)
-                        setOrder(tiles)
-                        notifyItemRemoved(holder.adapterPosition)
+                        removeTile(tiles[holder.adapterPosition])
                     }
                     .setNegativeButton(R.string.no, null)
                     .show()
