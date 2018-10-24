@@ -274,6 +274,7 @@
   <string name="safe_mode_volume_warning_desc">Restores current High Volume Warning state on boot.</string>
   <string name="safe_mode_needed_qs_row_col">Safe Mode must be turned on, with the Row/Column option activated, for landscape values to work.</string>
   <string name="safe_mode_inactive_on_current_page">Safe Mode is inactive on this screen! Go back to the main menu to save changes!</string>
+  <string name="qs_info_marshmallow">Hold down on an icon to remove it.</string>
   <!--Messages-->
   <string name="sorry_explain">Ada sesuatu yang tidak beres saat menyetel toggle ini.</string>
   <string name="sorry_option">Try executing the following command from a computer (it\'s one line):</string>
