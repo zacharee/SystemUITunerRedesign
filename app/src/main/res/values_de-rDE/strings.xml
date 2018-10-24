@@ -275,6 +275,7 @@ Dies ist das Rotationssperren-Symbol. Tippen Sie hier, um es zu beheben.</string
   <string name="safe_mode_volume_warning_desc">Stellt den aktuellen Warnstatus für hohe Lautstärke beim Neustart wieder her.</string>
   <string name="safe_mode_needed_qs_row_col">Der abgesicherte Modus muss eingeschaltet sein, wenn die Option Zeile/Spalte aktiviert ist, damit die Querformatwerte funktionieren.</string>
   <string name="safe_mode_inactive_on_current_page">Der abgesicherte Modus ist auf diesem Bildschirm inaktiv! Wechseln Sie zurück zum Hauptmenü, um die Änderungen zu speichern!</string>
+  <string name="qs_info_marshmallow">Hold down on an icon to remove it.</string>
   <!--Messages-->
   <string name="sorry_explain">Irgendetwas ist beim Setzen dieses Schalters schiefgelaufen.</string>
   <string name="sorry_option">Versuche den folgenden Befehl von einem Computer aus auszuführen (es ist eine Zeile):</string>
