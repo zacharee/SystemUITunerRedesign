@@ -9,25 +9,24 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import com.rey.material.widget.CheckedImageView
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.activites.apppickers.AppsListActivity
 import com.zacharee1.systemuituner.activites.apppickers.ComponentsListActivity
 import com.zacharee1.systemuituner.util.writeSecure
 import java.util.*
 
-class CustomAdapter(appInfos: ArrayList<AppInfo>, private val context: Context, private val isLeft: Boolean) : RecyclerView.Adapter<CustomAdapter.CustomHolder>() {
-    private var apps = ArrayList<AppInfo>()
-
-    init {
-        apps = appInfos
-    }
+class CustomAdapter(private val apps: ArrayList<AppInfo>,
+                    private val context: Context,
+                    private val isLeft: Boolean,
+                    private val singleSelect: Boolean) : RecyclerView.Adapter<CustomAdapter.CustomHolder>() {
 
     override fun getItemCount(): Int {
         return apps.size
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CustomHolder {
-        val view = LayoutInflater.from(context).inflate(R.layout.app_info_layout, parent, false)
+        val view = LayoutInflater.from(context).inflate(if (singleSelect) R.layout.app_info_single else R.layout.app_info_multi, parent, false)
         return CustomHolder(view)
     }
 
@@ -43,6 +42,7 @@ class CustomAdapter(appInfos: ArrayList<AppInfo>, private val context: Context, 
 
             setAppName()
             setAppIcon()
+            setAppSummary()
             setListener()
         }
 
@@ -56,8 +56,16 @@ class CustomAdapter(appInfos: ArrayList<AppInfo>, private val context: Context, 
             icon.setImageDrawable(appInfo.appIcon)
         }
 
+        private fun setAppSummary() {
+            val summary = view.findViewById<TextView>(R.id.summary)
+            summary.text = appInfo.componentName
+        }
+
         private fun setListener() {
             view.setOnClickListener {
+                val check = view.findViewById<CheckedImageView>(R.id.checkbox)
+                check.isSelected = true
+
                 if (context is AppsListActivity) {
                     val activity = Intent(context, ComponentsListActivity::class.java)
                     activity.putExtra("package", appInfo.packageName)

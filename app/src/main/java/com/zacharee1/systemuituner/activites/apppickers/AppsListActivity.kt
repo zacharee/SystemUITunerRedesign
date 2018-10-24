@@ -67,7 +67,7 @@ class AppsListActivity : BaseAnimActivity() {
         val recyclerView = findViewById<RecyclerView>(R.id.app_rec)
 
         Thread(Runnable {
-            val adapter = CustomAdapter(appInfo, this@AppsListActivity, isLeft)
+            val adapter = CustomAdapter(appInfo, this@AppsListActivity, isLeft, true)
 
             runOnUiThread {
                 recyclerView.adapter = adapter

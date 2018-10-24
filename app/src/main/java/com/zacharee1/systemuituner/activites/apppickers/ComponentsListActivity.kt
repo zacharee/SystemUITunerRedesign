@@ -43,7 +43,7 @@ class ComponentsListActivity : BaseAnimActivity() {
         val recyclerView = findViewById<RecyclerView>(R.id.app_rec)
 
         Thread(Runnable {
-            val adapter = CustomAdapter(getComponentInfo(packageName), this@ComponentsListActivity, isLeft)
+            val adapter = CustomAdapter(getComponentInfo(packageName), this@ComponentsListActivity, isLeft, true)
 
             runOnUiThread {
                 recyclerView.adapter = adapter

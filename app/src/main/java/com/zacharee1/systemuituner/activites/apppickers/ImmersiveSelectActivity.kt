@@ -1,5 +1,6 @@
 package com.zacharee1.systemuituner.activites.apppickers
 
+import android.annotation.SuppressLint
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.preference.CheckBoxPreference
@@ -21,6 +22,7 @@ import io.reactivex.schedulers.Schedulers
 import java.util.*
 
 class ImmersiveSelectActivity : BaseAnimActivity() {
+    @SuppressLint("CheckResult")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -111,7 +113,7 @@ class ImmersiveSelectActivity : BaseAnimActivity() {
         private var infos: TreeMap<String, AppInfo> = TreeMap()
 
         fun setInfo(info: TreeMap<String, AppInfo>) {
-            infos.putAll(info)
+            infos = info
         }
 
         override fun onCreate(savedInstanceState: Bundle?) {
