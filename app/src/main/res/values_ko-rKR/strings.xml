@@ -274,6 +274,7 @@
   <string name="safe_mode_volume_warning_desc">Restores current High Volume Warning state on boot.</string>
   <string name="safe_mode_needed_qs_row_col">Safe Mode must be turned on, with the Row/Column option activated, for landscape values to work.</string>
   <string name="safe_mode_inactive_on_current_page">Safe Mode is inactive on this screen! Go back to the main menu to save changes!</string>
+  <string name="qs_info_marshmallow">Hold down on an icon to remove it.</string>
   <!--Messages-->
   <string name="sorry_explain">이 토글을 설정하는 도중 문제가 발생했습니다.</string>
   <string name="sorry_option">컴퓨터에서 다음 명령어를 실행해보십시오(한 줄):</string>
