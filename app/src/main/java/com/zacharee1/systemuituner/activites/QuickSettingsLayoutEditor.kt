@@ -149,7 +149,7 @@ class QuickSettingsLayoutEditor : BaseAnimActivity() {
 
             @SuppressLint("InflateParams")
             override fun onBindViewHolder(holder: AddVH, position: Int) {
-                holder.view.setOnClickListener {
+                holder.itemView.setOnClickListener {
                     if (!availableTiles[holder.adapterPosition].key.contains("intent(")) {
                         addTile(holder, true)
                     } else {
@@ -179,10 +179,9 @@ class QuickSettingsLayoutEditor : BaseAnimActivity() {
                 return availableTiles.size
             }
 
-            inner class AddVH(internal var view: View) : RecyclerView.ViewHolder(view) {
-
+            private inner class AddVH(view: View) : RecyclerView.ViewHolder(view) {
                 fun setText(text: String) {
-                    val textView = view.findViewById<TextView>(R.id.textView)
+                    val textView = itemView.findViewById<TextView>(R.id.textView)
                     textView.text = text
                 }
             }

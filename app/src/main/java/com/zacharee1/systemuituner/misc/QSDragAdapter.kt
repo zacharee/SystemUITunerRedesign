@@ -128,38 +128,38 @@ class QSDragAdapter(private val context: Context) : RecyclerView.Adapter<QSDragA
         return tiles.size
     }
 
-    class QSViewHolder(private var mView: View) : RecyclerView.ViewHolder(mView) {
+    class QSViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
         val context: Context
-            get() = mView.context
+            get() = itemView.context
 
         init {
 
             if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M) {
-                mView.findViewById<View>(R.id.close_button).visibility = View.GONE
+                view.findViewById<View>(R.id.close_button).visibility = View.GONE
             }
         }
 
         fun setTitle(title: String) {
-            val textView = mView.findViewById<TextView>(R.id.textView)
+            val textView = itemView.findViewById<TextView>(R.id.textView)
             textView.text = title
         }
 
         fun setIcon(icon: Drawable) {
-            val imageView = mView.findViewById<ImageView>(R.id.imageView)
+            val imageView = itemView.findViewById<ImageView>(R.id.imageView)
             imageView.setImageDrawable(icon)
         }
 
         fun setCloseListener(listener: View.OnClickListener) {
-            mView.findViewById<View>(R.id.close_button).setOnClickListener(listener)
+            itemView.findViewById<View>(R.id.close_button).setOnClickListener(listener)
         }
     }
 
     class QSTile(var key: String, context: Context) {
-        private var mParser: TileParser = TileParser(key, context)
+        private var parser: TileParser = TileParser(key, context)
 
-        var title = mParser.title
-        var icon = mParser.icon
+        var title = parser.title
+        var icon = parser.icon
     }
 
     class TileParser(var key: String, private val mContext: Context) {
