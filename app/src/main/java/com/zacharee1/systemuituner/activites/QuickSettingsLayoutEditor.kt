@@ -26,6 +26,7 @@ import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.misc.QSDragAdapter
 import com.zacharee1.systemuituner.util.pxToDp
 import com.zacharee1.systemuituner.util.writeSecure
+import kotlinx.android.synthetic.main.activity_blank_recycler.*
 import java.util.*
 
 class QuickSettingsLayoutEditor : BaseAnimActivity() {
@@ -41,6 +42,22 @@ class QuickSettingsLayoutEditor : BaseAnimActivity() {
 
     private fun setUpRecyclerView() {
         val recyclerView = findViewById<RecyclerView>(R.id.content_main)
+
+        if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.M) {
+            val marshmallowInfo = TextView(this)
+            marshmallowInfo.text = resources.getText(R.string.qs_info_marshmallow)
+            marshmallowInfo.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
+            marshmallowInfo.textSize = 24f
+            val params = FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT,
+                    pxToDp(48f).toInt(), Gravity.TOP)
+
+            root.addView(marshmallowInfo, params)
+
+            val recParams = recyclerView.layoutParams as FrameLayout.LayoutParams
+            recParams.topMargin = params.height
+            recyclerView.layoutParams = recParams
+        }
+
         val adapter = QSDragAdapter(this)
         recyclerView.adapter = adapter
         recyclerView.layoutManager = GridLayoutManager(this, 3)
