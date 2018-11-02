@@ -3,7 +3,7 @@ package com.zacharee1.systemuituner
 import android.Manifest
 import android.content.Intent
 import android.os.Bundle
-import android.preference.PreferenceManager
+import androidx.preference.PreferenceManager
 import com.crashlytics.android.Crashlytics
 import com.zacharee1.systemuituner.activites.BaseAnimActivity
 import com.zacharee1.systemuituner.activites.info.IntroActivity

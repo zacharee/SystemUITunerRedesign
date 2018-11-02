@@ -3,28 +3,30 @@ package com.zacharee1.systemuituner.fragments
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
-import android.preference.Preference
-import android.preference.PreferenceCategory
-import android.preference.SwitchPreference
 import android.provider.Settings
-import com.pavelsikun.seekbarpreference.SeekBarPreference
+import androidx.preference.Preference
+import androidx.preference.PreferenceCategory
+import androidx.preference.SwitchPreference
+import com.pavelsikun.seekbarpreference.SeekBarPreferenceCompat
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.activites.QuickSettingsLayoutEditor
+import com.zacharee1.systemuituner.util.forEachPreference
 import com.zacharee1.systemuituner.util.writeSecure
 
 class QSFragment : AnimFragment() {
+    override val prefsRes = R.xml.pref_qs
+    
     private var origHeader = false
 
     override fun onSetTitle() = resources.getString(R.string.quick_settings)
 
-    override fun onAnimationFinishedEnter(enter: Boolean) {
-        if (enter) {
-            addPreferencesFromResource(R.xml.pref_qs)
-            setSwitchStates()
-            setSwitchListeners()
-            setSliderState()
-            setEditorListener()
-        }
+    override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
+        super.onCreatePreferences(savedInstanceState, rootKey)
+
+        setSwitchStates()
+        setSwitchListeners()
+        setSliderState()
+        setEditorListener()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -55,51 +57,42 @@ class QSFragment : AnimFragment() {
     }
 
     private fun setSwitchStates() {
-        (0 until preferenceScreen.rootAdapter.count)
-                .map { //loop through every preference
-                    preferenceScreen.rootAdapter.getItem(it)
-                }
-                .filterIsInstance<SwitchPreference>()
-                .forEach { //if current preference is a SwitchPreference
-
-                    it.isChecked = Settings.Secure.getInt(context?.contentResolver, it.key, 1) == 1
-                }
+        preferenceScreen.forEachPreference {
+            if (it is SwitchPreference) {
+                it.isChecked = Settings.Secure.getInt(context?.contentResolver, it.key, 1) == 1
+            }
+        }
     }
 
     private fun setSwitchListeners() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            (0 until preferenceScreen.rootAdapter.count)
-                    .map {
-                        //loop through every preference
-                        preferenceScreen.rootAdapter.getItem(it)
+            preferenceScreen.forEachPreference {
+                if (it is SwitchPreference) {
+                    it.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { preference, o ->
+                        context?.writeSecure(preference.key, if (o.toString().toBoolean()) 1 else 0)
+                        true
                     }
-                    .filterIsInstance<SwitchPreference>()
-                    .forEach {
-                        //if current preference is a SwitchPreference
-
-                        it.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { preference, o ->
-                            context.writeSecure(preference.key, if (o.toString().toBoolean()) 1 else 0)
-                            true
-                        }
-                    }
+                }
+            }
         } else {
             val category = findPreference(GENERAL_QS) as PreferenceCategory
             category.isEnabled = false
 
-            for (i in 0 until category.preferenceCount) {
-                val preference = category.getPreference(i) as SwitchPreference
-                preference.isChecked = false
-                preference.setSummary(R.string.requires_nougat)
+            category.forEachPreference {
+                if (it is SwitchPreference) {
+                    it.isChecked = false
+                    it.setSummary(R.string.requires_nougat)
+                }
             }
         }
     }
 
     private fun setSliderState() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            val pref = findPreference(QQS_COUNT) as SeekBarPreference //find the SliderPreference
+            val pref = findPreference(QQS_COUNT) as SeekBarPreferenceCompat //find the SliderPreference
             //            pref.set<in(1);
             pref.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { _, o ->
-                context.writeSecure(QQS_COUNT, o.toString().toFloat().toInt()) //write new value to Settings if user presses OK
+                context?.writeSecure(QQS_COUNT, o.toString().toFloat().toInt()) //write new value to Settings if user presses OK
                 true
             }
 
@@ -108,9 +101,9 @@ class QSFragment : AnimFragment() {
             val category = findPreference(COUNT_CATEGORY) as PreferenceCategory
             category.isEnabled = false
 
-            (0 until category.preferenceCount)
-                    .map { category.getPreference(it) }
-                    .forEach { it.setSummary(R.string.requires_nougat) }
+            category.forEachPreference {
+                it.setSummary(R.string.requires_nougat)
+            }
         }
 
     }

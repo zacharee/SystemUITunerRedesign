@@ -4,11 +4,11 @@ import android.annotation.TargetApi
 import android.content.*
 import android.os.Handler
 import android.os.Looper
-import android.preference.PreferenceManager
 import android.provider.AlarmClock
 import android.service.quicksettings.Tile
 import android.service.quicksettings.TileService
 import android.widget.Toast
+import androidx.preference.PreferenceManager
 import com.zacharee1.systemuituner.R
 import java.text.SimpleDateFormat
 import java.util.*

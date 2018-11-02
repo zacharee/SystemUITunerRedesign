@@ -11,11 +11,11 @@ import android.os.Build
 import android.os.Handler
 import android.os.IBinder
 import android.os.Looper
-import android.preference.PreferenceManager
 import android.provider.Settings
-import android.support.v4.app.NotificationCompat
 import android.view.Surface
 import android.view.WindowManager
+import androidx.core.app.NotificationCompat
+import androidx.preference.PreferenceManager
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.activites.settings.SettingsActivity
 import com.zacharee1.systemuituner.fragments.MiscFragment

@@ -5,22 +5,24 @@ import android.content.Intent
 import android.graphics.Color
 import android.graphics.PorterDuff
 import android.os.Build
-import android.preference.Preference
-import android.preference.PreferenceCategory
+import android.os.Bundle
 import android.provider.Settings
+import androidx.preference.Preference
+import androidx.preference.PreferenceCategory
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.activites.apppickers.AppsListActivity
 import com.zacharee1.systemuituner.prefs.LockPref
 import com.zacharee1.systemuituner.util.writeSecure
 
 class LockFragment : AnimFragment() {
-    override fun onAnimationFinishedEnter(enter: Boolean) {
-        if (enter) {
-            addPreferencesFromResource(R.xml.pref_lock)
-            setEnabled()
-            setLockIconStuff()
-            setResetListeners()
-        }
+    override val prefsRes = R.xml.pref_lock
+
+    override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
+        super.onCreatePreferences(savedInstanceState, rootKey)
+
+        setEnabled()
+        setLockIconStuff()
+        setResetListeners()
     }
 
     override fun onResume() {
@@ -36,7 +38,7 @@ class LockFragment : AnimFragment() {
         val isOreo = Build.VERSION.SDK_INT > Build.VERSION_CODES.N_MR1
 
         shortcuts.isEnabled = isOreo
-        if (isOreo) shortcuts.removePreference(oreoMsg)
+        if (isOreo) shortcuts.removePreference(oreoMsg ?: return)
     }
 
     private fun setLockIconStuff() {
@@ -76,28 +78,28 @@ class LockFragment : AnimFragment() {
         rightLock?.summary = rightSum
 
         try {
-            leftLock?.title = context.packageManager.getApplicationLabel(context.packageManager.getApplicationInfo(leftStuff!![0], 0))
+            leftLock?.title = context?.packageManager?.getApplicationLabel(context?.packageManager?.getApplicationInfo(leftStuff!![0], 0))
         } catch (e: Exception) {
-            leftLock?.title = context.resources.getString(R.string.choose_left)
+            leftLock?.title = context?.resources?.getString(R.string.choose_left)
         }
 
         try {
-            rightLock?.title = context.packageManager.getApplicationLabel(context.packageManager.getApplicationInfo(rightStuff!![0], 0))
+            rightLock?.title = context?.packageManager?.getApplicationLabel(context?.packageManager?.getApplicationInfo(rightStuff!![0], 0))
         } catch (e: Exception) {
-            rightLock?.title = context.resources.getString(R.string.choose_right)
+            rightLock?.title = context?.resources?.getString(R.string.choose_right)
         }
 
         val unknown = context?.resources?.getDrawable(R.drawable.ic_help_outline_black_24dp, null)?.mutate()
         unknown?.setColorFilter(Color.WHITE, PorterDuff.Mode.SRC_ATOP)
 
         try {
-            leftLock?.icon = context.packageManager.getActivityIcon(ComponentName(leftStuff!![0], leftStuff[1]))
+            leftLock?.icon = context?.packageManager?.getActivityIcon(ComponentName(leftStuff!![0], leftStuff[1]))
         } catch (e: Exception) {
             leftLock?.icon = unknown
         }
 
         try {
-            rightLock?.icon = context.packageManager.getActivityIcon(ComponentName(rightStuff!![0], rightStuff[1]))
+            rightLock?.icon = context?.packageManager?.getActivityIcon(ComponentName(rightStuff!![0], rightStuff[1]))
         } catch (e: Exception) {
             rightLock?.icon = unknown
         }
@@ -109,12 +111,12 @@ class LockFragment : AnimFragment() {
         val rightLock = findPreference(CHOOSE_RIGHT) as LockPref
 
         leftLock.resetListener = {
-            context.writeSecure(KEYGUARD_LEFT, null)
+            context?.writeSecure(KEYGUARD_LEFT, null)
             setLockSummaryTitleAndIcon()
             true
         }
         rightLock.resetListener = {
-            context.writeSecure(KEYGUARD_RIGHT, null)
+            context?.writeSecure(KEYGUARD_RIGHT, null)
             setLockSummaryTitleAndIcon()
             true
         }

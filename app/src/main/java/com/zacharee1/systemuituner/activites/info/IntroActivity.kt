@@ -4,8 +4,6 @@ import android.Manifest
 import android.graphics.Color
 import android.os.Bundle
 import android.os.CountDownTimer
-import android.preference.PreferenceManager
-import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,6 +11,8 @@ import android.widget.Button
 import android.widget.CheckBox
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.fragment.app.Fragment
+import androidx.preference.PreferenceManager
 import com.github.paolorotolo.appintro.AppIntro2
 import com.github.paolorotolo.appintro.ISlideBackgroundColorHolder
 import com.zacharee1.systemuituner.R
@@ -133,7 +133,7 @@ class IntroActivity : AppIntro2() {
     }
 
     open class SlideFragment : Fragment(), ISlideBackgroundColorHolder {
-        internal open val layoutId = R.layout.fragment_intro2
+        internal open val layoutId = R.layout.appintro_fragment_intro2
 
         override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
             val args = arguments

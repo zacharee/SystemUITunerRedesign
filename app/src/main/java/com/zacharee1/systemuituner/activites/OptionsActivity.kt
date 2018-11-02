@@ -1,17 +1,18 @@
 package com.zacharee1.systemuituner.activites
 
-import android.app.FragmentManager
 import android.os.Build
 import android.os.Bundle
-import android.preference.PreferenceFragment
-import android.preference.PreferenceManager
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import androidx.fragment.app.FragmentManager
+import androidx.preference.PreferenceFragmentCompat
+import androidx.preference.PreferenceManager
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.fragments.AnimFragment
 import com.zacharee1.systemuituner.misc.OptionSelected
 import com.zacharee1.systemuituner.util.checkSamsung
+import com.zacharee1.systemuituner.util.forEachPreference
 
 class OptionsActivity : BaseAnimActivity() {
     companion object {
@@ -30,8 +31,8 @@ class OptionsActivity : BaseAnimActivity() {
 
         main = MainPrefs()
 
-        fragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
-        fragmentManager
+        supportFragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
+        supportFragmentManager
                 ?.beginTransaction()
                 ?.replace(R.id.content_main, main)
                 ?.addToBackStack("main")
@@ -42,7 +43,7 @@ class OptionsActivity : BaseAnimActivity() {
         super.onResume()
 
         val hideWelcomeScreen = PreferenceManager.getDefaultSharedPreferences(this).getBoolean("hide_welcome_screen", false)
-        setBackClickable(fragmentManager.backStackEntryCount > 1 || !hideWelcomeScreen)
+        setBackClickable(supportFragmentManager.backStackEntryCount > 1 || !hideWelcomeScreen)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -70,11 +71,11 @@ class OptionsActivity : BaseAnimActivity() {
         val hideWelcomeScreen = PreferenceManager.getDefaultSharedPreferences(this).getBoolean("hide_welcome_screen", false)
 
         when {
-            fragmentManager != null -> when {
-                fragmentManager.backStackEntryCount > 1 -> {
-                    fragmentManager.popBackStackImmediate()
+            supportFragmentManager != null -> when {
+                supportFragmentManager.backStackEntryCount > 1 -> {
+                    supportFragmentManager.popBackStackImmediate()
 
-                    val stillAboveOne = fragmentManager.backStackEntryCount > 1
+                    val stillAboveOne = supportFragmentManager.backStackEntryCount > 1
 
                     setBackClickable(stillAboveOne || !hideWelcomeScreen)
                 }
@@ -85,13 +86,9 @@ class OptionsActivity : BaseAnimActivity() {
     }
 
     class MainPrefs : AnimFragment() {
-        override fun onCreate(savedInstanceState: Bundle?) {
-            super.onCreate(savedInstanceState)
+        override val prefsRes = R.xml.prefs_main
 
-            addPreferencesFromResource(R.xml.prefs_main)
-        }
-
-        override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
+        override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
             super.onViewCreated(view, savedInstanceState)
 
             removeTouchWizIfNeeded()
@@ -115,7 +112,7 @@ class OptionsActivity : BaseAnimActivity() {
         }
 
         private fun removeTouchWizIfNeeded() {
-            if (!activity.checkSamsung()) preferenceScreen.removePreference(findPreference("touchwiz") ?: return)
+            if (activity?.checkSamsung() == false) preferenceScreen.removePreference(findPreference("touchwiz") ?: return)
         }
 
         private fun removeLockScreenIfNeeded() {
@@ -123,12 +120,12 @@ class OptionsActivity : BaseAnimActivity() {
         }
 
         private fun setListeners() {
-            for (i in 0 until preferenceScreen.preferenceCount) {
-                val pref = preferenceScreen.getPreference(i)
-                pref.setOnPreferenceClickListener {
+            preferenceScreen.forEachPreference {
+                it.setOnPreferenceClickListener {
                     (activity as BaseAnimActivity).setBackClickable(true)
 
-                    val fragment = Class.forName(pref.fragment ?: return@setOnPreferenceClickListener false).newInstance() as PreferenceFragment
+                    val fragment = Class.forName(it.fragment
+                            ?: return@setOnPreferenceClickListener false).newInstance() as PreferenceFragmentCompat
                     fragmentManager
                             ?.beginTransaction()
                             ?.replace(R.id.content_main, fragment, it.key)

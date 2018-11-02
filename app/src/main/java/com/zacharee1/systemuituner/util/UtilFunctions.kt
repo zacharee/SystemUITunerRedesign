@@ -6,17 +6,15 @@ import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.preference.PreferenceFragment
-import android.preference.PreferenceManager
-import android.preference.SwitchPreference
 import android.provider.Settings
-import android.support.v7.app.AlertDialog
 import android.text.TextUtils
 import android.util.TypedValue
+import androidx.appcompat.app.AlertDialog
+import androidx.preference.*
 import com.zacharee1.systemuituner.R
-import com.zacharee1.systemuituner.activites.info.GrantWSActivity
 import com.zacharee1.systemuituner.activites.MainActivity
 import com.zacharee1.systemuituner.activites.OptionsActivity
+import com.zacharee1.systemuituner.activites.info.GrantWSActivity
 import com.zacharee1.systemuituner.activites.info.SettingWriteFailed
 import java.io.BufferedReader
 import java.io.DataOutputStream
@@ -237,29 +235,35 @@ fun Context.changeBlacklist(key: String?, remove: Boolean) =
             writeSecure("icon_blacklist", currentBL)
         } else false
 
-fun PreferenceFragment.updateBlacklistSwitches() {
-    var blString: String? = Settings.Secure.getString(activity.contentResolver, "icon_blacklist")
+fun PreferenceFragmentCompat.updateBlacklistSwitches() {
+    var blString: String? = Settings.Secure.getString(activity?.contentResolver, "icon_blacklist")
     if (blString == null) blString = ""
 
     val blItems = TreeSet(blString.split(","))
 
-    for (i in 0 until preferenceScreen.rootAdapter.count) {
-        val o = preferenceScreen.rootAdapter.getItem(i)
-
-        if (o is SwitchPreference) {
-            o.isChecked = true
+    preferenceScreen.forEachPreference { pref ->
+        if (pref is SwitchPreference) {
+            val key = pref.key
+            pref.isChecked = true
 
             if (!blString.isEmpty()) {
-                val key = o.key
-
                 if (key != null) {
                     val keyItems = TreeSet(key.split(","))
 
-                    keyItems
-                            .filter { blItems.contains(it) }
-                            .forEach { _ -> o.isChecked = false }
+                    if (keyItems.any { blItems.contains(it) })
+                        pref.isChecked = false
                 }
             }
         }
+    }
+}
+
+fun PreferenceGroup.forEachPreference(consumer: (pref: Preference) -> Unit) {
+    for (i in 0 until preferenceCount) {
+        val child = getPreference(i)
+
+        consumer.invoke(child)
+
+        if (child is PreferenceGroup) child.forEachPreference(consumer)
     }
 }

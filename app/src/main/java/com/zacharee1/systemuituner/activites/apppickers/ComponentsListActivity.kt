@@ -3,11 +3,11 @@ package com.zacharee1.systemuituner.activites.apppickers
 import android.app.Activity
 import android.content.pm.PackageManager
 import android.os.Bundle
-import android.support.v7.widget.DividerItemDecoration
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
 import android.view.MenuItem
 import android.view.View
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.dinuscxj.progressbar.CircleProgressBar
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.activites.BaseAnimActivity
@@ -80,7 +80,7 @@ class ComponentsListActivity : BaseAnimActivity() {
             val bar = findViewById<CircleProgressBar>(R.id.progress)
 
             for (activity in activities) {
-                apps[activity.name] = AppInfo(activity.name,
+                apps[activity!!.name] = AppInfo(activity.name,
                         activity.packageName,
                         activity.name,
                         activity.loadIcon(packageManager))

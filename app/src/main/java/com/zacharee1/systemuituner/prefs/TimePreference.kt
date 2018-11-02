@@ -2,11 +2,11 @@ package com.zacharee1.systemuituner.prefs
 
 import android.app.AlertDialog
 import android.content.Context
-import android.preference.Preference
 import android.text.format.DateFormat
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.widget.TimePicker
+import androidx.preference.Preference
 import com.zacharee1.systemuituner.R
 import java.util.concurrent.TimeUnit
 

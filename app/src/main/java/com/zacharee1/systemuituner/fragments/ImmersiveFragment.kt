@@ -4,16 +4,20 @@ import android.content.Intent
 import android.database.ContentObserver
 import android.net.Uri
 import android.os.Build
+import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.preference.*
 import android.provider.Settings
+import androidx.preference.*
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.activites.apppickers.ImmersiveSelectActivity
 import com.zacharee1.systemuituner.handlers.ImmersiveHandler
+import com.zacharee1.systemuituner.util.forEachPreference
 
 class ImmersiveFragment : AnimFragment(), Preference.OnPreferenceChangeListener {
-    private var mObserver = object : ContentObserver(Handler(Looper.getMainLooper())) {
+    override val prefsRes = R.xml.pref_imm
+
+    private var observer = object : ContentObserver(Handler(Looper.getMainLooper())) {
         override fun onChange(selfChange: Boolean, uri: Uri) {
             if (uri == ImmersiveHandler.POLICY_CONTROL) {
                 setProperBoxChecked()
@@ -23,32 +27,31 @@ class ImmersiveFragment : AnimFragment(), Preference.OnPreferenceChangeListener 
 
     override fun onSetTitle() = resources.getString(R.string.immersive_mode)
 
-    override fun onAnimationFinishedEnter(enter: Boolean) {
-        if (enter) {
-            addPreferencesFromResource(R.xml.pref_imm)
-            findPreference("immersive_tile_mode")?.onPreferenceChangeListener = this
+    override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
+        super.onCreatePreferences(savedInstanceState, rootKey)
 
-            val none = findPreference(ImmersiveHandler.DISABLED) as CheckBoxPreference
-            val full = findPreference(ImmersiveHandler.FULL) as CheckBoxPreference
-            val status = findPreference(ImmersiveHandler.STATUS) as CheckBoxPreference
-            val navi = findPreference(ImmersiveHandler.NAV) as CheckBoxPreference
-            val preconf = findPreference(ImmersiveHandler.PRECONF) as CheckBoxPreference
+        findPreference("immersive_tile_mode")?.onPreferenceChangeListener = this
 
-            none.onPreferenceChangeListener = this
-            full.onPreferenceChangeListener = this
-            status.onPreferenceChangeListener = this
-            navi.onPreferenceChangeListener = this
-            preconf.onPreferenceChangeListener = this
+        val none = findPreference(ImmersiveHandler.DISABLED) as CheckBoxPreference
+        val full = findPreference(ImmersiveHandler.FULL) as CheckBoxPreference
+        val status = findPreference(ImmersiveHandler.STATUS) as CheckBoxPreference
+        val navi = findPreference(ImmersiveHandler.NAV) as CheckBoxPreference
+        val preconf = findPreference(ImmersiveHandler.PRECONF) as CheckBoxPreference
 
-            setContentObserver()
-            setProperBoxChecked()
-            disableQSSettingIfBelowNougat()
-            setSelectorListener()
-        }
+        none.onPreferenceChangeListener = this
+        full.onPreferenceChangeListener = this
+        status.onPreferenceChangeListener = this
+        navi.onPreferenceChangeListener = this
+        preconf.onPreferenceChangeListener = this
+
+        setContentObserver()
+        setProperBoxChecked()
+        disableQSSettingIfBelowNougat()
+        setSelectorListener()
     }
 
     private fun setContentObserver() {
-        activity?.contentResolver?.registerContentObserver(Settings.Global.CONTENT_URI, true, mObserver)
+        activity?.contentResolver?.registerContentObserver(Settings.Global.CONTENT_URI, true, observer)
     }
 
     private fun setProperBoxChecked() {
@@ -59,9 +62,7 @@ class ImmersiveFragment : AnimFragment(), Preference.OnPreferenceChangeListener 
     private fun setAllOthersDisabled(keyToNotDisable: String) {
         val boxes = findPreference(IMMERSIVE_BOXES) as PreferenceCategory
 
-        for (i in 0 until boxes.preferenceCount) {
-            val preference = boxes.getPreference(i)
-
+        boxes.forEachPreference { preference ->
             if (preference is CheckBoxPreference) {
                 preference.isEnabled = preference.key != keyToNotDisable
 
@@ -78,8 +79,7 @@ class ImmersiveFragment : AnimFragment(), Preference.OnPreferenceChangeListener 
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.N) {
             val category = findPreference(CONFIG_QS) as PreferenceCategory
 
-            for (i in 0 until category.preferenceCount) {
-                val preference = category.getPreference(i)
+            category.forEachPreference { preference ->
                 preference.isEnabled = false
                 preference.setSummary(R.string.requires_nougat)
             }
@@ -103,7 +103,7 @@ class ImmersiveFragment : AnimFragment(), Preference.OnPreferenceChangeListener 
     override fun onDestroy() {
         super.onDestroy()
         try {
-            activity?.contentResolver?.unregisterContentObserver(mObserver)
+            activity?.contentResolver?.unregisterContentObserver(observer)
         } catch (e: Exception) {}
     }
 

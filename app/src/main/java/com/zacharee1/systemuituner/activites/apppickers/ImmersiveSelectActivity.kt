@@ -3,19 +3,20 @@ package com.zacharee1.systemuituner.activites.apppickers
 import android.annotation.SuppressLint
 import android.content.pm.PackageManager
 import android.os.Bundle
-import android.preference.CheckBoxPreference
-import android.preference.Preference
 import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
 import android.widget.LinearLayout
 import android.widget.Toast
+import androidx.preference.CheckBoxPreference
+import androidx.preference.Preference
 import com.dinuscxj.progressbar.CircleProgressBar
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.activites.BaseAnimActivity
 import com.zacharee1.systemuituner.fragments.AnimFragment
 import com.zacharee1.systemuituner.handlers.ImmersiveHandler
 import com.zacharee1.systemuituner.misc.AppInfo
+import com.zacharee1.systemuituner.util.forEachPreference
 import com.zacharee1.systemuituner.util.getInstalledApps
 import io.reactivex.Observable
 import io.reactivex.schedulers.Schedulers
@@ -54,7 +55,7 @@ class ImmersiveSelectActivity : BaseAnimActivity() {
 
                         (findViewById<View>(R.id.content_main) as LinearLayout).removeAllViews()
                         try {
-                            fragmentManager.beginTransaction().replace(R.id.content_main, fragment).commit()
+                            supportFragmentManager.beginTransaction().replace(R.id.content_main, fragment).commit()
                         } catch (e: Exception) {
                         }
 
@@ -110,20 +111,21 @@ class ImmersiveSelectActivity : BaseAnimActivity() {
     }
 
     class SelectorFragment : AnimFragment() {
+        override val prefsRes = R.xml.pref_blank
+
         private var infos: TreeMap<String, AppInfo> = TreeMap()
 
         fun setInfo(info: TreeMap<String, AppInfo>) {
             infos = info
         }
 
-        override fun onCreate(savedInstanceState: Bundle?) {
-            super.onCreate(savedInstanceState)
+        override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
+            super.onCreatePreferences(savedInstanceState, rootKey)
 
-            addPreferencesFromResource(R.xml.pref_blank)
             populateList()
         }
 
-        override fun onSetTitle(): String? = resources.getString(R.string.select_apps)
+        override fun onSetTitle(): String = resources.getString(R.string.select_apps)
 
         private fun populateList() {
             val selectedApps = ImmersiveHandler.parseSelectedApps(activity, TreeSet())
@@ -161,25 +163,19 @@ class ImmersiveSelectActivity : BaseAnimActivity() {
         }
 
         private fun setBoxesSelected(selected: Boolean) {
-            (0 until preferenceScreen.preferenceCount)
-                    .map { preferenceScreen.getPreference(it) }
-                    .filterIsInstance<CheckBoxPreference>()
-                    .apply {
-                        forEach {
-                            it.isChecked = selected
-                        }
-                    }
+            preferenceScreen.forEachPreference {
+                if (it is CheckBoxPreference) {
+                    it.isChecked = selected
+                }
+            }
         }
 
         fun invertSelection() {
-            (0 until preferenceScreen.preferenceCount)
-                    .map { preferenceScreen.getPreference(it) }
-                    .filterIsInstance<CheckBoxPreference>()
-                    .apply {
-                        forEach {
-                            it.isChecked = !it.isChecked
-                        }
-                    }
+            preferenceScreen.forEachPreference {
+                if (it is CheckBoxPreference) {
+                    it.isChecked = !it.isChecked
+                }
+            }
         }
 
         private fun restartMode() {

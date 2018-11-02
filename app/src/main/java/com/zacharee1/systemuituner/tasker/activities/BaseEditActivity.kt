@@ -31,13 +31,10 @@ abstract class BaseEditActivity<Input : Any> : BaseAnimActivity(), TaskerPluginC
         val args = Bundle()
         args.putInt(PREFS_RES, prefsRes)
         fragment.arguments = args
-        fragment.setOnFinishAnimationListener {
-            onFinishFragmentAttach()
-        }
 
-        fragmentManager
+        supportFragmentManager
                 ?.beginTransaction()
-                ?.replace(R.id.content_main, fragment, title)
+                ?.replace(R.id.content_main, fragment, title.toString())
                 ?.commit()
     }
 
@@ -45,19 +42,12 @@ abstract class BaseEditActivity<Input : Any> : BaseAnimActivity(), TaskerPluginC
         helper.finishForTasker()
     }
 
-    open fun onFinishFragmentAttach() {}
+    open fun onPreferenceAttached() {}
 
     class ConfigFragment : AnimFragment() {
-        private var listener: (() -> Unit)? = null
+        override val prefsRes: Int
+            get() = arguments!!.getInt(PREFS_RES)
 
-        override fun onAnimationFinishedEnter(enter: Boolean) {
-            addPreferencesFromResource(arguments.getInt(PREFS_RES))
-
-            listener?.invoke()
-        }
-
-        fun setOnFinishAnimationListener(listener: () -> Unit) {
-            this.listener = listener
-        }
+        override fun onSetTitle(): String? = null
     }
 }

@@ -3,15 +3,16 @@ package com.zacharee1.systemuituner.activites.settings
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
-import android.preference.Preference
-import android.preference.PreferenceCategory
-import android.preference.SwitchPreference
-import android.support.v4.content.ContextCompat
 import android.view.MenuItem
+import androidx.core.content.ContextCompat
+import androidx.preference.Preference
+import androidx.preference.PreferenceCategory
+import androidx.preference.SwitchPreference
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.activites.BaseAnimActivity
 import com.zacharee1.systemuituner.fragments.AnimFragment
 import com.zacharee1.systemuituner.services.SafeModeService
+import com.zacharee1.systemuituner.util.forEachPreference
 
 class SettingsActivity : BaseAnimActivity() {
 
@@ -19,9 +20,11 @@ class SettingsActivity : BaseAnimActivity() {
         super.onCreate(savedInstanceState)
 
         setContentView(R.layout.activity_item_list)
-        setTitle(R.string.settings)
 
-        fragmentManager.beginTransaction().replace(R.id.content_main, GeneralPreferenceFragment()).commit()
+        supportFragmentManager
+                .beginTransaction()
+                .replace(R.id.content_main, GeneralPreferenceFragment())
+                .commit()
     }
 
     /**
@@ -29,9 +32,13 @@ class SettingsActivity : BaseAnimActivity() {
      * activity is showing a two-pane settings UI.
      */
     class GeneralPreferenceFragment : AnimFragment() {
-        override fun onCreate(savedInstanceState: Bundle?) {
-            super.onCreate(savedInstanceState)
-            addPreferencesFromResource(R.xml.settings_general)
+        override val prefsRes = R.xml.settings_general
+
+        override fun onSetTitle() = resources.getString(R.string.settings)
+
+        override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
+            super.onCreatePreferences(savedInstanceState, rootKey)
+
             setHasOptionsMenu(true)
             setUpQSStuff()
             setSwitchListeners()
@@ -40,7 +47,7 @@ class SettingsActivity : BaseAnimActivity() {
         override fun onOptionsItemSelected(item: MenuItem): Boolean {
             val id = item.itemId
             if (id == android.R.id.home) {
-                activity.finish()
+                activity?.finish()
                 return true
             }
             return super.onOptionsItemSelected(item)
@@ -51,8 +58,8 @@ class SettingsActivity : BaseAnimActivity() {
 
             if (Build.VERSION.SDK_INT < Build.VERSION_CODES.N) {
                 category.isEnabled = false
-                for (i in 0 until category.preferenceCount) {
-                    category.getPreference(i).summary = resources.getText(R.string.requires_nougat)
+                category.forEachPreference {
+                    it.summary = resources.getText(R.string.requires_nougat)
                 }
             }
         }
@@ -63,10 +70,10 @@ class SettingsActivity : BaseAnimActivity() {
 
             safeMode.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { _, newValue ->
                 if (newValue.toString().toBoolean()) {
-                    activity.stopService(Intent(activity, SafeModeService::class.java))
-                    ContextCompat.startForegroundService(activity, Intent(activity, SafeModeService::class.java))
+                    activity?.stopService(Intent(activity, SafeModeService::class.java))
+                    ContextCompat.startForegroundService(activity!!, Intent(activity, SafeModeService::class.java))
                 } else {
-                    activity.stopService(Intent(activity, SafeModeService::class.java))
+                    activity?.stopService(Intent(activity, SafeModeService::class.java))
                 }
 
                 true

@@ -5,10 +5,10 @@ import android.database.ContentObserver
 import android.net.Uri
 import android.os.Handler
 import android.os.Looper
-import android.preference.PreferenceManager
 import android.provider.Settings
 import android.service.quicksettings.Tile
 import android.service.quicksettings.TileService
+import androidx.preference.PreferenceManager
 
 import com.zacharee1.systemuituner.handlers.ImmersiveHandler
 

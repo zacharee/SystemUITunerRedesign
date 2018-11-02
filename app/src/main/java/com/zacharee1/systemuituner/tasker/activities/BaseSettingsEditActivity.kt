@@ -1,7 +1,8 @@
 package com.zacharee1.systemuituner.tasker.activities
 
-import android.preference.EditTextPreference
-import android.preference.Preference
+import androidx.fragment.app.Fragment
+import androidx.preference.EditTextPreference
+import androidx.preference.Preference
 import com.joaomgcd.taskerpluginlibrary.config.TaskerPluginConfigHelperNoOutput
 import com.joaomgcd.taskerpluginlibrary.input.TaskerInput
 import com.zacharee1.systemuituner.R
@@ -37,7 +38,7 @@ abstract class BaseSettingsEditActivity : BaseEditActivity<SettingsInput>() {
         value = input.regular.value
     }
 
-    override fun onFinishFragmentAttach() {
+    override fun onAttachFragment(f: Fragment?) {
         val keyPref = fragment.findPreference(KEY) as EditTextPreference
         val valPref = fragment.findPreference(VALUE) as EditTextPreference
 

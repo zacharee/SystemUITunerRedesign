@@ -3,12 +3,14 @@ package com.zacharee1.systemuituner.fragments
 import android.app.Activity
 import android.content.Intent
 import android.net.Uri
-import android.preference.Preference
-import android.preference.SwitchPreference
+import android.os.Bundle
 import android.provider.Settings
 import android.widget.Toast
+import androidx.preference.Preference
+import androidx.preference.SwitchPreference
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.util.changeBlacklist
+import com.zacharee1.systemuituner.util.forEachPreference
 import com.zacharee1.systemuituner.util.updateBlacklistSwitches
 import com.zacharee1.systemuituner.util.writeSecure
 import java.io.BufferedReader
@@ -30,15 +32,16 @@ open class StatbarFragment : AnimFragment() {
         const val BW_REQ = 1012
     }
 
+    override val prefsRes = R.xml.pref_statbar
+
     override fun onSetTitle() = resources.getString(R.string.status_bar)
 
-    override fun onAnimationFinishedEnter(enter: Boolean) {
-        if (enter) {
-            addPreferencesFromResource(R.xml.pref_statbar)
-            preferenceListeners()
-            setSwitchPreferenceStates()
-            switchPreferenceListeners()
-        }
+    override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
+        super.onCreatePreferences(savedInstanceState, rootKey)
+
+        preferenceListeners()
+        setSwitchPreferenceStates()
+        switchPreferenceListeners()
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -62,13 +65,13 @@ open class StatbarFragment : AnimFragment() {
         val auto = findPreference(AUTO_DETECT)
 
         resetBL?.onPreferenceClickListener = Preference.OnPreferenceClickListener {
-            context.writeSecure(ICON_BLACKLIST, null)
+            context?.writeSecure(ICON_BLACKLIST, null)
             setSwitchPreferenceStates()
             true
         }
 
         backupBL?.onPreferenceClickListener = Preference.OnPreferenceClickListener {
-            val blacklist = Settings.Secure.getString(activity.contentResolver, ICON_BLACKLIST)
+            val blacklist = Settings.Secure.getString(activity?.contentResolver, ICON_BLACKLIST)
             if (blacklist.isNullOrBlank()) {
                 Toast.makeText(activity, R.string.nothing_to_back_up, Toast.LENGTH_SHORT).show()
             } else {
@@ -107,22 +110,21 @@ open class StatbarFragment : AnimFragment() {
     }
 
     internal open fun switchPreferenceListeners() {
-        (0 until preferenceScreen.rootAdapter.count)
-                .map { preferenceScreen.rootAdapter.getItem(it) }
-                .filterIsInstance<SwitchPreference>()
-                .forEach {
-                    it.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { preference, o ->
-                        val key = preference.key
-                        val value = o.toString().toBoolean()
+        preferenceScreen.forEachPreference {
+            if (it is SwitchPreference) {
+                it.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { preference, o ->
+                    val key = preference.key
+                    val value = o.toString().toBoolean()
 
-                        context.changeBlacklist(key, value)
-                        true
-                    }
+                    context?.changeBlacklist(key, value)
+                    true
                 }
+            }
+        }
     }
 
     private fun parseBackupFile(uri: Uri) {
-        val stream = activity.contentResolver.openInputStream(uri)
+        val stream = activity?.contentResolver?.openInputStream(uri)
         val reader = BufferedReader(InputStreamReader(stream))
         val builder = StringBuilder()
 
@@ -146,18 +148,18 @@ open class StatbarFragment : AnimFragment() {
 
         Toast.makeText(activity, R.string.backup_restored, Toast.LENGTH_SHORT).show()
 
-        stream.close()
-        context.writeSecure(ICON_BLACKLIST, bl)
+        stream?.close()
+        context?.writeSecure(ICON_BLACKLIST, bl)
         setSwitchPreferenceStates()
     }
 
     private fun writeBackupFile(uri: Uri) {
-        val blacklist = Settings.Secure.getString(activity.contentResolver, ICON_BLACKLIST) ?: return
-        val descriptor = activity.contentResolver.openFileDescriptor(uri, "w")
-        val stream = FileOutputStream(descriptor.fileDescriptor)
+        val blacklist = Settings.Secure.getString(activity?.contentResolver, ICON_BLACKLIST) ?: return
+        val descriptor = activity?.contentResolver?.openFileDescriptor(uri, "w")
+        val stream = FileOutputStream(descriptor?.fileDescriptor)
 
         stream.write(blacklist.toByteArray())
         stream.close()
-        descriptor.close()
+        descriptor?.close()
     }
 }

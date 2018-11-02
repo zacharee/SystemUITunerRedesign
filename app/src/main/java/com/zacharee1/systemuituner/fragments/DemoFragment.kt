@@ -6,35 +6,38 @@ import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
 import android.content.pm.PackageManager
-import android.preference.Preference
-import android.preference.SwitchPreference
+import android.os.Bundle
 import android.provider.Settings
 import android.widget.Toast
+import androidx.preference.Preference
+import androidx.preference.SwitchPreference
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.activites.instructions.SetupActivity.Companion.make
 import com.zacharee1.systemuituner.handlers.DemoHandler
+import com.zacharee1.systemuituner.util.forEachPreference
 import com.zacharee1.systemuituner.util.hasSpecificPerm
 import com.zacharee1.systemuituner.util.writeGlobal
 
 class DemoFragment : AnimFragment() {
+    override val prefsRes = R.xml.pref_demo
+
     private var switchReceiver: BroadcastReceiver? = null
     
     private lateinit var demoHandler: DemoHandler
 
     override fun onSetTitle() = resources.getString(R.string.demo_mode)
 
-    override fun onAnimationFinishedEnter(enter: Boolean) {
-        if (enter) {
-            addPreferencesFromResource(R.xml.pref_demo)
-            demoHandler = DemoHandler(context)
-            if (context.hasSpecificPerm(Manifest.permission.DUMP)) {
-                setPrefListeners()
-                setDemoSwitchListener()
-            } else {
-                make(context, arrayListOf(Manifest.permission.DUMP))
+    override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
+        super.onCreatePreferences(savedInstanceState, rootKey)
 
-                activity?.finish()
-            }
+        demoHandler = DemoHandler(context)
+        if (context?.hasSpecificPerm(Manifest.permission.DUMP) == true) {
+            setPrefListeners()
+            setDemoSwitchListener()
+        } else {
+            make(context!!, arrayListOf(Manifest.permission.DUMP))
+
+            activity?.finish()
         }
     }
 
@@ -43,10 +46,10 @@ class DemoFragment : AnimFragment() {
         enableDemo?.isEnabled = Settings.Global.getInt(context?.contentResolver, DEMO_ALLOWED, 0) == 0
         enableDemo?.onPreferenceClickListener = Preference.OnPreferenceClickListener { preference ->
             if (activity?.checkCallingOrSelfPermission(Manifest.permission.DUMP) == PackageManager.PERMISSION_GRANTED) {
-                context.writeGlobal(preference.key, 1)
+                context?.writeGlobal(preference.key, 1)
                 findPreference(SHOW_DEMO)?.isEnabled = true
             } else {
-                Toast.makeText(context, resources?.getString(R.string.grant_dump_perm), Toast.LENGTH_LONG).show()
+                Toast.makeText(context, resources.getString(R.string.grant_dump_perm), Toast.LENGTH_LONG).show()
             }
             true
         }
@@ -96,11 +99,11 @@ class DemoFragment : AnimFragment() {
     }
 
     private fun disableOtherPreferences(disable: Boolean) {
-        (0 until preferenceScreen.rootAdapter.count)
-                .map { preferenceScreen.rootAdapter.getItem(it) }
-                .filterIsInstance<Preference>()
-                .filter { it.hasKey() && !(it.key == DEMO_ALLOWED || it.key == SHOW_DEMO) }
-                .forEach { it.isEnabled = !disable }
+        preferenceScreen.forEachPreference {
+            if (it.hasKey() && !(it.key == DEMO_ALLOWED || it.key == SHOW_DEMO)) {
+                it.isEnabled = !disable
+            }
+        }
     }
 
     override fun onDestroy() {

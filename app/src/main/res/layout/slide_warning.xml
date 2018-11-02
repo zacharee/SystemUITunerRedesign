@@ -10,7 +10,7 @@
         android:id="@+id/include"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        layout="@layout/fragment_intro_content" />
+        layout="@layout/appintro_fragment_intro_content" />
 
     <Button
         android:id="@+id/terms"

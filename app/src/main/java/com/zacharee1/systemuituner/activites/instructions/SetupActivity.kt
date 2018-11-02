@@ -7,8 +7,6 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.content.res.ColorStateList
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.support.v7.app.AlertDialog
 import android.util.TypedValue
 import android.view.Gravity
 import android.view.LayoutInflater
@@ -16,8 +14,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.appcompat.app.AlertDialog
+import androidx.core.content.ContextCompat.startActivity
+import androidx.core.content.PermissionChecker.checkCallingOrSelfPermission
+import androidx.fragment.app.Fragment
 import com.github.paolorotolo.appintro.AppIntro2
+import com.google.android.gms.common.util.ArrayUtils.removeAll
 import com.zacharee1.systemuituner.R
+import com.zacharee1.systemuituner.R.string.intent
 import com.zacharee1.systemuituner.util.checkPermissions
 import com.zacharee1.systemuituner.util.pxToDp
 import com.zacharee1.systemuituner.util.startUp

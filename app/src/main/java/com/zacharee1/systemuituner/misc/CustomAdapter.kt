@@ -3,12 +3,12 @@ package com.zacharee1.systemuituner.misc
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
-import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
 import com.rey.material.widget.CheckedImageView
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.activites.apppickers.AppsListActivity
@@ -26,7 +26,8 @@ class CustomAdapter(private val apps: ArrayList<AppInfo>,
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CustomHolder {
-        val view = LayoutInflater.from(context).inflate(if (singleSelect) R.layout.app_info_single else R.layout.app_info_multi, parent, false)
+        val view = LayoutInflater.from(context).inflate(if (singleSelect) R.layout.app_info_single
+                                                                else R.layout.app_info_multi, parent, false)
         return CustomHolder(view)
     }
 
@@ -63,7 +64,7 @@ class CustomAdapter(private val apps: ArrayList<AppInfo>,
 
         private fun setListener() {
             view.setOnClickListener {
-                val check = view.findViewById<CheckedImageView>(R.id.checkbox)
+                val check = view.findViewById<CheckedImageView>(R.id.checkmark)
                 check.isSelected = true
 
                 if (context is AppsListActivity) {

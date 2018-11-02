@@ -2,12 +2,15 @@ package com.zacharee1.systemuituner.prefs
 
 import android.app.AlertDialog
 import android.content.Context
-import android.preference.EditTextPreference
 import android.provider.Settings
 import android.util.AttributeSet
 import android.view.View
+import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.preference.EditTextPreference
+import androidx.preference.EditTextPreferenceDialogFragmentCompat
+import androidx.preference.PreferenceViewHolder
 import com.zacharee1.systemuituner.R
 
 class CustomReadPreference : EditTextPreference {
@@ -35,7 +38,6 @@ class CustomReadPreference : EditTextPreference {
 
     private fun init(attrs: AttributeSet?, defStyleAttr: Int?, defStyleRes: Int?) {
         layoutResource = R.layout.custom_read_preference
-        editText.hint = context.resources.getString(R.string.key_plaintext)
 
         if (attrs != null) {
             val array = context.theme.obtainStyledAttributes(attrs,
@@ -53,31 +55,22 @@ class CustomReadPreference : EditTextPreference {
         }
     }
 
-    override fun onSetInitialValue(restoreValue: Boolean, defaultValue: Any?) {
-        super.onSetInitialValue(restoreValue, defaultValue)
+    override fun onSetInitialValue(defaultValue: Any?) {
         updateSummary(text)
     }
 
-    override fun onBindView(view: View) {
-        super.onBindView(view)
+    override fun onBindViewHolder(holder: PreferenceViewHolder?) {
+        super.onBindViewHolder(holder)
 
-        view.findViewById<ImageView>(R.id.select).setOnClickListener {
+        holder?.itemView?.findViewById<ImageView>(R.id.select)?.setOnClickListener {
             if (text != null && summary != null) {
                 val dialog = AlertDialog.Builder(context)
                         .setTitle(text)
                         .setMessage(summary)
                         .setPositiveButton(android.R.string.ok, null)
                         .show()
-                dialog.window.decorView.findViewById<TextView>(android.R.id.message).setTextIsSelectable(true)
+                dialog?.window?.decorView?.findViewById<TextView>(android.R.id.message)?.setTextIsSelectable(true)
             }
-        }
-    }
-
-    override fun onDialogClosed(positiveResult: Boolean) {
-        super.onDialogClosed(positiveResult)
-
-        if (positiveResult) {
-            updateSummary(text)
         }
     }
 
@@ -91,6 +84,24 @@ class CustomReadPreference : EditTextPreference {
             }
         } catch (e: NullPointerException) {
             null
+        }
+    }
+
+    class Fragment : EditTextPreferenceDialogFragmentCompat() {
+        private val edit: EditText?
+            get() = view?.findViewById(android.R.id.edit)
+
+        override fun onBindDialogView(view: View?) {
+            super.onBindDialogView(view)
+
+            edit?.hint = resources.getString(R.string.key_plaintext)
+        }
+
+        override fun onDialogClosed(positiveResult: Boolean) {
+            if (positiveResult) {
+                (preference as CustomReadPreference)
+                        .updateSummary(view?.findViewById<EditText>(android.R.id.edit)?.text?.toString())
+            }
         }
     }
 }

@@ -4,7 +4,6 @@ import android.app.AlertDialog
 import android.content.Context
 import android.util.AttributeSet
 import android.view.View
-import android.view.ViewGroup
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.fragments.StatbarFragment
 import com.zacharee1.systemuituner.util.changeBlacklist
@@ -16,13 +15,11 @@ class StatBarWarnPref : RedTextPref {
     constructor(context: Context, attrs: AttributeSet) : super(context, attrs)
     constructor(context: Context) : super(context)
 
-    override fun onCreateView(parent: ViewGroup): View {
-        val view = super.onCreateView(parent)
-        isSelectable = true
+    init {
         setTitle(android.R.string.dialog_alert_title)
         setSummary(R.string.statbar_rotation_lock_notif)
         setIcon(R.drawable.ic_smartphone_black_24dp)
-        return view
+        isSelectable = true
     }
 
     override fun onClick() {

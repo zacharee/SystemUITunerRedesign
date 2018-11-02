@@ -4,33 +4,35 @@ import android.annotation.SuppressLint
 import android.content.res.Resources
 import android.os.Build
 import android.os.Bundle
-import android.preference.EditTextPreference
-import android.preference.Preference
-import android.preference.PreferenceCategory
-import android.preference.SwitchPreference
 import android.provider.Settings
-import com.pavelsikun.seekbarpreference.SeekBarPreference
+import androidx.preference.EditTextPreference
+import androidx.preference.Preference
+import androidx.preference.PreferenceCategory
+import androidx.preference.SwitchPreference
+import com.pavelsikun.seekbarpreference.SeekBarPreferenceCompat
 import com.zacharee1.systemuituner.R
+import com.zacharee1.systemuituner.util.forEachPreference
 import com.zacharee1.systemuituner.util.writeGlobal
 import com.zacharee1.systemuituner.util.writeSecure
 import com.zacharee1.systemuituner.util.writeSystem
 import java.util.*
 
 class MiscFragment : AnimFragment() {
+    override val prefsRes = R.xml.pref_misc
+    
     private var origSnooze = false
 
     override fun onSetTitle() = resources.getString(R.string.miscellaneous)
 
-    override fun onAnimationFinishedEnter(enter: Boolean) {
-        if (enter) {
-            addPreferencesFromResource(R.xml.pref_misc)
-            setGlobalSwitchStates()
-            setSecureSwitchStates()
-            setSystemSwitchStates()
-            setNightModeSwitchStates()
-            setUpAnimationScales()
-            setUpSnoozeStuff()
-        }
+    override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
+        super.onCreatePreferences(savedInstanceState, rootKey)
+
+        setGlobalSwitchStates()
+        setSecureSwitchStates()
+        setSystemSwitchStates()
+        setNightModeSwitchStates()
+        setUpAnimationScales()
+        setUpSnoozeStuff()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -65,7 +67,7 @@ class MiscFragment : AnimFragment() {
             val key = preference.key
             preference.isChecked = Settings.Global.getInt(context?.contentResolver, key, 2) == 3
             preference.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { _, o ->
-                context.writeGlobal(key, if (o.toString().toBoolean()) 3 else 2)
+                context?.writeGlobal(key, if (o.toString().toBoolean()) 3 else 2)
                 true
             }
         }
@@ -76,11 +78,9 @@ class MiscFragment : AnimFragment() {
             val category = findPreference(POWER_NOTIFICATION_CONTROLS) as PreferenceCategory
             category.isEnabled = false
 
-            for (i in 0 until category.preferenceCount) {
-                val preference = findPreference(SHOW_IMPORTANCE_SLIDER) as SwitchPreference
-                preference.isChecked = false
-                preference.setSummary(if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.M) R.string.requires_nougat else R.string.safe_mode_android_o)
-            }
+            val preference = findPreference(SHOW_IMPORTANCE_SLIDER) as SwitchPreference
+            preference.isChecked = false
+            preference.setSummary(if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.M) R.string.requires_nougat else R.string.safe_mode_android_o)
         }
 
         val preferences = object : ArrayList<SwitchPreference>() {
@@ -107,7 +107,7 @@ class MiscFragment : AnimFragment() {
             val key = preference.key
             preference.isChecked = Settings.Secure.getInt(context?.contentResolver, key, 0) == 1
             preference.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { _, o ->
-                context.writeSecure(key, if (o.toString().toBoolean()) 1 else 0)
+                context?.writeSecure(key, if (o.toString().toBoolean()) 1 else 0)
                 true
             }
         }
@@ -124,7 +124,7 @@ class MiscFragment : AnimFragment() {
             val key = preference.key
             preference.isChecked = Settings.System.getInt(context?.contentResolver, key, 0) == 1
             preference.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { _, o ->
-                context.writeSystem(key, if (o.toString().toBoolean()) 1 else 0)
+                context?.writeSystem(key, if (o.toString().toBoolean()) 1 else 0)
                 true
             }
         }
@@ -161,7 +161,7 @@ class MiscFragment : AnimFragment() {
                 }
 
                 tint.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { _, o ->
-                    context.writeSecure(NIGHT_MODE_TINT, if (o.toString().toBoolean()) 1 else 0)
+                    context?.writeSecure(NIGHT_MODE_TINT, if (o.toString().toBoolean()) 1 else 0)
                     true
                 }
 
@@ -185,10 +185,11 @@ class MiscFragment : AnimFragment() {
                     if (!Resources.getSystem().getBoolean(id)) {
                         category.isEnabled = false
 
-                        for (i in 0 until category.preferenceCount) {
-                            val preference = category.getPreference(i) as SwitchPreference
-                            preference.isChecked = false
-                            preference.setSummary(R.string.night_display_not_avail)
+                        category.forEachPreference { preference ->
+                            if (preference is SwitchPreference) {
+                                preference.isChecked = false
+                                preference.setSummary(R.string.night_display_not_avail)
+                            }
                         }
                     }
                 } catch (e: Exception) {
@@ -200,10 +201,11 @@ class MiscFragment : AnimFragment() {
                 val category = findPreference(NIGHT_MODE_SETTINGS) as PreferenceCategory
                 category.isEnabled = false
 
-                for (i in 0 until category.preferenceCount) {
-                    val preference = category.getPreference(i) as SwitchPreference
-                    preference.isChecked = false
-                    preference.setSummary(R.string.requires_nougat)
+                category.forEachPreference {
+                    if (it is SwitchPreference) {
+                        it.isChecked = false
+                        it.setSummary(R.string.requires_nougat)
+                    }
                 }
             }
         }
@@ -212,7 +214,7 @@ class MiscFragment : AnimFragment() {
             if (Build.VERSION.SDK_INT == Build.VERSION_CODES.N)
                 evalNightModeStates(o.toString().toBoolean(), override.isChecked)
             else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N_MR1)
-                context.writeSecure(NIGHT_DISPLAY_AUTO, if (o.toString().toBoolean()) 1 else 0)
+                context?.writeSecure(NIGHT_DISPLAY_AUTO, if (o.toString().toBoolean()) 1 else 0)
             true
         }
 
@@ -220,7 +222,7 @@ class MiscFragment : AnimFragment() {
             if (Build.VERSION.SDK_INT == Build.VERSION_CODES.N)
                 evalNightModeStates(auto.isChecked, o.toString().toBoolean())
             else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N_MR1)
-                context.writeSecure(NIGHT_DISPLAY_ACTIVATED, if (o.toString().toBoolean()) 1 else 0)
+                context?.writeSecure(NIGHT_DISPLAY_ACTIVATED, if (o.toString().toBoolean()) 1 else 0)
             true
         }
     }
@@ -234,13 +236,13 @@ class MiscFragment : AnimFragment() {
             value = 2
         else if (override) value = 4
 
-        context.writeSecure(TWILIGHT_MODE, value)
+        context?.writeSecure(TWILIGHT_MODE, value)
     }
 
     private fun setUpAnimationScales() {
-        val duration = findPreference(Settings.Global.ANIMATOR_DURATION_SCALE) as SeekBarPreference
-        val transition = findPreference(Settings.Global.TRANSITION_ANIMATION_SCALE) as SeekBarPreference
-        val window = findPreference(Settings.Global.WINDOW_ANIMATION_SCALE) as SeekBarPreference
+        val duration = findPreference(Settings.Global.ANIMATOR_DURATION_SCALE) as SeekBarPreferenceCompat
+        val transition = findPreference(Settings.Global.TRANSITION_ANIMATION_SCALE) as SeekBarPreferenceCompat
+        val window = findPreference(Settings.Global.WINDOW_ANIMATION_SCALE) as SeekBarPreferenceCompat
 
         val durScale = Settings.Global.getFloat(activity?.contentResolver, duration.key, 1.0f)
         val tranScale = Settings.Global.getFloat(activity?.contentResolver, transition.key, 1.0f)
@@ -251,7 +253,7 @@ class MiscFragment : AnimFragment() {
         window.currentScaledValue = winScale
 
         val listener = Preference.OnPreferenceChangeListener { preference, o ->
-            context.writeGlobal(preference.key, o.toString())
+            context?.writeGlobal(preference.key, o.toString())
             true
         }
 
@@ -324,7 +326,7 @@ class MiscFragment : AnimFragment() {
     private fun saveSnoozeTimes(toSave: ArrayList<String>) {
         val base = "default=" + toSave[0] + ",options_array=" + toSave[1] + ":" + toSave[2] + ":" + toSave[3] + ":" + toSave[4]
         preferenceManager.sharedPreferences.edit().putString("notification_snooze_options", base).apply()
-        context.writeGlobal("notification_snooze_options", base)
+        context?.writeGlobal("notification_snooze_options", base)
     }
 
     private fun parseSnoozeTimes(): ArrayList<String> {

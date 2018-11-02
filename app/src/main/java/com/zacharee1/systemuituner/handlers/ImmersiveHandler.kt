@@ -2,9 +2,9 @@ package com.zacharee1.systemuituner.handlers
 
 import android.content.Context
 import android.os.Bundle
-import android.preference.PreferenceManager
 import android.provider.Settings
 import android.util.Log
+import androidx.preference.PreferenceManager
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.zacharee1.systemuituner.util.writeGlobal
 import java.util.*

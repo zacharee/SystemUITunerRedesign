@@ -29,7 +29,7 @@
         android:title="@string/qs_header_tile_count"
         android:key="qqs_count_category">
 
-        <com.pavelsikun.seekbarpreference.SeekBarPreference
+        <com.pavelsikun.seekbarpreference.SeekBarPreferenceCompat
             app:msbp_minValue="1"
             app:msbp_maxValue="20"
             android:defaultValue="5"
