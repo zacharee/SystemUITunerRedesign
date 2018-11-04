@@ -267,12 +267,12 @@
     <string name="fix_rotation_done_uninstall">Ikona rotace odstraněna! To se projeví až po restartování.</string>
     <string name="fix_rotation_done_stay">Ikona rotace odstraněna! Pokud se stále zobrazuje, restartujte zařízení.</string>
     <string name="missing_not_required_perms_desc">Jste si jisti, že chcete pokračovat? Nejméně jedno volitelné oprávnění nebylo uděleno, což znamená, že budete potřebovat znovu počítač, abyste později oprávnění udělili.</string>
-    <string name="ws_needed_desc">WRITE_SETTINGS is needed to change this setting. Tap the button above to grant it.\n (This unfortunately doesn\'t guarantee that the toggle will work.)</string>
-    <string name="safe_mode_high_brightness_warning_desc">Attempt to restore the currently set High Brightness Warning status on boot. This is only for TouchWiz devices and won\'t work without root.</string>
-    <string name="safe_mode_volume_warning_desc">Restores current High Volume Warning state on boot.</string>
-    <string name="safe_mode_needed_qs_row_col">Safe Mode must be turned on, with the Row/Column option activated, for landscape values to work.</string>
-    <string name="safe_mode_inactive_on_current_page">Safe Mode is inactive on this screen! Go back to the main menu to save changes!</string>
-    <string name="qs_info_marshmallow">Hold down on an icon to remove it.</string>
+    <string name="ws_needed_desc">WRITE_SETTINGS je nutné pro změnu tohoto nastavení. Klepnutím na tlačítko výše to povolíte.\n (To ale nezaručuje, že přepínač bude fungovat.)</string>
+    <string name="safe_mode_high_brightness_warning_desc">Zkuste obnovit aktuálně nastavený stav upozornění na vysoký jas při spuštění systému. Toto je pouze pro zařízení TouchWiz a nefunguje bez oprávnění root.</string>
+    <string name="safe_mode_volume_warning_desc">Obnovit aktuálně nastavený stav upozornění na vysoký jas při spuštění systému.</string>
+    <string name="safe_mode_needed_qs_row_col">Bezpečný režim musí být zapnutý, je-li aktivována volba řádků/sloupců pro práci s hodnotami na šířku.</string>
+    <string name="safe_mode_inactive_on_current_page">Bezpečný režim musí být aktivní na této obrazovce! Vraťte se do hlavního menu a uložte změny!</string>
+    <string name="qs_info_marshmallow">Podržte stisknutou ikonu a odstraňte ji.</string>
     <!--Messages-->
     <string name="sorry_explain">Během nastavování se něco pokazilo.</string>
     <string name="sorry_option">Zkuste spustit následující příkaz z počítače (je to jeden řádek):</string>
@@ -287,15 +287,15 @@
     <string name="intro_3">Je tu řada předdefinovaných možností pro stavový řádek, ale pokud nevidíte ikonu kterou chcete skrýt můžete zkusit auto-detekci která se pokusí detekovat ikony které můžou být skryty.</string>
     <string name="intro_4">A nejlepší část aplikace? Nevyžaduje root! Pokusí se získat privilégia rootu ale pokud nemůže tak musíte použít ADB. POUŽÍVÁNÍ ADB NENÍ ROOTOVÁNÍ!</string>
     <string name="intro_5">Až kliknete na tlačítko dokončit, systemUI Tuner se pokusí získat root access. Pokud může tak si potvrdí všechny potřebné oprávnění. Jinak se na obrazovce oběví instrukce.</string>
-    <string name="adb_setup">The permissions above must be granted to continue. You\'ll need to use ADB. Please note: PACKAGE_USAGE_STATS and DUMP are optional for most features. SystemUI Tuner will prompt you if either or both is needed.</string>
+    <string name="adb_setup">Výše uvedené oprávnění musí být udělena. Musíte použít ADB. Poznámka: PACKAGE_USAGE_STATS a DUMP jsou pro většinu funkcí volitelné. SystemUI Tuner vás může požádat o jednu nebo obě.</string>
     <string name="target_not_found">Nelze spustit aplikaci.</string>
     <string name="feature_not_supported">Vypadáto že vaše zařízení nepodporuje tuto funkci :/</string>
     <string name="miui_warning">Vypadá to že používáte zařízení s MIUI. Prosím mějte na védomí že některé funkce pro vás nemusí fungovat. Je to NEopravitelné!</string>
-    <string name="warn_message">Please read the Terms of Service before continuing.</string>
+    <string name="warn_message">Před pokračováním je nutné přečíst podmínky používání.</string>
     <string name="safe_mode_notif_desc">Je doporučeno abyste toto měli aktivované a spíše skryly notifikace. Vypnutí může zamezit funkčnost Safe módu.</string>
-    <string name="invalid_blacklist_backup">Invalid blacklist backup</string>
-    <string name="backup_restored">Successfully restored backup</string>
-    <string name="nothing_to_back_up">Nothing to back up</string>
+    <string name="invalid_blacklist_backup">Neplatná záloha černé listiny</string>
+    <string name="backup_restored">Úspěšné obnovení zálohy</string>
+    <string name="nothing_to_back_up">Nic k zálohování</string>
     <string name="grant_usage">Please grant SystemUI Tuner access to Usage.</string>
     <!--Instructions-->
     <string name="enable_debug"><![CDATA[1. Přejděte do nastavení >> Možností pro vývojáře a ujistěte se že máte zaplést Ladění USB.]]></string>
