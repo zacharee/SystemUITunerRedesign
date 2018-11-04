@@ -237,14 +237,14 @@
     <!--Descriptions-->
     <string name="fancy_pulldown_notice">Přepnutí této volby může způsobit problémy po restartování. Přepněte manuálně tuto možnost po restartu nebo zapněte bezpečný režim.</string>
     <string name="safe_mode_summary">UŽIVATELÉ SAMSUNG UCHOVEJTE TOTO ZAPNUTO, POKUD NEJSTE NA AOSP ROM!</string>
-    <string name="safe_mode_summary_1">Při restartu vymaže jakékoli úpravy stavového řádku a navrátí je po úspěšném startu.</string>
-    <string name="safe_mode_summary_2">Při startu přepne Hezké QW animace.</string>
-    <string name="safe_mode_summary_3">Resetuje vlastní QS header při startu. (Nugát+).</string>
-    <string name="safe_mode_summary_4">Resetuje vlastní počet QS rovin/sloupců při startu (TouchWiz, Nugát+).</string>
-    <string name="safe_mode_summary_5">Resetuje vlastní ztišení notifikací při startu (8.1+).</string>
-    <string name="enable_in_settings">Aktivujte v nastavení.</string>
+    <string name="safe_mode_summary_1">Vymaže jakékoli úpravy na stavové liště při restartu a obnoví je po spuštění.</string>
+    <string name="safe_mode_summary_2">Přepne efektní animace QS při startu.</string>
+    <string name="safe_mode_summary_3">Obnoví hodnotu vlastního počtu záhlaví QS při startu (Nougat+).</string>
+    <string name="safe_mode_summary_4">Obnoví hodnotu vlastního počtu řádků/sloupců QS při startu (TouchWiz, Nougat+).</string>
+    <string name="safe_mode_summary_5">Obnoví vlastní možnosti odložení oznámení při startu (8.1+).</string>
+    <string name="enable_in_settings">Povolit v nastavení.</string>
     <string name="reboot_required">(Vyžaduje restart)</string>
-    <string name="auto_detect_summary">Automaticky zkusit detekovat jaké ikony můžou být skrytý. Nefunguje na všech zařízeních!</string>
+    <string name="auto_detect_summary">Pokusy o automatické zjištění, které ikony stavové lišty mohou být skryty. Nefunguje na všech zařízeních!</string>
     <string name="night_display_not_avail">Noční display není na tomto zařízení podporován.</string>
     <string name="app_specific_desc">Vyberte aplikace které mají nebo nemají být zahrnuty v dokonalém režimu. Dokonalý režim musí být vypnut abyste mohly uplatnit toto nastavení.</string>
     <string name="blacklist_desc">Pokud zapnuto tak aplikace nebudou používat dokonalý režim</string>
