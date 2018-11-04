@@ -246,8 +246,8 @@
     <string name="reboot_required">(Vyžaduje restart)</string>
     <string name="auto_detect_summary">Pokusy o automatické zjištění, které ikony stavové lišty mohou být skryty. Nefunguje na všech zařízeních!</string>
     <string name="night_display_not_avail">Noční display není na tomto zařízení podporován.</string>
-    <string name="app_specific_desc">Vyberte aplikace které mají nebo nemají být zahrnuty v dokonalém režimu. Dokonalý režim musí být vypnut abyste mohly uplatnit toto nastavení.</string>
-    <string name="blacklist_desc">Pokud zapnuto tak aplikace nebudou používat dokonalý režim</string>
+    <string name="app_specific_desc">Vyberte aplikace, které mají být zahrnuty nebo vyloučeny z režimu přes celou obrazovku. Tento režim musí být deaktivován pro změnu těchto nastavení.</string>
+    <string name="blacklist_desc">Pokud je zapnuto, vybrané aplikace nebudou využívat režim přes celou obrazovku</string>
     <string name="imm_warn">Tato funkce umožňuje zapnout dokonalý mód. NEDĚLÁ to nic kromě toho. Jakékoli problémy jsou na straně výrobce vašeho zařízení. JÁ TO NEMOHU OPRAVIT!</string>
     <string name="statbar_rotation_lock_notif">Na některých zařízeních modifikace stavové lišty může způsobit to, že některé ikony budou vypadat jako telefon. To je ikona rotace obrazovky. Klepnutím sem to opravíte.</string>
     <string name="pnc_desc">Nastavení napájení vám umožní nastavit level důležitosti pro notifikace. Prostě tuto funkci zapněte a podržet prst na notifikace a začněte. Je možné že budete muset ztisknout A k povolení jezdce.</string>
