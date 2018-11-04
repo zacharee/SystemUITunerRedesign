@@ -248,17 +248,19 @@
     <string name="night_display_not_avail">Noční display není na tomto zařízení podporován.</string>
     <string name="app_specific_desc">Vyberte aplikace, které mají být zahrnuty nebo vyloučeny z režimu přes celou obrazovku. Tento režim musí být deaktivován pro změnu těchto nastavení.</string>
     <string name="blacklist_desc">Pokud je zapnuto, vybrané aplikace nebudou využívat režim přes celou obrazovku</string>
-    <string name="imm_warn">Tato funkce umožňuje zapnout dokonalý mód. NEDĚLÁ to nic kromě toho. Jakékoli problémy jsou na straně výrobce vašeho zařízení. JÁ TO NEMOHU OPRAVIT!</string>
+    <string name="imm_warn">Tato funkce umožňuje povolit pouze režim přes celou obrazovku. NEDĚLÁ to nic kromě toho. Jakékoli problémy jsou na straně výrobce vašeho zařízení. JÁ TO NEMOHU OPRAVIT!</string>
     <string name="statbar_rotation_lock_notif">Na některých zařízeních modifikace stavové lišty může způsobit to, že některé ikony budou vypadat jako telefon. To je ikona rotace obrazovky. Klepnutím sem to opravíte.</string>
-    <string name="pnc_desc">Nastavení napájení vám umožní nastavit level důležitosti pro notifikace. Prostě tuto funkci zapněte a podržet prst na notifikace a začněte. Je možné že budete muset ztisknout A k povolení jezdce.</string>
-    <string name="pnc_warn">Tato možnost je na některých zařízeních nespolehlivá, hlavně na TouchWiz! Je nemožné to opravit, ale nejlepší řešení se zdá být opakované klepání na požadovanou úroveň. Znova, NEMŮŽU to opravit!</string>
-    <string name="notif_desc">Kliknutím změníte mastavení</string>
-    <string name="touchwiz_oreo_qqs">Na zařízeních s TouchWiz Oreo není tato funkce spolehlivá! Společně nastavená čísla můžete uložit do Settings.System.apanel_number, což může být uděláno pouze s ADB nebo robotem. Safe mód se pokusí implementovat řešení, ale není garantovaná funkčnost!</string>
-    <string name="notifs_snooze_desc">&#160;    V androidu 8.1 a pozdějším můžete nastavit vlastní časy pro ztišení notifikací. Tyto hodnoty se resetují při restartu takže se ujistěte že máte zaplý Safe mód pokud je chcete uchovat napříč ciklama.\n\n&#160;
-    Použijte možnost níže k nastavení rozdílného času ztišení. \"Výchozí\" nastavení času Androidu bude použito jako výchozí. Dalšími položkami budou volné časy pro výběr.</string>
-    <string name="custom_settings_input_desc">Toto pole vám umožňuje si vytvořit vlastní nastavení.</string>
-    <string name="custom_settings_read_desc">Toto pole vám umožňuje číst hodnotu specifické klávesy.</string>
-    <string name="custom_settings_warning">Buďte opatrní co zde zadáváte! Špatný input můžu vést ke Crash loopu, bootloopu nebo něčemu horšímu!</string>
+    <string name="pnc_desc">Ovládací prvky Power Notification Controls umožňují nastavit úroveň významu pro oznámení podle jednotlivých aplikací. Chcete-li začít, jednoduše zapněte funkci a podržte ji. Možná budete muset klepnutím na tlačítko A povolit posuvník.</string>
+    <string name="pnc_warn">Tato funkce je známa jako nespolehlivá na určitých zařízeních, zejména na TouchWiz! Je nemožné to opravit, ale nejlepší řešení se zdá být opakované klepání na požadovanou úroveň. Znovu, NEMŮŽU to opravit!</string>
+    <string name="notif_desc">Klepnutím změnit nastavení</string>
+    <string name="touchwiz_oreo_qqs">Na zařízeních s TouchWiz Oreo není tato funkce spolehlivá! Společně nastavená čísla můžete uložit do Settings.System.apanel_number, což může být uděláno pouze s ADB nebo rootem. Bezpečný režim se pokusí implementovat řešení, ale není garantovaná funkčnost!</string>
+    <string name="notifs_snooze_desc">&#160;
+    V systému Android 8.1 a novějších můžete nastavit vlastní časy pro odložení oznámení. Tyto hodnoty se při restartování obnoví, takže povolte bezpečný režim, pokud chcete, aby přetrvávaly napříč napájecími cykly.\n\n&#160;
+    Pomocí níže uvedených možností nastavíte různé časy odložení. \"Výchozí\" nastavuje čas, ve kterém Android používá výchozí čas odložení.
+Dalšími položkami jsou časy odložení, které můžete vybrat.</string>
+    <string name="custom_settings_input_desc">Tato pole umožňují zadat vlastní nastavení.</string>
+    <string name="custom_settings_read_desc">Tato pole umožňují přečíst hodnotu zadaného klíče.</string>
+    <string name="custom_settings_warning">Buďte opatrní, co zde děláte! Pokud zadáte nesprávnou hodnotu, mohlo by dojít k selhání, bootloopu nebo horšímu!</string>
     <string name="hide_welcome_hint">Nápověda: Tuto obrazovku můžete skrýt a darovací zprávu také, a to tím že půjdete do nastavení a přepnete \"Skrýt uvítací obrazovku\".</string>
     <string name="safe_mode_notif_desc_not_supported">Toto nastavení musí v Oreu zůstat zaplé.</string>
     <string name="fix_rotation_icon_dialog_desc">Plánujete potom odinstalovat SystemUI Tuner?</string>
