@@ -261,8 +261,8 @@ Dalšími položkami jsou časy odložení, které můžete vybrat.</string>
     <string name="custom_settings_input_desc">Tato pole umožňují zadat vlastní nastavení.</string>
     <string name="custom_settings_read_desc">Tato pole umožňují přečíst hodnotu zadaného klíče.</string>
     <string name="custom_settings_warning">Buďte opatrní, co zde děláte! Pokud zadáte nesprávnou hodnotu, mohlo by dojít k selhání, bootloopu nebo horšímu!</string>
-    <string name="hide_welcome_hint">Nápověda: Tuto obrazovku můžete skrýt a darovací zprávu také, a to tím že půjdete do nastavení a přepnete \"Skrýt uvítací obrazovku\".</string>
-    <string name="safe_mode_notif_desc_not_supported">Toto nastavení musí v Oreu zůstat zaplé.</string>
+    <string name="hide_welcome_hint">Tip: Tuto obrazovku a dárcovskou zprávu můžete skrýt tím, že přejdete do Nastavení a přepnete na \"Skrýt uvítací obrazovku\".</string>
+    <string name="safe_mode_notif_desc_not_supported">Toto nastavení musí zůstat na Oreu povoleno.</string>
     <string name="fix_rotation_icon_dialog_desc">Plánujete potom odinstalovat SystemUI Tuner?</string>
     <string name="yes_im_uninstalling">Ano, odinstaluji</string>
     <string name="no_im_staying">Ne, zůstanu</string>
@@ -276,9 +276,9 @@ Dalšími položkami jsou časy odložení, které můžete vybrat.</string>
     <string name="safe_mode_inactive_on_current_page">Bezpečný režim musí být aktivní na této obrazovce! Vraťte se do hlavního menu a uložte změny!</string>
     <string name="qs_info_marshmallow">Podržte stisknutou ikonu a odstraňte ji.</string>
     <!--Messages-->
-    <string name="sorry_explain">Během nastavování se něco pokazilo.</string>
+    <string name="sorry_explain">Při nastavování tohoto přepínače se něco pokazilo.</string>
     <string name="sorry_option">Zkuste spustit následující příkaz z počítače (je to jeden řádek):</string>
-    <string name="grant_dump_perm">Potřebujete udělit oprávnění \"android.permission.DUMP\" k použití této funkce.</string>
+    <string name="grant_dump_perm">K použití této funkce potřebujete udělit oprávnění \"android.permission.DUMP\".</string>
     <string name="safe_mode_auto_enabled">Detekováno Samsung zařízení! Safe Mode byl pro vaši bezpečnost automaticky zapnut. Mějte na paměti že modifikování stavového řádků můžu ROZBÍT UI SYSTÉMU! Prosím využijte odkazu v Obchodě Play pro více informací.</string>
     <string name="requires_nougat">Vyžaduje Nugát nebo novější.</string>
     <string name="requires_oreo">Vyžaduje Oreo nebo novější.</string>
@@ -311,18 +311,18 @@ Dalšími položkami jsou časy odložení, které můžete vybrat.</string>
     <string name="cd_further"><![CDATA[- Ujistěte se, že složka <b>cd</b> obsahuje spustitelný soubor ADB. Pokud tomu tak není, <b>cd</b> přesuňte o jednu úroveň dále.]]></string>
     <string name="download_adb_mac"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-darwin.zip">Stáhnout ADB ZIP pro macOS.</a>]]></string>
     <string name="open_terminal">3. Otevřete terminál.</string>
-    <string name="cd_mac"><![CDATA[4. Zadejte <b>cd /path/to/extracted/folder/</b> do složky, kam jste extrahovali ADB. Například <b>cd /usere/Zachary/desktop/platform-tools/</b>.]]></string>
+    <string name="cd_mac"><![CDATA[4. Zadejte <b>cd /path/to/extracted/folder/</b> abyste se dostali do složky, kam jste extrahovali ADB. Pro příklad <b>cd /usere/Zachary/desktop/platform-tools/</b>.]]></string>
     <string name="make_sure_adb_installed">1. Ujistěte se, že je ADB nainstalováno:</string>
     <string name="download_adb_linux"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-linux.zip">Stáhnout ADB ZIP pro Linux.</a>]]></string>
-    <string name="cd_linux"><![CDATA[4. Vlož <b>cd /path/to/extracted/folder/</b> floor složky kam jsi extrahoval ADB. Pro příklad <b>cd /home/Zachary/desktop/platform-tools/</b>.]]></string>
+    <string name="cd_linux"><![CDATA[4. Zadejte <b>cd /path/to/extracted/folder/</b> abyste se dostali do složky, kam jste extrahovali ADB. Pro příklad <b>cd /home/Zachary/desktop/platform-tools/</b>.]]></string>
     <!--Misc-->
-    <string name="created_by">Aplikace vytvořena <a href="https://forum.xda-developers.com/member.php?u=7055541">Zacharee1</a></string>
+    <string name="created_by">Aplikaci vytvořil <a href="https://forum.xda-developers.com/member.php?u=7055541">Zacharee1</a></string>
     <string name="lang_credit">Překlady od dobrovolníků na <a href="https://crowdin.com/project/systemui-tuner">Crowdin</a></string>
     <string name="home_desc">Pro zařízení bez této aktivity</string>
     <string name="home_joke">Nebo pro zařízení s ní, nejsem váš šéf.</string>
-    <string name="home_extra">(Pokud máte základní nastavení systemUI, toto přidá pár drobností)</string>
-    <string name="donate_hook">Hey, vidím že používáš mojí aplikaci.</string>
-    <string name="donate_joke">Jak to vím? Magie.</string>
-    <string name="donate_request">Pokud si ji užíváš byl bych moc rád kdybys mohl postrádat dolar, nebo dva.</string>
-    <string name="donate_dont_worry">Nenutím tě. Tahle aplikace je a vždycky bude zadarmo.</string>
+    <string name="home_extra">(Pokud máte základní SystemUI Tuner, tento přidá pár drobností.)</string>
+    <string name="donate_hook">Hej, vidím, že používáte moji aplikaci.</string>
+    <string name="donate_joke">Jak, ptáte se? Kouzlo.</string>
+    <string name="donate_request">Pokud se vám líbí moje aplikace, bylo by naprosto úžasné, kdybyste přispěli dolar nebo dva.</string>
+    <string name="donate_dont_worry">To není žádná povinnost. Tato aplikace je a vždycky bude zdarma.</string>
 </resources>
