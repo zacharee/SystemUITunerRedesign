@@ -300,9 +300,9 @@ Dalšími položkami jsou časy odložení, které můžete vybrat.</string>
     <string name="nothing_to_back_up">Nic k zálohování</string>
     <string name="grant_usage">Udělte prosím aplikaci SystemUI Tuner přístup k použití.</string>
     <!--Instructions-->
-    <string name="enable_debug"><![CDATA[1. Přejděte do nastavení >> Možností pro vývojáře a ujistěte se že máte zaplést Ladění USB.]]></string>
-    <string name="accept_auth">2. Zapojte zařízení do vašeho počítače a povolte autorizaci.</string>
-    <string name="enable_devops"><![CDATA[- Možnosti pro vývojáře zapnete tak že půjdete do nastavení >> o telefonu, najděte \"číslo sestavení\" a 7krát na něj kliknete.]]></string>
+    <string name="enable_debug"><![CDATA[1. Přejděte do nastavení >> Možnosti pro vývojáře a ujistěte se, že máte povoleno USB ladění.]]></string>
+    <string name="accept_auth">2. Připojte zařízení k počítači a přijměte žádost o autorizaci.</string>
+    <string name="enable_devops"><![CDATA[- Možnosti pro vývojáře zapnete tak, že půjdete do Nastavení >> O telefonu, najdete \"Číslo sestavení\" a 7 krát na něj kliknete.]]></string>
     <string name="download_drivers">- Uživatelé Windows budou muset install drivery zařízení, které jsou k dispozici na stránkách výrobce.</string>
     <string name="download_adb_windows"><![CDATA[<a href="https://dl.google.com/android/repository/platform-tools-latest-windows.zip">Stáhněte ADB ZIP pro Windows.</a>]]></string>
     <string name="extract_zip">2. Extrahuje ZIP na lehce dosažitelné místo (například plochu).</string>
