@@ -303,19 +303,17 @@ Dalšími položkami jsou časy odložení, které můžete vybrat.</string>
     <string name="enable_debug"><![CDATA[1. Přejděte do nastavení >> Možnosti pro vývojáře a ujistěte se, že máte povoleno USB ladění.]]></string>
     <string name="accept_auth">2. Připojte zařízení k počítači a přijměte žádost o autorizaci.</string>
     <string name="enable_devops"><![CDATA[- Možnosti pro vývojáře zapnete tak, že půjdete do Nastavení >> O telefonu, najdete \"Číslo sestavení\" a 7 krát na něj kliknete.]]></string>
-    <string name="download_drivers">- Uživatelé Windows budou muset install drivery zařízení, které jsou k dispozici na stránkách výrobce.</string>
-    <string name="download_adb_windows"><![CDATA[<a href="https://dl.google.com/android/repository/platform-tools-latest-windows.zip">Stáhněte ADB ZIP pro Windows.</a>]]></string>
-    <string name="extract_zip">2. Extrahuje ZIP na lehce dosažitelné místo (například plochu).</string>
-    <string name="open_cmd">3. Otevři CMD.</string>
-    <string name="cd_windows"><![CDATA[Vlož <b>cd C:\\path\\to\\extract\\folder\\</b> aby ste se dostal do složky kam jste extrahoval ADB. Pro příklad <b>cd C:\\users\\Zachary\\Desktop\\platform-tools\\</b>.]]></string>
-    <string name="cd_further"><![CDATA[Ujistí se že složka kde <b>cd</b> obsahuje ADB spouštěč. Pokud ne <b>cd</b> o úroveň víš.]]></string>
-    <string name="download_adb_mac"><![CDATA[1.<a
-href="https://dl.google.com/android/repository/platform-tools-latest-darwin.zip">Stáhni ADB ZIP pro MacOS.</a>]]></string>
+    <string name="download_drivers">- Uživatelé Windows pravděpodobně potřebují nainstalovat ovladače zařízení, které jsou k dispozici na webu výrobce.</string>
+    <string name="download_adb_windows"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-windows.zip">Stáhnout ADB ZIP pro Windows.</a>]]></string>
+    <string name="extract_zip">2. Extrahujte ZIP na snadno přístupné místo (např. na plochu).</string>
+    <string name="open_cmd">3. Otevřete CMD.</string>
+    <string name="cd_windows"><![CDATA[4. Zadejte <b>cd C:\\path\\to\\extract\\folder\\</b> abyste se dostali do složky, kam jste extrahovali ADB. Pro příklad <b>cd C:\\users\\Zachary\\Desktop\\platform-tools\\</b>.]]></string>
+    <string name="cd_further"><![CDATA[- Ujistěte se, že složka <b>cd</b> obsahuje spustitelný soubor ADB. Pokud tomu tak není, <b>cd</b> přesuňte o jednu úroveň dále.]]></string>
+    <string name="download_adb_mac"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-darwin.zip">Stáhnout ADB ZIP pro macOS.</a>]]></string>
     <string name="open_terminal">3. Otevřete terminál.</string>
-    <string name="cd_mac"><![CDATA[4. Vložte <b>cd /path/to/extracted/folder/</b> do složky kam jste extrahoval ADB. Například <b>cd /usere/Zachary/desktop/platform-tools/</b>.]]></string>
-    <string name="make_sure_adb_installed">1. Ujistí se že je ADB nainstalováno:</string>
-    <string name="download_adb_linux"><![CDATA[1<a
-href="https://dl.google.com/android/repository/platform-tools-latest-linux.zip"> stáhni ADB ZIP pro Linux. </a>]]></string>
+    <string name="cd_mac"><![CDATA[4. Zadejte <b>cd /path/to/extracted/folder/</b> do složky, kam jste extrahovali ADB. Například <b>cd /usere/Zachary/desktop/platform-tools/</b>.]]></string>
+    <string name="make_sure_adb_installed">1. Ujistěte se, že je ADB nainstalováno:</string>
+    <string name="download_adb_linux"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-linux.zip">Stáhnout ADB ZIP pro Linux.</a>]]></string>
     <string name="cd_linux"><![CDATA[4. Vlož <b>cd /path/to/extracted/folder/</b> floor složky kam jsi extrahoval ADB. Pro příklad <b>cd /home/Zachary/desktop/platform-tools/</b>.]]></string>
     <!--Misc-->
     <string name="created_by">Aplikace vytvořena <a href="https://forum.xda-developers.com/member.php?u=7055541">Zacharee1</a></string>
