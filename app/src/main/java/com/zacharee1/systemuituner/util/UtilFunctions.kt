@@ -10,6 +10,7 @@ import android.provider.Settings
 import android.text.TextUtils
 import android.util.TypedValue
 import androidx.appcompat.app.AlertDialog
+import androidx.fragment.app.FragmentManager
 import androidx.preference.*
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.activites.MainActivity
@@ -267,3 +268,7 @@ fun PreferenceGroup.forEachPreference(consumer: (pref: Preference) -> Unit) {
         if (child is PreferenceGroup) child.forEachPreference(consumer)
     }
 }
+
+fun FragmentManager.getAnimTransaction() =
+        beginTransaction().apply { setCustomAnimations(R.anim.fade_in, R.anim.fade_out,
+                R.anim.fade_in, R.anim.fade_out) }

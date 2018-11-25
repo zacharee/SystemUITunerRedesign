@@ -9,10 +9,7 @@ import android.widget.Toast
 import androidx.preference.Preference
 import androidx.preference.SwitchPreference
 import com.zacharee1.systemuituner.R
-import com.zacharee1.systemuituner.util.changeBlacklist
-import com.zacharee1.systemuituner.util.forEachPreference
-import com.zacharee1.systemuituner.util.updateBlacklistSwitches
-import com.zacharee1.systemuituner.util.writeSecure
+import com.zacharee1.systemuituner.util.*
 import java.io.BufferedReader
 import java.io.FileOutputStream
 import java.io.InputStreamReader
@@ -97,7 +94,7 @@ open class StatbarFragment : AnimFragment() {
         auto?.setOnPreferenceClickListener {
             val fragment = AutoFragment()
             fragmentManager
-                    ?.beginTransaction()
+                    ?.getAnimTransaction()
                     ?.replace(R.id.content_main, fragment)
                     ?.addToBackStack("auto")
                     ?.commit()

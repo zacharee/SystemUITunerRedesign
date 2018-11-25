@@ -8,6 +8,7 @@ import com.joaomgcd.taskerpluginlibrary.config.TaskerPluginConfigHelperNoOutput
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.activites.BaseAnimActivity
 import com.zacharee1.systemuituner.fragments.AnimFragment
+import com.zacharee1.systemuituner.util.getAnimTransaction
 
 abstract class BaseEditActivity<Input : Any> : BaseAnimActivity(), TaskerPluginConfig<Input> {
     companion object {
@@ -33,7 +34,7 @@ abstract class BaseEditActivity<Input : Any> : BaseAnimActivity(), TaskerPluginC
         fragment.arguments = args
 
         supportFragmentManager
-                ?.beginTransaction()
+                ?.getAnimTransaction()
                 ?.replace(R.id.content_main, fragment, title.toString())
                 ?.commit()
     }

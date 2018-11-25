@@ -13,6 +13,7 @@ import com.zacharee1.systemuituner.activites.BaseAnimActivity
 import com.zacharee1.systemuituner.fragments.AnimFragment
 import com.zacharee1.systemuituner.services.SafeModeService
 import com.zacharee1.systemuituner.util.forEachPreference
+import com.zacharee1.systemuituner.util.getAnimTransaction
 
 class SettingsActivity : BaseAnimActivity() {
 
@@ -22,7 +23,7 @@ class SettingsActivity : BaseAnimActivity() {
         setContentView(R.layout.activity_item_list)
 
         supportFragmentManager
-                .beginTransaction()
+                .getAnimTransaction()
                 .replace(R.id.content_main, GeneralPreferenceFragment())
                 .commit()
     }

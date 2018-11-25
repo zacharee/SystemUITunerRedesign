@@ -13,6 +13,7 @@ import com.zacharee1.systemuituner.fragments.AnimFragment
 import com.zacharee1.systemuituner.misc.OptionSelected
 import com.zacharee1.systemuituner.util.checkSamsung
 import com.zacharee1.systemuituner.util.forEachPreference
+import com.zacharee1.systemuituner.util.getAnimTransaction
 
 class OptionsActivity : BaseAnimActivity() {
     companion object {
@@ -26,6 +27,9 @@ class OptionsActivity : BaseAnimActivity() {
 
         setContentView(R.layout.activity_item_list)
 
+        backButton.scaleX = 0f
+        backButton.scaleY = 0f
+
         val hideWelcomeScreen = PreferenceManager.getDefaultSharedPreferences(this).getBoolean("hide_welcome_screen", false)
         setBackClickable(!hideWelcomeScreen)
 
@@ -33,7 +37,7 @@ class OptionsActivity : BaseAnimActivity() {
 
         supportFragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
         supportFragmentManager
-                ?.beginTransaction()
+                ?.getAnimTransaction()
                 ?.replace(R.id.content_main, main)
                 ?.addToBackStack("main")
                 ?.commit()
@@ -127,7 +131,7 @@ class OptionsActivity : BaseAnimActivity() {
                     val fragment = Class.forName(it.fragment
                             ?: return@setOnPreferenceClickListener false).newInstance() as PreferenceFragmentCompat
                     fragmentManager
-                            ?.beginTransaction()
+                            ?.getAnimTransaction()
                             ?.replace(R.id.content_main, fragment, it.key)
                             ?.addToBackStack(it.key)
                             ?.commit()

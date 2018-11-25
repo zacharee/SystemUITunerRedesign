@@ -17,6 +17,7 @@ import com.zacharee1.systemuituner.fragments.AnimFragment
 import com.zacharee1.systemuituner.handlers.ImmersiveHandler
 import com.zacharee1.systemuituner.misc.AppInfo
 import com.zacharee1.systemuituner.util.forEachPreference
+import com.zacharee1.systemuituner.util.getAnimTransaction
 import com.zacharee1.systemuituner.util.getInstalledApps
 import io.reactivex.Observable
 import io.reactivex.schedulers.Schedulers
@@ -55,7 +56,7 @@ class ImmersiveSelectActivity : BaseAnimActivity() {
 
                         (findViewById<View>(R.id.content_main) as LinearLayout).removeAllViews()
                         try {
-                            supportFragmentManager.beginTransaction().replace(R.id.content_main, fragment).commit()
+                            supportFragmentManager.getAnimTransaction().replace(R.id.content_main, fragment).commit()
                         } catch (e: Exception) {
                         }
 
