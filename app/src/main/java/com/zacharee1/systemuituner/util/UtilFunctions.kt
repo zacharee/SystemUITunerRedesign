@@ -12,6 +12,7 @@ import android.util.TypedValue
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.FragmentManager
 import androidx.preference.*
+import com.topjohnwu.superuser.Shell
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.activites.MainActivity
 import com.zacharee1.systemuituner.activites.OptionsActivity
@@ -163,8 +164,8 @@ fun Context.writeGlobal(key: String?, value: Any?): Boolean {
         Settings.Global.putString(contentResolver, key, value?.toString())
     } catch (e: Exception) {
         val baseCommand = if (value != null) "settings put global $key $value" else "settings delete global $key"
-        return if (SuUtils.testSudo()) {
-            SuUtils.sudo(baseCommand)
+        return if (Shell.rootAccess()) {
+            sudo(baseCommand)
             true
         } else {
             launchErrorActivity(baseCommand)
@@ -179,8 +180,8 @@ fun Context.writeSecure(key: String?, value: Any?): Boolean {
         Settings.Secure.putString(contentResolver, key, value?.toString())
     } catch (e: Exception) {
         val baseCommand = if (value != null) "settings put secure $key $value" else "settings delete secure $key"
-        return if (SuUtils.testSudo()) {
-            SuUtils.sudo(baseCommand)
+        return if (Shell.rootAccess()) {
+            sudo(baseCommand)
             true
         } else {
             launchErrorActivity(baseCommand)
@@ -198,8 +199,8 @@ fun Context.writeSystem(key: String?, value: Any?, showError: Boolean = true): B
             Settings.System.putString(contentResolver, key, value?.toString())
         } catch (e: Exception) {
             val baseCommand = if (value != null) "settings put system $key $value" else "settings delete system $key"
-            return if (SuUtils.testSudo()) {
-                SuUtils.sudo(baseCommand)
+            return if (Shell.rootAccess()) {
+                sudo(baseCommand)
                 true
             } else {
                 if (showError) launchErrorActivity(baseCommand)
@@ -272,3 +273,9 @@ fun PreferenceGroup.forEachPreference(consumer: (pref: Preference) -> Unit) {
 fun FragmentManager.getAnimTransaction() =
         beginTransaction().apply { setCustomAnimations(R.anim.fade_in, R.anim.fade_out,
                 R.anim.fade_in, R.anim.fade_out) }
+
+fun sudo(vararg cmds: String) {
+    cmds.forEach {
+        Shell.su(it).submit()
+    }
+}

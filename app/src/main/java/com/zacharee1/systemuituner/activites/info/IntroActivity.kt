@@ -15,12 +15,13 @@ import androidx.fragment.app.Fragment
 import androidx.preference.PreferenceManager
 import com.github.paolorotolo.appintro.AppIntro2
 import com.github.paolorotolo.appintro.ISlideBackgroundColorHolder
+import com.topjohnwu.superuser.Shell
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.activites.instructions.SetupActivity
 import com.zacharee1.systemuituner.misc.OptionSelected
-import com.zacharee1.systemuituner.util.SuUtils
 import com.zacharee1.systemuituner.util.checkPermissions
 import com.zacharee1.systemuituner.util.startUp
+import com.zacharee1.systemuituner.util.sudo
 
 class IntroActivity : AppIntro2() {
 
@@ -109,9 +110,9 @@ class IntroActivity : AppIntro2() {
         val ret = checkPermissions(perms)
 
         if (ret.isNotEmpty()) {
-            if (SuUtils.testSudo()) {
-                SuUtils.sudo("pm grant $packageName ${Manifest.permission.WRITE_SECURE_SETTINGS} ; " +
-                        "pm grant $packageName ${Manifest.permission.DUMP} ; " +
+            if (Shell.rootAccess()) {
+                sudo("pm grant $packageName ${Manifest.permission.WRITE_SECURE_SETTINGS}",
+                        "pm grant $packageName ${Manifest.permission.DUMP}",
                         "pm grant $packageName ${Manifest.permission.PACKAGE_USAGE_STATS}")
                 startUp()
                 finishAndSave()

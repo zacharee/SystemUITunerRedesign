@@ -33,6 +33,7 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
+        android:name="com.topjohnwu.superuser.ContainerApp"
         android:theme="@style/AppTheme.Dark">
         <activity
             android:name=".LauncherActivity"

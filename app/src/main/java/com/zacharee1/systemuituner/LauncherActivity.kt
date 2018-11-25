@@ -5,12 +5,13 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.preference.PreferenceManager
 import com.crashlytics.android.Crashlytics
+import com.topjohnwu.superuser.Shell
 import com.zacharee1.systemuituner.activites.BaseAnimActivity
 import com.zacharee1.systemuituner.activites.info.IntroActivity
 import com.zacharee1.systemuituner.activites.instructions.SetupActivity
-import com.zacharee1.systemuituner.util.SuUtils
 import com.zacharee1.systemuituner.util.checkPermissions
 import com.zacharee1.systemuituner.util.startUp
+import com.zacharee1.systemuituner.util.sudo
 import io.fabric.sdk.android.Fabric
 
 class LauncherActivity : BaseAnimActivity() {
@@ -31,9 +32,9 @@ class LauncherActivity : BaseAnimActivity() {
             ret.removeAll(SetupActivity.NOT_REQUIRED)
 
             if (ret.isNotEmpty()) {
-                if (SuUtils.testSudo()) {
-                    SuUtils.sudo("pm grant $packageName ${Manifest.permission.WRITE_SECURE_SETTINGS} ; " +
-                            "pm grant $packageName ${Manifest.permission.DUMP} ; " +
+                if (Shell.rootAccess()) {
+                    sudo("pm grant $packageName ${Manifest.permission.WRITE_SECURE_SETTINGS}",
+                            "pm grant $packageName ${Manifest.permission.DUMP}",
                             "pm grant $packageName ${Manifest.permission.PACKAGE_USAGE_STATS}")
                     startUp()
                     finish()
