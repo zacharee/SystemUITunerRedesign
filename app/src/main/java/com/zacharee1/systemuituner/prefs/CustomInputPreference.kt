@@ -1,6 +1,7 @@
 package com.zacharee1.systemuituner.prefs
 
 import android.content.Context
+import android.os.Bundle
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View
@@ -82,7 +83,17 @@ class CustomInputPreference : DialogPreference {
         persistString(string)
     }
 
+    fun getPersistedString() = preferenceDataStore?.getString(key, null)
+
     class Fragment : PreferenceDialogFragmentCompat() {
+        companion object {
+            fun newInstance(key: String): Fragment {
+                val frag = Fragment()
+                frag.arguments = Bundle().apply { putString(ARG_KEY, key) }
+                return frag
+            }
+        }
+
         private val layout by lazy { LayoutInflater.from(context).inflate(R.layout.custom_input_preference_layout, null, false) }
         private val keyBox by lazy { layout.findViewById<EditText>(R.id.key) }
         private val valueBox by lazy { layout.findViewById<EditText>(R.id.value) }
@@ -98,11 +109,8 @@ class CustomInputPreference : DialogPreference {
                 valueBox.setText(value)
             }
 
-        init {
-            update(preference.extras.getString(EXTRA_VALUE))
-        }
-
         override fun onCreateDialogView(context: Context?): View {
+            update((preference as CustomInputPreference).getPersistedString())
             return layout
         }
 
@@ -114,7 +122,7 @@ class CustomInputPreference : DialogPreference {
             }
         }
 
-        fun update(value: String?) {
+        private fun update(value: String?) {
             val split = value?.split(SEPARATOR)
 
             if (split != null) {

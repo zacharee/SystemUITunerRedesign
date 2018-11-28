@@ -4,12 +4,9 @@ import android.app.AlertDialog
 import android.content.Context
 import android.provider.Settings
 import android.util.AttributeSet
-import android.view.View
-import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.preference.EditTextPreference
-import androidx.preference.EditTextPreferenceDialogFragmentCompat
 import androidx.preference.PreferenceViewHolder
 import com.zacharee1.systemuituner.R
 
@@ -36,6 +33,10 @@ class CustomReadPreference : EditTextPreference {
         init(null, null, null)
     }
 
+    init {
+        isPersistent = true
+    }
+
     private fun init(attrs: AttributeSet?, defStyleAttr: Int?, defStyleRes: Int?) {
         layoutResource = R.layout.custom_read_preference
 
@@ -56,6 +57,7 @@ class CustomReadPreference : EditTextPreference {
     }
 
     override fun onSetInitialValue(defaultValue: Any?) {
+        super.onSetInitialValue(defaultValue)
         updateSummary(text)
     }
 
@@ -74,6 +76,12 @@ class CustomReadPreference : EditTextPreference {
         }
     }
 
+    override fun setText(text: String?) {
+        super.setText(text)
+
+        updateSummary(text)
+    }
+
     private fun updateSummary(key: String?) {
         summary = try {
             when (type) {
@@ -84,24 +92,6 @@ class CustomReadPreference : EditTextPreference {
             }
         } catch (e: NullPointerException) {
             null
-        }
-    }
-
-    class Fragment : EditTextPreferenceDialogFragmentCompat() {
-        private val edit: EditText?
-            get() = view?.findViewById(android.R.id.edit)
-
-        override fun onBindDialogView(view: View?) {
-            super.onBindDialogView(view)
-
-            edit?.hint = resources.getString(R.string.key_plaintext)
-        }
-
-        override fun onDialogClosed(positiveResult: Boolean) {
-            if (positiveResult) {
-                (preference as CustomReadPreference)
-                        .updateSummary(view?.findViewById<EditText>(android.R.id.edit)?.text?.toString())
-            }
         }
     }
 }
