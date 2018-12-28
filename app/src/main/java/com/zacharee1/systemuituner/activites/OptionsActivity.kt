@@ -72,7 +72,8 @@ class OptionsActivity : BaseAnimActivity() {
     }
 
     private fun handleBackPressed() {
-        val hideWelcomeScreen = PreferenceManager.getDefaultSharedPreferences(this).getBoolean("hide_welcome_screen", false)
+        val hideWelcomeScreen = PreferenceManager.getDefaultSharedPreferences(this)
+                .getBoolean("hide_welcome_screen", false)
 
         when {
             supportFragmentManager != null -> when {

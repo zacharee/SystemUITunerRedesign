@@ -123,13 +123,13 @@ class AutoFragment : AnimFragment() {
 
                         if (prefs.values.isNotEmpty()) {
                             for (preference in prefs.values) {
-                                preferenceScreen.addPreference(preference)
+                                activity!!.runOnUiThread { preferenceScreen.addPreference(preference) }
                             }
                         } else {
                             val notSupported = Preference(activity)
                             notSupported.setSummary(R.string.feature_not_supported)
                             notSupported.isSelectable = false
-                            preferenceScreen.addPreference(notSupported)
+                            activity!!.runOnUiThread { preferenceScreen.addPreference(notSupported) }
                         }
 
                         activity?.runOnUiThread {

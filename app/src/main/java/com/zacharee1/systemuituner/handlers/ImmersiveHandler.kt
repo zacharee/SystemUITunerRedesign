@@ -29,7 +29,8 @@ object ImmersiveHandler {
     }
 
     fun getMode(context: Context?): String {
-        var imm = Settings.Global.getString(context?.contentResolver, KEY) ?: DISABLED
+        var imm = Settings.Global.getString(context?.contentResolver ?: return DISABLED, KEY)
+                ?: DISABLED
         if (imm.isEmpty()) imm = DISABLED
         imm = imm.replace("=(.+?)$".toRegex(), "")
 

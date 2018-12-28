@@ -43,6 +43,10 @@ class ImmersiveFragment : AnimFragment(), Preference.OnPreferenceChangeListener 
         status.onPreferenceChangeListener = this
         navi.onPreferenceChangeListener = this
         preconf.onPreferenceChangeListener = this
+    }
+
+    override fun onResume() {
+        super.onResume()
 
         setContentObserver()
         setProperBoxChecked()
@@ -51,7 +55,8 @@ class ImmersiveFragment : AnimFragment(), Preference.OnPreferenceChangeListener 
     }
 
     private fun setContentObserver() {
-        activity?.contentResolver?.registerContentObserver(Settings.Global.CONTENT_URI, true, observer)
+        activity?.contentResolver
+                ?.registerContentObserver(Settings.Global.CONTENT_URI, true, observer)
     }
 
     private fun setProperBoxChecked() {
