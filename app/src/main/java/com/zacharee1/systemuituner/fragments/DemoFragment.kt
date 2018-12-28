@@ -30,7 +30,7 @@ class DemoFragment : AnimFragment() {
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
         super.onCreatePreferences(savedInstanceState, rootKey)
 
-        demoHandler = DemoHandler(context)
+        demoHandler = DemoHandler(context!!)
         if (context?.hasSpecificPerm(Manifest.permission.DUMP) == true) {
             setPrefListeners()
             setDemoSwitchListener()

@@ -10,7 +10,9 @@ import androidx.preference.SwitchPreference
 import com.pavelsikun.seekbarpreference.SeekBarPreferenceCompat
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.activites.QuickSettingsLayoutEditor
+import com.zacharee1.systemuituner.util.PrefManager.Companion.QQS_COUNT
 import com.zacharee1.systemuituner.util.forEachPreference
+import com.zacharee1.systemuituner.util.prefs
 import com.zacharee1.systemuituner.util.writeSecure
 
 class QSFragment : AnimFragment() {
@@ -32,20 +34,15 @@ class QSFragment : AnimFragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        preferenceManager.sharedPreferences.apply {
-            origHeader = getBoolean("safe_mode_header_count", true)
-            edit().apply {
-                putBoolean("safe_mode_header_count", false)
-            }.apply()
-        }
+        origHeader = context!!.prefs.safeModeHeaderCount
+
+        context!!.prefs.safeModeHeaderCount = false
     }
 
     override fun onDestroy() {
         super.onDestroy()
 
-        preferenceManager.sharedPreferences.edit().apply {
-            putBoolean("safe_mode_header_count", origHeader)
-        }.apply()
+        context!!.prefs.safeModeHeaderCount = origHeader
     }
 
     private fun setEditorListener() {
@@ -110,8 +107,6 @@ class QSFragment : AnimFragment() {
 
     companion object {
         const val GENERAL_QS = "general_qs"
-        const val QQS_COUNT = "sysui_qqs_count"
         const val COUNT_CATEGORY = "qqs_count_category"
-        const val FANCY_ANIM = "sysui_qs_fancy_anim"
     }
 }

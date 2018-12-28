@@ -5,10 +5,10 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import androidx.preference.PreferenceManager
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.misc.OptionSelected
 import com.zacharee1.systemuituner.util.BillingUtil
+import com.zacharee1.systemuituner.util.prefs
 
 class MainActivity : BaseAnimActivity() {
     private var billing: BillingUtil? = null
@@ -24,8 +24,7 @@ class MainActivity : BaseAnimActivity() {
     override fun onResume() {
         super.onResume()
 
-        val hideWelcomeScreen = PreferenceManager.getDefaultSharedPreferences(this).getBoolean("hide_welcome_screen", false)
-        if (hideWelcomeScreen) {
+        if (prefs.hideWelcomeScreen) {
             launchList(null)
             finish()
         }

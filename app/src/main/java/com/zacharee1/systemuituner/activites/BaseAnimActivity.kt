@@ -18,9 +18,8 @@ import androidx.annotation.CallSuper
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.appcompat.widget.Toolbar
-import androidx.preference.PreferenceManager
 import com.zacharee1.systemuituner.R
-import com.zacharee1.systemuituner.util.isInDarkMode
+import com.zacharee1.systemuituner.util.prefs
 
 @SuppressLint("Registered")
 open class BaseAnimActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferenceChangeListener {
@@ -30,16 +29,16 @@ open class BaseAnimActivity : AppCompatActivity(), SharedPreferences.OnSharedPre
     internal val backButton by lazy { createBackButton() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        setTheme(if (isInDarkMode()) R.style.AppTheme_Dark else R.style.AppTheme)
+        setTheme(if (prefs.darkMode) R.style.AppTheme_Dark else R.style.AppTheme)
 
         super.onCreate(savedInstanceState)
 
         super.setContentView(R.layout.activity_base)
-        PreferenceManager.getDefaultSharedPreferences(this).registerOnSharedPreferenceChangeListener(this)
+        prefs.registerOnSharedPreferenceChangeListener(this)
 
         setSupportActionBar(toolbar)
 
-        toolbar.popupTheme = if (isInDarkMode()) R.style.AppTheme_PopupTheme_Dark else R.style.AppTheme_PopupTheme_Light
+        toolbar.popupTheme = if (prefs.darkMode) R.style.AppTheme_PopupTheme_Dark else R.style.AppTheme_PopupTheme_Light
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowHomeEnabled(true)
@@ -58,7 +57,7 @@ open class BaseAnimActivity : AppCompatActivity(), SharedPreferences.OnSharedPre
 
     override fun onDestroy() {
         super.onDestroy()
-        PreferenceManager.getDefaultSharedPreferences(this).unregisterOnSharedPreferenceChangeListener(this)
+        prefs.unregisterOnSharedPreferenceChangeListener(this)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

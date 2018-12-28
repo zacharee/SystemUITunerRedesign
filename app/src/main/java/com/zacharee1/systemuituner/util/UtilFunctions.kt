@@ -11,7 +11,10 @@ import android.text.TextUtils
 import android.util.TypedValue
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.FragmentManager
-import androidx.preference.*
+import androidx.preference.Preference
+import androidx.preference.PreferenceFragmentCompat
+import androidx.preference.PreferenceGroup
+import androidx.preference.SwitchPreference
 import com.topjohnwu.superuser.Shell
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.activites.MainActivity
@@ -92,11 +95,8 @@ fun Context.hasUsage(): Boolean {
 }
 
 fun Activity.startUp() {
-    val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
-
-    val firstStart = sharedPreferences.getBoolean("first_start", true)
-    if (firstStart && checkSamsung()) {
-        sharedPreferences.edit().putBoolean("safe_mode", true).apply()
+    if (prefs.firstStart && checkSamsung()) {
+        prefs.safeMode = true
         try {
             AlertDialog.Builder(this)
                     .setTitle(resources.getString(R.string.notice))
@@ -105,9 +105,9 @@ fun Activity.startUp() {
                     .show()
         } catch (e: Exception) {}
     }
-    sharedPreferences.edit().putBoolean("first_start", false).apply()
+    prefs.firstStart = false
 
-    if (sharedPreferences.getBoolean("hide_welcome_screen", false)) {
+    if (prefs.hideWelcomeScreen) {
         startActivity(Intent(this, OptionsActivity::class.java))
     } else {
         startActivity(Intent(this, MainActivity::class.java))
@@ -116,10 +116,6 @@ fun Activity.startUp() {
 
 fun Context.getInstalledApps() =
         packageManager.getInstalledApplications(PackageManager.GET_META_DATA)
-
-fun Context.isInDarkMode() =
-        PreferenceManager.getDefaultSharedPreferences(this)
-                .getBoolean("dark_mode", false)
 
 fun checkMIUI(): Boolean {
     val miui = ArrayList<String>()
@@ -279,3 +275,6 @@ fun sudo(vararg cmds: String) {
         Shell.su(it).submit()
     }
 }
+
+val Context.prefs: PrefManager
+    get() = PrefManager.getInstance(this)

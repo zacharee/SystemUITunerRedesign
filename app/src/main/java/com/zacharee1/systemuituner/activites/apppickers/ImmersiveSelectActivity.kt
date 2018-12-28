@@ -129,7 +129,7 @@ class ImmersiveSelectActivity : BaseAnimActivity() {
         override fun onSetTitle(): String = resources.getString(R.string.select_apps)
 
         private fun populateList() {
-            val selectedApps = ImmersiveHandler.parseSelectedApps(activity, TreeSet())
+            val selectedApps = ImmersiveHandler.parseSelectedApps(activity)
 
             for (info in infos.values) {
                 val preference = CheckBoxPreference(activity)

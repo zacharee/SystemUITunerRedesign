@@ -11,23 +11,20 @@ import androidx.preference.SwitchPreference
 import com.jaredrummler.android.colorpicker.ColorPreferenceCompat
 import com.pavelsikun.seekbarpreference.SeekBarPreferenceCompat
 import com.zacharee1.systemuituner.R
-import com.zacharee1.systemuituner.services.SafeModeService
+import com.zacharee1.systemuituner.util.PrefManager.Companion.HIGH_BRIGHTNESS_WARNING
+import com.zacharee1.systemuituner.util.PrefManager.Companion.NAVBAR_COLOR
+import com.zacharee1.systemuituner.util.PrefManager.Companion.NAVBAR_CURRENT_COLOR
+import com.zacharee1.systemuituner.util.PrefManager.Companion.TILE_COLUMN
+import com.zacharee1.systemuituner.util.PrefManager.Companion.TILE_COLUMN_LANDSCAPE
+import com.zacharee1.systemuituner.util.PrefManager.Companion.TILE_ROW
+import com.zacharee1.systemuituner.util.PrefManager.Companion.TILE_ROW_LANDSCAPE
+import com.zacharee1.systemuituner.util.prefs
 import com.zacharee1.systemuituner.util.writeGlobal
 import com.zacharee1.systemuituner.util.writeSecure
 import com.zacharee1.systemuituner.util.writeSystem
 
 class TWFragment : StatbarFragment() {
     private var origRowCol = false
-
-    companion object {
-        const val TILE_ROW = "qs_tile_row"
-        const val TILE_COLUMN = "qs_tile_column"
-        const val TILE_ROW_LANDSCAPE = "qs_tile_row_landscape"
-        const val TILE_COLUMN_LANDSCAPE = "qs_tile_column_landscape"
-        const val NAVBAR_COLOR = "navigationbar_color"
-        const val NAVBAR_CURRENT_COLOR = "navigationbar_current_color"
-        const val HIGH_BRIGHTNESS_WARNING = "shown_max_brightness_dialog"
-    }
 
     override val prefsRes = R.xml.pref_tw
 
@@ -45,21 +42,15 @@ class TWFragment : StatbarFragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        preferenceManager.sharedPreferences.apply {
-            origRowCol = getBoolean(SafeModeService.SAFE_MODE_ROW_COL, true)
+        origRowCol = context!!.prefs.safeModeRowCol
 
-            edit().apply {
-                putBoolean(SafeModeService.SAFE_MODE_ROW_COL, false)
-            }.apply()
-        }
+        context!!.prefs.safeModeRowCol = false
     }
 
     override fun onDestroy() {
-        super.onDestroy()
+        context!!.prefs.safeModeRowCol = origRowCol
 
-        preferenceManager.sharedPreferences.edit().apply {
-            putBoolean(SafeModeService.SAFE_MODE_ROW_COL, origRowCol)
-        }.apply()
+        super.onDestroy()
     }
 
     private fun setUpQSStuff() {

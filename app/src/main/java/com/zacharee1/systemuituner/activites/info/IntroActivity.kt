@@ -12,7 +12,6 @@ import android.widget.CheckBox
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.preference.PreferenceManager
 import com.github.paolorotolo.appintro.AppIntro2
 import com.github.paolorotolo.appintro.ISlideBackgroundColorHolder
 import com.topjohnwu.superuser.Shell
@@ -20,6 +19,7 @@ import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.activites.instructions.SetupActivity
 import com.zacharee1.systemuituner.misc.OptionSelected
 import com.zacharee1.systemuituner.util.checkPermissions
+import com.zacharee1.systemuituner.util.prefs
 import com.zacharee1.systemuituner.util.startUp
 import com.zacharee1.systemuituner.util.sudo
 
@@ -127,8 +127,7 @@ class IntroActivity : AppIntro2() {
     }
 
     private fun finishAndSave() {
-        val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
-        sharedPreferences.edit().putBoolean("show_intro", false).apply()
+        prefs.showIntro = false
 
         finish()
     }

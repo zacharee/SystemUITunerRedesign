@@ -7,19 +7,15 @@ import android.view.MenuItem
 import android.view.View
 import androidx.fragment.app.FragmentManager
 import androidx.preference.PreferenceFragmentCompat
-import androidx.preference.PreferenceManager
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.fragments.AnimFragment
 import com.zacharee1.systemuituner.misc.OptionSelected
 import com.zacharee1.systemuituner.util.checkSamsung
 import com.zacharee1.systemuituner.util.forEachPreference
 import com.zacharee1.systemuituner.util.getAnimTransaction
+import com.zacharee1.systemuituner.util.prefs
 
 class OptionsActivity : BaseAnimActivity() {
-    companion object {
-        const val ALLOW_CUSTOM_INPUT = "allow_custom_settings_input"
-    }
-
     private lateinit var main: MainPrefs
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,8 +26,7 @@ class OptionsActivity : BaseAnimActivity() {
         backButton.scaleX = 0f
         backButton.scaleY = 0f
 
-        val hideWelcomeScreen = PreferenceManager.getDefaultSharedPreferences(this).getBoolean("hide_welcome_screen", false)
-        setBackClickable(!hideWelcomeScreen)
+        setBackClickable(!prefs.hideWelcomeScreen)
 
         main = MainPrefs()
 
@@ -46,8 +41,7 @@ class OptionsActivity : BaseAnimActivity() {
     override fun onResume() {
         super.onResume()
 
-        val hideWelcomeScreen = PreferenceManager.getDefaultSharedPreferences(this).getBoolean("hide_welcome_screen", false)
-        setBackClickable(supportFragmentManager.backStackEntryCount > 1 || !hideWelcomeScreen)
+        setBackClickable(supportFragmentManager.backStackEntryCount > 1 || !prefs.hideWelcomeScreen)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -72,9 +66,6 @@ class OptionsActivity : BaseAnimActivity() {
     }
 
     private fun handleBackPressed() {
-        val hideWelcomeScreen = PreferenceManager.getDefaultSharedPreferences(this)
-                .getBoolean("hide_welcome_screen", false)
-
         when {
             supportFragmentManager != null -> when {
                 supportFragmentManager.backStackEntryCount > 1 -> {
@@ -82,7 +73,7 @@ class OptionsActivity : BaseAnimActivity() {
 
                     val stillAboveOne = supportFragmentManager.backStackEntryCount > 1
 
-                    setBackClickable(stillAboveOne || !hideWelcomeScreen)
+                    setBackClickable(stillAboveOne || !prefs.hideWelcomeScreen)
                 }
                 else -> finish()
             }
@@ -110,7 +101,7 @@ class OptionsActivity : BaseAnimActivity() {
 
         private fun updateCustomEnabledState() {
             val customPref = findPreference("custom")
-            val enabled = preferenceManager.sharedPreferences.getBoolean(ALLOW_CUSTOM_INPUT, false)
+            val enabled = context!!.prefs.allowCustomSettingsInput
 
             customPref.isEnabled = enabled
             customPref.summary = if (enabled) null else resources.getString(R.string.enable_in_settings)

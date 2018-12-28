@@ -8,9 +8,8 @@ import android.os.Looper
 import android.provider.Settings
 import android.service.quicksettings.Tile
 import android.service.quicksettings.TileService
-import androidx.preference.PreferenceManager
-
 import com.zacharee1.systemuituner.handlers.ImmersiveHandler
+import com.zacharee1.systemuituner.util.prefs
 
 @TargetApi(24)
 class ImmersiveTile : TileService() {
@@ -34,9 +33,10 @@ class ImmersiveTile : TileService() {
 
 
     override fun onClick() {
-        var toMode = PreferenceManager.getDefaultSharedPreferences(this).getString("immersive_tile_mode", ImmersiveHandler.FULL)
+        var toMode = prefs.immersiveTileMode!!
 
-        if (ImmersiveHandler.isInImmersive(this)) toMode = ImmersiveHandler.DISABLED
+        if (ImmersiveHandler.isInImmersive(this))
+            toMode = ImmersiveHandler.DISABLED
 
         setStateTo(toMode)
 

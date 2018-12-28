@@ -8,8 +8,8 @@ import android.provider.AlarmClock
 import android.service.quicksettings.Tile
 import android.service.quicksettings.TileService
 import android.widget.Toast
-import androidx.preference.PreferenceManager
 import com.zacharee1.systemuituner.R
+import com.zacharee1.systemuituner.util.prefs
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -40,13 +40,10 @@ class ClockTile : TileService() {
         }
     }
 
-    private lateinit var prefs: SharedPreferences
-
     private var shouldRun = false
 
     override fun onStartListening() {
         super.onStartListening()
-        prefs = PreferenceManager.getDefaultSharedPreferences(this)
         shouldRun = true
 
         registerReceiver(mReceiver, IntentFilter(Intent.ACTION_TIME_TICK))

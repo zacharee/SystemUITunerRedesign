@@ -11,10 +11,9 @@ import androidx.preference.PreferenceCategory
 import androidx.preference.SwitchPreference
 import com.pavelsikun.seekbarpreference.SeekBarPreferenceCompat
 import com.zacharee1.systemuituner.R
-import com.zacharee1.systemuituner.util.forEachPreference
-import com.zacharee1.systemuituner.util.writeGlobal
-import com.zacharee1.systemuituner.util.writeSecure
-import com.zacharee1.systemuituner.util.writeSystem
+import com.zacharee1.systemuituner.util.*
+import com.zacharee1.systemuituner.util.PrefManager.Companion.AUDIO_SAFE
+import com.zacharee1.systemuituner.util.PrefManager.Companion.NOTIFICATION_SNOOZE_OPTIONS
 import java.util.*
 
 class MiscFragment : AnimFragment() {
@@ -38,21 +37,15 @@ class MiscFragment : AnimFragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        preferenceManager.sharedPreferences.apply {
-            origSnooze = getBoolean("safe_mode_snooze_options", true)
+        origSnooze = context!!.prefs.safeModeSnoozeOptions
 
-            edit().apply {
-                putBoolean("safe_mode_snooze_options", false)
-            }.apply()
-        }
+        context!!.prefs.safeModeSnoozeOptions = false
     }
 
     override fun onDestroy() {
         super.onDestroy()
 
-        preferenceManager.sharedPreferences.edit().apply {
-            putBoolean("safe_mode_snooze_options", origSnooze)
-        }.apply()
+        context!!.prefs.safeModeSnoozeOptions = origSnooze
     }
 
     private fun setGlobalSwitchStates() {
@@ -263,8 +256,8 @@ class MiscFragment : AnimFragment() {
     }
 
     private fun setUpSnoozeStuff() {
-        val category = findPreference("notifs_snooze") as PreferenceCategory
-        val summary = findPreference("notifs_snooze_desc")
+        val category = findPreference(NOTIFS_SNOOZE) as PreferenceCategory
+        val summary = findPreference(NOTIFS_SNOOZE_DESC)
 
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O_MR1) {
             category.isEnabled = false
@@ -325,8 +318,8 @@ class MiscFragment : AnimFragment() {
 
     private fun saveSnoozeTimes(toSave: ArrayList<String>) {
         val base = "default=" + toSave[0] + ",options_array=" + toSave[1] + ":" + toSave[2] + ":" + toSave[3] + ":" + toSave[4]
-        preferenceManager.sharedPreferences.edit().putString("notification_snooze_options", base).apply()
-        context?.writeGlobal("notification_snooze_options", base)
+        context!!.prefs.notificationSnoozeOptions = base
+        context?.writeGlobal(NOTIFICATION_SNOOZE_OPTIONS, base)
     }
 
     private fun parseSnoozeTimes(): ArrayList<String> {
@@ -353,7 +346,6 @@ class MiscFragment : AnimFragment() {
 
     companion object {
         const val HUD_ENABLED = "heads_up_notifications_enabled"
-        const val AUDIO_SAFE = "audio_safe_volume_state"
         const val POWER_NOTIFICATION_CONTROLS = "power_notification_controls"
         const val SHOW_IMPORTANCE_SLIDER = "show_importance_slider"
         const val SHOW_ZEN = "sysui_show_full_zen"
@@ -367,6 +359,8 @@ class MiscFragment : AnimFragment() {
         const val NIGHT_DISPLAY_ACTIVATED = "night_display_activated"
         const val NIGHT_DISPLAY_AUTO = "night_display_auto"
         const val NIGHT_MODE_SETTINGS = "night_mode_settings"
+        const val NOTIFS_SNOOZE = "notifs_snooze"
+        const val NOTIFS_SNOOZE_DESC = "notifs_snooze_desc"
 
         private const val TWILIGHT_MODE_INACTIVE = 0
         private const val TWILIGHT_MODE_OVERRIDE = 1
