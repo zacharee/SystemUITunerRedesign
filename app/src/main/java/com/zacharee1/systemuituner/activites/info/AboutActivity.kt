@@ -3,14 +3,14 @@ package com.zacharee1.systemuituner.activites.info
 import android.os.Bundle
 import android.text.method.LinkMovementMethod
 import android.view.MenuItem
-import android.view.View
 import android.widget.TextView
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.activites.BaseAnimActivity
 import com.zacharee1.systemuituner.util.BillingUtil
+import kotlinx.android.synthetic.main.layout_donate.*
 
 class AboutActivity : BaseAnimActivity() {
-    private var mBilling: BillingUtil? = null
+    private val billing by lazy { BillingUtil(this) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,13 +18,17 @@ class AboutActivity : BaseAnimActivity() {
         setContentView(R.layout.activity_about)
         setTitle(R.string.about)
 
-        mBilling = BillingUtil(this)
-
         val appCred = findViewById<TextView>(R.id.app_credit)
         val langCred = findViewById<TextView>(R.id.lang_credit)
 
         appCred.movementMethod = LinkMovementMethod.getInstance()
         langCred.movementMethod = LinkMovementMethod.getInstance()
+
+        paypal_button.setOnClickListener { onDonatePayPalClicked() }
+        donate_1.setOnClickListener { onDonate1Clicked() }
+        donate_2.setOnClickListener { onDonate2Clicked() }
+        donate_5.setOnClickListener { onDonate5Clicked() }
+        donate_10.setOnClickListener { onDonate10Clicked() }
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -38,23 +42,23 @@ class AboutActivity : BaseAnimActivity() {
         return super.onOptionsItemSelected(item)
     }
 
-    fun onDonatePayPalClicked(v: View) {
+    private fun onDonatePayPalClicked() {
         BillingUtil.onDonatePayPalClicked(this)
     }
 
-    fun onDonate1Clicked(v: View) {
-        mBilling!!.onDonateClicked("donate_1")
+    private fun onDonate1Clicked() {
+        billing.onDonateClicked("donate_1")
     }
 
-    fun onDonate2Clicked(v: View) {
-        mBilling!!.onDonateClicked("donate_2")
+    private fun onDonate2Clicked() {
+        billing.onDonateClicked("donate_2")
     }
 
-    fun onDonate5Clicked(v: View) {
-        mBilling!!.onDonateClicked("donate_5")
+    private fun onDonate5Clicked() {
+        billing.onDonateClicked("donate_5")
     }
 
-    fun onDonate10Clicked(v: View) {
-        mBilling!!.onDonateClicked("donate_10")
+    private fun onDonate10Clicked() {
+        billing.onDonateClicked("donate_10")
     }
 }

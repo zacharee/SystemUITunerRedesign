@@ -15,11 +15,11 @@ import com.crashlytics.android.answers.PurchaseEvent
 import com.zacharee1.systemuituner.R
 
 
-class BillingUtil(private val mActivity: Activity) {
-    private val mBillingClient: BillingClient
+class BillingUtil(private val activity: Activity) {
+    private val client: BillingClient
 
     init {
-        mBillingClient = BillingClient.newBuilder(mActivity).setListener { responseCode, purchases ->
+        client = BillingClient.newBuilder(activity).setListener { responseCode, purchases ->
             if (responseCode == BillingClient.BillingResponse.OK && purchases != null) {
                 for (purchase in purchases) {
                     Answers.getInstance().logPurchase(PurchaseEvent()
@@ -36,17 +36,17 @@ class BillingUtil(private val mActivity: Activity) {
             }
         }.build()
 
-        mBillingClient.startConnection(object : BillingClientStateListener {
+        client.startConnection(object : BillingClientStateListener {
             override fun onBillingSetupFinished(@BillingClient.BillingResponse billingResponseCode: Int) {
                 if (billingResponseCode == BillingClient.BillingResponse.OK) {
-                    val ppTitle = mActivity.findViewById<TextView>(R.id.paypal_title)
-                    val ppButton = mActivity.findViewById<Button>(R.id.paypal_button)
+                    val ppTitle = activity.findViewById<TextView>(R.id.paypal_title)
+                    val ppButton = activity.findViewById<Button>(R.id.paypal_button)
 
                     if (ppTitle != null) ppTitle.visibility = View.GONE
                     if (ppButton != null) ppButton.visibility = View.GONE
                 } else if (billingResponseCode == BillingClient.BillingResponse.BILLING_UNAVAILABLE) {
-                    val gPlayD = mActivity.findViewById<LinearLayout>(R.id.google_play_donate)
-                    val gPlayDT = mActivity.findViewById<TextView>(R.id.google_play_donate_title)
+                    val gPlayD = activity.findViewById<LinearLayout>(R.id.google_play_donate)
+                    val gPlayDT = activity.findViewById<TextView>(R.id.google_play_donate_title)
 
                     if (gPlayD != null) {
                         gPlayD.visibility = View.GONE
@@ -66,22 +66,21 @@ class BillingUtil(private val mActivity: Activity) {
     }
 
     private fun consumeAsync(token: String) {
-        mBillingClient.consumeAsync(token) { _, _ -> }
+        client.consumeAsync(token) { _, _ -> }
     }
 
     fun onDonateClicked(skuId: String): Int {
         val builder = BillingFlowParams.newBuilder()
                 .setSku(skuId).setType(BillingClient.SkuType.INAPP)
-        return mBillingClient.launchBillingFlow(mActivity, builder.build())
+        return client.launchBillingFlow(activity, builder.build())
     }
 
     companion object {
-
         fun onDonatePayPalClicked(activity: Activity) {
-            val labsInstalled = activity?.packageManager.isPackageInstalled("com.xda.labs")
+            val labsInstalled = activity.packageManager.isPackageInstalled("com.xda.labs")
             val uri = Uri.parse(if (labsInstalled) "https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=zachary.wander@gmail.com" else "https://forum.xda-developers.com/donatetome.php?u=7055541")
             val intent = Intent(Intent.ACTION_VIEW, uri)
-            activity?.startActivity(intent)
+            activity.startActivity(intent)
         }
     }
 }

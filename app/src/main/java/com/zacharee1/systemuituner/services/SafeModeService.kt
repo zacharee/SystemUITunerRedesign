@@ -31,9 +31,9 @@ import com.zacharee1.systemuituner.util.PrefManager.Companion.TILE_COLUMN
 import com.zacharee1.systemuituner.util.PrefManager.Companion.TILE_ROW
 
 class SafeModeService : Service() {
-    private var shutDownReceiver: ShutDownReceiver? = null
-    private var themeReceiver: ThemeChangeReceiver? = null
-    private var resListener: ResolutionChangeListener? = null
+    private val shutDownReceiver by lazy { ShutDownReceiver() }
+    private val themeReceiver by lazy { ThemeChangeReceiver() }
+    private val resListener by lazy { ResolutionChangeListener(handler) }
 
     private val handler: Handler = Handler(Looper.getMainLooper())
     private val observer: ContentObserver = object : ContentObserver(handler) {
@@ -74,7 +74,6 @@ class SafeModeService : Service() {
         restoreQSHeaderCount()
         restoreHBWState()
         restoreQSRowColCount()
-        setUpReceivers()
         setUpContentObserver()
         restoreSnoozeState()
         restoreVolumeWarning()
@@ -86,23 +85,28 @@ class SafeModeService : Service() {
 
         try {
             unregisterReceiver(themeReceiver)
-        } catch (e: Exception) {}
+        } catch (e: Exception) {
+        }
 
         try {
             unregisterReceiver(shutDownReceiver)
-        } catch (e: Exception) {}
+        } catch (e: Exception) {
+        }
 
         try {
             contentResolver.unregisterContentObserver(resListener)
-        } catch (e: Exception) {}
+        } catch (e: Exception) {
+        }
 
         try {
             contentResolver.unregisterContentObserver(observer)
-        } catch (e: Exception) {}
+        } catch (e: Exception) {
+        }
 
         try {
             prefs.unregisterOnSharedPreferenceChangeListener(prefsListener)
-        } catch (e: Exception) {}
+        } catch (e: Exception) {
+        }
     }
 
     private fun startInForeground() {
@@ -124,12 +128,6 @@ class SafeModeService : Service() {
 
             startForeground(1001, notification.build())
         }
-    }
-
-    private fun setUpReceivers() {
-        shutDownReceiver = ShutDownReceiver()
-        themeReceiver = ThemeChangeReceiver()
-        resListener = ResolutionChangeListener(handler)
     }
 
     private fun restoreStateOnStartup() {

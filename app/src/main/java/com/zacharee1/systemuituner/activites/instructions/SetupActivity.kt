@@ -15,16 +15,13 @@ import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
-import androidx.core.content.ContextCompat.startActivity
-import androidx.core.content.PermissionChecker.checkCallingOrSelfPermission
 import androidx.fragment.app.Fragment
 import com.github.paolorotolo.appintro.AppIntro2
-import com.google.android.gms.common.util.ArrayUtils.removeAll
 import com.zacharee1.systemuituner.R
-import com.zacharee1.systemuituner.R.string.intent
 import com.zacharee1.systemuituner.util.checkPermissions
 import com.zacharee1.systemuituner.util.pxToDp
 import com.zacharee1.systemuituner.util.startUp
+import kotlinx.android.synthetic.main.permissions_fragment.*
 
 class SetupActivity : AppIntro2() {
     companion object {
@@ -66,6 +63,8 @@ class SetupActivity : AppIntro2() {
                     resources.getColor(R.color.intro_1, null)
             ))
         }
+
+        adb_instructions.setOnClickListener { launchInstructions() }
     }
 
     override fun onDonePressed(currentFragment: Fragment?) {
@@ -106,7 +105,7 @@ class SetupActivity : AppIntro2() {
         finish()
     }
 
-    fun launchInstructions(v: View) {
+    private fun launchInstructions() {
         if (permissionsNeeded == null) return
 
         val intent = Intent(this, InstructionsActivity::class.java)

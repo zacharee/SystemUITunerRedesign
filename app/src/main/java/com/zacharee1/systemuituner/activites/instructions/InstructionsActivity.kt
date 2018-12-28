@@ -19,6 +19,7 @@ import android.widget.TextView
 import androidx.annotation.ColorInt
 import androidx.annotation.IdRes
 import androidx.annotation.LayoutRes
+import androidx.core.text.HtmlCompat
 import androidx.fragment.app.Fragment
 import com.github.paolorotolo.appintro.AppIntro2
 import com.github.paolorotolo.appintro.ISlideBackgroundColorHolder
@@ -282,7 +283,7 @@ class InstructionsActivity : AppIntro2() {
         }
 
         private fun formatText(text: String): Spanned {
-            return if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M) Html.fromHtml(text, 0) else Html.fromHtml(text)
+            return if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M) Html.fromHtml(text, 0) else HtmlCompat.fromHtml(text, 0)
         }
 
         companion object {
