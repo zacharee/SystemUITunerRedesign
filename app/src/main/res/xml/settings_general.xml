@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <PreferenceCategory
+    <tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory
         android:title="@string/general">
 
         <SwitchPreference
@@ -12,9 +12,9 @@
             android:title="@string/hide_welcome_screen"
             android:key="hide_welcome_screen" />
 
-    </PreferenceCategory>
+    </tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory>
 
-    <PreferenceCategory
+    <tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory
         android:title="@string/quick_settings"
         android:key="quick_settings">
 
@@ -25,9 +25,9 @@
             android:entries="@array/clock_format_names"
             android:defaultValue="twelve" />
 
-    </PreferenceCategory>
+    </tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory>
 
-    <PreferenceCategory
+    <tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory
         android:title="@string/safe_mode" >
 
         <SwitchPreference
@@ -97,15 +97,15 @@
             android:summary="@string/safe_mode_volume_warning_desc"
             />
 
-    </PreferenceCategory>
+    </tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory>
 
-    <PreferenceCategory
+    <tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory
         android:title="@string/danger_zone">
 
         <SwitchPreference
             android:title="@string/enable_custom_settings_input"
             android:key="allow_custom_settings_input" />
 
-    </PreferenceCategory>
+    </tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory>
 
 </PreferenceScreen>

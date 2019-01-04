@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-    <PreferenceCategory
+    <tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory
         android:title="@string/status_bar">
         <com.zacharee1.systemuituner.prefs.StatBarWarnPref />
         <Preference
@@ -20,9 +20,9 @@
             android:title="@string/auto_detect"
             android:summary="@string/auto_detect_summary"
             android:icon="@drawable/ic_help_outline_black_24dp" />
-    </PreferenceCategory>
+    </tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory>
 
-    <PreferenceCategory
+    <tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory
         android:title="@string/networking_data">
         <SwitchPreference
             android:key="airplane"
@@ -88,9 +88,9 @@
             android:key="wifi"
             android:title="@string/wifi_icon"
             android:icon="@drawable/ic_signal_wifi_4_bar_black_24dp"/>
-    </PreferenceCategory>
+    </tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory>
 
-    <PreferenceCategory
+    <tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory
         android:title="@string/sounds_alerts">
         <SwitchPreference
             android:key="headset"
@@ -112,9 +112,9 @@
             android:key="volume"
             android:title="@string/volume"
             android:icon="@drawable/ic_volume_up_black_24dp"/>
-    </PreferenceCategory>
+    </tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory>
 
-    <PreferenceCategory
+    <tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory
         android:title="@string/time_such">
         <SwitchPreference
             android:key="alarm,alarm_clock"
@@ -132,9 +132,9 @@
             android:key="zen"
             android:title="@string/zen_icon"
             android:icon="@drawable/ic_do_not_disturb_on_black_24dp"/>
-    </PreferenceCategory>
+    </tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory>
 
-    <PreferenceCategory
+    <tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory
         android:title="@string/miscellaneous">
         <SwitchPreference
             android:key="answering_memo"
@@ -204,6 +204,6 @@
             android:key="sync_failing"
             android:title="@string/sync_failing_icon"
             android:icon="@drawable/ic_sync_problem_black_24dp"/>
-    </PreferenceCategory>
+    </tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory>
 
 </PreferenceScreen>

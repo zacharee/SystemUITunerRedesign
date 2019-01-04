@@ -2,7 +2,7 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <PreferenceCategory
+    <tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory
         android:title="@string/general">
         <SwitchPreference
             android:key="sysui_show_full_zen"
@@ -20,9 +20,9 @@
         <SwitchPreference
             android:key="clock_seconds"
             android:title="@string/show_clock_seconds"/>
-    </PreferenceCategory>
+    </tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory>
 
-    <PreferenceCategory
+    <tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory
         android:key="night_mode_settings"
         android:title="@string/night_mode">
         <SwitchPreference
@@ -34,9 +34,9 @@
         <SwitchPreference
             android:key="tuner_night_mode_adjust_tint"
             android:title="@string/night_mode_adjust_tint"/>
-    </PreferenceCategory>
+    </tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory>
 
-    <PreferenceCategory
+    <tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory
         android:title="@string/animation_speeds">
 
         <tk.zwander.seekbarpreference.SeekBarPreference
@@ -57,9 +57,9 @@
             android:defaultValue="100"
             android:title="@string/window_animation_scale"
             android:key="window_animation_scale" />
-    </PreferenceCategory>
+    </tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory>
 
-    <PreferenceCategory
+    <tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory
         android:title="@string/notifs_snooze"
         android:key="notifs_snooze">
 
@@ -94,9 +94,9 @@
             android:inputType="number"
             android:key="time_d" />
 
-    </PreferenceCategory>
+    </tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory>
 
-    <PreferenceCategory
+    <tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory
         android:title="@string/power_notification_controls"
         android:key="power_notification_controls">
         <SwitchPreference
@@ -108,6 +108,6 @@
             android:selectable="false" />
         <com.zacharee1.systemuituner.prefs.RedTextPref
             android:summary="@string/pnc_warn"/>
-    </PreferenceCategory>
+    </tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory>
 
 </PreferenceScreen>

@@ -6,14 +6,14 @@
         android:summary="@string/safe_mode_inactive_on_current_page"
         />
 
-    <PreferenceCategory
+    <tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory
         android:title="QS Layout">
         <Preference
             android:title="Launch Editor"
             android:key="launch_editor" />
-    </PreferenceCategory>
+    </tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory>
 
-    <PreferenceCategory
+    <tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory
         android:title="@string/general"
         android:key="general_qs">
         <SwitchPreference
@@ -23,9 +23,9 @@
         <SwitchPreference
             android:key="sysui_qs_move_whole_rows"
             android:title="@string/move_full_rows"/>
-    </PreferenceCategory>
+    </tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory>
 
-    <PreferenceCategory
+    <tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory
         android:title="@string/qs_header_tile_count"
         android:key="qqs_count_category">
 
@@ -38,6 +38,6 @@
 
         <com.zacharee1.systemuituner.prefs.RedTextPref
             android:summary="@string/touchwiz_oreo_qqs" />
-    </PreferenceCategory>
+    </tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory>
 
 </PreferenceScreen>

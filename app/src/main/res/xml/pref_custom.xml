@@ -4,7 +4,7 @@
     <com.zacharee1.systemuituner.prefs.RedTextPref
         android:summary="@string/custom_settings_warning" />
 
-    <PreferenceCategory
+    <tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory
         android:title="@string/custom_settings_input"
         android:key="custom_settings_input">
         <Preference
@@ -26,9 +26,9 @@
             app:type="system"
             android:key="system_settings"
             android:title="@string/system"/>
-    </PreferenceCategory>
+    </tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory>
 
-    <PreferenceCategory
+    <tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory
         android:title="@string/custom_settings_read"
         android:key="custom_settings_read">
         <Preference
@@ -50,5 +50,5 @@
             app:type="system"
             android:key="system_read"
             android:title="@string/system" />
-    </PreferenceCategory>
+    </tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory>
 </PreferenceScreen>

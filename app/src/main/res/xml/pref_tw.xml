@@ -6,7 +6,7 @@
         android:summary="@string/safe_mode_inactive_on_current_page"
         />
 
-    <PreferenceCategory
+    <tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory
         android:title="@string/quick_settings">
         <tk.zwander.seekbarpreference.SeekBarPreference
             android:title="@string/qs_row_count"
@@ -39,9 +39,9 @@
         <com.zacharee1.systemuituner.prefs.RedTextPref
             android:summary="@string/safe_mode_needed_qs_row_col"
             />
-    </PreferenceCategory>
+    </tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory>
 
-    <PreferenceCategory
+    <tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory
         android:title="@string/navigation_bar">
 
         <com.jaredrummler.android.colorpicker.ColorPreferenceCompat
@@ -50,9 +50,9 @@
             app:cpv_showAlphaSlider="true"
             android:defaultValue="-1"/>
 
-    </PreferenceCategory>
+    </tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory>
 
-    <PreferenceCategory
+    <tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory
         android:title="@string/miscellaneous">
 
         <SwitchPreference
@@ -60,9 +60,9 @@
             android:defaultValue="true"
             android:key="shown_max_brightness_dialog" />
 
-    </PreferenceCategory>
+    </tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory>
 
-    <PreferenceCategory
+    <tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory
         android:title="@string/status_bar">
         <com.zacharee1.systemuituner.prefs.StatBarWarnPref />
 
@@ -156,6 +156,6 @@
         <SwitchPreference
             android:key="wimax"
             android:title="@string/wimax_icon"/>
-    </PreferenceCategory>
+    </tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory>
 
 </PreferenceScreen>

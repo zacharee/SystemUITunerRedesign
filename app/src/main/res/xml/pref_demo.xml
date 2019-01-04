@@ -2,18 +2,21 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <PreferenceCategory
+    <tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory
         android:title="@string/general">
+
         <Preference
             android:title="@string/enable"
             android:key="sysui_demo_allowed"/>
         <SwitchPreference
             android:title="@string/show"
             android:key="show_demo"/>
-    </PreferenceCategory>
 
-    <PreferenceCategory
+    </tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory>
+
+    <tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory
         android:title="@string/miscellaneous">
+
         <com.zacharee1.systemuituner.prefs.TimePreference
             android:title="@string/select_time"
             android:key="selected_time"/>
@@ -109,6 +112,7 @@
         <SwitchPreference
             android:title="@string/speakerphone_icon"
             android:key="speakerphone_demo" />
-    </PreferenceCategory>
+
+    </tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory>
 
 </PreferenceScreen>

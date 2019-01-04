@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-    <PreferenceCategory
+    <tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory
         android:title="@string/immersive_mode"
         android:key="imm_boxes">
 
@@ -27,9 +27,9 @@
         <com.zacharee1.systemuituner.prefs.RedTextPref
             android:summary="@string/imm_warn" />
 
-    </PreferenceCategory>
+    </tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory>
 
-    <PreferenceCategory
+    <tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory
         android:title="@string/app_specific"
         android:key="app_specific">
 
@@ -50,7 +50,7 @@
             android:title="@string/select_apps"
             android:key="select_apps" />
 
-    </PreferenceCategory>
+    </tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory>
 
     <PreferenceCategory
         android:title="@string/config_qs"

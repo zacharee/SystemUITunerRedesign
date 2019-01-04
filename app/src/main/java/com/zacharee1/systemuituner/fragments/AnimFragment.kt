@@ -3,7 +3,10 @@ package com.zacharee1.systemuituner.fragments
 import android.os.Bundle
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
+import androidx.preference.PreferenceScreen
+import androidx.recyclerview.widget.RecyclerView
 import com.zacharee1.systemuituner.prefs.CustomInputPreference
+import tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceGroupAdapter
 
 abstract class AnimFragment : PreferenceFragmentCompat() {
     internal abstract val prefsRes: Int
@@ -26,6 +29,10 @@ abstract class AnimFragment : PreferenceFragmentCompat() {
             }
             else -> super.onDisplayPreferenceDialog(preference)
         }
+    }
+
+    override fun onCreateAdapter(preferenceScreen: PreferenceScreen): RecyclerView.Adapter<*> {
+        return CollapsiblePreferenceGroupAdapter(preferenceScreen)
     }
 
     internal abstract fun onSetTitle(): String?

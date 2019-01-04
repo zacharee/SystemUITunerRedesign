@@ -5,7 +5,8 @@
     <PreferenceCategory
         android:title="@string/shortcuts"
         android:enabled="false"
-        android:key="lockscreen_shortcuts" >
+        android:key="lockscreen_shortcuts"
+        app:expanded="true">
 
         <Preference
             android:key="oreo_needed"

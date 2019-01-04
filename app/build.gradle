@@ -30,10 +30,12 @@ android {
         versionCode project.version
         versionName project.version + ""
     }
+    
     compileOptions {
         sourceCompatibility 1.8
         targetCompatibility 1.8
     }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -49,9 +51,14 @@ android {
             matchingFallbacks = ['release']
         }
     }
+
     lintOptions {
         checkReleaseBuilds false // Add this
         abortOnError false
+    }
+
+    packagingOptions {
+        exclude "META-INF/library_release.kotlin_module"
     }
 }
 
@@ -78,6 +85,7 @@ dependencies {
     implementation 'com.jaredrummler:colorpicker-compat:1.0.5'
     implementation 'com.github.zacharee:SeekBarPreference:da20a11584'
     implementation 'com.github.zacharee:material:a2ab4a2d3c'
+    implementation 'com.github.zacharee:CollapsiblePreferenceCategory:79d5b49d67'
 
     //Other
     implementation 'com.github.paolorotolo:appintro:v5.1.0'
