@@ -39,12 +39,14 @@
         android:paddingEnd="12dp"
         android:paddingTop="4dp"
         android:paddingBottom="4dp">
-        <com.android.internal.widget.PreferenceImageView
+
+        <androidx.preference.internal.PreferenceImageView
             android:id="@android:id/icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:maxWidth="48dp"
             android:maxHeight="48dp" />
+
     </LinearLayout>
 
     <RelativeLayout

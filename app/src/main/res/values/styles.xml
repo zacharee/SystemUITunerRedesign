@@ -29,4 +29,9 @@
         <item name="textAppearanceButton">@android:style/TextAppearance.Material.Button</item>
     </style>
 
+    <style name="Material.Drawable.CircularProgress.Determinate.Accented" parent="Material.Drawable.CircularProgress.Determinate">
+        <item name="cpd_strokeSize">15dp</item>
+        <item name="cpd_strokeColor">?colorAccent</item>
+    </style>
+
 </resources>

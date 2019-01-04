@@ -24,6 +24,9 @@ class AutoFragment : AnimFragment() {
 
     private val prefs = TreeMap<String, Preference>()
 
+    private val content by lazy { activity!!.findViewById<ConstraintLayout>(R.id.content_main) }
+    private val progress by lazy { content.findViewById<View>(R.id.progress) }
+
     private var job: Job? = null
 
     override fun onSetTitle() = resources.getString(R.string.auto_detect)
@@ -37,15 +40,13 @@ class AutoFragment : AnimFragment() {
     override fun onDestroy() {
         super.onDestroy()
 
-        val content = activity?.findViewById<ConstraintLayout>(R.id.content_main)
-
         Thread {
             try {
                 job?.cancel()
             } catch (e: Exception) {}
         }.start()
 
-        content?.removeView(content.findViewById(R.id.progress))
+        content?.removeView(progress)
     }
 
 
@@ -57,8 +58,6 @@ class AutoFragment : AnimFragment() {
     }
 
     private fun setUp() {
-        val content = activity?.findViewById<ConstraintLayout>(R.id.content_main)
-
         LayoutInflater.from(activity).inflate(R.layout.indet_circle_prog, content, true)
 
         job = GlobalScope.launch {
@@ -137,7 +136,7 @@ class AutoFragment : AnimFragment() {
             }
 
             activity?.runOnUiThread {
-                content?.removeView(content.findViewById(R.id.progress))
+                content?.removeView(progress)
             }
         }
     }

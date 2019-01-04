@@ -33,7 +33,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
-    <com.pavelsikun.seekbarpreference.PreferenceImageView
+    <androidx.preference.internal.PreferenceImageView
         android:id="@+id/app_icon"
         android:layout_width="48dp"
         android:layout_height="48dp"

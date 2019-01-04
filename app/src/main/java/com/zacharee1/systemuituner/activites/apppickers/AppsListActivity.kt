@@ -9,23 +9,20 @@ import android.view.View
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.dinuscxj.progressbar.CircleProgressBar
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.activites.BaseAnimActivity
 import com.zacharee1.systemuituner.misc.AppInfo
 import com.zacharee1.systemuituner.misc.CustomAdapter
 import com.zacharee1.systemuituner.util.getInstalledApps
+import kotlinx.android.synthetic.main.activity_apps_list.*
 import java.util.*
 
 class AppsListActivity : BaseAnimActivity() {
-
     private val appInfo: ArrayList<AppInfo>
         get() {
             val appMap = TreeMap<String, AppInfo>()
 
             val apps = getInstalledApps()
-
-            val bar = findViewById<CircleProgressBar>(R.id.progress)
 
             for (info in apps) {
                 try {
@@ -35,7 +32,7 @@ class AppsListActivity : BaseAnimActivity() {
                                 null,
                                 info.loadIcon(packageManager))
 
-                        runOnUiThread { bar.progress = 100 * (apps.indexOf(info) + 1) / apps.size }
+                        runOnUiThread { progress.progress = (apps.indexOf(info) + 1f) / apps.size }
                     }
                 } catch (e: Exception) {
                 }
@@ -71,7 +68,7 @@ class AppsListActivity : BaseAnimActivity() {
 
             runOnUiThread {
                 recyclerView.adapter = adapter
-                findViewById<View>(R.id.progress).visibility = View.GONE
+                progress.visibility = View.GONE
             }
         }).start()
 

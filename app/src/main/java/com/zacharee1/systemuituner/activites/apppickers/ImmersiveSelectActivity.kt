@@ -10,7 +10,6 @@ import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.preference.CheckBoxPreference
 import androidx.preference.Preference
-import com.dinuscxj.progressbar.CircleProgressBar
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.activites.BaseAnimActivity
 import com.zacharee1.systemuituner.fragments.AnimFragment
@@ -19,6 +18,7 @@ import com.zacharee1.systemuituner.misc.AppInfo
 import com.zacharee1.systemuituner.util.forEachPreference
 import com.zacharee1.systemuituner.util.getAnimTransaction
 import com.zacharee1.systemuituner.util.getInstalledApps
+import kotlinx.android.synthetic.main.immersive_select.*
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import java.util.*
@@ -31,8 +31,6 @@ class ImmersiveSelectActivity : BaseAnimActivity() {
         setContentView(R.layout.immersive_select)
         setTitle(R.string.select_apps)
 
-        val bar = findViewById<CircleProgressBar>(R.id.app_load_progress)
-
         GlobalScope.launch {
             val it = getInstalledApps()
             val appMap = TreeMap<String, AppInfo>()
@@ -44,7 +42,7 @@ class ImmersiveSelectActivity : BaseAnimActivity() {
                             info.packageName,
                             null,
                             info.loadIcon(packageManager))
-                    runOnUiThread { bar.progress = 100 * (it.indexOf(info) + 1) / it.size }
+                    runOnUiThread { app_load_progress.progress = (it.indexOf(info) + 1f) / it.size }
                 }
             }
 
