@@ -13,9 +13,9 @@ import com.zacharee1.systemuituner.util.changeBlacklist
 import com.zacharee1.systemuituner.util.hasUsage
 import com.zacharee1.systemuituner.util.runCommand
 import com.zacharee1.systemuituner.util.updateBlacklistSwitches
-import io.reactivex.Observable
-import io.reactivex.disposables.Disposable
-import io.reactivex.schedulers.Schedulers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.launch
 import java.util.*
 import java.util.regex.Pattern
 
@@ -24,7 +24,7 @@ class AutoFragment : AnimFragment() {
 
     private val prefs = TreeMap<String, Preference>()
 
-    private lateinit var observable: Disposable
+    private var job: Job? = null
 
     override fun onSetTitle() = resources.getString(R.string.auto_detect)
 
@@ -41,7 +41,7 @@ class AutoFragment : AnimFragment() {
 
         Thread {
             try {
-                observable.dispose()
+                job?.cancel()
             } catch (e: Exception) {}
         }.start()
 
@@ -61,85 +61,84 @@ class AutoFragment : AnimFragment() {
 
         LayoutInflater.from(activity).inflate(R.layout.indet_circle_prog, content, true)
 
-        observable = Observable.fromCallable { runCommand("dumpsys activity service com.android.systemui/.SystemUIService") }
-                .subscribeOn(Schedulers.io())
-                .observeOn(Schedulers.io())
-                .subscribe { dump ->
-                    dump?.let {
-                        val index = dump.indexOf("icon slots")
-                        if (index != -1) {
-                            val icons = dump.substring(index)
-                            val ico = ArrayList(icons.split("\n"))
-                            ico.removeAt(0)
-                            for (slot in ico) {
-                                if (slot.startsWith("         ") || slot.startsWith("        ")) {
-                                    val p = Pattern.compile("\\((.*?)\\)")
-                                    val m = p.matcher(slot)
+        job = GlobalScope.launch {
+            val dump =runCommand("dumpsys activity service com.android.systemui/.SystemUIService")
 
-                                    while (!m.hitEnd()) {
-                                        if (activity == null) return@subscribe
-                                        if (m.find()) {
-                                            val result = m.group().replace("(", "").replace(")", "")
+            dump?.let {
+                val index = dump.indexOf("icon slots")
+                if (index != -1) {
+                    val icons = dump.substring(index)
+                    val ico = ArrayList(icons.split("\n"))
+                    ico.removeAt(0)
+                    for (slot in ico) {
+                        if (slot.startsWith("         ") || slot.startsWith("        ")) {
+                            val p = Pattern.compile("\\((.*?)\\)")
+                            val m = p.matcher(slot)
 
-                                            val preference = SwitchPreference(context)
-                                            preference.title = result
-                                            preference.key = result
-                                            preference.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { _, o ->
-                                                context?.changeBlacklist(preference.key, o.toString().toBoolean())
-                                                true
-                                            }
+                            while (!m.hitEnd()) {
+                                if (activity == null) return@launch
+                                if (m.find()) {
+                                    val result = m.group().replace("(", "").replace(")", "")
 
-                                            prefs[preference.key] = preference
-                                            break
-                                        }
+                                    val preference = SwitchPreference(context)
+                                    preference.title = result
+                                    preference.key = result
+                                    preference.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { _, o ->
+                                        context?.changeBlacklist(preference.key, o.toString().toBoolean())
+                                        true
                                     }
-                                } else
+
+                                    prefs[preference.key] = preference
                                     break
+                                }
                             }
-                        }
-
-                        val p = Pattern.compile("slot=(.+?)\\s")
-                        val m = p.matcher(dump)
-                        var find = ""
-
-                        while (!m.hitEnd()) if (m.find()) find = find + m.group() + "\n"
-
-                        val slots = ArrayList(find.split("\n"))
-                        for (slot in slots) {
-                            val slotNew = slot.replace("slot=", "").replace(" ", "")
-
-                            val preference = SwitchPreference(context)
-                            preference.title = slotNew
-                            preference.key = slotNew
-                            preference.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { _, o ->
-                                context?.changeBlacklist(preference.key, o.toString().toBoolean())
-                                true
-                            }
-
-                            if (!preference.key.isBlank() && !preference.title.toString().isBlank()) {
-                                prefs[preference.key] = preference
-                            }
-                        }
-
-                        if (prefs.values.isNotEmpty()) {
-                            for (preference in prefs.values) {
-                                activity!!.runOnUiThread { preferenceScreen.addPreference(preference) }
-                            }
-                        } else {
-                            val notSupported = Preference(activity)
-                            notSupported.setSummary(R.string.feature_not_supported)
-                            notSupported.isSelectable = false
-                            activity!!.runOnUiThread { preferenceScreen.addPreference(notSupported) }
-                        }
-
-                        activity?.runOnUiThread {
-                            updateBlacklistSwitches()
-                        }
-                    }
-
-                    activity?.runOnUiThread {
-                        content?.removeView(content.findViewById(R.id.progress))
+                        } else
+                            break
                     }
                 }
+
+                val p = Pattern.compile("slot=(.+?)\\s")
+                val m = p.matcher(dump)
+                var find = ""
+
+                while (!m.hitEnd()) if (m.find()) find = find + m.group() + "\n"
+
+                val slots = ArrayList(find.split("\n"))
+                for (slot in slots) {
+                    val slotNew = slot.replace("slot=", "").replace(" ", "")
+
+                    val preference = SwitchPreference(context)
+                    preference.title = slotNew
+                    preference.key = slotNew
+                    preference.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { _, o ->
+                        context?.changeBlacklist(preference.key, o.toString().toBoolean())
+                        true
+                    }
+
+                    if (!preference.key.isBlank() && !preference.title.toString().isBlank()) {
+                        prefs[preference.key] = preference
+                    }
+                }
+
+                if (prefs.values.isNotEmpty()) {
+                    for (preference in prefs.values) {
+                        activity!!.runOnUiThread { preferenceScreen.addPreference(preference) }
+                    }
+                } else {
+                    val notSupported = Preference(activity)
+                    notSupported.setSummary(R.string.feature_not_supported)
+                    notSupported.isSelectable = false
+                    activity!!.runOnUiThread { preferenceScreen.addPreference(notSupported) }
+                }
+
+                activity?.runOnUiThread {
+                    updateBlacklistSwitches()
+                }
+            }
+
+            activity?.runOnUiThread {
+                content?.removeView(content.findViewById(R.id.progress))
+            }
+        }
     }
 }

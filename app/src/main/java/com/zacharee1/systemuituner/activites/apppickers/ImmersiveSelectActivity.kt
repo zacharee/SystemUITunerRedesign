@@ -19,8 +19,8 @@ import com.zacharee1.systemuituner.misc.AppInfo
 import com.zacharee1.systemuituner.util.forEachPreference
 import com.zacharee1.systemuituner.util.getAnimTransaction
 import com.zacharee1.systemuituner.util.getInstalledApps
-import io.reactivex.Observable
-import io.reactivex.schedulers.Schedulers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 import java.util.*
 
 class ImmersiveSelectActivity : BaseAnimActivity() {
@@ -33,36 +33,34 @@ class ImmersiveSelectActivity : BaseAnimActivity() {
 
         val bar = findViewById<CircleProgressBar>(R.id.app_load_progress)
 
-        Observable.fromCallable { getInstalledApps() }
-                .subscribeOn(Schedulers.io())
-                .observeOn(Schedulers.io())
-                .subscribe {
-                    val appMap = TreeMap<String, AppInfo>()
+        GlobalScope.launch {
+            val it = getInstalledApps()
+            val appMap = TreeMap<String, AppInfo>()
 
-                    it.forEach { info ->
-                        val activities = packageManager.getPackageInfo(info.packageName, PackageManager.GET_ACTIVITIES).activities
-                        if (activities?.isNotEmpty() == true) {
-                            appMap[info.loadLabel(packageManager).toString()] = AppInfo(info.loadLabel(packageManager).toString(),
-                                    info.packageName,
-                                    null,
-                                    info.loadIcon(packageManager))
-                            runOnUiThread { bar.progress = 100 * (it.indexOf(info) + 1) / it.size }
-                        }
-                    }
-
-                    runOnUiThread {
-                        val fragment = SelectorFragment.newInstance()
-                        fragment.setInfo(appMap)
-
-                        (findViewById<View>(R.id.content_main) as LinearLayout).removeAllViews()
-                        try {
-                            supportFragmentManager.getAnimTransaction().replace(R.id.content_main, fragment).commit()
-                        } catch (e: Exception) {
-                        }
-
-                        setUpActionBar(fragment)
-                    }
+            it.forEach { info ->
+                val activities = packageManager.getPackageInfo(info.packageName, PackageManager.GET_ACTIVITIES).activities
+                if (activities?.isNotEmpty() == true) {
+                    appMap[info.loadLabel(packageManager).toString()] = AppInfo(info.loadLabel(packageManager).toString(),
+                            info.packageName,
+                            null,
+                            info.loadIcon(packageManager))
+                    runOnUiThread { bar.progress = 100 * (it.indexOf(info) + 1) / it.size }
                 }
+            }
+
+            runOnUiThread {
+                val fragment = SelectorFragment.newInstance()
+                fragment.setInfo(appMap)
+
+                (findViewById<View>(R.id.content_main) as LinearLayout).removeAllViews()
+                try {
+                    supportFragmentManager.getAnimTransaction().replace(R.id.content_main, fragment).commit()
+                } catch (e: Exception) {
+                }
+
+                setUpActionBar(fragment)
+            }
+        }
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
