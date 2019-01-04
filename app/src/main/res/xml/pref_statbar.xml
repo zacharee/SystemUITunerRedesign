@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.zacharee1.systemuituner.prefs.StatBarWarnPref />
+
+    <Preference
+        android:key="auto_detect"
+        android:title="@string/auto_detect"
+        android:summary="@string/auto_detect_summary"
+        android:icon="@drawable/ic_help_outline_black_24dp" />
+
     <tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory
-        android:title="@string/status_bar">
-        <com.zacharee1.systemuituner.prefs.StatBarWarnPref />
+        android:title="@string/backup_and_restore">
         <Preference
             android:key="reset_blacklist"
             android:title="@string/reset_blacklist"
@@ -15,11 +22,6 @@
             android:key="restore_blacklist"
             android:title="@string/restore_blacklist"
             android:icon="@drawable/ic_restore_black_24dp"/>
-        <Preference
-            android:key="auto_detect"
-            android:title="@string/auto_detect"
-            android:summary="@string/auto_detect_summary"
-            android:icon="@drawable/ic_help_outline_black_24dp" />
     </tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory>
 
     <tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory

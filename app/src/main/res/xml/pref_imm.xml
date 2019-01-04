@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.zacharee1.systemuituner.prefs.RedTextPref
+        android:summary="@string/imm_warn" />
+
     <tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory
         android:title="@string/immersive_mode"
         android:key="imm_boxes">
@@ -23,9 +26,6 @@
         <CheckBoxPreference
             android:title="@string/pre_confirms"
             android:key="immersive.preconfirms" />
-
-        <com.zacharee1.systemuituner.prefs.RedTextPref
-            android:summary="@string/imm_warn" />
 
     </tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory>
 

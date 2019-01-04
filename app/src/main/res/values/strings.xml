@@ -143,6 +143,7 @@
     <string name="battery">Battery</string>
     <string name="back_up_blacklist">Back Up Blacklist</string>
     <string name="restore_blacklist">Restore Blacklist</string>
+    <string name="backup_and_restore">Backup &amp; Restore</string>
     <string name="quick_settings">Quick Settings</string>
     <string name="demo_mode">Demo Mode</string>
     <string name="touchwiz" translatable="false">TouchWiz</string>
@@ -244,6 +245,7 @@
     <string name="high_brightness_warning">High Brightness Warning</string>
     <string name="grant">Grant</string>
     <string name="attention">Attention!</string>
+    <string name="options">Options</string>
 
     <!--Descriptions-->
     <string name="fancy_pulldown_notice">Toggling this option off can cause issues after a reboot. Manually toggle this option on and off after a reboot, or enable Safe Mode.</string>

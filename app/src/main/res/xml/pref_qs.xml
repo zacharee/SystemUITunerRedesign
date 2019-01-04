@@ -6,12 +6,12 @@
         android:summary="@string/safe_mode_inactive_on_current_page"
         />
 
-    <tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory
+    <PreferenceCategory
         android:title="QS Layout">
         <Preference
             android:title="Launch Editor"
             android:key="launch_editor" />
-    </tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory>
+    </PreferenceCategory>
 
     <tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory
         android:title="@string/general"
