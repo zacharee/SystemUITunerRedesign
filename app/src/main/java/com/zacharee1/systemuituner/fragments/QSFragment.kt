@@ -7,13 +7,13 @@ import android.provider.Settings
 import androidx.preference.Preference
 import androidx.preference.PreferenceCategory
 import androidx.preference.SwitchPreference
-import com.pavelsikun.seekbarpreference.SeekBarPreferenceCompat
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.activites.QuickSettingsLayoutEditor
 import com.zacharee1.systemuituner.util.PrefManager.Companion.QQS_COUNT
 import com.zacharee1.systemuituner.util.forEachPreference
 import com.zacharee1.systemuituner.util.prefs
 import com.zacharee1.systemuituner.util.writeSecure
+import tk.zwander.seekbarpreference.SeekBarPreference
 
 class QSFragment : AnimFragment() {
     override val prefsRes = R.xml.pref_qs
@@ -86,14 +86,14 @@ class QSFragment : AnimFragment() {
 
     private fun setSliderState() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            val pref = findPreference(QQS_COUNT) as SeekBarPreferenceCompat //find the SliderPreference
+            val pref = findPreference(QQS_COUNT) as SeekBarPreference //find the SliderPreference
             //            pref.set<in(1);
             pref.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { _, o ->
                 context?.writeSecure(QQS_COUNT, o.toString().toFloat().toInt()) //write new value to Settings if user presses OK
                 true
             }
 
-            pref.currentValue = Settings.Secure.getInt(context?.contentResolver, QQS_COUNT, 5) //set the progress/value from Settings
+            pref.progress = Settings.Secure.getInt(context?.contentResolver, QQS_COUNT, 5) //set the progress/value from Settings
         } else {
             val category = findPreference(COUNT_CATEGORY) as PreferenceCategory
             category.isEnabled = false

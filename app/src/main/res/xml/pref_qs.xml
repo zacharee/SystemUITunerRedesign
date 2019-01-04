@@ -29,9 +29,9 @@
         android:title="@string/qs_header_tile_count"
         android:key="qqs_count_category">
 
-        <com.pavelsikun.seekbarpreference.SeekBarPreferenceCompat
-            app:msbp_minValue="1"
-            app:msbp_maxValue="20"
+        <tk.zwander.seekbarpreference.SeekBarPreference
+            app:minValue="1"
+            app:maxValue="20"
             android:defaultValue="5"
             android:key="sysui_qqs_count"
             android:title="@string/qs_header_tile_count" />

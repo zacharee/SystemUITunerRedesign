@@ -9,7 +9,6 @@ import android.view.WindowManager
 import androidx.preference.Preference
 import androidx.preference.SwitchPreference
 import com.jaredrummler.android.colorpicker.ColorPreferenceCompat
-import com.pavelsikun.seekbarpreference.SeekBarPreferenceCompat
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.util.PrefManager.Companion.HIGH_BRIGHTNESS_WARNING
 import com.zacharee1.systemuituner.util.PrefManager.Companion.NAVBAR_COLOR
@@ -22,6 +21,7 @@ import com.zacharee1.systemuituner.util.prefs
 import com.zacharee1.systemuituner.util.writeGlobal
 import com.zacharee1.systemuituner.util.writeSecure
 import com.zacharee1.systemuituner.util.writeSystem
+import tk.zwander.seekbarpreference.SeekBarPreference
 
 class TWFragment : StatbarFragment() {
     private var origRowCol = false
@@ -57,10 +57,10 @@ class TWFragment : StatbarFragment() {
         val rotation = (activity?.getSystemService(Context.WINDOW_SERVICE) as WindowManager).defaultDisplay.rotation
         val landscape = rotation == Surface.ROTATION_180 || rotation == Surface.ROTATION_270
 
-        val rows = findPreference(TILE_ROW) as SeekBarPreferenceCompat
-        val columns = findPreference(TILE_COLUMN) as SeekBarPreferenceCompat
-        val rowsLandscape = findPreference(TILE_ROW_LANDSCAPE) as SeekBarPreferenceCompat
-        val columnsLandscape = findPreference(TILE_COLUMN_LANDSCAPE) as SeekBarPreferenceCompat
+        val rows = findPreference(TILE_ROW) as SeekBarPreference
+        val columns = findPreference(TILE_COLUMN) as SeekBarPreference
+        val rowsLandscape = findPreference(TILE_ROW_LANDSCAPE) as SeekBarPreference
+        val columnsLandscape = findPreference(TILE_COLUMN_LANDSCAPE) as SeekBarPreference
 
         val listener = Preference.OnPreferenceChangeListener { pref, value ->
             when (pref.key) {

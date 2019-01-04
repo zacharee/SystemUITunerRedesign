@@ -9,11 +9,11 @@ import androidx.preference.EditTextPreference
 import androidx.preference.Preference
 import androidx.preference.PreferenceCategory
 import androidx.preference.SwitchPreference
-import com.pavelsikun.seekbarpreference.SeekBarPreferenceCompat
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.util.*
 import com.zacharee1.systemuituner.util.PrefManager.Companion.AUDIO_SAFE
 import com.zacharee1.systemuituner.util.PrefManager.Companion.NOTIFICATION_SNOOZE_OPTIONS
+import tk.zwander.seekbarpreference.SeekBarPreference
 import java.util.*
 
 class MiscFragment : AnimFragment() {
@@ -233,17 +233,17 @@ class MiscFragment : AnimFragment() {
     }
 
     private fun setUpAnimationScales() {
-        val duration = findPreference(Settings.Global.ANIMATOR_DURATION_SCALE) as SeekBarPreferenceCompat
-        val transition = findPreference(Settings.Global.TRANSITION_ANIMATION_SCALE) as SeekBarPreferenceCompat
-        val window = findPreference(Settings.Global.WINDOW_ANIMATION_SCALE) as SeekBarPreferenceCompat
+        val duration = findPreference(Settings.Global.ANIMATOR_DURATION_SCALE) as SeekBarPreference
+        val transition = findPreference(Settings.Global.TRANSITION_ANIMATION_SCALE) as SeekBarPreference
+        val window = findPreference(Settings.Global.WINDOW_ANIMATION_SCALE) as SeekBarPreference
 
         val durScale = Settings.Global.getFloat(activity?.contentResolver, duration.key, 1.0f)
         val tranScale = Settings.Global.getFloat(activity?.contentResolver, transition.key, 1.0f)
         val winScale = Settings.Global.getFloat(activity?.contentResolver, window.key, 1.0f)
 
-        duration.currentScaledValue = durScale
-        transition.currentScaledValue = tranScale
-        window.currentScaledValue = winScale
+        duration.scaledProgress = durScale
+        transition.scaledProgress = tranScale
+        window.scaledProgress = winScale
 
         val listener = Preference.OnPreferenceChangeListener { preference, o ->
             context?.writeGlobal(preference.key, o.toString())

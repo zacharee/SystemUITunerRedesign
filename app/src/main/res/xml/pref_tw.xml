@@ -8,32 +8,32 @@
 
     <PreferenceCategory
         android:title="@string/quick_settings">
-        <com.pavelsikun.seekbarpreference.SeekBarPreferenceCompat
+        <tk.zwander.seekbarpreference.SeekBarPreference
             android:title="@string/qs_row_count"
             android:key="qs_tile_row"
-            app:msbp_minValue="1"
-            app:msbp_maxValue="10"
+            app:minValue="1"
+            app:maxValue="10"
             android:defaultValue="3"
             />
-        <com.pavelsikun.seekbarpreference.SeekBarPreferenceCompat
+        <tk.zwander.seekbarpreference.SeekBarPreference
             android:title="@string/qs_column_count"
             android:key="qs_tile_column"
-            app:msbp_minValue="2"
-            app:msbp_maxValue="10"
+            app:minValue="2"
+            app:maxValue="10"
             android:defaultValue="3"
             />
-        <com.pavelsikun.seekbarpreference.SeekBarPreferenceCompat
+        <tk.zwander.seekbarpreference.SeekBarPreference
             android:title="@string/qs_row_count_landscape"
             android:key="qs_tile_row_landscape"
-            app:msbp_minValue="1"
-            app:msbp_maxValue="3"
+            app:minValue="1"
+            app:maxValue="3"
             android:defaultValue="2"
             />
-        <com.pavelsikun.seekbarpreference.SeekBarPreferenceCompat
+        <tk.zwander.seekbarpreference.SeekBarPreference
             android:title="@string/qs_column_count_landscape"
             android:key="qs_tile_column_landscape"
-            app:msbp_minValue="2"
-            app:msbp_maxValue="12"
+            app:minValue="2"
+            app:maxValue="12"
             android:defaultValue="8"
             />
         <com.zacharee1.systemuituner.prefs.RedTextPref

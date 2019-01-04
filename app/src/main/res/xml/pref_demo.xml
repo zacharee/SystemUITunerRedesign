@@ -17,25 +17,25 @@
         <com.zacharee1.systemuituner.prefs.TimePreference
             android:title="@string/select_time"
             android:key="selected_time"/>
-        <com.pavelsikun.seekbarpreference.SeekBarPreferenceCompat
-            app:msbp_maxValue="100"
+        <tk.zwander.seekbarpreference.SeekBarPreference
+            app:maxValue="100"
             android:defaultValue="50"
             android:title="@string/select_battery_level"
             android:key="selected_battery_level"/>
-        <com.pavelsikun.seekbarpreference.SeekBarPreferenceCompat
-            app:msbp_maxValue="3"
+        <tk.zwander.seekbarpreference.SeekBarPreference
+            app:maxValue="3"
             android:defaultValue="3"
             android:title="@string/wifi_strength"
             android:key="wifi_strength"/>
-        <com.pavelsikun.seekbarpreference.SeekBarPreferenceCompat
+        <tk.zwander.seekbarpreference.SeekBarPreference
             android:defaultValue="4"
-            app:msbp_maxValue="4"
+            app:maxValue="4"
             android:title="@string/mobile_strength"
             android:key="selected_mobile_strength"/>
-        <com.pavelsikun.seekbarpreference.SeekBarPreferenceCompat
+        <tk.zwander.seekbarpreference.SeekBarPreference
             android:defaultValue="1"
-            app:msbp_minValue="1"
-            app:msbp_maxValue="8"
+            app:minValue="1"
+            app:maxValue="8"
             android:title="@string/sim_count"
             android:key="sim_count" />
         <ListPreference
