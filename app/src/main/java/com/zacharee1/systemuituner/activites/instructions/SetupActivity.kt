@@ -21,7 +21,7 @@ import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.util.checkPermissions
 import com.zacharee1.systemuituner.util.pxToDp
 import com.zacharee1.systemuituner.util.startUp
-import kotlinx.android.synthetic.main.permissions_fragment.*
+import kotlinx.android.synthetic.main.permissions_fragment.view.*
 
 class SetupActivity : AppIntro2() {
     companion object {
@@ -56,15 +56,16 @@ class SetupActivity : AppIntro2() {
         if (intent != null) {
             permissionsNeeded = ArrayList(intent.getStringArrayListExtra(PERMISSION_NEEDED)?.filterNot { checkCallingOrSelfPermission(it) == PackageManager.PERMISSION_GRANTED } ?: return)
 
-            addSlide(PermsFragment.newInstance(
+            val frag = PermsFragment.newInstance(
                     resources.getString(R.string.permissions),
                     resources.getString(R.string.adb_setup),
                     permissionsNeeded,
                     resources.getColor(R.color.intro_1, null)
-            ))
-        }
+            )
 
-        adb_instructions.setOnClickListener { launchInstructions() }
+            addSlide(frag)
+
+        }
     }
 
     override fun onDonePressed(currentFragment: Fragment?) {
@@ -105,33 +106,23 @@ class SetupActivity : AppIntro2() {
         finish()
     }
 
-    private fun launchInstructions() {
-        if (permissionsNeeded == null) return
-
-        val intent = Intent(this, InstructionsActivity::class.java)
-        intent.putStringArrayListExtra(InstructionsActivity.ARG_COMMANDS, permissionsNeeded)
-        startActivity(intent)
-    }
-
     class PermsFragment : Fragment() {
-        private var mView: View? = null
-
         @SuppressLint("SetTextI18n")
         override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
             val args = arguments
 
-            mView = inflater.inflate(R.layout.permissions_fragment, container, false)
+            val view = inflater.inflate(R.layout.permissions_fragment, container, false)
 
-            mView!!.setBackgroundColor(args!!.getInt("color"))
-            mView!!.findViewById<View>(R.id.adb_instructions).backgroundTintList = ColorStateList.valueOf(args.getInt("color"))
+            view.setBackgroundColor(args!!.getInt("color"))
+            view.findViewById<View>(R.id.adb_instructions).backgroundTintList = ColorStateList.valueOf(args.getInt("color"))
 
-            val title = mView!!.findViewById<TextView>(R.id.title)
+            val title = view.findViewById<TextView>(R.id.title)
             title.text = args.getString("title", "")
 
-            val desc = mView!!.findViewById<TextView>(R.id.description)
+            val desc = view.findViewById<TextView>(R.id.description)
             desc.text = args.getString("description", "")
 
-            val text = mView!!.findViewById<LinearLayout>(R.id.perms_layout)
+            val text = view.findViewById<LinearLayout>(R.id.perms_layout)
             val perms = args.getStringArrayList("permissions")
 
             if (perms != null) {
@@ -152,9 +143,15 @@ class SetupActivity : AppIntro2() {
 
                     text.addView(textView)
                 }
+
+                view.adb_instructions.setOnClickListener {
+                    val intent = Intent(activity, InstructionsActivity::class.java)
+                    intent.putStringArrayListExtra(InstructionsActivity.ARG_COMMANDS, perms)
+                    startActivity(intent)
+                }
             }
 
-            return mView
+            return view
         }
 
         companion object {
