@@ -257,7 +257,11 @@
     <string name="notifs_snooze_desc">&#160;
     V systému Android 8.1 a novějších můžete nastavit vlastní časy pro odložení oznámení. Tyto hodnoty se při restartování obnoví, takže povolte bezpečný režim, pokud chcete, aby přetrvávaly napříč napájecími cykly.\n\n&#160;
     Pomocí níže uvedených možností nastavíte různé časy odložení. \"Výchozí\" nastavuje čas, ve kterém Android používá výchozí čas odložení.
-Dalšími položkami jsou časy odložení, které můžete vybrat.</string>
+Dalšími položkami jsou časy odložení, které můžete vybrat.
+    
+
+
+    </string>
     <string name="custom_settings_input_desc">Tato pole umožňují zadat vlastní nastavení.</string>
     <string name="custom_settings_read_desc">Tato pole umožňují přečíst hodnotu zadaného klíče.</string>
     <string name="custom_settings_warning">Buďte opatrní, co zde děláte! Pokud zadáte nesprávnou hodnotu, mohlo by dojít k selhání, bootloopu nebo horšímu!</string>
@@ -311,7 +315,7 @@ Dalšími položkami jsou časy odložení, které můžete vybrat.</string>
     <string name="cd_further"><![CDATA[- Ujistěte se, že složka <b>cd</b> obsahuje spustitelný soubor ADB. Pokud tomu tak není, <b>cd</b> přesuňte o jednu úroveň dále.]]></string>
     <string name="download_adb_mac"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-darwin.zip">Stáhnout ADB ZIP pro macOS.</a>]]></string>
     <string name="open_terminal">3. Otevřete terminál.</string>
-    <string name="cd_mac"><![CDATA[4. Zadejte <b>cd /path/to/extracted/folder/</b> abyste se dostali do složky, kam jste extrahovali ADB. Pro příklad <b>cd /usere/Zachary/desktop/platform-tools/</b>.]]></string>
+    <string name="cd_mac"><![CDATA[4. Zadejte <b>cd /path/to/extracted/folder/</b> abyste se dostali do složky, kam jste extrahovali ADB. Pro příklad <b>cd /users/Zachary/desktop/platform-tools/</b>.]]></string>
     <string name="make_sure_adb_installed">1. Ujistěte se, že je ADB nainstalováno:</string>
     <string name="download_adb_linux"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-linux.zip">Stáhnout ADB ZIP pro Linux.</a>]]></string>
     <string name="cd_linux"><![CDATA[4. Zadejte <b>cd /path/to/extracted/folder/</b> abyste se dostali do složky, kam jste extrahovali ADB. Pro příklad <b>cd /home/Zachary/desktop/platform-tools/</b>.]]></string>
