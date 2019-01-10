@@ -4,7 +4,12 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.content.SharedPreferences
 import androidx.preference.PreferenceManager
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 import com.zacharee1.systemuituner.handlers.ImmersiveHandler
+import com.zacharee1.systemuituner.misc.CustomBlacklistInfo
+import java.util.*
+import kotlin.collections.ArrayList
 
 class PrefManager private constructor(private val context: Context) {
     companion object {
@@ -24,6 +29,7 @@ class PrefManager private constructor(private val context: Context) {
         const val APP_IMMERSIVE = "app_immersive"
         const val BATTERY_CHARGING = "battery_charging"
         const val BLUETOOTH_ICON = "bluetooth_icon"
+        const val CUSTOM_BLACKLIST_ITEMS = "custom_blacklist_items"
         const val DARK_MODE = "dark_mode"
         const val ERI_DEMO = "eri_demo"
         const val FIRST_START = "first_start"
@@ -234,6 +240,20 @@ class PrefManager private constructor(private val context: Context) {
             putStringSet(IMMERSIVE_APPS, value)
         }
 
+    /**
+     * Other
+     */
+    var customBlacklistItems: ArrayList<CustomBlacklistInfo>
+        get() {
+            return Gson().fromJson<ArrayList<CustomBlacklistInfo>>(
+                    getString(CUSTOM_BLACKLIST_ITEMS) ?: return ArrayList(),
+                    object : TypeToken<ArrayList<CustomBlacklistInfo>>() {}.type
+            )
+        }
+        set(value) {
+            putString(CUSTOM_BLACKLIST_ITEMS, Gson().toJson(value))
+        }
+
 
     val prefs: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(context)
 
@@ -284,5 +304,16 @@ class PrefManager private constructor(private val context: Context) {
 
     fun unregisterOnSharedPreferenceChangeListener(listener: SharedPreferences.OnSharedPreferenceChangeListener) {
         prefs.unregisterOnSharedPreferenceChangeListener(listener)
+    }
+
+    fun addCustomBlacklistItem(info: CustomBlacklistInfo) {
+        val items = customBlacklistItems
+
+        if (!items.contains(info))
+            customBlacklistItems = items.apply { add(info) }
+    }
+
+    fun removeCustomBlacklistItem(info: CustomBlacklistInfo) {
+        customBlacklistItems = customBlacklistItems.apply { remove(info) }
     }
 }

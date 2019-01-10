@@ -12,8 +12,9 @@ import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.util.writeGlobal
 import com.zacharee1.systemuituner.util.writeSecure
 import com.zacharee1.systemuituner.util.writeSystem
+import kotlinx.android.synthetic.main.custom_input_preference_layout.view.*
 
-class CustomInputPreference : DialogPreference {
+open class CustomInputPreference : DialogPreference {
     companion object {
         const val UNDEFINED = -1
         const val GLOBAL = 0
@@ -46,6 +47,12 @@ class CustomInputPreference : DialogPreference {
         fragment = "${context.packageName}/${Fragment::class.java.name}"
     }
 
+    override fun setTitle(title: CharSequence?) {
+        super.setTitle(title)
+
+        dialogTitle = title
+    }
+
     private fun init(attrs: AttributeSet?, defStyleAttr: Int?, defStyleRes: Int?) {
         if (attrs != null) {
             val array = context.theme.obtainStyledAttributes(attrs,
@@ -69,7 +76,7 @@ class CustomInputPreference : DialogPreference {
         extras.putString(EXTRA_VALUE, getPersistedString(null))
     }
 
-    fun handleSave(keyContent: String?, valueText: String?) {
+    open fun handleSave(keyContent: String?, valueText: String?) {
         var valueContent = valueText
         if (valueContent != null && (valueContent.isEmpty() || valueContent.isBlank())) valueContent = null
 
@@ -85,7 +92,7 @@ class CustomInputPreference : DialogPreference {
 
     fun getPersistedString() = preferenceDataStore?.getString(key, null)
 
-    class Fragment : PreferenceDialogFragmentCompat() {
+    open class Fragment : PreferenceDialogFragmentCompat() {
         companion object {
             fun newInstance(key: String): Fragment {
                 val frag = Fragment()
@@ -94,20 +101,24 @@ class CustomInputPreference : DialogPreference {
             }
         }
 
-        private val layout by lazy { LayoutInflater.from(context).inflate(R.layout.custom_input_preference_layout, null, false) }
-        private val keyBox by lazy { layout.findViewById<EditText>(R.id.key) }
-        private val valueBox by lazy { layout.findViewById<EditText>(R.id.value) }
+        val layout: View by lazy { LayoutInflater.from(context)
+                .inflate(R.layout.custom_input_preference_layout, null, false) }
+        val keyBox: EditText by lazy { layout.findViewById<EditText>(R.id.key) }
+        val valueBox: EditText by lazy { layout.findViewById<EditText>(R.id.value) }
 
-        private var keyText: String?
-            get() = keyBox.text.toString()
+        var keyText: String?
+            get() = keyBox.text?.toString()
             set(value) {
                 keyBox.setText(value)
             }
-        private var valueText: String?
-            get() = valueBox.text.toString()
+        var valueText: String?
+            get() = valueBox.text?.toString()
             set(value) {
                 valueBox.setText(value)
             }
+
+        open val keyHint by lazy { resources.getString(R.string.key) }
+        open val valueHint by lazy { resources.getString(R.string.value_plaintext) }
 
         override fun onCreateDialogView(context: Context?): View {
             update((preference as CustomInputPreference).getPersistedString())
@@ -122,13 +133,18 @@ class CustomInputPreference : DialogPreference {
             }
         }
 
-        private fun update(value: String?) {
-            val split = value?.split(SEPARATOR)
+        override fun onBindDialogView(view: View) {
+            super.onBindDialogView(view)
 
-            if (split != null) {
-                keyText = split[0]
-                valueText = if (split[1] == "null") null else split[1]
-            }
+            view.key_holder.hint = keyHint
+            view.value_holder.hint = valueHint
+        }
+
+        private fun update(value: String?) {
+            val split = value?.split(SEPARATOR) ?: return
+
+            keyText = split[0]
+            valueText = if (split[1] == "null") null else split[1]
         }
     }
 }

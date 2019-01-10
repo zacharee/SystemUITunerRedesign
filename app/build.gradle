@@ -92,6 +92,7 @@ dependencies {
     implementation 'com.joaomgcd:taskerpluginlibrary:0.1'
     implementation 'com.droidninja:filepicker:2.2.0'
     implementation 'com.github.topjohnwu:libsu:2.1.2'
+    implementation 'com.google.code.gson:gson:2.8.5'
 }
 
 apply plugin: 'com.google.gms.google-services'

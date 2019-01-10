@@ -221,4 +221,12 @@
 
     </tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory>
 
+    <tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory
+        android:title="@string/custom"
+        android:key="custom">
+
+        <com.zacharee1.systemuituner.prefs.AddCustomBlacklistItemPreference />
+
+    </tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory>
+
 </PreferenceScreen>

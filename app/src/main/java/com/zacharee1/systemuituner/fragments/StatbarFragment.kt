@@ -1,21 +1,27 @@
 package com.zacharee1.systemuituner.fragments
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
+import android.content.SharedPreferences
 import android.net.Uri
 import android.os.Bundle
 import android.provider.Settings
 import android.widget.Toast
 import androidx.preference.Preference
+import androidx.preference.PreferenceCategory
 import androidx.preference.SwitchPreference
 import com.zacharee1.systemuituner.R
+import com.zacharee1.systemuituner.prefs.CustomBlacklistPreference
 import com.zacharee1.systemuituner.util.*
 import java.io.BufferedReader
 import java.io.FileOutputStream
 import java.io.InputStreamReader
 import java.text.SimpleDateFormat
 import java.util.*
+import kotlin.collections.ArrayList
 
+@SuppressLint("RestrictedApi")
 open class StatbarFragment : AnimFragment() {
     companion object {
         const val RESET_BLACKLIST = "reset_blacklist"
@@ -25,10 +31,13 @@ open class StatbarFragment : AnimFragment() {
         const val ICON_BLACKLIST_BACKUP = "icon_blacklist_backup"
         const val AUTO_DETECT = "auto_detect"
         const val TOUCHWIZ = "touchwiz"
+        const val CUSTOM = "custom"
 
         const val BR_REQ = 1011
         const val BW_REQ = 1012
     }
+
+    private val customCat by lazy { findPreference(CUSTOM) as PreferenceCategory }
 
     override val prefsRes = R.xml.pref_statbar
 
@@ -40,6 +49,7 @@ open class StatbarFragment : AnimFragment() {
         preferenceListeners()
         setSwitchPreferenceStates()
         switchPreferenceListeners()
+        refreshCustomBlacklistItems()
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -56,7 +66,13 @@ open class StatbarFragment : AnimFragment() {
         super.onActivityResult(requestCode, resultCode, data)
     }
 
-    internal fun preferenceListeners() {
+    override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences?, key: String?) {
+        when (key) {
+            PrefManager.CUSTOM_BLACKLIST_ITEMS -> refreshCustomBlacklistItems()
+        }
+    }
+
+    private fun preferenceListeners() {
         if (!activity!!.checkSamsung())
             preferenceScreen.removePreference(findPreference(TOUCHWIZ))
 
@@ -162,5 +178,27 @@ open class StatbarFragment : AnimFragment() {
         stream.write(blacklist.toByteArray())
         stream.close()
         descriptor?.close()
+    }
+
+    private fun refreshCustomBlacklistItems() {
+        val toRemove = ArrayList<Preference>()
+
+        customCat.forEachPreference {
+            if (it is CustomBlacklistPreference) toRemove.add(it)
+        }
+
+        toRemove.forEach {
+            customCat.removePreference(it)
+        }
+
+        activity!!.prefs.customBlacklistItems.forEach {
+            val blPref = CustomBlacklistPreference(context!!)
+            blPref.title = it.name
+            blPref.key = it.key
+
+            customCat.addPreference(blPref)
+        }
+
+        switchPreferenceListeners()
     }
 }

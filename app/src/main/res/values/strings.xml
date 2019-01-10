@@ -246,6 +246,10 @@
     <string name="grant">Grant</string>
     <string name="attention">Attention!</string>
     <string name="options">Options</string>
+    <string name="name">Name</string>
+    <string name="key">Key</string>
+    <string name="add_item">Add Item</string>
+    <string name="are_you_sure">Are you sure?</string>
 
     <!--Descriptions-->
     <string name="fancy_pulldown_notice">Toggling this option off can cause issues after a reboot. Manually toggle this option on and off after a reboot, or enable Safe Mode.</string>
@@ -288,6 +292,7 @@
     <string name="safe_mode_needed_qs_row_col">Safe Mode must be turned on, with the Row/Column option activated, for landscape values to work.</string>
     <string name="safe_mode_inactive_on_current_page">Safe Mode is inactive on this screen! Go back to the main menu to save changes!</string>
     <string name="qs_info_marshmallow">Hold down on an icon to remove it.</string>
+    <string name="remove_custom_blacklist_item_desc">Are you sure you want to remove the %s toggle?</string>
 
     <!--Messages-->
     <string name="sorry_explain">Something went wrong while setting this toggle.</string>
