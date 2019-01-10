@@ -54,7 +54,11 @@ class AutoFragment : AnimFragment() {
     private fun verifyUsage() {
         if (activity?.hasUsage() == true) setUp()
         else {
-            SetupActivity.make(context!!, arrayListOf(Manifest.permission.DUMP, Manifest.permission.PACKAGE_USAGE_STATS))
+            SetupActivity.make(
+                    context!!,
+                    arrayListOf(Manifest.permission.DUMP,
+                            Manifest.permission.PACKAGE_USAGE_STATS)
+            )
         }
     }
 

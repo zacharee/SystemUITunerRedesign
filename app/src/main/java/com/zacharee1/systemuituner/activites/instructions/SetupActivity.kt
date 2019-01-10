@@ -54,7 +54,8 @@ class SetupActivity : AppIntro2() {
         val intent = intent
 
         if (intent != null) {
-            permissionsNeeded = ArrayList(intent.getStringArrayListExtra(PERMISSION_NEEDED)?.filterNot { checkCallingOrSelfPermission(it) == PackageManager.PERMISSION_GRANTED } ?: return)
+            permissionsNeeded = ArrayList(intent.getStringArrayListExtra(PERMISSION_NEEDED)
+                    ?.filterNot { checkCallingOrSelfPermission(it) == PackageManager.PERMISSION_GRANTED } ?: return)
 
             val frag = PermsFragment.newInstance(
                     resources.getString(R.string.permissions),
@@ -64,7 +65,6 @@ class SetupActivity : AppIntro2() {
             )
 
             addSlide(frag)
-
         }
     }
 
@@ -86,18 +86,15 @@ class SetupActivity : AppIntro2() {
                             .setTitle(R.string.missing_perms)
                             .setMessage(R.string.missing_not_required_perms_desc)
                             .setPositiveButton(R.string.yes) { _, _ ->
-                                startUp()
                                 finish()
                             }
                             .setNegativeButton(R.string.no, null)
                             .show()
                 } else {
-                    startUp()
                     finish()
                 }
             }
         } else {
-            startUp()
             finish()
         }
     }
