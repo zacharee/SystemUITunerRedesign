@@ -24,6 +24,7 @@ open class StatbarFragment : AnimFragment() {
         const val ICON_BLACKLIST = "icon_blacklist"
         const val ICON_BLACKLIST_BACKUP = "icon_blacklist_backup"
         const val AUTO_DETECT = "auto_detect"
+        const val TOUCHWIZ = "touchwiz"
 
         const val BR_REQ = 1011
         const val BW_REQ = 1012
@@ -56,6 +57,9 @@ open class StatbarFragment : AnimFragment() {
     }
 
     internal fun preferenceListeners() {
+        if (!activity!!.checkSamsung())
+            preferenceScreen.removePreference(findPreference(TOUCHWIZ))
+
         val resetBL = findPreference(RESET_BLACKLIST)
         val backupBL = findPreference(BACKUP_BLACKLIST)
         val restoreBL = findPreference(RESTORE_BLACKLIST)

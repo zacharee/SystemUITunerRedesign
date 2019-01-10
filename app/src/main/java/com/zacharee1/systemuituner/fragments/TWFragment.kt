@@ -23,7 +23,7 @@ import com.zacharee1.systemuituner.util.writeSecure
 import com.zacharee1.systemuituner.util.writeSystem
 import tk.zwander.seekbarpreference.SeekBarPreference
 
-class TWFragment : StatbarFragment() {
+class TWFragment : AnimFragment() {
     private var origRowCol = false
 
     override val prefsRes = R.xml.pref_tw
@@ -35,7 +35,6 @@ class TWFragment : StatbarFragment() {
 
         setUpQSStuff()
         setUpNavBarStuff()
-        preferenceListeners()
         switchPreferenceListeners()
     }
 
@@ -101,9 +100,7 @@ class TWFragment : StatbarFragment() {
         }
     }
 
-    override fun switchPreferenceListeners() {
-        super.switchPreferenceListeners()
-
+    private fun switchPreferenceListeners() {
         val hbw = findPreference(HIGH_BRIGHTNESS_WARNING) as SwitchPreference
         hbw.isChecked = Settings.System.getInt(activity?.contentResolver, hbw.key, 0) == 0
 
