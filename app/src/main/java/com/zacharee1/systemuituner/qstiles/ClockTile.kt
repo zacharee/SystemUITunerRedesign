@@ -28,7 +28,7 @@ class ClockTile : TileService() {
         const val FORMAT_24_NOSEC = "HH:mm"
     }
 
-    private val mReceiver: BroadcastReceiver = object : BroadcastReceiver() {
+    private val receiver: BroadcastReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context, intent: Intent) {
             setTime()
         }
@@ -46,7 +46,7 @@ class ClockTile : TileService() {
         super.onStartListening()
         shouldRun = true
 
-        registerReceiver(mReceiver, IntentFilter(Intent.ACTION_TIME_TICK))
+        registerReceiver(receiver, IntentFilter(Intent.ACTION_TIME_TICK))
         prefs.registerOnSharedPreferenceChangeListener(prefsListener)
         setTime()
 
@@ -58,7 +58,7 @@ class ClockTile : TileService() {
         shouldRun = false
         prefs.unregisterOnSharedPreferenceChangeListener(prefsListener)
         try {
-            unregisterReceiver(mReceiver)
+            unregisterReceiver(receiver)
         } catch (e: Exception) {}
         super.onStopListening()
     }
@@ -71,7 +71,7 @@ class ClockTile : TileService() {
 
     override fun onDestroy() {
         try {
-            unregisterReceiver(mReceiver)
+            unregisterReceiver(receiver)
         } catch (e: IllegalArgumentException) {
             e.printStackTrace()
         }

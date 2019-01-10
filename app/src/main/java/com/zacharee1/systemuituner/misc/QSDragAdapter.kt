@@ -188,7 +188,7 @@ class QSDragAdapter(private val context: Context) : RecyclerView.Adapter<QSDragA
         var icon = parser.icon
     }
 
-    class TileParser(var key: String, private val mContext: Context) {
+    class TileParser(var key: String, private val context: Context) {
         lateinit var icon: Drawable
         lateinit var title: String
 
@@ -205,7 +205,7 @@ class QSDragAdapter(private val context: Context) : RecyclerView.Adapter<QSDragA
         }
 
         private fun parseIntent() {
-            val drawable = mContext.resources.getDrawable(R.drawable.ic_android_black_24dp, null)
+            val drawable = context.resources.getDrawable(R.drawable.ic_android_black_24dp, null)
             drawable.setColorFilter(Color.WHITE, PorterDuff.Mode.SRC_ATOP)
 
             icon = drawable
@@ -238,15 +238,15 @@ class QSDragAdapter(private val context: Context) : RecyclerView.Adapter<QSDragA
             val component = name.split("/")[1]
 
             icon = try {
-                mContext.packageManager.getServiceInfo(ComponentName(packageName, "$packageName$component"), 0).loadIcon(mContext.packageManager)
+                context.packageManager.getServiceInfo(ComponentName(packageName, "$packageName$component"), 0).loadIcon(context.packageManager)
             } catch (e: Exception) {
                 e.printStackTrace()
-                mContext.resources.getDrawable(R.drawable.ic_android_black_24dp, null)
+                context.resources.getDrawable(R.drawable.ic_android_black_24dp, null)
             }
             icon.setColorFilter(Color.WHITE, PorterDuff.Mode.SRC_ATOP)
 
             title = try {
-                mContext.packageManager.getServiceInfo(ComponentName(packageName, "$packageName$component"), 0).loadLabel(mContext.packageManager).toString()
+                context.packageManager.getServiceInfo(ComponentName(packageName, "$packageName$component"), 0).loadLabel(context.packageManager).toString()
             } catch (e: Exception) {
                 e.printStackTrace()
                 try {
@@ -282,7 +282,7 @@ class QSDragAdapter(private val context: Context) : RecyclerView.Adapter<QSDragA
                 else -> R.drawable.ic_android_black_24dp
             }
 
-            val drawable = mContext.resources.getDrawable(iconRes, null).current.mutate()
+            val drawable = context.resources.getDrawable(iconRes, null).current.mutate()
             drawable.setColorFilter(Color.WHITE, PorterDuff.Mode.SRC_ATOP)
 
             icon = drawable

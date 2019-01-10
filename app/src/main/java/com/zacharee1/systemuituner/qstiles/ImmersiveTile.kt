@@ -13,20 +13,20 @@ import com.zacharee1.systemuituner.util.prefs
 
 @TargetApi(24)
 class ImmersiveTile : TileService() {
-    private var mObserver: ContentObserver? = null
-
-    override fun onStartListening() {
-        super.onStartListening()
-
-        mObserver = object : ContentObserver(Handler(Looper.getMainLooper())) {
+    private val observer by lazy {
+        object : ContentObserver(Handler(Looper.getMainLooper())) {
             override fun onChange(selfChange: Boolean, uri: Uri) {
                 if (uri == ImmersiveHandler.POLICY_CONTROL) {
                     setTileState()
                 }
             }
         }
+    }
 
-        contentResolver.registerContentObserver(Settings.Global.CONTENT_URI, true, mObserver!!)
+    override fun onStartListening() {
+        super.onStartListening()
+
+        contentResolver.registerContentObserver(Settings.Global.CONTENT_URI, true, observer!!)
 
         setTileState()
     }
@@ -55,7 +55,7 @@ class ImmersiveTile : TileService() {
 
     override fun onDestroy() {
         try {
-            contentResolver.unregisterContentObserver(mObserver!!)
+            contentResolver.unregisterContentObserver(observer!!)
         } catch (e: Exception) {
         }
 

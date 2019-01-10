@@ -16,8 +16,6 @@ import com.zacharee1.systemuituner.util.getAnimTransaction
 import com.zacharee1.systemuituner.util.prefs
 
 class OptionsActivity : BaseAnimActivity() {
-    private lateinit var main: MainPrefs
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -28,12 +26,10 @@ class OptionsActivity : BaseAnimActivity() {
 
         setBackClickable(!prefs.hideWelcomeScreen)
 
-        main = MainPrefs()
-
         supportFragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
         supportFragmentManager
                 ?.getAnimTransaction()
-                ?.replace(R.id.content_main, main)
+                ?.replace(R.id.content_main, MainPrefs())
                 ?.addToBackStack("main")
                 ?.commit()
     }

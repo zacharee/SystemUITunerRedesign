@@ -12,41 +12,37 @@ import com.zacharee1.systemuituner.handlers.DemoHandler
 
 @TargetApi(24)
 class DemoTile : TileService() {
-    private var mReceiver: BroadcastReceiver? = null
-    private var mDemoHandler: DemoHandler? = null
+    private val receiver = object : BroadcastReceiver() {
+        override fun onReceive(context: Context, intent: Intent) {
+            if (intent.action == "com.android.systemui.demo") {
+                val mode = intent.getStringExtra("command")
+
+                if (mode != null) {
+                    setState()
+                }
+            }
+        }
+    }
+    private val demoHandler by lazy { DemoHandler(this) }
 
     override fun onStartListening() {
         super.onStartListening()
 
-        mDemoHandler = DemoHandler(this)
-
-        mReceiver = object : BroadcastReceiver() {
-            override fun onReceive(context: Context, intent: Intent) {
-                if (intent.action == "com.android.systemui.demo") {
-                    val mode = intent.getStringExtra("command")
-
-                    if (mode != null) {
-                        setState()
-                    }
-                }
-            }
-        }
-
         val filter = IntentFilter("com.android.systemui.demo")
 
         try {
-            unregisterReceiver(mReceiver)
+            unregisterReceiver(receiver)
         } catch (e: Exception) {
         }
 
-        registerReceiver(mReceiver, filter)
+        registerReceiver(receiver, filter)
 
         setState()
     }
 
     private fun setState() {
-        if (mDemoHandler!!.isAllowed) {
-            qsTile?.state = if (mDemoHandler!!.isEnabled) Tile.STATE_ACTIVE else Tile.STATE_INACTIVE
+        if (demoHandler.isAllowed) {
+            qsTile?.state = if (demoHandler.isEnabled) Tile.STATE_ACTIVE else Tile.STATE_INACTIVE
         } else {
             qsTile?.state = Tile.STATE_UNAVAILABLE
         }
@@ -54,10 +50,10 @@ class DemoTile : TileService() {
     }
 
     override fun onClick() {
-        if (mDemoHandler!!.isEnabled) {
-            mDemoHandler!!.hideDemo()
+        if (demoHandler.isEnabled) {
+            demoHandler.hideDemo()
         } else {
-            mDemoHandler!!.showDemo()
+            demoHandler.showDemo()
         }
 
         setState()
@@ -67,7 +63,7 @@ class DemoTile : TileService() {
 
     override fun onDestroy() {
         try {
-            unregisterReceiver(mReceiver)
+            unregisterReceiver(receiver)
         } catch (e: Exception) {
         }
 

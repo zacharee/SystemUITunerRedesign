@@ -119,12 +119,10 @@ class InstructionsActivity : AppIntro2() {
             }
         }
 
-        private lateinit var selection: Button
+        private val selection by lazy { findViewById<Button>(R.id.change_selection) }
 
         override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
             val view = super.onCreateView(inflater, container, savedInstanceState)
-
-            selection = findViewById(R.id.change_selection)
 
             addSelectorButton()
             setSelectionListeners()
@@ -133,7 +131,7 @@ class InstructionsActivity : AppIntro2() {
         }
 
         private fun setSelectionListeners() {
-            selection.visibility = View.GONE
+            selection?.visibility = View.GONE
 
             val windows = findViewById<RadioButton>(R.id.choose_windows)
             val mac = findViewById<RadioButton>(R.id.choose_mac)
@@ -172,18 +170,19 @@ class InstructionsActivity : AppIntro2() {
                     }
                 }
 
-                animateChange(layout, title, R.string.on_computer, Runnable { selection.visibility = View.VISIBLE })
+                animateChange(layout, title, R.string.on_computer,
+                        Runnable { selection?.visibility = View.VISIBLE })
             }
 
-            windows.setOnClickListener(clickListener)
-            mac.setOnClickListener(clickListener)
-            ubuntu.setOnClickListener(clickListener)
-            fedora.setOnClickListener(clickListener)
-            linux.setOnClickListener(clickListener)
+            windows?.setOnClickListener(clickListener)
+            mac?.setOnClickListener(clickListener)
+            ubuntu?.setOnClickListener(clickListener)
+            fedora?.setOnClickListener(clickListener)
+            linux?.setOnClickListener(clickListener)
         }
 
         private fun addSelectorButton() {
-            selection.setOnClickListener {
+            selection?.setOnClickListener {
                 animateChange(R.layout.fragment_adb_select, R.string.choose_your_weapon, R.string.which_os, Runnable { setSelectionListeners() })
             }
         }
@@ -214,16 +213,14 @@ class InstructionsActivity : AppIntro2() {
     }
 
     open class Instructions : Fragment(), ISlideBackgroundColorHolder {
-        private var mView: View? = null
-
         private val layoutId: Int = R.layout.fragment_intro_custom_center
 
         override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-            mView = inflater.inflate(layoutId, container, false)
+            val view = inflater.inflate(layoutId, container, false)
 
-            val main = mView!!.findViewById<View>(R.id.main)
-            val title = mView!!.findViewById<TextView>(R.id.title)
-            val desc = mView!!.findViewById<TextView>(R.id.description)
+            val main = view.findViewById<View>(R.id.main)
+            val title = view.findViewById<TextView>(R.id.title)
+            val desc = view.findViewById<TextView>(R.id.description)
 
             val args = arguments
 
@@ -236,25 +233,23 @@ class InstructionsActivity : AppIntro2() {
                 setInternalLayout(group)
             }
 
-            return mView
+            return view
         }
 
-        fun <T : View> findViewById(@IdRes id: Int): T {
-            return mView!!.findViewById(id)
+        fun <T : View> findViewById(@IdRes id: Int): T? {
+            return view?.findViewById(id)
         }
 
         fun setTitle(title: String) {
-            val textView = mView?.findViewById<TextView>(R.id.title)
-            textView?.text = formatText(title)
+            findViewById<TextView>(R.id.title)?.text = formatText(title)
         }
 
         fun setDescription(description: String) {
-            val desc = mView?.findViewById<TextView>(R.id.description)
-            desc?.text = formatText(description)
+            findViewById<TextView>(R.id.description)?.text = formatText(description)
         }
 
         fun setInternalLayout(group: ViewGroup) {
-            val holder = mView?.findViewById<LinearLayout>(R.id.custom_layout_holder)
+            val holder = view?.findViewById<LinearLayout>(R.id.custom_layout_holder)
             holder?.removeAllViews()
 
             val viewChild = group.getChildAt(0) as ViewGroup
@@ -279,7 +274,7 @@ class InstructionsActivity : AppIntro2() {
         }
 
         override fun setBackgroundColor(backgroundColor: Int) {
-            mView!!.setBackgroundColor(backgroundColor)
+            view!!.setBackgroundColor(backgroundColor)
         }
 
         private fun formatText(text: String): Spanned {
