@@ -3,8 +3,8 @@ package com.zacharee1.systemuituner.prefs
 import android.content.Context
 import android.graphics.Color
 import android.util.AttributeSet
-import android.util.TypedValue
 import android.widget.ImageView
+import android.widget.LinearLayout
 import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
 import androidx.preference.PreferenceViewHolder
@@ -26,8 +26,8 @@ class CustomBlacklistPreference : SwitchPreference {
         isIconSpaceReserved = true
         isEnabled = true
         isSelectable = true
-        layoutResource = R.layout.preference_material
-        icon = ContextCompat.getDrawable(context, R.drawable.ic_add_black_24dp)
+        layoutResource = R.layout.clickable_icon_pref
+        icon = ContextCompat.getDrawable(context, R.drawable.ic_remove_circle_outline_black_24dp)
     }
 
     override fun setKey(key: String?) {
@@ -42,17 +42,7 @@ class CustomBlacklistPreference : SwitchPreference {
         holder.isDividerAllowedBelow = false
         holder.isDividerAllowedAbove = false
 
-        holder.itemView.findViewById<ImageView>(android.R.id.icon).apply {
-            isClickable = true
-            isFocusable = true
-            rotation = 45f
-
-            setColorFilter(Color.RED)
-
-            val tv = TypedValue()
-            context.theme.resolveAttribute(android.R.attr.selectableItemBackgroundBorderless, tv, true)
-            setBackgroundResource(tv.resourceId)
-
+        holder.itemView.findViewById<LinearLayout>(R.id.icon_frame).apply {
             setOnClickListener {
                 AlertDialog.Builder(context)
                         .setTitle(R.string.are_you_sure)
@@ -65,6 +55,10 @@ class CustomBlacklistPreference : SwitchPreference {
                         .setNegativeButton(R.string.no, null)
                         .show()
             }
+        }
+
+        holder.itemView.findViewById<ImageView>(android.R.id.icon).apply {
+            setColorFilter(Color.RED)
         }
     }
 }
