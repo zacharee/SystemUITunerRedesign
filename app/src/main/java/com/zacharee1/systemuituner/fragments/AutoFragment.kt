@@ -2,16 +2,17 @@ package com.zacharee1.systemuituner.fragments
 
 import android.Manifest
 import android.os.Bundle
+import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.View
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.preference.Preference
 import androidx.preference.SwitchPreference
+import com.topjohnwu.superuser.Shell
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.activites.instructions.SetupActivity
 import com.zacharee1.systemuituner.util.changeBlacklist
 import com.zacharee1.systemuituner.util.hasUsage
-import com.zacharee1.systemuituner.util.runCommand
 import com.zacharee1.systemuituner.util.updateBlacklistSwitches
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.Job
@@ -61,7 +62,10 @@ class AutoFragment : AnimFragment() {
         LayoutInflater.from(activity).inflate(R.layout.indet_circle_prog, content, true)
 
         job = GlobalScope.launch {
-            val dump =runCommand("dumpsys activity service com.android.systemui/.SystemUIService")
+            val dump = Shell.sh("dumpsys activity service com.android.systemui/.SystemUIService")
+                    .exec()
+                    .run { out.apply {addAll(err) } }
+                    .run { TextUtils.join("\n", this) }
 
             dump?.let {
                 val index = dump.indexOf("icon slots")

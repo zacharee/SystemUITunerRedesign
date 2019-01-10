@@ -21,10 +21,6 @@ import com.zacharee1.systemuituner.activites.MainActivity
 import com.zacharee1.systemuituner.activites.OptionsActivity
 import com.zacharee1.systemuituner.activites.info.GrantWSActivity
 import com.zacharee1.systemuituner.activites.info.SettingWriteFailed
-import java.io.BufferedReader
-import java.io.DataOutputStream
-import java.io.IOException
-import java.io.InputStreamReader
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -38,52 +34,6 @@ fun PackageManager.isPackageInstalled(packageName: String) =
 
 fun Context.pxToDp(px: Float) =
         TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, px, resources.displayMetrics)
-
-fun runCommand(vararg commands: String): String? {
-    try {
-        val comm = Runtime.getRuntime().exec("sh")
-        val outputStream = DataOutputStream(comm.outputStream)
-
-        commands.forEach {
-            outputStream.writeBytes(it + "\n")
-            outputStream.flush()
-        }
-
-        outputStream.writeBytes("exit\n")
-        outputStream.flush()
-
-        val inputReader = BufferedReader(InputStreamReader(comm.inputStream))
-        val errorReader = BufferedReader(InputStreamReader(comm.errorStream))
-
-        var ret = ""
-        var line: String?
-
-        do {
-            line = inputReader.readLine()
-            if (line == null) break
-            ret = ret + line + "\n"
-        } while (true)
-
-        do {
-            line = errorReader.readLine()
-            if (line == null) break
-            ret = ret + line + "\n"
-        } while (true)
-
-        try {
-            comm.waitFor()
-        } catch (e: InterruptedException) {
-            e.printStackTrace()
-        }
-
-        outputStream.close()
-
-        return ret
-    } catch (e: IOException) {
-        e.printStackTrace()
-        return null
-    }
-}
 
 fun Context.checkPermissions(permissions: ArrayList<String>) =
         ArrayList(permissions.filter {
