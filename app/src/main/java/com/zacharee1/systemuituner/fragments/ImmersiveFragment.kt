@@ -8,10 +8,14 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.provider.Settings
-import androidx.preference.*
+import androidx.preference.CheckBoxPreference
+import androidx.preference.ListPreference
+import androidx.preference.Preference
+import androidx.preference.PreferenceCategory
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.activites.apppickers.ImmersiveSelectActivity
 import com.zacharee1.systemuituner.handlers.ImmersiveHandler
+import com.zacharee1.systemuituner.util.PrefManager
 import com.zacharee1.systemuituner.util.forEachPreference
 
 class ImmersiveFragment : AnimFragment(), Preference.OnPreferenceChangeListener {
@@ -98,11 +102,15 @@ class ImmersiveFragment : AnimFragment(), Preference.OnPreferenceChangeListener 
             true
         }
 
-        val enabled = findPreference(APP_IMMERSIVE) as SwitchPreference?
-        enabled?.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { _, _ ->
+        val listener = Preference.OnPreferenceChangeListener { _, _ ->
             Handler().postDelayed({ ImmersiveHandler.setMode(context, ImmersiveHandler.getMode(context)) }, 100)
             true
         }
+
+        findPreference(PrefManager.APP_IMMERSIVE).onPreferenceChangeListener = listener
+        findPreference(PrefManager.IMMERSIVE_BLACKLIST).onPreferenceChangeListener = listener
+
+
     }
 
     override fun onDestroy() {
@@ -134,7 +142,6 @@ class ImmersiveFragment : AnimFragment(), Preference.OnPreferenceChangeListener 
 
     companion object {
         const val IMMERSIVE_BOXES = "imm_boxes"
-        const val APP_IMMERSIVE = "app_immersive"
         const val SELECT_APPS = "select_apps"
         const val CONFIG_QS = "config_qs"
     }

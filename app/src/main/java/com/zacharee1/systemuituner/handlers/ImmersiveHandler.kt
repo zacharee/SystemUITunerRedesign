@@ -37,7 +37,7 @@ object ImmersiveHandler {
         return imm
     }
 
-    fun setMode(context: Context?, type: String) {
+    fun setMode(context: Context?, type: String = getMode(context)) {
         if (type.contains(FULL)
                 || type.contains(STATUS)
                 || type.contains(NAV)
@@ -48,9 +48,6 @@ object ImmersiveHandler {
 
             context?.writeGlobal(KEY, typeNew)
         } else {
-            val bundle = Bundle()
-            bundle.putString("mode", type)
-            FirebaseAnalytics.getInstance(context!!).logEvent("bad_immersive", bundle)
             Log.w("SystemUITuner", "Invalid Immersive Mode Type: $type")
         }
     }
