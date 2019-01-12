@@ -29,7 +29,7 @@ class DemoHandler(private val context: Context) {
             intent = Intent("com.android.systemui.demo")
             intent.putExtra("command", "network")
             intent.putExtra("mobile", if (context.prefs.demoModeShowMobileIcon) "show" else "hide")
-            intent.putExtra("fully", context.prefs.demoModeMobileFullyConnected)
+            intent.putExtra("fully", "${context.prefs.demoModeMobileFullyConnected}")
             intent.putExtra("level", "${context.prefs.demoModeMobileStrength}")
             intent.putExtra("datatype", context.prefs.demoModeMobileType)
             context.sendBroadcast(intent)
@@ -43,7 +43,7 @@ class DemoHandler(private val context: Context) {
             intent = Intent("com.android.systemui.demo")
             intent.putExtra("command", "network")
             intent.putExtra("wifi", if (context.prefs.demoModeShowWiFi) "show" else "hide")
-            intent.putExtra("fully", context.prefs.demoModeWiFiFullyConnected)
+            intent.putExtra("fully", "${context.prefs.demoModeWiFiFullyConnected}")
             intent.putExtra("level", "${context.prefs.demoModeWiFiStrength}")
             context.sendBroadcast(intent)
 
@@ -96,7 +96,10 @@ class DemoHandler(private val context: Context) {
         context.writeGlobal("sysui_tuner_demo_on", 0)
     }
 
-    private fun Long.hour(): Long = TimeUnit.MILLISECONDS.toHours(this)
+    private fun Long.hour(): Long {
+        val h = TimeUnit.MILLISECONDS.toHours(this)
+        return if (h >= 12) h - 12 else h
+    }
 
     private fun Long.minute(): Long = TimeUnit.MILLISECONDS.toMinutes(this)
 }
