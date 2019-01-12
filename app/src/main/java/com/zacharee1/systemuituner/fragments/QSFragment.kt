@@ -87,9 +87,9 @@ class QSFragment : AnimFragment() {
     private fun setSliderState() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             val pref = findPreference(QQS_COUNT) as SeekBarPreference //find the SliderPreference
-            //            pref.set<in(1);
+
             pref.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { _, o ->
-                context?.writeSecure(QQS_COUNT, o.toString().toFloat().toInt()) //write new value to Settings if user presses OK
+                context?.writeSecure(QQS_COUNT, o.toString().toFloat().toInt()) //write new value to Settings
                 true
             }
 

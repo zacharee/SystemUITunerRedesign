@@ -83,7 +83,7 @@ dependencies {
 
     //Mine-ish
     implementation 'com.jaredrummler:colorpicker-compat:1.0.5'
-    implementation 'com.github.zacharee:SeekBarPreference:da20a11584'
+    implementation 'com.github.zacharee:SeekBarPreference:0110fe4fe7'
     implementation 'com.github.zacharee:material:a2ab4a2d3c'
     implementation 'com.github.zacharee:CollapsiblePreferenceCategory:a8c3469a7a'
 
