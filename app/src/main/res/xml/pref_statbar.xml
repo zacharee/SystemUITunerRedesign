@@ -25,7 +25,7 @@
     </tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory>
 
     <tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory
-        android:title="@string/networking_data">
+        android:title="@string/network">
         <SwitchPreference
             android:key="airplane"
             android:title="@string/airplane_icon"

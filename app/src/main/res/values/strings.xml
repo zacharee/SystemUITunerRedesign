@@ -35,7 +35,7 @@
     <string name="nfc_icon">NFC Icon</string>
     <string name="location_icon">Location Icon</string>
     <string name="su_icon">SU Icon</string>
-    <string name="networking_data"><![CDATA[Networking & Data]]></string>
+    <string name="network">Network</string>
     <string name="bluetooth_icon">Bluetooth Icon</string>
     <string name="data_saver_icon">Data Saver Icon</string>
     <string name="ethernet_icon">Ethernet Icon</string>
@@ -250,6 +250,7 @@
     <string name="key">Key</string>
     <string name="add_item">Add Item</string>
     <string name="are_you_sure">Are you sure?</string>
+    <string name="style">Style</string>
 
     <!--Descriptions-->
     <string name="fancy_pulldown_notice">Toggling this option off can cause issues after a reboot. Manually toggle this option on and off after a reboot, or enable Safe Mode.</string>
