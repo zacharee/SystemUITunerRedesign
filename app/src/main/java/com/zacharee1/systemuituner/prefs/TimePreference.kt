@@ -41,4 +41,20 @@ class TimePreference : Preference {
                 .setNegativeButton(android.R.string.cancel, null)
         d.show()
     }
+
+    override fun onSetInitialValue(defaultValue: Any?) {
+        super.onSetInitialValue(defaultValue)
+
+        syncSummary()
+    }
+
+    override fun notifyChanged() {
+        super.notifyChanged()
+
+        syncSummary()
+    }
+
+    private fun syncSummary() {
+        summary = String.format("%02d%02d", savedHour, savedMinute)
+    }
 }

@@ -43,7 +43,7 @@
             android:key="selected_mobile_strength"
             />
 
-        <ListPreference
+        <com.zacharee1.systemuituner.prefs.AutoSummaryListPreference
             android:persistent="true"
             android:title="@string/mobile_type"
             android:entries="@array/mobile_type_display"
@@ -79,7 +79,7 @@
     <tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory
         android:title="@string/style">
 
-        <ListPreference
+        <com.zacharee1.systemuituner.prefs.AutoSummaryListPreference
             android:persistent="true"
             android:title="@string/status_bar_style"
             android:entries="@array/statbar_style_display"
@@ -87,7 +87,7 @@
             android:key="status_bar_style"
             />
 
-        <ListPreference
+        <com.zacharee1.systemuituner.prefs.AutoSummaryListPreference
             android:persistent="true"
             android:title="@string/volume_icon_style"
             android:entries="@array/volume_icon_display"
@@ -96,7 +96,7 @@
             android:key="volume_icon"
             />
 
-        <ListPreference
+        <com.zacharee1.systemuituner.prefs.AutoSummaryListPreference
             android:persistent="true"
             android:title="@string/bluetooth_icon_style"
             android:entries="@array/bluetooth_icon_display"
