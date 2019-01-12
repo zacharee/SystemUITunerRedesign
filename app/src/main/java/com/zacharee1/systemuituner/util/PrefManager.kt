@@ -82,8 +82,6 @@ class PrefManager private constructor(private val context: Context) {
     /**
      * Booleans
      */
-    val alarmDemo: Boolean
-        get() = getBoolean(ALARM_DEMO)
     val allowCustomSettingsInput: Boolean
         get() = getBoolean(ALLOW_CUSTOM_SETTINGS_INPUT)
     val audioSafe: Boolean
@@ -93,15 +91,41 @@ class PrefManager private constructor(private val context: Context) {
         set(value) {
             putBoolean(APP_IMMERSIVE, value)
         }
-    val batteryCharging: Boolean
-        get() = getBoolean(BATTERY_CHARGING)
     var darkMode: Boolean
         get() = getBoolean(DARK_MODE)
         set(value) {
             putBoolean(DARK_MODE, value)
         }
-    val eriDemo: Boolean
+    val demoModeAlarm: Boolean
+        get() = getBoolean(ALARM_DEMO)
+    val demoModeBatteryCharging: Boolean
+        get() = getBoolean(BATTERY_CHARGING)
+    val demoModeMobileFullyConnected: Boolean
+        get() = getBoolean(MOBILE_FULLY_CONNECTED)
+    val demoModeNoSIM: Boolean
+        get() = getBoolean(NO_SIM)
+    val demoModeShowAirplaneMode: Boolean
+        get() = getBoolean(SHOW_AIRPLANE)
+    val demoModeShowEri: Boolean
         get() = getBoolean(ERI_DEMO)
+    val demoModeShowLocation: Boolean
+        get() = getBoolean(LOCATION_DEMO)
+    val demoModeShowMobileIcon: Boolean
+        get() = getBoolean(SHOW_MOBILE)
+    val demoModeShowMute: Boolean
+        get() = getBoolean(MUTE_DEMO)
+    val demoModeShowNotifs: Boolean
+        get() = getBoolean(SHOW_NOTIFICATIONS)
+    val demoModeShowSpkerPhone: Boolean
+        get() = getBoolean(SPEAKERPHONE_DEMO)
+    val demoModeShowSync: Boolean
+        get() = getBoolean(SYNC_DEMO)
+    val demoModeShowTTY: Boolean
+        get() = getBoolean(TTY_DEMO)
+    val demoModeShowWiFi: Boolean
+        get() = getBoolean(SHOW_WIFI)
+    val demoModeWiFiFullyConnected: Boolean
+        get() = getBoolean(WIFI_FULLY_CONNECTED)
     var firstStart: Boolean
         get() = getBoolean(FIRST_START, true)
         set(value) {
@@ -119,14 +143,6 @@ class PrefManager private constructor(private val context: Context) {
         set(value) {
             putBoolean(IMMERSIVE_BLACKLIST, value)
         }
-    val locationDemo: Boolean
-        get() = getBoolean(LOCATION_DEMO)
-    val mobileFullyConnected: Boolean
-        get() = getBoolean(MOBILE_FULLY_CONNECTED)
-    val muteDemo: Boolean
-        get() = getBoolean(MUTE_DEMO)
-    val noSim: Boolean
-        get() = getBoolean(NO_SIM)
     val qsFancyAnim: Boolean
         get() = getBoolean(QS_FANCY_ANIM, true)
     var safeMode: Boolean
@@ -159,23 +175,11 @@ class PrefManager private constructor(private val context: Context) {
         get() = getBoolean(SAFE_MODE_STATUS_BAR, true)
     val safeModeVolumeWarning: Boolean
         get() = getBoolean(SAFE_MODE_VOLUME_WARNING, true)
-    val showAirplane: Boolean
-        get() = getBoolean(SHOW_AIRPLANE)
     var showIntro: Boolean
         get() = getBoolean(SHOW_INTRO, true)
         set(value) {
             putBoolean(SHOW_INTRO, value)
         }
-    val showMobile: Boolean
-        get() = getBoolean(SHOW_MOBILE)
-    val showNotifications: Boolean
-        get() = getBoolean(SHOW_NOTIFICATIONS)
-    val showWiFi: Boolean
-        get() = getBoolean(SHOW_WIFI)
-    val speakerphoneDemo: Boolean
-        get() = getBoolean(SPEAKERPHONE_DEMO)
-    val syncDemo: Boolean
-        get() = getBoolean(SYNC_DEMO)
     val tileColumn: Int
         get() = getInt(TILE_COLUMN)
     val tileColumnLandscape: Int
@@ -184,52 +188,48 @@ class PrefManager private constructor(private val context: Context) {
         get() = getInt(TILE_ROW)
     val tileRowLandscape: Int
         get() = getInt(TILE_ROW_LANDSCAPE)
-    val ttyDemo: Boolean
-        get() = getBoolean(TTY_DEMO)
-    val wifiFullyConnected: Boolean
-        get() = getBoolean(WIFI_FULLY_CONNECTED)
 
     /**
      * Ints
      */
+    val demoModeBatteryLevel: Int
+        get() = getInt(SELECTED_BATTERY_LEVEL, 100)
+    val demoModeMobileStrength: Int
+        get() = getInt(SELECTED_MOBILE_STRENGTH, 4)
+    val demoModeSIMCount: Int
+        get() = getInt(SIM_COUNT, 0)
+    val demoModeWiFiStrength: Int
+        get() = getInt(WIFI_STRENGTH, 4)
     val qqsCount: Int
         get() = getInt(QQS_COUNT)
-    val selectedBatteryLevel: Int
-        get() = getInt(SELECTED_BATTERY_LEVEL, 100)
-    val selectedMobileStrength: Int
-        get() = getInt(SELECTED_MOBILE_STRENGTH, 4)
-    val simCount: Int
-        get() = getInt(SIM_COUNT, 0)
-    val wifiStrength: Int
-        get() = getInt(WIFI_STRENGTH, 4)
 
     /**
      * Longs
      */
-    val selectedTime: Long
+    val demoModeSelectedTime: Long
         get() = getLong(SELECTED_TIME, System.currentTimeMillis())
 
     /**
      * Strings
      */
-    val bluetoothIcon: String?
+    val demoModeBluetoothIconState: String?
         get() = getString(BLUETOOTH_ICON, "hidden")
+    val demoModeMobileType: String?
+        get() = getString(MOBILE_TYPE, "lte")
+    val demoModeStatusBarStyle: String?
+        get() = getString(STATUS_BAR_STYLE, "default")
+    val demoModeVolumeIcon: String?
+        get() = getString(VOLUME_ICON, "hidden")
     var immersiveTileMode: String?
         get() = getString(IMMERSIVE_TILE_MODE, ImmersiveHandler.FULL)
         set(value) {
             putString(IMMERSIVE_TILE_MODE, value)
         }
-    val mobileType: String?
-        get() = getString(MOBILE_TYPE, "lte")
     var notificationSnoozeOptions: String?
         get() = getString(NOTIFICATION_SNOOZE_OPTIONS, "")
         set(value) {
             putString(NOTIFICATION_SNOOZE_OPTIONS, value)
         }
-    val statusBarStyle: String?
-        get() = getString(STATUS_BAR_STYLE, "default")
-    val volumeIcon: String?
-        get() = getString(VOLUME_ICON, "hidden")
 
     /**
      * Set<String>
