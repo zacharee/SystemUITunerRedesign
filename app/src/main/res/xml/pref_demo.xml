@@ -20,7 +20,7 @@
         android:title="@string/network">
 
         <tk.zwander.seekbarpreference.SeekBarPreference
-            app:maxValue="3"
+            app:maxValue="4"
             android:defaultValue="3"
             android:title="@string/wifi_strength"
             android:key="wifi_strength"
@@ -84,6 +84,7 @@
             android:title="@string/status_bar_style"
             android:entries="@array/statbar_style_display"
             android:entryValues="@array/statbar_style_vals"
+            android:defaultValue="default"
             android:key="status_bar_style"
             />
 
@@ -92,7 +93,7 @@
             android:title="@string/volume_icon_style"
             android:entries="@array/volume_icon_display"
             android:entryValues="@array/volume_icon_values"
-            android:defaultValue="hidden"
+            android:defaultValue="hide"
             android:key="volume_icon"
             />
 
