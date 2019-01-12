@@ -2,6 +2,7 @@ package com.zacharee1.systemuituner.prefs
 
 import android.app.AlertDialog
 import android.content.Context
+import android.content.SharedPreferences
 import android.text.format.DateFormat
 import android.util.AttributeSet
 import android.view.LayoutInflater
@@ -10,7 +11,7 @@ import androidx.preference.Preference
 import com.zacharee1.systemuituner.R
 import java.util.concurrent.TimeUnit
 
-class TimePreference : Preference {
+class TimePreference : Preference, SharedPreferences.OnSharedPreferenceChangeListener {
     val savedHour: Long
         get() = TimeUnit.MILLISECONDS.toHours(getPersistedLong(0))
 
@@ -42,19 +43,34 @@ class TimePreference : Preference {
         d.show()
     }
 
-    override fun onSetInitialValue(defaultValue: Any?) {
-        super.onSetInitialValue(defaultValue)
+    override fun onAttached() {
+        super.onAttached()
 
         syncSummary()
+        sharedPreferences.registerOnSharedPreferenceChangeListener(this)
     }
 
-    override fun notifyChanged() {
-        super.notifyChanged()
+    override fun onDetached() {
+        super.onDetached()
 
-        syncSummary()
+        sharedPreferences.unregisterOnSharedPreferenceChangeListener(this)
+    }
+
+    override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences?, key: String?) {
+        if (key == this.key) syncSummary()
     }
 
     private fun syncSummary() {
-        summary = String.format("%02d%02d", savedHour, savedMinute)
+        val updatedHour = if (savedHour == 0L) 12 else if (savedHour > 12) savedHour - 12 else savedHour
+
+        summary = StringBuilder().run {
+            append(String.format(
+                    "%01d:%02d",
+                    updatedHour,
+                    savedMinute
+            ))
+            append(" ")
+            append(if (savedHour < 12) "AM" else "PM")
+        }
     }
 }
