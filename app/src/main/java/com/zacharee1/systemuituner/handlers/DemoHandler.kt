@@ -96,10 +96,7 @@ class DemoHandler(private val context: Context) {
         context.writeGlobal("sysui_tuner_demo_on", 0)
     }
 
-    private fun Long.hour(): Long {
-        val h = TimeUnit.MILLISECONDS.toHours(this)
-        return if (h >= 12) h - 12 else h
-    }
+    private fun Long.hour(): Long = TimeUnit.MILLISECONDS.toHours(this)
 
     private fun Long.minute(): Long = TimeUnit.MILLISECONDS.toMinutes(this)
 }
