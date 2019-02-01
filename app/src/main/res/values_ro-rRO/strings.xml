@@ -169,7 +169,7 @@
     <string name="which_os">Ce sistem de operare rulează pe computerul tău?</string>
     <string name="on_device">Urmează instrucțiunile următoare, pe aparatul tău.</string>
     <string name="on_computer">Urmează instrucțiunile următoare pe computerul tău.</string>
-    <string name="run_on_computer">Run these commands on your computer. For Linux (Other) and macOS, you will need to use \"./adb\" instead of \"adb\".</string>
+    <string name="run_on_computer">Rulaţi aceste comenzi pe computerul dvs. Pentru Linux (Altele) și macOS, aveţi nevoie de \"./adb\", în loc de \"adb\".</string>
     <string name="windows">Windows</string>
     <string name="mac">macOS</string>
     <string name="ubuntu">Ubuntu</string>
@@ -202,7 +202,7 @@
     <string name="intent">Intenție</string>
     <string name="removing_tile">Eliminarea Tile</string>
     <string name="remove_tile">Elimină %s?</string>
-    <string name="allow_deep_sleep">Enable Automatic Deep Sleep</string>
+    <string name="allow_deep_sleep">Activare automată somn profund</string>
     <string name="yes">Da</string>
     <string name="no">Nu</string>
     <string name="notif_title">Safe Mode Service is running</string>
