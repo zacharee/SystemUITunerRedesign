@@ -58,7 +58,7 @@
     <string name="zen_icon">禅图标</string>
     <string name="do_not_disturb">免打扰图标</string>
     <string name="dnd">消息免打扰</string>
-    <string name="privacy_policy">Privacy Policy</string>
+    <string name="privacy_policy">隐私条款</string>
     <string name="terms_of_service">Terms of Service</string>
     <string name="donate">捐赠</string>
     <string name="reset_blacklist">重置黑名单</string>
