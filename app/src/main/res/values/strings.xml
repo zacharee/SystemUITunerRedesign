@@ -259,7 +259,7 @@
     <string name="safe_mode_summary_2">Toggles the QS Fancy Animation on boot.</string>
     <string name="safe_mode_summary_3">Restores custom QS header count value on boot (Nougat+).</string>
     <string name="safe_mode_summary_4">Restores custom QS row/column count on boot (TouchWiz, Nougat+).</string>
-    <string name="safe_mode_summary_5">Restores custom notification snooze options on boot (8.1+).</string>
+    <string name="safe_mode_summary_5">Keeps custom snooze options set (8.1+).</string>
     <string name="enable_in_settings">Enable in Settings.</string>
     <string name="reboot_required">(Reboot Required)</string>
     <string name="auto_detect_summary">Attempts to automatically detect which status bar icons can be hidden. Does not work on all devices!</string>
@@ -271,9 +271,8 @@
     <string name="pnc_desc">Power Notification Controls allow you to set the level of importance for notifications on a per-app basis. Simply turn the feature on and hold down on a notification to get started. You may need to tap the A to enable the slider.</string>
     <string name="pnc_warn">This feature is known to be unreliable on certain devices, especially on TouchWiz! It is impossible to fix, but the best workaround seems to be to tap repeatedly on the desired level. Again, I CANNOT fix it!</string>
     <string name="notif_desc">Tap to change settings</string>
-    <string name="touchwiz_oreo_qqs">On TouchWiz Oreo devices, this setting is no longer reliable! Along with setting the number here, you may have to also save the value to Settings.System.apanel_number, which can only be done with ADB or root. Safe Mode attempts to implement a workaround, but I can\'t guarantee it will work!</string>
-    <string name="notifs_snooze_desc">&#160;
-    In Android 8.1 and later, you can set custom times for notification snoozing. These values reset on reboot, so make sure to enable Safe Mode if you would like them to persist across power cycles.\n\n&#160;
+    <string name="notifs_snooze_desc">
+    In Android 8.1 and later, you can set custom times for notification snoozing. These values reset on reboot, so make sure to enable Safe Mode if you would like them to persist across power cycles.\n\n
     Use the options below to set the different snooze times. \"Default\" sets the time Android will use by default. The other items will be the snooze times available for you to select.
     </string>
     <string name="custom_settings_input_desc">These fields allow you to enter your own custom settings.</string>
@@ -319,6 +318,9 @@
     <string name="backup_restored">Successfully restored backup</string>
     <string name="nothing_to_back_up">Nothing to back up</string>
     <string name="grant_usage">Please grant SystemUI Tuner access to Usage.</string>
+    <string name="setting_not_on_pie">This setting doesn\'t work on Pie or later.</string>
+    <string name="setting_not_on_touchwiz_pie">This setting doesn\'t work on TouchWiz Pie or later.</string>
+    <string name="setting_not_on_touchwiz">This setting doesn\'t work on TouchWiz.</string>
 
     <!--Instructions-->
     <string name="enable_debug"><![CDATA[1. Go to Settings >> Developer Options and make sure USB Debugging is enabled.]]></string>

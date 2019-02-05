@@ -96,6 +96,25 @@ class MiscFragment : AnimFragment() {
             preference.setSummary(R.string.requires_nougat)
         }
 
+        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.O_MR1) {
+            findPreference(SHOW_ZEN).apply {
+                isEnabled = false
+                setSummary(R.string.setting_not_on_pie)
+            }
+
+            if (context!!.checkSamsung()) {
+                findPreference(HUD_ENABLED).apply {
+                    isEnabled = false
+                    setSummary(R.string.setting_not_on_touchwiz_pie)
+                }
+
+                findPreference(CLOCK_SECONDS).apply {
+                    isEnabled = false
+                    setSummary(R.string.setting_not_on_touchwiz_pie)
+                }
+            }
+        }
+
         for (preference in preferences) {
             val key = preference.key
             preference.isChecked = Settings.Secure.getInt(context?.contentResolver, key, 0) == 1

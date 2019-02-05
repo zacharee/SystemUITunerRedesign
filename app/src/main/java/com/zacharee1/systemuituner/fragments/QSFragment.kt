@@ -10,6 +10,7 @@ import androidx.preference.SwitchPreference
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.activites.QuickSettingsLayoutEditor
 import com.zacharee1.systemuituner.util.PrefManager.Companion.QQS_COUNT
+import com.zacharee1.systemuituner.util.checkSamsung
 import com.zacharee1.systemuituner.util.forEachPreference
 import com.zacharee1.systemuituner.util.prefs
 import com.zacharee1.systemuituner.util.writeSecure
@@ -88,12 +89,17 @@ class QSFragment : AnimFragment() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             val pref = findPreference(QQS_COUNT) as SeekBarPreference //find the SliderPreference
 
-            pref.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { _, o ->
-                context?.writeSecure(QQS_COUNT, o.toString().toFloat().toInt()) //write new value to Settings
-                true
-            }
+            if (context!!.checkSamsung() && Build.VERSION.SDK_INT > Build.VERSION_CODES.O_MR1) {
+                pref.isEnabled = false
+                pref.setSummary(R.string.setting_not_on_touchwiz_pie)
+            } else {
+                pref.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { _, o ->
+                    context?.writeSecure(QQS_COUNT, o.toString().toFloat().toInt()) //write new value to Settings
+                    true
+                }
 
-            pref.progress = Settings.Secure.getInt(context?.contentResolver, QQS_COUNT, 5) //set the progress/value from Settings
+                pref.progress = Settings.Secure.getInt(context?.contentResolver, QQS_COUNT, 5) //set the progress/value from Settings
+            }
         } else {
             val category = findPreference(COUNT_CATEGORY) as PreferenceCategory
             category.isEnabled = false

@@ -5,6 +5,7 @@ import android.os.Build
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.core.content.ContextCompat
+import androidx.preference.CheckBoxPreference
 import androidx.preference.Preference
 import androidx.preference.PreferenceCategory
 import androidx.preference.SwitchPreference
@@ -12,6 +13,8 @@ import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.activites.BaseAnimActivity
 import com.zacharee1.systemuituner.fragments.AnimFragment
 import com.zacharee1.systemuituner.services.SafeModeService
+import com.zacharee1.systemuituner.util.PrefManager
+import com.zacharee1.systemuituner.util.checkSamsung
 import com.zacharee1.systemuituner.util.forEachPreference
 import com.zacharee1.systemuituner.util.getAnimTransaction
 
@@ -84,6 +87,20 @@ class SettingsActivity : BaseAnimActivity() {
                 safeNotif.isEnabled = false
                 safeNotif.summary = resources.getText(R.string.safe_mode_notif_desc_not_supported)
             }
+
+            if (context!!.checkSamsung() && Build.VERSION.SDK_INT > Build.VERSION_CODES.O_MR1) {
+                (findPreference(PrefManager.SAFE_MODE_ROW_COL) as CheckBoxPreference).apply {
+                    isEnabled = false
+                    isChecked = false
+                    setSummary(R.string.setting_not_on_touchwiz_pie)
+                }
+            }
+
+            findPreference(PrefManager.SAFE_MODE_HIGH_BRIGHTNESS_WARNING)
+                    .isVisible = context!!.checkSamsung()
+
+            findPreference(PrefManager.SAFE_MODE_SNOOZE_OPTIONS)
+                    .isVisible = Build.VERSION.SDK_INT > Build.VERSION_CODES.O
         }
     }
 }

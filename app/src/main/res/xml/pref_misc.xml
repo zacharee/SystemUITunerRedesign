@@ -9,10 +9,12 @@
             android:title="@string/dnd_switch_in_vol_slider"/>
         <SwitchPreference
             android:key="heads_up_notifications_enabled"
-            android:title="@string/heads_up_notifications"/>
+            android:title="@string/heads_up_notifications"
+            android:defaultValue="true"/>
         <SwitchPreference
             android:key="audio_safe_volume_state"
-            android:title="@string/headphone_volume_warning"/>
+            android:title="@string/headphone_volume_warning"
+            android:defaultValue="true"/>
         <SwitchPreference
             android:key="status_bar_show_battery_percent"
             android:title="@string/battery_percentage"

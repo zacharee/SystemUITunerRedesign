@@ -2,11 +2,13 @@ package com.zacharee1.systemuituner.fragments
 
 import android.content.Context
 import android.graphics.Color
+import android.os.Build
 import android.os.Bundle
 import android.provider.Settings
 import android.view.Surface
 import android.view.WindowManager
 import androidx.preference.Preference
+import androidx.preference.PreferenceGroup
 import androidx.preference.SwitchPreference
 import com.jaredrummler.android.colorpicker.ColorPreferenceCompat
 import com.zacharee1.systemuituner.R
@@ -21,6 +23,7 @@ import com.zacharee1.systemuituner.util.prefs
 import com.zacharee1.systemuituner.util.writeGlobal
 import com.zacharee1.systemuituner.util.writeSecure
 import com.zacharee1.systemuituner.util.writeSystem
+import tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory
 import tk.zwander.seekbarpreference.SeekBarPreference
 
 class TWFragment : AnimFragment() {
@@ -61,31 +64,38 @@ class TWFragment : AnimFragment() {
         val rowsLandscape = findPreference(TILE_ROW_LANDSCAPE) as SeekBarPreference
         val columnsLandscape = findPreference(TILE_COLUMN_LANDSCAPE) as SeekBarPreference
 
-        val listener = Preference.OnPreferenceChangeListener { pref, value ->
-            when (pref.key) {
-                TILE_ROW -> {
-                    if (!landscape) activity?.writeSecure(TILE_ROW, value.toString().toFloat().toInt())
-                }
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.P) {
+            val listener = Preference.OnPreferenceChangeListener { pref, value ->
+                when (pref.key) {
+                    TILE_ROW -> {
+                        if (!landscape) activity?.writeSecure(TILE_ROW, value.toString().toFloat().toInt())
+                    }
 
-                TILE_ROW_LANDSCAPE -> {
-                    if (landscape) activity?.writeSecure(TILE_ROW, value.toString().toFloat().toInt())
-                }
+                    TILE_ROW_LANDSCAPE -> {
+                        if (landscape) activity?.writeSecure(TILE_ROW, value.toString().toFloat().toInt())
+                    }
 
-                TILE_COLUMN -> {
-                    if (!landscape) activity?.writeSecure(TILE_COLUMN, value.toString().toFloat().toInt())
-                }
+                    TILE_COLUMN -> {
+                        if (!landscape) activity?.writeSecure(TILE_COLUMN, value.toString().toFloat().toInt())
+                    }
 
-                TILE_COLUMN_LANDSCAPE -> {
-                    if (landscape) activity?.writeSecure(TILE_COLUMN, value.toString().toFloat().toInt())
+                    TILE_COLUMN_LANDSCAPE -> {
+                        if (landscape) activity?.writeSecure(TILE_COLUMN, value.toString().toFloat().toInt())
+                    }
                 }
+                true
             }
-            true
-        }
 
-        rows.onPreferenceChangeListener = listener
-        columns.onPreferenceChangeListener = listener
-        rowsLandscape.onPreferenceChangeListener = listener
-        columnsLandscape.onPreferenceChangeListener = listener
+            rows.onPreferenceChangeListener = listener
+            columns.onPreferenceChangeListener = listener
+            rowsLandscape.onPreferenceChangeListener = listener
+            columnsLandscape.onPreferenceChangeListener = listener
+        } else {
+            arrayOf(rows, columns, rowsLandscape, columnsLandscape).forEach {
+                it.isEnabled = false
+                it.setSummary(R.string.setting_not_on_touchwiz_pie)
+            }
+        }
     }
 
     private fun setUpNavBarStuff() {
