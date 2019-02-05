@@ -65,8 +65,8 @@ android {
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.1.0'
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.1.0'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.1.1'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.1.1'
 
     //AndroidX
     implementation 'androidx.appcompat:appcompat:1.0.2'
@@ -79,19 +79,18 @@ dependencies {
     implementation 'com.google.android.material:material:1.1.0-alpha02'
     implementation 'com.android.billingclient:billing:1.0'
     implementation 'com.crashlytics.sdk.android:crashlytics:2.9.8'
-    implementation 'com.google.firebase:firebase-core:16.0.6'
+    implementation 'com.google.firebase:firebase-core:16.0.7'
 
     //Mine-ish
     implementation 'com.jaredrummler:colorpicker-compat:1.0.5'
-    implementation 'com.github.zacharee:SeekBarPreference:fc6a5a072b'
+    implementation 'com.github.zacharee:SeekBarPreference:f78184e719'
     implementation 'com.github.zacharee:material:a2ab4a2d3c'
-    implementation 'com.github.zacharee:CollapsiblePreferenceCategory:a8c3469a7a'
+    implementation 'com.github.zacharee:CollapsiblePreferenceCategory:f83b33ab20'
 
     //Other
     implementation 'com.github.paolorotolo:appintro:v5.1.0'
     implementation 'com.joaomgcd:taskerpluginlibrary:0.1'
-    implementation 'com.droidninja:filepicker:2.2.0'
-    implementation 'com.github.topjohnwu:libsu:2.1.2'
+    implementation 'com.github.topjohnwu:libsu:2.2.0'
     implementation 'com.google.code.gson:gson:2.8.5'
 }
 

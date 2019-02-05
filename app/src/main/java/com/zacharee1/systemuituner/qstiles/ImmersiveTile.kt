@@ -26,7 +26,7 @@ class ImmersiveTile : TileService() {
     override fun onStartListening() {
         super.onStartListening()
 
-        contentResolver.registerContentObserver(Settings.Global.CONTENT_URI, true, observer!!)
+        contentResolver.registerContentObserver(Settings.Global.CONTENT_URI, true, observer)
 
         setTileState()
     }
@@ -55,7 +55,7 @@ class ImmersiveTile : TileService() {
 
     override fun onDestroy() {
         try {
-            contentResolver.unregisterContentObserver(observer!!)
+            contentResolver.unregisterContentObserver(observer)
         } catch (e: Exception) {
         }
 
