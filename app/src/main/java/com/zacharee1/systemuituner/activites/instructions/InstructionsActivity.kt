@@ -121,13 +121,11 @@ class InstructionsActivity : AppIntro2() {
 
         private val selection by lazy { findViewById<Button>(R.id.change_selection) }
 
-        override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-            val view = super.onCreateView(inflater, container, savedInstanceState)
+        override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+            super.onViewCreated(view, savedInstanceState)
 
             addSelectorButton()
             setSelectionListeners()
-
-            return view
         }
 
         private fun setSelectionListeners() {
@@ -216,7 +214,11 @@ class InstructionsActivity : AppIntro2() {
         private val layoutId: Int = R.layout.fragment_intro_custom_center
 
         override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-            val view = inflater.inflate(layoutId, container, false)
+            return inflater.inflate(layoutId, container, false)
+        }
+
+        override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+            super.onViewCreated(view, savedInstanceState)
 
             val main = view.findViewById<View>(R.id.main)
             val title = view.findViewById<TextView>(R.id.title)
@@ -228,12 +230,12 @@ class InstructionsActivity : AppIntro2() {
             title.text = args.getString(ARG_TITLE)
             desc.text = args.getString(ARG_DESC)
 
-            if (args.getInt(ARG_LAYOUT) != 0 && args.getInt(ARG_LAYOUT) != -1) {
-                val group = View.inflate(activity, args.getInt(ARG_LAYOUT), null) as ViewGroup
+            val argLayout = args.getInt(ARG_LAYOUT)
+
+            if (argLayout > 0) {
+                val group = View.inflate(activity, argLayout, null) as ViewGroup
                 setInternalLayout(group)
             }
-
-            return view
         }
 
         fun <T : View> findViewById(@IdRes id: Int): T? {
@@ -304,11 +306,11 @@ class InstructionsActivity : AppIntro2() {
     class Commands : Instructions() {
 
         @SuppressLint("SetTextI18n")
-        override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-            val view = super.onCreateView(inflater, container, savedInstanceState)
+        override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+            super.onViewCreated(view, savedInstanceState)
 
             val commands = arguments!!.getStringArrayList(ARG_COMMANDS)
-            val holder = view!!.findViewById<LinearLayout>(R.id.custom_layout_holder)
+            val holder = view.findViewById<LinearLayout>(R.id.custom_layout_holder)
 
             for (command in commands!!) {
                 val textView = TextView(activity)
@@ -325,8 +327,6 @@ class InstructionsActivity : AppIntro2() {
 
                 holder.addView(textView)
             }
-
-            return view
         }
 
         companion object {
