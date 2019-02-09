@@ -28,10 +28,10 @@ class OptionsActivity : BaseAnimActivity() {
 
         supportFragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
         supportFragmentManager
-                ?.getAnimTransaction()
-                ?.replace(R.id.content_main, MainPrefs())
-                ?.addToBackStack("main")
-                ?.commit()
+                .getAnimTransaction()
+                .replace(R.id.content_main, MainPrefs())
+                .addToBackStack("main")
+                .commit()
     }
 
     override fun onResume() {
@@ -63,15 +63,12 @@ class OptionsActivity : BaseAnimActivity() {
 
     private fun handleBackPressed() {
         when {
-            supportFragmentManager != null -> when {
-                supportFragmentManager.backStackEntryCount > 1 -> {
-                    supportFragmentManager.popBackStackImmediate()
+            supportFragmentManager.backStackEntryCount > 1 -> {
+                supportFragmentManager.popBackStackImmediate()
 
-                    val stillAboveOne = supportFragmentManager.backStackEntryCount > 1
+                val stillAboveOne = supportFragmentManager.backStackEntryCount > 1
 
-                    setBackClickable(stillAboveOne || !prefs.hideWelcomeScreen)
-                }
-                else -> finish()
+                setBackClickable(stillAboveOne || !prefs.hideWelcomeScreen)
             }
             else -> finish()
         }

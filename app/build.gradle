@@ -85,7 +85,8 @@ dependencies {
     implementation 'com.jaredrummler:colorpicker-compat:1.0.5'
     implementation 'com.github.zacharee:SeekBarPreference:f78184e719'
     implementation 'com.github.zacharee:material:a2ab4a2d3c'
-    implementation 'com.github.zacharee:CollapsiblePreferenceCategory:f83b33ab20'
+    implementation 'com.github.zacharee:CollapsiblePreferenceCategory:c26018885a'
+//    implementation project(':CollapsiblePreferenceCategory')
 
     //Other
     implementation 'com.github.paolorotolo:appintro:v5.1.0'

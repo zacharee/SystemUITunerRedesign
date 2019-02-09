@@ -34,9 +34,9 @@ abstract class BaseEditActivity<Input : Any> : BaseAnimActivity(), TaskerPluginC
         fragment.arguments = args
 
         supportFragmentManager
-                ?.getAnimTransaction()
-                ?.replace(R.id.content_main, fragment, title.toString())
-                ?.commit()
+                .getAnimTransaction()
+                .replace(R.id.content_main, fragment, title.toString())
+                .commit()
     }
 
     override fun onBackPressed() {
