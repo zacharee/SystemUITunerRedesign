@@ -17,9 +17,6 @@ import android.view.WindowManager
 import androidx.core.app.NotificationCompat
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.activites.settings.SettingsActivity
-import com.zacharee1.systemuituner.fragments.StatbarFragment
-import com.zacharee1.systemuituner.fragments.StatbarFragment.Companion.ICON_BLACKLIST
-import com.zacharee1.systemuituner.fragments.StatbarFragment.Companion.ICON_BLACKLIST_BACKUP
 import com.zacharee1.systemuituner.util.*
 import com.zacharee1.systemuituner.util.PrefManager.Companion.AUDIO_SAFE
 import com.zacharee1.systemuituner.util.PrefManager.Companion.HIGH_BRIGHTNESS_WARNING
@@ -143,13 +140,13 @@ class SafeModeService : Service() {
 
     private fun restoreBlacklist() {
         if (prefs.safeModeStatusBar) {
-            val blacklist = Settings.Secure.getString(contentResolver, ICON_BLACKLIST)
+            val blacklist = blacklistManager.currentBlacklist
 
-            if (blacklist == null || blacklist.isEmpty()) {
-                val blacklistBackup = Settings.Global.getString(contentResolver, ICON_BLACKLIST_BACKUP)
+            if (blacklist.isEmpty()) {
+                val blacklistBackup = blacklistManager.backupBlacklist
 
                 if (blacklistBackup != null && !blacklistBackup.isEmpty()) {
-                    writeSecure(ICON_BLACKLIST, blacklistBackup)
+                    blacklistManager.setCurrentBlacklist(blacklistBackup)
                 }
             }
         }
@@ -219,13 +216,13 @@ class SafeModeService : Service() {
 
     private fun resetBlacklist(restore: Boolean) {
         if (prefs.safeModeStatusBar) {
-            val blacklist = Settings.Secure.getString(contentResolver, StatbarFragment.ICON_BLACKLIST)
+            blacklistManager.apply {
+                backupBlacklist = currentBlacklist
+                setCurrentBlacklist(null)
 
-            writeGlobal(StatbarFragment.ICON_BLACKLIST_BACKUP, blacklist)
-            writeSecure(StatbarFragment.ICON_BLACKLIST, null)
-
-            if (restore) {
-                handler.postDelayed({ writeSecure(StatbarFragment.ICON_BLACKLIST, blacklist) }, 400)
+                if (restore) {
+                    handler.postDelayed({ currentBlacklist = backupBlacklist }, 400)
+                }
             }
         }
     }

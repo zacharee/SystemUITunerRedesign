@@ -102,4 +102,16 @@
         <item>military</item>
         <item>military_nosec</item>
     </string-array>
+
+    <string-array name="tw_clock_position_names">
+        <item>@string/left</item>
+        <item>@string/middle</item>
+        <item>@string/right</item>
+    </string-array>
+    
+    <string-array name="tw_clock_position_values">
+        <item>left_clock_position</item>
+        <item>middle_clock_position</item>
+        <item>right_clock_position</item>
+    </string-array>
 </resources>

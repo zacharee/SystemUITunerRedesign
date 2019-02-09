@@ -7,7 +7,6 @@ import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.provider.Settings
-import android.text.TextUtils
 import android.util.TypedValue
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.FragmentManager
@@ -21,8 +20,6 @@ import com.zacharee1.systemuituner.activites.MainActivity
 import com.zacharee1.systemuituner.activites.OptionsActivity
 import com.zacharee1.systemuituner.activites.info.GrantWSActivity
 import com.zacharee1.systemuituner.activites.info.SettingWriteFailed
-import java.util.*
-import kotlin.collections.ArrayList
 
 fun PackageManager.isPackageInstalled(packageName: String) =
         try {
@@ -168,35 +165,17 @@ fun Context.launchErrorActivity(baseCommand: String?) {
 fun Context.hasSpecificPerm(permission: String) =
         checkCallingOrSelfPermission(permission) == PackageManager.PERMISSION_GRANTED
 
-fun Context.changeBlacklist(key: String?, remove: Boolean) =
-        if (key != null) {
-            var currentBL: String = Settings.Secure.getString(contentResolver, "icon_blacklist") ?: ""
-            val blItems = TreeSet(currentBL.split(","))
-            val keyItems = TreeSet(key.split(","))
-
-            keyItems
-                    .filter { if (remove) blItems.contains(it) else !blItems.contains(it) }
-                    .forEach { if (remove) blItems.remove(it) else blItems.add(it) }
-
-            currentBL = TextUtils.join(",", blItems) ?: ""
-
-            writeSecure("icon_blacklist", currentBL)
-        } else false
-
 fun PreferenceFragmentCompat.updateBlacklistSwitches() {
-    var blString: String? = Settings.Secure.getString(activity?.contentResolver, "icon_blacklist")
-    if (blString == null) blString = ""
-
-    val blItems = TreeSet(blString.split(","))
+    val blItems = context!!.blacklistManager.currentBlacklistAsList
 
     preferenceScreen.forEachPreference { pref ->
         if (pref is SwitchPreference) {
             val key = pref.key
             pref.isChecked = true
 
-            if (!blString.isEmpty()) {
+            if (!blItems.isEmpty()) {
                 if (key != null) {
-                    val keyItems = TreeSet(key.split(","))
+                    val keyItems = ArrayList(key.split(","))
 
                     if (keyItems.any { blItems.contains(it) })
                         pref.isChecked = false
@@ -228,3 +207,6 @@ fun sudo(vararg cmds: String) {
 
 val Context.prefs: PrefManager
     get() = PrefManager.getInstance(this)
+
+val Context.blacklistManager: BlacklistManager
+    get() = BlacklistManager.getInstance(this)

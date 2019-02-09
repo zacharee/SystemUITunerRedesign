@@ -160,6 +160,7 @@
     <string name="none">None</string>
     <string name="full">Full</string>
     <string name="navigation_bar">Navigation Bar</string>
+    <string name="navigation_bar_color">Navigation Bar Color</string>
     <string name="pre_confirms">Pre-Confirms</string>
     <string name="config_qs">Configure Quick Tile</string>
     <string name="mode">Mode</string>
@@ -251,6 +252,10 @@
     <string name="add_item">Add Item</string>
     <string name="are_you_sure">Are you sure?</string>
     <string name="style">Style</string>
+    <string name="clock_position">Clock Position</string>
+    <string name="left">Left</string>
+    <string name="middle">Middle</string>
+    <string name="right">Right</string>
 
     <!--Descriptions-->
     <string name="fancy_pulldown_notice">Toggling this option off can cause issues after a reboot. Manually toggle this option on and off after a reboot, or enable Safe Mode.</string>

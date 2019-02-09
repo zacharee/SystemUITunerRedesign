@@ -7,11 +7,12 @@ import android.os.Bundle
 import android.provider.Settings
 import android.view.Surface
 import android.view.WindowManager
+import androidx.preference.ListPreference
 import androidx.preference.Preference
-import androidx.preference.PreferenceGroup
 import androidx.preference.SwitchPreference
 import com.jaredrummler.android.colorpicker.ColorPreferenceCompat
 import com.zacharee1.systemuituner.R
+import com.zacharee1.systemuituner.util.*
 import com.zacharee1.systemuituner.util.PrefManager.Companion.HIGH_BRIGHTNESS_WARNING
 import com.zacharee1.systemuituner.util.PrefManager.Companion.NAVBAR_COLOR
 import com.zacharee1.systemuituner.util.PrefManager.Companion.NAVBAR_CURRENT_COLOR
@@ -19,11 +20,7 @@ import com.zacharee1.systemuituner.util.PrefManager.Companion.TILE_COLUMN
 import com.zacharee1.systemuituner.util.PrefManager.Companion.TILE_COLUMN_LANDSCAPE
 import com.zacharee1.systemuituner.util.PrefManager.Companion.TILE_ROW
 import com.zacharee1.systemuituner.util.PrefManager.Companion.TILE_ROW_LANDSCAPE
-import com.zacharee1.systemuituner.util.prefs
-import com.zacharee1.systemuituner.util.writeGlobal
-import com.zacharee1.systemuituner.util.writeSecure
-import com.zacharee1.systemuituner.util.writeSystem
-import tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory
+import com.zacharee1.systemuituner.util.PrefManager.Companion.TW_CLOCK_POSITION
 import tk.zwander.seekbarpreference.SeekBarPreference
 
 class TWFragment : AnimFragment() {
@@ -38,6 +35,7 @@ class TWFragment : AnimFragment() {
 
         setUpQSStuff()
         setUpNavBarStuff()
+        setUpClockPosition()
         switchPreferenceListeners()
     }
 
@@ -95,6 +93,31 @@ class TWFragment : AnimFragment() {
                 it.isEnabled = false
                 it.setSummary(R.string.setting_not_on_touchwiz_pie)
             }
+        }
+    }
+
+    private fun setUpClockPosition() {
+        val pref = findPreference(TW_CLOCK_POSITION) as ListPreference
+        val blMan = context!!.blacklistManager
+        val bl = blMan.currentBlacklistAsList
+        val v = bl.intersect(pref.entryValues.toList())
+
+        pref.value = v.toList()[0].toString()
+        pref.summary = pref.entry
+
+        pref.setOnPreferenceChangeListener { p, value ->
+            p as ListPreference
+
+            val rem = p.entryValues.toMutableList()
+                    .apply { remove(value) }
+                    .map { it.toString() }
+
+            blMan.removeItems(rem)
+            blMan.addItem(value.toString())
+
+            p.summary = p.entries[p.entryValues.indexOf(value)]
+
+            true
         }
     }
 

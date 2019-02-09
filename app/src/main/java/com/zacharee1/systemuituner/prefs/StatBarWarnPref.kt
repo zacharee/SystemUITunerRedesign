@@ -5,8 +5,7 @@ import android.content.Context
 import android.util.AttributeSet
 import android.view.View
 import com.zacharee1.systemuituner.R
-import com.zacharee1.systemuituner.fragments.StatbarFragment
-import com.zacharee1.systemuituner.util.changeBlacklist
+import com.zacharee1.systemuituner.util.blacklistManager
 import com.zacharee1.systemuituner.util.writeSecure
 
 class StatBarWarnPref : RedTextPref {
@@ -34,7 +33,7 @@ class StatBarWarnPref : RedTextPref {
             setButton(AlertDialog.BUTTON_POSITIVE, context.resources.getText(R.string.yes_im_uninstalling)) { _, _ -> }
             setButton(AlertDialog.BUTTON_NEGATIVE, context.resources.getText(R.string.no_im_staying)) { _, _ -> }
 
-            setOnShowListener { _ ->
+            setOnShowListener {
                 getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener { performUninstall() }
                 getButton(AlertDialog.BUTTON_NEGATIVE).setOnClickListener { performStay() }
             }
@@ -44,7 +43,7 @@ class StatBarWarnPref : RedTextPref {
 
         private fun performUninstall() {
             context.writeSecure("sysui_tuner_version", 0)
-            context.writeSecure(StatbarFragment.ICON_BLACKLIST, null)
+            context.blacklistManager.setCurrentBlacklist(null)
 
             setTitle(context.resources.getString(R.string.done))
             setMessage(context.resources.getString(R.string.fix_rotation_done_uninstall))
@@ -58,7 +57,7 @@ class StatBarWarnPref : RedTextPref {
         }
 
         private fun performStay() {
-            context.changeBlacklist("rotate", false)
+            context.blacklistManager.addItem("rotate")
 
             setTitle(context.resources.getString(R.string.done))
             setMessage(context.resources.getString(R.string.fix_rotation_done_stay))

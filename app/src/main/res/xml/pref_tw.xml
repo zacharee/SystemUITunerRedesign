@@ -43,18 +43,21 @@
     </tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory>
 
     <tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory
-        android:title="@string/navigation_bar">
+        android:title="@string/miscellaneous">
+
+        <ListPreference
+            android:title="@string/clock_position"
+            android:key="tw_clock_position"
+            android:entries="@array/tw_clock_position_names"
+            android:entryValues="@array/tw_clock_position_values"
+            android:defaultValue="left_clock_position"
+            />
 
         <com.jaredrummler.android.colorpicker.ColorPreferenceCompat
-            android:title="@string/color"
+            android:title="@string/navigation_bar_color"
             android:key="navigationbar_color"
             app:cpv_showAlphaSlider="true"
             android:defaultValue="-1"/>
-
-    </tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory>
-
-    <tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory
-        android:title="@string/miscellaneous">
 
         <SwitchPreference
             android:title="@string/high_brightness_warning"

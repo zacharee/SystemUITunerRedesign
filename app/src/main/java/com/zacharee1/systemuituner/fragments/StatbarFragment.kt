@@ -6,7 +6,6 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.net.Uri
 import android.os.Bundle
-import android.provider.Settings
 import android.widget.Toast
 import androidx.preference.Preference
 import androidx.preference.PreferenceCategory
@@ -27,8 +26,6 @@ open class StatbarFragment : AnimFragment() {
         const val RESET_BLACKLIST = "reset_blacklist"
         const val BACKUP_BLACKLIST = "backup_blacklist"
         const val RESTORE_BLACKLIST = "restore_blacklist"
-        const val ICON_BLACKLIST = "icon_blacklist"
-        const val ICON_BLACKLIST_BACKUP = "icon_blacklist_backup"
         const val AUTO_DETECT = "auto_detect"
         const val TOUCHWIZ = "touchwiz"
         const val CUSTOM = "custom"
@@ -82,14 +79,14 @@ open class StatbarFragment : AnimFragment() {
         val auto = findPreference(AUTO_DETECT)
 
         resetBL?.onPreferenceClickListener = Preference.OnPreferenceClickListener {
-            context?.writeSecure(ICON_BLACKLIST, null)
+            context?.blacklistManager?.setCurrentBlacklist(null)
             setSwitchPreferenceStates()
             true
         }
 
         backupBL?.onPreferenceClickListener = Preference.OnPreferenceClickListener {
-            val blacklist = Settings.Secure.getString(activity?.contentResolver, ICON_BLACKLIST)
-            if (blacklist.isNullOrBlank()) {
+            val blacklist = activity!!.blacklistManager.currentBlacklist
+            if (blacklist.isBlank()) {
                 Toast.makeText(activity, R.string.nothing_to_back_up, Toast.LENGTH_SHORT).show()
             } else {
                 val createIntent = Intent(Intent.ACTION_CREATE_DOCUMENT)
@@ -133,7 +130,7 @@ open class StatbarFragment : AnimFragment() {
                     val key = preference.key
                     val value = o.toString().toBoolean()
 
-                    context?.changeBlacklist(key, value)
+                    context?.blacklistManager?.modifyItem(key, value)
                     true
                 }
             }
@@ -166,16 +163,15 @@ open class StatbarFragment : AnimFragment() {
         Toast.makeText(activity, R.string.backup_restored, Toast.LENGTH_SHORT).show()
 
         stream?.close()
-        context?.writeSecure(ICON_BLACKLIST, bl)
+        context?.blacklistManager?.currentBlacklist = bl
         setSwitchPreferenceStates()
     }
 
     private fun writeBackupFile(uri: Uri) {
-        val blacklist = Settings.Secure.getString(activity?.contentResolver, ICON_BLACKLIST) ?: return
         val descriptor = activity?.contentResolver?.openFileDescriptor(uri, "w")
         val stream = FileOutputStream(descriptor?.fileDescriptor)
 
-        stream.write(blacklist.toByteArray())
+        stream.write(context!!.blacklistManager.currentBlacklist.toByteArray())
         stream.close()
         descriptor?.close()
     }

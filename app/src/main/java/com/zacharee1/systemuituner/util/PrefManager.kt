@@ -74,6 +74,7 @@ class PrefManager private constructor(private val context: Context) {
         const val TILE_ROW = "qs_tile_row"
         const val TILE_ROW_LANDSCAPE = "qs_tile_row_landscape"
         const val TTY_DEMO = "tty_demo"
+        const val TW_CLOCK_POSITION = "tw_clock_position"
         const val VOLUME_ICON = "volume_icon"
         const val WIFI_FULLY_CONNECTED = "wifi_fully_connected"
         const val WIFI_STRENGTH = "wifi_strength"

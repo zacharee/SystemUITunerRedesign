@@ -11,7 +11,7 @@ import androidx.preference.SwitchPreference
 import com.topjohnwu.superuser.Shell
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.activites.instructions.SetupActivity
-import com.zacharee1.systemuituner.util.changeBlacklist
+import com.zacharee1.systemuituner.util.blacklistManager
 import com.zacharee1.systemuituner.util.hasUsage
 import com.zacharee1.systemuituner.util.updateBlacklistSwitches
 import kotlinx.coroutines.GlobalScope
@@ -90,8 +90,8 @@ class AutoFragment : AnimFragment() {
                                     val preference = SwitchPreference(context)
                                     preference.title = result
                                     preference.key = result
-                                    preference.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { _, o ->
-                                        context?.changeBlacklist(preference.key, o.toString().toBoolean())
+                                    preference.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { p, o ->
+                                        context?.blacklistManager?.modifyItem(p.key, o.toString().toBoolean())
                                         true
                                     }
 
@@ -117,8 +117,8 @@ class AutoFragment : AnimFragment() {
                     val preference = SwitchPreference(context)
                     preference.title = slotNew
                     preference.key = slotNew
-                    preference.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { _, o ->
-                        context?.changeBlacklist(preference.key, o.toString().toBoolean())
+                    preference.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { p, o ->
+                        context?.blacklistManager?.modifyItem(p.key, o.toString().toBoolean())
                         true
                     }
 
