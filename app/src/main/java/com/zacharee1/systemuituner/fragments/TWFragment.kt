@@ -98,26 +98,32 @@ class TWFragment : AnimFragment() {
 
     private fun setUpClockPosition() {
         val pref = findPreference(TW_CLOCK_POSITION) as ListPreference
-        val blMan = context!!.blacklistManager
-        val bl = blMan.currentBlacklistAsList
-        val v = bl.intersect(pref.entryValues.toList())
 
-        pref.value = v.toList()[0].toString()
-        pref.summary = pref.entry
+        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.O_MR1) {
+            val blMan = context!!.blacklistManager
+            val bl = blMan.currentBlacklistAsList
+            val v = bl.intersect(pref.entryValues.toList())
 
-        pref.setOnPreferenceChangeListener { p, value ->
-            p as ListPreference
+            pref.value = v.toList()[0].toString()
+            pref.summary = pref.entry
 
-            val rem = p.entryValues.toMutableList()
-                    .apply { remove(value) }
-                    .map { it.toString() }
+            pref.setOnPreferenceChangeListener { p, value ->
+                p as ListPreference
 
-            blMan.removeItems(rem)
-            blMan.addItem(value.toString())
+                val rem = p.entryValues.toMutableList()
+                        .apply { remove(value) }
+                        .map { it.toString() }
 
-            p.summary = p.entries[p.entryValues.indexOf(value)]
+                blMan.removeItems(rem)
+                blMan.addItem(value.toString())
 
-            true
+                p.summary = p.entries[p.entryValues.indexOf(value)]
+
+                true
+            }
+        } else {
+            pref.isEnabled = false
+            pref.summary = resources.getString(R.string.requires_pie)
         }
     }
 

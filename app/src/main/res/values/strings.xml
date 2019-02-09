@@ -306,6 +306,7 @@
     <string name="safe_mode_auto_enabled">Samsung device detected! Safe Mode has been automatically enabled for your safety. Be warned that modifying any status bar icons has the potential to BREAK SYSTEM UI! Please follow the link in the Play Store description for more information.</string>
     <string name="requires_nougat">Requires Nougat or later.</string>
     <string name="requires_oreo">Requires Oreo or later.</string>
+    <string name="requires_pie">Requires Pie or later.</string>
     <string name="requires_8_1">Requires Oreo 8.1 or later.</string>
     <string name="safe_mode_android_o">Because of limitations added in Android O, this feature will not work on your device.</string>
     <string name="intro_1">Thanks for downloading my app! SystemUI Tuner is meant to replace/supplement the built-in System UI Tuner seen in AOSP. Both users with and without System UI Tuner can benefit from this app.</string>
