@@ -52,8 +52,13 @@ abstract class AnimFragment : PreferenceFragmentCompat(), SharedPreferences.OnSh
     override fun onCreateRecyclerView(inflater: LayoutInflater?, parent: ViewGroup?, savedInstanceState: Bundle?): RecyclerView {
         val recView = super.onCreateRecyclerView(inflater, parent, savedInstanceState)
 
-        recView.itemAnimator = LandingAnimator().apply {
+        recView.itemAnimator = object : LandingAnimator() {
+
+        }.apply {
             addDuration = resources.getInteger(android.R.integer.config_shortAnimTime).toLong()
+            changeDuration = 0
+            removeDuration = 0
+            moveDuration = addDuration
         }
 
         return recView
