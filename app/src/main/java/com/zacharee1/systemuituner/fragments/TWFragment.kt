@@ -104,7 +104,7 @@ class TWFragment : AnimFragment() {
             val bl = blMan.currentBlacklistAsList
             val v = bl.intersect(pref.entryValues.toList())
 
-            pref.value = v.toList()[0].toString()
+            pref.value = if (v.isEmpty()) pref.entryValues[0].toString() else v.toList()[0].toString()
             pref.summary = pref.entry
 
             pref.setOnPreferenceChangeListener { p, value ->
