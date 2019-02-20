@@ -5,16 +5,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.preference.Preference
-import androidx.preference.PreferenceFragmentCompat
-import androidx.preference.PreferenceScreen
 import androidx.recyclerview.widget.RecyclerView
 import com.zacharee1.systemuituner.prefs.AddCustomBlacklistItemPreference
 import com.zacharee1.systemuituner.prefs.CustomInputPreference
 import com.zacharee1.systemuituner.util.prefs
 import jp.wasabeef.recyclerview.animators.LandingAnimator
-import tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceGroupAdapter
+import tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceFragment
 
-abstract class AnimFragment : PreferenceFragmentCompat(), SharedPreferences.OnSharedPreferenceChangeListener {
+abstract class AnimFragment : CollapsiblePreferenceFragment(), SharedPreferences.OnSharedPreferenceChangeListener {
     internal abstract val prefsRes: Int
 
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
@@ -62,10 +60,6 @@ abstract class AnimFragment : PreferenceFragmentCompat(), SharedPreferences.OnSh
         }
 
         return recView
-    }
-
-    override fun onCreateAdapter(preferenceScreen: PreferenceScreen): RecyclerView.Adapter<*> {
-        return CollapsiblePreferenceGroupAdapter(preferenceScreen)
     }
 
     override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences?, key: String?) {}
