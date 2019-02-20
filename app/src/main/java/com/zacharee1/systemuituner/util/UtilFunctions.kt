@@ -5,9 +5,11 @@ import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
+import android.content.pm.ApplicationInfo
 import android.content.pm.PackageManager
 import android.provider.Settings
 import android.util.TypedValue
+import android.view.View
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.FragmentManager
 import androidx.preference.Preference
@@ -210,3 +212,22 @@ val Context.prefs: PrefManager
 
 val Context.blacklistManager: BlacklistManager
     get() = BlacklistManager.getInstance(this)
+
+fun Context.createApplicationContext(appInfo: ApplicationInfo): Context {
+    val method = Context::class.java.getMethod("createApplicationContext", ApplicationInfo::class.java, Int::class.java)
+
+    return method.invoke(this, appInfo, 0) as Context
+}
+
+val Context.twHasAospClock: Boolean
+    get() {
+        val sysUiCtx = createApplicationContext(packageManager.getApplicationInfo("com.android.systemui", 0))
+        val clockLayoutRes = sysUiCtx.resources.getIdentifier("qs_status_bar_clock", "layout", "com.android.systemui")
+
+        return try {
+            View.inflate(this, clockLayoutRes, null)
+            false
+        } catch (e: Exception) {
+            !e.message!!.contains("QSPhoneStatusBarViewClock")
+        }
+    }
