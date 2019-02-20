@@ -3,6 +3,7 @@ package com.zacharee1.systemuituner.util
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.SharedPreferences
+import android.os.Build
 import androidx.preference.PreferenceManager
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
@@ -157,6 +158,7 @@ class PrefManager private constructor(private val context: Context) {
         get() = getBoolean(SAFE_MODE_HIGH_BRIGHTNESS_WARNING, true)
     var safeModeHeaderCount: Boolean
         get() = getBoolean(SAFE_MODE_HEADER_COUNT, true)
+                && !(context.checkSamsung() && Build.VERSION.SDK_INT > Build.VERSION_CODES.O_MR1)
         set(value) {
             putBoolean(SAFE_MODE_HEADER_COUNT, value)
         }

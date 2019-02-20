@@ -94,6 +94,12 @@ class SettingsActivity : BaseAnimActivity() {
                     isChecked = false
                     setSummary(R.string.setting_not_on_touchwiz_pie)
                 }
+
+                (findPreference(PrefManager.SAFE_MODE_HEADER_COUNT) as CheckBoxPreference).apply {
+                    isEnabled = false
+                    isChecked = false
+                    setSummary(R.string.setting_not_on_touchwiz_pie)
+                }
             }
 
             findPreference(PrefManager.SAFE_MODE_HIGH_BRIGHTNESS_WARNING)
