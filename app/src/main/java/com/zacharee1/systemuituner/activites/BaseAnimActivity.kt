@@ -19,6 +19,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.appcompat.widget.Toolbar
 import com.zacharee1.systemuituner.R
+import com.zacharee1.systemuituner.util.PrefManager
 import com.zacharee1.systemuituner.util.prefs
 
 @SuppressLint("Registered")
@@ -101,7 +102,7 @@ open class BaseAnimActivity : AppCompatActivity(), SharedPreferences.OnSharedPre
     @CallSuper
     override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences?, key: String?) {
         when (key) {
-            "dark_mode" -> recreate()
+            PrefManager.DARK_MODE -> recreate()
         }
     }
 
