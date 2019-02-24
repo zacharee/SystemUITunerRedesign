@@ -8,10 +8,10 @@
     <string name="notice">AVVISO</string>
     <string name="hide_welcome_screen">Nascondi la schermata di benvenuto</string>
     <string name="instructions">Istruzioni</string>
-    <string name="need_help">Need Help?</string>
+    <string name="need_help">Hai bisogno di Aiuto?</string>
     <string name="about">Informazioni</string>
     <string name="miscellaneous">Varie</string>
-    <string name="custom">Custom</string>
+    <string name="custom">Personalizza</string>
     <string name="settings">Impostazioni</string>
     <string name="status_bar">Barra di stato</string>
     <string name="sorry">Scusa…</string>
@@ -58,8 +58,8 @@
     <string name="zen_icon">Icona Zen</string>
     <string name="do_not_disturb">Icona Non disturbare</string>
     <string name="dnd">Non Disturbare</string>
-    <string name="privacy_policy">Privacy Policy</string>
-    <string name="terms_of_service">Terms of Service</string>
+    <string name="privacy_policy">Informativa sulla privacy</string>
+    <string name="terms_of_service">Termini di Servizio</string>
     <string name="donate">Dona</string>
     <string name="reset_blacklist">Reimposta la blacklist</string>
     <string name="animator_duration_scale">Scala durata animatore</string>
@@ -69,8 +69,8 @@
     <string name="general">Generale</string>
     <string name="heads_up_notifications">Notifiche Heads-Up</string>
     <string name="headphone_volume_warning">Avviso di volume in cuffia</string>
-    <string name="custom_settings_input">Custom Settings Input</string>
-    <string name="custom_settings_read">Read Custom Value</string>
+    <string name="custom_settings_input">Valori di impostazioni personalizzati</string>
+    <string name="custom_settings_read">Nuovo valore personalizzato</string>
     <string name="global">Globale</string>
     <string name="secure">Sicurezza</string>
     <string name="system">Sistema</string>
@@ -78,7 +78,7 @@
     <string name="power_notification_controls">Controllo poteri di notifica</string>
     <string name="danger_zone">Zona pericolosa</string>
     <string name="safe_mode">Modalità provvisoria</string>
-    <string name="enable_custom_settings_input">Enable Custom Settings</string>
+    <string name="enable_custom_settings_input">Abilita azioni personalizzate</string>
     <string name="enable">Abilita</string>
     <string name="knox_icon">Icona KNOX</string>
     <string name="smart_network_icon">Icona di rete intelligente</string>
@@ -154,8 +154,8 @@
     <string name="mode">Modalità</string>
     <string name="qs_column_count">Numero delle colonne dei QS</string>
     <string name="qs_row_count">Numero di righe dei QS</string>
-    <string name="qs_column_count_landscape">QS Column Count (Landscape)</string>
-    <string name="qs_row_count_landscape">QS Row Count (Landscape)</string>
+    <string name="qs_column_count_landscape">Numero di Colonne QS (Orizzontale)</string>
+    <string name="qs_row_count_landscape">Numero di Colonne QS (Orizzontale)</string>
     <string name="lockscreen">Schermata di blocco</string>
     <string name="choose_left">Scegli la scorciatoia di sinistra</string>
     <string name="choose_right">Scegli la scorciatoia di destra</string>
@@ -205,9 +205,9 @@
     <string name="allow_deep_sleep">Attiva Deep Sleep automatico</string>
     <string name="yes">Si</string>
     <string name="no">No</string>
-    <string name="notif_title">Safe Mode Service is running</string>
+    <string name="notif_title">Servizio Modalità Sicura in esecuzione</string>
     <string name="color">Colore</string>
-    <string name="notifs_snooze">Notification Snoozing</string>
+    <string name="notifs_snooze">Silenzia notifiche</string>
     <string name="default_text">Predefinito</string>
     <string name="time_a">Tempo A</string>
     <string name="time_b">Tempo B</string>
@@ -219,62 +219,60 @@
     <string name="military">24 Ore</string>
     <string name="military_nosec">24 Ore, senza secondi</string>
     <string name="show_notif">Mostra notifiche</string>
-    <string name="carrier_on_home">Carrier Label on Home Screen</string>
-    <string name="carrier_on_lock">Carrier Label on Lock Screen</string>
-    <string name="key_plaintext">Key</string>
-    <string name="value_plaintext">Value</string>
-    <string name="remove_from_blacklist">Remove From Blacklist?</string>
-    <string name="safe_mode_status_bar">Status Bar</string>
-    <string name="safe_mode_fancy_anim">Fancy Animation</string>
-    <string name="safe_mode_header_count">QS Header Count</string>
-    <string name="safe_mode_row_col_tw">QS Row/Column Count</string>
-    <string name="safe_mode_snooze_options">Snooze Options</string>
-    <string name="fix_rotation_icon_dialog_title">Uninstalling?</string>
-    <string name="done">Done!</string>
-    <string name="high_brightness_warning">High Brightness Warning</string>
-    <string name="grant">Grant</string>
-    <string name="attention">Attention!</string>
+    <string name="carrier_on_home">Etichetta operatore nella schermata Home</string>
+    <string name="carrier_on_lock">Etichetta operatore nella schermata Home</string>
+    <string name="key_plaintext">Codice</string>
+    <string name="value_plaintext">Valore</string>
+    <string name="remove_from_blacklist">Rimuovi dalla lista nera?</string>
+    <string name="safe_mode_status_bar">Barra di stato</string>
+    <string name="safe_mode_fancy_anim">Animazioni Avanzate</string>
+    <string name="safe_mode_header_count">Quantità icone nelle impostazioni rapide</string>
+    <string name="safe_mode_row_col_tw">Numero delle colonne dei QS</string>
+    <string name="safe_mode_snooze_options">Opzioni Snooze</string>
+    <string name="fix_rotation_icon_dialog_title">Disinstallazione?</string>
+    <string name="done">Fatto!</string>
+    <string name="high_brightness_warning">Avviso Alta luminosità</string>
+    <string name="grant">Consenti</string>
+    <string name="attention">Attenzione!</string>
     <!--Descriptions-->
     <string name="fancy_pulldown_notice">Abilitare/Disabilitare questa opzione potrebbe causare problemi dopo un riavvio. Abilita/disabilita manualmente questa opzione dopo il riavvio, oppure usa il SafeMode.</string>
     <string name="safe_mode_summary">Utenti Samsung, lasciare attivato almeno che abbiate una ROM AOSP!</string>
     <string name="safe_mode_summary_1">Rimuovi ogni personalizzazione alla barra di stato al riavvio e ripristina tutto al termine dell\'avvio.</string>
-    <string name="safe_mode_summary_2">Toggles the QS Fancy Animation on boot.</string>
-    <string name="safe_mode_summary_3">Restores custom QS header count value on boot (Nougat+).</string>
-    <string name="safe_mode_summary_4">Restores custom QS row/column count on boot (TouchWiz, Nougat+).</string>
-    <string name="safe_mode_summary_5">Restores custom notification snooze options on boot (8.1+).</string>
+    <string name="safe_mode_summary_2">Attiva l\'animazione Fancy QS all\'avvio.</string>
+    <string name="safe_mode_summary_3">Ripristina il valore di conteggio personalizzato QS all\'avvio (Nougat+).</string>
+    <string name="safe_mode_summary_4">Ripristina il conteggio personalizzato QS riga/colonna all\'avvio (TouchWiz, Nougat+).</string>
+    <string name="safe_mode_summary_5">Ripristina le opzioni personalizzate di snooze di notifica all\'avvio (8.1+).</string>
     <string name="enable_in_settings">Attivalo nelle impostazioni.</string>
     <string name="reboot_required">(Riavvio necessario)</string>
-    <string name="auto_detect_summary">Attempts to automatically detect which status bar icons can be hidden. Does not work on all devices!</string>
+    <string name="auto_detect_summary">Tenta di rilevare automaticamente quali icone della barra di stato possono essere nascoste. Non funziona su tutti i dispositivi!</string>
     <string name="night_display_not_avail">Il display notturno non è disponibile su questo device.</string>
     <string name="app_specific_desc">Seleziona app da includere o escludere dalla modalità immersiva. La modalità immersiva dev\'essere disabilitata per rendere effettivi questi cambiamenti.</string>
     <string name="blacklist_desc">Quando attiva, le app selezionate non useranno la modalità immersiva</string>
     <string name="imm_warn">Questa funzione ti permette di attivare la modalità immersiva. Non fa nient\'altro. Ogni problema riscontrato durante l\'utilizzo è causato dal produttore del telefono. NON POSSO SISTEMARLO!</string>
-    <string name="statbar_rotation_lock_notif">On certain devices, modifying the status bar icons can cause an icon that looks like a phone to appear. This is the rotation lock icon. Tap here to fix it.</string>
-    <string name="pnc_desc">Power Notification Controls allow you to set the level of importance for notifications on a per-app basis. Simply turn the feature on and hold down on a notification to get started. You may need to tap the A to enable the slider.</string>
+    <string name="statbar_rotation_lock_notif">Su alcuni dispositivi, modificare le icone della barra di stato può far comparire un icona simile ad un telefono. Quest\'ultima indica il blocco della rotazione.</string>
+    <string name="pnc_desc">I controlli di notifica consentono di impostare il livello di importanza per le notifiche su base per-app. Semplicemente attiva la funzione e tieni premuto su una notifica per iniziare. Potresti dover toccare la A per abilitare lo slider.</string>
     <string name="pnc_warn">Questa funzione è inaffidabile su alcuni dispositivi, sopratutto su TouchWiz! È impossibile da sistemare, la soluzione migliore è quella di premere continuamente fino al livello desiderato. Ancora una volta, NON POSSO SISTEMARLO!</string>
     <string name="notif_desc">Tocca per modificare le impostazioni</string>
-    <string name="touchwiz_oreo_qqs">On TouchWiz Oreo devices, this setting is no longer reliable! Along with setting the number here, you may have to also save the value to Settings.System.apanel_number, which can only be done with ADB or root. Safe Mode attempts to implement a workaround, but I can\'t guarantee it will work!</string>
-    <string name="notifs_snooze_desc">&#160;
-    In Android 8.1 and later, you can set custom times for notification snoozing. These values reset on reboot, so make sure to enable Safe Mode if you would like them to persist across power cycles.\n\n&#160;
-    Use the options below to set the different snooze times. \"Default\" sets the time Android will use by default. The other items will be the snooze times available for you to select.
-    </string>
-    <string name="custom_settings_input_desc">These fields allow you to enter your own custom settings.</string>
-    <string name="custom_settings_read_desc">These fields allow you to read the value of a specified key.</string>
-    <string name="custom_settings_warning">Be careful what you do here! If you input an incorrect value, you could cause a crash loop, bootloop or worse!</string>
-    <string name="hide_welcome_hint">Hint: You can hide this screen, and the donation message, by going to Settings and toggling on \"Hide Welcome Screen\".</string>
-    <string name="safe_mode_notif_desc_not_supported">This setting must remain enabled on Oreo.</string>
-    <string name="fix_rotation_icon_dialog_desc">Are you planning to uninstall SystemUI Tuner after this?</string>
-    <string name="yes_im_uninstalling">Yes, I\'m Uninstalling</string>
-    <string name="no_im_staying">No, I\'m Staying</string>
-    <string name="fix_rotation_done_uninstall">Rotation icon removed! This won\'t take effect until you reboot.</string>
-    <string name="fix_rotation_done_stay">Rotation icon removed! If it still appears, reboot your device.</string>
-    <string name="missing_not_required_perms_desc">Are you sure you want to continue? At least one optional permission wasn\'t granted, which means you will need a computer again to grant them later.</string>
-    <string name="ws_needed_desc">WRITE_SETTINGS is needed to change this setting. Tap the button above to grant it.\n (This unfortunately doesn\'t guarantee that the toggle will work.)</string>
-    <string name="safe_mode_high_brightness_warning_desc">Attempt to restore the currently set High Brightness Warning status on boot. This is only for TouchWiz devices and won\'t work without root.</string>
-    <string name="safe_mode_volume_warning_desc">Restores current High Volume Warning state on boot.</string>
-    <string name="safe_mode_needed_qs_row_col">Safe Mode must be turned on, with the Row/Column option activated, for landscape values to work.</string>
-    <string name="safe_mode_inactive_on_current_page">Safe Mode is inactive on this screen! Go back to the main menu to save changes!</string>
-    <string name="qs_info_marshmallow">Hold down on an icon to remove it.</string>
+    <string name="touchwiz_oreo_qqs">Su TouchWiz Oreo, questa impostazione non è più affidabile! Insieme all\'impostazione del numero qui, potresti anche dover salvare il valore in Impostazioni.System.apanel_numero, che può essere fatto solo con ADB o root. Modalità sicura tentativi di implementare un funzionamento, ma non posso garantire che funzioni!</string>
+    <string name="notifs_snooze_desc">In Android 8.1 e versioni successive, puoi impostare tempi personalizzati per il posticipo della notifica. Questi valori vengono reimpostati al riavvio, quindi assicurati di abilitare la Modalità provvisoria se desideri che persistano tra i cicli di alimentazione.\n\n&#160;
+Utilizzare le opzioni seguenti per impostare i diversi tempi di ripetizione. \"Default\" imposta il tempo che Android utilizzerà per impostazione predefinita. Gli altri articoli saranno i tempi di snooze disponibili per la selezione.    </string>
+    <string name="custom_settings_input_desc">Questi campi consentono di inserire le tue impostazioni personalizzate.</string>
+    <string name="custom_settings_read_desc">Questi campi ti permettono di leggere il valore di una chiave specificata.</string>
+    <string name="custom_settings_warning">Fai attenzione a cosa fai qui! Se inserisci un valore errato, potresti causare un loop di crash, bootloop o peggio!</string>
+    <string name="hide_welcome_hint">Suggerimento: Puoi nascondere questa schermata e il messaggio di donazione andando in Impostazioni e togliendo su \"Nascondi schermata di benvenuto\".</string>
+    <string name="safe_mode_notif_desc_not_supported">Questa impostazione deve rimanere attiva su Oreo.</string>
+    <string name="fix_rotation_icon_dialog_desc">Stai pianificando di disinstallare SystemUI Tuner dopo questo?</string>
+    <string name="yes_im_uninstalling">Sì, sto disinstallando</string>
+    <string name="no_im_staying">No, sto rimanendo</string>
+    <string name="fix_rotation_done_uninstall">Icona di rotazione rimossa! Questo non avrà effetto fino al riavvio.</string>
+    <string name="fix_rotation_done_stay">Icona di rotazione rimossa! Se ancora appare, riavvia il dispositivo.</string>
+    <string name="missing_not_required_perms_desc">Sei sicuro di voler continuare? Almeno un\'autorizzazione facoltativa non è stata concessa, il che significa che avrai bisogno di nuovo di un computer per concederli in seguito.</string>
+    <string name="ws_needed_desc">WRITE_SETTINGS è necessario per modificare questa impostazione. Tocca il pulsante qui sopra per concederla.\n (Questo purtroppo non garantisce che l\'interruttore funzioni.)</string>
+    <string name="safe_mode_high_brightness_warning_desc">Tentativo di ripristinare lo stato di allarme Alta luminosità attualmente impostato all\'avvio. Questo è solo per i dispositivi TouchWiz e non funzionerà senza root.</string>
+    <string name="safe_mode_volume_warning_desc">Ripristina l\'attuale stato di allarme ad alto volume all\'avvio.</string>
+    <string name="safe_mode_needed_qs_row_col">La modalità sicura deve essere attivata, con l\'opzione Riga/Colonna attivata, per il funzionamento dei valori landscape.</string>
+    <string name="safe_mode_inactive_on_current_page">La modalità sicura è inattiva su questa schermata! Torna al menu principale per salvare le modifiche!</string>
+    <string name="qs_info_marshmallow">Tieni premuto su un\'icona per rimuoverla.</string>
     <!--Messages-->
     <string name="sorry_explain">Qualcosa è andato storto mentre selezionavi questa impostazione.</string>
     <string name="sorry_option">Prova ad eseguire questo comando da un pc (è solo una linea):</string>
@@ -289,16 +287,16 @@
     <string name="intro_3">C\'è una pletora di opzioni pre-definite per la barra di stato, ma se non vedi un icona che vuoi nascondere, puoi provare la modalità Auto-Detect, che proverà a rilevare le icone che possono essere nascoste.</string>
     <string name="intro_4">E la parte migliore di questa app? Non ha bisogno di root! Tenterà di ottenere i privilegi di root, ma nel caso non sia possibile si dovra utilizzare ADB. UTILIZZARE ADB NON È ROOTARE!</string>
     <string name="intro_5">Una volta premuto il pulsante fine, SystemUI Tuner tenterà di ottenere l\'accesso root. Se possibile, concederà tutte le autorizzazioni per voi. In caso contrario, compariranno delle istruzioni per guidarvi.</string>
-    <string name="adb_setup">The permissions above must be granted to continue. You\'ll need to use ADB. Please note: PACKAGE_USAGE_STATS and DUMP are optional for most features. SystemUI Tuner will prompt you if either or both is needed.</string>
+    <string name="adb_setup">I permessi sopra devono essere concessi per continuare. Dovrai utilizzare ADB. Nota: PACKAGE_USAGE_STATS e DUMP sono opzionali per la maggior parte delle funzioni. Il Tuner SystemUI ti chiederà se è necessario o entrambi.</string>
     <string name="target_not_found">Impossibile avviare l\'app.</string>
     <string name="feature_not_supported">Sembra che il tuo dispositivo non supporti questa funzione :/</string>
     <string name="miui_warning">Sembra che tu stia utilizzando un dispositivo MIUI. Nel caso in cui sia disponibile qualche funzione, e ques\'ultima vada, se causa problemi NON POSSO SISTEMARLO!</string>
-    <string name="warn_message">Please read the Terms of Service before continuing.</string>
-    <string name="safe_mode_notif_desc">It is recommended that you keep this active, and hide the notification instead. Turning it off may cause Safe Mode to no longer function.</string>
-    <string name="invalid_blacklist_backup">Invalid blacklist backup</string>
-    <string name="backup_restored">Successfully restored backup</string>
-    <string name="nothing_to_back_up">Nothing to back up</string>
-    <string name="grant_usage">Please grant SystemUI Tuner access to Usage.</string>
+    <string name="warn_message">Per favore accetta i Termini di Servizio prima di continuare.</string>
+    <string name="safe_mode_notif_desc">Si consiglia di mantenere questa funzione attiva e nascondere invece la notifica. Disattivarla potrebbe causare una modalità sicura per non funzionare più.</string>
+    <string name="invalid_blacklist_backup">Backup blacklist non valido</string>
+    <string name="backup_restored">Backup ripristinato con successo</string>
+    <string name="nothing_to_back_up">Niente da recuperare</string>
+    <string name="grant_usage">Si prega di concedere a SystemUI Tuner l\'accesso all\'utilizzo.</string>
     <!--Instructions-->
     <string name="enable_debug"><![CDATA[1. Vai nelle impostazioni >> Opzioni sviluppatore e assicurati che Debug Android sia attivo.]]></string>
     <string name="accept_auth">2. Collega il tuo telefono al tuo pc e accetta l\'autorizzazione che comparirà su di esso.</string>
@@ -317,7 +315,7 @@
     <string name="cd_linux"><![CDATA[4. Digita <b>cd /path/to/extracted/folder/</b> per entrare nella cartella dove hai estratto ADB. Per esempio, <b>cd /home/Zachary/Desktop/platform-tools/</b>.]]></string>
     <!--Misc-->
     <string name="created_by">App creata da <a href="https://forum.xda-developers.com/member.php?u=7055541">Zacharee1</a></string>
-    <string name="lang_credit">Translations by volunteers on <a href="https://crowdin.com/project/systemui-tuner">Crowdin</a></string>
+    <string name="lang_credit">Traduzioni da volontari su <a href="https://crowdin.com/project/systemui-tuner">Crowdin</a></string>
     <string name="home_desc">Per i dispositivi senza questa Activity</string>
     <string name="home_joke">O per i devices con l\'activity, Non sono il tuo capo.</string>
     <string name="home_extra">(Se hai il sintetizzaro di interfaccia utente stock, quest\'ultimo ti fornirà alcune impostazioni extra.)</string>
