@@ -5,10 +5,10 @@
     <string name="app_name">SystemUI Tuner</string>
     <string name="to_the_tweaks">Zu den Tweaks!</string>
     <string name="more">Mehr</string>
-    <string name="notice">NOTIZ</string>
+    <string name="notice">HINWEIS</string>
     <string name="hide_welcome_screen">Willkommensbildschirm verstecken</string>
     <string name="instructions">Anleitung</string>
-    <string name="need_help">Benötigen Sie Hilfe?</string>
+    <string name="need_help">Brauchst du Hilfe?</string>
     <string name="about">Über</string>
     <string name="miscellaneous">Sonstiges</string>
     <string name="custom">Benutzerdefiniert</string>
@@ -167,10 +167,10 @@
     <string name="no_root">Kein Root benötigt</string>
     <string name="permissions">Berechtigungen</string>
     <string name="missing_perms">Fehlende Rechte!</string>
-    <string name="which_os">Welches Betriebssystem läuft auf Ihrem Computer?</string>
-    <string name="on_device">Befolgen Sie diese Anweisungen auf Ihrem Gerät.</string>
-    <string name="on_computer">Befolgen Sie diese Anweisungen auf Ihrem Computer.</string>
-    <string name="run_on_computer">Führen Sie diese Befehle auf Ihrem Computer aus. Für Linux (andere) und MacOS, müssen Sie \". /adb\" anstelle von \"adb\" verwenden.</string>
+    <string name="which_os">Welches Betriebssystem läuft auf deinem Computer?</string>
+    <string name="on_device">Befolge diese Anweisungen auf deinem Gerät.</string>
+    <string name="on_computer">Befolge diese Anweisungen auf deinem Computer.</string>
+    <string name="run_on_computer">Führe diese Befehle auf deinem Computer aus. Für Linux (andere) und MacOS, musst du \". /adb\" anstelle von \"adb\" verwenden.</string>
     <string name="windows">Windows</string>
     <string name="mac">macOS</string>
     <string name="ubuntu">Ubuntu</string>
@@ -311,27 +311,27 @@ Dies ist das Rotationssperren-Symbol. Tippen Sie hier, um es zu beheben.</string
     <!--Instructions-->
     <string name="enable_debug"><![CDATA[1. Gehe in den Einstellungen >> Entwickler-Optionen und stelle sicher, dass USB-Debugging aktiviert ist.]]></string>
     <string name="accept_auth">2. Verbinde dein Gerät an deinen Computer und akzeptiere die Autorisierungsanfrage.</string>
-    <string name="enable_devops"><![CDATA[- Enable Developer Options by going to Settings >> About, finding \"Build Number\" and tapping it 7 times.]]></string>
-    <string name="download_drivers">- Windows users may need to install device drivers, which are available from the manufacturer\'s website.</string>
-    <string name="download_adb_windows"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-windows.zip">Download the ADB ZIP for Windows.</a>]]></string>
-    <string name="extract_zip">2. Extract the ZIP to an easily-accessible location (ie Desktop).</string>
-    <string name="open_cmd">3. Open CMD.</string>
-    <string name="cd_windows"><![CDATA[4. Enter <b>cd C:\\path\\to\\extracted\\folder\\</b> to get to the folder where you extracted ADB. For instance, <b>cd C:\\Users\\Zachary\\Desktop\\platform-tools\\</b>.]]></string>
-    <string name="cd_further"><![CDATA[- Make sure that the folder you <b>cd</b> into contains the ADB executable. If not, <b>cd</b> one level further.]]></string>
-    <string name="download_adb_mac"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-darwin.zip">Download the ADB ZIP for macOS.</a>]]></string>
-    <string name="open_terminal">3. Open Terminal.</string>
-    <string name="cd_mac"><![CDATA[4. Enter <b>cd /path/to/extracted/folder/</b> to get to the folder you extracted ADB into. For instance, <b>cd /Users/Zachary/Desktop/platform-tools/</b>.]]></string>
-    <string name="make_sure_adb_installed">1. Make sure ADB is installed:</string>
-    <string name="download_adb_linux"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-linux.zip">Download the ADB ZIP for Linux.</a>]]></string>
-    <string name="cd_linux"><![CDATA[4. Enter <b>cd /path/to/extracted/folder/</b> to get to the folder you extracted ADB into. For instance, <b>cd /home/Zachary/Desktop/platform-tools/</b>.]]></string>
+    <string name="enable_devops"><![CDATA[• Aktiviere die Entwickleroptionen, indem du „Einstellungen” ➜ „Über” aufrufst, nach \„Build-Nummer\” suchst und 7 Mal darauf tippst.]]></string>
+    <string name="download_drivers">• Windows-Nutzer müssen möglicherweise Gerätetreiber installieren, die auf der Website des Herstellers verfügbar sind.</string>
+    <string name="download_adb_windows"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-windows.zip">ADB ZIP für Windows herunterladen.</a>]]></string>
+    <string name="extract_zip">2. Entpacke die ZIP-Datei an einem leicht zugänglichen Ort (z.B. Desktop).</string>
+    <string name="open_cmd">3. Öffne CMD.</string>
+    <string name="cd_windows"><![CDATA[4. Gib <b>cd C:\\path\\to\\extrahiert\\ordner\\</b> ein, um den Ordner zu öffnen, in dem du ADB extrahierst hast. Zum Beispiel, <b>cd C:\\Users\\Zachary\\Desktop\\Plattform-Tools\\</b>.]]></string>
+    <string name="cd_further"><![CDATA[• Stelle sicher, dass der Ordner, in den du mit <b>cd</b> wechselst, die ausführbare Datei ADB enthält. Wenn nicht, <b>cd</b> wechselt eine Ebene weiter.]]></string>
+    <string name="download_adb_mac"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-darwin.zip">ADB ZIP für macOS herunterladen.</a>]]></string>
+    <string name="open_terminal">3. Öffne den Terminal.</string>
+    <string name="cd_mac"><![CDATA[4. Gib <b>cd /path/to/extractracted/ordner/</b> ein, um den Ordner zu öffnen, in den du die ADB extrahiert hast. Zum Beispiel <b>cd /Users/Zachary/Desktop/plattform-tools/</b>.]]></string>
+    <string name="make_sure_adb_installed">1. Stelle sicher, dass ADB installiert ist:</string>
+    <string name="download_adb_linux"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-linux.zip">ADB ZIP für Linux herunterladen.</a>]]></string>
+    <string name="cd_linux"><![CDATA[4. Gib <b>cd /path/to/extractracted/ordner/</b> ein, um den Ordner zu öffnen, in den du die ADB extrahiert hast. Zum Beispiel <b>cd /home/Zachary/Desktop/plattform-tools/</b>.]]></string>
     <!--Misc-->
-    <string name="created_by">App created by <a href="https://forum.xda-developers.com/member.php?u=7055541">Zacharee1</a></string>
-    <string name="lang_credit">Translations by volunteers on <a href="https://crowdin.com/project/systemui-tuner">Crowdin</a></string>
-    <string name="home_desc">For Devices without this Activity</string>
-    <string name="home_joke">Or for devices with it, I\'m not your boss.</string>
-    <string name="home_extra">(If you do have the stock SystemUI Tuner, this one provides some extra goodies.)</string>
-    <string name="donate_hook">Hey, I see you\'re using my app.</string>
-    <string name="donate_joke">How, you ask? Magic.</string>
-    <string name="donate_request">If you\'re enjoying your time here, it\'d be absolutely amazing if you could spare a dollar or two.</string>
-    <string name="donate_dont_worry">There\'s absolutely no obligation. This app is free and always will be.</string>
+    <string name="created_by">App von <a href="https://forum.xda-developers.com/member.php?u=7055541">Zacharee1</a></string>
+    <string name="lang_credit">Übersetzungen von Freiwilligen auf <a href="https://crowdin.com/project/systemui-tuner">Crowdin</a></string>
+    <string name="home_desc">Für Geräte ohne diese Aktivität</string>
+    <string name="home_joke">Oder für Geräte mit ihr. Ich bin nicht dein Chef.</string>
+    <string name="home_extra">(Wenn du den normalen SystemUI Tuner hast, bietet dir dies ein paar extra Vorteile.)</string>
+    <string name="donate_hook">Hi, ich sehe, dass du meine App verwendest.</string>
+    <string name="donate_joke">Wie, fragst du? Magie.</string>
+    <string name="donate_request">Wenn du meine App magst, wäre es sehr nett, wenn du mir ein oder zwei Dollar spenden könntest.</string>
+    <string name="donate_dont_worry">Das ist natürlich absolut keine Pflicht. Diese App ist kostenlos und wird es immer sein.</string>
 </resources>
