@@ -3,10 +3,10 @@
 <resources>
     <!--Titles-->
     <string name="app_name">SystemUI Tuner</string>
-    <string name="to_the_tweaks">To The Tweaks!</string>
-    <string name="more">More</string>
-    <string name="notice">NOTICE</string>
-    <string name="hide_welcome_screen">Hide Welcome Screen</string>
+    <string name="to_the_tweaks">Zu den Tweaks!</string>
+    <string name="more">Mehr</string>
+    <string name="notice">NOTIZ</string>
+    <string name="hide_welcome_screen">Willkommensbildschirm verstecken</string>
     <string name="instructions">Instructions</string>
     <string name="need_help">Need Help?</string>
     <string name="about">About</string>
