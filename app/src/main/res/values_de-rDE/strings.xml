@@ -253,37 +253,37 @@
     <string name="reboot_required">(Neustart erforderlich)</string>
     <string name="auto_detect_summary">Versuche automatisch zu erkennen, welche Statusleistensymbole ausgeblendet werden können. Funktioniert nicht auf allen Geräten!</string>
     <string name="night_display_not_avail">Nachtbildschirm ist auf diesem Gerät nicht verfügbar.</string>
-    <string name="app_specific_desc">Wählen Sie, ob Apps vom immersiven Modus eingeschlossen, oder ausgeschlossen werden. Der immersive Mode muss deaktiviert werden, um diese Einstellungen zu ändern.</string>
+    <string name="app_specific_desc">Wähle, ob Apps vom immersiven Modus eingeschlossen, oder ausgeschlossen werden. Der immersive Mode muss deaktiviert werden, um diese Einstellungen zu ändern.</string>
     <string name="blacklist_desc">Wenn aktiviert, werden die ausgewählen Apps den Immersiven Modus nicht verwenden</string>
     <string name="imm_warn">Dieses Feature ermöglicht es lediglich den Immersive Modus zu aktivieren. Es tut nicht mehr. Alle Probleme die auftreten sind Schuld des Geräteherstellers. ICH KANN ES NICHT BEHEBEN!</string>
     <string name="statbar_rotation_lock_notif">Auf bestimmten Geräten verursacht das Ändern der Statusleiste ein Symbol, das wie ein Handy aussieht.
 Dies ist das Rotationssperren-Symbol. Tippen Sie hier, um es zu beheben.</string>
-    <string name="pnc_desc">Mit Power Notification Controls können Sie die Wichtigkeit einer Benachrichtigung pro App einstellen. Einfach die Funktion aktivieren und eine Benachrichtigung lange halten. Manchmal müssen sie das A antippen um den Schieberegler zu aktivieren.</string>
+    <string name="pnc_desc">Mit Power Notification Controls können Sie die Wichtigkeit einer Benachrichtigung pro App einstellen. Einfach die Funktion aktivieren und eine Benachrichtigung lange halten. Manchmal musst du das A antippen, um den Schieberegler zu aktivieren.</string>
     <string name="pnc_warn">Diese Funktion ist dafür bekannt, auf bestimmten Geräten, vor allem mit TouchWiz nicht zu funktionieren! Es ist unmöglich zu beheben, aber die beste Lösung ist, öfters auf das gewünschte Level zu tippen. Noch einmal, ich KANN ES NICHT beheben!</string>
     <string name="notif_desc">Antippen, um die Einstellungen zu ändern</string>
-    <string name="touchwiz_oreo_qqs">Auf TouchWiz Oreo-Geräten ist diese Einstellung nicht mehr zuverlässig! Zusammen mit dem Einstellen der Zahl hier, müssen Sie auch den Wert in Settings.System.apanel_number, speichern, was nur mit ADB oder Root-Rechten getan werden kann. Im abgesicherten Modus funktioniert es manchmal ohne das, aber dafür kann ich nicht garantieren!</string>
+    <string name="touchwiz_oreo_qqs">Auf TouchWiz Oreo-Geräten ist diese Einstellung nicht mehr zuverlässig! Zusammen mit dem Einstellen der Zahl hier, musst du auch den Wert in Settings.System.apanel_number, speichern, was nur mit ADB oder Root-Rechten getan werden kann. Im abgesicherten Modus funktioniert es manchmal ohne das, aber dafür kann ich nicht garantieren!</string>
     <string name="notifs_snooze_desc">&#160;
-    in Android 8.1 und höher, können Sie eigene Zeiten für lautlose Benachrichtigungen festlegen. Diese Werte werden beim Neustart zurückgesetzt, aktivieren sie den abgesicherten Modus, wenn die Werte beim Neustart erhalten bleiben sollen.\n\n&#160;
-    Verwenden Sie die folgenden Optionen, um die verschiedenen Snooze-Zeiten einzustellen. \"Default\" setzt die Zeit, die Android standardmäßig verwendet. Die anderen Elemente sind die Snooze-Zeiten, die zur Auswahl stehen.
+    in Android 8.1 und höher, kannst eigene Zeiten für lautlose Benachrichtigungen festlegen. Diese Werte werden beim Neustart zurückgesetzt, aktiviere den abgesicherten Modus, wenn die Werte beim Neustart erhalten bleiben sollen.\n\n&#160;
+    Verwende die folgenden Optionen, um die verschiedenen Snooze-Zeiten einzustellen. \"Default\" setzt die Zeit, die Android standardmäßig verwendet. Die anderen Elemente sind die Snooze-Zeiten, die zur Auswahl stehen.
     </string>
-    <string name="custom_settings_input_desc">In diesen Felder können Sie Ihre eigenen benutzerdefinierten Einstellungen eingeben.</string>
-    <string name="custom_settings_read_desc">Diese Felder ermöglichen es Ihnen, den Wert eines bestimmten Schlüssels zu lesen.</string>
-    <string name="custom_settings_warning">Seien Sie vorsichtig, bei dem, was Sie hier tun! Wenn Sie einen falschen Wert eingeben, können Sie eine Crash-Schleife, eine Boot-Schleife oder noch schlimmeres verursachen!</string>
-    <string name="hide_welcome_hint">Hinweis: Sie können diesen Bildschirm und die Spendennachricht ausblenden, indem Sie in die Einstellungen wechseln und „Willkommensbildschirm ausblenden” umschalten.</string>
+    <string name="custom_settings_input_desc">In diesen Felder kannst du deine eigenen benutzerdefinierten Einstellungen eingeben.</string>
+    <string name="custom_settings_read_desc">Diese Felder ermöglichen es dir, den Wert eines bestimmten Schlüssels zu lesen.</string>
+    <string name="custom_settings_warning">Sei vorsichtig, bei dem, was du hier tust! Wenn du einen falschen Wert eingibst, kannst du eine Crash-Schleife, eine Boot-Schleife oder noch schlimmeres verursachen!</string>
+    <string name="hide_welcome_hint">Hinweis: Du kannst diesen Bildschirm und die Spendennachricht ausblenden, indem du in die Einstellungen wechselst und „Willkommensbildschirm ausblenden” umschaltest.</string>
     <string name="safe_mode_notif_desc_not_supported">Diese Einstellung muss in Oreo aktiviert bleiben.</string>
-    <string name="fix_rotation_icon_dialog_desc">Haben Sie vor, SystemUI Tuner anschließend zu deinstallieren?</string>
+    <string name="fix_rotation_icon_dialog_desc">Hast du vor, SystemUI Tuner anschließend zu deinstallieren?</string>
     <string name="yes_im_uninstalling">Ja, deinstallieren</string>
     <string name="no_im_staying">Nein, behalten</string>
     <string name="fix_rotation_done_uninstall">Rotationssymbol entfernt! Einstellung wird erst nach einem Neustart wirksam.</string>
-    <string name="fix_rotation_done_stay">Rotationssymbol entfernt! Wenn es immer noch angezeigt wird, starten Sie Ihr Gerät neu.</string>
-    <string name="missing_not_required_perms_desc">Möchten Sie wirklich fortfahren? Mindestens eine optionale Berechtigung wurde nicht erteilt, was bedeutet, dass Sie erneut einen Computer benötigen, um sie später zu gewähren.</string>
-    <string name="ws_needed_desc">WRITE_SETTINGS wird benötigt, um diese Einstellung zu ändern. Tippen Sie auf die Schaltfläche oben, um sie zu erlauben.\n (Dies garantiert leider nicht, dass die Umschaltung funktioniert.)</string>
-    <string name="safe_mode_high_brightness_warning_desc">Versuchen Sie, den aktuell eingestellten Warnstatus für hohe Helligkeit beim Systemstart wiederherzustellen. Dies ist nur für TouchWiz-Geräte und funktioniert nicht ohne Root.</string>
+    <string name="fix_rotation_done_stay">Rotationssymbol entfernt! Wenn es immer noch angezeigt wird, starte dein Gerät neu.</string>
+    <string name="missing_not_required_perms_desc">Möchtest du wirklich fortfahren? Mindestens eine optionale Berechtigung wurde nicht erteilt, was bedeutet, dass du erneut einen Computer benötigst, um sie später zu gewähren.</string>
+    <string name="ws_needed_desc">WRITE_SETTINGS wird benötigt, um diese Einstellung zu ändern. Tippe auf die Schaltfläche oben, um sie zu erlauben.\n (Dies garantiert leider nicht, dass die Umschaltung funktioniert.)</string>
+    <string name="safe_mode_high_brightness_warning_desc">Versuche, den aktuell eingestellten Warnstatus für hohe Helligkeit beim Systemstart wiederherzustellen. Dies ist nur für TouchWiz-Geräte und funktioniert nicht ohne Root.</string>
     <string name="safe_mode_volume_warning_desc">Stellt den aktuellen Warnstatus für hohe Lautstärke beim Neustart wieder her.</string>
     <string name="safe_mode_needed_qs_row_col">Der abgesicherte Modus muss eingeschaltet sein, wenn die Option Zeile/Spalte aktiviert ist, damit die Querformatwerte funktionieren.</string>
-    <string name="safe_mode_inactive_on_current_page">Der abgesicherte Modus ist auf diesem Bildschirm inaktiv! Wechseln Sie zurück zum Hauptmenü, um die Änderungen zu speichern!</string>
-    <string name="qs_info_marshmallow">Halten Sie ein Symbol gedrückt, um es zu entfernen.</string>
-    <string name="remove_custom_blacklist_item_desc">Sind Sie sicher, dass Sie den %s Schalter entfernen möchten?</string>
+    <string name="safe_mode_inactive_on_current_page">Der abgesicherte Modus ist auf diesem Bildschirm inaktiv! Wechsel zurück zum Hauptmenü, um die Änderungen zu speichern!</string>
+    <string name="qs_info_marshmallow">Halte ein Symbol gedrückt, um es zu entfernen.</string>
+    <string name="remove_custom_blacklist_item_desc">Bist du sicher, dass du den %s Schalter entfernen möchtest?</string>
     <!--Messages-->
     <string name="sorry_explain">Irgendetwas ist beim Setzen dieses Schalters schiefgelaufen.</string>
     <string name="sorry_option">Versuche den folgenden Befehl von einem Computer aus auszuführen (es ist eine Zeile):</string>
@@ -294,10 +294,10 @@ Dies ist das Rotationssperren-Symbol. Tippen Sie hier, um es zu beheben.</string
     <string name="requires_8_1">Erfordert Oreo 8.1 oder höher.</string>
     <string name="safe_mode_android_o">Dieses Feature ist durch Limitationen in Android O nicht auf deinem Gerät verfügbar.</string>
     <string name="intro_1">Danke für das Herunterladen meiner App! SystemUI Tuner soll den in AOSP integrierten System-UI-Tuner ersetzen / ergänzen. Benutzer mit und ohne System UI Tuner können von dieser App profitieren.</string>
-    <string name="intro_2">Wie in AOSP können Sie mit SystemUI Tuner bestimmte Symbole der Statusleiste ausblenden, die nicht angezeigt werden sollen. Sie können aber auch viele andere Dinge tun, wie z.B. Heads-up-Benachrichtigungen deaktivieren oder sogar den Immersive-Modus umschalten.</string>
-    <string name="intro_3">Es gibt eine Vielzahl von vordefinierten Optionen für die Statusleiste, aber wenn Sie kein Symbol sehen, das Sie ausblenden möchten, können Sie die Funktion Auto-Detect ausprobieren, die versucht, Symbole zu erkennen, die ausgeblendet werden können.</string>
-    <string name="intro_4">Und das Beste an dieser App? Ihr Gerät muss nicht gerootet werden! Es wird versuchen, Root-Rechte zu erhalten, aber wenn es nicht geht, müssen Sie ADB verwenden. DIE VERWENDUNG VON ADB IST KEIN ROOTING!</string>
-    <string name="intro_5">Sobald Sie auf die Schaltfläche „Fertigstellen” tippen, versucht SystemUI Tuner, Root-Zugriff zu erhalten. Wenn es möglich ist, gewährt es Ihnen alle erforderlichen Berechtigungen. Andernfalls erscheinen Anweisungen, die Sie anleiten.</string>
+    <string name="intro_2">Wie in AOSP kannst du mit SystemUI Tuner bestimmte Symbole der Statusleiste ausblenden, die nicht angezeigt werden sollen. Du kannst aber auch viele andere Dinge tun, wie z.B. Heads-up-Benachrichtigungen deaktivieren oder sogar den Immersive-Modus umschalten.</string>
+    <string name="intro_3">Es gibt eine Vielzahl von vordefinierten Optionen für die Statusleiste, aber wenn du kein Symbol siehst, das du ausblenden möchtest, kannst du die Funktion Auto-Detect ausprobieren, die versucht, Symbole zu erkennen, die ausgeblendet werden können.</string>
+    <string name="intro_4">Und das Beste an dieser App? Dein Gerät muss nicht gerootet werden! Es wird versuchen, Root-Rechte zu erhalten, aber wenn es nicht geht, musst du ADB verwenden. DIE VERWENDUNG VON ADB IST KEIN ROOTING!</string>
+    <string name="intro_5">Sobald du auf die Schaltfläche „Fertigstellen” tippst, versucht SystemUI Tuner, Root-Zugriff zu erhalten. Wenn es möglich ist, gewährt es dir alle erforderlichen Berechtigungen. Andernfalls erscheinen Anweisungen, die dich anleiten.</string>
     <string name="adb_setup">Die oben genannten Berechtigungen müssen gewährt werden. Sie müssen die ADB verwenden. Bitte beachten Sie: PACKAGE_USAGE_STATS und DUMP sind optional für die meisten Funktionen. SystemUI Tuner fragt Sie ggf. eine oder beide ist.</string>
     <string name="target_not_found">App kann nicht gestartet werden.</string>
     <string name="feature_not_supported">Ihr Gerät unterstützt diese Funktion nicht :/</string>
