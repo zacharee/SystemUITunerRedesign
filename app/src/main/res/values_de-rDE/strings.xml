@@ -298,16 +298,16 @@ Dies ist das Rotationssperren-Symbol. Tippen Sie hier, um es zu beheben.</string
     <string name="intro_3">Es gibt eine Vielzahl von vordefinierten Optionen für die Statusleiste, aber wenn du kein Symbol siehst, das du ausblenden möchtest, kannst du die Funktion Auto-Detect ausprobieren, die versucht, Symbole zu erkennen, die ausgeblendet werden können.</string>
     <string name="intro_4">Und das Beste an dieser App? Dein Gerät muss nicht gerootet werden! Es wird versuchen, Root-Rechte zu erhalten, aber wenn es nicht geht, musst du ADB verwenden. DIE VERWENDUNG VON ADB IST KEIN ROOTING!</string>
     <string name="intro_5">Sobald du auf die Schaltfläche „Fertigstellen” tippst, versucht SystemUI Tuner, Root-Zugriff zu erhalten. Wenn es möglich ist, gewährt es dir alle erforderlichen Berechtigungen. Andernfalls erscheinen Anweisungen, die dich anleiten.</string>
-    <string name="adb_setup">Die oben genannten Berechtigungen müssen gewährt werden. Sie müssen die ADB verwenden. Bitte beachten Sie: PACKAGE_USAGE_STATS und DUMP sind optional für die meisten Funktionen. SystemUI Tuner fragt Sie ggf. eine oder beide ist.</string>
+    <string name="adb_setup">Die oben genannten Berechtigungen müssen gewährt werden. Du musst die ADB verwenden. Bitte beachte: PACKAGE_USAGE_STATS und DUMP sind optional für die meisten Funktionen. SystemUI Tuner fragt dich ggf. wenn eine oder beide benötigt werden.</string>
     <string name="target_not_found">App kann nicht gestartet werden.</string>
     <string name="feature_not_supported">Ihr Gerät unterstützt diese Funktion nicht :/</string>
-    <string name="miui_warning">Es scheint, dass Sie ein MIUI-Gerät verwenden. Bitte beachten Sie, dass wenn überhaupt, nur wenige Funktionen dieser App funktionieren. Das kann NICHT geändert werden!</string>
-    <string name="warn_message">Bitte lesen Sie die Nutzungsbedingungen bevor Sie fortfahren.</string>
+    <string name="miui_warning">Es scheint, dass du ein MIUI-Gerät verwendest. Bitte beachte, dass wenn überhaupt, nur wenige Funktionen dieser App funktionieren. Das kann NICHT geändert werden!</string>
+    <string name="warn_message">Bitte lese die Nutzungsbedingungen bevor du fortfährst.</string>
     <string name="safe_mode_notif_desc">Es wird empfohlen dies aktiviert zu lassen, und die Benachrichtigung auszublenden. Abgeschaltet kann es sein, dass der abgesicherte Modus nicht mehr funktioniert.</string>
     <string name="invalid_blacklist_backup">Ungültige Sicherung der Blacklist</string>
     <string name="backup_restored">Sicherung erfolgreich wiederhergestellt</string>
     <string name="nothing_to_back_up">Keine Sicherung erforderlich</string>
-    <string name="grant_usage">Bitte gewähren Sie SystemUI Tuner Zugriff auf \"Usage\".</string>
+    <string name="grant_usage">Bitte gewähre SystemUI Tuner Zugriff auf \"Usage\".</string>
     <!--Instructions-->
     <string name="enable_debug"><![CDATA[1. Gehe in den Einstellungen >> Entwickler-Optionen und stelle sicher, dass USB-Debugging aktiviert ist.]]></string>
     <string name="accept_auth">2. Verbinde dein Gerät an deinen Computer und akzeptiere die Autorisierungsanfrage.</string>
