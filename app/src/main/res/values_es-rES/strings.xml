@@ -235,7 +235,7 @@
     <string name="grant">Adjudicar</string>
     <string name="attention">¡ Atención!</string>
     <!--Descriptions-->
-    <string name="fancy_pulldown_notice">Desactivar esta opción puede causar problemas después de reiniciar. Activa y desactiva manualmente esta opción después de reiniciar, o activa Modo Seguro.</string>
+    <string name="fancy_pulldown_notice">Toggling this option off can cause issues after a reboot. Manually toggle this option on and off after a reboot, or enable Safe Mode.</string>
     <string name="safe_mode_summary">LOS USUARIOS DE SAMSUNG MANTIENEN ESTO ENCENDIDO A MENOS QUE TENGAN UNA ROM AOSP!</string>
     <string name="safe_mode_summary_1">Limpia toda personalización de la barra de estado en reinicio y las restaura después que se complete el arranque.</string>
     <string name="safe_mode_summary_2">Cambia la animación de lujo de QS en el arranque.</string>
