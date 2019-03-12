@@ -13,6 +13,8 @@ import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnticipateInterpolator
+import android.view.animation.OvershootInterpolator
 import android.widget.ImageView
 import android.widget.TextView
 import com.zacharee1.systemuituner.R
@@ -21,9 +23,9 @@ import java.util.*
 import java.util.regex.Pattern
 
 class QSDragAdapter(private val context: Context) : RecyclerView.Adapter<QSDragAdapter.QSViewHolder>() {
-    var mTiles = ArrayList<QSTile>()
+    var tiles = ArrayList<QSTile>()
 
-    var mAvailableTiles = ArrayList<QSTile>()
+    var availableTiles = ArrayList<QSTile>()
 
     private val defaultTiles: ArrayList<QSTile>
         get() {
@@ -63,28 +65,36 @@ class QSDragAdapter(private val context: Context) : RecyclerView.Adapter<QSDragA
 
         val tempTiles = tileArray.map { QSTile(it, context) }
 
-        mTiles.clear()
-        mTiles.addAll(tempTiles)
+        this.tiles.clear()
+        this.tiles.addAll(tempTiles)
 
         refreshAvailableTiles()
     }
 
     private fun refreshAvailableTiles() {
-        mAvailableTiles.clear()
+        availableTiles.clear()
         for (tile in defaultTiles) {
-            val hasTile = mTiles.any { it.key == tile.key }
+            val hasTile = tiles.any { it.key == tile.key }
 
             if (!hasTile) {
-                mAvailableTiles.add(tile)
+                availableTiles.add(tile)
             }
         }
     }
 
     fun addTile(tile: QSTile) {
-        mTiles.add(tile)
+        tiles.add(tile)
         notifyDataSetChanged()
 
-        setOrder(mTiles)
+        setOrder(tiles)
+        refreshAvailableTiles()
+    }
+
+    fun removeTile(tile: QSTile) {
+        tiles.remove(tile)
+        notifyDataSetChanged()
+
+        setOrder(tiles)
         refreshAvailableTiles()
     }
 
@@ -102,16 +112,14 @@ class QSDragAdapter(private val context: Context) : RecyclerView.Adapter<QSDragA
     }
 
     override fun onBindViewHolder(holder: QSViewHolder, position: Int) {
-        holder.setTitle(mTiles[holder.adapterPosition].title)
-        holder.setIcon(mTiles[holder.adapterPosition].icon)
+        holder.setTitle(tiles[holder.adapterPosition].title)
+        holder.setIcon(tiles[holder.adapterPosition].icon)
         holder.setCloseListener(View.OnClickListener {
             AlertDialog.Builder(context)
                     .setTitle(R.string.removing_tile)
-                    .setMessage(String.format(holder.context.resources.getString(R.string.remove_tile), mTiles[holder.adapterPosition].title))
+                    .setMessage(String.format(holder.context.resources.getString(R.string.remove_tile), tiles[holder.adapterPosition].title))
                     .setPositiveButton(R.string.yes) { _, _ ->
-                        mTiles.removeAt(holder.adapterPosition)
-                        setOrder(mTiles)
-                        notifyItemRemoved(holder.adapterPosition)
+                        removeTile(tiles[holder.adapterPosition])
                     }
                     .setNegativeButton(R.string.no, null)
                     .show()
@@ -119,41 +127,65 @@ class QSDragAdapter(private val context: Context) : RecyclerView.Adapter<QSDragA
     }
 
     override fun getItemCount(): Int {
-        return mTiles.size
+        return tiles.size
     }
 
-    class QSViewHolder(private var mView: View) : RecyclerView.ViewHolder(mView) {
-
+    class QSViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val context: Context
-            get() = mView.context
+            get() = itemView.context
 
         init {
-
-            if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M) {
-                mView.findViewById<View>(R.id.close_button).visibility = View.GONE
+            if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.M) {
+                itemView.setOnLongClickListener {
+                    showClose()
+                    true
+                }
+                itemView.setOnClickListener {
+                    hideClose()
+                }
             }
         }
 
         fun setTitle(title: String) {
-            val textView = mView.findViewById<TextView>(R.id.textView)
+            val textView = itemView.findViewById<TextView>(R.id.textView)
             textView.text = title
         }
 
         fun setIcon(icon: Drawable) {
-            val imageView = mView.findViewById<ImageView>(R.id.imageView)
+            val imageView = itemView.findViewById<ImageView>(R.id.imageView)
             imageView.setImageDrawable(icon)
         }
 
         fun setCloseListener(listener: View.OnClickListener) {
-            mView.findViewById<View>(R.id.close_button).setOnClickListener(listener)
+            itemView.findViewById<View>(R.id.close_button).setOnClickListener(listener)
+        }
+
+        private fun showClose() {
+            val closeButton = itemView.findViewById<ImageView>(R.id.close_button)
+
+            closeButton.animate()
+                    .scaleX(1f)
+                    .scaleY(1f)
+                    .setInterpolator(OvershootInterpolator())
+                    .start()
+        }
+
+        private fun hideClose() {
+            val closeButtom = itemView.findViewById<ImageView>(R.id.close_button)
+
+            closeButtom.animate()
+                    .scaleX(0f)
+                    .scaleY(0f)
+                    .setInterpolator(AnticipateInterpolator())
+                    .start()
         }
     }
 
     class QSTile(var key: String, context: Context) {
-        private var mParser: TileParser = TileParser(key, context)
+        private var parser: TileParser = TileParser(key, context)
 
-        var title = mParser.title
-        var icon = mParser.icon
+        var title = parser.title
+        var icon = parser.icon
     }
 
     class TileParser(var key: String, private val mContext: Context) {

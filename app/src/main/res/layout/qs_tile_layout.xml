@@ -39,11 +39,13 @@
             android:adjustViewBounds="true"
             android:background="?selectableItemBackgroundBorderless"
             android:clickable="true"
-            android:elevation="5dp"
+            android:elevation="4dp"
             android:focusable="true"
             android:rotation="45"
             android:scaleType="fitCenter"
             android:tint="#f00"
+            android:scaleX="0"
+            android:scaleY="0"
             app:srcCompat="@drawable/ic_add_circle_black_24dp" />
 
     </FrameLayout>
