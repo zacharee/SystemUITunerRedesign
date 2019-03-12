@@ -11,13 +11,13 @@ import android.preference.SwitchPreference
 import android.provider.Settings
 import com.pavelsikun.seekbarpreference.SeekBarPreference
 import com.zacharee1.systemuituner.R
-import com.zacharee1.systemuituner.util.writeGlobal
-import com.zacharee1.systemuituner.util.writeSecure
-import com.zacharee1.systemuituner.util.writeSystem
+import com.zacharee1.systemuituner.services.SafeModeService
+import com.zacharee1.systemuituner.util.*
 import java.util.*
 
 class MiscFragment : AnimFragment() {
     private var origSnooze = false
+    private var origCallRecording = false
 
     override fun onSetTitle() = resources.getString(R.string.miscellaneous)
 
@@ -30,6 +30,7 @@ class MiscFragment : AnimFragment() {
             setNightModeSwitchStates()
             setUpAnimationScales()
             setUpSnoozeStuff()
+            removeOnePlusIfNeeded()
         }
     }
 
@@ -37,10 +38,12 @@ class MiscFragment : AnimFragment() {
         super.onCreate(savedInstanceState)
 
         preferenceManager.sharedPreferences.apply {
-            origSnooze = getBoolean("safe_mode_snooze_options", true)
+            origSnooze = getBoolean(SafeModeService.SAFE_MODE_SNOOZE_OPTIONS, true)
+            origCallRecording = getBoolean(SafeModeService.SAFE_MODE_CALL_RECORDING, true)
 
             edit().apply {
-                putBoolean("safe_mode_snooze_options", false)
+                putBoolean(SafeModeService.SAFE_MODE_SNOOZE_OPTIONS, false)
+                putBoolean(SafeModeService.SAFE_MODE_CALL_RECORDING, false)
             }.apply()
         }
     }
@@ -49,7 +52,8 @@ class MiscFragment : AnimFragment() {
         super.onDestroy()
 
         preferenceManager.sharedPreferences.edit().apply {
-            putBoolean("safe_mode_snooze_options", origSnooze)
+            putBoolean(SafeModeService.SAFE_MODE_SNOOZE_OPTIONS, origSnooze)
+            putBoolean(SafeModeService.SAFE_MODE_CALL_RECORDING, origCallRecording)
         }.apply()
     }
 
@@ -66,6 +70,16 @@ class MiscFragment : AnimFragment() {
             preference.isChecked = Settings.Global.getInt(context?.contentResolver, key, 2) == 3
             preference.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { _, o ->
                 context.writeGlobal(key, if (o.toString().toBoolean()) 3 else 2)
+                true
+            }
+        }
+
+        // OnePlus call recording
+        if (checkOnePlusWithCallRecording()) {
+            val preference = findPreference(ONE_PLUS_CALL_RECORDER) as SwitchPreference
+            preference.isChecked = Settings.Global.getInt(context?.contentResolver, ONE_PLUS_CALL_RECORDER, 0) == 1
+            preference.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { _, o ->
+                context.writeGlobal(ONE_PLUS_CALL_RECORDER, if (o.toString().toBoolean()) 1 else 0)
                 true
             }
         }
@@ -349,6 +363,12 @@ class MiscFragment : AnimFragment() {
         return ret
     }
 
+    private fun removeOnePlusIfNeeded() {
+        if (!checkOnePlusWithCallRecording()) {
+            preferenceScreen.removePreference(findPreference("call_recording") ?: return)
+        }
+    }
+
     companion object {
         const val HUD_ENABLED = "heads_up_notifications_enabled"
         const val AUDIO_SAFE = "audio_safe_volume_state"
@@ -365,6 +385,7 @@ class MiscFragment : AnimFragment() {
         const val NIGHT_DISPLAY_ACTIVATED = "night_display_activated"
         const val NIGHT_DISPLAY_AUTO = "night_display_auto"
         const val NIGHT_MODE_SETTINGS = "night_mode_settings"
+        const val ONE_PLUS_CALL_RECORDER = "op_voice_recording_supported_by_mcc"
 
         private const val TWILIGHT_MODE_INACTIVE = 0
         private const val TWILIGHT_MODE_OVERRIDE = 1

@@ -110,4 +110,16 @@
             android:summary="@string/pnc_warn"/>
     </PreferenceCategory>
 
+    <PreferenceCategory
+        android:title="@string/call_recording"
+        android:key="call_recording">
+        <SwitchPreference
+            android:key="op_voice_recording_supported_by_mcc"
+            android:title="@string/enabled"/>
+        <Preference
+            android:title="@string/about"
+            android:summary="@string/call_recording_desc"
+            android:selectable="false" />
+    </PreferenceCategory>
+
 </PreferenceScreen>
