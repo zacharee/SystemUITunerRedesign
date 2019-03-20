@@ -224,16 +224,16 @@
     <string name="key_plaintext">按鍵</string>
     <string name="value_plaintext">數值</string>
     <string name="remove_from_blacklist">Remove From Blacklist?</string>
-    <string name="safe_mode_status_bar">Status Bar</string>
-    <string name="safe_mode_fancy_anim">Fancy Animation</string>
+    <string name="safe_mode_status_bar">狀態列</string>
+    <string name="safe_mode_fancy_anim">炫泡動畫</string>
     <string name="safe_mode_header_count">QS Header Count</string>
     <string name="safe_mode_row_col_tw">QS Row/Column Count</string>
     <string name="safe_mode_snooze_options">Snooze Options</string>
-    <string name="fix_rotation_icon_dialog_title">Uninstalling?</string>
-    <string name="done">Done!</string>
-    <string name="high_brightness_warning">High Brightness Warning</string>
-    <string name="grant">Grant</string>
-    <string name="attention">Attention!</string>
+    <string name="fix_rotation_icon_dialog_title">移除中？</string>
+    <string name="done">完成！</string>
+    <string name="high_brightness_warning">高亮度警告</string>
+    <string name="grant">允許</string>
+    <string name="attention">注意！</string>
     <!--Descriptions-->
     <string name="fancy_pulldown_notice">關閉本功能可能導致重啟後發生問題。請於重啟後手動開啟再關閉，或啟用安全模式。</string>
     <string name="safe_mode_summary">三星用戶應保持本設定啟用，除非你有 AOSP ROM！</string>
@@ -249,7 +249,7 @@
     <string name="app_specific_desc">選擇要包含或排除於沈浸模式的 app。變更設定前必須先停用沈浸模式。</string>
     <string name="blacklist_desc">選項啟用時 app 將不會進入沈浸模式</string>
     <string name="imm_warn">本功能只會啟用沈浸模式，沒有別的了。若因此發生問題請洽裝置製造商，我幫不了你！</string>
-    <string name="statbar_rotation_lock_notif">On certain devices, modifying the status bar icons can cause an icon that looks like a phone to appear. This is the rotation lock icon. Tap here to fix it.</string>
+    <string name="statbar_rotation_lock_notif">在某些裝置上修改圖示後，會多出一個類似手機的圖示，他是螢幕旋轉鎖定圖示。點擊這裡修復這個問題。</string>
     <string name="pnc_desc">電量通知控制讓你可以調整每個 app 的通知重要程度。開啟本功能並長按任意通知即可開始使用，若要使用滑掉條可能需要按 A。</string>
     <string name="pnc_warn">本功能在某些裝置上無法使用，尤其是 TouchWiz ！多按幾次或許會成功，這我沒辦法處理。</string>
     <string name="notif_desc">點擊以變更設定</string>
@@ -264,17 +264,17 @@
     <string name="hide_welcome_hint">提示：你可以到設定關閉 \"隱藏歡迎畫面\" 以隱藏本畫面及贊助訊息。</string>
     <string name="safe_mode_notif_desc_not_supported">本設定在 Oreo 中必須保持啟用</string>
     <string name="fix_rotation_icon_dialog_desc">Are you planning to uninstall SystemUI Tuner after this?</string>
-    <string name="yes_im_uninstalling">Yes, I\'m Uninstalling</string>
-    <string name="no_im_staying">No, I\'m Staying</string>
-    <string name="fix_rotation_done_uninstall">Rotation icon removed! This won\'t take effect until you reboot.</string>
-    <string name="fix_rotation_done_stay">Rotation icon removed! If it still appears, reboot your device.</string>
+    <string name="yes_im_uninstalling">對，我就是要移除</string>
+    <string name="no_im_staying">不了，我放棄</string>
+    <string name="fix_rotation_done_uninstall">已移除旋轉圖示！重開機後會生效。</string>
+    <string name="fix_rotation_done_stay">已移除旋轉圖示！如果它還沒消失，請重開你的裝置。</string>
     <string name="missing_not_required_perms_desc">Are you sure you want to continue? At least one optional permission wasn\'t granted, which means you will need a computer again to grant them later.</string>
     <string name="ws_needed_desc">WRITE_SETTINGS is needed to change this setting. Tap the button above to grant it.\n (This unfortunately doesn\'t guarantee that the toggle will work.)</string>
     <string name="safe_mode_high_brightness_warning_desc">Attempt to restore the currently set High Brightness Warning status on boot. This is only for TouchWiz devices and won\'t work without root.</string>
     <string name="safe_mode_volume_warning_desc">Restores current High Volume Warning state on boot.</string>
     <string name="safe_mode_needed_qs_row_col">Safe Mode must be turned on, with the Row/Column option activated, for landscape values to work.</string>
     <string name="safe_mode_inactive_on_current_page">Safe Mode is inactive on this screen! Go back to the main menu to save changes!</string>
-    <string name="qs_info_marshmallow">Hold down on an icon to remove it.</string>
+    <string name="qs_info_marshmallow">按住圖示以移除。</string>
     <!--Messages-->
     <string name="sorry_explain">設定時發生未知錯誤</string>
     <string name="sorry_option">試著從電腦執行下列指定（單行指令）：</string>
@@ -293,11 +293,11 @@
     <string name="target_not_found">無法啟動 app。</string>
     <string name="feature_not_supported">你的裝置好像不支援此功能 :/</string>
     <string name="miui_warning">看起來你正在使用搭載 MIUI 的裝置。請注意本裝置只可以使用 app 的少數功能，這題無解！</string>
-    <string name="warn_message">Please read the Terms of Service before continuing.</string>
+    <string name="warn_message">繼續之前請閱讀服務條款。</string>
     <string name="safe_mode_notif_desc">建議你保持本設定啟用，並用隱藏通知作為替代方式。停用此設定可能導致安全模式無法正常運作。</string>
     <string name="invalid_blacklist_backup">Invalid blacklist backup</string>
-    <string name="backup_restored">Successfully restored backup</string>
-    <string name="nothing_to_back_up">Nothing to back up</string>
+    <string name="backup_restored">成功還原備份</string>
+    <string name="nothing_to_back_up">沒什麼能備份的</string>
     <string name="grant_usage">Please grant SystemUI Tuner access to Usage.</string>
     <!--Instructions-->
     <string name="enable_debug"><![CDATA[1. 前往 "設定" 中的 "開發者選項"，確保 USB Debugging 是啟用的。]]></string>
