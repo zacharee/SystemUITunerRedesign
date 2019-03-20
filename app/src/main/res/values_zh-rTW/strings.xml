@@ -223,7 +223,7 @@
     <string name="carrier_on_lock">鎖定屏幕顯示運營商標簽</string>
     <string name="key_plaintext">按鍵</string>
     <string name="value_plaintext">數值</string>
-    <string name="remove_from_blacklist">Remove From Blacklist?</string>
+    <string name="remove_from_blacklist">從黑名單中刪除</string>
     <string name="safe_mode_status_bar">狀態列</string>
     <string name="safe_mode_fancy_anim">炫泡動畫</string>
     <string name="safe_mode_header_count">QS Header Count</string>
@@ -263,12 +263,12 @@
     <string name="custom_settings_warning">請小心操作！如果你輸入了錯誤的數值，可能導致一直崩潰，重啓或更糟！</string>
     <string name="hide_welcome_hint">提示：你可以到設定關閉 \"隱藏歡迎畫面\" 以隱藏本畫面及贊助訊息。</string>
     <string name="safe_mode_notif_desc_not_supported">本設定在 Oreo 中必須保持啟用</string>
-    <string name="fix_rotation_icon_dialog_desc">Are you planning to uninstall SystemUI Tuner after this?</string>
+    <string name="fix_rotation_icon_dialog_desc">你想要在這之後移除 SystemUI Tuner 嗎？</string>
     <string name="yes_im_uninstalling">對，我就是要移除</string>
     <string name="no_im_staying">不了，我放棄</string>
     <string name="fix_rotation_done_uninstall">已移除旋轉圖示！重開機後會生效。</string>
     <string name="fix_rotation_done_stay">已移除旋轉圖示！如果它還沒消失，請重開你的裝置。</string>
-    <string name="missing_not_required_perms_desc">Are you sure you want to continue? At least one optional permission wasn\'t granted, which means you will need a computer again to grant them later.</string>
+    <string name="missing_not_required_perms_desc">你確定要繼續嗎？至少有一個非必要權限未被授權，之後你可能需要用電腦再度授權一次。</string>
     <string name="ws_needed_desc">WRITE_SETTINGS is needed to change this setting. Tap the button above to grant it.\n (This unfortunately doesn\'t guarantee that the toggle will work.)</string>
     <string name="safe_mode_high_brightness_warning_desc">Attempt to restore the currently set High Brightness Warning status on boot. This is only for TouchWiz devices and won\'t work without root.</string>
     <string name="safe_mode_volume_warning_desc">Restores current High Volume Warning state on boot.</string>
@@ -295,7 +295,7 @@
     <string name="miui_warning">看起來你正在使用搭載 MIUI 的裝置。請注意本裝置只可以使用 app 的少數功能，這題無解！</string>
     <string name="warn_message">繼續之前請閱讀服務條款。</string>
     <string name="safe_mode_notif_desc">建議你保持本設定啟用，並用隱藏通知作為替代方式。停用此設定可能導致安全模式無法正常運作。</string>
-    <string name="invalid_blacklist_backup">Invalid blacklist backup</string>
+    <string name="invalid_blacklist_backup">無效的黑名單備份</string>
     <string name="backup_restored">成功還原備份</string>
     <string name="nothing_to_back_up">沒什麼能備份的</string>
     <string name="grant_usage">Please grant SystemUI Tuner access to Usage.</string>
