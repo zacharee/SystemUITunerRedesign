@@ -8,7 +8,7 @@
     <string name="notice">注意</string>
     <string name="hide_welcome_screen">隱藏歡迎畫面</string>
     <string name="instructions">操作指南</string>
-    <string name="need_help">Need Help?</string>
+    <string name="need_help">需要幫助嗎？</string>
     <string name="about">關於</string>
     <string name="miscellaneous">雜項</string>
     <string name="custom">自定義</string>
@@ -58,8 +58,8 @@
     <string name="zen_icon">自訂勿擾模式</string>
     <string name="do_not_disturb">勿擾模式</string>
     <string name="dnd">勿擾模式</string>
-    <string name="privacy_policy">Privacy Policy</string>
-    <string name="terms_of_service">Terms of Service</string>
+    <string name="privacy_policy">隱私權政策</string>
+    <string name="terms_of_service">服務條款</string>
     <string name="donate">贊助</string>
     <string name="reset_blacklist">重設黑名單</string>
     <string name="animator_duration_scale">動畫持續時間</string>
@@ -316,7 +316,7 @@
     <string name="download_adb_linux"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-linux.zip">下載 Linux 版 ADB</a>]]></string>
     <string name="cd_linux"><![CDATA[4. 輸入 <b>cd /path/to/extracted/folder/</b> 以切換至 ADB 所在路徑，舉例來說：<b>cd /home/Zachary/Desktop/platform-tools/</b>。]]></string>
     <!--Misc-->
-    <string name="created_by">App 由 <a href=\'https://forum.xda-developers.com/member.php?u=7055541\'>Zacharee1</a> 製作</string>
+    <string name="created_by">App 由 &lt;a href=\'https://forum.xda-developers.com/member.php?u=7055541\'&gt;Zacharee1&lt;/a&gt; 製作</string>
     <string name="lang_credit"><a href="https://crowdin.com/project/systemui-tuner">Crowdin</a> 上的志工們提供的翻譯</string>
     <string name="home_desc">獻給那些沒有本功能的裝置</string>
     <string name="home_joke">至於那些有內建的⋯別來找我</string>
