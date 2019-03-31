@@ -7,7 +7,8 @@
     android:paddingEnd="16dp"
     android:gravity="center_vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:baselineAligned="false">
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/key_holder"
@@ -20,6 +21,7 @@
             android:inputType="text"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:importantForAutofill="no"
             />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -35,6 +37,7 @@
             android:inputType="text"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:importantForAutofill="no"
             />
 
     </com.google.android.material.textfield.TextInputLayout>
