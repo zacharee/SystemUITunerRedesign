@@ -38,8 +38,8 @@ class EditBlacklistActivity : BaseEditActivity<BlacklistInput>() {
     override fun onResumeFragments() {
         super.onResumeFragments()
 
-        val keyPref = fragment.findPreference(KEY) as EditTextPreference
-        val remPref = fragment.findPreference(REMOVE) as SwitchPreference
+        val keyPref = fragment.findPreference<EditTextPreference>(KEY)!!
+        val remPref = fragment.findPreference<SwitchPreference>(REMOVE)!!
 
         keyPref.summary = key
         keyPref.text = key

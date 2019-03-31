@@ -51,8 +51,8 @@ class MiscFragment : AnimFragment() {
     private fun setGlobalSwitchStates() {
         val preferences = object : ArrayList<SwitchPreference>() {
             init {
-                add(findPreference(HUD_ENABLED) as SwitchPreference)
-                add(findPreference(AUDIO_SAFE) as SwitchPreference)
+                add(findPreference(HUD_ENABLED)!!)
+                add(findPreference(AUDIO_SAFE)!!)
             }
         }
 
@@ -68,48 +68,48 @@ class MiscFragment : AnimFragment() {
 
     private fun setSecureSwitchStates() {
         if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.M || Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            val category = findPreference(POWER_NOTIFICATION_CONTROLS) as PreferenceCategory
+            val category = findPreference<PreferenceCategory>(POWER_NOTIFICATION_CONTROLS)!!
             category.isEnabled = false
 
-            val preference = findPreference(SHOW_IMPORTANCE_SLIDER) as SwitchPreference
+            val preference = findPreference<SwitchPreference>(SHOW_IMPORTANCE_SLIDER)!!
             preference.isChecked = false
             preference.setSummary(if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.M) R.string.requires_nougat else R.string.safe_mode_android_o)
         }
 
         val preferences = object : ArrayList<SwitchPreference>() {
             init {
-                if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M) add(findPreference(SHOW_ZEN) as SwitchPreference)
-                if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M) add(findPreference(CLOCK_SECONDS) as SwitchPreference)
-                if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M) add(findPreference(SHOW_IMPORTANCE_SLIDER) as SwitchPreference)
+                if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M) add(findPreference(SHOW_ZEN)!!)
+                if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M) add(findPreference(CLOCK_SECONDS)!!)
+                if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M) add(findPreference(SHOW_IMPORTANCE_SLIDER)!!)
             }
         }
 
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.N) {
-            var preference = findPreference(CLOCK_SECONDS) as SwitchPreference
+            var preference = findPreference<SwitchPreference>(CLOCK_SECONDS)!!
             preference.isEnabled = false
             preference.isChecked = false
             preference.setSummary(R.string.requires_nougat)
 
-            preference = findPreference(SHOW_ZEN) as SwitchPreference
+            preference = findPreference(SHOW_ZEN)!!
             preference.isEnabled = false
             preference.isChecked = false
             preference.setSummary(R.string.requires_nougat)
         }
 
         if (Build.VERSION.SDK_INT > Build.VERSION_CODES.O_MR1) {
-            findPreference(SHOW_ZEN).apply {
+            findPreference<SwitchPreference>(SHOW_ZEN)?.apply {
                 isEnabled = false
                 setSummary(R.string.setting_not_on_pie)
             }
 
             if (context!!.checkSamsung()) {
-                findPreference(HUD_ENABLED).apply {
+                findPreference<SwitchPreference>(HUD_ENABLED)?.apply {
                     isEnabled = false
                     setSummary(R.string.setting_not_on_touchwiz_pie)
                 }
 
                 if (!context!!.twHasAospClock) {
-                    findPreference(CLOCK_SECONDS).apply {
+                    findPreference<SwitchPreference>(CLOCK_SECONDS)?.apply {
                         isEnabled = false
                         setSummary(R.string.setting_not_on_touchwiz_pie)
                     }
@@ -130,7 +130,7 @@ class MiscFragment : AnimFragment() {
     private fun setSystemSwitchStates() {
         val preferences = object : ArrayList<SwitchPreference>() {
             init {
-                add(findPreference(STATUS_BAR_BATTERY) as SwitchPreference)
+                add(findPreference(STATUS_BAR_BATTERY)!!)
             }
         }
 
@@ -145,9 +145,9 @@ class MiscFragment : AnimFragment() {
     }
 
     private fun setNightModeSwitchStates() {
-        val auto = findPreference(NIGHT_MODE_AUTO) as SwitchPreference
-        val override = findPreference(NIGHT_MODE_OVERRIDE) as SwitchPreference
-        val tint = findPreference(TUNER_NIGHT_MODE_TINT) as SwitchPreference
+        val auto = findPreference<SwitchPreference>(NIGHT_MODE_AUTO)!!
+        val override = findPreference<SwitchPreference>(NIGHT_MODE_OVERRIDE)!!
+        val tint = findPreference<SwitchPreference>(TUNER_NIGHT_MODE_TINT)!!
 
         when {
             Build.VERSION.SDK_INT == Build.VERSION_CODES.N -> {
@@ -181,7 +181,7 @@ class MiscFragment : AnimFragment() {
 
             }
             Build.VERSION.SDK_INT >= Build.VERSION_CODES.N_MR1 -> {
-                val category = findPreference(NIGHT_MODE_SETTINGS) as PreferenceCategory
+                val category = findPreference<PreferenceCategory>(NIGHT_MODE_SETTINGS)!!
                 category.setTitle(R.string.night_display)
                 category.removePreference(tint)
 
@@ -212,7 +212,7 @@ class MiscFragment : AnimFragment() {
 
             }
             else -> {
-                val category = findPreference(NIGHT_MODE_SETTINGS) as PreferenceCategory
+                val category = findPreference<PreferenceCategory>(NIGHT_MODE_SETTINGS)!!
                 category.isEnabled = false
 
                 category.forEachPreference {
@@ -254,9 +254,9 @@ class MiscFragment : AnimFragment() {
     }
 
     private fun setUpAnimationScales() {
-        val duration = findPreference(Settings.Global.ANIMATOR_DURATION_SCALE) as SeekBarPreference
-        val transition = findPreference(Settings.Global.TRANSITION_ANIMATION_SCALE) as SeekBarPreference
-        val window = findPreference(Settings.Global.WINDOW_ANIMATION_SCALE) as SeekBarPreference
+        val duration = findPreference<SeekBarPreference>(Settings.Global.ANIMATOR_DURATION_SCALE)!!
+        val transition = findPreference<SeekBarPreference>(Settings.Global.TRANSITION_ANIMATION_SCALE)!!
+        val window = findPreference<SeekBarPreference>(Settings.Global.WINDOW_ANIMATION_SCALE)!!
 
         val durScale = Settings.Global.getFloat(activity?.contentResolver, duration.key, 1.0f)
         val tranScale = Settings.Global.getFloat(activity?.contentResolver, transition.key, 1.0f)
@@ -277,18 +277,18 @@ class MiscFragment : AnimFragment() {
     }
 
     private fun setUpSnoozeStuff() {
-        val category = findPreference(NOTIFS_SNOOZE) as PreferenceCategory
-        val summary = findPreference(NOTIFS_SNOOZE_DESC)
+        val category = findPreference<PreferenceCategory>(NOTIFS_SNOOZE)!!
+        val summary = findPreference<Preference>(NOTIFS_SNOOZE_DESC)
 
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O_MR1) {
             category.isEnabled = false
             summary?.setSummary(R.string.requires_8_1)
         } else {
-            val def = findPreference("default_time") as EditTextPreference
-            val a = findPreference("time_a") as EditTextPreference
-            val b = findPreference("time_b") as EditTextPreference
-            val c = findPreference("time_c") as EditTextPreference
-            val d = findPreference("time_d") as EditTextPreference
+            val def = findPreference<EditTextPreference>("default_time")!!
+            val a = findPreference<EditTextPreference>("time_a")!!
+            val b = findPreference<EditTextPreference>("time_b")!!
+            val c = findPreference<EditTextPreference>("time_c")!!
+            val d = findPreference<EditTextPreference>("time_d")!!
 
             val times = parseSnoozeTimes()
 

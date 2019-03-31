@@ -58,7 +58,7 @@ class SettingsActivity : BaseAnimActivity() {
         }
 
         private fun setUpQSStuff() {
-            val category = findPreference("quick_settings") as PreferenceCategory
+            val category = findPreference<PreferenceCategory>("quick_settings")!!
 
             if (Build.VERSION.SDK_INT < Build.VERSION_CODES.N) {
                 category.isEnabled = false
@@ -69,8 +69,8 @@ class SettingsActivity : BaseAnimActivity() {
         }
 
         private fun setSwitchListeners() {
-            val safeMode = findPreference("safe_mode") as SwitchPreference
-            val safeNotif = findPreference("show_safe_mode_notif") as SwitchPreference
+            val safeMode = findPreference<SwitchPreference>("safe_mode")!!
+            val safeNotif = findPreference<SwitchPreference>("show_safe_mode_notif")!!
 
             safeMode.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { _, newValue ->
                 if (newValue.toString().toBoolean()) {
@@ -89,24 +89,24 @@ class SettingsActivity : BaseAnimActivity() {
             }
 
             if (context!!.checkSamsung() && Build.VERSION.SDK_INT > Build.VERSION_CODES.O_MR1) {
-                (findPreference(PrefManager.SAFE_MODE_ROW_COL) as CheckBoxPreference).apply {
+                findPreference<CheckBoxPreference>(PrefManager.SAFE_MODE_ROW_COL)!!.apply {
                     isEnabled = false
                     isChecked = false
                     setSummary(R.string.setting_not_on_touchwiz_pie)
                 }
 
-                (findPreference(PrefManager.SAFE_MODE_HEADER_COUNT) as CheckBoxPreference).apply {
+                findPreference<CheckBoxPreference>(PrefManager.SAFE_MODE_HEADER_COUNT)!!.apply {
                     isEnabled = false
                     isChecked = false
                     setSummary(R.string.setting_not_on_touchwiz_pie)
                 }
             }
 
-            findPreference(PrefManager.SAFE_MODE_HIGH_BRIGHTNESS_WARNING)
-                    .isVisible = context!!.checkSamsung()
+            findPreference<Preference>(PrefManager.SAFE_MODE_HIGH_BRIGHTNESS_WARNING)
+                    ?.isVisible = context!!.checkSamsung()
 
-            findPreference(PrefManager.SAFE_MODE_SNOOZE_OPTIONS)
-                    .isVisible = Build.VERSION.SDK_INT > Build.VERSION_CODES.O
+            findPreference<Preference>(PrefManager.SAFE_MODE_SNOOZE_OPTIONS)
+                    ?.isVisible = Build.VERSION.SDK_INT > Build.VERSION_CODES.O
         }
     }
 }

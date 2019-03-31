@@ -33,8 +33,8 @@ class LockFragment : AnimFragment() {
     override fun onSetTitle() = resources.getString(R.string.lockscreen)
 
     private fun setEnabled() {
-        val shortcuts = findPreference(LOCKSCREEN_SHORTCUTS) as PreferenceCategory
-        val oreoMsg = findPreference(OREO_NEEDED)
+        val shortcuts = findPreference<PreferenceCategory>(LOCKSCREEN_SHORTCUTS)!!
+        val oreoMsg = findPreference<Preference>(OREO_NEEDED)
         val isOreo = Build.VERSION.SDK_INT > Build.VERSION_CODES.N_MR1
 
         shortcuts.isEnabled = isOreo
@@ -44,7 +44,7 @@ class LockFragment : AnimFragment() {
     private fun setLockIconStuff() {
         setLockSummaryTitleAndIcon()
 
-        val left = findPreference(CHOOSE_LEFT)
+        val left = findPreference<Preference>(CHOOSE_LEFT)
         left?.onPreferenceClickListener = Preference.OnPreferenceClickListener {
             val activity = Intent(context, AppsListActivity::class.java)
             activity.putExtra(EXTRA_ISLEFT, true)
@@ -52,7 +52,7 @@ class LockFragment : AnimFragment() {
             true
         }
 
-        val right = findPreference(CHOOSE_RIGHT)
+        val right = findPreference<Preference>(CHOOSE_RIGHT)
         right?.onPreferenceClickListener = Preference.OnPreferenceClickListener {
             val activity = Intent(context, AppsListActivity::class.java)
             activity.putExtra(EXTRA_ISLEFT, false)
@@ -62,8 +62,8 @@ class LockFragment : AnimFragment() {
     }
 
     private fun setLockSummaryTitleAndIcon() {
-        val leftLock = findPreference(CHOOSE_LEFT)
-        val rightLock = findPreference(CHOOSE_RIGHT)
+        val leftLock = findPreference<Preference>(CHOOSE_LEFT)
+        val rightLock = findPreference<Preference>(CHOOSE_RIGHT)
 
         val leftSum = Settings.Secure.getString(context?.contentResolver, KEYGUARD_LEFT)
         val rightSum = Settings.Secure.getString(context?.contentResolver, KEYGUARD_RIGHT)
@@ -107,8 +107,8 @@ class LockFragment : AnimFragment() {
     }
 
     private fun setResetListeners() {
-        val leftLock = findPreference(CHOOSE_LEFT) as LockPref
-        val rightLock = findPreference(CHOOSE_RIGHT) as LockPref
+        val leftLock = findPreference<LockPref>(CHOOSE_LEFT)!!
+        val rightLock = findPreference<LockPref>(CHOOSE_RIGHT)!!
 
         leftLock.resetListener = {
             context?.writeSecure(KEYGUARD_LEFT, null)

@@ -58,10 +58,10 @@ class TWFragment : AnimFragment() {
         val rotation = (activity?.getSystemService(Context.WINDOW_SERVICE) as WindowManager).defaultDisplay.rotation
         val landscape = rotation == Surface.ROTATION_180 || rotation == Surface.ROTATION_270
 
-        val rows = findPreference(TILE_ROW) as SeekBarPreference
-        val columns = findPreference(TILE_COLUMN) as SeekBarPreference
-        val rowsLandscape = findPreference(TILE_ROW_LANDSCAPE) as SeekBarPreference
-        val columnsLandscape = findPreference(TILE_COLUMN_LANDSCAPE) as SeekBarPreference
+        val rows = findPreference<SeekBarPreference>(TILE_ROW)!!
+        val columns = findPreference<SeekBarPreference>(TILE_COLUMN)!!
+        val rowsLandscape = findPreference<SeekBarPreference>(TILE_ROW_LANDSCAPE)!!
+        val columnsLandscape = findPreference<SeekBarPreference>(TILE_COLUMN_LANDSCAPE)!!
 
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.P) {
             val listener = Preference.OnPreferenceChangeListener { pref, value ->
@@ -98,7 +98,7 @@ class TWFragment : AnimFragment() {
     }
 
     private fun setUpClockPosition() {
-        val pref = findPreference(TW_CLOCK_POSITION) as ListPreference
+        val pref = findPreference<ListPreference>(TW_CLOCK_POSITION)!!
 
         if (Build.VERSION.SDK_INT > Build.VERSION_CODES.O_MR1) {
             val blMan = context!!.blacklistManager
@@ -129,7 +129,7 @@ class TWFragment : AnimFragment() {
     }
 
     private fun setUpNavBarStuff() {
-        val preference = findPreference(NAVBAR_COLOR) as ColorPreferenceCompat
+        val preference = findPreference<ColorPreferenceCompat>(NAVBAR_COLOR)!!
         val savedVal = Settings.Global.getInt(context?.contentResolver, NAVBAR_COLOR, Color.WHITE)
 
         preference.saveValue(savedVal)
@@ -141,7 +141,7 @@ class TWFragment : AnimFragment() {
     }
 
     private fun switchPreferenceListeners() {
-        val hbw = findPreference(HIGH_BRIGHTNESS_WARNING) as SwitchPreference
+        val hbw = findPreference<SwitchPreference>(HIGH_BRIGHTNESS_WARNING)!!
         hbw.isChecked = Settings.System.getInt(activity?.contentResolver, hbw.key, 0) == 0
 
         hbw.setOnPreferenceChangeListener { pref, newValue ->

@@ -47,7 +47,7 @@ class QSFragment : AnimFragment() {
     }
 
     private fun setEditorListener() {
-        val launch = findPreference("launch_editor")
+        val launch = findPreference<Preference>("launch_editor")
         launch?.onPreferenceClickListener = Preference.OnPreferenceClickListener {
             startActivity(Intent(context, QuickSettingsLayoutEditor::class.java))
             true
@@ -73,7 +73,7 @@ class QSFragment : AnimFragment() {
                 }
             }
         } else {
-            val category = findPreference(GENERAL_QS) as PreferenceCategory
+            val category = findPreference<PreferenceCategory>(GENERAL_QS)!!
             category.isEnabled = false
 
             category.forEachPreference {
@@ -87,7 +87,7 @@ class QSFragment : AnimFragment() {
 
     private fun setSliderState() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            val pref = findPreference(QQS_COUNT) as SeekBarPreference //find the SliderPreference
+            val pref = findPreference<SeekBarPreference>(QQS_COUNT)!!
 
             if (context!!.checkSamsung() && Build.VERSION.SDK_INT > Build.VERSION_CODES.O_MR1) {
                 pref.isEnabled = false
@@ -101,7 +101,7 @@ class QSFragment : AnimFragment() {
                 pref.progress = Settings.Secure.getInt(context?.contentResolver, QQS_COUNT, 5) //set the progress/value from Settings
             }
         } else {
-            val category = findPreference(COUNT_CATEGORY) as PreferenceCategory
+            val category = findPreference<PreferenceCategory>(COUNT_CATEGORY)!!
             category.isEnabled = false
 
             category.forEachPreference {

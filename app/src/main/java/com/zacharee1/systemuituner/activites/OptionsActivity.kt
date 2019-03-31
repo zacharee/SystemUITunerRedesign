@@ -6,6 +6,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import androidx.fragment.app.FragmentManager
+import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.fragments.AnimFragment
@@ -93,7 +94,7 @@ class OptionsActivity : BaseAnimActivity() {
         override fun onSetTitle() = resources.getString(R.string.app_name)
 
         private fun updateCustomEnabledState() {
-            val customPref = findPreference("custom")
+            val customPref = findPreference<Preference>("custom")!!
             val enabled = context!!.prefs.allowCustomSettingsInput
 
             customPref.isEnabled = enabled

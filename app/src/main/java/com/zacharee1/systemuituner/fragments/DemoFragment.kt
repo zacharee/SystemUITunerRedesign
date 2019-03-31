@@ -42,12 +42,12 @@ class DemoFragment : AnimFragment() {
     }
 
     private fun setPrefListeners() {
-        val enableDemo = findPreference(DEMO_ALLOWED)
+        val enableDemo = findPreference<SwitchPreference>(DEMO_ALLOWED)
         enableDemo?.isEnabled = Settings.Global.getInt(context?.contentResolver, DEMO_ALLOWED, 0) == 0
         enableDemo?.onPreferenceClickListener = Preference.OnPreferenceClickListener { preference ->
             if (activity?.checkCallingOrSelfPermission(Manifest.permission.DUMP) == PackageManager.PERMISSION_GRANTED) {
                 context?.writeGlobal(preference.key, 1)
-                findPreference(SHOW_DEMO)?.isEnabled = true
+                findPreference<SwitchPreference>(SHOW_DEMO)?.isEnabled = true
             } else {
                 Toast.makeText(context, resources.getString(R.string.grant_dump_perm), Toast.LENGTH_LONG).show()
             }
@@ -56,7 +56,7 @@ class DemoFragment : AnimFragment() {
     }
 
     private fun setDemoSwitchListener() {
-        val demo = findPreference(SHOW_DEMO) as SwitchPreference
+        val demo = findPreference<SwitchPreference>(SHOW_DEMO)!!
 
         switchReceiver = object : BroadcastReceiver() {
             override fun onReceive(context: Context, intent: Intent) {

@@ -40,8 +40,8 @@ abstract class BaseSettingsEditActivity : BaseEditActivity<SettingsInput>() {
     override fun onResumeFragments() {
         super.onResumeFragments()
 
-        val keyPref = fragment.findPreference(KEY) as EditTextPreference
-        val valPref = fragment.findPreference(VALUE) as EditTextPreference
+        val keyPref = fragment.findPreference<EditTextPreference>(KEY)!!
+        val valPref = fragment.findPreference<EditTextPreference>(VALUE)!!
 
         keyPref.summary = key
         valPref.summary = value

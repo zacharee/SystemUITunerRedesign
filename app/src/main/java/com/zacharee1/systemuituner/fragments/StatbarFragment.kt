@@ -34,7 +34,7 @@ open class StatbarFragment : AnimFragment() {
         const val BW_REQ = 1012
     }
 
-    private val customCat by lazy { findPreference(CUSTOM) as PreferenceCategory }
+    private val customCat by lazy { findPreference<PreferenceCategory>(CUSTOM)!! }
 
     override val prefsRes = R.xml.pref_statbar
 
@@ -73,10 +73,10 @@ open class StatbarFragment : AnimFragment() {
         if (!activity!!.checkSamsung())
             preferenceScreen.removePreference(findPreference(TOUCHWIZ))
 
-        val resetBL = findPreference(RESET_BLACKLIST)
-        val backupBL = findPreference(BACKUP_BLACKLIST)
-        val restoreBL = findPreference(RESTORE_BLACKLIST)
-        val auto = findPreference(AUTO_DETECT)
+        val resetBL = findPreference<Preference>(RESET_BLACKLIST)
+        val backupBL = findPreference<Preference>(BACKUP_BLACKLIST)
+        val restoreBL = findPreference<Preference>(RESTORE_BLACKLIST)
+        val auto = findPreference<Preference>(AUTO_DETECT)
 
         resetBL?.onPreferenceClickListener = Preference.OnPreferenceClickListener {
             context?.blacklistManager?.setCurrentBlacklist(null)
