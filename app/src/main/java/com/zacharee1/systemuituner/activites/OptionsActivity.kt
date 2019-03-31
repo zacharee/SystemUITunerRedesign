@@ -5,18 +5,29 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import androidx.fragment.app.FragmentManager
+import androidx.navigation.NavController
+import androidx.navigation.NavDestination
 import androidx.preference.Preference
-import androidx.preference.PreferenceFragmentCompat
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.fragments.AnimFragment
 import com.zacharee1.systemuituner.misc.OptionSelected
 import com.zacharee1.systemuituner.util.checkSamsung
-import com.zacharee1.systemuituner.util.forEachPreference
-import com.zacharee1.systemuituner.util.getAnimTransaction
+import com.zacharee1.systemuituner.util.navController
+import com.zacharee1.systemuituner.util.navOptions
 import com.zacharee1.systemuituner.util.prefs
 
-class OptionsActivity : BaseAnimActivity() {
+class OptionsActivity : BaseAnimActivity(), NavController.OnDestinationChangedListener {
+    companion object {
+        const val STATBAR = "statbar"
+        const val QS = "qs"
+        const val DEMO = "demo"
+        const val TOUCHWIZ = "touchwiz"
+        const val IMMERSIVE = "immersive"
+        const val LOCKSCREEN = "lockscreen"
+        const val MISC = "misc"
+        const val CUSTOM = "custom"
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -25,20 +36,13 @@ class OptionsActivity : BaseAnimActivity() {
         backButton.scaleX = 0f
         backButton.scaleY = 0f
 
-        setBackClickable(!prefs.hideWelcomeScreen)
-
-        supportFragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
-        supportFragmentManager
-                .getAnimTransaction()
-                .replace(R.id.content_main, MainPrefs())
-                .addToBackStack("main")
-                .commit()
+        navController.addOnDestinationChangedListener(this)
     }
 
     override fun onResume() {
         super.onResume()
 
-        setBackClickable(supportFragmentManager.backStackEntryCount > 1 || !prefs.hideWelcomeScreen)
+        updateBackClickable()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -51,28 +55,27 @@ class OptionsActivity : BaseAnimActivity() {
         val id = item.itemId
 
         if (id == android.R.id.home) {
-            handleBackPressed()
+            onBackPressed()
             return true
         }
 
         return OptionSelected.doAction(item.itemId, this)
     }
 
-    override fun onBackPressed() {
-        handleBackPressed()
+    override fun onDestinationChanged(controller: NavController, destination: NavDestination, arguments: Bundle?) {
+        updateBackClickable()
     }
 
-    private fun handleBackPressed() {
-        when {
-            supportFragmentManager.backStackEntryCount > 1 -> {
-                supportFragmentManager.popBackStackImmediate()
+    override fun onDestroy() {
+        super.onDestroy()
 
-                val stillAboveOne = supportFragmentManager.backStackEntryCount > 1
+        navController.removeOnDestinationChangedListener(this)
+    }
 
-                setBackClickable(stillAboveOne || !prefs.hideWelcomeScreen)
-            }
-            else -> finish()
-        }
+    private fun updateBackClickable() {
+        val currentFrag = navController.currentDestination
+
+        setBackClickable(currentFrag?.id != R.id.mainPrefs || !prefs.hideWelcomeScreen)
     }
 
     class MainPrefs : AnimFragment() {
@@ -83,7 +86,6 @@ class OptionsActivity : BaseAnimActivity() {
 
             removeTouchWizIfNeeded()
             removeLockScreenIfNeeded()
-            setListeners()
         }
 
         override fun onResume() {
@@ -91,10 +93,33 @@ class OptionsActivity : BaseAnimActivity() {
             updateCustomEnabledState()
         }
 
+        override fun onPreferenceTreeClick(preference: Preference?): Boolean {
+            val (action, res) = when (preference?.key) {
+                STATBAR -> R.id.action_mainPrefs_to_statbarFragment to true
+                QS -> R.id.action_mainPrefs_to_QSFragment to true
+                DEMO -> R.id.action_mainPrefs_to_demoFragment to true
+                IMMERSIVE -> R.id.action_mainPrefs_to_immersiveFragment to true
+                LOCKSCREEN -> R.id.action_mainPrefs_to_lockFragment to true
+                MISC -> R.id.action_mainPrefs_to_miscFragment to true
+                CUSTOM -> R.id.action_mainPrefs_to_customFragment to true
+                else -> null to super.onPreferenceTreeClick(preference)
+            }
+
+            action?.let {
+                navController.navigate(
+                        it,
+                        null,
+                        navOptions
+                )
+            }
+
+            return res
+        }
+
         override fun onSetTitle() = resources.getString(R.string.app_name)
 
         private fun updateCustomEnabledState() {
-            val customPref = findPreference<Preference>("custom")!!
+            val customPref = findPreference<Preference>(CUSTOM)!!
             val enabled = context!!.prefs.allowCustomSettingsInput
 
             customPref.isEnabled = enabled
@@ -102,28 +127,13 @@ class OptionsActivity : BaseAnimActivity() {
         }
 
         private fun removeTouchWizIfNeeded() {
-            if (activity?.checkSamsung() == false) preferenceScreen.removePreference(findPreference("touchwiz") ?: return)
+            if (activity?.checkSamsung() == false)
+                preferenceScreen.removePreference(findPreference(TOUCHWIZ) ?: return)
         }
 
         private fun removeLockScreenIfNeeded() {
-            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O) preferenceScreen.removePreference(findPreference("lockscreen") ?: return)
-        }
-
-        private fun setListeners() {
-            preferenceScreen.forEachPreference {
-                it.setOnPreferenceClickListener {
-                    (activity as BaseAnimActivity).setBackClickable(true)
-
-                    val fragment = Class.forName(it.fragment
-                            ?: return@setOnPreferenceClickListener false).newInstance() as PreferenceFragmentCompat
-                    fragmentManager
-                            ?.getAnimTransaction()
-                            ?.replace(R.id.content_main, fragment, it.key)
-                            ?.addToBackStack(it.key)
-                            ?.commit()
-                    true
-                }
-            }
+            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O)
+                preferenceScreen.removePreference(findPreference("lockscreen") ?: return)
         }
     }
 }

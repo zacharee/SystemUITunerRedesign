@@ -36,11 +36,11 @@ class ImmersiveFragment : AnimFragment(), Preference.OnPreferenceChangeListener 
 
         findPreference<Preference>("immersive_tile_mode")?.onPreferenceChangeListener = this
 
-        val none = findPreference<PreferenceCategory>(ImmersiveHandler.DISABLED)!!
-        val full = findPreference<PreferenceCategory>(ImmersiveHandler.FULL)!!
-        val status = findPreference<PreferenceCategory>(ImmersiveHandler.STATUS)!!
-        val navi = findPreference<PreferenceCategory>(ImmersiveHandler.NAV)!!
-        val preconf = findPreference<PreferenceCategory>(ImmersiveHandler.PRECONF)!!
+        val none = findPreference<CheckBoxPreference>(ImmersiveHandler.DISABLED)!!
+        val full = findPreference<CheckBoxPreference>(ImmersiveHandler.FULL)!!
+        val status = findPreference<CheckBoxPreference>(ImmersiveHandler.STATUS)!!
+        val navi = findPreference<CheckBoxPreference>(ImmersiveHandler.NAV)!!
+        val preconf = findPreference<CheckBoxPreference>(ImmersiveHandler.PRECONF)!!
 
         none.onPreferenceChangeListener = this
         full.onPreferenceChangeListener = this

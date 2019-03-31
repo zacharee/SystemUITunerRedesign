@@ -38,7 +38,7 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
         release_upload {
@@ -46,9 +46,14 @@ android {
             jniDebuggable false
             renderscriptDebuggable false
             renderscriptOptimLevel 3
-            minifyEnabled false
+            minifyEnabled true
             zipAlignEnabled true
             matchingFallbacks = ['release']
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled = true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
 
@@ -75,6 +80,8 @@ dependencies {
     implementation 'androidx.recyclerview:recyclerview:1.1.0-alpha03'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.0-alpha3'
     implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.1.0-alpha01'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.1.0-alpha01'
 
     //Google
     implementation 'com.google.android.material:material:1.1.0-alpha04'

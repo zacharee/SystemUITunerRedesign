@@ -12,6 +12,10 @@ import android.util.TypedValue
 import android.view.View
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.FragmentManager
+import androidx.navigation.NavController
+import androidx.navigation.NavOptions
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 import androidx.preference.PreferenceGroup
@@ -231,3 +235,17 @@ val Context.twHasAospClock: Boolean
             !e.message!!.contains("QSPhoneStatusBarViewClock")
         }
     }
+
+val PreferenceFragmentCompat.navController: NavController
+    get() = NavHostFragment.findNavController(this)
+
+val navOptions =
+        NavOptions.Builder()
+                .setEnterAnim(android.R.anim.fade_in)
+                .setExitAnim(android.R.anim.fade_out)
+                .setPopEnterAnim(android.R.anim.fade_in)
+                .setPopExitAnim(android.R.anim.fade_out)
+                .build()
+
+val Activity.navController: NavController
+    get() = findNavController(R.id.nav_host)

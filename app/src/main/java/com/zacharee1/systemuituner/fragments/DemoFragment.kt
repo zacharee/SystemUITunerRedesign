@@ -42,7 +42,7 @@ class DemoFragment : AnimFragment() {
     }
 
     private fun setPrefListeners() {
-        val enableDemo = findPreference<SwitchPreference>(DEMO_ALLOWED)
+        val enableDemo = findPreference<Preference>(DEMO_ALLOWED)
         enableDemo?.isEnabled = Settings.Global.getInt(context?.contentResolver, DEMO_ALLOWED, 0) == 0
         enableDemo?.onPreferenceClickListener = Preference.OnPreferenceClickListener { preference ->
             if (activity?.checkCallingOrSelfPermission(Manifest.permission.DUMP) == PackageManager.PERMISSION_GRANTED) {
