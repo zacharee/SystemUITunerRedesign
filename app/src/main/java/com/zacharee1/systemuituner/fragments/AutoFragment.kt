@@ -90,8 +90,8 @@ class AutoFragment : AnimFragment() {
                                     val preference = SwitchPreference(context)
                                     preference.title = result
                                     preference.key = result
-                                    preference.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { p, o ->
-                                        context?.blacklistManager?.modifyItem(p.key, o.toString().toBoolean())
+                                    preference.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { pref, o ->
+                                        context?.blacklistManager?.modifyItem(pref.key, o.toString().toBoolean())
                                         true
                                     }
 
