@@ -9,6 +9,7 @@
     <tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory
         android:title="@string/quick_settings"
         android:key="qs_row_col_cat">
+
         <tk.zwander.seekbarpreference.SeekBarPreference
             android:title="@string/qs_row_count"
             android:key="qs_tile_row"
@@ -16,6 +17,7 @@
             app:maxValue="10"
             android:defaultValue="3"
             />
+
         <tk.zwander.seekbarpreference.SeekBarPreference
             android:title="@string/qs_column_count"
             android:key="qs_tile_column"
@@ -23,6 +25,7 @@
             app:maxValue="10"
             android:defaultValue="3"
             />
+
         <tk.zwander.seekbarpreference.SeekBarPreference
             android:title="@string/qs_row_count_landscape"
             android:key="qs_tile_row_landscape"
@@ -30,6 +33,7 @@
             app:maxValue="3"
             android:defaultValue="2"
             />
+
         <tk.zwander.seekbarpreference.SeekBarPreference
             android:title="@string/qs_column_count_landscape"
             android:key="qs_tile_column_landscape"
@@ -37,12 +41,15 @@
             app:maxValue="12"
             android:defaultValue="8"
             />
+
         <com.zacharee1.systemuituner.prefs.RedTextPref
             android:summary="@string/safe_mode_needed_qs_row_col"
             />
+
     </tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory>
 
     <tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory
+        android:key="touchwiz_misc"
         android:title="@string/miscellaneous">
 
         <ListPreference
@@ -57,12 +64,14 @@
             android:title="@string/navigation_bar_color"
             android:key="navigationbar_color"
             app:cpv_showAlphaSlider="true"
-            android:defaultValue="-1"/>
+            android:defaultValue="-1"
+            />
 
         <SwitchPreference
             android:title="@string/high_brightness_warning"
             android:defaultValue="true"
-            android:key="shown_max_brightness_dialog" />
+            android:key="shown_max_brightness_dialog"
+            />
 
     </tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory>
 

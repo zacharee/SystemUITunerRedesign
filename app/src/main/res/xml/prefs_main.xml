@@ -5,43 +5,50 @@
         android:key="statbar"
         android:icon="@drawable/ic_visibility_off_black_24dp"
         android:title="@string/status_bar"
-        android:fragment="com.zacharee1.systemuituner.fragments.StatbarFragment" />
+        android:fragment="com.zacharee1.systemuituner.fragments.StatbarFragment"
+        />
 
     <Preference
         android:key="qs"
         android:icon="@drawable/ic_settings_black_24dp"
         android:title="@string/quick_settings"
-        android:fragment="com.zacharee1.systemuituner.fragments.QSFragment" />
+        android:fragment="com.zacharee1.systemuituner.fragments.QSFragment"
+        />
 
     <Preference
         android:key="demo"
         android:icon="@drawable/ic_tv_black_24dp"
         android:title="@string/demo_mode"
-        android:fragment="com.zacharee1.systemuituner.fragments.DemoFragment" />
+        android:fragment="com.zacharee1.systemuituner.fragments.DemoFragment"
+        />
 
     <Preference
         android:key="touchwiz"
         android:icon="@drawable/ic_phone_android_black_24dp"
         android:title="@string/touchwiz"
-        android:fragment="com.zacharee1.systemuituner.fragments.TWFragment" />
+        android:fragment="com.zacharee1.systemuituner.fragments.TWFragment"
+        />
 
     <Preference
         android:key="immersive"
         android:icon="@drawable/ic_fullscreen_black_24dp"
         android:title="@string/immersive_mode"
-        android:fragment="com.zacharee1.systemuituner.fragments.ImmersiveFragment" />
+        android:fragment="com.zacharee1.systemuituner.fragments.ImmersiveFragment"
+        />
 
     <Preference
         android:key="lockscreen"
         android:icon="@drawable/ic_lock_outline_black_24dp"
         android:title="@string/lockscreen"
-        android:fragment="com.zacharee1.systemuituner.fragments.LockFragment" />
+        android:fragment="com.zacharee1.systemuituner.fragments.LockFragment"
+        />
 
     <Preference
         android:key="misc"
         android:icon="@drawable/ic_more_horiz_black_24dp"
         android:title="@string/miscellaneous"
-        android:fragment="com.zacharee1.systemuituner.fragments.MiscFragment" />
+        android:fragment="com.zacharee1.systemuituner.fragments.MiscFragment"
+        />
 
     <Preference
         android:enabled="false"
@@ -49,6 +56,7 @@
         android:icon="@drawable/ic_brush_black_24dp"
         android:title="@string/custom"
         android:summary="@string/enable_in_settings"
-        android:fragment="com.zacharee1.systemuituner.fragments.CustomFragment" />
+        android:fragment="com.zacharee1.systemuituner.fragments.CustomFragment"
+        />
 
 </PreferenceScreen>

@@ -9,6 +9,7 @@
         android:icon="@drawable/ic_help_outline_black_24dp" />
 
     <tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory
+        android:key="status_bar_backup_restore"
         android:title="@string/backup_and_restore">
         <Preference
             android:key="reset_blacklist"
@@ -25,6 +26,7 @@
     </tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory>
 
     <tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory
+        android:key="status_bar_network"
         android:title="@string/network">
         <SwitchPreference
             android:key="airplane"
@@ -93,6 +95,7 @@
     </tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory>
 
     <tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory
+        android:key="status_bar_sounds"
         android:title="@string/sounds_alerts">
         <SwitchPreference
             android:key="headset"
@@ -117,6 +120,7 @@
     </tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory>
 
     <tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory
+        android:key="status_bar_time"
         android:title="@string/time_such">
         <SwitchPreference
             android:key="alarm,alarm_clock"
@@ -137,6 +141,7 @@
     </tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory>
 
     <tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory
+        android:key="status_bar_misc"
         android:title="@string/miscellaneous">
         <SwitchPreference
             android:key="answering_memo"

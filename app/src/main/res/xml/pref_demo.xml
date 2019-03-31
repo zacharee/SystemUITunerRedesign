@@ -17,6 +17,7 @@
     </PreferenceCategory>
 
     <tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory
+        android:key="demo_network"
         android:title="@string/network">
 
         <tk.zwander.seekbarpreference.SeekBarPreference
@@ -77,6 +78,7 @@
     </tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory>
 
     <tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory
+        android:key="demo_style"
         android:title="@string/style">
 
         <com.zacharee1.systemuituner.prefs.AutoSummaryListPreference
@@ -109,6 +111,7 @@
     </tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory>
 
     <tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory
+        android:key="demo_misc"
         android:title="@string/miscellaneous">
 
         <com.zacharee1.systemuituner.prefs.TimePreference

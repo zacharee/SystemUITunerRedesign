@@ -4,11 +4,13 @@
     <EditTextPreference
         android:title="@string/key_plaintext"
         android:persistent="false"
-        android:key="key" />
+        android:key="key"
+        />
 
     <EditTextPreference
         android:title="@string/value_plaintext"
         android:persistent="false"
-        android:key="value" />
+        android:key="value"
+        />
 
 </PreferenceScreen>

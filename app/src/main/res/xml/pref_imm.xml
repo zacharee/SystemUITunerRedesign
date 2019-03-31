@@ -9,23 +9,28 @@
 
         <CheckBoxPreference
             android:title="@string/none"
-            android:key="immersive.none" />
+            android:key="immersive.none"
+            />
 
         <CheckBoxPreference
             android:title="@string/full"
-            android:key="immersive.full" />
+            android:key="immersive.full"
+            />
 
         <CheckBoxPreference
             android:title="@string/status_bar"
-            android:key="immersive.status" />
+            android:key="immersive.status"
+            />
 
         <CheckBoxPreference
             android:title="@string/navigation_bar"
-            android:key="immersive.navigation" />
+            android:key="immersive.navigation"
+            />
 
         <CheckBoxPreference
             android:title="@string/pre_confirms"
-            android:key="immersive.preconfirms" />
+            android:key="immersive.preconfirms"
+            />
 
     </tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory>
 
@@ -35,20 +40,24 @@
 
         <Preference
             android:selectable="false"
-            android:summary="@string/app_specific_desc" />
+            android:summary="@string/app_specific_desc"
+            />
 
         <SwitchPreference
             android:title="@string/enabled"
-            android:key="app_immersive" />
+            android:key="app_immersive"
+            />
 
         <SwitchPreference
             android:title="@string/blacklist"
             android:summary="@string/blacklist_desc"
-            android:key="immersive_blacklist"/>
+            android:key="immersive_blacklist"
+            />
 
         <Preference
             android:title="@string/select_apps"
-            android:key="select_apps" />
+            android:key="select_apps"
+            />
 
     </tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory>
 
@@ -62,7 +71,9 @@
             android:persistent="true"
             android:entries="@array/immersive_names"
             android:entryValues="@array/immersive_values"
-            android:defaultValue="immersive.full" />
+            android:defaultValue="immersive.full"
+            />
 
     </PreferenceCategory>
+
 </PreferenceScreen>
