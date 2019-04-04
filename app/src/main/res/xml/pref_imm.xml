@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <com.zacharee1.systemuituner.prefs.RedTextPref
         android:summary="@string/imm_warn" />
 
@@ -7,29 +8,8 @@
         android:title="@string/immersive_mode"
         android:key="imm_boxes">
 
-        <CheckBoxPreference
-            android:title="@string/none"
-            android:key="immersive.none"
-            />
-
-        <CheckBoxPreference
-            android:title="@string/full"
-            android:key="immersive.full"
-            />
-
-        <CheckBoxPreference
-            android:title="@string/status_bar"
-            android:key="immersive.status"
-            />
-
-        <CheckBoxPreference
-            android:title="@string/navigation_bar"
-            android:key="immersive.navigation"
-            />
-
-        <CheckBoxPreference
-            android:title="@string/pre_confirms"
-            android:key="immersive.preconfirms"
+        <com.zacharee1.systemuituner.prefs.ImmersiveModePreference
+            android:key="immersive_selection"
             />
 
     </tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory>

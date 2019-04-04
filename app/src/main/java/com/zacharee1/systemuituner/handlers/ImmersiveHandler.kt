@@ -1,10 +1,8 @@
 package com.zacharee1.systemuituner.handlers
 
 import android.content.Context
-import android.os.Bundle
 import android.provider.Settings
 import android.util.Log
-import com.google.firebase.analytics.FirebaseAnalytics
 import com.zacharee1.systemuituner.util.prefs
 import com.zacharee1.systemuituner.util.writeGlobal
 import java.util.*
@@ -95,6 +93,14 @@ object ImmersiveHandler {
         val set = TreeSet(context?.prefs?.immersiveApps)
         set.remove(remove)
         context?.prefs?.immersiveApps = set
+    }
+
+    fun isValidMode(type: String): Boolean {
+        return type.contains(FULL)
+                || type.contains(STATUS)
+                || type.contains(NAV)
+                || type.contains(PRECONF)
+                || type.contains(DISABLED)
     }
 
     private fun isSelecting(context: Context?): Boolean {

@@ -8,26 +8,28 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.provider.Settings
-import androidx.preference.CheckBoxPreference
 import androidx.preference.ListPreference
 import androidx.preference.Preference
 import androidx.preference.PreferenceCategory
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.activites.apppickers.ImmersiveSelectActivity
 import com.zacharee1.systemuituner.handlers.ImmersiveHandler
+import com.zacharee1.systemuituner.prefs.ImmersiveModePreference
 import com.zacharee1.systemuituner.util.PrefManager
 import com.zacharee1.systemuituner.util.forEachPreference
 
 class ImmersiveFragment : AnimFragment(), Preference.OnPreferenceChangeListener {
     override val prefsRes = R.xml.pref_imm
 
-    private var observer = object : ContentObserver(Handler(Looper.getMainLooper())) {
+    private val observer = object : ContentObserver(Handler(Looper.getMainLooper())) {
         override fun onChange(selfChange: Boolean, uri: Uri) {
             if (uri == ImmersiveHandler.POLICY_CONTROL) {
-                setProperBoxChecked()
+                selection?.update()
             }
         }
     }
+
+    private val selection by lazy { findPreference<ImmersiveModePreference>("immersive_selection") }
 
     override fun onSetTitle() = resources.getString(R.string.immersive_mode)
 
@@ -36,24 +38,13 @@ class ImmersiveFragment : AnimFragment(), Preference.OnPreferenceChangeListener 
 
         findPreference<Preference>("immersive_tile_mode")?.onPreferenceChangeListener = this
 
-        val none = findPreference<CheckBoxPreference>(ImmersiveHandler.DISABLED)!!
-        val full = findPreference<CheckBoxPreference>(ImmersiveHandler.FULL)!!
-        val status = findPreference<CheckBoxPreference>(ImmersiveHandler.STATUS)!!
-        val navi = findPreference<CheckBoxPreference>(ImmersiveHandler.NAV)!!
-        val preconf = findPreference<CheckBoxPreference>(ImmersiveHandler.PRECONF)!!
-
-        none.onPreferenceChangeListener = this
-        full.onPreferenceChangeListener = this
-        status.onPreferenceChangeListener = this
-        navi.onPreferenceChangeListener = this
-        preconf.onPreferenceChangeListener = this
+        selection?.onPreferenceChangeListener = this
     }
 
     override fun onResume() {
         super.onResume()
 
         setContentObserver()
-        setProperBoxChecked()
         disableQSSettingIfBelowNougat()
         setSelectorListener()
     }
@@ -61,27 +52,6 @@ class ImmersiveFragment : AnimFragment(), Preference.OnPreferenceChangeListener 
     private fun setContentObserver() {
         activity?.contentResolver
                 ?.registerContentObserver(Settings.Global.CONTENT_URI, true, observer)
-    }
-
-    private fun setProperBoxChecked() {
-        val currentMode = ImmersiveHandler.getMode(context)
-        setAllOthersDisabled(currentMode)
-    }
-
-    private fun setAllOthersDisabled(keyToNotDisable: String) {
-        val boxes = findPreference<PreferenceCategory>(IMMERSIVE_BOXES)!!
-
-        boxes.forEachPreference { preference ->
-            if (preference is CheckBoxPreference) {
-                preference.isEnabled = preference.key != keyToNotDisable
-
-                if (preference.key != keyToNotDisable) {
-                    preference.isChecked = false
-                } else if (!preference.isChecked) {
-                    preference.isChecked = true
-                }
-            }
-        }
     }
 
     private fun disableQSSettingIfBelowNougat() {
@@ -121,14 +91,8 @@ class ImmersiveFragment : AnimFragment(), Preference.OnPreferenceChangeListener 
     }
 
     override fun onPreferenceChange(preference: Preference, o: Any): Boolean {
-        if (preference is CheckBoxPreference) {
-
-            val isChecked = o.toString().toBoolean()
-
-            if (isChecked) {
-                setAllOthersDisabled(preference.key)
-                ImmersiveHandler.setMode(activity, preference.key)
-            }
+        if (preference is ImmersiveModePreference) {
+            ImmersiveHandler.setMode(activity, o.toString())
         }
 
         if (preference is ListPreference) {

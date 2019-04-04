@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="immersive_none" type="id" />
+    <item name="immersive_full" type="id" />
+    <item name="immersive_status" type="id" />
+    <item name="immersive_nav" type="id" />
+    <item name="immersive_preconf" type="id" />
+</resources>
