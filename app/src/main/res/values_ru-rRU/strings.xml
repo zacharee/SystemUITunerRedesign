@@ -197,10 +197,10 @@
     <string name="select_component">Выбрать компонент</string>
     <string name="reset">Сбросить</string>
     <string name="agree">Принять</string>
-    <string name="cancel">Cancel</string>
-    <string name="dont_show">Don\'t Show Again</string>
-    <string name="miui_detected">MIUI Device Detected!</string>
-    <string name="intent">Intent</string>
+    <string name="cancel">Отмена</string>
+    <string name="dont_show">Больше не показывать</string>
+    <string name="miui_detected">Обнаружено устройство с MIUI!</string>
+    <string name="intent">Намерения</string>
     <string name="removing_tile">Удаление плитки</string>
     <string name="remove_tile">Удалить %s?</string>
     <string name="allow_deep_sleep">Включить автоматический глубокий сон</string>
@@ -222,7 +222,7 @@
     <string name="show_notif">Показывать уведомления</string>
     <string name="carrier_on_home">Имя оператора связи на домашнем экране</string>
     <string name="carrier_on_lock">Имя оператора связи на экране блокировки</string>
-    <string name="key_plaintext">Клавиша</string>
+    <string name="key_plaintext">Ключ</string>
     <string name="value_plaintext">Значение</string>
     <string name="remove_from_blacklist">Удалить из чёрного списка?</string>
     <string name="safe_mode_status_bar">Строка состояния</string>
@@ -237,7 +237,7 @@
     <string name="attention">Внимание!</string>
     <string name="options">Настройки</string>
     <string name="name">Название</string>
-    <string name="key">Клавиша</string>
+    <string name="key">Ключ</string>
     <string name="add_item">Добавить элемент</string>
     <string name="are_you_sure">Вы уверены?</string>
     <string name="style">Стиль</string>
@@ -259,14 +259,14 @@
     <string name="statbar_rotation_lock_notif">On certain devices, modifying the status bar icons can cause an icon that looks like a phone to appear. This is the rotation lock icon. Tap here to fix it.</string>
     <string name="pnc_desc">Power Notification Controls allow you to set the level of importance for notifications on a per-app basis. Simply turn the feature on and hold down on a notification to get started. You may need to tap the A to enable the slider.</string>
     <string name="pnc_warn">This feature is known to be unreliable on certain devices, especially on TouchWiz! It is impossible to fix, but the best workaround seems to be to tap repeatedly on the desired level. Again, I CANNOT fix it!</string>
-    <string name="notif_desc">Tap to change settings</string>
-    <string name="touchwiz_oreo_qqs">On TouchWiz Oreo devices, this setting is no longer reliable! Along with setting the number here, you may have to also save the value to Settings.System.apanel_number, which can only be done with ADB or root. Safe Mode attempts to implement a workaround, but I can\'t guarantee it will work!</string>
+    <string name="notif_desc">Тапните для изменения значения</string>
+    <string name="touchwiz_oreo_qqs">На устройствах с TouchWiz Oreo эта настройка больше не надёжна! Наряду с установкой здесь номера, Вам также может придётся сохранить значение в Settings.System.apanel_number, которое можно сделать только с ADB или root. Безопасный режим пытается реализовать обход, но я не могу гарантировать, что это будет работать!</string>
     <string name="notifs_snooze_desc">&#160;
-    In Android 8.1 and later, you can set custom times for notification snoozing. These values reset on reboot, so make sure to enable Safe Mode if you would like them to persist across power cycles.\n\n&#160;
-    Use the options below to set the different snooze times. \"Default\" sets the time Android will use by default. The other items will be the snooze times available for you to select.
+    В Android 8.1 и новее Вы можете установить пользовательские времена для приглушения уведомлений. Эти значения сбрасываются при перезагрузке, поэтому убедитесь, что включён безопасный режим, если вы хотите, чтобы они сохранялись между перезагрузками.\n\n&#160;
+    Используйте параметры ниже, чтобы установить различные времена приглушения уведомлений. \"По умолчанию\" устанавливает время, которое Android будет использоваться по умолчанию. Другие элементы будут доступны для выбора.
     </string>
-    <string name="custom_settings_input_desc">These fields allow you to enter your own custom settings.</string>
-    <string name="custom_settings_read_desc">These fields allow you to read the value of a specified key.</string>
+    <string name="custom_settings_input_desc">Эти поля позволяют ввести свои собственные настройки.</string>
+    <string name="custom_settings_read_desc">Эти поля позволяют читать значения указанного ключа.</string>
     <string name="custom_settings_warning">Be careful what you do here! If you input an incorrect value, you could cause a crash loop, bootloop or worse!</string>
     <string name="hide_welcome_hint">Hint: You can hide this screen, and the donation message, by going to Settings and toggling on \"Hide Welcome Screen\".</string>
     <string name="safe_mode_notif_desc_not_supported">This setting must remain enabled on Oreo.</string>
@@ -321,16 +321,16 @@
     <string name="open_terminal">3. Откройте Терминал.</string>
     <string name="cd_mac"><![CDATA[4. Введите <b>cd /путь/к/распакованной/папке</b> чтобы попасть в папку, куда Вы извлекли ADB. Например, <b>cd /Users/Zachary/Desktop/platform-tools/</b>.]]></string>
     <string name="make_sure_adb_installed">1. Убедитесь, что ADB установлен:</string>
-    <string name="download_adb_linux"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-linux.zip">Download the ADB ZIP for Linux.</a>]]></string>
-    <string name="cd_linux"><![CDATA[4. Enter <b>cd /path/to/extracted/folder/</b> to get to the folder you extracted ADB into. For instance, <b>cd /home/Zachary/Desktop/platform-tools/</b>.]]></string>
+    <string name="download_adb_linux"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-linux.zip">Скачайте ADB ZIP для Linux.</a>]]></string>
+    <string name="cd_linux"><![CDATA[4. Введите <b>cd /путь/к/распакованной/папке/</b> чтобы попасть в папку, куда Вы извлекли ADB. Например, <b>cd /home/Zachary/Desktop/platform-tools/</b>.]]></string>
     <!--Misc-->
-    <string name="created_by">App created by <a href="https://forum.xda-developers.com/member.php?u=7055541">Zacharee1</a></string>
-    <string name="lang_credit">Translations by volunteers on <a href="https://crowdin.com/project/systemui-tuner">Crowdin</a></string>
-    <string name="home_desc">For Devices without this Activity</string>
-    <string name="home_joke">Or for devices with it, I\'m not your boss.</string>
-    <string name="home_extra">(If you do have the stock SystemUI Tuner, this one provides some extra goodies.)</string>
-    <string name="donate_hook">Hey, I see you\'re using my app.</string>
-    <string name="donate_joke">How, you ask? Magic.</string>
-    <string name="donate_request">If you\'re enjoying your time here, it\'d be absolutely amazing if you could spare a dollar or two.</string>
-    <string name="donate_dont_worry">There\'s absolutely no obligation. This app is free and always will be.</string>
+    <string name="created_by">Приложение создано <a href="https://forum.xda-developers.com/member.php?u=7055541">Zacharee1</a></string>
+    <string name="lang_credit">Переводы сделаны добровольцами на <a href="https://crowdin.com/project/systemui-tuner">Crowdin</a>, русский <a href="https://forum.xda-developers.com/member.php?u=4791873">Borizzz aka iMiKE</a></string>
+    <string name="home_desc">Для устройств без этой активности</string>
+    <string name="home_joke">Или для устройств с ней, кто я такой, чтобы вам приказывать.</string>
+    <string name="home_extra">(Даже если у вас есть встроенный SystemUI Tuner, этот обладает некоторыми дополнительными возможностями.)</string>
+    <string name="donate_hook">Эй, я вижу, что вы используете моё приложение.</string>
+    <string name="donate_joke">Как, спросите вы? Магия.</string>
+    <string name="donate_request">Если вам здесь весело, было бы просто замечательно, если бы вы могли поделиться долларом-двумя.</string>
+    <string name="donate_dont_worry">Нет абсолютно никаких обязательств. Это приложение бесплатно и всегда будет таким.</string>
 </resources>
