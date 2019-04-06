@@ -221,7 +221,7 @@
     <string name="show_notif">Показывать уведомления</string>
     <string name="carrier_on_home">Имя оператора связи на домашнем экране</string>
     <string name="carrier_on_lock">Имя оператора связи на экране блокировки</string>
-    <string name="key_plaintext">Клавиша</string>
+    <string name="key_plaintext">Ключ</string>
     <string name="value_plaintext">Значение</string>
     <string name="remove_from_blacklist">Удалить из чёрного списка?</string>
     <string name="safe_mode_status_bar">Строка состояния</string>
@@ -246,10 +246,10 @@
     <string name="reboot_required">(Требуется перезагрузка)</string>
     <string name="auto_detect_summary">Пытается автоматически определить, какие иконки в строке состояния можно скрыть. Работает не на всех устройствах!</string>
     <string name="night_display_not_avail">Ночной дисплей недоступен на этом устройстве.</string>
-    <string name="app_specific_desc">Select apps to be included in or excluded from Immersive Mode. Immersive Mode must be disabled to change these settings.</string>
-    <string name="blacklist_desc">When on, selected apps will not use Immersive Mode</string>
-    <string name="imm_warn">This feature merely allows you to enable Immersive Mode. It DOES NOT do anything beyond that. Any issues you experience are the fault of your device\'s manufacturer. I CANNOT FIX IT!</string>
-    <string name="statbar_rotation_lock_notif">On certain devices, modifying the status bar icons can cause an icon that looks like a phone to appear. This is the rotation lock icon. Tap here to fix it.</string>
+    <string name="app_specific_desc">Выберите приложения, которые будут включены или исключены из режима погружения. Режим погружения должен быть отключен для изменения этих настроек.</string>
+    <string name="blacklist_desc">Когда включено, выбранные приложения не будут использовать режим погружения</string>
+    <string name="imm_warn">Эта функция позволяет вам включить режим погружения. Она НЕ делает ничего кроме этого. Любые проблемы, которые вы испытываете, являются ошибкой производителя вашего устройства. Я НЕ МОГУ ИСПРАВИТЬ ИХ!</string>
+    <string name="statbar_rotation_lock_notif">На определенных устройствах изменение иконок строки состояния может вызвать значок, который выглядит как телефон. Это значок блокировки поворота. Нажмите здесь, чтобы исправить его.</string>
     <string name="pnc_desc">Power Notification Controls allow you to set the level of importance for notifications on a per-app basis. Simply turn the feature on and hold down on a notification to get started. You may need to tap the A to enable the slider.</string>
     <string name="pnc_warn">This feature is known to be unreliable on certain devices, especially on TouchWiz! It is impossible to fix, but the best workaround seems to be to tap repeatedly on the desired level. Again, I CANNOT fix it!</string>
     <string name="notif_desc">Тапните для изменения значения</string>
@@ -259,7 +259,7 @@
     Use the options below to set the different snooze times. \"Default\" sets the time Android will use by default. The other items will be the snooze times available for you to select.
     </string>
     <string name="custom_settings_input_desc">These fields allow you to enter your own custom settings.</string>
-    <string name="custom_settings_read_desc">These fields allow you to read the value of a specified key.</string>
+    <string name="custom_settings_read_desc">Эти поля позволяют читать значения указанного ключа.</string>
     <string name="custom_settings_warning">Be careful what you do here! If you input an incorrect value, you could cause a crash loop, bootloop or worse!</string>
     <string name="hide_welcome_hint">Hint: You can hide this screen, and the donation message, by going to Settings and toggling on \"Hide Welcome Screen\".</string>
     <string name="safe_mode_notif_desc_not_supported">Эта настройка должна оставаться включена на Oreo.</string>
@@ -312,9 +312,9 @@
     <string name="download_adb_mac"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-darwin.zip">Download the ADB ZIP for macOS.</a>]]></string>
     <string name="open_terminal">3. Откройте Терминал.</string>
     <string name="cd_mac"><![CDATA[4. Enter <b>cd /path/to/extracted/folder/</b> to get to the folder you extracted ADB into. For instance, <b>cd /Users/Zachary/Desktop/platform-tools/</b>.]]></string>
-    <string name="make_sure_adb_installed">1. Make sure ADB is installed:</string>
-    <string name="download_adb_linux"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-linux.zip">Download the ADB ZIP for Linux.</a>]]></string>
-    <string name="cd_linux"><![CDATA[4. Enter <b>cd /path/to/extracted/folder/</b> to get to the folder you extracted ADB into. For instance, <b>cd /home/Zachary/Desktop/platform-tools/</b>.]]></string>
+    <string name="make_sure_adb_installed">1. Убедитесь, что ADB установлен:</string>
+    <string name="download_adb_linux"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-linux.zip">Скачайте ADB ZIP для Linux.</a>]]></string>
+    <string name="cd_linux"><![CDATA[4. Введите <b>cd /путь/к/распакованной/папке/</b> чтобы попасть в папку, куда Вы извлекли ADB. Например, <b>cd /home/Zachary/Desktop/platform-tools/</b>.]]></string>
     <!--Misc-->
     <string name="created_by">Приложение создано <a href="https://forum.xda-developers.com/member.php?u=7055541">Zacharee1</a></string>
     <string name="lang_credit">Переводы сделаны добровольцами на <a href="https://crowdin.com/project/systemui-tuner">Crowdin</a></string>
