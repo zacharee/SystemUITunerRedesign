@@ -191,7 +191,7 @@
     <string name="warning">Внимание!</string>
     <string name="select_all">Выбрать все</string>
     <string name="deselect_all">Отменить выбор</string>
-    <string name="invert_selection">О&amp;братить выделение</string>
+    <string name="invert_selection">Обратить выделение</string>
     <string name="select_app">Выбрать приложение</string>
     <string name="select_component">Выбрать компонент</string>
     <string name="reset">Сбросить</string>
