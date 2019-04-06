@@ -145,7 +145,7 @@
     <string name="no_sim_icon">Нет иконки SIM</string>
     <string name="sync_icon">Иконка синхронизации</string>
     <string name="microphone_mute">Иконка заглушки</string>
-    <string name="immersive_mode">Полноэкранный режим</string>
+    <string name="immersive_mode">Режим погружения</string>
     <string name="none">Нет</string>
     <string name="full">Полн.</string>
     <string name="navigation_bar">Панель навигации</string>
@@ -227,7 +227,7 @@
     <string name="safe_mode_status_bar">Строка состояния</string>
     <string name="safe_mode_fancy_anim">Модная анимация</string>
     <string name="safe_mode_header_count">Количество заголовков быстрых настроек</string>
-    <string name="safe_mode_row_col_tw">QS Row/Column Count</string>
+    <string name="safe_mode_row_col_tw">Количество столбцов/строк плиток быстрых настроек</string>
     <string name="safe_mode_snooze_options">Настройки приглушения</string>
     <string name="fix_rotation_icon_dialog_title">Удалить?</string>
     <string name="done">Готово!</string>
@@ -250,25 +250,25 @@
     <string name="blacklist_desc">Когда включено, выбранные приложения не будут использовать режим погружения</string>
     <string name="imm_warn">Эта функция позволяет вам включить режим погружения. Она НЕ делает ничего кроме этого. Любые проблемы, которые вы испытываете, являются ошибкой производителя вашего устройства. Я НЕ МОГУ ИСПРАВИТЬ ИХ!</string>
     <string name="statbar_rotation_lock_notif">На определенных устройствах изменение иконок строки состояния может вызвать значок, который выглядит как телефон. Это значок блокировки поворота. Нажмите здесь, чтобы исправить его.</string>
-    <string name="pnc_desc">Power Notification Controls allow you to set the level of importance for notifications on a per-app basis. Simply turn the feature on and hold down on a notification to get started. You may need to tap the A to enable the slider.</string>
-    <string name="pnc_warn">This feature is known to be unreliable on certain devices, especially on TouchWiz! It is impossible to fix, but the best workaround seems to be to tap repeatedly on the desired level. Again, I CANNOT fix it!</string>
+    <string name="pnc_desc">Управление уведомлением позволяет вам установить уровень важности уведомлений для каждого приложения. Просто включите функцию и удерживайте уведомление, чтобы начать. Возможно, вам нужно тапнуть на A, чтобы включить слайдер.</string>
+    <string name="pnc_warn">Эта функция известна как ненадежная на некоторых устройствах, особенно на TouchWiz! Невозможно исправить, но похоже лучше всего будет повторно нажать на желаемом уровне. Опять же, я НЕ МОГУ исправить его!</string>
     <string name="notif_desc">Тапните для изменения значения</string>
-    <string name="touchwiz_oreo_qqs">On TouchWiz Oreo devices, this setting is no longer reliable! Along with setting the number here, you may have to also save the value to Settings.System.apanel_number, which can only be done with ADB or root. Safe Mode attempts to implement a workaround, but I can\'t guarantee it will work!</string>
+    <string name="touchwiz_oreo_qqs">На устройствах с TouchWiz Oreo эта настройка больше не надёжна! Наряду с установкой здесь номера, Вам также может придётся сохранить значение в Settings.System.apanel_number, которое можно сделать только с ADB или root. Безопасный режим пытается реализовать обход, но я не могу гарантировать, что это будет работать!</string>
     <string name="notifs_snooze_desc">&#160;
-    In Android 8.1 and later, you can set custom times for notification snoozing. These values reset on reboot, so make sure to enable Safe Mode if you would like them to persist across power cycles.\n\n&#160;
-    Use the options below to set the different snooze times. \"Default\" sets the time Android will use by default. The other items will be the snooze times available for you to select.
+    В Android 8.1 и новее Вы можете установить пользовательские времена для приглушения уведомлений. Эти значения сбрасываются при перезагрузке, поэтому убедитесь, что включён безопасный режим, если вы хотите, чтобы они сохранялись между перезагрузками.\n\n&#160;
+    Используйте параметры ниже, чтобы установить различные времена приглушения уведомлений. \"По умолчанию\" устанавливает время, которое Android будет использоваться по умолчанию. Другие элементы будут доступны для выбора.
     </string>
-    <string name="custom_settings_input_desc">These fields allow you to enter your own custom settings.</string>
+    <string name="custom_settings_input_desc">Эти поля позволяют ввести свои собственные настройки.</string>
     <string name="custom_settings_read_desc">Эти поля позволяют читать значения указанного ключа.</string>
-    <string name="custom_settings_warning">Be careful what you do here! If you input an incorrect value, you could cause a crash loop, bootloop or worse!</string>
-    <string name="hide_welcome_hint">Hint: You can hide this screen, and the donation message, by going to Settings and toggling on \"Hide Welcome Screen\".</string>
+    <string name="custom_settings_warning">Будьте осторожны здесь! Если вы введёте неверное значение, вы можете вызвать цикл сбоев приложений, бутлуп или даже хуже!</string>
+    <string name="hide_welcome_hint">Подсказка: Вы можете скрыть этот экран и сообщение пожертвования перейдя в Настройки и включив \"Скрыть экран приветствия\".</string>
     <string name="safe_mode_notif_desc_not_supported">Эта настройка должна оставаться включена на Oreo.</string>
     <string name="fix_rotation_icon_dialog_desc">Вы планируете удалить SystemUI Tuner после этого?</string>
     <string name="yes_im_uninstalling">Да, я удаляю</string>
     <string name="no_im_staying">Нет, я остаюсь</string>
-    <string name="fix_rotation_done_uninstall">Rotation icon removed! This won\'t take effect until you reboot.</string>
-    <string name="fix_rotation_done_stay">Rotation icon removed! If it still appears, reboot your device.</string>
-    <string name="missing_not_required_perms_desc">Are you sure you want to continue? At least one optional permission wasn\'t granted, which means you will need a computer again to grant them later.</string>
+    <string name="fix_rotation_done_uninstall">Иконка поворота удалена! Эффекта не будет до перезагрузки.</string>
+    <string name="fix_rotation_done_stay">Иконка поворота удалена! Если она всё ещё появляется, перезагрузите устройство.</string>
+    <string name="missing_not_required_perms_desc">Вы уверены, что хотите продолжить? По крайней мере одно опциональное разрешение не было выдано, что значит, вам понадобится компьютер снова, чтобы предоставить его позже.</string>
     <string name="ws_needed_desc">WRITE_SETTINGS is needed to change this setting. Tap the button above to grant it.\n (This unfortunately doesn\'t guarantee that the toggle will work.)</string>
     <string name="safe_mode_high_brightness_warning_desc">Attempt to restore the currently set High Brightness Warning status on boot. This is only for TouchWiz devices and won\'t work without root.</string>
     <string name="safe_mode_volume_warning_desc">Restores current High Volume Warning state on boot.</string>
