@@ -279,7 +279,7 @@
     <string name="sorry_explain">Что-то пошло не так во время установки этой настройки.</string>
     <string name="sorry_option">Попробуйте выполнить следующие команды с компьютера (это всё одна строка):</string>
     <string name="grant_dump_perm">Необходимо предоставить разрешение «android.permission.DUMP» для использования этой функции.</string>
-    <string name="safe_mode_auto_enabled">Samsung устройство обнаружено! Для вашей безопасности автоматически включен безопасный режим. Имейте в виду, что изменения любых значков в строке состояния могут ПОЛОМАТЬ интерфейс системы! Пожалуйста, следуйте по ссылке в описании приложения в магазине Play для получения дополнительной информации.</string>
+    <string name="safe_mode_auto_enabled">Обнаружено устройство Samsung! Для вашей безопасности автоматически включен безопасный режим. Имейте в виду, что изменения любых иконок в строке состояния могут ПОЛОМАТЬ интерфейс системы! Пожалуйста, следуйте по ссылке в описании приложения в Google Play для получения дополнительной информации.</string>
     <string name="requires_nougat">Требует версии ПО Nougat или выше.</string>
     <string name="requires_oreo">Требует версии ПО Oreo или выше.</string>
     <string name="requires_8_1">Требует версии ПО Oreo 8.1 или выше.</string>
@@ -293,17 +293,17 @@
     <string name="target_not_found">Не удаётся запустить приложение.</string>
     <string name="feature_not_supported">It seems your device doesn\'t support this feature :/</string>
     <string name="miui_warning">It seems that you\'re using a MIUI device. Please take note that few, if any, features of this app will work for you. It is NOT fixable!</string>
-    <string name="warn_message">Please read the Terms of Service before continuing.</string>
-    <string name="safe_mode_notif_desc">It is recommended that you keep this active, and hide the notification instead. Turning it off may cause Safe Mode to no longer function.</string>
+    <string name="warn_message">Прежде чем продолжить, вы должны согласиться с Пользовательским соглашением.</string>
+    <string name="safe_mode_notif_desc">Рекомендуется сохранить активным и наоборот спрятать уведомление. Отключение может привести к тому, что безопасный режим больше не будет работать.</string>
     <string name="invalid_blacklist_backup">Неверная резервная копия черного списка</string>
     <string name="backup_restored">Резервная копия успешно восстановлена</string>
     <string name="nothing_to_back_up">Нечего бэкапить</string>
-    <string name="grant_usage">Please grant SystemUI Tuner access to Usage.</string>
+    <string name="grant_usage">Пожалуйста, предоставьте SystemUI Tuner доступ к использованию.</string>
     <!--Instructions-->
-    <string name="enable_debug"><![CDATA[1. Go to Settings >> Developer Options and make sure USB Debugging is enabled.]]></string>
-    <string name="accept_auth">2. Plug your device into your computer and accept the authorization request on it.</string>
-    <string name="enable_devops"><![CDATA[- Enable Developer Options by going to Settings >> About, finding \"Build Number\" and tapping it 7 times.]]></string>
-    <string name="download_drivers">- Windows users may need to install device drivers, which are available from the manufacturer\'s website.</string>
+    <string name="enable_debug"><![CDATA[1. Перейдите в Настройки >> Для разработчиков и убедитесь, что отладка USB включена.]]></string>
+    <string name="accept_auth">2. Подключите устройство к компьютеру и примите запрос на авторизацию на нём.</string>
+    <string name="enable_devops"><![CDATA[- Включите параметры разработчика перейдя в Настройки >> О телефоне, найдите \"Номер сборки\" и тапните на него 7 раз.]]></string>
+    <string name="download_drivers">- Пользователям Windows может потребоваться установить драйверы устройств, которые доступны на сайте производителя.</string>
     <string name="download_adb_windows"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-windows.zip">Download the ADB ZIP for Windows.</a>]]></string>
     <string name="extract_zip">2. Extract the ZIP to an easily-accessible location (ie Desktop).</string>
     <string name="open_cmd">3. Откройте консоль CMD.</string>
@@ -311,7 +311,7 @@
     <string name="cd_further"><![CDATA[- Make sure that the folder you <b>cd</b> into contains the ADB executable. If not, <b>cd</b> one level further.]]></string>
     <string name="download_adb_mac"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-darwin.zip">Download the ADB ZIP for macOS.</a>]]></string>
     <string name="open_terminal">3. Откройте Терминал.</string>
-    <string name="cd_mac"><![CDATA[4. Enter <b>cd /path/to/extracted/folder/</b> to get to the folder you extracted ADB into. For instance, <b>cd /Users/Zachary/Desktop/platform-tools/</b>.]]></string>
+    <string name="cd_mac"><![CDATA[4. Введите <b>cd /путь/к/распакованной/папке/</b> чтобы попасть в папку, куда Вы извлекли ADB. Например, <b>cd /Users/Zachary/Desktop/platform-tools/</b>.]]></string>
     <string name="make_sure_adb_installed">1. Убедитесь, что ADB установлен:</string>
     <string name="download_adb_linux"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-linux.zip">Скачайте ADB ZIP для Linux.</a>]]></string>
     <string name="cd_linux"><![CDATA[4. Введите <b>cd /путь/к/распакованной/папке/</b> чтобы попасть в папку, куда Вы извлекли ADB. Например, <b>cd /home/Zachary/Desktop/platform-tools/</b>.]]></string>
