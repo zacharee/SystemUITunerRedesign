@@ -304,12 +304,12 @@
     <string name="accept_auth">2. Подключите устройство к компьютеру и примите запрос на авторизацию на нём.</string>
     <string name="enable_devops"><![CDATA[- Включите параметры разработчика перейдя в Настройки >> О телефоне, найдите \"Номер сборки\" и тапните на него 7 раз.]]></string>
     <string name="download_drivers">- Пользователям Windows может потребоваться установить драйверы устройств, которые доступны на сайте производителя.</string>
-    <string name="download_adb_windows"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-windows.zip">Download the ADB ZIP for Windows.</a>]]></string>
-    <string name="extract_zip">2. Extract the ZIP to an easily-accessible location (ie Desktop).</string>
+    <string name="download_adb_windows"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-windows.zip">Скачайте ADB ZIP для Windows.</a>]]></string>
+    <string name="extract_zip">2. Распакуйте ZIP-файл в удобное место (например, на Рабочий стол).</string>
     <string name="open_cmd">3. Откройте консоль CMD.</string>
-    <string name="cd_windows"><![CDATA[4. Enter <b>cd C:\\path\\to\\extracted\\folder\\</b> to get to the folder where you extracted ADB. For instance, <b>cd C:\\Users\\Zachary\\Desktop\\platform-tools\\</b>.]]></string>
-    <string name="cd_further"><![CDATA[- Make sure that the folder you <b>cd</b> into contains the ADB executable. If not, <b>cd</b> one level further.]]></string>
-    <string name="download_adb_mac"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-darwin.zip">Download the ADB ZIP for macOS.</a>]]></string>
+    <string name="cd_windows"><![CDATA[4. Введите <b>cd C:\\путь\\к\\распакованной\\папке\\</b> чтобы попасть в папку, куда Вы извлекли ADB. Например, <b>cd C:\\Users\\Zachary\\Desktop\\platform-tools\\</b>.]]></string>
+    <string name="cd_further"><![CDATA[- Убедитесь, что папка, куда вы переходите по команде <b>cd</b> содержит исполняемый файл ADB. Если нет, перейдите командой <b>cd</b> на еще один уровень.]]></string>
+    <string name="download_adb_mac"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-darwin.zip">Скачайте ADB ZIP для macOS.</a>]]></string>
     <string name="open_terminal">3. Откройте Терминал.</string>
     <string name="cd_mac"><![CDATA[4. Введите <b>cd /путь/к/распакованной/папке/</b> чтобы попасть в папку, куда Вы извлекли ADB. Например, <b>cd /Users/Zachary/Desktop/platform-tools/</b>.]]></string>
     <string name="make_sure_adb_installed">1. Убедитесь, что ADB установлен:</string>
