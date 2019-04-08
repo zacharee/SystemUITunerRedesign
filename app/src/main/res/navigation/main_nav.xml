@@ -28,6 +28,9 @@
         <action
             android:id="@+id/action_mainPrefs_to_customFragment"
             app:destination="@id/customFragment" />
+        <action
+            android:id="@+id/action_mainPrefs_to_TWFragment"
+            app:destination="@id/TWFragment" />
     </fragment>
     <fragment
         android:id="@+id/autoFragment"
@@ -65,4 +68,8 @@
         android:id="@+id/miscFragment"
         android:name="com.zacharee1.systemuituner.fragments.MiscFragment"
         android:label="MiscFragment" />
+    <fragment
+        android:id="@+id/TWFragment"
+        android:name="com.zacharee1.systemuituner.fragments.TWFragment"
+        android:label="TWFragment" />
 </navigation>

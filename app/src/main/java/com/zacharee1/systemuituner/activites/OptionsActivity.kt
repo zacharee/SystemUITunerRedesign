@@ -99,6 +99,7 @@ class OptionsActivity : BaseAnimActivity(), NavController.OnDestinationChangedLi
                 QS -> R.id.action_mainPrefs_to_QSFragment to true
                 DEMO -> R.id.action_mainPrefs_to_demoFragment to true
                 IMMERSIVE -> R.id.action_mainPrefs_to_immersiveFragment to true
+                TOUCHWIZ -> R.id.action_mainPrefs_to_TWFragment to true
                 LOCKSCREEN -> R.id.action_mainPrefs_to_lockFragment to true
                 MISC -> R.id.action_mainPrefs_to_miscFragment to true
                 CUSTOM -> R.id.action_mainPrefs_to_customFragment to true
