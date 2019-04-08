@@ -223,19 +223,6 @@ fun Context.createApplicationContext(appInfo: ApplicationInfo): Context {
     return method.invoke(this, appInfo, 0) as Context
 }
 
-val Context.twHasAospClock: Boolean
-    get() {
-        val sysUiCtx = createApplicationContext(packageManager.getApplicationInfo("com.android.systemui", 0))
-        val clockLayoutRes = sysUiCtx.resources.getIdentifier("qs_status_bar_clock", "layout", "com.android.systemui")
-
-        return try {
-            View.inflate(this, clockLayoutRes, null)
-            false
-        } catch (e: Exception) {
-            !e.message!!.contains("QSPhoneStatusBarViewClock")
-        }
-    }
-
 val PreferenceFragmentCompat.navController: NavController
     get() = NavHostFragment.findNavController(this)
 

@@ -108,11 +108,9 @@ class MiscFragment : AnimFragment() {
                     setSummary(R.string.setting_not_on_touchwiz_pie)
                 }
 
-                if (!context!!.twHasAospClock) {
-                    findPreference<SwitchPreference>(CLOCK_SECONDS)?.apply {
-                        isEnabled = false
-                        setSummary(R.string.setting_not_on_touchwiz_pie)
-                    }
+                findPreference<SwitchPreference>(CLOCK_SECONDS)?.apply {
+                    isEnabled = false
+                    setSummary(R.string.setting_not_on_touchwiz_pie)
                 }
             }
         }
