@@ -38,21 +38,16 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled true
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
         release_upload {
             debuggable false
-            jniDebuggable false
-            renderscriptDebuggable false
-            renderscriptOptimLevel 3
-            minifyEnabled true
-            zipAlignEnabled true
             matchingFallbacks = ['release']
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
         debug {
-            minifyEnabled = true
+            minifyEnabled = false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
