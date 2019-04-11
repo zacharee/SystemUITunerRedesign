@@ -1,7 +1,6 @@
 package com.zacharee1.systemuituner.prefs
 
 import android.content.Context
-import android.os.Bundle
 import android.util.AttributeSet
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.misc.CustomBlacklistInfo
@@ -27,17 +26,5 @@ class AddCustomBlacklistItemPreference : CustomInputPreference {
 
         context.prefs.addCustomBlacklistItem(
                 CustomBlacklistInfo(keyContent, valueText))
-    }
-
-    class Fragment : CustomInputPreference.Fragment() {
-        companion object {
-            fun newInstance(key: String): Fragment {
-                val frag = Fragment()
-                frag.arguments = Bundle().apply { putString(ARG_KEY, key) }
-                return frag
-            }
-        }
-
-        override val valueHint by lazy { resources.getString(R.string.name) }
     }
 }

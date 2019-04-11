@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.preference.Preference
 import androidx.recyclerview.widget.RecyclerView
+import com.zacharee1.systemuituner.fragments.pref.AddCustomBlacklistItemPreferenceFragment
+import com.zacharee1.systemuituner.fragments.pref.CustomInputPreferenceFragment
 import com.zacharee1.systemuituner.prefs.AddCustomBlacklistItemPreference
 import com.zacharee1.systemuituner.prefs.CustomInputPreference
 import com.zacharee1.systemuituner.util.prefs
@@ -34,12 +36,12 @@ abstract class AnimFragment : CollapsiblePreferenceFragment(), SharedPreferences
     override fun onDisplayPreferenceDialog(preference: Preference?) {
         when (preference) {
             is AddCustomBlacklistItemPreference -> {
-                val frag = AddCustomBlacklistItemPreference.Fragment.newInstance(preference.key)
+                val frag = AddCustomBlacklistItemPreferenceFragment.newInstance(preference.key)
                 frag.setTargetFragment(this, 1)
                 frag.show(fragmentManager!!, null)
             }
             is CustomInputPreference -> {
-                val frag = CustomInputPreference.Fragment.newInstance(preference.key)
+                val frag = CustomInputPreferenceFragment.newInstance(preference.key)
                 frag.setTargetFragment(this, 0)
                 frag.show(fragmentManager!!, null)
             }
