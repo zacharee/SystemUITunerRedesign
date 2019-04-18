@@ -61,7 +61,6 @@
     <string name="terms_of_service">Terms of Service</string>
     <string name="donate">Donate</string>
     <string name="google_play" translatable="false">Google Play</string>
-    <string name="google" translatable="false">Google+</string>
     <string name="telegram" translatable="false">Telegram</string>
     <string name="xda_thread" translatable="false">XDA Thread</string>
     <string name="reset_blacklist">Reset Blacklist</string>

@@ -26,13 +26,8 @@ object OptionSelected {
                 return true
             }
             R.id.action_telegram -> {
-                val teleIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://t.me/joinchat/AAAAAEIB6WKWL-yphJbZwg"))
+                val teleIntent = Intent(Intent.ACTION_VIEW, Uri.parse("http://bit.ly/ZachareeTG"))
                 context.startActivity(teleIntent)
-                return true
-            }
-            R.id.action_g_plus -> {
-                val gIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://plus.google.com/communities/113741695211107417994"))
-                context.startActivity(gIntent)
                 return true
             }
             R.id.action_xda_thread -> {
