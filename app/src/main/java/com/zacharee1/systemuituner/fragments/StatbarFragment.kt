@@ -109,12 +109,11 @@ open class StatbarFragment : AnimFragment() {
         }
 
         auto?.setOnPreferenceClickListener {
-            val fragment = AutoFragment()
-            fragmentManager
-                    ?.getAnimTransaction()
-                    ?.replace(R.id.content_main, fragment)
-                    ?.addToBackStack("auto")
-                    ?.commit()
+            navController.navigate(
+                    R.id.action_statbarFragment_to_autoFragment,
+                    null,
+                    navOptions
+            )
             true
         }
     }
