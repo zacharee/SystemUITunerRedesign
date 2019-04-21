@@ -19,7 +19,7 @@
     <string name="show">Показать</string>
     <string name="select_time">Выбрать время</string>
     <string name="select_battery_level">Выбрать уровень заряда</string>
-    <string name="wifi_strength">Уровень сигнала Wi-Fi</string>
+    <string name="wifi_strength">Уровень сигнала WiFi</string>
     <string name="battery_charging">Зарядка аккумулятора</string>
     <string name="mobile_strength">Уровень сигнала сети</string>
     <string name="mobile_type">Тип мобильного</string>
