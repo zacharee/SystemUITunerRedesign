@@ -189,7 +189,7 @@ class InstructionsActivity : AppIntro2() {
             view?.findViewById<LinearLayout>(R.id.animation_dummy)?.animate()?.let {
                 it.setListener(object : Animator.AnimatorListener {
                     override fun onAnimationEnd(animation: Animator?) {
-                        setInternalLayout(View.inflate(context, targetLayout, null) as ViewGroup)
+                        setInternalLayout(View.inflate(context ?: return, targetLayout, null) as ViewGroup)
                         setTitle(resources.getString(targetTitle))
                         setDescription(resources.getString(targetDesc))
                         runnable.run()

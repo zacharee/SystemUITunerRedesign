@@ -39,13 +39,9 @@ class AutoFragment : AnimFragment() {
     }
 
     override fun onDestroy() {
-        super.onDestroy()
+        job?.cancel()
 
-        Thread {
-            try {
-                job?.cancel()
-            } catch (e: Exception) {}
-        }.start()
+        super.onDestroy()
 
         content?.removeView(progress)
     }
@@ -87,7 +83,7 @@ class AutoFragment : AnimFragment() {
                                 if (m.find()) {
                                     val result = m.group().replace("(", "").replace(")", "")
 
-                                    val preference = SwitchPreference(context)
+                                    val preference = SwitchPreference(context ?: return@launch)
                                     preference.title = result
                                     preference.key = result
                                     preference.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { pref, o ->
