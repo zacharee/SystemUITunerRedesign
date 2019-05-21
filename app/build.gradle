@@ -97,8 +97,6 @@ dependencies {
     implementation 'com.github.topjohnwu:libsu:2.2.0'
     implementation 'com.google.code.gson:gson:2.8.5'
     implementation 'jp.wasabeef:recyclerview-animators:3.0.0'
-    implementation 'android.arch.navigation:navigation-fragment:1.0.0'
-    implementation 'android.arch.navigation:navigation-ui:1.0.0'
 }
 
 apply plugin: 'com.google.gms.google-services'
