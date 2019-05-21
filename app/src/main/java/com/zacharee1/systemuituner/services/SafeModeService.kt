@@ -145,7 +145,7 @@ class SafeModeService : Service() {
             if (blacklist.isEmpty()) {
                 val blacklistBackup = blacklistManager.backupBlacklist
 
-                if (blacklistBackup != null && !blacklistBackup.isEmpty()) {
+                if (blacklistBackup.isNotEmpty()) {
                     blacklistManager.setCurrentBlacklist(blacklistBackup)
                 }
             }
