@@ -8,7 +8,7 @@
     <string name="notice">공지</string>
     <string name="hide_welcome_screen">환영 화면 숨기기</string>
     <string name="instructions">사용법</string>
-    <string name="need_help">Need Help?</string>
+    <string name="need_help">도움이 필요하세요?</string>
     <string name="about">정보</string>
     <string name="miscellaneous">기타</string>
     <string name="custom">사용자 정의</string>
@@ -58,8 +58,8 @@
     <string name="zen_icon">Zen 아이콘</string>
     <string name="do_not_disturb">방해 금지 아이콘</string>
     <string name="dnd">방해 금지</string>
-    <string name="privacy_policy">Privacy Policy</string>
-    <string name="terms_of_service">Terms of Service</string>
+    <string name="privacy_policy">개인정보 보호 정책</string>
+    <string name="terms_of_service">서비스 약관</string>
     <string name="donate">기부</string>
     <string name="reset_blacklist">제외 목록 초기화</string>
     <string name="animator_duration_scale">애니메이터 지속 배율</string>
@@ -231,7 +231,7 @@
     <string name="safe_mode_snooze_options">스누즈 옵션</string>
     <string name="fix_rotation_icon_dialog_title">Uninstalling?</string>
     <string name="done">Done!</string>
-    <string name="high_brightness_warning">High Brightness Warning</string>
+    <string name="high_brightness_warning">높은 밝기 경고</string>
     <string name="grant">Grant</string>
     <string name="attention">Attention!</string>
     <!--Descriptions-->
@@ -249,7 +249,7 @@
     <string name="app_specific_desc">몰입 모드에 포함 또는 제외할 앱을 선택하십시오. 이 설정을 변경하려면 몰입 모드를 비활성화해야 합니다.</string>
     <string name="blacklist_desc">켜졌을 때, 선택한 앱은 몰입 모드를 사용하지 않습니다.</string>
     <string name="imm_warn">이 기능은 단지 몰입 모드를 활성화할 수 있도록 합니다. 그 이상의 기능은 없습니다. 발생하는 모든 문제는 장치 제조업체 탓입니다. 저는 문제를 해결할 수 없습니다!</string>
-    <string name="statbar_rotation_lock_notif">On certain devices, modifying the status bar icons can cause an icon that looks like a phone to appear. This is the rotation lock icon. Tap here to fix it.</string>
+    <string name="statbar_rotation_lock_notif">특정 장치에서 상태 표시줄 아이콘을 수정하면 전화처럼 보이는 아이콘을 나타나게 할 수 있습니다. 이것은 회전 잠금 아이콘입니다. 고치려면 여기를 탭하세요.</string>
     <string name="pnc_desc">강력 알림 제어는 앱 별로 알림에 대한 중요 수준을 설정하도록 합니다. 시작하려면 간단하게 기능을 켜고 알림을 누르고 있으면 됩니다. A를 눌러 슬라이더를 활성화해야 할 수도 있습니다.</string>
     <string name="pnc_warn">이 기능은 특정 장치, 특히 터치위즈에서 불안정한 것으로 알려져 있습니다! 문제를 해결할 수 없지만, 가장 좋은 대체 수단은 원하는 수준에서 반복적으로 누르는 것입니다. 다시 언급하지만, 저는 이 문제를 해결할 수 없습니다!</string>
     <string name="notif_desc">눌러서 설정 변경</string>
@@ -266,12 +266,12 @@
     <string name="fix_rotation_icon_dialog_desc">Are you planning to uninstall SystemUI Tuner after this?</string>
     <string name="yes_im_uninstalling">Yes, I\'m Uninstalling</string>
     <string name="no_im_staying">No, I\'m Staying</string>
-    <string name="fix_rotation_done_uninstall">Rotation icon removed! This won\'t take effect until you reboot.</string>
-    <string name="fix_rotation_done_stay">Rotation icon removed! If it still appears, reboot your device.</string>
-    <string name="missing_not_required_perms_desc">Are you sure you want to continue? At least one optional permission wasn\'t granted, which means you will need a computer again to grant them later.</string>
-    <string name="ws_needed_desc">WRITE_SETTINGS is needed to change this setting. Tap the button above to grant it.\n (This unfortunately doesn\'t guarantee that the toggle will work.)</string>
-    <string name="safe_mode_high_brightness_warning_desc">Attempt to restore the currently set High Brightness Warning status on boot. This is only for TouchWiz devices and won\'t work without root.</string>
-    <string name="safe_mode_volume_warning_desc">Restores current High Volume Warning state on boot.</string>
+    <string name="fix_rotation_done_uninstall">회전 아이콘을 삭제했습니다! 재부팅하기 전까지는 효과가 나타나지 않습니다.</string>
+    <string name="fix_rotation_done_stay">회전 아이콘을 삭제했습니다! 여전히 나타난다면, 디바이스를 재시작해보세요.</string>
+    <string name="missing_not_required_perms_desc">정말 계속할까요? 추가 권한이 적어도 한 개 이상 허락되지 않았으며, 나중에 권한 허용을 위해 컴퓨터를 다시 필요로 하게 될 것입니다.</string>
+    <string name="ws_needed_desc">이 설정을 변경하려면 WRITE_SETTINGS 권한이 필요합니다. 위의 버튼을 눌러 허용해주세요.\n (다만 권한 부여 기능이 동작할 것이라고 보증되지는 않습니다.)</string>
+    <string name="safe_mode_high_brightness_warning_desc">부팅 시 현재 지정된 높은 밝기 경고 설정을 복원합니다. TouchWiz 디바이스 전용이며 루트 권한 없이 동작하지 않습니다.</string>
+    <string name="safe_mode_volume_warning_desc">부팅 시 현재 지정된 높은 음량 경고 설정을 복원합니다.</string>
     <string name="safe_mode_needed_qs_row_col">Safe Mode must be turned on, with the Row/Column option activated, for landscape values to work.</string>
     <string name="safe_mode_inactive_on_current_page">Safe Mode is inactive on this screen! Go back to the main menu to save changes!</string>
     <string name="qs_info_marshmallow">Hold down on an icon to remove it.</string>
