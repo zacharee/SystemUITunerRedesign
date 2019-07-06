@@ -253,7 +253,7 @@
     <string name="safe_mode_summary_2">Přepne efektní animace QS při startu.</string>
     <string name="safe_mode_summary_3">Obnoví hodnotu vlastního počtu záhlaví QS při startu (Nougat+).</string>
     <string name="safe_mode_summary_4">Obnoví hodnotu vlastního počtu řádků/sloupců QS při startu (TouchWiz, Nougat+).</string>
-    <string name="safe_mode_summary_5">Keeps custom snooze options set (8.1+).</string>
+    <string name="safe_mode_summary_5">Udržuje vlastní nastavené možnosti odložení (8.1+).</string>
     <string name="enable_in_settings">Povolit v nastavení.</string>
     <string name="reboot_required">(Vyžaduje restart)</string>
     <string name="auto_detect_summary">Pokusy o automatické zjištění, které ikony stavové lišty mohou být skryty. Nefunguje na všech zařízeních!</string>
@@ -265,8 +265,12 @@
     <string name="pnc_desc">Ovládací prvky Power Notification Controls umožňují nastavit úroveň významu pro oznámení podle jednotlivých aplikací. Chcete-li začít, jednoduše zapněte funkci a podržte ji. Možná budete muset klepnutím na tlačítko A povolit posuvník.</string>
     <string name="pnc_warn">Tato funkce je známa jako nespolehlivá na určitých zařízeních, zejména na TouchWiz! Je nemožné to opravit, ale nejlepší řešení se zdá být opakované klepání na požadovanou úroveň. Znovu, NEMŮŽU to opravit!</string>
     <string name="notif_desc">Klepnutím změnit nastavení</string>
-    <string name="notifs_snooze_desc">    In Android 8.1 and later, you can set custom times for notification snoozing. These values reset on reboot, so make sure to enable Safe Mode if you would like them to persist across power cycles.\n\n
-    Use the options below to set the different snooze times. \"Default\" sets the time Android will use by default. The other items will be the snooze times available for you to select.
+    <string name="notifs_snooze_desc">    V systému Android 8.1 a novějších můžete nastavit vlastní časy pro odložení oznámení. Tyto hodnoty se při restartování obnoví, takže povolte bezpečný režim, pokud chcete, aby přetrvávaly napříč napájecími cykly.\n\n
+    Pomocí níže uvedených možností nastavíte různé časy odložení. \"Výchozí\" nastavuje čas, ve kterém Android používá výchozí čas odložení.
+Dalšími položkami jsou časy odložení, které můžete vybrat.
+    
+
+
     </string>
     <string name="custom_settings_input_desc">Tato pole umožňují zadat vlastní nastavení.</string>
     <string name="custom_settings_read_desc">Tato pole umožňují přečíst hodnotu zadaného klíče.</string>
@@ -293,7 +297,7 @@
     <string name="safe_mode_auto_enabled">Zjištěno zařízení Samsung! Bezpečný režim byl pro vaši bezpečnost automaticky povolen. Mějte na paměti, že modifikování stavové lišty může ROZBÍT SYSTEM UI! Další informace naleznete v odkazu na Obchod Play.</string>
     <string name="requires_nougat">Vyžaduje Nugát nebo novější.</string>
     <string name="requires_oreo">Vyžaduje Oreo nebo novější.</string>
-    <string name="requires_pie">Requires Pie or later.</string>
+    <string name="requires_pie">Vyžaduje Pie nebo novější.</string>
     <string name="requires_8_1">Vyžaduje Oreo 8.1 nebo novější.</string>
     <string name="safe_mode_android_o">Z důvodu omezení, která byla přidána do systému Android O, nebude tato funkce v zařízení fungovat.</string>
     <string name="intro_1">Děkuji za stažení mé aplikace! SystemUI Tuner má za úkol nahradit/doplnit vestavěný Systém UI Tuner jako v AOSP. Uživatelé jak s tak i bez System UI Tuner můžou těžit z této aplikace.</string>
@@ -311,9 +315,9 @@
     <string name="backup_restored">Úspěšné obnovení zálohy</string>
     <string name="nothing_to_back_up">Nic k zálohování</string>
     <string name="grant_usage">Udělte prosím aplikaci SystemUI Tuner přístup k použití.</string>
-    <string name="setting_not_on_pie">This setting doesn\'t work on Pie or later.</string>
-    <string name="setting_not_on_touchwiz_pie">This setting doesn\'t work on TouchWiz Pie or later.</string>
-    <string name="setting_not_on_touchwiz">This setting doesn\'t work on TouchWiz.</string>
+    <string name="setting_not_on_pie">Toto nastavení nefunguje na Androidu Pie nebo novějším.</string>
+    <string name="setting_not_on_touchwiz_pie">Toto nastavení nefunguje na TouchWiz Pie nebo novějším.</string>
+    <string name="setting_not_on_touchwiz">Toto nastavení nefunguje na TouchWiz.</string>
     <!--Instructions-->
     <string name="enable_debug"><![CDATA[1. Přejděte do nastavení >> Možnosti pro vývojáře a ujistěte se, že máte povoleno USB ladění.]]></string>
     <string name="accept_auth">2. Připojte zařízení k počítači a přijměte žádost o autorizaci.</string>
@@ -340,5 +344,5 @@
     <string name="donate_joke">Jak, ptáte se? Kouzlo.</string>
     <string name="donate_request">Pokud se vám líbí moje aplikace, bylo by naprosto úžasné, kdybyste přispěli dolar nebo dva.</string>
     <string name="donate_dont_worry">To není žádná povinnost. Tato aplikace je a vždycky bude zdarma.</string>
-    <string name="select_os">Please select an operating system.</string>
+    <string name="select_os">Vyberte prosím operační systém.</string>
 </resources>
