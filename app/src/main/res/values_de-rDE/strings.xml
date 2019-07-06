@@ -33,7 +33,7 @@
     <string name="battery_icon">Battery Symbol</string>
     <string name="battery_percentage">Batterieladung in %</string>
     <string name="cast_icon">Cast-Symbol</string>
-    <string name="rotation_lock_icon">Drehsperre Symbol</string>
+    <string name="rotation_lock_icon">Rotationssperren-Symbol</string>
     <string name="nfc_icon">NFC-Symbol</string>
     <string name="location_icon">GPS-Symbol</string>
     <string name="su_icon">SU-Symbol</string>
@@ -48,7 +48,7 @@
     <string name="vpn_icon">VPN-Symbol</string>
     <string name="sounds_alerts"><![CDATA[Geräusche & Benachrichtigungen]]></string>
     <string name="volume">Lautstärke-Symbol</string>
-    <string name="headset_icon">Headset-Symbol</string>
+    <string name="headset_icon">Kopfhörer-Symbol</string>
     <string name="speakerphone_icon">Lautsprecher-Symbol</string>
     <string name="time_such"><![CDATA[Zeit etc.]]></string>
     <string name="clock">Uhr-Symbol</string>
