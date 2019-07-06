@@ -266,9 +266,8 @@ Dies ist das Rotationssperren-Symbol. Tippen Sie hier, um es zu beheben.</string
     <string name="pnc_desc">Mit Power Notification Controls können Sie die Wichtigkeit einer Benachrichtigung pro App einstellen. Einfach die Funktion aktivieren und eine Benachrichtigung lange halten. Manchmal musst du das A antippen, um den Schieberegler zu aktivieren.</string>
     <string name="pnc_warn">Diese Funktion ist dafür bekannt, auf bestimmten Geräten, vor allem mit TouchWiz nicht zu funktionieren! Es ist unmöglich zu beheben, aber die beste Lösung ist, öfters auf das gewünschte Level zu tippen. Noch einmal, ich KANN ES NICHT beheben!</string>
     <string name="notif_desc">Antippen, um die Einstellungen zu ändern</string>
-    <string name="notifs_snooze_desc">    In Android 8.1 and later, you can set custom times for notification snoozing. These values reset on reboot, so make sure to enable Safe Mode if you would like them to persist across power cycles.\n\n
-    Use the options below to set the different snooze times. \"Default\" sets the time Android will use by default. The other items will be the snooze times available for you to select.
-    </string>
+    <string name="notifs_snooze_desc">In Android 8.1 und höher können Sie benutzerdefinierte Zeiten für das Zurückstellen von Benachrichtigungen festlegen. Diese Werte werden beim Neustart zurückgesetzt, also stellen Sie sicher, dass Sie den abgesicherten Modus aktivieren, wenn Sie möchten, dass sie auch über den Netzausfall hinaus erhalten bleiben.\n\n
+Verwenden Sie die folgenden Optionen, um die verschiedenen Zeiten für das Zurückstellen festzulegen. „Standard” legt die Zeit fest, die Android standardmäßig verwendet. Die anderen Einträge sind die Zeiten für das Zurückstellen, welche Sie auswählen können.</string>
     <string name="custom_settings_input_desc">In diesen Felder kannst du deine eigenen benutzerdefinierten Einstellungen eingeben.</string>
     <string name="custom_settings_read_desc">Diese Felder ermöglichen es dir, den Wert eines bestimmten Schlüssels zu lesen.</string>
     <string name="custom_settings_warning">Sei vorsichtig, bei dem, was du hier tust! Wenn du einen falschen Wert eingibst, kannst du eine Crash-Schleife, eine Boot-Schleife oder noch schlimmeres verursachen!</string>
