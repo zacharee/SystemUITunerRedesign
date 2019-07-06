@@ -3,7 +3,7 @@
 <resources>
     <!--Titles-->
     <string name="app_name">Настройка системного интерфейса</string>
-    <string name="to_the_tweaks">Настроить!</string>
+    <string name="to_the_tweaks">К настройкам!</string>
     <string name="more">Больше</string>
     <string name="notice">УВЕДОМЛЕНИЕ</string>
     <string name="hide_welcome_screen">Скрыть экран приветствия</string>
