@@ -150,7 +150,7 @@
     <string name="none">Žádný</string>
     <string name="full">Plný</string>
     <string name="navigation_bar">Navigační panel</string>
-    <string name="navigation_bar_color">Navigation Bar Color</string>
+    <string name="navigation_bar_color">Barva navigačního panelu</string>
     <string name="pre_confirms">Předem potvrdit</string>
     <string name="config_qs">Nastavení rychlé dlaždice</string>
     <string name="mode">Režim</string>
@@ -242,10 +242,10 @@
     <string name="add_item">Přidat položku</string>
     <string name="are_you_sure">Jste si jisti?</string>
     <string name="style">Styl</string>
-    <string name="clock_position">Clock Position</string>
-    <string name="left">Left</string>
-    <string name="middle">Middle</string>
-    <string name="right">Right</string>
+    <string name="clock_position">Pozice hodin</string>
+    <string name="left">Vlevo</string>
+    <string name="middle">Uprostřed</string>
+    <string name="right">Vpravo</string>
     <!--Descriptions-->
     <string name="fancy_pulldown_notice">Přepnutí této volby může způsobit problémy po restartování. Přepněte manuálně tuto možnost po restartu nebo zapněte bezpečný režim.</string>
     <string name="safe_mode_summary">UŽIVATELÉ SAMSUNG UCHOVEJTE TOTO ZAPNUTO, POKUD NEJSTE NA AOSP ROM!</string>
