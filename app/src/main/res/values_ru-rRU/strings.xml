@@ -150,7 +150,7 @@
     <string name="none">Нет</string>
     <string name="full">Полн.</string>
     <string name="navigation_bar">Панель навигации</string>
-    <string name="navigation_bar_color">Цвет навбара</string>
+    <string name="navigation_bar_color">Цвет навигационной панели</string>
     <string name="pre_confirms">Предварительно подтверждённые</string>
     <string name="config_qs">Настроить быстрые плитки</string>
     <string name="mode">Режим</string>
