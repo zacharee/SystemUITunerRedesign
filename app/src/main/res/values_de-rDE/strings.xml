@@ -150,7 +150,7 @@
     <string name="none">Keins</string>
     <string name="full">Voll</string>
     <string name="navigation_bar">Navigationsleiste</string>
-    <string name="navigation_bar_color">Navigation Bar Color</string>
+    <string name="navigation_bar_color">Farbe der Navigationsleiste</string>
     <string name="pre_confirms">Vorabbestätigungen</string>
     <string name="config_qs">Kofiguriere eine Quick Settings Kachel</string>
     <string name="mode">Modus</string>
@@ -242,8 +242,8 @@
     <string name="add_item">Element hinzufügen</string>
     <string name="are_you_sure">Bist du sicher?</string>
     <string name="style">Stil</string>
-    <string name="clock_position">Clock Position</string>
-    <string name="left">Left</string>
+    <string name="clock_position">Position der Uhr</string>
+    <string name="left">Links</string>
     <string name="middle">Middle</string>
     <string name="right">Right</string>
     <!--Descriptions-->
