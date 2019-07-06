@@ -207,7 +207,7 @@
     <string name="no">Nein</string>
     <string name="notif_title">Dienst für den abgesicherten Modus wird ausgeführt</string>
     <string name="color">Farbe</string>
-    <string name="notifs_snooze">Benachrichtigung später lesen</string>
+    <string name="notifs_snooze">Benachrichtigung zurückstellen</string>
     <string name="default_text">Standard</string>
     <string name="time_a">Zeit A</string>
     <string name="time_b">Zeit B</string>
@@ -228,7 +228,7 @@
     <string name="safe_mode_fancy_anim">Ausgefallene Animation</string>
     <string name="safe_mode_header_count">QS-Kopfzeilenanzahl</string>
     <string name="safe_mode_row_col_tw">QS Zeilen-/Spaltenanzahl</string>
-    <string name="safe_mode_snooze_options">Zurückstellen-Optionen</string>
+    <string name="safe_mode_snooze_options">Optionen für Zurückstellen</string>
     <string name="fix_rotation_icon_dialog_title">Deinstallieren?</string>
     <string name="done">Fertig!</string>
     <string name="high_brightness_warning">Warnung bei hoher Helligkeit</string>
@@ -241,7 +241,7 @@
     <string name="safe_mode_summary_2">Schaltet die QS Fancy Animation beim Hochfahren ein und aus.</string>
     <string name="safe_mode_summary_3">Stellt benutzerdefinierte QS-Header-Zählwerte beim Hochfahren wieder her (Nougat+).</string>
     <string name="safe_mode_summary_4">Stellt benutzerdefinierte QS-Reihen/Spalten-Zählwerte beim Hochfahren wieder her (TouchWiz, Nougat+).</string>
-    <string name="safe_mode_summary_5">Stellt benutzerdefinierte Benachrichtigungs-Schlummer-Optionen beim Hochfahren wieder her (8.1+).</string>
+    <string name="safe_mode_summary_5">Stellt benutzerdefinierte Optionen für das Zurückstellen von Benachrichtigungen beim Booten (8.1+) wieder her.</string>
     <string name="enable_in_settings">In den Einstellungen aktivieren.</string>
     <string name="reboot_required">(Neustart erforderlich)</string>
     <string name="auto_detect_summary">Versuche automatisch zu erkennen, welche Statusleistensymbole ausgeblendet werden können. Funktioniert nicht auf allen Geräten!</string>
