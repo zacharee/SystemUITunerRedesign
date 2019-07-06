@@ -2,7 +2,6 @@ package com.zacharee1.systemuituner.activites
 
 import android.annotation.SuppressLint
 import android.content.SharedPreferences
-import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.MenuItem
@@ -16,15 +15,17 @@ import android.widget.LinearLayout
 import android.widget.TextSwitcher
 import androidx.annotation.CallSuper
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.AppCompatTextView
 import androidx.appcompat.widget.Toolbar
+import com.google.android.material.bottomappbar.BottomAppBar
+import com.google.android.material.elevation.ElevationOverlayProvider
+import com.google.android.material.shape.MaterialShapeDrawable
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.util.PrefManager
 import com.zacharee1.systemuituner.util.prefs
 
 @SuppressLint("Registered")
 open class BaseAnimActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferenceChangeListener {
-    internal val toolbar by lazy { findViewById<Toolbar>(R.id.toolbar) }
+    internal val toolbar by lazy { findViewById<BottomAppBar>(R.id.toolbar) }
     internal val content by lazy { findViewById<LinearLayout>(R.id.content_internal) }
     internal val titleSwitcher by lazy { findViewById<TextSwitcher>(R.id.title) }
     internal val backButton by lazy { createBackButton() }
@@ -39,8 +40,6 @@ open class BaseAnimActivity : AppCompatActivity(), SharedPreferences.OnSharedPre
 
         setSupportActionBar(toolbar)
 
-        toolbar.popupTheme = if (prefs.darkMode) R.style.AppTheme_PopupTheme_Dark else R.style.AppTheme_PopupTheme_Light
-
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowHomeEnabled(true)
 
@@ -48,10 +47,13 @@ open class BaseAnimActivity : AppCompatActivity(), SharedPreferences.OnSharedPre
 
         titleSwitcher.inAnimation = AnimationUtils.loadAnimation(this, android.R.anim.fade_in).apply { duration =  animDuration}
         titleSwitcher.outAnimation = AnimationUtils.loadAnimation(this, android.R.anim.fade_out).apply { duration = animDuration }
-        titleSwitcher.setFactory {
-            AppCompatTextView(this).apply {
-                setTextAppearance(android.R.style.TextAppearance_Material_Widget_ActionBar_Title)
-                setTextColor(Color.WHITE)
+
+        if (prefs.darkMode) {
+            with(toolbar.background as MaterialShapeDrawable) {
+                val color = ElevationOverlayProvider(this@BaseAnimActivity)
+                        .getSurfaceColorWithOverlayIfNeeded(elevation)
+
+                window.navigationBarColor = color
             }
         }
     }
@@ -118,7 +120,7 @@ open class BaseAnimActivity : AppCompatActivity(), SharedPreferences.OnSharedPre
     }
 
     private fun createBackButton(): ImageButton {
-        val mNavButtonView = toolbar::class.java.getDeclaredField("mNavButtonView")
+        val mNavButtonView = Toolbar::class.java.getDeclaredField("mNavButtonView")
         mNavButtonView.isAccessible = true
 
         return mNavButtonView.get(toolbar) as ImageButton

@@ -1,16 +1,16 @@
 package com.zacharee1.systemuituner.prefs
 
-import android.app.AlertDialog
 import android.content.Context
 import android.provider.Settings
 import android.util.AttributeSet
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.preference.EditTextPreference
+import androidx.preference.DialogPreference
 import androidx.preference.PreferenceViewHolder
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.zacharee1.systemuituner.R
 
-class CustomReadPreference : EditTextPreference {
+class CustomReadPreference : DialogPreference {
     companion object {
         const val UNDEFINED = -1
         const val GLOBAL = 0
@@ -47,9 +47,7 @@ class CustomReadPreference : EditTextPreference {
                     defStyleRes ?: 0)
 
             for (i in 0 until array.indexCount) {
-                val index = array.getIndex(i)
-
-                when (index) {
+                when (val index = array.getIndex(i)) {
                     R.styleable.CustomInputPreference_type -> type = array.getInteger(index, UNDEFINED)
                 }
             }
@@ -58,16 +56,16 @@ class CustomReadPreference : EditTextPreference {
 
     override fun onSetInitialValue(defaultValue: Any?) {
         super.onSetInitialValue(defaultValue)
-        updateSummary(text)
+        updateSummary(getPersistedString(defaultValue?.toString()))
     }
 
     override fun onBindViewHolder(holder: PreferenceViewHolder?) {
         super.onBindViewHolder(holder)
 
         holder?.itemView?.findViewById<ImageView>(R.id.select)?.setOnClickListener {
-            if (text != null && summary != null) {
-                val dialog = AlertDialog.Builder(context)
-                        .setTitle(text)
+            if (getPersistedString() != null && summary != null) {
+                val dialog = MaterialAlertDialogBuilder(context)
+                        .setTitle(getPersistedString())
                         .setMessage(summary)
                         .setPositiveButton(android.R.string.ok, null)
                         .show()
@@ -76,10 +74,13 @@ class CustomReadPreference : EditTextPreference {
         }
     }
 
-    override fun setText(text: String?) {
-        super.setText(text)
-
+    fun handleSave(text: String?) {
+        persistString(text)
         updateSummary(text)
+    }
+
+    fun getPersistedString(): String? {
+        return getPersistedString(null)
     }
 
     private fun updateSummary(key: String?) {

@@ -65,16 +65,16 @@
                 android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/open_tweaks"
-                style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:text="@string/to_the_tweaks"
                 android:textAlignment="center"
-                android:textColor="@drawable/button_text_dark_theme"
-                tools:layout_editor_absoluteX="8dp" />
+                tools:layout_editor_absoluteX="8dp"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                />
 
             <TextView
                 android:id="@+id/hide_welcome_hint"
@@ -87,7 +87,7 @@
                 android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
-            <androidx.cardview.widget.CardView
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginEnd="8dp"
@@ -96,7 +96,7 @@
                 app:cardElevation="1dp" >
 
                 <include layout="@layout/layout_donate" />
-            </androidx.cardview.widget.CardView>
+            </com.google.android.material.card.MaterialCardView>
 
         </LinearLayout>
     </ScrollView>

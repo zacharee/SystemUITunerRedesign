@@ -8,8 +8,10 @@ import androidx.preference.Preference
 import androidx.recyclerview.widget.RecyclerView
 import com.zacharee1.systemuituner.fragments.pref.AddCustomBlacklistItemPreferenceFragment
 import com.zacharee1.systemuituner.fragments.pref.CustomInputPreferenceFragment
+import com.zacharee1.systemuituner.fragments.pref.CustomReadPreferenceFragment
 import com.zacharee1.systemuituner.prefs.AddCustomBlacklistItemPreference
 import com.zacharee1.systemuituner.prefs.CustomInputPreference
+import com.zacharee1.systemuituner.prefs.CustomReadPreference
 import com.zacharee1.systemuituner.util.prefs
 import jp.wasabeef.recyclerview.animators.LandingAnimator
 import tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceFragment
@@ -42,6 +44,11 @@ abstract class AnimFragment : CollapsiblePreferenceFragment(), SharedPreferences
             }
             is CustomInputPreference -> {
                 val frag = CustomInputPreferenceFragment.newInstance(preference.key)
+                frag.setTargetFragment(this, 0)
+                frag.show(fragmentManager!!, null)
+            }
+            is CustomReadPreference -> {
+                val frag = CustomReadPreferenceFragment.newInstance(preference.key)
                 frag.setTargetFragment(this, 0)
                 frag.show(fragmentManager!!, null)
             }

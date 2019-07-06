@@ -7,7 +7,6 @@ import android.os.CountDownTimer
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.CheckBox
 import android.widget.ImageView
 import android.widget.TextView
@@ -22,6 +21,7 @@ import com.zacharee1.systemuituner.util.checkPermissions
 import com.zacharee1.systemuituner.util.prefs
 import com.zacharee1.systemuituner.util.startUp
 import com.zacharee1.systemuituner.util.sudo
+import kotlinx.android.synthetic.main.slide_warning.view.*
 
 class IntroActivity : AppIntro2() {
 
@@ -192,8 +192,7 @@ class IntroActivity : AppIntro2() {
         override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
             super.onViewCreated(view, savedInstanceState)
 
-            val terms = view.findViewById<Button>(R.id.terms)
-            terms.setOnClickListener {
+            view.terms.setOnClickListener {
                 OptionSelected.doAction(R.id.action_terms, activity!!)
             }
         }

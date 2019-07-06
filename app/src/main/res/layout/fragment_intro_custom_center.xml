@@ -26,9 +26,8 @@
             android:textSize="28sp"
             android:textStyle="bold" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/change_selection"
-            style="@style/Base.Widget.AppCompat.Button.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -36,7 +35,9 @@
             android:text="@string/change_selection"
             android:textAlignment="center"
             android:textColor="?android:textColorPrimary"
-            android:visibility="gone" />
+            android:visibility="gone"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            />
 
         <LinearLayout
             android:id="@+id/custom_layout_holder"

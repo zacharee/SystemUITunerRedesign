@@ -18,7 +18,7 @@ class SettingWriteFailed : BaseAnimActivity() {
             if (extras != null) {
                 val command = extras.getString("command")
 
-                val textView = findViewById<TextView>(R.id.sorry_command)
+                val textView = findViewById<TextView>(R.id.command)
                 textView.text = command
             }
         }

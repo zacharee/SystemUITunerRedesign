@@ -8,6 +8,7 @@ import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.widget.TimePicker
 import androidx.preference.Preference
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.zacharee1.systemuituner.R
 import java.util.concurrent.TimeUnit
 
@@ -31,7 +32,7 @@ class TimePreference : Preference, SharedPreferences.OnSharedPreferenceChangeLis
         pickerView.minute = savedMinute.toInt()
         pickerView.setIs24HourView(DateFormat.is24HourFormat(context))
 
-        val d = AlertDialog.Builder(context)
+        val d = MaterialAlertDialogBuilder(context)
                 .setView(view)
                 .setPositiveButton(android.R.string.ok) { _, _ ->
                     val persist = TimeUnit.HOURS.toMillis(pickerView.hour.toLong()) + TimeUnit.MINUTES.toMillis(pickerView.minute.toLong())

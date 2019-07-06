@@ -7,15 +7,10 @@ import android.os.Bundle
 import android.text.Html
 import android.text.Spanned
 import android.text.method.LinkMovementMethod
-import android.util.TypedValue
-import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.LinearLayout
-import android.widget.RadioButton
-import android.widget.TextView
+import android.widget.*
 import androidx.annotation.ColorInt
 import androidx.annotation.IdRes
 import androidx.annotation.LayoutRes
@@ -23,8 +18,9 @@ import androidx.core.text.HtmlCompat
 import androidx.fragment.app.Fragment
 import com.github.paolorotolo.appintro.AppIntro2
 import com.github.paolorotolo.appintro.ISlideBackgroundColorHolder
+import com.github.paolorotolo.appintro.ISlidePolicy
 import com.zacharee1.systemuituner.R
-import com.zacharee1.systemuituner.util.pxToDp
+import kotlinx.android.synthetic.main.command_box.view.*
 import java.util.*
 
 class InstructionsActivity : AppIntro2() {
@@ -99,7 +95,7 @@ class InstructionsActivity : AppIntro2() {
         finish()
     }
 
-    open class OSInstructions: Instructions() {
+    open class OSInstructions: Instructions(), ISlidePolicy {
         companion object {
             @JvmOverloads
             fun newInstance(title: CharSequence, description: CharSequence,
@@ -121,11 +117,22 @@ class InstructionsActivity : AppIntro2() {
 
         private val selection by lazy { findViewById<Button>(R.id.change_selection) }
 
+        private var hasSelectedAnOs = false
+        private var isOnOsSelectionScreen = true
+
         override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
             super.onViewCreated(view, savedInstanceState)
 
             addSelectorButton()
             setSelectionListeners()
+        }
+
+        override fun isPolicyRespected(): Boolean {
+            return !isOnOsSelectionScreen || hasSelectedAnOs
+        }
+
+        override fun onUserIllegallyRequestedNextPage() {
+            Toast.makeText(context, R.string.select_os, Toast.LENGTH_SHORT).show()
         }
 
         private fun setSelectionListeners() {
@@ -170,6 +177,8 @@ class InstructionsActivity : AppIntro2() {
 
                 animateChange(layout, title, R.string.on_computer,
                         Runnable { selection?.visibility = View.VISIBLE })
+                isOnOsSelectionScreen = false
+                hasSelectedAnOs = true
             }
 
             windows?.setOnClickListener(clickListener)
@@ -182,6 +191,8 @@ class InstructionsActivity : AppIntro2() {
         private fun addSelectorButton() {
             selection?.setOnClickListener {
                 animateChange(R.layout.fragment_adb_select, R.string.choose_your_weapon, R.string.which_os, Runnable { setSelectionListeners() })
+                isOnOsSelectionScreen = true
+                hasSelectedAnOs = false
             }
         }
 
@@ -313,19 +324,10 @@ class InstructionsActivity : AppIntro2() {
             val holder = view.findViewById<LinearLayout>(R.id.custom_layout_holder)
 
             for (command in commands!!) {
-                val textView = TextView(activity)
-                textView.gravity = Gravity.CENTER_HORIZONTAL or Gravity.CENTER_VERTICAL
-                textView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 18f)
-                textView.setTextIsSelectable(true)
-                textView.text = PREFIX + command
-                textView.setPadding(
-                        0,
-                        activity!!.pxToDp(8f).toInt(),
-                        0,
-                        0
-                )
+                val commandBox = layoutInflater.inflate(R.layout.command_box, holder, false)
 
-                holder.addView(textView)
+                commandBox.command.text = "adb shell pm grant ${view.context.packageName} $command"
+                holder.addView(commandBox)
             }
         }
 

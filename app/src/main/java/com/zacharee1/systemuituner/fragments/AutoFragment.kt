@@ -11,9 +11,7 @@ import androidx.preference.SwitchPreference
 import com.topjohnwu.superuser.Shell
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.activites.instructions.SetupActivity
-import com.zacharee1.systemuituner.util.blacklistManager
-import com.zacharee1.systemuituner.util.hasUsage
-import com.zacharee1.systemuituner.util.updateBlacklistSwitches
+import com.zacharee1.systemuituner.util.*
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
@@ -32,8 +30,8 @@ class AutoFragment : AnimFragment() {
 
     override fun onSetTitle() = resources.getString(R.string.auto_detect)
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
 
         verifyUsage()
     }
@@ -48,13 +46,15 @@ class AutoFragment : AnimFragment() {
 
 
     private fun verifyUsage() {
-        if (activity?.hasUsage() == true) setUp()
+        if (activity!!.hasUsage() && activity!!.hasDump()) setUp()
         else {
             SetupActivity.make(
                     context!!,
                     arrayListOf(Manifest.permission.DUMP,
                             Manifest.permission.PACKAGE_USAGE_STATS)
             )
+
+            navController.navigateUp()
         }
     }
 

@@ -7,20 +7,17 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.content.res.ColorStateList
 import android.os.Bundle
-import android.util.TypedValue
-import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
-import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import com.github.paolorotolo.appintro.AppIntro2
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.util.checkPermissions
-import com.zacharee1.systemuituner.util.pxToDp
-import com.zacharee1.systemuituner.util.startUp
+import kotlinx.android.synthetic.main.command_box.view.*
 import kotlinx.android.synthetic.main.permissions_fragment.view.*
 
 class SetupActivity : AppIntro2() {
@@ -75,14 +72,14 @@ class SetupActivity : AppIntro2() {
             val notRequiredMissing = ArrayList(missing).apply { removeAll(requiredMissing) }
 
             if (requiredMissing.isNotEmpty()) {
-                AlertDialog.Builder(this)
+                MaterialAlertDialogBuilder(this)
                         .setTitle(R.string.missing_perms)
                         .setMessage(requiredMissing.toString())
                         .setPositiveButton(R.string.ok, null)
                         .show()
             } else {
                 if (notRequiredMissing.isNotEmpty()) {
-                    AlertDialog.Builder(this)
+                    MaterialAlertDialogBuilder(this)
                             .setTitle(R.string.missing_perms)
                             .setMessage(R.string.missing_not_required_perms_desc)
                             .setPositiveButton(R.string.yes) { _, _ ->
@@ -124,21 +121,10 @@ class SetupActivity : AppIntro2() {
 
             if (perms != null) {
                 for (perm in perms) {
-                    val command = "adb shell pm grant " + activity!!.packageName + " "
+                    val commandBox = layoutInflater.inflate(R.layout.command_box, text, false)
 
-                    val textView = TextView(activity)
-                    textView.gravity = Gravity.CENTER_HORIZONTAL or Gravity.CENTER_VERTICAL
-                    textView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 18f)
-                    textView.setTextIsSelectable(true)
-                    textView.text = command + perm
-                    textView.setPadding(
-                            0,
-                            activity!!.pxToDp(8f).toInt(),
-                            0,
-                            0
-                    )
-
-                    text.addView(textView)
+                    commandBox.command.text = "adb shell pm grant ${view.context.packageName} $perm"
+                    text.addView(commandBox)
                 }
 
                 view.adb_instructions.setOnClickListener {

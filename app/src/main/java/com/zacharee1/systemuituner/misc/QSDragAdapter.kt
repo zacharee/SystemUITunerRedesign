@@ -1,6 +1,5 @@
 package com.zacharee1.systemuituner.misc
 
-import android.app.AlertDialog
 import android.content.ComponentName
 import android.content.Context
 import android.graphics.Color
@@ -17,6 +16,7 @@ import android.view.animation.OvershootInterpolator
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.util.writeSecure
 import java.util.*
@@ -115,7 +115,7 @@ class QSDragAdapter(private val context: Context) : RecyclerView.Adapter<QSDragA
         holder.setTitle(tiles[holder.adapterPosition].title)
         holder.setIcon(tiles[holder.adapterPosition].icon)
         holder.setCloseListener(View.OnClickListener {
-            AlertDialog.Builder(context)
+            MaterialAlertDialogBuilder(context)
                     .setTitle(R.string.removing_tile)
                     .setMessage(String.format(holder.context.resources.getString(R.string.remove_tile), tiles[holder.adapterPosition].title))
                     .setPositiveButton(R.string.yes) { _, _ ->

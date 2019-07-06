@@ -1,32 +1,26 @@
 <resources>
 
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-        <item name="actionBarTheme">@style/AppTheme.AppBarOverlay</item>
-        <item name="textAppearanceButton">@android:style/TextAppearance.Material.Button</item>
+        <item name="colorPrimaryVariant">@color/colorPrimaryLight</item>
+        <item name="colorSecondary">@color/colorAccent</item>
+        <item name="colorSecondaryVariant">@color/colorAccentLight</item>
+        <item name="buttonStyle">@style/Widget.MaterialComponents.Button.TextButton</item>
+        <item name="materialButtonStyle">?buttonStyle</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">true</item>
     </style>
 
-    <style name="AppTheme.Intro" parent="AppTheme.Dark" />
-
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
-        <item name="android:colorControlNormal">@android:color/white</item>
-    </style>
-
-    <style name="AppTheme.PopupTheme.Dark" parent="AppTheme.Dark" />
-    <style name="AppTheme.PopupTheme.Light" parent="AppTheme" />
-
-    <style name="AppTheme.Dark" parent="Theme.AppCompat">
+    <style name="AppTheme.Dark" parent="Theme.MaterialComponents.NoActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccentDark</item>
-        <item name="android:statusBarColor">@color/colorPrimaryDark</item>
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-        <item name="textAppearanceButton">@android:style/TextAppearance.Material.Button</item>
+        <item name="colorPrimaryVariant">@color/colorPrimaryLight</item>
+        <item name="colorSecondary">@color/colorAccent</item>
+        <item name="colorSecondaryVariant">@color/colorAccentLight</item>
+        <item name="buttonStyle">@style/Widget.MaterialComponents.Button.TextButton</item>
+        <item name="materialButtonStyle">?buttonStyle</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
     </style>
 
     <style name="Material.Drawable.CircularProgress.Determinate.Accented" parent="Material.Drawable.CircularProgress.Determinate">

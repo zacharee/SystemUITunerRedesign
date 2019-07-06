@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/main"
     android:orientation="vertical"
     android:layout_width="match_parent"
@@ -12,13 +13,16 @@
         android:layout_height="match_parent"
         layout="@layout/appintro_fragment_intro_content" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/terms"
-        style="@style/Widget.MaterialComponents.Button"
+        android:textColor="?android:textColorPrimary"
+        app:backgroundTint="?android:textColorTertiary"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="@string/terms_of_service" />
+        android:text="@string/terms_of_service"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        />
 
     <FrameLayout
         android:id="@+id/agree_holder"

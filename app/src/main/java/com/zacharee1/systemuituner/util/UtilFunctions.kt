@@ -9,8 +9,6 @@ import android.content.pm.ApplicationInfo
 import android.content.pm.PackageManager
 import android.provider.Settings
 import android.util.TypedValue
-import android.view.View
-import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.FragmentManager
 import androidx.navigation.NavController
 import androidx.navigation.NavOptions
@@ -20,6 +18,7 @@ import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 import androidx.preference.PreferenceGroup
 import androidx.preference.SwitchPreference
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.topjohnwu.superuser.Shell
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.activites.MainActivity
@@ -47,11 +46,15 @@ fun Context.hasUsage(): Boolean {
     return checkCallingOrSelfPermission(Manifest.permission.PACKAGE_USAGE_STATS) == PackageManager.PERMISSION_GRANTED
 }
 
+fun Context.hasDump(): Boolean {
+    return checkCallingOrSelfPermission(Manifest.permission.DUMP) == PackageManager.PERMISSION_GRANTED
+}
+
 fun Activity.startUp() {
     if (prefs.firstStart && checkSamsung()) {
         prefs.safeMode = true
         try {
-            AlertDialog.Builder(this)
+            MaterialAlertDialogBuilder(this)
                     .setTitle(resources.getString(R.string.notice))
                     .setMessage(resources.getString(R.string.safe_mode_auto_enabled))
                     .setPositiveButton(resources.getString(R.string.ok), null)

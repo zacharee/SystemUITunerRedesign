@@ -17,6 +17,7 @@ import android.widget.FrameLayout
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.*
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.misc.QSDragAdapter
@@ -167,7 +168,7 @@ class QuickSettingsLayoutEditor : BaseAnimActivity() {
                         addTile(holder, true)
                     } else {
                         val dialogView = LayoutInflater.from(context).inflate(R.layout.dialog_text_input, null, false)
-                        AlertDialog.Builder(context)
+                        MaterialAlertDialogBuilder(context)
                                 .setTitle(R.string.intent)
                                 .setView(dialogView)
                                 .setPositiveButton(R.string.ok) { _, _ ->

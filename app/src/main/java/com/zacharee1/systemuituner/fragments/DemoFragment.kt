@@ -5,17 +5,17 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
-import android.content.pm.PackageManager
 import android.os.Bundle
 import android.provider.Settings
 import android.widget.Toast
 import androidx.preference.Preference
 import androidx.preference.SwitchPreference
 import com.zacharee1.systemuituner.R
-import com.zacharee1.systemuituner.activites.instructions.SetupActivity.Companion.make
+import com.zacharee1.systemuituner.activites.instructions.SetupActivity
 import com.zacharee1.systemuituner.handlers.DemoHandler
 import com.zacharee1.systemuituner.util.forEachPreference
-import com.zacharee1.systemuituner.util.hasSpecificPerm
+import com.zacharee1.systemuituner.util.hasDump
+import com.zacharee1.systemuituner.util.navController
 import com.zacharee1.systemuituner.util.writeGlobal
 
 class DemoFragment : AnimFragment() {
@@ -31,13 +31,18 @@ class DemoFragment : AnimFragment() {
         super.onCreatePreferences(savedInstanceState, rootKey)
 
         demoHandler = DemoHandler(context!!)
-        if (context?.hasSpecificPerm(Manifest.permission.DUMP) == true) {
+
+        if (context!!.hasDump()) {
             setPrefListeners()
             setDemoSwitchListener()
         } else {
-            make(context!!, arrayListOf(Manifest.permission.DUMP))
+            SetupActivity.make(
+                    context!!,
+                    arrayListOf(Manifest.permission.DUMP,
+                            Manifest.permission.PACKAGE_USAGE_STATS)
+            )
 
-            activity?.finish()
+            navController.navigateUp()
         }
     }
 
@@ -45,7 +50,7 @@ class DemoFragment : AnimFragment() {
         val enableDemo = findPreference<Preference>(DEMO_ALLOWED)
         enableDemo?.isEnabled = Settings.Global.getInt(context?.contentResolver, DEMO_ALLOWED, 0) == 0
         enableDemo?.onPreferenceClickListener = Preference.OnPreferenceClickListener { preference ->
-            if (activity?.checkCallingOrSelfPermission(Manifest.permission.DUMP) == PackageManager.PERMISSION_GRANTED) {
+            if (context!!.hasDump()) {
                 context?.writeGlobal(preference.key, 1)
                 findPreference<SwitchPreference>(SHOW_DEMO)?.isEnabled = true
             } else {

@@ -5,10 +5,10 @@ import android.graphics.Color
 import android.util.AttributeSet
 import android.widget.ImageView
 import android.widget.LinearLayout
-import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
 import androidx.preference.PreferenceViewHolder
 import androidx.preference.SwitchPreference
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.misc.CustomBlacklistInfo
 import com.zacharee1.systemuituner.util.prefs
@@ -44,7 +44,7 @@ class CustomBlacklistPreference : SwitchPreference {
 
         holder.itemView.findViewById<LinearLayout>(R.id.icon_frame).apply {
             setOnClickListener {
-                AlertDialog.Builder(context)
+                MaterialAlertDialogBuilder(context)
                         .setTitle(R.string.are_you_sure)
                         .setMessage(context.resources
                                 .getString(R.string.remove_custom_blacklist_item_desc, title))
