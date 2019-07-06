@@ -244,8 +244,8 @@
     <string name="style">Stil</string>
     <string name="clock_position">Position der Uhr</string>
     <string name="left">Links</string>
-    <string name="middle">Middle</string>
-    <string name="right">Right</string>
+    <string name="middle">Mitte</string>
+    <string name="right">Rechts</string>
     <!--Descriptions-->
     <string name="fancy_pulldown_notice">Wenn du diese Option deaktivierst, kann es nach einem Neustart zu Problemen kommen. Schalte diese Option nach einem Neustart manuell ein und aus oder aktiviere den abgesicherten Modus.</string>
     <string name="safe_mode_summary">SAMSUNG-BENUTZER: LASSE DIES AN, SOFERN DU KEINE AOSP ROM HAST!</string>
@@ -253,7 +253,7 @@
     <string name="safe_mode_summary_2">Schaltet die QS Fancy Animation beim Hochfahren ein und aus.</string>
     <string name="safe_mode_summary_3">Stellt benutzerdefinierte QS-Header-Zählwerte beim Hochfahren wieder her (Nougat+).</string>
     <string name="safe_mode_summary_4">Stellt benutzerdefinierte QS-Reihen/Spalten-Zählwerte beim Hochfahren wieder her (TouchWiz, Nougat+).</string>
-    <string name="safe_mode_summary_5">Keeps custom snooze options set (8.1+).</string>
+    <string name="safe_mode_summary_5">Lässt die Einstellung der benutzerdefinierten Optionen „Zurückstellen” (8.1+) unverändert.</string>
     <string name="enable_in_settings">In den Einstellungen aktivieren.</string>
     <string name="reboot_required">(Neustart erforderlich)</string>
     <string name="auto_detect_summary">Versuche automatisch zu erkennen, welche Statusleistensymbole ausgeblendet werden können. Funktioniert nicht auf allen Geräten!</string>
@@ -294,7 +294,7 @@ Dies ist das Rotationssperren-Symbol. Tippen Sie hier, um es zu beheben.</string
     <string name="safe_mode_auto_enabled">Samsung-Gerät erkannt! Sicherer Modus wurde automatisch zu deiner Sicherheit aktiviert. Sei gewarnt, dass jegliches Modifizieren deiner Statusleistensymbole möglicherweise die SYSTEM UI ZERSTÖREN könnte! Bitte folge dem Link in der \"Play Store\"-Beschreibung für mehr Informationen.</string>
     <string name="requires_nougat">Erfordert Nougat oder höher.</string>
     <string name="requires_oreo">Erfordert Oreo oder höher.</string>
-    <string name="requires_pie">Requires Pie or later.</string>
+    <string name="requires_pie">Erfordert Pie oder höher.</string>
     <string name="requires_8_1">Erfordert Oreo 8.1 oder höher.</string>
     <string name="safe_mode_android_o">Dieses Feature ist durch Limitationen in Android O nicht auf deinem Gerät verfügbar.</string>
     <string name="intro_1">Danke für das Herunterladen meiner App! SystemUI Tuner soll den in AOSP integrierten System-UI-Tuner ersetzen / ergänzen. Benutzer mit und ohne System UI Tuner können von dieser App profitieren.</string>
@@ -312,7 +312,7 @@ Dies ist das Rotationssperren-Symbol. Tippen Sie hier, um es zu beheben.</string
     <string name="backup_restored">Sicherung erfolgreich wiederhergestellt</string>
     <string name="nothing_to_back_up">Keine Sicherung erforderlich</string>
     <string name="grant_usage">Bitte gewähre SystemUI Tuner Zugriff auf \"Usage\".</string>
-    <string name="setting_not_on_pie">This setting doesn\'t work on Pie or later.</string>
+    <string name="setting_not_on_pie">Diese Einstellung funktioniert nicht unter Pie oder höher.</string>
     <string name="setting_not_on_touchwiz_pie">This setting doesn\'t work on TouchWiz Pie or later.</string>
     <string name="setting_not_on_touchwiz">This setting doesn\'t work on TouchWiz.</string>
     <!--Instructions-->
