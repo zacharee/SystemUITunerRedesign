@@ -209,7 +209,7 @@
     <string name="no">Nein</string>
     <string name="notif_title">Dienst für den abgesicherten Modus wird ausgeführt</string>
     <string name="color">Farbe</string>
-    <string name="notifs_snooze">Benachrichtigung später lesen</string>
+    <string name="notifs_snooze">Benachrichtigung zurückstellen</string>
     <string name="default_text">Standard</string>
     <string name="time_a">Zeit A</string>
     <string name="time_b">Zeit B</string>
@@ -230,7 +230,7 @@
     <string name="safe_mode_fancy_anim">Ausgefallene Animation</string>
     <string name="safe_mode_header_count">QS-Kopfzeilenanzahl</string>
     <string name="safe_mode_row_col_tw">QS Zeilen-/Spaltenanzahl</string>
-    <string name="safe_mode_snooze_options">Schlummeroptionen</string>
+    <string name="safe_mode_snooze_options">Optionen für Zurückstellen</string>
     <string name="fix_rotation_icon_dialog_title">Deinstallieren?</string>
     <string name="done">Fertig!</string>
     <string name="high_brightness_warning">Warnung bei hoher Helligkeit</string>
@@ -313,8 +313,8 @@ Dies ist das Rotationssperren-Symbol. Tippen Sie hier, um es zu beheben.</string
     <string name="nothing_to_back_up">Keine Sicherung erforderlich</string>
     <string name="grant_usage">Bitte gewähre SystemUI Tuner Zugriff auf \"Usage\".</string>
     <string name="setting_not_on_pie">Diese Einstellung funktioniert nicht unter Pie oder höher.</string>
-    <string name="setting_not_on_touchwiz_pie">This setting doesn\'t work on TouchWiz Pie or later.</string>
-    <string name="setting_not_on_touchwiz">This setting doesn\'t work on TouchWiz.</string>
+    <string name="setting_not_on_touchwiz_pie">Diese Einstellung funktioniert nicht mit TouchWiz unter Pie oder höher.</string>
+    <string name="setting_not_on_touchwiz">Diese Einstellung funktioniert nicht unter TouchWiz.</string>
     <!--Instructions-->
     <string name="enable_debug"><![CDATA[1. Gehe in den Einstellungen >> Entwickler-Optionen und stelle sicher, dass USB-Debugging aktiviert ist.]]></string>
     <string name="accept_auth">2. Verbinde dein Gerät an deinen Computer und akzeptiere die Autorisierungsanfrage.</string>
@@ -341,5 +341,5 @@ Dies ist das Rotationssperren-Symbol. Tippen Sie hier, um es zu beheben.</string
     <string name="donate_joke">Wie, fragst du? Magie.</string>
     <string name="donate_request">Wenn du meine App magst, wäre es sehr nett, wenn du mir ein oder zwei Dollar spenden könntest.</string>
     <string name="donate_dont_worry">Das ist natürlich absolut keine Pflicht. Diese App ist kostenlos und wird es immer sein.</string>
-    <string name="select_os">Please select an operating system.</string>
+    <string name="select_os">Bitte wählen Sie ein Betriebssystem.</string>
 </resources>
