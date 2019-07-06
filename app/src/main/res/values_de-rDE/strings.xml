@@ -228,7 +228,7 @@
     <string name="safe_mode_fancy_anim">Ausgefallene Animation</string>
     <string name="safe_mode_header_count">QS-Kopfzeilenanzahl</string>
     <string name="safe_mode_row_col_tw">QS Zeilen-/Spaltenanzahl</string>
-    <string name="safe_mode_snooze_options">Schlummeroptionen</string>
+    <string name="safe_mode_snooze_options">Zurückstellen-Optionen</string>
     <string name="fix_rotation_icon_dialog_title">Deinstallieren?</string>
     <string name="done">Fertig!</string>
     <string name="high_brightness_warning">Warnung bei hoher Helligkeit</string>
