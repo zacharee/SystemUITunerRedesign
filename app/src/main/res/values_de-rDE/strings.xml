@@ -150,6 +150,7 @@
     <string name="none">Keins</string>
     <string name="full">Voll</string>
     <string name="navigation_bar">Navigationsleiste</string>
+    <string name="navigation_bar_color">Navigation Bar Color</string>
     <string name="pre_confirms">Vorabbestätigungen</string>
     <string name="config_qs">Kofiguriere eine Quick Settings Kachel</string>
     <string name="mode">Modus</string>
@@ -241,6 +242,10 @@
     <string name="add_item">Element hinzufügen</string>
     <string name="are_you_sure">Bist du sicher?</string>
     <string name="style">Stil</string>
+    <string name="clock_position">Clock Position</string>
+    <string name="left">Left</string>
+    <string name="middle">Middle</string>
+    <string name="right">Right</string>
     <!--Descriptions-->
     <string name="fancy_pulldown_notice">Wenn du diese Option deaktivierst, kann es nach einem Neustart zu Problemen kommen. Schalte diese Option nach einem Neustart manuell ein und aus oder aktiviere den abgesicherten Modus.</string>
     <string name="safe_mode_summary">SAMSUNG-BENUTZER: LASSE DIES AN, SOFERN DU KEINE AOSP ROM HAST!</string>
@@ -248,7 +253,7 @@
     <string name="safe_mode_summary_2">Schaltet die QS Fancy Animation beim Hochfahren ein und aus.</string>
     <string name="safe_mode_summary_3">Stellt benutzerdefinierte QS-Header-Zählwerte beim Hochfahren wieder her (Nougat+).</string>
     <string name="safe_mode_summary_4">Stellt benutzerdefinierte QS-Reihen/Spalten-Zählwerte beim Hochfahren wieder her (TouchWiz, Nougat+).</string>
-    <string name="safe_mode_summary_5">Stellt benutzerdefinierte Benachrichtigungs-Schlummer-Optionen beim Hochfahren wieder her (8.1+).</string>
+    <string name="safe_mode_summary_5">Keeps custom snooze options set (8.1+).</string>
     <string name="enable_in_settings">In den Einstellungen aktivieren.</string>
     <string name="reboot_required">(Neustart erforderlich)</string>
     <string name="auto_detect_summary">Versuche automatisch zu erkennen, welche Statusleistensymbole ausgeblendet werden können. Funktioniert nicht auf allen Geräten!</string>
@@ -261,10 +266,8 @@ Dies ist das Rotationssperren-Symbol. Tippen Sie hier, um es zu beheben.</string
     <string name="pnc_desc">Mit Power Notification Controls können Sie die Wichtigkeit einer Benachrichtigung pro App einstellen. Einfach die Funktion aktivieren und eine Benachrichtigung lange halten. Manchmal musst du das A antippen, um den Schieberegler zu aktivieren.</string>
     <string name="pnc_warn">Diese Funktion ist dafür bekannt, auf bestimmten Geräten, vor allem mit TouchWiz nicht zu funktionieren! Es ist unmöglich zu beheben, aber die beste Lösung ist, öfters auf das gewünschte Level zu tippen. Noch einmal, ich KANN ES NICHT beheben!</string>
     <string name="notif_desc">Antippen, um die Einstellungen zu ändern</string>
-    <string name="touchwiz_oreo_qqs">Auf TouchWiz Oreo-Geräten ist diese Einstellung nicht mehr zuverlässig! Zusammen mit dem Einstellen der Zahl hier, musst du auch den Wert in Settings.System.apanel_number, speichern, was nur mit ADB oder Root-Rechten getan werden kann. Im abgesicherten Modus funktioniert es manchmal ohne das, aber dafür kann ich nicht garantieren!</string>
-    <string name="notifs_snooze_desc">&#160;
-    in Android 8.1 und höher, kannst eigene Zeiten für lautlose Benachrichtigungen festlegen. Diese Werte werden beim Neustart zurückgesetzt, aktiviere den abgesicherten Modus, wenn die Werte beim Neustart erhalten bleiben sollen.\n\n&#160;
-    Verwende die folgenden Optionen, um die verschiedenen Snooze-Zeiten einzustellen. \"Default\" setzt die Zeit, die Android standardmäßig verwendet. Die anderen Elemente sind die Snooze-Zeiten, die zur Auswahl stehen.
+    <string name="notifs_snooze_desc">    In Android 8.1 and later, you can set custom times for notification snoozing. These values reset on reboot, so make sure to enable Safe Mode if you would like them to persist across power cycles.\n\n
+    Use the options below to set the different snooze times. \"Default\" sets the time Android will use by default. The other items will be the snooze times available for you to select.
     </string>
     <string name="custom_settings_input_desc">In diesen Felder kannst du deine eigenen benutzerdefinierten Einstellungen eingeben.</string>
     <string name="custom_settings_read_desc">Diese Felder ermöglichen es dir, den Wert eines bestimmten Schlüssels zu lesen.</string>
@@ -291,6 +294,7 @@ Dies ist das Rotationssperren-Symbol. Tippen Sie hier, um es zu beheben.</string
     <string name="safe_mode_auto_enabled">Samsung-Gerät erkannt! Sicherer Modus wurde automatisch zu deiner Sicherheit aktiviert. Sei gewarnt, dass jegliches Modifizieren deiner Statusleistensymbole möglicherweise die SYSTEM UI ZERSTÖREN könnte! Bitte folge dem Link in der \"Play Store\"-Beschreibung für mehr Informationen.</string>
     <string name="requires_nougat">Erfordert Nougat oder höher.</string>
     <string name="requires_oreo">Erfordert Oreo oder höher.</string>
+    <string name="requires_pie">Requires Pie or later.</string>
     <string name="requires_8_1">Erfordert Oreo 8.1 oder höher.</string>
     <string name="safe_mode_android_o">Dieses Feature ist durch Limitationen in Android O nicht auf deinem Gerät verfügbar.</string>
     <string name="intro_1">Danke für das Herunterladen meiner App! SystemUI Tuner soll den in AOSP integrierten System-UI-Tuner ersetzen / ergänzen. Benutzer mit und ohne System UI Tuner können von dieser App profitieren.</string>
@@ -308,6 +312,9 @@ Dies ist das Rotationssperren-Symbol. Tippen Sie hier, um es zu beheben.</string
     <string name="backup_restored">Sicherung erfolgreich wiederhergestellt</string>
     <string name="nothing_to_back_up">Keine Sicherung erforderlich</string>
     <string name="grant_usage">Bitte gewähre SystemUI Tuner Zugriff auf \"Usage\".</string>
+    <string name="setting_not_on_pie">This setting doesn\'t work on Pie or later.</string>
+    <string name="setting_not_on_touchwiz_pie">This setting doesn\'t work on TouchWiz Pie or later.</string>
+    <string name="setting_not_on_touchwiz">This setting doesn\'t work on TouchWiz.</string>
     <!--Instructions-->
     <string name="enable_debug"><![CDATA[1. Gehe in den Einstellungen >> Entwickler-Optionen und stelle sicher, dass USB-Debugging aktiviert ist.]]></string>
     <string name="accept_auth">2. Verbinde dein Gerät an deinen Computer und akzeptiere die Autorisierungsanfrage.</string>
@@ -334,4 +341,5 @@ Dies ist das Rotationssperren-Symbol. Tippen Sie hier, um es zu beheben.</string
     <string name="donate_joke">Wie, fragst du? Magie.</string>
     <string name="donate_request">Wenn du meine App magst, wäre es sehr nett, wenn du mir ein oder zwei Dollar spenden könntest.</string>
     <string name="donate_dont_worry">Das ist natürlich absolut keine Pflicht. Diese App ist kostenlos und wird es immer sein.</string>
+    <string name="select_os">Please select an operating system.</string>
 </resources>
