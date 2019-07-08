@@ -111,8 +111,8 @@
     <string name="volte">VoLTE</string>
     <string name="vowifi">VoWiFi</string>
     <string name="wifi_calling_icon">Bellen via Wi-Fi-pictogram</string>
-    <string name="answering_memo_icon">Answering Memo Icon</string>
-    <string name="felica_lock_icon">Felica Lock Icon</string>
+    <string name="answering_memo_icon">Memo beantwoorden-pictogram</string>
+    <string name="felica_lock_icon">Felica Lock-pictogram</string>
     <string name="ime_icon">IME-pictogram</string>
     <string name="nfc_lock_icon">NFC vergerendelspictogram</string>
     <string name="otg_keyboard_icon">OTG Keyboard Icon</string>
