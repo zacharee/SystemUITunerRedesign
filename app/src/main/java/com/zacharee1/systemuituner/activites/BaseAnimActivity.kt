@@ -51,7 +51,7 @@ open class BaseAnimActivity : AppCompatActivity(), SharedPreferences.OnSharedPre
         if (prefs.darkMode) {
             with(toolbar.background as MaterialShapeDrawable) {
                 val color = ElevationOverlayProvider(this@BaseAnimActivity)
-                        .getSurfaceColorWithOverlayIfNeeded(elevation)
+                        .compositeOverlayWithThemeSurfaceColorIfNeeded(elevation)
 
                 window.navigationBarColor = color
             }
