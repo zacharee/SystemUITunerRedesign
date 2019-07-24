@@ -10,7 +10,7 @@
     <string name="instructions">Hướng dẫn</string>
     <string name="need_help">Need Help?</string>
     <string name="about">Thông tin</string>
-    <string name="miscellaneous">Miscellaneous</string>
+    <string name="miscellaneous">Hỗn hợp</string>
     <string name="custom">Tuỳ chỉnh</string>
     <string name="settings">Cài đặt</string>
     <string name="status_bar">Thanh Trạng thái</string>
@@ -58,12 +58,12 @@
     <string name="zen_icon">Zen Icon</string>
     <string name="do_not_disturb">Do Not Disturb Icon</string>
     <string name="dnd">Do Not Disturb</string>
-    <string name="privacy_policy">Privacy Policy</string>
-    <string name="terms_of_service">Terms of Service</string>
-    <string name="donate">Donate</string>
-    <string name="reset_blacklist">Reset Blacklist</string>
-    <string name="animator_duration_scale">Animator Duration Scale</string>
-    <string name="transition_animation_scale">Transition Animation Scale</string>
+    <string name="privacy_policy">Chính sách bảo mật</string>
+    <string name="terms_of_service">ĐIỀU KHOẢN SỬ DỤNG</string>
+    <string name="donate">Quyên góp</string>
+    <string name="reset_blacklist">Đặt lại danh sách đen</string>
+    <string name="animator_duration_scale">Quy mô thời gian hoạt hình</string>
+    <string name="transition_animation_scale">Quy mô hoạt hình chuyển tiếp</string>
     <string name="window_animation_scale">Window Animation Scale</string>
     <string name="animation_speeds">Animation Speeds</string>
     <string name="general">General</string>
