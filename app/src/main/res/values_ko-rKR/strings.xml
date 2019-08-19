@@ -4,7 +4,7 @@
     <!--Titles-->
     <string name="app_name">SystemUI 튜너</string>
     <string name="to_the_tweaks">트윅하러 가기!</string>
-    <string name="more">더 보기</string>
+    <string name="more">더보기</string>
     <string name="notice">공지</string>
     <string name="hide_welcome_screen">환영 화면 숨기기</string>
     <string name="instructions">사용법</string>
@@ -265,7 +265,7 @@
     <string name="safe_mode_notif_desc_not_supported">이 설정은 오레오에서 반드시 활성화되어야 합니다.</string>
     <string name="fix_rotation_icon_dialog_desc">Are you planning to uninstall SystemUI Tuner after this?</string>
     <string name="yes_im_uninstalling">예, 제거하려고 합니다.</string>
-    <string name="no_im_staying">No, I\'m Staying</string>
+    <string name="no_im_staying">아뇨, 유지할겁니다.</string>
     <string name="fix_rotation_done_uninstall">회전 아이콘을 삭제했습니다! 재부팅하기 전까지는 효과가 나타나지 않습니다.</string>
     <string name="fix_rotation_done_stay">회전 아이콘을 삭제했습니다! 여전히 나타난다면, 디바이스를 재시작해보세요.</string>
     <string name="missing_not_required_perms_desc">정말 계속할까요? 추가 권한이 적어도 한 개 이상 허락되지 않았으며, 나중에 권한 허용을 위해 컴퓨터를 다시 필요로 하게 될 것입니다.</string>
@@ -293,7 +293,7 @@
     <string name="target_not_found">앱을 시작할 수 없습니다.</string>
     <string name="feature_not_supported">장치가 이 기능을 지원 하지 않는 것 같습니다. :/</string>
     <string name="miui_warning">MIUI 장치를 사용하시는 것 같습니다. 이 앱의 기능들이 아예 작동하지 않거나 극히 일부 기능만 작동할 것입니다. 문제 해결이 불가능합니다!</string>
-    <string name="warn_message">Please read the Terms of Service before continuing.</string>
+    <string name="warn_message">계속하기 전에 서비스 약관에 동의하십시오.</string>
     <string name="safe_mode_notif_desc">이것을 켜는 대신, 알림을 숨길 것을 권장합니다. 이것을 끄면 안전 모드가 더 이상 작동하지 않는 원인이 될 수 있습니다.</string>
     <string name="invalid_blacklist_backup">유효하지 않은 차단 목록 백업</string>
     <string name="backup_restored">백업이 성공적으로 복원됨</string>
