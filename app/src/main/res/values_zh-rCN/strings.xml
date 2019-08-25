@@ -59,7 +59,7 @@
     <string name="do_not_disturb">免打扰图标</string>
     <string name="dnd">消息免打扰</string>
     <string name="privacy_policy">隐私条款</string>
-    <string name="terms_of_service">Terms of Service</string>
+    <string name="terms_of_service">请求</string>
     <string name="donate">捐赠</string>
     <string name="reset_blacklist">重置黑名单</string>
     <string name="animator_duration_scale">动画持续时间</string>
@@ -154,7 +154,7 @@
     <string name="mode">模式</string>
     <string name="qs_column_count">QS 列计数</string>
     <string name="qs_row_count">QS 行计数</string>
-    <string name="qs_column_count_landscape">QS Column Count (Landscape)</string>
+    <string name="qs_column_count_landscape">状态栏图标列数（横向）</string>
     <string name="qs_row_count_landscape">QS Row Count (Landscape)</string>
     <string name="lockscreen">锁定屏幕</string>
     <string name="choose_left">选择左快捷键</string>
