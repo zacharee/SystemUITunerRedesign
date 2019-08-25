@@ -155,7 +155,7 @@
     <string name="qs_column_count">QS 列计数</string>
     <string name="qs_row_count">QS 行计数</string>
     <string name="qs_column_count_landscape">状态栏图标列数（横向）</string>
-    <string name="qs_row_count_landscape">QS Row Count (Landscape)</string>
+    <string name="qs_row_count_landscape">简易下拉状态栏图标行数（横向）</string>
     <string name="lockscreen">锁定屏幕</string>
     <string name="choose_left">选择左快捷键</string>
     <string name="choose_right">选择右键</string>
@@ -223,8 +223,8 @@
     <string name="carrier_on_lock">锁定幕显示运营商标签</string>
     <string name="key_plaintext">按键</string>
     <string name="value_plaintext">数值</string>
-    <string name="remove_from_blacklist">Remove From Blacklist?</string>
-    <string name="safe_mode_status_bar">Status Bar</string>
+    <string name="remove_from_blacklist">移出黑名单列表</string>
+    <string name="safe_mode_status_bar">下拉状态栏</string>
     <string name="safe_mode_fancy_anim">Fancy Animation</string>
     <string name="safe_mode_header_count">QS Header Count</string>
     <string name="safe_mode_row_col_tw">QS Row/Column Count</string>
