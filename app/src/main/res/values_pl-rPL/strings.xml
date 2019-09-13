@@ -8,10 +8,10 @@
     <string name="notice">UWAGA</string>
     <string name="hide_welcome_screen">Ukryj ekran powitalny</string>
     <string name="instructions">Instrukcja</string>
-    <string name="need_help">Need Help?</string>
+    <string name="need_help">Potrzebujesz pomocy?</string>
     <string name="about">Informacje</string>
     <string name="miscellaneous">Inne</string>
-    <string name="custom">Custom</string>
+    <string name="custom">Własna</string>
     <string name="settings">Ustawienia</string>
     <string name="status_bar">Pasek stanu</string>
     <string name="sorry">Przepraszamy…</string>
@@ -58,8 +58,8 @@
     <string name="zen_icon">Ikona Zen</string>
     <string name="do_not_disturb">Ikona \'Nie przeszkadzać\'</string>
     <string name="dnd">A</string>
-    <string name="privacy_policy">Privacy Policy</string>
-    <string name="terms_of_service">Terms of Service</string>
+    <string name="privacy_policy">Polityka prywatności</string>
+    <string name="terms_of_service">Warunki Korzystania z Usługi</string>
     <string name="donate">Wesprzyj mnie</string>
     <string name="reset_blacklist">Reset czarnej listy</string>
     <string name="animator_duration_scale">Długość animacji</string>
@@ -221,21 +221,21 @@
     <string name="show_notif">Pokaż powiadomienia</string>
     <string name="carrier_on_home">Carrier Label on Home Screen</string>
     <string name="carrier_on_lock">Carrier Label on Lock Screen</string>
-    <string name="key_plaintext">Key</string>
-    <string name="value_plaintext">Value</string>
-    <string name="remove_from_blacklist">Remove From Blacklist?</string>
-    <string name="safe_mode_status_bar">Status Bar</string>
+    <string name="key_plaintext">Klucz</string>
+    <string name="value_plaintext">Wartość</string>
+    <string name="remove_from_blacklist">Usunąć z czarnej listy?</string>
+    <string name="safe_mode_status_bar">Pasek stanu</string>
     <string name="safe_mode_fancy_anim">Fancy Animation</string>
     <string name="safe_mode_header_count">QS Header Count</string>
     <string name="safe_mode_row_col_tw">QS Row/Column Count</string>
     <string name="safe_mode_snooze_options">Snooze Options</string>
     <string name="fix_rotation_icon_dialog_title">Uninstalling?</string>
-    <string name="done">Done!</string>
-    <string name="high_brightness_warning">High Brightness Warning</string>
-    <string name="grant">Grant</string>
-    <string name="attention">Attention!</string>
+    <string name="done">Zrobione!</string>
+    <string name="high_brightness_warning">Ostrzeżenie wysokiej jasności</string>
+    <string name="grant">Przyznaj</string>
+    <string name="attention">Uwaga!</string>
     <!--Descriptions-->
-    <string name="fancy_pulldown_notice">Toggling this option off can cause issues after a reboot. Manually toggle this option on and off after a reboot, or enable Safe Mode.</string>
+    <string name="fancy_pulldown_notice">Wyłączanie tej opcji może powodować problemy po ponownym uruchomieniu. Włącz tryb bezpieczny lub ręcznie włącz i wyłącz tą opcje po ponownym uruchomieniu.</string>
     <string name="safe_mode_summary">SAMSUNG USERS KEEP THIS TURNED ON UNLESS YOU HAVE AN AOSP ROM!</string>
     <string name="safe_mode_summary_1">Clears any status bar customizations on reboot and restores them after boot completes.</string>
     <string name="safe_mode_summary_2">Toggles the QS Fancy Animation on boot.</string>
@@ -298,7 +298,7 @@
     <string name="invalid_blacklist_backup">Invalid blacklist backup</string>
     <string name="backup_restored">Successfully restored backup</string>
     <string name="nothing_to_back_up">Nothing to back up</string>
-    <string name="grant_usage">Please grant SystemUI Tuner access to Usage.</string>
+    <string name="grant_usage">Proszę przyznaj SystemUI Tuner uprawnienia używania.</string>
     <!--Instructions-->
     <string name="enable_debug"><![CDATA[1. Wejdź w Ustawienia telefonu >> Opcje programistyczne i upewnij się, że Debugowanie USB jest włączone.]]></string>
     <string name="accept_auth">2. Podłącz urządzenie do komputera i zaakceptuj autoryzację.</string>
@@ -317,7 +317,7 @@
     <string name="cd_linux"><![CDATA[4. Wpisz: <b>cd /lokalizacja/wypakowanego/folderu/</b>, aby dostać się do folderu z wypakowanymi plikami ADB. Na przykład, <b>cd /home/Zachary/Desktop/platform-tools/</b>.]]></string>
     <!--Misc-->
     <string name="created_by">Aplikacja stworzona przez <a href="https://forum.xda-developers.com/member.php?u=7055541">Zacharee1</a></string>
-    <string name="lang_credit">Translations by volunteers on <a href="https://crowdin.com/project/systemui-tuner">Crowdin</a></string>
+    <string name="lang_credit">Tłumaczenie przez wolontariuszy <a href="https://crowdin.com/project/systemui-tuner">Crowdin</a></string>
     <string name="home_desc">Dla urządzeń bez tych czynności</string>
     <string name="home_joke">Lub dla urządzeń, które ją mają, nie będę Ci rządził.</string>
     <string name="home_extra">(Jeśli masz domyślny SystemUI Tuner, ten zawiera dodatkowe funkcje.)</string>
