@@ -246,6 +246,7 @@
     <string name="left">Слева</string>
     <string name="middle">Посередине</string>
     <string name="right">Справа</string>
+    <string name="force_enable_adb">Force-Enable ADB</string>
     <!--Descriptions-->
     <string name="fancy_pulldown_notice">Отключение этого параметра может вызвать проблемы после перезагрузки. Включите и потом отключите вручную этот параметр после перезагрузки, или включите безопасный режим.</string>
     <string name="safe_mode_summary">ПОЛЬЗОВАТЕЛИ SAMSUNG, ОСТАВЬТЕ ЭТО ВКЛЮЧЁННЫМ, ЕСЛИ У ВАС AOSP ROM!</string>
@@ -286,6 +287,7 @@
     <string name="safe_mode_inactive_on_current_page">Безопасный режим неактивен на этом экране! Вернитесь в главное меню чтобы сохранить изменения!</string>
     <string name="qs_info_marshmallow">Удерживайте иконку чтобы её удалить.</string>
     <string name="remove_custom_blacklist_item_desc">Вы уверены, что хотите удалить %s переключатель?</string>
+    <string name="force_enable_adb_desc">Certain devices automatically turn ADB off after a period of inactivity. Enable this to force ADB to stay enabled indefinitely.</string>
     <!--Messages-->
     <string name="sorry_explain">Что-то пошло не так во время установки этого переключателя.</string>
     <string name="sorry_option">Попробуйте выполнить следующие команды с компьютера (это всё одна строка):</string>
