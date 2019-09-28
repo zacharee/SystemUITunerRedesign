@@ -32,6 +32,7 @@ class MiscFragment : AnimFragment() {
         setNightModeSwitchStates()
         setUpAnimationScales()
         setUpSnoozeStuff()
+        setUpForceAdb()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -332,6 +333,20 @@ class MiscFragment : AnimFragment() {
             b.onPreferenceChangeListener = listener
             c.onPreferenceChangeListener = listener
             d.onPreferenceChangeListener = listener
+        }
+    }
+
+    private fun setUpForceAdb() {
+        val force = findPreference<SwitchPreference>(PrefManager.FORCE_ENABLE_ADB)
+
+        force?.setOnPreferenceChangeListener { _, newValue ->
+            if (newValue.toString().toBoolean()) {
+                requireContext().startForceADBService()
+            } else {
+                requireContext().stopForceADBService()
+            }
+
+            true
         }
     }
 

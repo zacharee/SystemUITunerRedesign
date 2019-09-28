@@ -234,6 +234,8 @@
             android:enabled="true"
             android:exported="true"
             android:permission="com.zacharee1.permission.RUN_SERVICE" />
+        <service android:name=".services.ForceADBService"
+            android:exported="false" />
 
         <receiver
             android:name=".receivers.PackageReplaceReceiver"

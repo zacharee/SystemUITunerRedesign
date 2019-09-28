@@ -79,6 +79,7 @@ class PrefManager private constructor(private val context: Context) {
         const val VOLUME_ICON = "volume_icon"
         const val WIFI_FULLY_CONNECTED = "wifi_fully_connected"
         const val WIFI_STRENGTH = "wifi_strength"
+        const val FORCE_ENABLE_ADB = "force_enable_adb"
     }
 
     /**
@@ -183,6 +184,12 @@ class PrefManager private constructor(private val context: Context) {
         set(value) {
             putBoolean(SHOW_INTRO, value)
         }
+    val forceEnableAdb: Boolean
+        get() = getBoolean(FORCE_ENABLE_ADB, false)
+
+    /**
+     * Ints
+     */
     val tileColumn: Int
         get() = getInt(TILE_COLUMN)
     val tileColumnLandscape: Int
@@ -191,10 +198,6 @@ class PrefManager private constructor(private val context: Context) {
         get() = getInt(TILE_ROW)
     val tileRowLandscape: Int
         get() = getInt(TILE_ROW_LANDSCAPE)
-
-    /**
-     * Ints
-     */
     val demoModeBatteryLevel: Int
         get() = getInt(SELECTED_BATTERY_LEVEL, 100)
     val demoModeMobileStrength: Int

@@ -7,8 +7,13 @@ import android.content.Context
 import android.content.Intent
 import android.content.pm.ApplicationInfo
 import android.content.pm.PackageManager
+import android.os.Build.VERSION.SDK_INT
+import android.os.Build.VERSION_CODES
+import android.os.Build.VERSION_CODES.N_MR1
+import android.os.Build.VERSION_CODES.O
 import android.provider.Settings
 import android.util.TypedValue
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.FragmentManager
 import androidx.navigation.NavController
 import androidx.navigation.NavOptions
@@ -25,6 +30,9 @@ import com.zacharee1.systemuituner.activites.MainActivity
 import com.zacharee1.systemuituner.activites.OptionsActivity
 import com.zacharee1.systemuituner.activites.info.GrantWSActivity
 import com.zacharee1.systemuituner.activites.info.SettingWriteFailed
+import com.zacharee1.systemuituner.services.ForceADBService
+import com.zacharee1.systemuituner.services.SafeModeService
+
 
 fun PackageManager.isPackageInstalled(packageName: String) =
         try {
@@ -239,3 +247,59 @@ val navOptions =
 
 val Activity.navController: NavController
     get() = findNavController(R.id.nav_host)
+
+fun Context.getNotificationSettingsForChannel(channel: String?): Intent {
+    val intent = Intent()
+    when {
+        SDK_INT >= VERSION_CODES.P -> {
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            if (channel != null) {
+                intent.action = Settings.ACTION_CHANNEL_NOTIFICATION_SETTINGS
+                intent.putExtra(Settings.EXTRA_CHANNEL_ID, channel)
+            } else {
+                intent.action = Settings.ACTION_APP_NOTIFICATION_SETTINGS
+            }
+            intent.putExtra(Settings.EXTRA_APP_PACKAGE, packageName)
+        }
+        SDK_INT >= O -> {
+            if (channel != null) {
+                intent.action = Settings.ACTION_CHANNEL_NOTIFICATION_SETTINGS
+                intent.putExtra(Settings.EXTRA_CHANNEL_ID, channel)
+            } else {
+                intent.action = Settings.ACTION_APP_NOTIFICATION_SETTINGS
+            }
+            intent.putExtra(Settings.EXTRA_APP_PACKAGE, packageName)
+        }
+        SDK_INT >= N_MR1 -> {
+            intent.action = Settings.ACTION_APP_NOTIFICATION_SETTINGS
+            intent.putExtra(Settings.EXTRA_APP_PACKAGE, packageName)
+        }
+        SDK_INT >= VERSION_CODES.M -> {
+            intent.action = Settings.ACTION_APP_NOTIFICATION_SETTINGS
+            intent.putExtra("app_package", packageName)
+            intent.putExtra("app_uid", applicationInfo.uid)
+        }
+    }
+
+    return intent
+}
+
+fun Context.startSafeModeService() {
+    val intent = Intent(this, SafeModeService::class.java)
+    ContextCompat.startForegroundService(this, intent)
+}
+
+fun Context.stopSafeModeService() {
+    val intent = Intent(this, SafeModeService::class.java)
+    stopService(intent)
+}
+
+fun Context.startForceADBService() {
+    val intent = Intent(this, ForceADBService::class.java)
+    ContextCompat.startForegroundService(this, intent)
+}
+
+fun Context.stopForceADBService() {
+    val intent = Intent(this, ForceADBService::class.java)
+    stopService(intent)
+}

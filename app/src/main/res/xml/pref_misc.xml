@@ -34,6 +34,12 @@
             android:title="@string/show_clock_seconds"
             />
 
+        <SwitchPreference
+            android:key="force_enable_adb"
+            android:title="@string/force_enable_adb"
+            android:summary="@string/force_enable_adb_desc"
+            />
+
     </tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory>
 
     <tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory

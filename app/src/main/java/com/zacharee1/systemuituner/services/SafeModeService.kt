@@ -16,7 +16,6 @@ import android.view.Surface
 import android.view.WindowManager
 import androidx.core.app.NotificationCompat
 import com.zacharee1.systemuituner.R
-import com.zacharee1.systemuituner.activites.settings.SettingsActivity
 import com.zacharee1.systemuituner.util.*
 import com.zacharee1.systemuituner.util.PrefManager.Companion.AUDIO_SAFE
 import com.zacharee1.systemuituner.util.PrefManager.Companion.HIGH_BRIGHTNESS_WARNING
@@ -63,10 +62,15 @@ class SafeModeService : Service() {
         return null
     }
 
+    override fun onCreate() {
+        super.onCreate()
+
+        startInForeground()
+    }
+
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         prefs.registerOnSharedPreferenceChangeListener(prefsListener)
 
-        startInForeground()
         restoreStateOnStartup()
         restoreQSHeaderCount()
         restoreHBWState()
@@ -108,15 +112,15 @@ class SafeModeService : Service() {
 
     private fun startInForeground() {
         if (prefs.safeModeNotif) {
-            val settingsIntent = PendingIntent.getActivity(this, 0, Intent(this, SettingsActivity::class.java), 0)
+            val settingsIntent = PendingIntent.getActivity(this, 0, getNotificationSettingsForChannel("safe_mode_2"), 0)
             val manager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                val channel = NotificationChannel("safe_mode", resources.getString(R.string.app_name), NotificationManager.IMPORTANCE_LOW)
+                val channel = NotificationChannel("safe_mode_2", resources.getString(R.string.safe_mode), NotificationManager.IMPORTANCE_LOW)
                 manager.createNotificationChannel(channel)
             }
 
-            val notification = NotificationCompat.Builder(this, "safe_mode")
+            val notification = NotificationCompat.Builder(this, "safe_mode_2")
                     .setSmallIcon(R.mipmap.ic_launcher)
                     .setContentTitle(resources.getString(R.string.notif_title))
                     .setContentText(resources.getString(R.string.notif_desc))
