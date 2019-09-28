@@ -78,7 +78,7 @@ class SafeModeService : Service() {
         setUpContentObserver()
         restoreSnoozeState()
         restoreVolumeWarning()
-        return Service.START_STICKY
+        return START_STICKY
     }
 
     override fun onDestroy() {
@@ -182,14 +182,14 @@ class SafeModeService : Service() {
                 val row = prefs.tileRow
                 val col = prefs.tileColumn
 
-                if (row != -1) writeSecure(PrefManager.TILE_ROW, row)
-                if (col != -1) writeSecure(PrefManager.TILE_COLUMN, col)
+                if (row != -1) writeSecure(TILE_ROW, row)
+                if (col != -1) writeSecure(TILE_COLUMN, col)
             } else {
                 val row = prefs.tileRowLandscape
                 val col = prefs.tileColumnLandscape
 
-                if (row != -1) writeSecure(PrefManager.TILE_ROW, row)
-                if (col != -1) writeSecure(PrefManager.TILE_COLUMN, col)
+                if (row != -1) writeSecure(TILE_ROW, row)
+                if (col != -1) writeSecure(TILE_COLUMN, col)
             }
         }
     }
@@ -204,18 +204,9 @@ class SafeModeService : Service() {
         }
     }
 
-    private fun saveSnoozeState() {
-        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.O && prefs.safeModeSnoozeOptions) {
-            val set = Settings.Global.getString(contentResolver, NOTIFICATION_SNOOZE_OPTIONS)
-            if (set != null && !set.isEmpty()) prefs.notificationSnoozeOptions = set
-        }
-    }
-
     private fun setUpContentObserver() {
-        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M) {
-            contentResolver.registerContentObserver(Settings.Global.CONTENT_URI, true, observer)
-            contentResolver.registerContentObserver(Settings.Secure.CONTENT_URI, true, observer)
-        }
+        contentResolver.registerContentObserver(Settings.Global.CONTENT_URI, true, observer)
+        contentResolver.registerContentObserver(Settings.Secure.CONTENT_URI, true, observer)
     }
 
     private fun resetBlacklist(restore: Boolean) {
@@ -244,7 +235,6 @@ class SafeModeService : Service() {
 
         override fun onReceive(context: Context, intent: Intent) {
             resetBlacklist(false)
-            saveSnoozeState()
         }
     }
 
