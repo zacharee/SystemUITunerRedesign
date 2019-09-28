@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/StudioProjects-SystemUITunerRedesign.iml" filepath="$PROJECT_DIR$/StudioProjects-SystemUITunerRedesign.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/SystemUITunerRedesign.iml" filepath="$PROJECT_DIR$/.idea/SystemUITunerRedesign.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
