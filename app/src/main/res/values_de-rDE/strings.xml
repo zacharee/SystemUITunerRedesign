@@ -246,7 +246,7 @@
     <string name="left">Links</string>
     <string name="middle">Mitte</string>
     <string name="right">Rechts</string>
-    <string name="force_enable_adb">Force-Enable ADB</string>
+    <string name="force_enable_adb">Aktivierung von ADB erzwingen</string>
     <!--Descriptions-->
     <string name="fancy_pulldown_notice">Wenn du diese Option deaktivierst, kann es nach einem Neustart zu Problemen kommen. Schalte diese Option nach einem Neustart manuell ein und aus oder aktiviere den abgesicherten Modus.</string>
     <string name="safe_mode_summary">SAMSUNG-BENUTZER: LASSE DIES AN, SOFERN DU KEINE AOSP ROM HAST!</string>
@@ -287,7 +287,7 @@ Verwenden Sie die folgenden Optionen, um die verschiedenen Zeiten für das Zurü
     <string name="safe_mode_inactive_on_current_page">Der abgesicherte Modus ist auf diesem Bildschirm inaktiv! Wechsel zurück zum Hauptmenü, um die Änderungen zu speichern!</string>
     <string name="qs_info_marshmallow">Halte ein Symbol gedrückt, um es zu entfernen.</string>
     <string name="remove_custom_blacklist_item_desc">Bist du sicher, dass du den %s Schalter entfernen möchtest?</string>
-    <string name="force_enable_adb_desc">Certain devices automatically turn ADB off after a period of inactivity. Enable this to force ADB to stay enabled indefinitely.</string>
+    <string name="force_enable_adb_desc">Einige Geräte deaktivieren ADB automatisch nach einer gewissen Zeit der Inaktivität. Aktivieren Sie diese Funktion, um zu erzwingen, dass ADB auf unbestimmte Zeit aktiviert bleibt.</string>
     <!--Messages-->
     <string name="sorry_explain">Irgendetwas ist beim Setzen dieses Schalters schiefgelaufen.</string>
     <string name="sorry_option">Versuche den folgenden Befehl von einem Computer aus auszuführen (es ist eine Zeile):</string>
