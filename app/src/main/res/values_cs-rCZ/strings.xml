@@ -246,7 +246,7 @@
     <string name="left">Vlevo</string>
     <string name="middle">Uprostřed</string>
     <string name="right">Vpravo</string>
-    <string name="force_enable_adb">Force-Enable ADB</string>
+    <string name="force_enable_adb">Vynuceně povolit ADB</string>
     <!--Descriptions-->
     <string name="fancy_pulldown_notice">Přepnutí této volby může způsobit problémy po restartování. Přepněte manuálně tuto možnost po restartu nebo zapněte bezpečný režim.</string>
     <string name="safe_mode_summary">UŽIVATELÉ SAMSUNG UCHOVEJTE TOTO ZAPNUTO, POKUD NEJSTE NA AOSP ROM!</string>
