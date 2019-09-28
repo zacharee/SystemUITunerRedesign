@@ -246,6 +246,7 @@
     <string name="left">Left</string>
     <string name="middle">Middle</string>
     <string name="right">Right</string>
+    <string name="force_enable_adb">Force-Enable ADB</string>
     <!--Descriptions-->
     <string name="fancy_pulldown_notice">Toggling this option off can cause issues after a reboot. Manually toggle this option on and off after a reboot, or enable Safe Mode.</string>
     <string name="safe_mode_summary">SAMSUNG USERS KEEP THIS TURNED ON UNLESS YOU HAVE AN AOSP ROM!</string>
@@ -286,6 +287,7 @@
     <string name="safe_mode_inactive_on_current_page">Safe Mode is inactive on this screen! Go back to the main menu to save changes!</string>
     <string name="qs_info_marshmallow">Hold down on an icon to remove it.</string>
     <string name="remove_custom_blacklist_item_desc">Are you sure you want to remove the %s toggle?</string>
+    <string name="force_enable_adb_desc">Certain devices automatically turn ADB off after a period of inactivity. Enable this to force ADB to stay enabled indefinitely.</string>
     <!--Messages-->
     <string name="sorry_explain">Something went wrong while setting this toggle.</string>
     <string name="sorry_option">Try executing the following command from a computer (it\'s one line):</string>
