@@ -37,7 +37,7 @@
     <string name="nfc_icon">NFC</string>
     <string name="location_icon">Ubicación</string>
     <string name="su_icon">Super SU</string>
-    <string name="networking_data"><![CDATA[Redes y Datos]]></string>
+    <string name="network">Network</string>
     <string name="bluetooth_icon">Bluetooth</string>
     <string name="data_saver_icon">Ahorro de Datos</string>
     <string name="ethernet_icon">Ethernet</string>
@@ -134,6 +134,7 @@
     <string name="battery">Batería</string>
     <string name="back_up_blacklist">Copia de Seguridad de Lista Negra</string>
     <string name="restore_blacklist">Restaurar la Lista Negra</string>
+    <string name="backup_and_restore">Backup &amp; Restore</string>
     <string name="quick_settings">Configuración Rápida</string>
     <string name="demo_mode">Modo Demo</string>
     <string name="auto_detect">Detección Automática</string>
@@ -149,6 +150,7 @@
     <string name="none">Ninguno</string>
     <string name="full">Completo</string>
     <string name="navigation_bar">Barra de Navegación</string>
+    <string name="navigation_bar_color">Navigation Bar Color</string>
     <string name="pre_confirms">Predeterminado</string>
     <string name="config_qs">Configuración de Ajustes Rápidos</string>
     <string name="mode">Modo</string>
@@ -234,6 +236,17 @@
     <string name="high_brightness_warning">Advertencia de alto brillo</string>
     <string name="grant">Adjudicar</string>
     <string name="attention">¡ Atención!</string>
+    <string name="options">Options</string>
+    <string name="name">Name</string>
+    <string name="key">Key</string>
+    <string name="add_item">Add Item</string>
+    <string name="are_you_sure">Are you sure?</string>
+    <string name="style">Style</string>
+    <string name="clock_position">Clock Position</string>
+    <string name="left">Left</string>
+    <string name="middle">Middle</string>
+    <string name="right">Right</string>
+    <string name="force_enable_adb">Force-Enable ADB</string>
     <!--Descriptions-->
     <string name="fancy_pulldown_notice">Toggling this option off can cause issues after a reboot. Manually toggle this option on and off after a reboot, or enable Safe Mode.</string>
     <string name="safe_mode_summary">LOS USUARIOS DE SAMSUNG MANTIENEN ESTO ENCENDIDO A MENOS QUE TENGAN UNA ROM AOSP!</string>
@@ -241,7 +254,7 @@
     <string name="safe_mode_summary_2">Cambia la animación de lujo de QS en el arranque.</string>
     <string name="safe_mode_summary_3">Restaura el valor del conteo de encabezado personalizado QS en el arranque (+Nougat).</string>
     <string name="safe_mode_summary_4">Restaura el conteo de fila/columna personalizada QS en el arranque (TouchWiz, +Nougat).</string>
-    <string name="safe_mode_summary_5">Restaura las opciones de repetición de notificación personalizados en el arranque (8.1 +).</string>
+    <string name="safe_mode_summary_5">Keeps custom snooze options set (8.1+).</string>
     <string name="enable_in_settings">Habilitar en configuración.</string>
     <string name="reboot_required">(Debe Reiniciar)</string>
     <string name="auto_detect_summary">Intenta detectar automáticamente qué iconos de la barra de estado pueden estar ocultos. ¡No funciona en todos los dispositivos!</string>
@@ -253,9 +266,7 @@
     <string name="pnc_desc">El Controlador de Notificaciones le permiten ajustar el nivel de importancia para las notificaciones por aplicación. Simplemente active la característica y pulsado una notificación para empezar. Deberá pulsar la A para activar el control deslizante.</string>
     <string name="pnc_warn">Esta característica parece no ser compatible en algunos dispositivos, especialmente en TouchWiz! Es imposible de arreglar, pero la mejor solución parece ser golpear repetidamente en el nivel deseado. ¡Una vez más, NO puedo arreglarlo!</string>
     <string name="notif_desc">Pulse para cambiar los ajustes</string>
-    <string name="touchwiz_oreo_qqs">On TouchWiz Oreo devices, this setting is no longer reliable! Along with setting the number here, you may have to also save the value to Settings.System.apanel_number, which can only be done with ADB or root. Safe Mode attempts to implement a workaround, but I can\'t guarantee it will work!</string>
-    <string name="notifs_snooze_desc">&#160;
-    In Android 8.1 and later, you can set custom times for notification snoozing. These values reset on reboot, so make sure to enable Safe Mode if you would like them to persist across power cycles.\n\n&#160;
+    <string name="notifs_snooze_desc">    In Android 8.1 and later, you can set custom times for notification snoozing. These values reset on reboot, so make sure to enable Safe Mode if you would like them to persist across power cycles.\n\n
     Use the options below to set the different snooze times. \"Default\" sets the time Android will use by default. The other items will be the snooze times available for you to select.
     </string>
     <string name="custom_settings_input_desc">These fields allow you to enter your own custom settings.</string>
@@ -275,6 +286,8 @@
     <string name="safe_mode_needed_qs_row_col">Safe Mode must be turned on, with the Row/Column option activated, for landscape values to work.</string>
     <string name="safe_mode_inactive_on_current_page">Safe Mode is inactive on this screen! Go back to the main menu to save changes!</string>
     <string name="qs_info_marshmallow">Hold down on an icon to remove it.</string>
+    <string name="remove_custom_blacklist_item_desc">Are you sure you want to remove the %s toggle?</string>
+    <string name="force_enable_adb_desc">Certain devices automatically turn ADB off after a period of inactivity. Enable this to force ADB to stay enabled indefinitely.</string>
     <!--Messages-->
     <string name="sorry_explain">Something went wrong while setting this toggle.</string>
     <string name="sorry_option">Intenta ejecutar el comando desde tu computadora (una línea):</string>
@@ -282,6 +295,7 @@
     <string name="safe_mode_auto_enabled">¡Dispositivo Samsung detectado! Modo seguro se ha activado automáticamente para su seguridad. ¡Se advierte que modificar cualquier icono de la barra de Estado tiene el potencial de romper la interfaz de sistema! Siga el enlace en la descripción de Play Store para obtener más información.</string>
     <string name="requires_nougat">Requiere Nougat u más actual.</string>
     <string name="requires_oreo">Requiere de Oreo o posterior.</string>
+    <string name="requires_pie">Requires Pie or later.</string>
     <string name="requires_8_1">Requiere de Oreo 8.1 o posterior.</string>
     <string name="safe_mode_android_o">Debido a las limitaciones en Android Oreo, ésta característica podría no activarse en tu dispositivo</string>
     <string name="intro_1">¡Gracias por descargar mi aplicación! Modificador SystemUI  está destinado a reemplazar/complementar el modificador de sistema de interfaz de usuario en AOSP. Ambos usuarios con y sin Modificador de Sistema de interfaz pueden beneficiarse de esta aplicación.</string>
@@ -299,6 +313,9 @@
     <string name="backup_restored">Successfully restored backup</string>
     <string name="nothing_to_back_up">Nothing to back up</string>
     <string name="grant_usage">Please grant SystemUI Tuner access to Usage.</string>
+    <string name="setting_not_on_pie">This setting doesn\'t work on Pie or later.</string>
+    <string name="setting_not_on_touchwiz_pie">This setting doesn\'t work on TouchWiz Pie or later.</string>
+    <string name="setting_not_on_touchwiz">This setting doesn\'t work on TouchWiz.</string>
     <!--Instructions-->
     <string name="enable_debug"><![CDATA[1. ir a Ajustes >> Opciones de Desarrollador y activar la depuración USB.]]></string>
     <string name="accept_auth">2. Conecte su dispositivo al ordenador y acepte la solicitud de autorización en él.</string>
@@ -325,4 +342,5 @@
     <string name="donate_joke">¿Cómo; te preguntas? Magia.</string>
     <string name="donate_request">Si estás disfrutando de la aplicación, sería absolutamente increíble que nos ayudes con una donación.</string>
     <string name="donate_dont_worry">Claro; éso no es para nada obligatorio. Ésta aplicación es gratuita y siempre lo será.</string>
+    <string name="select_os">Please select an operating system.</string>
 </resources>
