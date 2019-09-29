@@ -37,7 +37,7 @@
     <string name="nfc_icon">Иконка NFC</string>
     <string name="location_icon">Иконка местоположения</string>
     <string name="su_icon">Иконка рута</string>
-    <string name="networking_data"><![CDATA[Сеть и Интернет]]></string>
+    <string name="network">Network</string>
     <string name="bluetooth_icon">Иконка Bluetooth</string>
     <string name="data_saver_icon">Иконка экономии трафика</string>
     <string name="ethernet_icon">Иконка Ethernet</string>
@@ -134,6 +134,7 @@
     <string name="battery">Батарея</string>
     <string name="back_up_blacklist">Резервная копия чёрного списка</string>
     <string name="restore_blacklist">Восстановить чёрный список</string>
+    <string name="backup_and_restore">Backup &amp; Restore</string>
     <string name="quick_settings">Быстрые настройки</string>
     <string name="demo_mode">Деморежим</string>
     <string name="auto_detect">Автоопределение</string>
@@ -149,6 +150,7 @@
     <string name="none">Нет</string>
     <string name="full">Полн.</string>
     <string name="navigation_bar">Панель навигации</string>
+    <string name="navigation_bar_color">Navigation Bar Color</string>
     <string name="pre_confirms">Предварительно подтверждённые</string>
     <string name="config_qs">Настроить быстрые плитки</string>
     <string name="mode">Режим</string>
@@ -234,6 +236,17 @@
     <string name="high_brightness_warning">Предупреждение о высокой яркости</string>
     <string name="grant">Предоставить</string>
     <string name="attention">Внимание!</string>
+    <string name="options">Options</string>
+    <string name="name">Name</string>
+    <string name="key">Key</string>
+    <string name="add_item">Add Item</string>
+    <string name="are_you_sure">Are you sure?</string>
+    <string name="style">Style</string>
+    <string name="clock_position">Clock Position</string>
+    <string name="left">Left</string>
+    <string name="middle">Middle</string>
+    <string name="right">Right</string>
+    <string name="force_enable_adb">Force-Enable ADB</string>
     <!--Descriptions-->
     <string name="fancy_pulldown_notice">Отключение этого параметра может вызвать проблемы после перезагрузки. Включите и потом отключите вручную этот параметр после перезагрузки, или включите безопасный режим.</string>
     <string name="safe_mode_summary">ПОЛЬЗОВАТЕЛИ SAMSUNG, ОСТАВЬТЕ ЭТО ВКЛЮЧЁННЫМ, ЕСЛИ У ВАС AOSP ROM!</string>
@@ -241,7 +254,7 @@
     <string name="safe_mode_summary_2">Включает модные анимации быстрых настроек при загрузке.</string>
     <string name="safe_mode_summary_3">Восстанавливает пользовательское значение количества заголовков быстрых настроек при загрузке (Nougat и выше).</string>
     <string name="safe_mode_summary_4">Восстанавливает пользовательский QS счетчик строк/столбцов при загрузке (TouchWiz, Nougat и выше).</string>
-    <string name="safe_mode_summary_5">Восстанавливает пользовательские параметры приглушения уведомлений при загрузке (8.1 и выше).</string>
+    <string name="safe_mode_summary_5">Keeps custom snooze options set (8.1+).</string>
     <string name="enable_in_settings">Включить в настройках.</string>
     <string name="reboot_required">(Требуется перезагрузка)</string>
     <string name="auto_detect_summary">Пытается автоматически определить, какие иконки в строке состояния можно скрыть. Работает не на всех устройствах!</string>
@@ -253,10 +266,8 @@
     <string name="pnc_desc">Управление уведомлением позволяет вам установить уровень важности уведомлений для каждого приложения. Просто включите функцию и удерживайте уведомление, чтобы начать. Возможно, вам нужно тапнуть на A, чтобы включить слайдер.</string>
     <string name="pnc_warn">Эта функция известна как ненадежная на некоторых устройствах, особенно на TouchWiz! Невозможно исправить, но похоже лучше всего будет повторно нажать на желаемом уровне. Опять же, я НЕ МОГУ исправить его!</string>
     <string name="notif_desc">Тапните для изменения значения</string>
-    <string name="touchwiz_oreo_qqs">На устройствах с TouchWiz Oreo эта настройка больше не надёжна! Наряду с установкой здесь номера, Вам также может придётся сохранить значение в Settings.System.apanel_number, которое можно сделать только с ADB или root. Безопасный режим пытается реализовать обход, но я не могу гарантировать, что это будет работать!</string>
-    <string name="notifs_snooze_desc">&#160;
-    В Android 8.1 и новее Вы можете установить пользовательские времена для приглушения уведомлений. Эти значения сбрасываются при перезагрузке, поэтому убедитесь, что включён безопасный режим, если вы хотите, чтобы они сохранялись между перезагрузками.\n\n&#160;
-    Используйте параметры ниже, чтобы установить различные времена приглушения уведомлений. \"По умолчанию\" устанавливает время, которое Android будет использоваться по умолчанию. Другие элементы будут доступны для выбора.
+    <string name="notifs_snooze_desc">    In Android 8.1 and later, you can set custom times for notification snoozing. These values reset on reboot, so make sure to enable Safe Mode if you would like them to persist across power cycles.\n\n
+    Use the options below to set the different snooze times. \"Default\" sets the time Android will use by default. The other items will be the snooze times available for you to select.
     </string>
     <string name="custom_settings_input_desc">Эти поля позволяют ввести свои собственные настройки.</string>
     <string name="custom_settings_read_desc">Эти поля позволяют читать значения указанного ключа.</string>
@@ -275,6 +286,8 @@
     <string name="safe_mode_needed_qs_row_col">Безопасный режим должен быть включен с активированным значением строки/колонки, для работы горизонтальных значений.</string>
     <string name="safe_mode_inactive_on_current_page">Безопасный режим неактивен на этом экране! Вернитесь в главное меню чтобы сохранить изменения!</string>
     <string name="qs_info_marshmallow">Удерживайте иконку чтобы её удалить.</string>
+    <string name="remove_custom_blacklist_item_desc">Are you sure you want to remove the %s toggle?</string>
+    <string name="force_enable_adb_desc">Certain devices automatically turn ADB off after a period of inactivity. Enable this to force ADB to stay enabled indefinitely.</string>
     <!--Messages-->
     <string name="sorry_explain">Что-то пошло не так во время установки этой настройки.</string>
     <string name="sorry_option">Попробуйте выполнить следующие команды с компьютера (это всё одна строка):</string>
@@ -282,6 +295,7 @@
     <string name="safe_mode_auto_enabled">Обнаружено устройство Samsung! Для вашей безопасности автоматически включен безопасный режим. Имейте в виду, что изменения любых иконок в строке состояния могут ПОЛОМАТЬ интерфейс системы! Пожалуйста, следуйте по ссылке в описании приложения в Google Play для получения дополнительной информации.</string>
     <string name="requires_nougat">Требует версии ПО Nougat или выше.</string>
     <string name="requires_oreo">Требует версии ПО Oreo или выше.</string>
+    <string name="requires_pie">Requires Pie or later.</string>
     <string name="requires_8_1">Требует версии ПО Oreo 8.1 или выше.</string>
     <string name="safe_mode_android_o">Из-за ограничений в Android O, эта функция не будет работать на вашем устройстве.</string>
     <string name="intro_1">Спасибо за загрузку моего приложения! SystemUI Tuner предназначен для замены/дополнения встроенного System UI Tuner, который отображается в AOSP. Пользователи с и без System UI Tuner могут извлечь выгоду из этого приложения.</string>
@@ -299,6 +313,9 @@
     <string name="backup_restored">Резервная копия успешно восстановлена</string>
     <string name="nothing_to_back_up">Нечего бэкапить</string>
     <string name="grant_usage">Пожалуйста, предоставьте SystemUI Tuner доступ к использованию.</string>
+    <string name="setting_not_on_pie">This setting doesn\'t work on Pie or later.</string>
+    <string name="setting_not_on_touchwiz_pie">This setting doesn\'t work on TouchWiz Pie or later.</string>
+    <string name="setting_not_on_touchwiz">This setting doesn\'t work on TouchWiz.</string>
     <!--Instructions-->
     <string name="enable_debug"><![CDATA[1. Перейдите в Настройки >> Для разработчиков и убедитесь, что отладка USB включена.]]></string>
     <string name="accept_auth">2. Подключите устройство к компьютеру и примите запрос на авторизацию на нём.</string>
@@ -325,4 +342,5 @@
     <string name="donate_joke">Как, спросите вы? Магия.</string>
     <string name="donate_request">Если вам здесь весело, было бы просто замечательно, если бы вы могли поделиться долларом-двумя.</string>
     <string name="donate_dont_worry">Нет абсолютно никаких обязательств. Это приложение бесплатно и всегда будет таким.</string>
+    <string name="select_os">Please select an operating system.</string>
 </resources>
