@@ -37,7 +37,7 @@
     <string name="nfc_icon">NFC-Symbol</string>
     <string name="location_icon">GPS-Symbol</string>
     <string name="su_icon">SU-Symbol</string>
-    <string name="network">Network</string>
+    <string name="network">Netzwerk</string>
     <string name="bluetooth_icon">Bluetooth-Symbol</string>
     <string name="data_saver_icon">Datensparmodus-Symbol</string>
     <string name="ethernet_icon">LAN-Symbol</string>
@@ -134,7 +134,7 @@
     <string name="battery">Akku</string>
     <string name="back_up_blacklist">Blacklisten sichern</string>
     <string name="restore_blacklist">Blacklist wiederherstellen</string>
-    <string name="backup_and_restore">Backup &amp; Restore</string>
+    <string name="backup_and_restore">Sichern und Wiederherstellen</string>
     <string name="quick_settings">Schnelleinstellungen</string>
     <string name="demo_mode">Demo-Modus</string>
     <string name="auto_detect">Auto Erkennung</string>
@@ -150,7 +150,7 @@
     <string name="none">Keins</string>
     <string name="full">Voll</string>
     <string name="navigation_bar">Navigationsleiste</string>
-    <string name="navigation_bar_color">Navigation Bar Color</string>
+    <string name="navigation_bar_color">Farbe der Navigationsleiste</string>
     <string name="pre_confirms">Vorabbestätigungen</string>
     <string name="config_qs">Kofiguriere eine Quick Settings Kachel</string>
     <string name="mode">Modus</string>
@@ -236,17 +236,17 @@
     <string name="high_brightness_warning">Warnung bei hoher Helligkeit</string>
     <string name="grant">Erlauben</string>
     <string name="attention">Achtung!</string>
-    <string name="options">Options</string>
+    <string name="options">Einstellungen</string>
     <string name="name">Name</string>
-    <string name="key">Key</string>
-    <string name="add_item">Add Item</string>
-    <string name="are_you_sure">Are you sure?</string>
-    <string name="style">Style</string>
-    <string name="clock_position">Clock Position</string>
-    <string name="left">Left</string>
-    <string name="middle">Middle</string>
-    <string name="right">Right</string>
-    <string name="force_enable_adb">Force-Enable ADB</string>
+    <string name="key">Schlüssel</string>
+    <string name="add_item">Element hinzufügen</string>
+    <string name="are_you_sure">Fortfahren?</string>
+    <string name="style">Stil</string>
+    <string name="clock_position">Position der Uhr</string>
+    <string name="left">Links</string>
+    <string name="middle">Mitte</string>
+    <string name="right">Rechts</string>
+    <string name="force_enable_adb">Aktivierung von ADB erzwingen</string>
     <!--Descriptions-->
     <string name="fancy_pulldown_notice">Wenn Sie diese Option deaktivieren, kann es nach einem Neustart zu Problemen kommen. Schalten Sie diese Option nach einem Neustart manuell ein und aus oder aktivieren Sie den abgesicherten Modus.</string>
     <string name="safe_mode_summary">SAMSUNG-BENUTZER: LASST DIES AN, SOFERN IHR KEINE AOSP ROM HABT!</string>
@@ -254,7 +254,7 @@
     <string name="safe_mode_summary_2">Schaltet die QS Fancy Animation beim Hochfahren ein und aus.</string>
     <string name="safe_mode_summary_3">Stellt benutzerdefinierte QS-Header-Zählwerte beim Hochfahren wieder her (Nougat+).</string>
     <string name="safe_mode_summary_4">Stellt benutzerdefinierte QS-Reihen/Spalten-Zählwerte beim Hochfahren wieder her (TouchWiz, Nougat+).</string>
-    <string name="safe_mode_summary_5">Keeps custom snooze options set (8.1+).</string>
+    <string name="safe_mode_summary_5">Lässt die Einstellung der benutzerdefinierten Optionen „Zurückstellen” (8.1+) unverändert.</string>
     <string name="enable_in_settings">In den Einstellungen aktivieren.</string>
     <string name="reboot_required">(Neustart erforderlich)</string>
     <string name="auto_detect_summary">Versuche automatisch zu erkennen, welche Statusleistensymbole ausgeblendet werden können. Funktioniert nicht auf allen Geräten!</string>
@@ -267,9 +267,8 @@ Dies ist das Rotationssperren-Symbol. Tippen Sie hier, um es zu beheben.</string
     <string name="pnc_desc">Mit Power Notification Controls können Sie die Wichtigkeit einer Benachrichtigung pro App einstellen. Einfach die Funktion aktivieren und eine Benachrichtigung lange halten. Manchmal müssen sie das A antippen um den Schieberegler zu aktivieren.</string>
     <string name="pnc_warn">Diese Funktion ist dafür bekannt, auf bestimmten Geräten, vor allem mit TouchWiz nicht zu funktionieren! Es ist unmöglich zu beheben, aber die beste Lösung ist, öfters auf das gewünschte Level zu tippen. Noch einmal, ich KANN ES NICHT beheben!</string>
     <string name="notif_desc">Antippen, um die Einstellungen zu ändern</string>
-    <string name="notifs_snooze_desc">    In Android 8.1 and later, you can set custom times for notification snoozing. These values reset on reboot, so make sure to enable Safe Mode if you would like them to persist across power cycles.\n\n
-    Use the options below to set the different snooze times. \"Default\" sets the time Android will use by default. The other items will be the snooze times available for you to select.
-    </string>
+    <string name="notifs_snooze_desc">In Android 8.1 und höher können Sie benutzerdefinierte Zeiten für das Zurückstellen von Benachrichtigungen festlegen. Diese Werte werden beim Neustart zurückgesetzt, also stellen Sie sicher, dass Sie den abgesicherten Modus aktivieren, wenn Sie möchten, dass sie auch über den Netzausfall hinaus erhalten bleiben.\n\n
+Verwenden Sie die folgenden Optionen, um die verschiedenen Zeiten für das Zurückstellen festzulegen. „Standard” legt die Zeit fest, die Android standardmäßig verwendet. Die anderen Einträge sind die Zeiten für das Zurückstellen, welche Sie auswählen können.</string>
     <string name="custom_settings_input_desc">In diesen Felder können Sie Ihre eigenen benutzerdefinierten Einstellungen eingeben.</string>
     <string name="custom_settings_read_desc">Diese Felder ermöglichen es Ihnen, den Wert eines bestimmten Schlüssels zu lesen.</string>
     <string name="custom_settings_warning">Seien Sie vorsichtig, bei dem, was Sie hier tun! Wenn Sie einen falschen Wert eingeben, können Sie eine Crash-Schleife, eine Boot-Schleife oder noch schlimmeres verursachen!</string>
@@ -287,8 +286,8 @@ Dies ist das Rotationssperren-Symbol. Tippen Sie hier, um es zu beheben.</string
     <string name="safe_mode_needed_qs_row_col">Der abgesicherte Modus muss eingeschaltet sein, wenn die Option Zeile/Spalte aktiviert ist, damit die Querformatwerte funktionieren.</string>
     <string name="safe_mode_inactive_on_current_page">Der abgesicherte Modus ist auf diesem Bildschirm inaktiv! Wechseln Sie zurück zum Hauptmenü, um die Änderungen zu speichern!</string>
     <string name="qs_info_marshmallow">Halten Sie ein Symbol gedrückt, um es zu entfernen.</string>
-    <string name="remove_custom_blacklist_item_desc">Are you sure you want to remove the %s toggle?</string>
-    <string name="force_enable_adb_desc">Certain devices automatically turn ADB off after a period of inactivity. Enable this to force ADB to stay enabled indefinitely.</string>
+    <string name="remove_custom_blacklist_item_desc">Möchten Sie den Umschalter %s wirklich entfernen?</string>
+    <string name="force_enable_adb_desc">Einige Geräte deaktivieren ADB automatisch nach einer gewissen Zeit der Inaktivität. Aktivieren Sie diese Funktion, um zu erzwingen, dass ADB auf unbestimmte Zeit aktiviert bleibt.</string>
     <!--Messages-->
     <string name="sorry_explain">Irgendetwas ist beim Setzen dieses Schalters schiefgelaufen.</string>
     <string name="sorry_option">Versuche den folgenden Befehl von einem Computer aus auszuführen (es ist eine Zeile):</string>
@@ -296,7 +295,7 @@ Dies ist das Rotationssperren-Symbol. Tippen Sie hier, um es zu beheben.</string
     <string name="safe_mode_auto_enabled">Samsung-Gerät erkannt! Sicherer Modus wurde automatisch zu deiner Sicherheit aktiviert. Sei gewarnt, dass jegliches Modifizieren deiner Statusleistensymbole möglicherweise dein SYSTEM ZERSTÖREN könnte! Bitte folge dem Link in der \"Play Store\"-Beschreibung für mehr Informationen.</string>
     <string name="requires_nougat">Erfordert Nougat oder höher.</string>
     <string name="requires_oreo">Erfordert Oreo oder höher.</string>
-    <string name="requires_pie">Requires Pie or later.</string>
+    <string name="requires_pie">Erfordert Android 9.0 Pie oder höher.</string>
     <string name="requires_8_1">Erfordert Oreo 8.1 oder höher.</string>
     <string name="safe_mode_android_o">Dieses Feature ist durch Limitationen in Android O nicht auf deinem Gerät verfügbar.</string>
     <string name="intro_1">Danke für das Herunterladen meiner App! SystemUI Tuner soll den in AOSP integrierten System-UI-Tuner ersetzen / ergänzen. Benutzer mit und ohne System UI Tuner können von dieser App profitieren.</string>
@@ -314,9 +313,9 @@ Dies ist das Rotationssperren-Symbol. Tippen Sie hier, um es zu beheben.</string
     <string name="backup_restored">Sicherung erfolgreich wiederhergestellt</string>
     <string name="nothing_to_back_up">Keine Sicherung erforderlich</string>
     <string name="grant_usage">Bitte gewähren Sie SystemUI Tuner Zugriff auf \"Usage\".</string>
-    <string name="setting_not_on_pie">This setting doesn\'t work on Pie or later.</string>
-    <string name="setting_not_on_touchwiz_pie">This setting doesn\'t work on TouchWiz Pie or later.</string>
-    <string name="setting_not_on_touchwiz">This setting doesn\'t work on TouchWiz.</string>
+    <string name="setting_not_on_pie">Diese Einstellung funktioniert nicht unter Android 9.0 Pie oder später.</string>
+    <string name="setting_not_on_touchwiz_pie">Diese Einstellung funktioniert nicht mit TouchWiz unter Pie oder höher.</string>
+    <string name="setting_not_on_touchwiz">Diese Einstellung funktioniert nicht unter TouchWiz.</string>
     <!--Instructions-->
     <string name="enable_debug"><![CDATA[1. Gehen zu den Einstellungen >> Entwickler-Optionen und stelle sicher, dass USB-Debugging aktiviert ist.]]></string>
     <string name="accept_auth">2. Verbinde dein Handy an deinen Computer und akzeptiere die Autorisierungsanfrage.</string>
@@ -343,5 +342,5 @@ Dies ist das Rotationssperren-Symbol. Tippen Sie hier, um es zu beheben.</string
     <string name="donate_joke">Wie, fragst du? Magie.</string>
     <string name="donate_request">Wenn du meine App magst, wäre es sehr nett, wenn du mir ein oder zwei Dollar spenden könntest.</string>
     <string name="donate_dont_worry">Das ist natürlich absolut keine Pflicht. Diese App ist kostenlos und wird es immer sein.</string>
-    <string name="select_os">Please select an operating system.</string>
+    <string name="select_os">Bitte ein Betriebssystem auswählen</string>
 </resources>
