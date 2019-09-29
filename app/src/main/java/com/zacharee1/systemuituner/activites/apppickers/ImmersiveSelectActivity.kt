@@ -3,22 +3,24 @@ package com.zacharee1.systemuituner.activites.apppickers
 import android.annotation.SuppressLint
 import android.content.pm.PackageManager
 import android.os.Bundle
-import android.preference.CheckBoxPreference
-import android.preference.Preference
 import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
 import android.widget.LinearLayout
 import android.widget.Toast
-import com.dinuscxj.progressbar.CircleProgressBar
+import androidx.preference.CheckBoxPreference
+import androidx.preference.Preference
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.activites.BaseAnimActivity
 import com.zacharee1.systemuituner.fragments.AnimFragment
 import com.zacharee1.systemuituner.handlers.ImmersiveHandler
 import com.zacharee1.systemuituner.misc.AppInfo
+import com.zacharee1.systemuituner.util.forEachPreference
+import com.zacharee1.systemuituner.util.getAnimTransaction
 import com.zacharee1.systemuituner.util.getInstalledApps
-import io.reactivex.Observable
-import io.reactivex.schedulers.Schedulers
+import kotlinx.android.synthetic.main.immersive_select.*
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 import java.util.*
 
 class ImmersiveSelectActivity : BaseAnimActivity() {
@@ -29,38 +31,34 @@ class ImmersiveSelectActivity : BaseAnimActivity() {
         setContentView(R.layout.immersive_select)
         setTitle(R.string.select_apps)
 
-        val bar = findViewById<CircleProgressBar>(R.id.app_load_progress)
+        GlobalScope.launch {
+            val it = getInstalledApps()
+            val appMap = TreeMap<String, AppInfo>()
 
-        Observable.fromCallable { getInstalledApps() }
-                .subscribeOn(Schedulers.io())
-                .observeOn(Schedulers.io())
-                .subscribe {
-                    val appMap = TreeMap<String, AppInfo>()
-
-                    it.forEach { info ->
-                        val activities = packageManager.getPackageInfo(info.packageName, PackageManager.GET_ACTIVITIES).activities
-                        if (activities?.isNotEmpty() == true) {
-                            appMap[info.loadLabel(packageManager).toString()] = AppInfo(info.loadLabel(packageManager).toString(),
-                                    info.packageName,
-                                    null,
-                                    info.loadIcon(packageManager))
-                            runOnUiThread { bar.progress = 100 * (it.indexOf(info) + 1) / it.size }
-                        }
-                    }
-
-                    runOnUiThread {
-                        val fragment = SelectorFragment.newInstance()
-                        fragment.setInfo(appMap)
-
-                        (findViewById<View>(R.id.content_main) as LinearLayout).removeAllViews()
-                        try {
-                            fragmentManager.beginTransaction().replace(R.id.content_main, fragment).commit()
-                        } catch (e: Exception) {
-                        }
-
-                        setUpActionBar(fragment)
-                    }
+            it.forEach { info ->
+                val activities = packageManager.getPackageInfo(info.packageName, PackageManager.GET_ACTIVITIES).activities
+                if (activities?.isNotEmpty() == true) {
+                    appMap[info.loadLabel(packageManager).toString()] = AppInfo(info.loadLabel(packageManager).toString(),
+                            info.packageName,
+                            null,
+                            info.loadIcon(packageManager))
+                    runOnUiThread { app_load_progress.progress = (it.indexOf(info) + 1f) / it.size }
                 }
+            }
+
+            runOnUiThread {
+                val fragment = SelectorFragment.newInstance()
+                fragment.setInfo(appMap)
+
+                (findViewById<View>(R.id.content_main) as LinearLayout).removeAllViews()
+                try {
+                    supportFragmentManager.getAnimTransaction().replace(R.id.content_main, fragment).commit()
+                } catch (e: Exception) {
+                }
+
+                setUpActionBar(fragment)
+            }
+        }
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -110,23 +108,24 @@ class ImmersiveSelectActivity : BaseAnimActivity() {
     }
 
     class SelectorFragment : AnimFragment() {
+        override val prefsRes = R.xml.pref_blank
+
         private var infos: TreeMap<String, AppInfo> = TreeMap()
 
         fun setInfo(info: TreeMap<String, AppInfo>) {
             infos = info
         }
 
-        override fun onCreate(savedInstanceState: Bundle?) {
-            super.onCreate(savedInstanceState)
+        override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
+            super.onCreatePreferences(savedInstanceState, rootKey)
 
-            addPreferencesFromResource(R.xml.pref_blank)
             populateList()
         }
 
-        override fun onSetTitle(): String? = resources.getString(R.string.select_apps)
+        override fun onSetTitle(): String = resources.getString(R.string.select_apps)
 
         private fun populateList() {
-            val selectedApps = ImmersiveHandler.parseSelectedApps(activity, TreeSet())
+            val selectedApps = ImmersiveHandler.parseSelectedApps(activity)
 
             for (info in infos.values) {
                 val preference = CheckBoxPreference(activity)
@@ -161,25 +160,19 @@ class ImmersiveSelectActivity : BaseAnimActivity() {
         }
 
         private fun setBoxesSelected(selected: Boolean) {
-            (0 until preferenceScreen.preferenceCount)
-                    .map { preferenceScreen.getPreference(it) }
-                    .filterIsInstance<CheckBoxPreference>()
-                    .apply {
-                        forEach {
-                            it.isChecked = selected
-                        }
-                    }
+            preferenceScreen.forEachPreference {
+                if (it is CheckBoxPreference) {
+                    it.isChecked = selected
+                }
+            }
         }
 
         fun invertSelection() {
-            (0 until preferenceScreen.preferenceCount)
-                    .map { preferenceScreen.getPreference(it) }
-                    .filterIsInstance<CheckBoxPreference>()
-                    .apply {
-                        forEach {
-                            it.isChecked = !it.isChecked
-                        }
-                    }
+            preferenceScreen.forEachPreference {
+                if (it is CheckBoxPreference) {
+                    it.isChecked = !it.isChecked
+                }
+            }
         }
 
         private fun restartMode() {

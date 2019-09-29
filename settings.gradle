@@ -1,2 +1,2 @@
-include ':app'
-//project(':SeekBarPref').projectDir = new File('/mnt/AA387BDB387BA54B/StudioProjects/MaterialSeekBarPreference/library')
+include ':app'/*, ':CollapsiblePreferenceCategory'*/
+//project(':CollapsiblePreferenceCategory').projectDir = new File('..\\CollapsiblePreferenceCategory\\library')

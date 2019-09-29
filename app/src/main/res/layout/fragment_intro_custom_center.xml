@@ -26,18 +26,18 @@
             android:textSize="28sp"
             android:textStyle="bold" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/change_selection"
-            android:visibility="gone"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="18sp"
-            style="@style/Base.Widget.AppCompat.Button.Borderless.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:gravity="center"
             android:text="@string/change_selection"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            android:textColor="?android:textColorPrimary"
+            android:visibility="gone"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            />
 
         <LinearLayout
             android:id="@+id/custom_layout_holder"

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/main_nav"
+    app:startDestination="@id/mainPrefs">
+
+    <fragment
+        android:id="@+id/mainPrefs"
+        android:name="com.zacharee1.systemuituner.activites.OptionsActivity$MainPrefs"
+        android:label="MainPrefs" >
+        <action
+            android:id="@+id/action_mainPrefs_to_statbarFragment"
+            app:destination="@id/statbarFragment" />
+        <action
+            android:id="@+id/action_mainPrefs_to_QSFragment"
+            app:destination="@id/QSFragment" />
+        <action
+            android:id="@+id/action_mainPrefs_to_demoFragment"
+            app:destination="@id/demoFragment" />
+        <action
+            android:id="@+id/action_mainPrefs_to_immersiveFragment"
+            app:destination="@id/immersiveFragment" />
+        <action
+            android:id="@+id/action_mainPrefs_to_lockFragment"
+            app:destination="@id/lockFragment" />
+        <action
+            android:id="@+id/action_mainPrefs_to_miscFragment"
+            app:destination="@id/miscFragment" />
+        <action
+            android:id="@+id/action_mainPrefs_to_customFragment"
+            app:destination="@id/customFragment" />
+        <action
+            android:id="@+id/action_mainPrefs_to_TWFragment"
+            app:destination="@id/TWFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/autoFragment"
+        android:name="com.zacharee1.systemuituner.fragments.AutoFragment"
+        android:label="AutoFragment" />
+    <fragment
+        android:id="@+id/customFragment"
+        android:name="com.zacharee1.systemuituner.fragments.CustomFragment"
+        android:label="CustomFragment" />
+    <fragment
+        android:id="@+id/statbarFragment"
+        android:name="com.zacharee1.systemuituner.fragments.StatbarFragment"
+        android:label="StatbarFragment" >
+        <action
+            android:id="@+id/action_statbarFragment_to_autoFragment"
+            app:destination="@id/autoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/QSFragment"
+        android:name="com.zacharee1.systemuituner.fragments.QSFragment"
+        android:label="QSFragment" />
+    <fragment
+        android:id="@+id/demoFragment"
+        android:name="com.zacharee1.systemuituner.fragments.DemoFragment"
+        android:label="DemoFragment" />
+    <fragment
+        android:id="@+id/immersiveFragment"
+        android:name="com.zacharee1.systemuituner.fragments.ImmersiveFragment"
+        android:label="ImmersiveFragment" />
+    <fragment
+        android:id="@+id/lockFragment"
+        android:name="com.zacharee1.systemuituner.fragments.LockFragment"
+        android:label="LockFragment" />
+    <fragment
+        android:id="@+id/miscFragment"
+        android:name="com.zacharee1.systemuituner.fragments.MiscFragment"
+        android:label="MiscFragment" />
+    <fragment
+        android:id="@+id/TWFragment"
+        android:name="com.zacharee1.systemuituner.fragments.TWFragment"
+        android:label="TWFragment" />
+</navigation>

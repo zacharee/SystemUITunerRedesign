@@ -1,16 +1,16 @@
 package com.zacharee1.systemuituner.prefs
 
-import android.app.AlertDialog
 import android.content.Context
-import android.preference.EditTextPreference
 import android.provider.Settings
 import android.util.AttributeSet
-import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.preference.DialogPreference
+import androidx.preference.PreferenceViewHolder
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.zacharee1.systemuituner.R
 
-class CustomReadPreference : EditTextPreference {
+class CustomReadPreference : DialogPreference {
     companion object {
         const val UNDEFINED = -1
         const val GLOBAL = 0
@@ -33,9 +33,12 @@ class CustomReadPreference : EditTextPreference {
         init(null, null, null)
     }
 
+    init {
+        isPersistent = true
+    }
+
     private fun init(attrs: AttributeSet?, defStyleAttr: Int?, defStyleRes: Int?) {
         layoutResource = R.layout.custom_read_preference
-        editText.hint = context.resources.getString(R.string.key_plaintext)
 
         if (attrs != null) {
             val array = context.theme.obtainStyledAttributes(attrs,
@@ -44,41 +47,40 @@ class CustomReadPreference : EditTextPreference {
                     defStyleRes ?: 0)
 
             for (i in 0 until array.indexCount) {
-                val index = array.getIndex(i)
-
-                when (index) {
+                when (val index = array.getIndex(i)) {
                     R.styleable.CustomInputPreference_type -> type = array.getInteger(index, UNDEFINED)
                 }
             }
         }
     }
 
-    override fun onSetInitialValue(restoreValue: Boolean, defaultValue: Any?) {
-        super.onSetInitialValue(restoreValue, defaultValue)
-        updateSummary(text)
+    override fun onSetInitialValue(defaultValue: Any?) {
+        super.onSetInitialValue(defaultValue)
+        updateSummary(getPersistedString(defaultValue?.toString()))
     }
 
-    override fun onBindView(view: View) {
-        super.onBindView(view)
+    override fun onBindViewHolder(holder: PreferenceViewHolder?) {
+        super.onBindViewHolder(holder)
 
-        view.findViewById<ImageView>(R.id.select).setOnClickListener {
-            if (text != null && summary != null) {
-                val dialog = AlertDialog.Builder(context)
-                        .setTitle(text)
+        holder?.itemView?.findViewById<ImageView>(R.id.select)?.setOnClickListener {
+            if (getPersistedString() != null && summary != null) {
+                val dialog = MaterialAlertDialogBuilder(context)
+                        .setTitle(getPersistedString())
                         .setMessage(summary)
                         .setPositiveButton(android.R.string.ok, null)
                         .show()
-                dialog.window.decorView.findViewById<TextView>(android.R.id.message).setTextIsSelectable(true)
+                dialog?.window?.decorView?.findViewById<TextView>(android.R.id.message)?.setTextIsSelectable(true)
             }
         }
     }
 
-    override fun onDialogClosed(positiveResult: Boolean) {
-        super.onDialogClosed(positiveResult)
+    fun handleSave(text: String?) {
+        persistString(text)
+        updateSummary(text)
+    }
 
-        if (positiveResult) {
-            updateSummary(text)
-        }
+    fun getPersistedString(): String? {
+        return getPersistedString(null)
     }
 
     private fun updateSummary(key: String?) {

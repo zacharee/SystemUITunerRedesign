@@ -1,56 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-    <PreferenceCategory
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.zacharee1.systemuituner.prefs.RedTextPref
+        android:summary="@string/imm_warn" />
+
+    <tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory
         android:title="@string/immersive_mode"
         android:key="imm_boxes">
 
-        <CheckBoxPreference
-            android:title="@string/none"
-            android:key="immersive.none" />
+        <com.zacharee1.systemuituner.prefs.ImmersiveModePreference
+            android:key="immersive_selection"
+            />
 
-        <CheckBoxPreference
-            android:title="@string/full"
-            android:key="immersive.full" />
+    </tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory>
 
-        <CheckBoxPreference
-            android:title="@string/status_bar"
-            android:key="immersive.status" />
-
-        <CheckBoxPreference
-            android:title="@string/navigation_bar"
-            android:key="immersive.navigation" />
-
-        <CheckBoxPreference
-            android:title="@string/pre_confirms"
-            android:key="immersive.preconfirms" />
-
-        <com.zacharee1.systemuituner.prefs.RedTextPref
-            android:summary="@string/imm_warn" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
+    <tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory
         android:title="@string/app_specific"
         android:key="app_specific">
 
         <Preference
             android:selectable="false"
-            android:summary="@string/app_specific_desc" />
+            android:summary="@string/app_specific_desc"
+            />
 
         <SwitchPreference
             android:title="@string/enabled"
-            android:key="app_immersive" />
+            android:key="app_immersive"
+            />
 
         <SwitchPreference
             android:title="@string/blacklist"
             android:summary="@string/blacklist_desc"
-            android:key="immersive_blacklist"/>
+            android:key="immersive_blacklist"
+            />
 
         <Preference
             android:title="@string/select_apps"
-            android:key="select_apps" />
+            android:key="select_apps"
+            />
 
-    </PreferenceCategory>
+    </tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory>
 
     <PreferenceCategory
         android:title="@string/config_qs"
@@ -62,7 +51,9 @@
             android:persistent="true"
             android:entries="@array/immersive_names"
             android:entryValues="@array/immersive_values"
-            android:defaultValue="immersive.full" />
+            android:defaultValue="immersive.full"
+            />
 
     </PreferenceCategory>
+
 </PreferenceScreen>

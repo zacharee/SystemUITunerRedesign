@@ -6,156 +6,73 @@
         android:summary="@string/safe_mode_inactive_on_current_page"
         />
 
-    <PreferenceCategory
-        android:title="@string/quick_settings">
-        <com.pavelsikun.seekbarpreference.SeekBarPreference
+    <tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory
+        android:title="@string/quick_settings"
+        android:key="qs_row_col_cat">
+
+        <tk.zwander.seekbarpreference.SeekBarPreference
             android:title="@string/qs_row_count"
             android:key="qs_tile_row"
-            app:msbp_minValue="1"
-            app:msbp_maxValue="10"
+            app:minValue="1"
+            app:maxValue="10"
             android:defaultValue="3"
             />
-        <com.pavelsikun.seekbarpreference.SeekBarPreference
+
+        <tk.zwander.seekbarpreference.SeekBarPreference
             android:title="@string/qs_column_count"
             android:key="qs_tile_column"
-            app:msbp_minValue="2"
-            app:msbp_maxValue="10"
+            app:minValue="2"
+            app:maxValue="10"
             android:defaultValue="3"
             />
-        <com.pavelsikun.seekbarpreference.SeekBarPreference
+
+        <tk.zwander.seekbarpreference.SeekBarPreference
             android:title="@string/qs_row_count_landscape"
             android:key="qs_tile_row_landscape"
-            app:msbp_minValue="1"
-            app:msbp_maxValue="3"
+            app:minValue="1"
+            app:maxValue="3"
             android:defaultValue="2"
             />
-        <com.pavelsikun.seekbarpreference.SeekBarPreference
+
+        <tk.zwander.seekbarpreference.SeekBarPreference
             android:title="@string/qs_column_count_landscape"
             android:key="qs_tile_column_landscape"
-            app:msbp_minValue="2"
-            app:msbp_maxValue="12"
+            app:minValue="2"
+            app:maxValue="12"
             android:defaultValue="8"
             />
+
         <com.zacharee1.systemuituner.prefs.RedTextPref
             android:summary="@string/safe_mode_needed_qs_row_col"
             />
-    </PreferenceCategory>
 
-    <PreferenceCategory
-        android:title="@string/navigation_bar">
+    </tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory>
 
-        <com.jaredrummler.android.colorpicker.ColorPreference
-            android:title="@string/color"
+    <tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory
+        android:key="touchwiz_misc"
+        android:title="@string/miscellaneous">
+
+        <ListPreference
+            android:title="@string/clock_position"
+            android:key="tw_clock_position"
+            android:entries="@array/tw_clock_position_names"
+            android:entryValues="@array/tw_clock_position_values"
+            android:defaultValue="left_clock_position"
+            />
+
+        <com.jaredrummler.android.colorpicker.ColorPreferenceCompat
+            android:title="@string/navigation_bar_color"
             android:key="navigationbar_color"
             app:cpv_showAlphaSlider="true"
-            android:defaultValue="-1"/>
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:title="@string/miscellaneous">
+            android:defaultValue="-1"
+            />
 
         <SwitchPreference
             android:title="@string/high_brightness_warning"
             android:defaultValue="true"
-            android:key="shown_max_brightness_dialog" />
+            android:key="shown_max_brightness_dialog"
+            />
 
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:title="@string/status_bar">
-        <com.zacharee1.systemuituner.prefs.StatBarWarnPref />
-
-        <Preference
-            android:icon="@drawable/ic_settings_backup_restore_black_24dp"
-            android:key="reset_blacklist"
-            android:title="@string/reset_blacklist"/>
-        <Preference
-            android:icon="@drawable/ic_backup_black_24dp"
-            android:key="backup_blacklist"
-            android:title="@string/back_up_blacklist"/>
-        <Preference
-            android:icon="@drawable/ic_restore_black_24dp"
-            android:key="restore_blacklist"
-            android:title="@string/restore_blacklist"/>
-        <Preference
-            android:key="auto_detect"
-            android:title="@string/auto_detect"
-            android:summary="@string/auto_detect_summary"
-            android:icon="@drawable/ic_help_outline_black_24dp" />
-
-        <SwitchPreference
-            android:title="@string/carrier_on_home"
-            android:key="slimindicator_home_carrier" />
-        <SwitchPreference
-            android:title="@string/carrier_on_lock"
-            android:key="slimindicator_lock_carrier" />
-        <SwitchPreference
-            android:key="face"
-            android:title="@string/face_icon"/>
-        <SwitchPreference
-            android:key="femtoicon"
-            android:title="@string/femtocell_icon"/>
-        <SwitchPreference
-            android:key="gesture"
-            android:title="@string/gesture_icon"/>
-        <SwitchPreference
-            android:key="glove"
-            android:title="@string/glove_icon"/>
-        <SwitchPreference
-            android:key="gps"
-            android:title="@string/gps_icon"/>
-        <SwitchPreference
-            android:key="ims_volte"
-            android:title="@string/ims_volte_icon"/>
-        <SwitchPreference
-            android:key="keyguard_wakeup"
-            android:title="@string/keyguard_wakeup_icon"/>
-        <SwitchPreference
-            android:key="knox_container"
-            android:title="@string/knox_icon"/>
-        <SwitchPreference
-            android:key="lbs"
-            android:title="@string/lbs_icon"/>
-        <SwitchPreference
-            android:key="phone_signal_second_stub"
-            android:title="@string/phone_signal_second_stub"/>
-        <SwitchPreference
-            android:key="private_mode"
-            android:title="@string/private_mode_icon"/>
-        <SwitchPreference
-            android:key="com.samsung.rcs"
-            android:title="@string/rcs_icon"/>
-        <SwitchPreference
-            android:key="safezone"
-            android:title="@string/safezone_icon"/>
-        <SwitchPreference
-            android:key="smart_bonding"
-            android:title="@string/smart_bonding_icon"/>
-        <SwitchPreference
-            android:key="smart_network"
-            android:title="@string/smart_network_icon"/>
-        <SwitchPreference
-            android:key="smart_scroll"
-            android:title="@string/smart_scroll_icon"/>
-        <SwitchPreference
-            android:key="toddler"
-            android:title="@string/toddler_icon"/>
-        <SwitchPreference
-            android:key="wearable_gear"
-            android:title="@string/wearable_icon"/>
-        <SwitchPreference
-            android:key="wifi_ap"
-            android:title="@string/wifi_ap_icon"/>
-        <SwitchPreference
-            android:key="wifi_oxygen"
-            android:title="@string/wifi_oxygen_icon"/>
-        <SwitchPreference
-            android:key="wifi_p2p"
-            android:title="@string/wifi_p2p_icon"/>
-        <SwitchPreference
-            android:key="wimax"
-            android:title="@string/wimax_icon"/>
-    </PreferenceCategory>
+    </tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory>
 
 </PreferenceScreen>

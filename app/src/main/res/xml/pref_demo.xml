@@ -4,111 +4,172 @@
 
     <PreferenceCategory
         android:title="@string/general">
+
         <Preference
             android:title="@string/enable"
-            android:key="sysui_demo_allowed"/>
+            android:key="sysui_demo_allowed"
+            />
         <SwitchPreference
             android:title="@string/show"
-            android:key="show_demo"/>
+            android:key="show_demo"
+            />
+
     </PreferenceCategory>
 
-    <PreferenceCategory
-        android:title="@string/miscellaneous">
-        <com.zacharee1.systemuituner.prefs.TimePreference
-            android:title="@string/select_time"
-            android:key="selected_time"/>
-        <com.pavelsikun.seekbarpreference.SeekBarPreference
-            app:msbp_maxValue="100"
-            android:defaultValue="50"
-            android:title="@string/select_battery_level"
-            android:key="selected_battery_level"/>
-        <com.pavelsikun.seekbarpreference.SeekBarPreference
-            app:msbp_maxValue="3"
+    <tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory
+        android:key="demo_network"
+        android:title="@string/network">
+
+        <tk.zwander.seekbarpreference.SeekBarPreference
+            app:maxValue="4"
             android:defaultValue="3"
             android:title="@string/wifi_strength"
-            android:key="wifi_strength"/>
-        <com.pavelsikun.seekbarpreference.SeekBarPreference
+            android:key="wifi_strength"
+            />
+
+        <SwitchPreference
+            android:title="@string/wifi_icon"
+            android:key="show_wifi"
+            />
+
+        <SwitchPreference
+            android:title="@string/wifi_fully"
+            android:key="wifi_fully_connected"
+            />
+
+        <tk.zwander.seekbarpreference.SeekBarPreference
             android:defaultValue="4"
-            app:msbp_maxValue="4"
+            app:maxValue="4"
             android:title="@string/mobile_strength"
-            android:key="selected_mobile_strength"/>
-        <com.pavelsikun.seekbarpreference.SeekBarPreference
-            android:defaultValue="1"
-            app:msbp_minValue="1"
-            app:msbp_maxValue="8"
-            android:title="@string/sim_count"
-            android:key="sim_count" />
-        <ListPreference
+            android:key="selected_mobile_strength"
+            />
+
+        <com.zacharee1.systemuituner.prefs.AutoSummaryListPreference
             android:persistent="true"
             android:title="@string/mobile_type"
             android:entries="@array/mobile_type_display"
             android:entryValues="@array/mobile_type_vals"
-            android:key="mobile_type"/>
-        <ListPreference
+            android:key="mobile_type"
+            />
+
+        <SwitchPreference
+            android:title="@string/mobile_icon"
+            android:key="show_mobile"
+            />
+
+        <SwitchPreference
+            android:title="@string/mobile_fully"
+            android:key="mobile_fully_connected"
+            />
+
+        <tk.zwander.seekbarpreference.SeekBarPreference
+            android:defaultValue="1"
+            app:minValue="1"
+            app:maxValue="8"
+            android:title="@string/sim_count"
+            android:key="sim_count"
+            />
+
+        <SwitchPreference
+            android:title="@string/no_sim_icon"
+            android:key="no_sim"
+            />
+
+    </tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory>
+
+    <tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory
+        android:key="demo_style"
+        android:title="@string/style">
+
+        <com.zacharee1.systemuituner.prefs.AutoSummaryListPreference
             android:persistent="true"
             android:title="@string/status_bar_style"
             android:entries="@array/statbar_style_display"
             android:entryValues="@array/statbar_style_vals"
-            android:key="status_bar_style"/>
-        <ListPreference
+            android:defaultValue="default"
+            android:key="status_bar_style"
+            />
+
+        <com.zacharee1.systemuituner.prefs.AutoSummaryListPreference
             android:persistent="true"
             android:title="@string/volume_icon_style"
             android:entries="@array/volume_icon_display"
             android:entryValues="@array/volume_icon_values"
-            android:defaultValue="hidden"
-            android:key="volume_icon" />
-        <ListPreference
+            android:defaultValue="hide"
+            android:key="volume_icon"
+            />
+
+        <com.zacharee1.systemuituner.prefs.AutoSummaryListPreference
             android:persistent="true"
             android:title="@string/bluetooth_icon_style"
             android:entries="@array/bluetooth_icon_display"
             android:entryValues="@array/bluetooth_icon_values"
             android:defaultValue="hidden"
-            android:key="bluetooth_icon" />
-        <SwitchPreference
-            android:title="@string/show_notifications"
-            android:key="show_notifications"/>
+            android:key="bluetooth_icon"
+            />
+
+    </tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory>
+
+    <tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory
+        android:key="demo_misc"
+        android:title="@string/miscellaneous">
+
+        <com.zacharee1.systemuituner.prefs.TimePreference
+            android:title="@string/select_time"
+            android:key="selected_time"
+            />
+
+        <tk.zwander.seekbarpreference.SeekBarPreference
+            app:maxValue="100"
+            android:defaultValue="50"
+            android:title="@string/select_battery_level"
+            android:key="selected_battery_level"
+            />
+
         <SwitchPreference
             android:title="@string/battery_charging"
-            android:key="battery_charging"/>
+            android:key="battery_charging"
+            />
+
+        <SwitchPreference
+            android:title="@string/show_notifications"
+            android:key="show_notifications"
+            />
+
         <SwitchPreference
             android:title="@string/show_airplane_mode"
-            android:key="show_airplane"/>
-        <SwitchPreference
-            android:title="@string/mobile_icon"
-            android:key="show_mobile"/>
-        <SwitchPreference
-            android:title="@string/mobile_fully"
-            android:key="mobile_fully_connected"/>
-        <SwitchPreference
-            android:title="@string/wifi_icon"
-            android:key="show_wifi"/>
-        <SwitchPreference
-            android:title="@string/wifi_fully"
-            android:key="wifi_fully_connected"/>
-        <SwitchPreference
-            android:title="@string/no_sim_icon"
-            android:key="no_sim" />
+            android:key="show_airplane"
+            />
+
         <SwitchPreference
             android:title="@string/location_icon"
-            android:key="location_demo" />
+            android:key="location_demo"
+            />
         <SwitchPreference
             android:title="@string/alarm_clock_icon"
-            android:key="alarm_demo" />
+            android:key="alarm_demo"
+            />
         <SwitchPreference
             android:title="@string/sync_icon"
-            android:key="sync_demo" />
+            android:key="sync_demo"
+            />
         <SwitchPreference
             android:title="@string/tty_icon"
-            android:key="tty_demo" />
+            android:key="tty_demo"
+            />
         <SwitchPreference
             android:title="@string/cdma_eri_icon"
-            android:key="eri_demo" />
+            android:key="eri_demo"
+            />
         <SwitchPreference
             android:title="@string/microphone_mute"
-            android:key="mute_demo" />
+            android:key="mute_demo"
+            />
         <SwitchPreference
             android:title="@string/speakerphone_icon"
-            android:key="speakerphone_demo" />
-    </PreferenceCategory>
+            android:key="speakerphone_demo"
+            />
+
+    </tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory>
 
 </PreferenceScreen>

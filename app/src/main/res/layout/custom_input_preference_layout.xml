@@ -7,22 +7,41 @@
     android:paddingEnd="16dp"
     android:gravity="center_vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:baselineAligned="false">
 
-    <EditText
-        android:id="@+id/key"
-        android:hint="@string/key_plaintext"
-        android:inputType="text"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/key_holder"
         android:layout_weight="1"
         android:layout_width="0dp"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
-    <EditText
-        android:id="@+id/value"
-        android:hint="@string/value_plaintext"
-        android:inputType="text"
+        <EditText
+            android:id="@+id/key"
+            android:inputType="text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:importantForAutofill="no"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/value_holder"
         android:layout_weight="1"
         android:layout_width="0dp"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <EditText
+            android:id="@+id/value"
+            android:inputType="text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:importantForAutofill="no"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
 </LinearLayout>

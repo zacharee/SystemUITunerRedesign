@@ -17,9 +17,6 @@
                     android:id="@+id/action_telegram"
                     android:title="@string/telegram" />
                 <item
-                    android:id="@+id/action_g_plus"
-                    android:title="@string/google" />
-                <item
                     android:id="@+id/action_xda_thread"
                     android:title="@string/xda_thread" />
                 <item

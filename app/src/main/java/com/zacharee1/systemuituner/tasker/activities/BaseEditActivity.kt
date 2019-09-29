@@ -8,6 +8,7 @@ import com.joaomgcd.taskerpluginlibrary.config.TaskerPluginConfigHelperNoOutput
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.activites.BaseAnimActivity
 import com.zacharee1.systemuituner.fragments.AnimFragment
+import com.zacharee1.systemuituner.util.getAnimTransaction
 
 abstract class BaseEditActivity<Input : Any> : BaseAnimActivity(), TaskerPluginConfig<Input> {
     companion object {
@@ -31,33 +32,23 @@ abstract class BaseEditActivity<Input : Any> : BaseAnimActivity(), TaskerPluginC
         val args = Bundle()
         args.putInt(PREFS_RES, prefsRes)
         fragment.arguments = args
-        fragment.setOnFinishAnimationListener {
-            onFinishFragmentAttach()
-        }
 
-        fragmentManager
-                ?.beginTransaction()
-                ?.replace(R.id.content_main, fragment, title)
-                ?.commit()
+        supportFragmentManager
+                .getAnimTransaction()
+                .replace(R.id.content_main, fragment, title.toString())
+                .commit()
     }
 
     override fun onBackPressed() {
         helper.finishForTasker()
     }
 
-    open fun onFinishFragmentAttach() {}
+    open fun onPreferenceAttached() {}
 
     class ConfigFragment : AnimFragment() {
-        private var listener: (() -> Unit)? = null
+        override val prefsRes: Int
+            get() = arguments!!.getInt(PREFS_RES)
 
-        override fun onAnimationFinishedEnter(enter: Boolean) {
-            addPreferencesFromResource(arguments.getInt(PREFS_RES))
-
-            listener?.invoke()
-        }
-
-        fun setOnFinishAnimationListener(listener: () -> Unit) {
-            this.listener = listener
-        }
+        override fun onSetTitle(): String? = null
     }
 }

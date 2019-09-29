@@ -15,18 +15,16 @@ import com.zacharee1.systemuituner.R
 
 @TargetApi(24)
 class BatteryTile : TileService() {
-    private var mReceiver: BroadcastReceiver? = null
+    private val receiver = object : BroadcastReceiver() {
+        override fun onReceive(context: Context, intent: Intent) {
+            setLevel(intent)
+        }
+    }
 
     override fun onStartListening() {
         super.onStartListening()
 
-        mReceiver = object : BroadcastReceiver() {
-            override fun onReceive(context: Context, intent: Intent) {
-                setLevel(intent)
-            }
-        }
-
-        registerReceiver(mReceiver, IntentFilter(Intent.ACTION_BATTERY_CHANGED))
+        registerReceiver(receiver, IntentFilter(Intent.ACTION_BATTERY_CHANGED))
 
         qsTile?.state = Tile.STATE_ACTIVE
         qsTile?.updateTile()
@@ -47,7 +45,7 @@ class BatteryTile : TileService() {
 
     override fun onDestroy() {
         try {
-            unregisterReceiver(mReceiver)
+            unregisterReceiver(receiver)
         } catch (e: IllegalArgumentException) {
             e.printStackTrace()
         }

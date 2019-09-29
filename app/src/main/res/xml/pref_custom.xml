@@ -1,54 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <com.zacharee1.systemuituner.prefs.RedTextPref
-        android:summary="@string/custom_settings_warning" />
 
-    <PreferenceCategory
+    <com.zacharee1.systemuituner.prefs.RedTextPref
+        android:summary="@string/custom_settings_warning"
+        />
+
+    <tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory
         android:title="@string/custom_settings_input"
         android:key="custom_settings_input">
+
         <Preference
             android:selectable="false"
             android:title="@string/about"
-            android:summary="@string/custom_settings_input_desc" />
+            android:summary="@string/custom_settings_input_desc"
+            />
 
         <com.zacharee1.systemuituner.prefs.CustomInputPreference
             app:type="global"
             android:key="global_settings"
-            android:title="@string/global"/>
+            android:title="@string/global"
+            />
 
         <com.zacharee1.systemuituner.prefs.CustomInputPreference
             app:type="secure"
             android:key="secure_settings"
-            android:title="@string/secure"/>
+            android:title="@string/secure"
+            />
 
         <com.zacharee1.systemuituner.prefs.CustomInputPreference
             app:type="system"
             android:key="system_settings"
-            android:title="@string/system"/>
-    </PreferenceCategory>
+            android:title="@string/system"
+            />
 
-    <PreferenceCategory
+    </tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory>
+
+    <tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory
         android:title="@string/custom_settings_read"
         android:key="custom_settings_read">
+
         <Preference
             android:selectable="false"
             android:title="@string/about"
-            android:summary="@string/custom_settings_read_desc" />
+            android:summary="@string/custom_settings_read_desc"
+            />
 
         <com.zacharee1.systemuituner.prefs.CustomReadPreference
             app:type="global"
             android:key="global_read"
-            android:title="@string/global" />
+            android:title="@string/global"
+            />
 
         <com.zacharee1.systemuituner.prefs.CustomReadPreference
             app:type="secure"
             android:key="secure_read"
-            android:title="@string/secure" />
+            android:title="@string/secure"
+            />
 
         <com.zacharee1.systemuituner.prefs.CustomReadPreference
             app:type="system"
             android:key="system_read"
-            android:title="@string/system" />
-    </PreferenceCategory>
+            android:title="@string/system"
+            />
+
+    </tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory>
+
 </PreferenceScreen>

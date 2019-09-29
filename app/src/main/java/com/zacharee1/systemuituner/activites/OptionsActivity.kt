@@ -1,48 +1,48 @@
 package com.zacharee1.systemuituner.activites
 
-import android.app.FragmentManager
 import android.os.Build
 import android.os.Bundle
-import android.preference.PreferenceFragment
-import android.preference.PreferenceManager
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import androidx.navigation.NavController
+import androidx.navigation.NavDestination
+import androidx.preference.Preference
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.fragments.AnimFragment
 import com.zacharee1.systemuituner.misc.OptionSelected
 import com.zacharee1.systemuituner.util.checkSamsung
+import com.zacharee1.systemuituner.util.navController
+import com.zacharee1.systemuituner.util.navOptions
+import com.zacharee1.systemuituner.util.prefs
 
-class OptionsActivity : BaseAnimActivity() {
+class OptionsActivity : BaseAnimActivity(), NavController.OnDestinationChangedListener {
     companion object {
-        const val ALLOW_CUSTOM_INPUT = "allow_custom_settings_input"
+        const val STATBAR = "statbar"
+        const val QS = "qs"
+        const val DEMO = "demo"
+        const val TOUCHWIZ = "touchwiz"
+        const val IMMERSIVE = "immersive"
+        const val LOCKSCREEN = "lockscreen"
+        const val MISC = "misc"
+        const val CUSTOM = "custom"
     }
-
-    private lateinit var main: MainPrefs
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         setContentView(R.layout.activity_item_list)
 
-        val hideWelcomeScreen = PreferenceManager.getDefaultSharedPreferences(this).getBoolean("hide_welcome_screen", false)
-        setBackClickable(!hideWelcomeScreen)
+        backButton.scaleX = 0f
+        backButton.scaleY = 0f
 
-        main = MainPrefs()
-
-        fragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
-        fragmentManager
-                ?.beginTransaction()
-                ?.replace(R.id.content_main, main)
-                ?.addToBackStack("main")
-                ?.commit()
+        navController.addOnDestinationChangedListener(this)
     }
 
     override fun onResume() {
         super.onResume()
 
-        val hideWelcomeScreen = PreferenceManager.getDefaultSharedPreferences(this).getBoolean("hide_welcome_screen", false)
-        setBackClickable(fragmentManager.backStackEntryCount > 1 || !hideWelcomeScreen)
+        updateBackClickable()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -55,48 +55,37 @@ class OptionsActivity : BaseAnimActivity() {
         val id = item.itemId
 
         if (id == android.R.id.home) {
-            handleBackPressed()
+            onBackPressed()
             return true
         }
 
         return OptionSelected.doAction(item.itemId, this)
     }
 
-    override fun onBackPressed() {
-        handleBackPressed()
+    override fun onDestinationChanged(controller: NavController, destination: NavDestination, arguments: Bundle?) {
+        updateBackClickable()
     }
 
-    private fun handleBackPressed() {
-        val hideWelcomeScreen = PreferenceManager.getDefaultSharedPreferences(this).getBoolean("hide_welcome_screen", false)
+    override fun onDestroy() {
+        super.onDestroy()
 
-        when {
-            fragmentManager != null -> when {
-                fragmentManager.backStackEntryCount > 1 -> {
-                    fragmentManager.popBackStackImmediate()
+        navController.removeOnDestinationChangedListener(this)
+    }
 
-                    val stillAboveOne = fragmentManager.backStackEntryCount > 1
+    private fun updateBackClickable() {
+        val currentFrag = navController.currentDestination
 
-                    setBackClickable(stillAboveOne || !hideWelcomeScreen)
-                }
-                else -> finish()
-            }
-            else -> finish()
-        }
+        setBackClickable(currentFrag?.id != R.id.mainPrefs || !prefs.hideWelcomeScreen)
     }
 
     class MainPrefs : AnimFragment() {
-        override fun onCreate(savedInstanceState: Bundle?) {
-            super.onCreate(savedInstanceState)
+        override val prefsRes = R.xml.prefs_main
 
-            addPreferencesFromResource(R.xml.prefs_main)
-        }
-
-        override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
+        override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
             super.onViewCreated(view, savedInstanceState)
 
             removeTouchWizIfNeeded()
             removeLockScreenIfNeeded()
-            setListeners()
         }
 
         override fun onResume() {
@@ -104,39 +93,48 @@ class OptionsActivity : BaseAnimActivity() {
             updateCustomEnabledState()
         }
 
+        override fun onPreferenceTreeClick(preference: Preference?): Boolean {
+            val (action, res) = when (preference?.key) {
+                STATBAR -> R.id.action_mainPrefs_to_statbarFragment to true
+                QS -> R.id.action_mainPrefs_to_QSFragment to true
+                DEMO -> R.id.action_mainPrefs_to_demoFragment to true
+                IMMERSIVE -> R.id.action_mainPrefs_to_immersiveFragment to true
+                TOUCHWIZ -> R.id.action_mainPrefs_to_TWFragment to true
+                LOCKSCREEN -> R.id.action_mainPrefs_to_lockFragment to true
+                MISC -> R.id.action_mainPrefs_to_miscFragment to true
+                CUSTOM -> R.id.action_mainPrefs_to_customFragment to true
+                else -> null to super.onPreferenceTreeClick(preference)
+            }
+
+            action?.let {
+                navController.navigate(
+                        it,
+                        null,
+                        navOptions
+                )
+            }
+
+            return res
+        }
+
         override fun onSetTitle() = resources.getString(R.string.app_name)
 
         private fun updateCustomEnabledState() {
-            val customPref = findPreference("custom")
-            val enabled = preferenceManager.sharedPreferences.getBoolean(ALLOW_CUSTOM_INPUT, false)
+            val customPref = findPreference<Preference>(CUSTOM)!!
+            val enabled = context!!.prefs.allowCustomSettingsInput
 
             customPref.isEnabled = enabled
             customPref.summary = if (enabled) null else resources.getString(R.string.enable_in_settings)
         }
 
         private fun removeTouchWizIfNeeded() {
-            if (!activity.checkSamsung()) preferenceScreen.removePreference(findPreference("touchwiz") ?: return)
+            if (activity?.checkSamsung() == false)
+                preferenceScreen.removePreference(findPreference(TOUCHWIZ) ?: return)
         }
 
         private fun removeLockScreenIfNeeded() {
-            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O) preferenceScreen.removePreference(findPreference("lockscreen") ?: return)
-        }
-
-        private fun setListeners() {
-            for (i in 0 until preferenceScreen.preferenceCount) {
-                val pref = preferenceScreen.getPreference(i)
-                pref.setOnPreferenceClickListener {
-                    (activity as BaseAnimActivity).setBackClickable(true)
-
-                    val fragment = Class.forName(pref.fragment ?: return@setOnPreferenceClickListener false).newInstance() as PreferenceFragment
-                    fragmentManager
-                            ?.beginTransaction()
-                            ?.replace(R.id.content_main, fragment, it.key)
-                            ?.addToBackStack(it.key)
-                            ?.commit()
-                    true
-                }
-            }
+            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O)
+                preferenceScreen.removePreference(findPreference("lockscreen") ?: return)
         }
     }
 }

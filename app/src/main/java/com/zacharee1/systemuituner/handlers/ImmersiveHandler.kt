@@ -1,11 +1,9 @@
 package com.zacharee1.systemuituner.handlers
 
 import android.content.Context
-import android.os.Bundle
-import android.preference.PreferenceManager
 import android.provider.Settings
 import android.util.Log
-import com.google.firebase.analytics.FirebaseAnalytics
+import com.zacharee1.systemuituner.util.prefs
 import com.zacharee1.systemuituner.util.writeGlobal
 import java.util.*
 
@@ -29,14 +27,15 @@ object ImmersiveHandler {
     }
 
     fun getMode(context: Context?): String {
-        var imm = Settings.Global.getString(context?.contentResolver, KEY) ?: DISABLED
+        var imm = Settings.Global.getString(context?.contentResolver ?: return DISABLED, KEY)
+                ?: DISABLED
         if (imm.isEmpty()) imm = DISABLED
         imm = imm.replace("=(.+?)$".toRegex(), "")
 
         return imm
     }
 
-    fun setMode(context: Context?, type: String) {
+    fun setMode(context: Context?, type: String = getMode(context)) {
         if (type.contains(FULL)
                 || type.contains(STATUS)
                 || type.contains(NAV)
@@ -47,9 +46,6 @@ object ImmersiveHandler {
 
             context?.writeGlobal(KEY, typeNew)
         } else {
-            val bundle = Bundle()
-            bundle.putString("mode", type)
-            FirebaseAnalytics.getInstance(context!!).logEvent("bad_immersive", bundle)
             Log.w("SystemUITuner", "Invalid Immersive Mode Type: $type")
         }
     }
@@ -67,7 +63,7 @@ object ImmersiveHandler {
     }
 
     private fun parseSelectedApps(context: Context?, def: String): String {
-        val apps = parseSelectedApps(context, TreeSet())
+        val apps = parseSelectedApps(context)
 
         return if (apps.isEmpty())
             def
@@ -83,27 +79,35 @@ object ImmersiveHandler {
         }
     }
 
-    fun parseSelectedApps(context: Context?, def: TreeSet<String>): TreeSet<String> {
-        return TreeSet(PreferenceManager.getDefaultSharedPreferences(context).getStringSet("immersive_apps", def)!!)
+    fun parseSelectedApps(context: Context?): TreeSet<String> {
+        return TreeSet(context?.prefs?.immersiveApps)
     }
 
     fun addApp(context: Context?, add: String) {
-        val set = TreeSet(PreferenceManager.getDefaultSharedPreferences(context).getStringSet("immersive_apps", TreeSet())!!)
+        val set = TreeSet(context?.prefs?.immersiveApps)
         set.add(add)
-        PreferenceManager.getDefaultSharedPreferences(context).edit().putStringSet("immersive_apps", set).apply()
+        context?.prefs?.immersiveApps = set
     }
 
     fun removeApp(context: Context?, remove: String) {
-        val set = TreeSet(PreferenceManager.getDefaultSharedPreferences(context).getStringSet("immersive_apps", TreeSet())!!)
+        val set = TreeSet(context?.prefs?.immersiveApps)
         set.remove(remove)
-        PreferenceManager.getDefaultSharedPreferences(context).edit().putStringSet("immersive_apps", set).apply()
+        context?.prefs?.immersiveApps = set
+    }
+
+    fun isValidMode(type: String): Boolean {
+        return type.contains(FULL)
+                || type.contains(STATUS)
+                || type.contains(NAV)
+                || type.contains(PRECONF)
+                || type.contains(DISABLED)
     }
 
     private fun isSelecting(context: Context?): Boolean {
-        return PreferenceManager.getDefaultSharedPreferences(context).getBoolean("app_immersive", false)
+        return context?.prefs?.appImmersive!!
     }
 
     private fun isBlacklist(context: Context?): Boolean {
-        return PreferenceManager.getDefaultSharedPreferences(context).getBoolean("immersive_blacklist", false)
+        return context?.prefs?.immersiveBlacklist!!
     }
 }

@@ -31,8 +31,10 @@
         android:allowBackup="true"
         android:fullBackupContent="@xml/backup_descriptor"
         android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round"
         android:label="@string/app_name"
         android:supportsRtl="true"
+        android:name="com.topjohnwu.superuser.ContainerApp"
         android:theme="@style/AppTheme.Dark">
         <activity
             android:name=".LauncherActivity"
@@ -232,6 +234,8 @@
             android:enabled="true"
             android:exported="true"
             android:permission="com.zacharee1.permission.RUN_SERVICE" />
+        <service android:name=".services.ForceADBService"
+            android:exported="false" />
 
         <receiver
             android:name=".receivers.PackageReplaceReceiver"

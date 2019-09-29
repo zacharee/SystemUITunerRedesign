@@ -4,26 +4,23 @@ import android.animation.Animator
 import android.annotation.SuppressLint
 import android.os.Build
 import android.os.Bundle
-import android.support.annotation.ColorInt
-import android.support.annotation.IdRes
-import android.support.annotation.LayoutRes
-import android.support.v4.app.Fragment
 import android.text.Html
 import android.text.Spanned
 import android.text.method.LinkMovementMethod
-import android.util.TypedValue
-import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.LinearLayout
-import android.widget.RadioButton
-import android.widget.TextView
+import android.widget.*
+import androidx.annotation.ColorInt
+import androidx.annotation.IdRes
+import androidx.annotation.LayoutRes
+import androidx.core.text.HtmlCompat
+import androidx.fragment.app.Fragment
 import com.github.paolorotolo.appintro.AppIntro2
 import com.github.paolorotolo.appintro.ISlideBackgroundColorHolder
+import com.github.paolorotolo.appintro.ISlidePolicy
 import com.zacharee1.systemuituner.R
-import com.zacharee1.systemuituner.util.pxToDp
+import kotlinx.android.synthetic.main.command_box.view.*
 import java.util.*
 
 class InstructionsActivity : AppIntro2() {
@@ -98,7 +95,7 @@ class InstructionsActivity : AppIntro2() {
         finish()
     }
 
-    open class OSInstructions: Instructions() {
+    open class OSInstructions: Instructions(), ISlidePolicy {
         companion object {
             @JvmOverloads
             fun newInstance(title: CharSequence, description: CharSequence,
@@ -118,21 +115,28 @@ class InstructionsActivity : AppIntro2() {
             }
         }
 
-        private lateinit var selection: Button
+        private val selection by lazy { findViewById<Button>(R.id.change_selection) }
 
-        override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-            val view = super.onCreateView(inflater, container, savedInstanceState)
+        private var hasSelectedAnOs = false
+        private var isOnOsSelectionScreen = true
 
-            selection = findViewById(R.id.change_selection)
+        override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+            super.onViewCreated(view, savedInstanceState)
 
             addSelectorButton()
             setSelectionListeners()
+        }
 
-            return view
+        override fun isPolicyRespected(): Boolean {
+            return !isOnOsSelectionScreen || hasSelectedAnOs
+        }
+
+        override fun onUserIllegallyRequestedNextPage() {
+            Toast.makeText(context, R.string.select_os, Toast.LENGTH_SHORT).show()
         }
 
         private fun setSelectionListeners() {
-            selection.visibility = View.GONE
+            selection?.visibility = View.GONE
 
             val windows = findViewById<RadioButton>(R.id.choose_windows)
             val mac = findViewById<RadioButton>(R.id.choose_mac)
@@ -171,19 +175,24 @@ class InstructionsActivity : AppIntro2() {
                     }
                 }
 
-                animateChange(layout, title, R.string.on_computer, Runnable { selection.visibility = View.VISIBLE })
+                animateChange(layout, title, R.string.on_computer,
+                        Runnable { selection?.visibility = View.VISIBLE })
+                isOnOsSelectionScreen = false
+                hasSelectedAnOs = true
             }
 
-            windows.setOnClickListener(clickListener)
-            mac.setOnClickListener(clickListener)
-            ubuntu.setOnClickListener(clickListener)
-            fedora.setOnClickListener(clickListener)
-            linux.setOnClickListener(clickListener)
+            windows?.setOnClickListener(clickListener)
+            mac?.setOnClickListener(clickListener)
+            ubuntu?.setOnClickListener(clickListener)
+            fedora?.setOnClickListener(clickListener)
+            linux?.setOnClickListener(clickListener)
         }
 
         private fun addSelectorButton() {
-            selection.setOnClickListener {
+            selection?.setOnClickListener {
                 animateChange(R.layout.fragment_adb_select, R.string.choose_your_weapon, R.string.which_os, Runnable { setSelectionListeners() })
+                isOnOsSelectionScreen = true
+                hasSelectedAnOs = false
             }
         }
 
@@ -191,7 +200,7 @@ class InstructionsActivity : AppIntro2() {
             view?.findViewById<LinearLayout>(R.id.animation_dummy)?.animate()?.let {
                 it.setListener(object : Animator.AnimatorListener {
                     override fun onAnimationEnd(animation: Animator?) {
-                        setInternalLayout(View.inflate(context, targetLayout, null) as ViewGroup)
+                        setInternalLayout(View.inflate(context ?: return, targetLayout, null) as ViewGroup)
                         setTitle(resources.getString(targetTitle))
                         setDescription(resources.getString(targetDesc))
                         runnable.run()
@@ -213,16 +222,18 @@ class InstructionsActivity : AppIntro2() {
     }
 
     open class Instructions : Fragment(), ISlideBackgroundColorHolder {
-        private var mView: View? = null
-
         private val layoutId: Int = R.layout.fragment_intro_custom_center
 
         override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-            mView = inflater.inflate(layoutId, container, false)
+            return inflater.inflate(layoutId, container, false)
+        }
 
-            val main = mView!!.findViewById<View>(R.id.main)
-            val title = mView!!.findViewById<TextView>(R.id.title)
-            val desc = mView!!.findViewById<TextView>(R.id.description)
+        override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+            super.onViewCreated(view, savedInstanceState)
+
+            val main = view.findViewById<View>(R.id.main)
+            val title = view.findViewById<TextView>(R.id.title)
+            val desc = view.findViewById<TextView>(R.id.description)
 
             val args = arguments
 
@@ -230,30 +241,28 @@ class InstructionsActivity : AppIntro2() {
             title.text = args.getString(ARG_TITLE)
             desc.text = args.getString(ARG_DESC)
 
-            if (args.getInt(ARG_LAYOUT) != 0 && args.getInt(ARG_LAYOUT) != -1) {
-                val group = View.inflate(activity, args.getInt(ARG_LAYOUT), null) as ViewGroup
+            val argLayout = args.getInt(ARG_LAYOUT)
+
+            if (argLayout > 0) {
+                val group = View.inflate(activity, argLayout, null) as ViewGroup
                 setInternalLayout(group)
             }
-
-            return mView
         }
 
-        fun <T : View> findViewById(@IdRes id: Int): T {
-            return mView!!.findViewById(id)
+        fun <T : View> findViewById(@IdRes id: Int): T? {
+            return view?.findViewById(id)
         }
 
         fun setTitle(title: String) {
-            val textView = mView?.findViewById<TextView>(R.id.title)
-            textView?.text = formatText(title)
+            findViewById<TextView>(R.id.title)?.text = formatText(title)
         }
 
         fun setDescription(description: String) {
-            val desc = mView?.findViewById<TextView>(R.id.description)
-            desc?.text = formatText(description)
+            findViewById<TextView>(R.id.description)?.text = formatText(description)
         }
 
         fun setInternalLayout(group: ViewGroup) {
-            val holder = mView?.findViewById<LinearLayout>(R.id.custom_layout_holder)
+            val holder = view?.findViewById<LinearLayout>(R.id.custom_layout_holder)
             holder?.removeAllViews()
 
             val viewChild = group.getChildAt(0) as ViewGroup
@@ -278,11 +287,11 @@ class InstructionsActivity : AppIntro2() {
         }
 
         override fun setBackgroundColor(backgroundColor: Int) {
-            mView!!.setBackgroundColor(backgroundColor)
+            view!!.setBackgroundColor(backgroundColor)
         }
 
         private fun formatText(text: String): Spanned {
-            return if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M) Html.fromHtml(text, 0) else Html.fromHtml(text)
+            return if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M) Html.fromHtml(text, 0) else HtmlCompat.fromHtml(text, 0)
         }
 
         companion object {
@@ -308,29 +317,18 @@ class InstructionsActivity : AppIntro2() {
     class Commands : Instructions() {
 
         @SuppressLint("SetTextI18n")
-        override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-            val view = super.onCreateView(inflater, container, savedInstanceState)
+        override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+            super.onViewCreated(view, savedInstanceState)
 
             val commands = arguments!!.getStringArrayList(ARG_COMMANDS)
-            val holder = view!!.findViewById<LinearLayout>(R.id.custom_layout_holder)
+            val holder = view.findViewById<LinearLayout>(R.id.custom_layout_holder)
 
             for (command in commands!!) {
-                val textView = TextView(activity)
-                textView.gravity = Gravity.CENTER_HORIZONTAL or Gravity.CENTER_VERTICAL
-                textView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 18f)
-                textView.setTextIsSelectable(true)
-                textView.text = PREFIX + command
-                textView.setPadding(
-                        0,
-                        activity!!.pxToDp(8f).toInt(),
-                        0,
-                        0
-                )
+                val commandBox = layoutInflater.inflate(R.layout.command_box, holder, false)
 
-                holder.addView(textView)
+                commandBox.command.text = "adb shell pm grant ${view.context.packageName} $command"
+                holder.addView(commandBox)
             }
-
-            return view
         }
 
         companion object {

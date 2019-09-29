@@ -1,7 +1,7 @@
 package com.zacharee1.systemuituner.tasker.activities
 
-import android.preference.EditTextPreference
-import android.preference.SwitchPreference
+import androidx.preference.EditTextPreference
+import androidx.preference.SwitchPreference
 import com.joaomgcd.taskerpluginlibrary.config.TaskerPluginConfigHelperNoOutput
 import com.joaomgcd.taskerpluginlibrary.input.TaskerInput
 import com.zacharee1.systemuituner.R
@@ -35,9 +35,11 @@ class EditBlacklistActivity : BaseEditActivity<BlacklistInput>() {
         remove = input.regular.remove
     }
 
-    override fun onFinishFragmentAttach() {
-        val keyPref = fragment.findPreference(KEY) as EditTextPreference
-        val remPref = fragment.findPreference(REMOVE) as SwitchPreference
+    override fun onResumeFragments() {
+        super.onResumeFragments()
+
+        val keyPref = fragment.findPreference<EditTextPreference>(KEY)!!
+        val remPref = fragment.findPreference<SwitchPreference>(REMOVE)!!
 
         keyPref.summary = key
         keyPref.text = key

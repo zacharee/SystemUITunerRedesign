@@ -7,20 +7,18 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.content.res.ColorStateList
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.support.v7.app.AlertDialog
-import android.util.TypedValue
-import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.fragment.app.Fragment
 import com.github.paolorotolo.appintro.AppIntro2
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.util.checkPermissions
-import com.zacharee1.systemuituner.util.pxToDp
-import com.zacharee1.systemuituner.util.startUp
+import kotlinx.android.synthetic.main.command_box.view.*
+import kotlinx.android.synthetic.main.permissions_fragment.view.*
 
 class SetupActivity : AppIntro2() {
     companion object {
@@ -53,14 +51,17 @@ class SetupActivity : AppIntro2() {
         val intent = intent
 
         if (intent != null) {
-            permissionsNeeded = ArrayList(intent.getStringArrayListExtra(PERMISSION_NEEDED)?.filterNot { checkCallingOrSelfPermission(it) == PackageManager.PERMISSION_GRANTED } ?: return)
+            permissionsNeeded = ArrayList(intent.getStringArrayListExtra(PERMISSION_NEEDED)
+                    ?.filterNot { checkCallingOrSelfPermission(it) == PackageManager.PERMISSION_GRANTED } ?: return)
 
-            addSlide(PermsFragment.newInstance(
+            val frag = PermsFragment.newInstance(
                     resources.getString(R.string.permissions),
                     resources.getString(R.string.adb_setup),
                     permissionsNeeded,
                     resources.getColor(R.color.intro_1, null)
-            ))
+            )
+
+            addSlide(frag)
         }
     }
 
@@ -71,29 +72,26 @@ class SetupActivity : AppIntro2() {
             val notRequiredMissing = ArrayList(missing).apply { removeAll(requiredMissing) }
 
             if (requiredMissing.isNotEmpty()) {
-                AlertDialog.Builder(this)
+                MaterialAlertDialogBuilder(this)
                         .setTitle(R.string.missing_perms)
                         .setMessage(requiredMissing.toString())
                         .setPositiveButton(R.string.ok, null)
                         .show()
             } else {
                 if (notRequiredMissing.isNotEmpty()) {
-                    AlertDialog.Builder(this)
+                    MaterialAlertDialogBuilder(this)
                             .setTitle(R.string.missing_perms)
                             .setMessage(R.string.missing_not_required_perms_desc)
                             .setPositiveButton(R.string.yes) { _, _ ->
-                                startUp()
                                 finish()
                             }
                             .setNegativeButton(R.string.no, null)
                             .show()
                 } else {
-                    startUp()
                     finish()
                 }
             }
         } else {
-            startUp()
             finish()
         }
     }
@@ -102,56 +100,41 @@ class SetupActivity : AppIntro2() {
         finish()
     }
 
-    fun launchInstructions(v: View) {
-        if (permissionsNeeded == null) return
-
-        val intent = Intent(this, InstructionsActivity::class.java)
-        intent.putStringArrayListExtra(InstructionsActivity.ARG_COMMANDS, permissionsNeeded)
-        startActivity(intent)
-    }
-
     class PermsFragment : Fragment() {
-        private var mView: View? = null
-
         @SuppressLint("SetTextI18n")
         override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
             val args = arguments
 
-            mView = inflater.inflate(R.layout.permissions_fragment, container, false)
+            val view = inflater.inflate(R.layout.permissions_fragment, container, false)
 
-            mView!!.setBackgroundColor(args!!.getInt("color"))
-            mView!!.findViewById<View>(R.id.adb_instructions).backgroundTintList = ColorStateList.valueOf(args.getInt("color"))
+            view.setBackgroundColor(args!!.getInt("color"))
+            view.findViewById<View>(R.id.adb_instructions).backgroundTintList = ColorStateList.valueOf(args.getInt("color"))
 
-            val title = mView!!.findViewById<TextView>(R.id.title)
+            val title = view.findViewById<TextView>(R.id.title)
             title.text = args.getString("title", "")
 
-            val desc = mView!!.findViewById<TextView>(R.id.description)
+            val desc = view.findViewById<TextView>(R.id.description)
             desc.text = args.getString("description", "")
 
-            val text = mView!!.findViewById<LinearLayout>(R.id.perms_layout)
+            val text = view.findViewById<LinearLayout>(R.id.perms_layout)
             val perms = args.getStringArrayList("permissions")
 
             if (perms != null) {
                 for (perm in perms) {
-                    val command = "adb shell pm grant " + activity!!.packageName + " "
+                    val commandBox = layoutInflater.inflate(R.layout.command_box, text, false)
 
-                    val textView = TextView(activity)
-                    textView.gravity = Gravity.CENTER_HORIZONTAL or Gravity.CENTER_VERTICAL
-                    textView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 18f)
-                    textView.setTextIsSelectable(true)
-                    textView.text = command + perm
-                    textView.setPadding(
-                            0,
-                            activity!!.pxToDp(8f).toInt(),
-                            0,
-                            0
-                    )
+                    commandBox.command.text = "adb shell pm grant ${view.context.packageName} $perm"
+                    text.addView(commandBox)
+                }
 
-                    text.addView(textView)
+                view.adb_instructions.setOnClickListener {
+                    val intent = Intent(activity, InstructionsActivity::class.java)
+                    intent.putStringArrayListExtra(InstructionsActivity.ARG_COMMANDS, perms)
+                    startActivity(intent)
                 }
             }
 
-            return mView
+            return view
         }
 
         companion object {

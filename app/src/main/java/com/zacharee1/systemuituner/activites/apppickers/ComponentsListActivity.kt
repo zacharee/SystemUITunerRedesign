@@ -3,20 +3,19 @@ package com.zacharee1.systemuituner.activites.apppickers
 import android.app.Activity
 import android.content.pm.PackageManager
 import android.os.Bundle
-import android.support.v7.widget.DividerItemDecoration
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
 import android.view.MenuItem
 import android.view.View
-import com.dinuscxj.progressbar.CircleProgressBar
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.activites.BaseAnimActivity
 import com.zacharee1.systemuituner.misc.AppInfo
 import com.zacharee1.systemuituner.misc.CustomAdapter
+import kotlinx.android.synthetic.main.activity_apps_list.*
 import java.util.*
 
 class ComponentsListActivity : BaseAnimActivity() {
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_apps_list)
@@ -47,7 +46,7 @@ class ComponentsListActivity : BaseAnimActivity() {
 
             runOnUiThread {
                 recyclerView.adapter = adapter
-                findViewById<View>(R.id.progress).visibility = View.GONE
+                progress.visibility = View.GONE
             }
         }).start()
 
@@ -77,15 +76,13 @@ class ComponentsListActivity : BaseAnimActivity() {
 
             val activities = info.activities
 
-            val bar = findViewById<CircleProgressBar>(R.id.progress)
-
             for (activity in activities) {
-                apps[activity.name] = AppInfo(activity.name,
+                apps[activity!!.name] = AppInfo(activity.name,
                         activity.packageName,
                         activity.name,
                         activity.loadIcon(packageManager))
 
-                runOnUiThread { bar.progress = 100 * (Arrays.asList(*activities).indexOf(activity) + 1) / apps.size }
+                runOnUiThread { progress.progress = (Arrays.asList(*activities).indexOf(activity) + 1f) / apps.size }
             }
         } catch (e: Exception) {
         }

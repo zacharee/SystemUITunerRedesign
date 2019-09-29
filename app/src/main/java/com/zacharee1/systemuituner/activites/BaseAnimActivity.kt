@@ -2,75 +2,65 @@ package com.zacharee1.systemuituner.activites
 
 import android.annotation.SuppressLint
 import android.content.SharedPreferences
-import android.graphics.Color
 import android.os.Bundle
-import android.preference.PreferenceManager
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.AppCompatTextView
-import android.support.v7.widget.Toolbar
 import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
+import android.view.animation.AnticipateInterpolator
+import android.view.animation.OvershootInterpolator
 import android.widget.ImageButton
 import android.widget.LinearLayout
 import android.widget.TextSwitcher
-import android.widget.TextView
+import androidx.annotation.CallSuper
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
+import com.google.android.material.bottomappbar.BottomAppBar
+import com.google.android.material.elevation.ElevationOverlayProvider
+import com.google.android.material.shape.MaterialShapeDrawable
 import com.zacharee1.systemuituner.R
-import com.zacharee1.systemuituner.util.isInDarkMode
+import com.zacharee1.systemuituner.util.PrefManager
+import com.zacharee1.systemuituner.util.prefs
 
 @SuppressLint("Registered")
 open class BaseAnimActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferenceChangeListener {
-    lateinit var textSwitcher: TextSwitcher
-    lateinit var toolbar: Toolbar
-    lateinit var content: LinearLayout
-
-    var title: String? = null
+    internal val toolbar by lazy { findViewById<BottomAppBar>(R.id.toolbar) }
+    internal val content by lazy { findViewById<LinearLayout>(R.id.content_internal) }
+    internal val titleSwitcher by lazy { findViewById<TextSwitcher>(R.id.title) }
+    internal val backButton by lazy { createBackButton() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        setTheme(if (isInDarkMode()) R.style.AppTheme_Dark else R.style.AppTheme)
+        setTheme(if (prefs.darkMode) R.style.AppTheme_Dark else R.style.AppTheme)
 
         super.onCreate(savedInstanceState)
 
         super.setContentView(R.layout.activity_base)
-        PreferenceManager.getDefaultSharedPreferences(this).registerOnSharedPreferenceChangeListener(this)
-
-        content = findViewById(R.id.content_internal)
-        toolbar = findViewById(R.id.toolbar)
-        textSwitcher = findViewById(R.id.text_switcher)
+        prefs.registerOnSharedPreferenceChangeListener(this)
 
         setSupportActionBar(toolbar)
-        hideTitleView()
-
-        toolbar.popupTheme = if (isInDarkMode()) R.style.AppTheme_PopupTheme_Dark else R.style.AppTheme_PopupTheme_Light
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowHomeEnabled(true)
 
-        val outAnim = AnimationUtils.loadAnimation(this, R.anim.pop_out)
-        val inAnim = AnimationUtils.loadAnimation(this, R.anim.pop_in)
+        val animDuration = resources.getInteger(android.R.integer.config_shortAnimTime).toLong()
 
-        outAnim.duration = resources.getInteger(android.R.integer.config_shortAnimTime).toLong()
-        inAnim.duration = outAnim.duration
+        titleSwitcher.inAnimation = AnimationUtils.loadAnimation(this, android.R.anim.fade_in).apply { duration =  animDuration}
+        titleSwitcher.outAnimation = AnimationUtils.loadAnimation(this, android.R.anim.fade_out).apply { duration = animDuration }
 
-        textSwitcher.outAnimation = outAnim
-        textSwitcher.inAnimation = inAnim
-        textSwitcher.setFactory {
-            AppCompatTextView(this).apply {
-                setTextAppearance(android.R.style.TextAppearance_Material_Widget_ActionBar_Title)
-                setTextColor(Color.WHITE)
+        if (prefs.darkMode) {
+            with(toolbar.background as MaterialShapeDrawable) {
+                val color = ElevationOverlayProvider(this@BaseAnimActivity)
+                        .compositeOverlayWithThemeSurfaceColorIfNeeded(elevation)
+
+                window.navigationBarColor = color
             }
         }
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        PreferenceManager.getDefaultSharedPreferences(this).unregisterOnSharedPreferenceChangeListener(this)
-    }
-
-    override fun onAttachedToWindow() {
-        if (super.getTitle() != null) setTitle(super.getTitle())
+        prefs.unregisterOnSharedPreferenceChangeListener(this)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -79,21 +69,6 @@ open class BaseAnimActivity : AppCompatActivity(), SharedPreferences.OnSharedPre
         }
 
         return super.onOptionsItemSelected(item)
-    }
-
-    override fun setTitle(titleId: Int) {
-        if (titleId > 0) {
-            setTitle(resources.getText(titleId))
-        }
-    }
-
-    override fun setTitle(title: CharSequence?) {
-        try {
-            textSwitcher.setText(title)
-        } catch (e: UninitializedPropertyAccessException) {}
-
-        this.title = title?.toString()
-        super.setTitle(null)
     }
 
     override fun setContentView(layoutResID: Int) {
@@ -115,30 +90,39 @@ open class BaseAnimActivity : AppCompatActivity(), SharedPreferences.OnSharedPre
         } else content.addView(view)
     }
 
+    override fun setTitle(titleId: Int) {
+        if (titleId > 0) {
+            title = resources.getText(titleId)
+        }
+    }
+
+    override fun setTitle(title: CharSequence?) {
+        titleSwitcher.setText(title)
+        super.setTitle(null)
+    }
+
+    @CallSuper
     override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences?, key: String?) {
         when (key) {
-            "dark_mode" -> recreate()
+            PrefManager.DARK_MODE -> recreate()
         }
     }
 
     fun setBackClickable(clickable: Boolean) {
-        val mNavButtonView = toolbar::class.java.getDeclaredField("mNavButtonView")
-        mNavButtonView.isAccessible = true
+        backButton.isClickable = clickable
 
-        val view = mNavButtonView.get(toolbar) as ImageButton
-        view.isClickable = clickable
-
-        view.animate()
-                .alpha(if (clickable) 1.0f else 0.0f)
+        backButton.animate()
+                .scaleX(if (clickable) 1f else 0f)
+                .scaleY(if (clickable) 1f else 0f)
+                .setInterpolator(if (clickable) OvershootInterpolator() else AnticipateInterpolator())
                 .setDuration(resources.getInteger(android.R.integer.config_shortAnimTime).toLong())
                 .start()
     }
 
-    private fun hideTitleView() {
-        val mTitleTextView = toolbar::class.java.getDeclaredField("mTitleTextView")
-        mTitleTextView.isAccessible = true
+    private fun createBackButton(): ImageButton {
+        val mNavButtonView = Toolbar::class.java.getDeclaredField("mNavButtonView")
+        mNavButtonView.isAccessible = true
 
-        val view = mTitleTextView.get(toolbar) as TextView
-        view.visibility = View.GONE
+        return mNavButtonView.get(toolbar) as ImageButton
     }
 }

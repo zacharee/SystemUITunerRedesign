@@ -4,11 +4,13 @@
     <EditTextPreference
         android:title="@string/key_plaintext"
         android:persistent="false"
-        android:key="key" />
+        android:key="key"
+        />
 
     <SwitchPreference
         android:title="@string/remove_from_blacklist"
         android:persistent="false"
-        android:key="remove" />
+        android:key="remove"
+        />
 
 </PreferenceScreen>

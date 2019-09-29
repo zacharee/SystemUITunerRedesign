@@ -1,57 +1,77 @@
 package com.zacharee1.systemuituner.fragments
 
-import android.animation.Animator
-import android.animation.AnimatorInflater
-import android.content.Context
-import android.preference.PreferenceFragment
-import com.zacharee1.systemuituner.R
+import android.content.SharedPreferences
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.ViewGroup
+import androidx.preference.Preference
+import androidx.recyclerview.widget.RecyclerView
+import com.zacharee1.systemuituner.fragments.pref.AddCustomBlacklistItemPreferenceFragment
+import com.zacharee1.systemuituner.fragments.pref.CustomInputPreferenceFragment
+import com.zacharee1.systemuituner.fragments.pref.CustomReadPreferenceFragment
+import com.zacharee1.systemuituner.prefs.AddCustomBlacklistItemPreference
+import com.zacharee1.systemuituner.prefs.CustomInputPreference
+import com.zacharee1.systemuituner.prefs.CustomReadPreference
+import com.zacharee1.systemuituner.util.prefs
+import jp.wasabeef.recyclerview.animators.LandingAnimator
+import tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceFragment
 
-open class AnimFragment : PreferenceFragment() {
-    private var animationFinished: (() -> Unit)? = null
-    private var attached = false
+abstract class AnimFragment : CollapsiblePreferenceFragment(), SharedPreferences.OnSharedPreferenceChangeListener {
+    internal abstract val prefsRes: Int
 
-    override fun onCreateAnimator(transit: Int, enter: Boolean, nextAnim: Int): Animator {
-        onAnimationCreated(enter)
-
-        val res = if (nextAnim > 0) nextAnim else if (enter) R.animator.pop_in else R.animator.pop_out
-        val anim = AnimatorInflater.loadAnimator(activity, res)
-
-        anim.addListener(object : Animator.AnimatorListener {
-            override fun onAnimationStart(animation: Animator?) {
-                if (enter) {
-                    val title = onSetTitle()
-                    if (title != null) {
-                        activity.runOnUiThread { activity.title = title }
-                    }
-                }
-            }
-            override fun onAnimationRepeat(animation: Animator?) {}
-            override fun onAnimationCancel(animation: Animator?) {}
-            override fun onAnimationEnd(animation: Animator?) {
-                if (enter && !isRemoving) {
-                    if (!attached) animationFinished = { onAnimationFinishedEnter(enter) }
-                    else onAnimationFinishedEnter(enter)
-                }
-                if (!enter) onAnimationFinishedExit(enter)
-            }
-        })
-
-        return anim
+    override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
+        setPreferencesFromResource(prefsRes, rootKey)
     }
 
-    override fun onAttach(context: Context?) {
-        super.onAttach(context)
-
-        attached = true
-
-        animationFinished?.invoke()
+    override fun onResume() {
+        super.onResume()
+        activity?.title = onSetTitle() ?: return
+        activity?.prefs?.registerOnSharedPreferenceChangeListener(this)
     }
 
-    internal open fun onAnimationCreated(enter: Boolean) {}
+    override fun onDestroy() {
+        super.onDestroy()
 
-    internal open fun onAnimationFinishedEnter(enter: Boolean) {}
+        activity?.prefs?.unregisterOnSharedPreferenceChangeListener(this)
+    }
 
-    internal open fun onAnimationFinishedExit(enter: Boolean) {}
+    override fun onDisplayPreferenceDialog(preference: Preference?) {
+        when (preference) {
+            is AddCustomBlacklistItemPreference -> {
+                val frag = AddCustomBlacklistItemPreferenceFragment.newInstance(preference.key)
+                frag.setTargetFragment(this, 1)
+                frag.show(fragmentManager!!, null)
+            }
+            is CustomInputPreference -> {
+                val frag = CustomInputPreferenceFragment.newInstance(preference.key)
+                frag.setTargetFragment(this, 0)
+                frag.show(fragmentManager!!, null)
+            }
+            is CustomReadPreference -> {
+                val frag = CustomReadPreferenceFragment.newInstance(preference.key)
+                frag.setTargetFragment(this, 0)
+                frag.show(fragmentManager!!, null)
+            }
+            else -> super.onDisplayPreferenceDialog(preference)
+        }
+    }
 
-    internal open fun onSetTitle(): String? = null
+    override fun onCreateRecyclerView(inflater: LayoutInflater?, parent: ViewGroup?, savedInstanceState: Bundle?): RecyclerView {
+        val recView = super.onCreateRecyclerView(inflater, parent, savedInstanceState)
+
+        recView.itemAnimator = object : LandingAnimator() {
+
+        }.apply {
+            addDuration = resources.getInteger(android.R.integer.config_shortAnimTime).toLong()
+            changeDuration = 0
+            removeDuration = 0
+            moveDuration = addDuration
+        }
+
+        return recView
+    }
+
+    override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences?, key: String?) {}
+
+    internal abstract fun onSetTitle(): String?
 }

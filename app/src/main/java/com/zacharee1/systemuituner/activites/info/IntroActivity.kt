@@ -4,23 +4,24 @@ import android.Manifest
 import android.graphics.Color
 import android.os.Bundle
 import android.os.CountDownTimer
-import android.preference.PreferenceManager
-import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.CheckBox
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.fragment.app.Fragment
 import com.github.paolorotolo.appintro.AppIntro2
 import com.github.paolorotolo.appintro.ISlideBackgroundColorHolder
+import com.topjohnwu.superuser.Shell
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.activites.instructions.SetupActivity
 import com.zacharee1.systemuituner.misc.OptionSelected
-import com.zacharee1.systemuituner.util.SuUtils
 import com.zacharee1.systemuituner.util.checkPermissions
+import com.zacharee1.systemuituner.util.prefs
 import com.zacharee1.systemuituner.util.startUp
+import com.zacharee1.systemuituner.util.sudo
+import kotlinx.android.synthetic.main.slide_warning.view.*
 
 class IntroActivity : AppIntro2() {
 
@@ -109,9 +110,9 @@ class IntroActivity : AppIntro2() {
         val ret = checkPermissions(perms)
 
         if (ret.isNotEmpty()) {
-            if (SuUtils.testSudo()) {
-                SuUtils.sudo("pm grant $packageName ${Manifest.permission.WRITE_SECURE_SETTINGS} ; " +
-                        "pm grant $packageName ${Manifest.permission.DUMP} ; " +
+            if (Shell.rootAccess()) {
+                sudo("pm grant $packageName ${Manifest.permission.WRITE_SECURE_SETTINGS}",
+                        "pm grant $packageName ${Manifest.permission.DUMP}",
                         "pm grant $packageName ${Manifest.permission.PACKAGE_USAGE_STATS}")
                 startUp()
                 finishAndSave()
@@ -126,14 +127,13 @@ class IntroActivity : AppIntro2() {
     }
 
     private fun finishAndSave() {
-        val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
-        sharedPreferences.edit().putBoolean("show_intro", false).apply()
+        prefs.showIntro = false
 
         finish()
     }
 
     open class SlideFragment : Fragment(), ISlideBackgroundColorHolder {
-        internal open val layoutId = R.layout.fragment_intro2
+        internal open val layoutId = R.layout.appintro_fragment_intro2
 
         override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
             val args = arguments
@@ -192,8 +192,7 @@ class IntroActivity : AppIntro2() {
         override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
             super.onViewCreated(view, savedInstanceState)
 
-            val terms = view.findViewById<Button>(R.id.terms)
-            terms.setOnClickListener {
+            view.terms.setOnClickListener {
                 OptionSelected.doAction(R.id.action_terms, activity!!)
             }
         }

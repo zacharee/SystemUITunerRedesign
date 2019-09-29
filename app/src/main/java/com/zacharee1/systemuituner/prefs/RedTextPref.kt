@@ -2,11 +2,10 @@ package com.zacharee1.systemuituner.prefs
 
 import android.content.Context
 import android.graphics.Color
-import android.preference.Preference
 import android.util.AttributeSet
-import android.view.View
-import android.view.ViewGroup
 import android.widget.TextView
+import androidx.preference.Preference
+import androidx.preference.PreferenceViewHolder
 import com.zacharee1.systemuituner.R
 
 open class RedTextPref : Preference {
@@ -15,12 +14,15 @@ open class RedTextPref : Preference {
     constructor(context: Context, attrs: AttributeSet) : super(context, attrs)
     constructor(context: Context) : super(context)
 
-    override fun onCreateView(parent: ViewGroup): View {
-        val view = super.onCreateView(parent)
+    init {
         title = context.resources.getString(R.string.warning)
-        view.findViewById<TextView>(android.R.id.title).setTextColor(Color.RED)
-        view.findViewById<TextView>(android.R.id.summary).setTextColor(Color.RED)
         isSelectable = false
-        return view
+    }
+
+    override fun onBindViewHolder(holder: PreferenceViewHolder?) {
+        super.onBindViewHolder(holder)
+
+        holder?.itemView?.findViewById<TextView>(android.R.id.title)?.setTextColor(Color.RED)
+        holder?.itemView?.findViewById<TextView>(android.R.id.summary)?.setTextColor(Color.RED)
     }
 }

@@ -8,36 +8,43 @@
 
     <PreferenceCategory
         android:title="QS Layout">
+
         <Preference
             android:title="Launch Editor"
-            android:key="launch_editor" />
+            android:key="launch_editor"
+            />
+
     </PreferenceCategory>
 
-    <PreferenceCategory
+    <tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory
         android:title="@string/general"
         android:key="general_qs">
+
         <SwitchPreference
             android:key="sysui_qs_fancy_anim"
             android:title="@string/fancy_pulldown_animation"
-            android:summary="@string/fancy_pulldown_notice"/>
+            android:summary="@string/fancy_pulldown_notice"
+            />
+
         <SwitchPreference
             android:key="sysui_qs_move_whole_rows"
-            android:title="@string/move_full_rows"/>
-    </PreferenceCategory>
+            android:title="@string/move_full_rows"
+            />
 
-    <PreferenceCategory
+    </tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory>
+
+    <tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory
         android:title="@string/qs_header_tile_count"
         android:key="qqs_count_category">
 
-        <com.pavelsikun.seekbarpreference.SeekBarPreference
-            app:msbp_minValue="1"
-            app:msbp_maxValue="20"
+        <tk.zwander.seekbarpreference.SeekBarPreference
+            app:minValue="1"
+            app:maxValue="20"
             android:defaultValue="5"
             android:key="sysui_qqs_count"
-            android:title="@string/qs_header_tile_count" />
+            android:title="@string/qs_header_tile_count"
+            />
 
-        <com.zacharee1.systemuituner.prefs.RedTextPref
-            android:summary="@string/touchwiz_oreo_qqs" />
-    </PreferenceCategory>
+    </tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory>
 
 </PreferenceScreen>

@@ -4,12 +4,12 @@ import android.annotation.TargetApi
 import android.content.*
 import android.os.Handler
 import android.os.Looper
-import android.preference.PreferenceManager
 import android.provider.AlarmClock
 import android.service.quicksettings.Tile
 import android.service.quicksettings.TileService
 import android.widget.Toast
 import com.zacharee1.systemuituner.R
+import com.zacharee1.systemuituner.util.prefs
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -28,7 +28,7 @@ class ClockTile : TileService() {
         const val FORMAT_24_NOSEC = "HH:mm"
     }
 
-    private val mReceiver: BroadcastReceiver = object : BroadcastReceiver() {
+    private val receiver: BroadcastReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context, intent: Intent) {
             setTime()
         }
@@ -40,16 +40,13 @@ class ClockTile : TileService() {
         }
     }
 
-    private lateinit var prefs: SharedPreferences
-
     private var shouldRun = false
 
     override fun onStartListening() {
         super.onStartListening()
-        prefs = PreferenceManager.getDefaultSharedPreferences(this)
         shouldRun = true
 
-        registerReceiver(mReceiver, IntentFilter(Intent.ACTION_TIME_TICK))
+        registerReceiver(receiver, IntentFilter(Intent.ACTION_TIME_TICK))
         prefs.registerOnSharedPreferenceChangeListener(prefsListener)
         setTime()
 
@@ -61,7 +58,7 @@ class ClockTile : TileService() {
         shouldRun = false
         prefs.unregisterOnSharedPreferenceChangeListener(prefsListener)
         try {
-            unregisterReceiver(mReceiver)
+            unregisterReceiver(receiver)
         } catch (e: Exception) {}
         super.onStopListening()
     }
@@ -74,7 +71,7 @@ class ClockTile : TileService() {
 
     override fun onDestroy() {
         try {
-            unregisterReceiver(mReceiver)
+            unregisterReceiver(receiver)
         } catch (e: IllegalArgumentException) {
             e.printStackTrace()
         }

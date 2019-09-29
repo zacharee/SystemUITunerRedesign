@@ -5,12 +5,14 @@
     <PreferenceCategory
         android:title="@string/shortcuts"
         android:enabled="false"
-        android:key="lockscreen_shortcuts" >
+        android:key="lockscreen_shortcuts"
+        app:expanded="true">
 
         <Preference
             android:key="oreo_needed"
             android:title="@string/requires_oreo"
-            android:selectable="false" />
+            android:selectable="false"
+            />
 
         <com.zacharee1.systemuituner.prefs.LockPref
             android:title="@string/choose_left"
@@ -18,7 +20,8 @@
             android:icon="@drawable/ic_help_outline_black_24dp"
             android:layout="@layout/preference_icon"
             android:widgetLayout="@layout/lock_pref_widget"
-            android:key="choose_left" />
+            android:key="choose_left"
+            />
 
         <com.zacharee1.systemuituner.prefs.LockPref
             android:title="@string/choose_right"
@@ -26,7 +29,8 @@
             android:icon="@drawable/ic_help_outline_black_24dp"
             android:layout="@layout/preference_icon"
             android:widgetLayout="@layout/lock_pref_widget"
-            android:key="choose_right" />
+            android:key="choose_right"
+            />
 
     </PreferenceCategory>
 

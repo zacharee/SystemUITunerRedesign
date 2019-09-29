@@ -25,6 +25,7 @@ class GrantWSActivity : BaseAnimActivity(), AppOpsManager.OnOpChangedListener {
 
             val grant = Intent(context, GrantWSActivity::class.java)
             grant.putExtra(EXTRA_KEY, key)
+            grant.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
 
             when (value) {
                 is Int -> grant.putExtra(EXTRA_VALUE, value)
