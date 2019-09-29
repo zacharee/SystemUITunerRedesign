@@ -37,7 +37,7 @@
     <string name="nfc_icon">NFC</string>
     <string name="location_icon">地點</string>
     <string name="su_icon">超級使用者 (SU)</string>
-    <string name="networking_data"><![CDATA[網路與行動數據]]></string>
+    <string name="network">Network</string>
     <string name="bluetooth_icon">藍牙</string>
     <string name="data_saver_icon">數據節省</string>
     <string name="ethernet_icon">乙太網路</string>
@@ -134,6 +134,7 @@
     <string name="battery">電池</string>
     <string name="back_up_blacklist">備份黑名單</string>
     <string name="restore_blacklist">還原黑名單</string>
+    <string name="backup_and_restore">Backup &amp; Restore</string>
     <string name="quick_settings">快速設定</string>
     <string name="demo_mode">Demo 模式</string>
     <string name="auto_detect">自動偵測</string>
@@ -149,6 +150,7 @@
     <string name="none">無</string>
     <string name="full">完整</string>
     <string name="navigation_bar">導覽列</string>
+    <string name="navigation_bar_color">Navigation Bar Color</string>
     <string name="pre_confirms">預先確認</string>
     <string name="config_qs">調整快速設定方塊</string>
     <string name="mode">模式</string>
@@ -234,6 +236,17 @@
     <string name="high_brightness_warning">高亮度警告</string>
     <string name="grant">允許</string>
     <string name="attention">注意！</string>
+    <string name="options">Options</string>
+    <string name="name">Name</string>
+    <string name="key">Key</string>
+    <string name="add_item">Add Item</string>
+    <string name="are_you_sure">Are you sure?</string>
+    <string name="style">Style</string>
+    <string name="clock_position">Clock Position</string>
+    <string name="left">Left</string>
+    <string name="middle">Middle</string>
+    <string name="right">Right</string>
+    <string name="force_enable_adb">Force-Enable ADB</string>
     <!--Descriptions-->
     <string name="fancy_pulldown_notice">關閉本功能可能導致重啟後發生問題。請於重啟後手動開啟再關閉，或啟用安全模式。</string>
     <string name="safe_mode_summary">三星用戶應保持本設定啟用，除非你有 AOSP ROM！</string>
@@ -241,7 +254,7 @@
     <string name="safe_mode_summary_2">開機時切換快速設定動畫。</string>
     <string name="safe_mode_summary_3">在啟動時還原自訂 QS 標頭計數值 (Nougat+)。</string>
     <string name="safe_mode_summary_4">在啟動時還原自訂 QS 行/列計數 (TouchWiz、Nougat+)。</string>
-    <string name="safe_mode_summary_5">啟動時，恢復自訂的通知暫停選項 (8.1 +)。</string>
+    <string name="safe_mode_summary_5">Keeps custom snooze options set (8.1+).</string>
     <string name="enable_in_settings">在設定中啟用</string>
     <string name="reboot_required">（需要重啟）</string>
     <string name="auto_detect_summary">嘗試自動偵測可被隱藏的狀態列圖示。請注意，並不是所有裝置都支援！</string>
@@ -253,9 +266,7 @@
     <string name="pnc_desc">電量通知控制讓你可以調整每個 app 的通知重要程度。開啟本功能並長按任意通知即可開始使用，若要使用滑掉條可能需要按 A。</string>
     <string name="pnc_warn">本功能在某些裝置上無法使用，尤其是 TouchWiz ！多按幾次或許會成功，這我沒辦法處理。</string>
     <string name="notif_desc">點擊以變更設定</string>
-    <string name="touchwiz_oreo_qqs">在 TouchWiz 奧利利的設備, 這個設置不再可靠!在這裡設置數位的同時, 您可能還必須將該值保存到 Settings.System.apanel_number, 這只能用ADB或 root 使用者來完成。安全模式試圖實現一種變通辦法, 但我不能保證它會奏效!</string>
-    <string name="notifs_snooze_desc">&#160;
-    In Android 8.1 and later, you can set custom times for notification snoozing. These values reset on reboot, so make sure to enable Safe Mode if you would like them to persist across power cycles.\n\n&#160;
+    <string name="notifs_snooze_desc">    In Android 8.1 and later, you can set custom times for notification snoozing. These values reset on reboot, so make sure to enable Safe Mode if you would like them to persist across power cycles.\n\n
     Use the options below to set the different snooze times. \"Default\" sets the time Android will use by default. The other items will be the snooze times available for you to select.
     </string>
     <string name="custom_settings_input_desc">這些欄位允許您輸入自己的自訂設置。</string>
@@ -275,6 +286,8 @@
     <string name="safe_mode_needed_qs_row_col">Safe Mode must be turned on, with the Row/Column option activated, for landscape values to work.</string>
     <string name="safe_mode_inactive_on_current_page">Safe Mode is inactive on this screen! Go back to the main menu to save changes!</string>
     <string name="qs_info_marshmallow">按住圖示以移除。</string>
+    <string name="remove_custom_blacklist_item_desc">Are you sure you want to remove the %s toggle?</string>
+    <string name="force_enable_adb_desc">Certain devices automatically turn ADB off after a period of inactivity. Enable this to force ADB to stay enabled indefinitely.</string>
     <!--Messages-->
     <string name="sorry_explain">設定時發生未知錯誤</string>
     <string name="sorry_option">試著從電腦執行下列指定（單行指令）：</string>
@@ -282,6 +295,7 @@
     <string name="safe_mode_auto_enabled">偵測到 Samsung 裝置！保險起見安全模式已自動開啟。請注意更動任何狀態列圖示可能導致系統損毀！詳細資訊請見 Play 商店中的敘述。</string>
     <string name="requires_nougat">需要 Android Nougat 以上的版本</string>
     <string name="requires_oreo">需要 Android Oreo 以上的版本</string>
+    <string name="requires_pie">Requires Pie or later.</string>
     <string name="requires_8_1">需要 Oreo 8.1 以上的版本。</string>
     <string name="safe_mode_android_o">由於 Android O 的限制，此功能無法在本裝置使用</string>
     <string name="intro_1">感謝下載我的 app！SystemUI Tuner 是款系統原生 System UI Tuner 的替代品，不論你的裝置有無 System UI Tuner ，這個 app 都能帶來全新感受。</string>
@@ -299,6 +313,9 @@
     <string name="backup_restored">成功還原備份</string>
     <string name="nothing_to_back_up">沒什麼能備份的</string>
     <string name="grant_usage">Please grant SystemUI Tuner access to Usage.</string>
+    <string name="setting_not_on_pie">This setting doesn\'t work on Pie or later.</string>
+    <string name="setting_not_on_touchwiz_pie">This setting doesn\'t work on TouchWiz Pie or later.</string>
+    <string name="setting_not_on_touchwiz">This setting doesn\'t work on TouchWiz.</string>
     <!--Instructions-->
     <string name="enable_debug"><![CDATA[1. 前往 "設定" 中的 "開發者選項"，確保 USB Debugging 是啟用的。]]></string>
     <string name="accept_auth">2. 將裝置連接至電腦，並接受授權要求。</string>
@@ -325,4 +342,5 @@
     <string name="donate_joke">你問我怎麼知道的？厲害吧</string>
     <string name="donate_request">如果你用得開心，來點贊助是再好不過了</string>
     <string name="donate_dont_worry">這當然沒有強制，App 永遠都是免費用到飽！</string>
+    <string name="select_os">Please select an operating system.</string>
 </resources>
