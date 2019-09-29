@@ -37,7 +37,7 @@
     <string name="nfc_icon">Ikona NFC</string>
     <string name="location_icon">Ikona polohy</string>
     <string name="su_icon">Ikona SU</string>
-    <string name="network">Network</string>
+    <string name="network">Síť</string>
     <string name="bluetooth_icon">Ikona bluetooth</string>
     <string name="data_saver_icon">Ikona spořiče dat</string>
     <string name="ethernet_icon">Ikona ethernetu</string>
@@ -134,7 +134,7 @@
     <string name="battery">Baterie</string>
     <string name="back_up_blacklist">Zálohovat černou listinu</string>
     <string name="restore_blacklist">Obnovit černou listinu</string>
-    <string name="backup_and_restore">Backup &amp; Restore</string>
+    <string name="backup_and_restore">Záloha &amp; Obnovení</string>
     <string name="quick_settings">Rychlá nastavení</string>
     <string name="demo_mode">Demo mód</string>
     <string name="auto_detect">Automaticky rozpoznat</string>
@@ -150,7 +150,7 @@
     <string name="none">Žádný</string>
     <string name="full">Plný</string>
     <string name="navigation_bar">Navigační panel</string>
-    <string name="navigation_bar_color">Navigation Bar Color</string>
+    <string name="navigation_bar_color">Barva navigačního panelu</string>
     <string name="pre_confirms">Předem potvrdit</string>
     <string name="config_qs">Nastavení rychlé dlaždice</string>
     <string name="mode">Režim</string>
@@ -236,17 +236,17 @@
     <string name="high_brightness_warning">Varování při vysokém jasu</string>
     <string name="grant">Udělit</string>
     <string name="attention">Upozornění!</string>
-    <string name="options">Options</string>
-    <string name="name">Name</string>
-    <string name="key">Key</string>
-    <string name="add_item">Add Item</string>
-    <string name="are_you_sure">Are you sure?</string>
-    <string name="style">Style</string>
-    <string name="clock_position">Clock Position</string>
-    <string name="left">Left</string>
-    <string name="middle">Middle</string>
-    <string name="right">Right</string>
-    <string name="force_enable_adb">Force-Enable ADB</string>
+    <string name="options">Možnosti</string>
+    <string name="name">Název</string>
+    <string name="key">Klíč</string>
+    <string name="add_item">Přidat položku</string>
+    <string name="are_you_sure">Jste si jisti?</string>
+    <string name="style">Styl</string>
+    <string name="clock_position">Pozice hodin</string>
+    <string name="left">Vlevo</string>
+    <string name="middle">Uprostřed</string>
+    <string name="right">Vpravo</string>
+    <string name="force_enable_adb">Vynuceně povolit ADB</string>
     <!--Descriptions-->
     <string name="fancy_pulldown_notice">Přepnutí této volby může způsobit problémy po restartování. Přepněte manuálně tuto možnost po restartu nebo zapněte bezpečný režim.</string>
     <string name="safe_mode_summary">UŽIVATELÉ SAMSUNG UCHOVEJTE TOTO ZAPNUTO, POKUD NEJSTE NA AOSP ROM!</string>
@@ -254,7 +254,7 @@
     <string name="safe_mode_summary_2">Přepne efektní animace QS při startu.</string>
     <string name="safe_mode_summary_3">Obnoví hodnotu vlastního počtu záhlaví QS při startu (Nougat+).</string>
     <string name="safe_mode_summary_4">Obnoví hodnotu vlastního počtu řádků/sloupců QS při startu (TouchWiz, Nougat+).</string>
-    <string name="safe_mode_summary_5">Keeps custom snooze options set (8.1+).</string>
+    <string name="safe_mode_summary_5">Udržuje vlastní nastavené možnosti odložení (8.1+).</string>
     <string name="enable_in_settings">Povolit v nastavení.</string>
     <string name="reboot_required">(Vyžaduje restart)</string>
     <string name="auto_detect_summary">Pokusy o automatické zjištění, které ikony stavové lišty mohou být skryty. Nefunguje na všech zařízeních!</string>
@@ -266,8 +266,12 @@
     <string name="pnc_desc">Ovládací prvky Power Notification Controls umožňují nastavit úroveň významu pro oznámení podle jednotlivých aplikací. Chcete-li začít, jednoduše zapněte funkci a podržte ji. Možná budete muset klepnutím na tlačítko A povolit posuvník.</string>
     <string name="pnc_warn">Tato funkce je známa jako nespolehlivá na určitých zařízeních, zejména na TouchWiz! Je nemožné to opravit, ale nejlepší řešení se zdá být opakované klepání na požadovanou úroveň. Znovu, NEMŮŽU to opravit!</string>
     <string name="notif_desc">Klepnutím změnit nastavení</string>
-    <string name="notifs_snooze_desc">    In Android 8.1 and later, you can set custom times for notification snoozing. These values reset on reboot, so make sure to enable Safe Mode if you would like them to persist across power cycles.\n\n
-    Use the options below to set the different snooze times. \"Default\" sets the time Android will use by default. The other items will be the snooze times available for you to select.
+    <string name="notifs_snooze_desc">    V systému Android 8.1 a novějších můžete nastavit vlastní časy pro odložení oznámení. Tyto hodnoty se při restartování obnoví, takže povolte bezpečný režim, pokud chcete, aby přetrvávaly napříč napájecími cykly.\n\n
+    Pomocí níže uvedených možností nastavíte různé časy odložení. \"Výchozí\" nastavuje čas, ve kterém Android používá výchozí čas odložení.
+Dalšími položkami jsou časy odložení, které můžete vybrat.
+    
+
+
     </string>
     <string name="custom_settings_input_desc">Tato pole umožňují zadat vlastní nastavení.</string>
     <string name="custom_settings_read_desc">Tato pole umožňují přečíst hodnotu zadaného klíče.</string>
@@ -286,8 +290,8 @@
     <string name="safe_mode_needed_qs_row_col">Bezpečný režim musí být zapnutý, je-li aktivována volba řádků/sloupců pro práci s hodnotami na šířku.</string>
     <string name="safe_mode_inactive_on_current_page">Bezpečný režim musí být aktivní na této obrazovce! Vraťte se do hlavního menu a uložte změny!</string>
     <string name="qs_info_marshmallow">Podržte stisknutou ikonu a odstraňte ji.</string>
-    <string name="remove_custom_blacklist_item_desc">Are you sure you want to remove the %s toggle?</string>
-    <string name="force_enable_adb_desc">Certain devices automatically turn ADB off after a period of inactivity. Enable this to force ADB to stay enabled indefinitely.</string>
+    <string name="remove_custom_blacklist_item_desc">Opravdu chcete odstranit přepínač %s?</string>
+    <string name="force_enable_adb_desc">Některá zařízení automaticky vypnou po určité době nečinnosti ADB. Povolením tohoto vynutíte, aby ADB zůstalo povoleno na neurčito.</string>
     <!--Messages-->
     <string name="sorry_explain">Při nastavování tohoto přepínače se něco pokazilo.</string>
     <string name="sorry_option">Zkuste spustit následující příkaz z počítače (je to jeden řádek):</string>
@@ -295,7 +299,7 @@
     <string name="safe_mode_auto_enabled">Zjištěno zařízení Samsung! Bezpečný režim byl pro vaši bezpečnost automaticky povolen. Mějte na paměti, že modifikování stavové lišty může ROZBÍT SYSTEM UI! Další informace naleznete v odkazu na Obchod Play.</string>
     <string name="requires_nougat">Vyžaduje Nugát nebo novější.</string>
     <string name="requires_oreo">Vyžaduje Oreo nebo novější.</string>
-    <string name="requires_pie">Requires Pie or later.</string>
+    <string name="requires_pie">Vyžaduje Pie nebo novější.</string>
     <string name="requires_8_1">Vyžaduje Oreo 8.1 nebo novější.</string>
     <string name="safe_mode_android_o">Z důvodu omezení, která byla přidána do systému Android O, nebude tato funkce v zařízení fungovat.</string>
     <string name="intro_1">Děkuji za stažení mé aplikace! SystemUI Tuner má za úkol nahradit/doplnit vestavěný Systém UI Tuner jako v AOSP. Uživatelé jak s tak i bez System UI Tuner můžou těžit z této aplikace.</string>
@@ -313,9 +317,9 @@
     <string name="backup_restored">Úspěšné obnovení zálohy</string>
     <string name="nothing_to_back_up">Nic k zálohování</string>
     <string name="grant_usage">Udělte prosím aplikaci SystemUI Tuner přístup k použití.</string>
-    <string name="setting_not_on_pie">This setting doesn\'t work on Pie or later.</string>
-    <string name="setting_not_on_touchwiz_pie">This setting doesn\'t work on TouchWiz Pie or later.</string>
-    <string name="setting_not_on_touchwiz">This setting doesn\'t work on TouchWiz.</string>
+    <string name="setting_not_on_pie">Toto nastavení nefunguje na Androidu Pie nebo novějším.</string>
+    <string name="setting_not_on_touchwiz_pie">Toto nastavení nefunguje na TouchWiz Pie nebo novějším.</string>
+    <string name="setting_not_on_touchwiz">Toto nastavení nefunguje na TouchWiz.</string>
     <!--Instructions-->
     <string name="enable_debug"><![CDATA[1. Přejděte do nastavení >> Možnosti pro vývojáře a ujistěte se, že máte povoleno USB ladění.]]></string>
     <string name="accept_auth">2. Připojte zařízení k počítači a přijměte žádost o autorizaci.</string>
@@ -342,5 +346,5 @@
     <string name="donate_joke">Jak, ptáte se? Kouzlo.</string>
     <string name="donate_request">Pokud se vám líbí moje aplikace, bylo by naprosto úžasné, kdybyste přispěli dolar nebo dva.</string>
     <string name="donate_dont_worry">To není žádná povinnost. Tato aplikace je a vždycky bude zdarma.</string>
-    <string name="select_os">Please select an operating system.</string>
+    <string name="select_os">Vyberte prosím operační systém.</string>
 </resources>
