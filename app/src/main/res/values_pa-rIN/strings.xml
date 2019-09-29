@@ -37,7 +37,7 @@
     <string name="nfc_icon">ਐਨਐਫਸੀ ਆਈਕਨ</string>
     <string name="location_icon">ਸਥਾਨ ਆਈਕਾਨ</string>
     <string name="su_icon">SU ਆਈਕਾਨ</string>
-    <string name="networking_data"><![CDATA[ਨੈਟਵਰਕਿੰਗ ਅਤੇ ਡਾਟਾ]]></string>
+    <string name="network">Network</string>
     <string name="bluetooth_icon">ਬਲਿਊਟੁੱਥ ਆਈਕਾਨ</string>
     <string name="data_saver_icon">ਡਾਟਾ ਸੇਵਰ ਆਈਕਨ</string>
     <string name="ethernet_icon">ਈਥਰਨੈੱਟ ਆਈਕਾਨ</string>
@@ -134,6 +134,7 @@
     <string name="battery">ਬੈਟਰੀ</string>
     <string name="back_up_blacklist">ਬਲੈਕਲਿਸਟ ਬੈਕ ਅਪ ਕਰੋ</string>
     <string name="restore_blacklist">ਬਲੈਕਲਿਸਟ ਨੂੰ ਪੁਨਰ ਸਥਾਪਿਤ ਕਰੋ</string>
+    <string name="backup_and_restore">Backup &amp; Restore</string>
     <string name="quick_settings">ਤੁਰੰਤ ਸੈਟਿੰਗਜ਼</string>
     <string name="demo_mode">ਡੈਮੋ ਮੋਡ</string>
     <string name="auto_detect">ਸਵੈ-ਪਹਿਚਾਣ</string>
@@ -149,6 +150,7 @@
     <string name="none">ਕੋਈ ਨਹੀਂ</string>
     <string name="full">ਪੂਰਾ</string>
     <string name="navigation_bar">ਨੇਵੀਗੇਸ਼ਨ ਬਾਰ</string>
+    <string name="navigation_bar_color">Navigation Bar Color</string>
     <string name="pre_confirms">ਪਹਿਲਾਂ ਪੁਸ਼ਟੀ ਕਰਦਾ ਹੈ</string>
     <string name="config_qs">ਤੇਜ਼ ਟਾਇਲ ਨੂੰ ਕੌਂਫਿਗਰ ਕਰੋ</string>
     <string name="mode">ਢੰਗ</string>
@@ -234,6 +236,17 @@
     <string name="high_brightness_warning">High Brightness Warning</string>
     <string name="grant">Grant</string>
     <string name="attention">Attention!</string>
+    <string name="options">Options</string>
+    <string name="name">Name</string>
+    <string name="key">Key</string>
+    <string name="add_item">Add Item</string>
+    <string name="are_you_sure">Are you sure?</string>
+    <string name="style">Style</string>
+    <string name="clock_position">Clock Position</string>
+    <string name="left">Left</string>
+    <string name="middle">Middle</string>
+    <string name="right">Right</string>
+    <string name="force_enable_adb">Force-Enable ADB</string>
     <!--Descriptions-->
     <string name="fancy_pulldown_notice">ਇਸ ਚੋਣ ਨੂੰ ਬੰਦ ਕਰਨ ਨਾਲ ਰੀਬੂਟ ਤੋਂ ਬਾਅਦ ਦੇ ਮਸਲਿਆਂ ਦਾ ਕਾਰਨ ਬਣ ਸਕਦਾ ਹੈ. ਖੁਦ ਰੀਬੂਟ ਤੋਂ ਬਾਅਦ ਇਸ ਚੋਣ ਨੂੰ ਬੰਦ ਅਤੇ ਬੰਦ ਕਰਨ ਲਈ, ਜਾਂ ਸੁਰੱਖਿਅਤ ਮੋਡ ਯੋਗ ਕਰੋ.</string>
     <string name="safe_mode_summary">ਸੈਮਸੰਗ ਦੇ ਯੂਜ਼ਰਸ ਇਸ ਨੂੰ ਚਾਲੂ ਰਾਖਿਓ ਜਦੋ ਤਕ ਤੁਸੀਂ ਕਿਸੀ AOSP ਰੋਮ ਤੇ ਨਾ ਹੋਵੋ!</string>
@@ -241,7 +254,7 @@
     <string name="safe_mode_summary_2">ਬੂਟ ਤੇ QS ਫੈਨਸੀ ਐਨੀਮੇਸ਼ਨ ਨੂੰ ਟੋਗਲ ਕਰਦਾ ਹੈ.</string>
     <string name="safe_mode_summary_3">ਬੂਟ ਤੇ ਕਸਟਮ QS ਸਿਰਲੇਖ ਗਿਣਤੀ ਮੁੱਲ ਨੂੰ ਰੀਸਟੋਰ ਕਰਦਾ ਹੈ (ਨੌਗਾਟ+).</string>
     <string name="safe_mode_summary_4">ਬੂਟ ਤੇ ਰੀਸਟੋਰ ਕੀਤੇ ਕਸਟਮ QS ਕਤਾਰ / ਕਾਲਮ ਕਾਊਂਟ (ਟਚਵਿਜ਼, ਨੋਗਾਟ).</string>
-    <string name="safe_mode_summary_5">ਬੂਟ \'ਤੇ ਕਸਟਮ ਨੋਟੀਫਿਕੇਸ਼ਨ ਸਨੂਜ਼ ਵਿਕਲਪ ਰੀਸਟੋਰ ਕਰਦਾ ਹੈ (8.1+).</string>
+    <string name="safe_mode_summary_5">Keeps custom snooze options set (8.1+).</string>
     <string name="enable_in_settings">ਸੈਟਿੰਗਾਂ ਵਿੱਚ ਸਮਰੱਥ ਬਣਾਓ.</string>
     <string name="reboot_required">(ਰੀਬੂਟ ਜ਼ਰੂਰੀ)</string>
     <string name="auto_detect_summary">ਆਪਣੇ ਆਪ ਪਤਾ ਲਗਾਉਣ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰੋ ਕਿ ਕਿਹੜਾ ਸਥਿਤੀ ਬਾਰ ਆਈਕਨ ਲੁਕਾਏ ਜਾ ਸਕਦੇ ਹਨ ਸਾਰੇ ਡਿਵਾਈਸਾਂ ਤੇ ਕੰਮ ਨਹੀਂ ਕਰਦਾ!</string>
@@ -253,10 +266,9 @@
     <string name="pnc_desc">ਪਾਵਰ ਨੋਟੀਫਿਕੇਸ਼ਨ ਨਿਯੰਤਰਣ ਤੁਹਾਨੂੰ ਪ੍ਰਤੀ-ਐਪ ਅਧਾਰ \'ਤੇ ਨੋਟੀਫਿਕੇਸ਼ਨਾਂ ਲਈ ਮਹੱਤਵਪੂਰਣ ਪੱਧਰ ਨਿਰਧਾਰਤ ਕਰਨ ਦੀ ਆਗਿਆ ਦਿੰਦਾ ਹੈ ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਬਸ ਇਕ ਵਿਸ਼ੇਸ਼ਤਾ ਨੂੰ ਚਾਲੂ ਕਰੋ ਅਤੇ ਨੋਟੀਫਿਕੇਸ਼ਨ ਤੇ ਹੋਲਡ ਕਰੋ. ਸਲਾਈਡਰ ਨੂੰ ਸਮਰੱਥ ਬਣਾਉਣ ਲਈ ਤੁਹਾਨੂੰ ਏ ਨੂੰ ਟੈਪ ਕਰਨ ਦੀ ਲੋੜ ਹੋ ਸਕਦੀ ਹੈ.</string>
     <string name="pnc_warn">ਇਹ ਵਿਸ਼ੇਸ਼ਤਾ ਕੁਝ ਡਿਵਾਈਸਾਂ ਤੇ ਭਰੋਸੇਯੋਗ ਨਹੀਂ ਜਾਣੀ ਜਾਂਦੀ, ਵਿਸ਼ੇਸ਼ ਤੌਰ ਤੇ ਟਚਵਿਜ਼ ਉੱਤੇ! ਇਹ ਠੀਕ ਕਰਨਾ ਨਾਮੁਮਕਿਨ ਹੈ, ਪਰ ਸਭ ਤੋਂ ਵਧੀਆ ਕੰਮ ਇਹ ਹੈ ਕਿ ਲੋੜੀਦੇ ਪੱਧਰ ਤੇ ਵਾਰ ਵਾਰ ਟੈਪ ਕਰਨਾ. ਦੁਬਾਰਾ ਫਿਰ, ਮੈਂ ਇਸ ਨੂੰ ਠੀਕ ਨਹੀਂ ਕਰ ਸਕਦਾ!</string>
     <string name="notif_desc">ਸੈਟਿੰਗਜ਼ ਬਦਲਣ ਲਈ ਟੈਪ ਕਰੋ</string>
-    <string name="touchwiz_oreo_qqs">TouchWiz Oreo ਡਿਵਾਈਸਾਂ ਤੇ, ਇਹ ਸੈਟਿੰਗ ਹੁਣ ਭਰੋਸੇਯੋਗ ਨਹੀਂ ਹੈ! ਇੱਥੇ ਨੰਬਰ ਸੈਟ ਕਰਨ ਦੇ ਨਾਲ, ਤੁਹਾਨੂੰ ਸੈਟਿੰਗਜ਼ ਨੂੰ ਵੀ ਸੇਵ ਕਰਨਾ ਪੈ ਸਕਦਾ ਹੈ. ਸਿਸਟਮ.ਆਪਨੀਲ_ਨੰਬਰ, ਜੋ ਸਿਰਫ ਏ.ਡੀ.ਬੀ. ਜਾਂ ਰੂਟ ਨਾਲ ਹੀ ਕੀਤਾ ਜਾ ਸਕਦਾ ਹੈ. ਸੇਫ ਮੋਡ ਇਕ ਅਪਰੈਲ ਨੂੰ ਲਾਗੂ ਕਰਨ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰਦਾ ਹੈ, ਪਰ ਮੈਂ ਗਾਰੰਟੀ ਨਹੀਂ ਦੇ ਸਕਦਾ ਕਿ ਇਹ ਕੰਮ ਕਰੇਗੀ!</string>
-    <string name="notifs_snooze_desc">&#160;
-   Android 8.1 ਅਤੇ ਬਾਅਦ ਵਿੱਚ, ਤੁਸੀਂ ਨੋਟੀਫਿਕੇਸ਼ਨ ਸਮਾਰੋਹ ਲਈ ਕਸਟਮ ਵਾਰ ਸੈੱਟ ਕਰ ਸਕਦੇ ਹੋ. ਇਹ ਮੁੱਲ ਰੀਬੂਟ ਤੇ ਰੀਸੈਟ ਕਰਦੇ ਹਨ, ਇਸਲਈ ਯਕੀਨੀ ਬਣਾਓ ਕਿ ਸੁਰੱਖਿਅਤ ਮੋਡ ਨੂੰ ਸਮਰੱਥ ਬਣਾਉਣਾ ਹੈ ਜੇ ਤੁਸੀਂ ਚਾਹੁੰਦੇ ਹੋ ਕਿ ਉਹ ਸ਼ਕਤੀ ਸਾਈਕਲਾਂ ਤੇ ਬਣੇ ਰਹਿਣ.\n\n&#160;
-    ਵੱਖਰੇ ਸਨੂਜ਼ ਸਮੇਂ ਨਿਰਧਾਰਤ ਕਰਨ ਲਈ ਹੇਠਾਂ ਦਿੱਤੇ ਵਿਕਲਪਾਂ ਦਾ ਪ੍ਰਯੋਗ ਕਰੋ \"ਡਿਫਾਲਟ\" ਸੈੱਟ ਕਰਦਾ ਹੈ ਕਿ ਐਂਡ੍ਰੌਡ ਡਿਫਾਲਟ ਵਰਤੋਂ ਕਰੇਗਾ. ਹੋਰ ਚੀਜ਼ਾਂ ਤੁਹਾਡੇ ਲਈ ਚੁਣਨ ਲਈ ਸਨੂਜ਼ ਦੇ ਸਮੇਂ ਹੋਣਗੇ.    </string>
+    <string name="notifs_snooze_desc">    In Android 8.1 and later, you can set custom times for notification snoozing. These values reset on reboot, so make sure to enable Safe Mode if you would like them to persist across power cycles.\n\n
+    Use the options below to set the different snooze times. \"Default\" sets the time Android will use by default. The other items will be the snooze times available for you to select.
+    </string>
     <string name="custom_settings_input_desc">These fields allow you to enter your own custom settings.</string>
     <string name="custom_settings_read_desc">These fields allow you to read the value of a specified key.</string>
     <string name="custom_settings_warning">Be careful what you do here! If you input an incorrect value, you could cause a crash loop, bootloop or worse!</string>
@@ -274,6 +286,8 @@
     <string name="safe_mode_needed_qs_row_col">Safe Mode must be turned on, with the Row/Column option activated, for landscape values to work.</string>
     <string name="safe_mode_inactive_on_current_page">Safe Mode is inactive on this screen! Go back to the main menu to save changes!</string>
     <string name="qs_info_marshmallow">Hold down on an icon to remove it.</string>
+    <string name="remove_custom_blacklist_item_desc">Are you sure you want to remove the %s toggle?</string>
+    <string name="force_enable_adb_desc">Certain devices automatically turn ADB off after a period of inactivity. Enable this to force ADB to stay enabled indefinitely.</string>
     <!--Messages-->
     <string name="sorry_explain">ਇਸ ਨੂੰ ਬਦਲਣ ਵੇਲੇ ਕੁਝ ਗਲਤ ਹੋ ਗਿਆ.</string>
     <string name="sorry_option">ਕੰਪਿਊਟਰ ਤੋਂ ਹੇਠਲੀ ਕਮਾਂਡ ਚਲਾਉਣ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰੋ (ਇਹ ਇੱਕ ਲਾਈਨ ਹੈ):</string>
@@ -281,6 +295,7 @@
     <string name="safe_mode_auto_enabled">ਸੈਮਸੰਗ ਡਿਵਾਈਸ ਖੋਜੀ ਗਈ! ਸੁਰੱਖਿਅਤ ਢੰਗ ਤੁਹਾਡੀ ਸੁਰੱਖਿਆ ਲਈ ਸਵੈਚਾਲਿਤ ਹੈ ਸਾਵਧਾਨ ਰਹੋ ਕਿ ਕਿਸੇ ਵੀ ਸਥਿਤੀ ਬਾਰ ਆਈਕਾਨ ਨੂੰ ਸੋਧਣਾ ਸਿਸਟਮ UI ਨੂੰ ਕਰੈਸ਼ ਕਰਣ ਦੀ ਛਮਤਾਂ ਰੱਖਦਾ ਹੈ! ਹੋਰ ਜਾਣਕਾਰੀ ਲਈ ਕਿਰਪਾ ਕਰਕੇ Play Store ਦੇ ਵੇਰਵੇ ਵਿੱਚ ਲਿੰਕ ਦਾ ਪਾਲਣ ਕਰੋ.</string>
     <string name="requires_nougat">Nougat ਜ ਬਾਅਦ ਦੀ ਲੋੜ ਹੈ.</string>
     <string name="requires_oreo">Oreo ਜਾਂ ਬਾਅਦ ਵਿੱਚ.</string>
+    <string name="requires_pie">Requires Pie or later.</string>
     <string name="requires_8_1">Oreo 8.1 ਜਾਂ ਬਾਅਦ ਦੀ ਲੋੜ ਹੈ.</string>
     <string name="safe_mode_android_o">ਐਂਡਰਾਇਡ ਓ ਵਿੱਚ ਜੋੜੀਆਂ ਗਈਆਂ ਕਮੀਆਂ ਦੇ ਕਾਰਨ, ਇਹ ਵਿਸ਼ੇਸ਼ਤਾ ਤੁਹਾਡੀ ਡਿਵਾਈਸ \'ਤੇ ਕੰਮ ਨਹੀਂ ਕਰੇਗੀ.</string>
     <string name="intro_1">ਮੇਰੀ ਐਕ ਡਾਊਨਲੋਡ ਕਰਨ ਲਈ ਧੰਨਵਾਦ! SystemUI ਟਿਊਨਰ ਦਾ ਭਾਵ AOSP ਵਿੱਚ ਦੇਖੇ ਗਏ ਬਿਲਟ-ਇਨ ਸਿਸਟਮ UI ਟੂਨਰ ਨੂੰ ਬਦਲਣਾ / ਪੂਰਤੀ ਕਰਨਾ ਹੈ. ਸਿਸਟਮ UI ਟਿਊਨਰ ਦੇ ਨਾਲ ਜਾਂ ਬਿਨਾਂ ਦੋਵੇਂ ਉਪਭੋਗਤਾਵਾਂ ਨੂੰ ਇਸ ਐਪ ਤੋਂ ਲਾਭ ਹੋ ਸਕਦਾ ਹੈ.</string>
@@ -298,6 +313,9 @@
     <string name="backup_restored">Successfully restored backup</string>
     <string name="nothing_to_back_up">Nothing to back up</string>
     <string name="grant_usage">Please grant SystemUI Tuner access to Usage.</string>
+    <string name="setting_not_on_pie">This setting doesn\'t work on Pie or later.</string>
+    <string name="setting_not_on_touchwiz_pie">This setting doesn\'t work on TouchWiz Pie or later.</string>
+    <string name="setting_not_on_touchwiz">This setting doesn\'t work on TouchWiz.</string>
     <!--Instructions-->
     <string name="enable_debug"><![CDATA[1. ਸੈਟਿੰਗਾਂ> ਵਿਕਾਸਕਾਰ ਦੀਆਂ ਚੋਣਾਂ ਤੇ ਜਾਓ ਅਤੇ ਯਕੀਨੀ ਬਣਾਓ ਕਿ USB ਡੀਬੱਗਿੰਗ ਸਮਰਥਿਤ ਹੈ.]]></string>
     <string name="accept_auth">2. ਆਪਣੀ ਡਿਵਾਈਸ ਨੂੰ ਆਪਣੇ ਕੰਪਿਊਟਰ ਵਿੱਚ ਜੋੜੋ ਅਤੇ ਇਸ \'ਤੇ ਪ੍ਰਮਾਣਿਕਤਾ ਦੀ ਬੇਨਤੀ ਨੂੰ ਸਵੀਕਾਰ ਕਰੋ.</string>
@@ -325,4 +343,5 @@
     <string name="donate_joke">ਕਿਵੇਂ, ਤੁਸੀਂ ਪੁੱਛ ਸਕਦੇ ਹੋ? ਮੈਜਿਕ.</string>
     <string name="donate_request">ਜੇ ਤੁਸੀਂ ਆਪਣੇ ਸਮੇਂ ਦਾ ਇੱਥੇ ਆਨੰਦ ਮਾਣ ਰਹੇ ਹੋ, ਇਹ ਬਿਲਕੁਲ ਅਦਭੁੱਦ ਹੋ ਜਾਵੇਗਾ ਜੇਕਰ ਤੁਸੀਂ ਮੈਨੂੰ ਇੱਕ ਡਾਲਰ ਜਾਂ ਦੋ ਬਖਸ਼ ਸਕਦੇ ਹੋ.</string>
     <string name="donate_dont_worry">ਬਿਲਕੁਲ ਕੋਈ ਜ਼ਿੰਮੇਵਾਰੀ ਨਹੀਂ ਹੈ. ਇਹ ਐਪ ਮੁਫਤ ਹੈ ਅਤੇ ਹਮੇਸ਼ਾਂ ਹੋਵੇਗਾ.</string>
+    <string name="select_os">Please select an operating system.</string>
 </resources>
