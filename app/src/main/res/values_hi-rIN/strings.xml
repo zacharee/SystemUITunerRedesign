@@ -37,7 +37,7 @@
     <string name="nfc_icon">NFC आइकन</string>
     <string name="location_icon">स्थान चिह्न</string>
     <string name="su_icon">SU आइकन</string>
-    <string name="networking_data"><![CDATA[नेटवर्किंग & डेटा]]></string>
+    <string name="network">Network</string>
     <string name="bluetooth_icon">ब्लूटूथ चिह्न</string>
     <string name="data_saver_icon">डेटा सेवर चिह्न</string>
     <string name="ethernet_icon">ईथरनेट आइकन</string>
@@ -134,6 +134,7 @@
     <string name="battery">बैटरी</string>
     <string name="back_up_blacklist">बैक अप ब्लैकलिस्ट</string>
     <string name="restore_blacklist">ब्लैकलिस्ट रीसेट करें</string>
+    <string name="backup_and_restore">Backup &amp; Restore</string>
     <string name="quick_settings">शीग्र सेटिंग्स</string>
     <string name="demo_mode">डेमो मोड</string>
     <string name="auto_detect">स्व-खोज</string>
@@ -149,6 +150,7 @@
     <string name="none">कोई नहीं</string>
     <string name="full">पूर्ण</string>
     <string name="navigation_bar">नेविगेशन पट्टी</string>
+    <string name="navigation_bar_color">Navigation Bar Color</string>
     <string name="pre_confirms">पूर्व की पुष्टि</string>
     <string name="config_qs">त्वरित टाइल कॉंफ़िगर करें</string>
     <string name="mode">मोड</string>
@@ -234,6 +236,17 @@
     <string name="high_brightness_warning">High Brightness Warning</string>
     <string name="grant">Grant</string>
     <string name="attention">Attention!</string>
+    <string name="options">Options</string>
+    <string name="name">Name</string>
+    <string name="key">Key</string>
+    <string name="add_item">Add Item</string>
+    <string name="are_you_sure">Are you sure?</string>
+    <string name="style">Style</string>
+    <string name="clock_position">Clock Position</string>
+    <string name="left">Left</string>
+    <string name="middle">Middle</string>
+    <string name="right">Right</string>
+    <string name="force_enable_adb">Force-Enable ADB</string>
     <!--Descriptions-->
     <string name="fancy_pulldown_notice">इस विकल्प को बंद करने से रिबूट के बाद समस्याएं हो सकती हैं। रीबूट के बाद मैन्युअल रूप से इस विकल्प को चालू या बंद करें, या सुरक्षित मोड सक्षम करें।</string>
     <string name="safe_mode_summary">सैमसंग उपयोगकर्ताओं को यह चालू रखें जब तक की आप एक AOSP ROM पर है!</string>
@@ -241,7 +254,7 @@
     <string name="safe_mode_summary_2">बूट पर QS फैंसी एनीमेशन टॉगल करता है ।</string>
     <string name="safe_mode_summary_3">कस्टम QS शीर्ष लेख गणना मान बूट (नूगा +) पर पुनर्स्थापित करता है ।</string>
     <string name="safe_mode_summary_4">बूट पर कस्टम QS पंक्ति/स्तंभ गणना पुनर्स्थापित करता है (TouchWiz, नूगा +) ।</string>
-    <string name="safe_mode_summary_5">बूट पर कस्टम अधिसूचना स्नूज़ विकल्प पुनर्स्थापित करता है (8.1+)</string>
+    <string name="safe_mode_summary_5">Keeps custom snooze options set (8.1+).</string>
     <string name="enable_in_settings">सेटिंग्स में सक्षम करें ।</string>
     <string name="reboot_required">(रीबूट आवश्यक)</string>
     <string name="auto_detect_summary">स्वचालित रूप से पता लगाने के लिए कि कौन-से स्थिति पट्टी आइकन छिपाए जा सकते हैं सभी उपकरणों पर काम नहीं करता है!</string>
@@ -253,10 +266,9 @@
     <string name="pnc_desc">पावर सूचना नियंत्रण आपको प्रति-ऐप्लिकेशन के आधार पर सूचनाओं के लिए महत्व का स्तर सेट करने की अनुमति देते हैं. बस सुविधा चालू करें और आरंभ करने के लिए अधिसूचना पर दबाकर रखें । आपको स्लाइडर को सक्षम करने के लिए एक टैप करना पड़ सकता है.</string>
     <string name="pnc_warn">यह सुविधा विशेष रूप से टचविज़ पर कुछ डिवाइसों पर अविश्वसनीय हो जाती है! यह तय करना असंभव है, लेकिन वांछित स्तर पर बार-बार टैप करने के लिए सबसे अच्छा काम करने लगता है। दोबारा, मैं इसे ठीक नहीं कर सकता!</string>
     <string name="notif_desc">सेटिंग बदलने के लिए टैप करें</string>
-    <string name="touchwiz_oreo_qqs">TouchWiz Oreo डिवाइस पर, यह सेटिंग अब विश्वसनीय नहीं है! यहां नंबर सेट करने के साथ-साथ, आपको सेटिंग को भी सहेजना होगा। सिस्टेम.नपेनेल_एनम्बर, जो केवल एडीबी या रूट के साथ ही किया जा सकता है। सुरक्षित मोड एक वैकल्पिक हल को लागू करने का प्रयास करता है, लेकिन मैं गारंटी नहीं दे सकता कि यह काम करेगा!</string>
-    <string name="notifs_snooze_desc">&#160;
-    एंड्रॉइड 8.1 और बाद में, आप नोटिफिकेशन स्नूज़िंग के लिए कस्टम बार सेट कर सकते हैं। ये मान रिबूट पर रीसेट करते हैं, इसलिए यदि आप उन्हें बिजली चक्रों में जारी रखना चाहते हैं तो सुरक्षित मोड सक्षम करना सुनिश्चित करें। \n\n&#160;
-    विभिन्न स्नूज़ बार सेट करने के लिए नीचे दिए गए विकल्पों का उपयोग करें \"डिफ़ॉल्ट\" सेट करता है कि Android डिफ़ॉल्ट रूप से उपयोग करेगा अन्य आइटम आपके लिए चुनने के लिए स्नूज़ बार उपलब्ध होंगे।    </string>
+    <string name="notifs_snooze_desc">    In Android 8.1 and later, you can set custom times for notification snoozing. These values reset on reboot, so make sure to enable Safe Mode if you would like them to persist across power cycles.\n\n
+    Use the options below to set the different snooze times. \"Default\" sets the time Android will use by default. The other items will be the snooze times available for you to select.
+    </string>
     <string name="custom_settings_input_desc">These fields allow you to enter your own custom settings.</string>
     <string name="custom_settings_read_desc">These fields allow you to read the value of a specified key.</string>
     <string name="custom_settings_warning">Be careful what you do here! If you input an incorrect value, you could cause a crash loop, bootloop or worse!</string>
@@ -274,6 +286,8 @@
     <string name="safe_mode_needed_qs_row_col">Safe Mode must be turned on, with the Row/Column option activated, for landscape values to work.</string>
     <string name="safe_mode_inactive_on_current_page">Safe Mode is inactive on this screen! Go back to the main menu to save changes!</string>
     <string name="qs_info_marshmallow">Hold down on an icon to remove it.</string>
+    <string name="remove_custom_blacklist_item_desc">Are you sure you want to remove the %s toggle?</string>
+    <string name="force_enable_adb_desc">Certain devices automatically turn ADB off after a period of inactivity. Enable this to force ADB to stay enabled indefinitely.</string>
     <!--Messages-->
     <string name="sorry_explain">इस टॉगल को सेट करते समय कुछ गलत हो गया</string>
     <string name="sorry_option">किसी कंप्यूटर से निंन आदेश निष्पादित करने का प्रयास करें (यह एक पंक्ति है):</string>
@@ -281,6 +295,7 @@
     <string name="safe_mode_auto_enabled">सैमसंग डिवाइस का पता चला! सुरक्षित मोड स्वचालित रूप से आपकी सुरक्षा के लिए सक्षम किया गया है । चेतावनी दी जाती है कि किसी भी स्थिति में पट्टी माउस को संशोधित करने के लिए प्रणाली यूआई को तोड़ने की क्षमता रखता है! कृपया अधिक जानकारी के लिए प्ले स्टोर विवरण में लिंक का अनुसरण करें।</string>
     <string name="requires_nougat">नौगेट या बाद की आवश्यकता होती है</string>
     <string name="requires_oreo">नौगेट या बाद की आवश्यकता होती है</string>
+    <string name="requires_pie">Requires Pie or later.</string>
     <string name="requires_8_1">Oreo 8.1 या उच्चतर की आवश्यकता है ।</string>
     <string name="safe_mode_android_o">एंड्रॉयड ओ में जोड़ा सीमाओं के कारण, यह सुविधा आपके डिवाइस पर काम नहीं करेगा.</string>
     <string name="intro_1">मेरे ऐप को डाउनलोड करने के लिए धन्यवाद! सिस्टमयूआई ट्यूनर को एओएसपी में देखा गया अंतर्निहित सिस्टम UI ट्यूनर को बदलने / पूरक करने के लिए है। सिस्टम यूआई ट्यूनर के साथ और बिना दोनों उपयोगकर्ताओं को इस ऐप से फायदा हो सकता है।
@@ -299,6 +314,9 @@
     <string name="backup_restored">Successfully restored backup</string>
     <string name="nothing_to_back_up">Nothing to back up</string>
     <string name="grant_usage">Please grant SystemUI Tuner access to Usage.</string>
+    <string name="setting_not_on_pie">This setting doesn\'t work on Pie or later.</string>
+    <string name="setting_not_on_touchwiz_pie">This setting doesn\'t work on TouchWiz Pie or later.</string>
+    <string name="setting_not_on_touchwiz">This setting doesn\'t work on TouchWiz.</string>
     <!--Instructions-->
     <string name="enable_debug"><![CDATA[1. सेटिंग्स > > डेवलपर विकल्प पर जाएँ और सुनिश्चित करें कि USB डिबगिंग सक्षम है.]]></string>
     <string name="accept_auth">2. अपने डिवाइस को अपने कंप्यूटर में प्लग करें और उस पर प्राधिकरण अनुरोध को स्वीकार करें।</string>
@@ -325,4 +343,5 @@
     <string name="donate_joke">कैसे, तुम पूछते हो? जादू.</string>
     <string name="donate_request">यदि आप अपने यहां समय का आनंद ले रहे हैं, यह बिल्कुल आश्चर्यजनक होगा अगर तुम एक डॉलर या दो प्रदान कर सको।</string>
     <string name="donate_dont_worry">यह बिल्कुल कोई दायित्व नहीं है । यह एप्लिकेशन निःशुल्क है और हमेशा होगा ।</string>
+    <string name="select_os">Please select an operating system.</string>
 </resources>
