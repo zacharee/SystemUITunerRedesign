@@ -37,7 +37,7 @@
     <string name="nfc_icon">Ícone de NFC</string>
     <string name="location_icon">Ícone de Localização</string>
     <string name="su_icon">Ícone SU</string>
-    <string name="networking_data"><![CDATA[Rede e dados]]></string>
+    <string name="network">Network</string>
     <string name="bluetooth_icon">Ícone Bluetooth</string>
     <string name="data_saver_icon">Ícone de economia de dados</string>
     <string name="ethernet_icon">Ícone de Ethernet</string>
@@ -134,6 +134,7 @@
     <string name="battery">Bateria</string>
     <string name="back_up_blacklist">Fazer backup da lista negra</string>
     <string name="restore_blacklist">Restaurar lista negra</string>
+    <string name="backup_and_restore">Backup &amp; Restore</string>
     <string name="quick_settings">Configurações rápidas</string>
     <string name="demo_mode">Modo de demonstração</string>
     <string name="auto_detect">Detecção automática</string>
@@ -149,6 +150,7 @@
     <string name="none">Nenhum</string>
     <string name="full">Cheio</string>
     <string name="navigation_bar">Barra de navegação</string>
+    <string name="navigation_bar_color">Navigation Bar Color</string>
     <string name="pre_confirms">Pré-confirma</string>
     <string name="config_qs">Configurar os botões Rápidos</string>
     <string name="mode">Modo</string>
@@ -234,6 +236,17 @@
     <string name="high_brightness_warning">High Brightness Warning</string>
     <string name="grant">Grant</string>
     <string name="attention">Attention!</string>
+    <string name="options">Options</string>
+    <string name="name">Name</string>
+    <string name="key">Key</string>
+    <string name="add_item">Add Item</string>
+    <string name="are_you_sure">Are you sure?</string>
+    <string name="style">Style</string>
+    <string name="clock_position">Clock Position</string>
+    <string name="left">Left</string>
+    <string name="middle">Middle</string>
+    <string name="right">Right</string>
+    <string name="force_enable_adb">Force-Enable ADB</string>
     <!--Descriptions-->
     <string name="fancy_pulldown_notice">Desativar essa opção pode causar problemas após a reinicialização. Ative e desative manualmente essa opção, após uma reinicialização ou ative o Modo de Segurança.</string>
     <string name="safe_mode_summary">OS USUÁRIOS DA SAMSUNG DEVEM MANTÊ-LO LIGADO, A MENOS QUE VOCÊ TENHA UMA ROM AOSP!</string>
@@ -241,7 +254,7 @@
     <string name="safe_mode_summary_2">Ativa/desativa a animação elegante em configurações rápidas, na inicialização.</string>
     <string name="safe_mode_summary_3">Restaura os valores da grade personalizada das configurações rápidas, na inicialização (Nougat +).</string>
     <string name="safe_mode_summary_4">Restaura o número de linha/coluna personalizada das configurações rápidas, na inicialização (TouchWiz, Nougat +).</string>
-    <string name="safe_mode_summary_5">Restaura as opções de notificação de soneca personalizada na inicialização (8.1 +).</string>
+    <string name="safe_mode_summary_5">Keeps custom snooze options set (8.1+).</string>
     <string name="enable_in_settings">Ative em Configurações.</string>
     <string name="reboot_required">(Reinicialização Obrigatória)</string>
     <string name="auto_detect_summary">Tenta detectar automaticamente quais ícones da barra de status podem estar ocultos. Não funciona em todos os dispositivos!</string>
@@ -253,10 +266,8 @@
     <string name="pnc_desc">Controles de notificação de energia permitem que você defina o nível de importância para as notificações em uma base por aplicativo. Basta ativar o recurso e mantenha pressionada em uma notificação para começar. Você pode precisar tocar o A para ativar o controle deslizante.</string>
     <string name="pnc_warn">Esse recurso é conhecido por ser instável em certos dispositivos, especialmente sobre o TouchWiz! É impossível de corrigir, mas a melhor solução parece ser tocar repetidamente no nível desejado. Novamente, não posso CORRIGI-LO!</string>
     <string name="notif_desc">Toque para alterar as configurações</string>
-    <string name="touchwiz_oreo_qqs">Em dispositivos TouchWiz Oreo, essa configuração não é mais confiável! Juntamente com a configuração do número aqui, você pode precisar salvar também o valor Settings.System.apanel_number, que só pode ser feito com ADB ou root. O Modo de seguro tenta implementar uma solução alternativa, mas não posso garantir que funcione!</string>
-    <string name="notifs_snooze_desc">&#160;
-    No Android 8.1 e posterior, você pode definir horários personalizados para adiar a notificação. Esses valores são redefinidos na reinicialização, então certifique-se de habilitar o modo seguro se quiser que eles persistam em ciclos de energia.\n\n&#160;
-    Use as opções abaixo para definir os diferentes tempos de soneca. \"Padrão\" define o horário que o Android usará por padrão. Os outros itens serão os tempos de soneca disponíveis para você selecionar.
+    <string name="notifs_snooze_desc">    In Android 8.1 and later, you can set custom times for notification snoozing. These values reset on reboot, so make sure to enable Safe Mode if you would like them to persist across power cycles.\n\n
+    Use the options below to set the different snooze times. \"Default\" sets the time Android will use by default. The other items will be the snooze times available for you to select.
     </string>
     <string name="custom_settings_input_desc">Estes campos permitem que você insira suas próprias configurações personalizadas.</string>
     <string name="custom_settings_read_desc">Estes campos permitem que você leia o valor de uma chave especificada.</string>
@@ -275,6 +286,8 @@
     <string name="safe_mode_needed_qs_row_col">Safe Mode must be turned on, with the Row/Column option activated, for landscape values to work.</string>
     <string name="safe_mode_inactive_on_current_page">Safe Mode is inactive on this screen! Go back to the main menu to save changes!</string>
     <string name="qs_info_marshmallow">Hold down on an icon to remove it.</string>
+    <string name="remove_custom_blacklist_item_desc">Are you sure you want to remove the %s toggle?</string>
+    <string name="force_enable_adb_desc">Certain devices automatically turn ADB off after a period of inactivity. Enable this to force ADB to stay enabled indefinitely.</string>
     <!--Messages-->
     <string name="sorry_explain">Algo deu errado ao definir esta alternância.</string>
     <string name="sorry_option">Tente executar o seguinte comando a partir de um computador (é uma linha):</string>
@@ -282,6 +295,7 @@
     <string name="safe_mode_auto_enabled">Dispositivo Samsung detectado! O modo de segurança foi ativado automaticamente para sua segurança. Esteja ciente de que a modificação de qualquer barra de status tem o potencial para interromper a Interface de Usuário do Sistema! Por favor, siga o link na descrição da Play Store para mais informações.</string>
     <string name="requires_nougat">Requer o Nougat ou+.</string>
     <string name="requires_oreo">Requer Oreo ou posterior.</string>
+    <string name="requires_pie">Requires Pie or later.</string>
     <string name="requires_8_1">Requer Oreo 8.1 ou posterior.</string>
     <string name="safe_mode_android_o">Devido às limitações adicionadas no Android O, esse recurso não funcionará no seu dispositivo.</string>
     <string name="intro_1">Obrigado por baixar meu aplicativo! O SystemUI tuner destina-se a substituir / suplementar a construção do IU do Sistema integrado visto no AOSP. Ambos os usuários com e sem o System UI Tuner podem se beneficiar deste aplicativo.</string>
@@ -299,6 +313,9 @@
     <string name="backup_restored">Restaurado com êxito</string>
     <string name="nothing_to_back_up">Nada para fazer backup</string>
     <string name="grant_usage">Por favor, conceda acesso ao SystemUI tuner para uso.</string>
+    <string name="setting_not_on_pie">This setting doesn\'t work on Pie or later.</string>
+    <string name="setting_not_on_touchwiz_pie">This setting doesn\'t work on TouchWiz Pie or later.</string>
+    <string name="setting_not_on_touchwiz">This setting doesn\'t work on TouchWiz.</string>
     <!--Instructions-->
     <string name="enable_debug"><![CDATA[1. vá para configurações >> opções do desenvolvedor e tenha certeza que a depuração USB está habilitada.]]></string>
     <string name="accept_auth">2. Ligue o seu dispositivo no seu computador e aceite o pedido de autorização nele.</string>
@@ -325,4 +342,5 @@
     <string name="donate_joke">Como, você pergunta? Magica.</string>
     <string name="donate_request">Se você está aproveitando seu tempo aqui, seria absolutamente incrível se você pudesse me ajuda com um dólar ou dois.</string>
     <string name="donate_dont_worry">Não há absolutamente nenhuma obrigação. Este app é grátis e sempre será.</string>
+    <string name="select_os">Please select an operating system.</string>
 </resources>
