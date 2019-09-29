@@ -37,7 +37,7 @@
     <string name="nfc_icon">NFC simgesi</string>
     <string name="location_icon">Konum simgesi</string>
     <string name="su_icon">SU simgesi</string>
-    <string name="networking_data"><![CDATA[Ağ ve Veri]]></string>
+    <string name="network">Network</string>
     <string name="bluetooth_icon">Bluetooth simgesi</string>
     <string name="data_saver_icon">Veri Tasarrufu Simgesi</string>
     <string name="ethernet_icon">Ethernet simgesi</string>
@@ -134,6 +134,7 @@
     <string name="battery">Batarya</string>
     <string name="back_up_blacklist">Kara listeye geri dön</string>
     <string name="restore_blacklist">Kara listeyi geri yükle</string>
+    <string name="backup_and_restore">Backup &amp; Restore</string>
     <string name="quick_settings">Hızlı Ayarlar</string>
     <string name="demo_mode">Demo Modu</string>
     <string name="auto_detect">Otomatik Algıla</string>
@@ -149,6 +150,7 @@
     <string name="none">Hiçbiri</string>
     <string name="full">Tam</string>
     <string name="navigation_bar">Navgasyon çubuğu</string>
+    <string name="navigation_bar_color">Navigation Bar Color</string>
     <string name="pre_confirms">Önceden onaylanmışlar</string>
     <string name="config_qs">Hızlı Karo\'yi Yapılandır</string>
     <string name="mode">Mod</string>
@@ -234,6 +236,17 @@
     <string name="high_brightness_warning">High Brightness Warning</string>
     <string name="grant">Grant</string>
     <string name="attention">Attention!</string>
+    <string name="options">Options</string>
+    <string name="name">Name</string>
+    <string name="key">Key</string>
+    <string name="add_item">Add Item</string>
+    <string name="are_you_sure">Are you sure?</string>
+    <string name="style">Style</string>
+    <string name="clock_position">Clock Position</string>
+    <string name="left">Left</string>
+    <string name="middle">Middle</string>
+    <string name="right">Right</string>
+    <string name="force_enable_adb">Force-Enable ADB</string>
     <!--Descriptions-->
     <string name="fancy_pulldown_notice">Toggling this option off can cause issues after a reboot. Manually toggle this option on and off after a reboot, or enable Safe Mode.</string>
     <string name="safe_mode_summary">SAMSUNG USERS KEEP THIS TURNED ON UNLESS YOU HAVE AN AOSP ROM!</string>
@@ -241,7 +254,7 @@
     <string name="safe_mode_summary_2">Toggles the QS Fancy Animation on boot.</string>
     <string name="safe_mode_summary_3">Restores custom QS header count value on boot (Nougat+).</string>
     <string name="safe_mode_summary_4">Restores custom QS row/column count on boot (TouchWiz, Nougat+).</string>
-    <string name="safe_mode_summary_5">Restores custom notification snooze options on boot (8.1+).</string>
+    <string name="safe_mode_summary_5">Keeps custom snooze options set (8.1+).</string>
     <string name="enable_in_settings">Ayarları etkinleştirin.</string>
     <string name="reboot_required">(Yeniden başlatma gerektirir)</string>
     <string name="auto_detect_summary">Attempts to automatically detect which status bar icons can be hidden. Does not work on all devices!</string>
@@ -253,9 +266,7 @@
     <string name="pnc_desc">Güç Bildirim Denetimleri uygulaması başına  olacak şekilde bildirimleri önem düzeyini ayarlamak için izin verir. Sadece bu özelliği etkinleştirmek ve başlamak için bir bildirim üzerine basılı tutun. Kaydırıcıyı aktif etmek için A harfine dokunumanız lazım olabilir.</string>
     <string name="pnc_warn">Bazı cihazlarda bu özellik güvenilmez, özellikle TouchWiz de  biliniyor. Düzeltmek mümkün değildir, ama en iyi çözüm sürekli olarak istenilen düzeyde dokunmak gibi görünüyor.  Tekrar, bunu düzeltemiyorum!</string>
     <string name="notif_desc">Tap to change settings</string>
-    <string name="touchwiz_oreo_qqs">On TouchWiz Oreo devices, this setting is no longer reliable! Along with setting the number here, you may have to also save the value to Settings.System.apanel_number, which can only be done with ADB or root. Safe Mode attempts to implement a workaround, but I can\'t guarantee it will work!</string>
-    <string name="notifs_snooze_desc">&#160;
-    In Android 8.1 and later, you can set custom times for notification snoozing. These values reset on reboot, so make sure to enable Safe Mode if you would like them to persist across power cycles.\n\n&#160;
+    <string name="notifs_snooze_desc">    In Android 8.1 and later, you can set custom times for notification snoozing. These values reset on reboot, so make sure to enable Safe Mode if you would like them to persist across power cycles.\n\n
     Use the options below to set the different snooze times. \"Default\" sets the time Android will use by default. The other items will be the snooze times available for you to select.
     </string>
     <string name="custom_settings_input_desc">These fields allow you to enter your own custom settings.</string>
@@ -275,6 +286,8 @@
     <string name="safe_mode_needed_qs_row_col">Safe Mode must be turned on, with the Row/Column option activated, for landscape values to work.</string>
     <string name="safe_mode_inactive_on_current_page">Safe Mode is inactive on this screen! Go back to the main menu to save changes!</string>
     <string name="qs_info_marshmallow">Hold down on an icon to remove it.</string>
+    <string name="remove_custom_blacklist_item_desc">Are you sure you want to remove the %s toggle?</string>
+    <string name="force_enable_adb_desc">Certain devices automatically turn ADB off after a period of inactivity. Enable this to force ADB to stay enabled indefinitely.</string>
     <!--Messages-->
     <string name="sorry_explain">Bu geçişi ayarlarken birşeyler yanlış gitti.</string>
     <string name="sorry_option">Try executing the following command from a computer (it\'s one line):</string>
@@ -282,6 +295,7 @@
     <string name="safe_mode_auto_enabled">Samsung aygıtı algılandı! Sizi korumak için güvenli mod otomatik olarak etkinleştirildi. Herhangi bir durum çubuğu simgesini değiştirmenin sistemi kırma potansiyeline sahip olduğuna dikkat edin! Lütfen daha fazla açıklama için play store içinde ki adresi ziyaret edin.</string>
     <string name="requires_nougat">Nougat veya daha ileri bir sürümü gerektirir.</string>
     <string name="requires_oreo">Oreo veya daha ileri bir sürümü gerektirir.</string>
+    <string name="requires_pie">Requires Pie or later.</string>
     <string name="requires_8_1">Requires Oreo 8.1 or later.</string>
     <string name="safe_mode_android_o">Android O\'da eklenen sınırlamalar nedeniyle bu özellik cihazınızda çalışmaz.</string>
     <string name="intro_1">Benim uygulamamı indirdiğiniz için teşekkürler! SystemUI Tuner, Sistem UI Ayarlayıcısını değiştirmek / tamamlamak için AOSP\'de görülen yerleşik  uygulamadır. Sistem UI Ayarlayıcısı olan veya olmayan kullanıcılar hepsi bu uygulamadan faydalanabilirler.</string>
@@ -299,6 +313,9 @@
     <string name="backup_restored">Successfully restored backup</string>
     <string name="nothing_to_back_up">Nothing to back up</string>
     <string name="grant_usage">Please grant SystemUI Tuner access to Usage.</string>
+    <string name="setting_not_on_pie">This setting doesn\'t work on Pie or later.</string>
+    <string name="setting_not_on_touchwiz_pie">This setting doesn\'t work on TouchWiz Pie or later.</string>
+    <string name="setting_not_on_touchwiz">This setting doesn\'t work on TouchWiz.</string>
     <!--Instructions-->
     <string name="enable_debug"><![CDATA[1. Ayarlar'a gidin >>Geliştirici Seçenekleri'ni seçin ve USB Hata Ayıklama'nın etkinleştirildiğinden emin olun.]]></string>
     <string name="accept_auth">2. Cihazınızı bilgisayarınıza takın ve üzerindeki yetkilendirme izin talebini kabul edin.</string>
@@ -325,4 +342,5 @@
     <string name="donate_joke">Nasıl soruyorsun? Sihirli.</string>
     <string name="donate_request">Eğer burada vakit geçiriyor iseniz, şayet bir ya da iki dolar ayırdıysanız kesinlikle şaşırtıcı olur.</string>
     <string name="donate_dont_worry">Kesinlikle hiçbir zorunluluk yoktur. Bu uygulama ücretsiz ve her zaman olacak.</string>
+    <string name="select_os">Please select an operating system.</string>
 </resources>
