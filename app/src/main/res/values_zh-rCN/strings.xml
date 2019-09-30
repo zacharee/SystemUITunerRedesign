@@ -263,9 +263,9 @@
     <string name="blacklist_desc">选项启用时，应用将不会进入沉浸模式</string>
     <string name="imm_warn">本功能只会启用沈浸模式，沒有別的了。若因此发生问题请联系设备制造商，我帮不了你！</string>
     <string name="statbar_rotation_lock_notif">您可以在某些设备上修改状态栏图标，使其看起来像电话。这是旋转锁定图标。点击此处修复</string>
-    <string name="pnc_desc">Power Notification Controls allow you to set the level of importance for notifications on a per-app basis. Simply turn the feature on and hold down on a notification to get started. You may need to tap the A to enable the slider.</string>
-    <string name="pnc_warn">This feature is known to be unreliable on certain devices, especially on TouchWiz! It is impossible to fix, but the best workaround seems to be to tap repeatedly on the desired level. Again, I CANNOT fix it!</string>
-    <string name="notif_desc">Tap to change settings</string>
+    <string name="pnc_desc">通知管理允许您为每个应用程序设置通知的重要程度，只需按住通知打开该功能并即可开始。您可能需要点击A启用滑块。</string>
+    <string name="pnc_warn">本功能在某些设备上不可用，特别是 TouchWiz ！可以尝试多试试，但是我无法修复。</string>
+    <string name="notif_desc">点击更改设置</string>
     <string name="notifs_snooze_desc">    In Android 8.1 and later, you can set custom times for notification snoozing. These values reset on reboot, so make sure to enable Safe Mode if you would like them to persist across power cycles.\n\n
     Use the options below to set the different snooze times. \"Default\" sets the time Android will use by default. The other items will be the snooze times available for you to select.
     </string>
