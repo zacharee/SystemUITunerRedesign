@@ -134,7 +134,7 @@
     <string name="battery">电池</string>
     <string name="back_up_blacklist">备份黑名单</string>
     <string name="restore_blacklist">恢复黑名单</string>
-    <string name="backup_and_restore">Backup &amp; Restore</string>
+    <string name="backup_and_restore">备份 &amp; 恢复</string>
     <string name="quick_settings">快速设置</string>
     <string name="demo_mode">演示模式</string>
     <string name="auto_detect">自动检测</string>
@@ -150,7 +150,7 @@
     <string name="none">无</string>
     <string name="full">满</string>
     <string name="navigation_bar">导航栏</string>
-    <string name="navigation_bar_color">Navigation Bar Color</string>
+    <string name="navigation_bar_color">导航栏颜色</string>
     <string name="pre_confirms">预先确认</string>
     <string name="config_qs">配置快速块</string>
     <string name="mode">模式</string>
