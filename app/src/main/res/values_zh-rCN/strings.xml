@@ -319,27 +319,27 @@
     <!--Instructions-->
     <string name="enable_debug"><![CDATA[1. 前往 设置 >> 开发者选项 中并确保已开启 USB 调试。]]></string>
     <string name="accept_auth">2.将手机连接电脑，并且同意授权。</string>
-    <string name="enable_devops"><![CDATA[- Enable Developer Options by going to Settings >> About, finding \"Build Number\" and tapping it 7 times.]]></string>
-    <string name="download_drivers">- Windows users may need to install device drivers, which are available from the manufacturer\'s website.</string>
-    <string name="download_adb_windows"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-windows.zip">Download the ADB ZIP for Windows.</a>]]></string>
-    <string name="extract_zip">2. Extract the ZIP to an easily-accessible location (ie Desktop).</string>
-    <string name="open_cmd">3. Open CMD.</string>
-    <string name="cd_windows"><![CDATA[4. Enter <b>cd C:\\path\\to\\extracted\\folder\\</b> to get to the folder where you extracted ADB. For instance, <b>cd C:\\Users\\Zachary\\Desktop\\platform-tools\\</b>.]]></string>
-    <string name="cd_further"><![CDATA[- Make sure that the folder you <b>cd</b> into contains the ADB executable. If not, <b>cd</b> one level further.]]></string>
-    <string name="download_adb_mac"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-darwin.zip">Download the ADB ZIP for macOS.</a>]]></string>
-    <string name="open_terminal">3. Open Terminal.</string>
-    <string name="cd_mac"><![CDATA[4. Enter <b>cd /path/to/extracted/folder/</b> to get to the folder you extracted ADB into. For instance, <b>cd /Users/Zachary/Desktop/platform-tools/</b>.]]></string>
-    <string name="make_sure_adb_installed">1. Make sure ADB is installed:</string>
-    <string name="download_adb_linux"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-linux.zip">Download the ADB ZIP for Linux.</a>]]></string>
-    <string name="cd_linux"><![CDATA[4. Enter <b>cd /path/to/extracted/folder/</b> to get to the folder you extracted ADB into. For instance, <b>cd /home/Zachary/Desktop/platform-tools/</b>.]]></string>
+    <string name="enable_devops"><![CDATA[- 在 设置 >> 系统中，找到 \"版本号\" 并点击 7 次 即可开启开发者选项。]]></string>
+    <string name="download_drivers">-Windows用户可能需要安装手机驱动，这个可以联系手机厂家获取。或者用 驱动精灵，360驱动大师等</string>
+    <string name="download_adb_windows"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-windows.zip">下载Windows版本的 ADB 压缩文件.</a>]]></string>
+    <string name="extract_zip">2. 解压缩ZIP文件夹（比如解压到桌面）</string>
+    <string name="open_cmd">3. 打开CMD</string>
+    <string name="cd_windows"><![CDATA[4. 输入 <b>cd C:\\path\\to\\extracted\\folder\\</b> ADB文件所在文件夹文件夹. 比如: <b>cd C:\\Users\\Yuht\\Desktop\\platform-tools\\</b>.]]></string>
+    <string name="cd_further"><![CDATA[- 确认<b>cd</b> 的路径包含ADB可执行文件，如果没有包含，尝试更改路径层级。]]></string>
+    <string name="download_adb_mac"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-darwin.zip">下载苹果版的 ADB 压缩包.</a>]]></string>
+    <string name="open_terminal">3. 打开终端</string>
+    <string name="cd_mac"><![CDATA[4. 输入 <b>cd /path/to/extracted/folder/</b> ADB文件所在文件夹文件夹. 比如: <b>cd /Users/Zachary/Desktop/platform-tools</b>.]]></string>
+    <string name="make_sure_adb_installed">1. 确认安装了ADB</string>
+    <string name="download_adb_linux"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-linux.zip">下载Linux系统的 ADB 压缩包.</a>]]></string>
+    <string name="cd_linux"><![CDATA[4. 输入 <b>cd /path/to/extracted/folder/</b> ADB文件所在文件夹. 比如: <b>cd /home/Zachary/Desktop/platform-tools</b>.]]></string>
     <!--Misc-->
-    <string name="created_by">App created by <a href="https://forum.xda-developers.com/member.php?u=7055541">Zacharee1</a></string>
-    <string name="lang_credit">Translations by volunteers on <a href="https://crowdin.com/project/systemui-tuner">Crowdin</a></string>
-    <string name="home_desc">For Devices without this Activity</string>
-    <string name="home_joke">Or for devices with it, I\'m not your boss.</string>
-    <string name="home_extra">(If you do have the stock SystemUI Tuner, this one provides some extra goodies.)</string>
-    <string name="donate_hook">Hey, I see you\'re using my app.</string>
-    <string name="donate_joke">How, you ask? Magic.</string>
+    <string name="created_by">作者 <a href="https://forum.xda-developers.com/member.php?u=7055541">Zacharee1</a></string>
+    <string name="lang_credit">由志愿者在 <a href="https://crowdin.com/project/systemui-tuner">Crowdin</a> 网站翻译</string>
+    <string name="home_desc">对没有此活动的设备</string>
+    <string name="home_joke">或对于具有此功能的设备，请自行判断。</string>
+    <string name="home_extra">(即使你有原生的 SystemUI Tuner, 也没这个厉害)</string>
+    <string name="donate_hook">嘿，您正在使用我的应用程序。</string>
+    <string name="donate_joke">你问我怎么知道的？厉害吧！</string>
     <string name="donate_request">If you\'re enjoying your time here, it\'d be absolutely amazing if you could spare a dollar or two.</string>
     <string name="donate_dont_worry">There\'s absolutely no obligation. This app is free and always will be.</string>
     <string name="select_os">Please select an operating system.</string>
