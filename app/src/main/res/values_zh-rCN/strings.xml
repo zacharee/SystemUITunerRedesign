@@ -312,13 +312,13 @@
     <string name="invalid_blacklist_backup">无效黑名单备份</string>
     <string name="backup_restored">成功恢复备份</string>
     <string name="nothing_to_back_up">无备份</string>
-    <string name="grant_usage">Please grant SystemUI Tuner access to Usage.</string>
-    <string name="setting_not_on_pie">This setting doesn\'t work on Pie or later.</string>
-    <string name="setting_not_on_touchwiz_pie">This setting doesn\'t work on TouchWiz Pie or later.</string>
-    <string name="setting_not_on_touchwiz">This setting doesn\'t work on TouchWiz.</string>
+    <string name="grant_usage">请允许 SystemUI Tuner 操作权限。</string>
+    <string name="setting_not_on_pie">此设置不会在安卓9.0及以上版本中工作。</string>
+    <string name="setting_not_on_touchwiz_pie">此设置不会在三星9.0及以上版本中工作。</string>
+    <string name="setting_not_on_touchwiz">此设置在三星手机上无效</string>
     <!--Instructions-->
-    <string name="enable_debug"><![CDATA[1. Go to Settings >> Developer Options and make sure USB Debugging is enabled.]]></string>
-    <string name="accept_auth">2. Plug your device into your computer and accept the authorization request on it.</string>
+    <string name="enable_debug"><![CDATA[1. 前往 设置 >> 开发者选项 中并确保已开启 USB 调试。]]></string>
+    <string name="accept_auth">2.将手机连接电脑，并且同意授权。</string>
     <string name="enable_devops"><![CDATA[- Enable Developer Options by going to Settings >> About, finding \"Build Number\" and tapping it 7 times.]]></string>
     <string name="download_drivers">- Windows users may need to install device drivers, which are available from the manufacturer\'s website.</string>
     <string name="download_adb_windows"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-windows.zip">Download the ADB ZIP for Windows.</a>]]></string>
