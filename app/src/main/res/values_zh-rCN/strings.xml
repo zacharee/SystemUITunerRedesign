@@ -314,8 +314,8 @@
     <string name="nothing_to_back_up">无备份</string>
     <string name="grant_usage">请允许 SystemUI Tuner 操作权限。</string>
     <string name="setting_not_on_pie">此设置不会在安卓9.0及以上版本中工作。</string>
-    <string name="setting_not_on_touchwiz_pie">This setting doesn\'t work on TouchWiz Pie or later.</string>
-    <string name="setting_not_on_touchwiz">This setting doesn\'t work on TouchWiz.</string>
+    <string name="setting_not_on_touchwiz_pie">此设置不会在三星9.0及以上版本中工作。</string>
+    <string name="setting_not_on_touchwiz">此设置在三星手机上无效</string>
     <!--Instructions-->
     <string name="enable_debug"><![CDATA[1.在设置>>开发者模式中，确认启用了USB调试。]]></string>
     <string name="accept_auth">2.连接手机到电脑，并且同意授权。</string>
@@ -342,5 +342,5 @@
     <string name="donate_joke">怎么用，你问吧？ Magic。</string>
     <string name="donate_request">如果你在这里享受你的时间, 如果你能捐赠$1 ~ $2美元, 那将是绝对令人惊叹的。</string>
     <string name="donate_dont_worry">绝对没有义务. 这个应用应该一直是免费的。</string>
-    <string name="select_os">Please select an operating system.</string>
+    <string name="select_os">请选择您的操作系统。</string>
 </resources>
