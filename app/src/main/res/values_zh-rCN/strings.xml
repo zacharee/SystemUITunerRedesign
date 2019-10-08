@@ -281,13 +281,13 @@
     <string name="fix_rotation_done_stay">旋转图标已删除！如果仍然出现，请重新启动设备。</string>
     <string name="missing_not_required_perms_desc">您确定要继续吗？至少要有一个未授予的选择权限，这意味着您以后将需要一台计算机再次授予它们。</string>
     <string name="ws_needed_desc">需要设置，请点击上面的按钮来授予它。\n (不幸的是，这不能保证开关将会运行。)</string>
-    <string name="safe_mode_high_brightness_warning_desc">Attempt to restore the currently set High Brightness Warning status on boot. This is only for TouchWiz devices and won\'t work without root.</string>
-    <string name="safe_mode_volume_warning_desc">Restores current High Volume Warning state on boot.</string>
+    <string name="safe_mode_high_brightness_warning_desc">尝试在引导时恢复当前设置的“高亮度警告”状态。这仅适用于TouchWiz设备，如果没有root用户将无法使用。</string>
+    <string name="safe_mode_volume_warning_desc">在启动时恢复当前的高容量警告状态。</string>
     <string name="safe_mode_needed_qs_row_col">必须启用“行/列”选项的“安全模式”才能使横向值起作用。</string>
-    <string name="safe_mode_inactive_on_current_page">Safe Mode is inactive on this screen! Go back to the main menu to save changes!</string>
+    <string name="safe_mode_inactive_on_current_page">此屏幕上的安全模式无效！返回主菜单以保存更改！</string>
     <string name="qs_info_marshmallow">按住图标将其删除。</string>
-    <string name="remove_custom_blacklist_item_desc">Are you sure you want to remove the %s toggle?</string>
-    <string name="force_enable_adb_desc">Certain devices automatically turn ADB off after a period of inactivity. Enable this to force ADB to stay enabled indefinitely.</string>
+    <string name="remove_custom_blacklist_item_desc">您真的要删除%s切换？</string>
+    <string name="force_enable_adb_desc">一段时间不活动后，某些设备会自动关闭ADB。启用此选项可强制ADB无限期保持启用状态。</string>
     <!--Messages-->
     <string name="sorry_explain">这项设置发生错误</string>
     <string name="sorry_option">请从电脑端输入以下命令行(是一整句哦)</string>
@@ -341,6 +341,6 @@
     <string name="donate_hook">嘿，您正在使用我的应用程序。</string>
     <string name="donate_joke">你问我怎么知道的？厉害吧！</string>
     <string name="donate_request">如果你觉得这个应用不错，能来点捐赠再好不过了。</string>
-    <string name="donate_dont_worry">There\'s absolutely no obligation. This app is free and always will be.</string>
+    <string name="donate_dont_worry">这个没有强制。这个APP永远都是免费的。</string>
     <string name="select_os">Please select an operating system.</string>
 </resources>
