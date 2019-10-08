@@ -266,18 +266,18 @@
     <string name="pnc_desc">通知管理允许您为每个应用程序设置通知的重要程度，只需按住通知打开该功能并即可开始。您可能需要点击A启用滑块。</string>
     <string name="pnc_warn">本功能在某些设备上不可用，特别是 TouchWiz ！可以尝试多试试，但是我无法修复。</string>
     <string name="notif_desc">点击更改设置</string>
-    <string name="notifs_snooze_desc">    In Android 8.1 and later, you can set custom times for notification snoozing. These values reset on reboot, so make sure to enable Safe Mode if you would like them to persist across power cycles.\n\n
-    Use the options below to set the different snooze times. \"Default\" sets the time Android will use by default. The other items will be the snooze times available for you to select.
+    <string name="notifs_snooze_desc">在Android 8.1及更高版本中，您可以设置自定义时间以暂停通知。这些值会在重新启动时重置，因此，如果您希望它们在整个电源循环中持续存在，请确保启用“安全模式”。\n\n
+使用以下选项设置不同的贪睡时间。“默认”设置Android默认使用的时间。其他项目将是您可以选择的贪睡时间。
     </string>
-    <string name="custom_settings_input_desc">These fields allow you to enter your own custom settings.</string>
-    <string name="custom_settings_read_desc">These fields allow you to read the value of a specified key.</string>
-    <string name="custom_settings_warning">Be careful what you do here! If you input an incorrect value, you could cause a crash loop, bootloop or worse!</string>
-    <string name="hide_welcome_hint">Hint: You can hide this screen, and the donation message, by going to Settings and toggling on \"Hide Welcome Screen\".</string>
-    <string name="safe_mode_notif_desc_not_supported">This setting must remain enabled on Oreo.</string>
-    <string name="fix_rotation_icon_dialog_desc">Are you planning to uninstall SystemUI Tuner after this?</string>
-    <string name="yes_im_uninstalling">Yes, I\'m Uninstalling</string>
-    <string name="no_im_staying">No, I\'m Staying</string>
-    <string name="fix_rotation_done_uninstall">Rotation icon removed! This won\'t take effect until you reboot.</string>
+    <string name="custom_settings_input_desc">下面允许你输入一些自定义设置</string>
+    <string name="custom_settings_read_desc">这些字段允许您读取指定的值。</string>
+    <string name="custom_settings_warning">请小心操作，如果你输入了错误的数值，可能导致一直崩溃或一直重启或更糟！</string>
+    <string name="hide_welcome_hint">提示：您可以通过转到“设置”并在“隐藏欢迎屏幕”上切换来隐藏此屏幕和捐赠消息。</string>
+    <string name="safe_mode_notif_desc_not_supported">设个设置在Android Oreo上必须保持启用</string>
+    <string name="fix_rotation_icon_dialog_desc">您是否打算在此之后卸载 SystemUI Tuner？</string>
+    <string name="yes_im_uninstalling">是的，我要卸载</string>
+    <string name="no_im_staying">不，保持不变</string>
+    <string name="fix_rotation_done_uninstall">旋转图标已删除！在重新启动之前，该设置将不会生效。</string>
     <string name="fix_rotation_done_stay">Rotation icon removed! If it still appears, reboot your device.</string>
     <string name="missing_not_required_perms_desc">Are you sure you want to continue? At least one optional permission wasn\'t granted, which means you will need a computer again to grant them later.</string>
     <string name="ws_needed_desc">WRITE_SETTINGS is needed to change this setting. Tap the button above to grant it.\n (This unfortunately doesn\'t guarantee that the toggle will work.)</string>
