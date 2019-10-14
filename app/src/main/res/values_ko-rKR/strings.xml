@@ -247,6 +247,7 @@
     <string name="middle">Middle</string>
     <string name="right">Right</string>
     <string name="force_enable_adb">Force-Enable ADB</string>
+    <string name="global_dark_mode">Global Dark Mode</string>
     <!--Descriptions-->
     <string name="fancy_pulldown_notice">이 옵션을 끄면 재부팅 후 발생하는 문제의 원인이 될 수 있습니다. 재부팅 후 이 옵션을 수동으로 켰다 껐다 하거나, 안전 모드를 활성화하십시오.</string>
     <string name="safe_mode_summary">삼성 사용자라면 AOSP 롬이 아닌 경우 이것을 켜세요!</string>
@@ -288,6 +289,7 @@
     <string name="qs_info_marshmallow">Hold down on an icon to remove it.</string>
     <string name="remove_custom_blacklist_item_desc">Are you sure you want to remove the %s toggle?</string>
     <string name="force_enable_adb_desc">Certain devices automatically turn ADB off after a period of inactivity. Enable this to force ADB to stay enabled indefinitely.</string>
+    <string name="global_dark_mode_desc">Make supported applications use their dark themes (eg: Google Play Store, Instagram, etc). May require a reboot.</string>
     <!--Messages-->
     <string name="sorry_explain">이 토글을 설정하는 도중 문제가 발생했습니다.</string>
     <string name="sorry_option">컴퓨터에서 다음 명령어를 실행해보십시오(한 줄):</string>
