@@ -40,11 +40,18 @@
             android:summary="@string/force_enable_adb_desc"
             />
 
+        <SwitchPreference
+            android:key="ui_night_mode"
+            android:title="@string/global_dark_mode"
+            android:summary="@string/global_dark_mode_desc"
+            />
+
     </tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory>
 
     <tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory
         android:key="night_mode_settings"
         android:title="@string/night_mode">
+
         <SwitchPreference
             android:key="night_mode_auto"
             android:title="@string/night_mode_auto"

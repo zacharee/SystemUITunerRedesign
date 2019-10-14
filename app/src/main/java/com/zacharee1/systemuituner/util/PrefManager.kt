@@ -80,6 +80,7 @@ class PrefManager private constructor(private val context: Context) {
         const val WIFI_FULLY_CONNECTED = "wifi_fully_connected"
         const val WIFI_STRENGTH = "wifi_strength"
         const val FORCE_ENABLE_ADB = "force_enable_adb"
+        const val GLOBAL_DARK_MODE = "ui_night_mode"
     }
 
     /**

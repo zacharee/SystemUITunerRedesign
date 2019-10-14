@@ -1,6 +1,8 @@
 package com.zacharee1.systemuituner.fragments
 
 import android.annotation.SuppressLint
+import android.app.UiModeManager
+import android.content.Context
 import android.content.res.Resources
 import android.os.Build
 import android.os.Bundle
@@ -12,6 +14,7 @@ import androidx.preference.SwitchPreference
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.util.*
 import com.zacharee1.systemuituner.util.PrefManager.Companion.AUDIO_SAFE
+import com.zacharee1.systemuituner.util.PrefManager.Companion.GLOBAL_DARK_MODE
 import com.zacharee1.systemuituner.util.PrefManager.Companion.NOTIFICATION_SNOOZE_OPTIONS
 import tk.zwander.seekbarpreference.SeekBarPreference
 import java.util.*
@@ -50,20 +53,30 @@ class MiscFragment : AnimFragment() {
     }
 
     private fun setGlobalSwitchStates() {
-        val preferences = object : ArrayList<SwitchPreference>() {
-            init {
-                add(findPreference(HUD_ENABLED)!!)
-                add(findPreference(AUDIO_SAFE)!!)
-            }
+        val hudEnabled = findPreference<SwitchPreference>(HUD_ENABLED)!!
+        val audioSafe = findPreference<SwitchPreference>(AUDIO_SAFE)!!
+        val globalDark = findPreference<SwitchPreference>(GLOBAL_DARK_MODE)!!
+
+        hudEnabled.isChecked = Settings.Global.getInt(context?.contentResolver, hudEnabled.key, 0) == 1
+        hudEnabled.setOnPreferenceChangeListener { p, newValue ->
+            context?.writeGlobal(p.key, if (newValue.toString().toBoolean()) 1 else 0)
+            true
         }
 
-        for (preference in preferences) {
-            val key = preference.key
-            preference.isChecked = Settings.Global.getInt(context?.contentResolver, key, 2) == 3
-            preference.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { _, o ->
-                context?.writeGlobal(key, if (o.toString().toBoolean()) 3 else 2)
-                true
-            }
+        audioSafe.isChecked = Settings.Global.getInt(context?.contentResolver, audioSafe.key, 2) == 3
+        audioSafe.setOnPreferenceChangeListener { p, newValue ->
+            context?.writeGlobal(p.key, if (newValue.toString().toBoolean()) 3 else 2)
+            true
+        }
+
+        globalDark.isChecked = Settings.Global.getInt(context?.contentResolver, globalDark.key, 1) == 2
+        globalDark.setOnPreferenceChangeListener { p, newValue ->
+            val enabled = newValue.toString().toBoolean()
+            val value = if (enabled) UiModeManager.MODE_NIGHT_YES else UiModeManager.MODE_NIGHT_NO
+
+            (context?.getSystemService(Context.UI_MODE_SERVICE) as UiModeManager?)?.nightMode = value
+            context?.writeGlobal(p.key, value)
+            true
         }
     }
 
