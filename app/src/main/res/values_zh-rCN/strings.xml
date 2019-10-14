@@ -247,6 +247,7 @@
     <string name="middle">中间</string>
     <string name="right">右边</string>
     <string name="force_enable_adb">强制启用 ADB</string>
+    <string name="global_dark_mode">Global Dark Mode</string>
     <!--Descriptions-->
     <string name="fancy_pulldown_notice">关闭此选项会导致重新启动后出现问题。在重新启动后手动切换此选项, 或启用安全模式。</string>
     <string name="safe_mode_summary">注意：！三星用户保持这个打开, 除非你有一个 AOSP ROM的系统！</string>
@@ -288,6 +289,7 @@
     <string name="qs_info_marshmallow">按住图标将其删除。</string>
     <string name="remove_custom_blacklist_item_desc">您真的要删除%s切换？</string>
     <string name="force_enable_adb_desc">一段时间不活动后，某些设备会自动关闭ADB。启用此选项可强制ADB无限期保持启用状态。</string>
+    <string name="global_dark_mode_desc">Make supported applications use their dark themes (eg: Google Play Store, Instagram, etc). May require a reboot.</string>
     <!--Messages-->
     <string name="sorry_explain">这项设置发生错误</string>
     <string name="sorry_option">请从电脑端输入以下命令行(是一整句哦)</string>
