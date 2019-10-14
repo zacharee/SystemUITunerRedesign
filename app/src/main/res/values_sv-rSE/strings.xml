@@ -247,6 +247,7 @@
     <string name="middle">Middle</string>
     <string name="right">Right</string>
     <string name="force_enable_adb">Force-Enable ADB</string>
+    <string name="global_dark_mode">Global Dark Mode</string>
     <!--Descriptions-->
     <string name="fancy_pulldown_notice">Ändring av detta alternativ kan orsaka problem efter en omstart. Växla alternativet på och av efter en omstart, eller aktivera felsäkert läge.</string>
     <string name="safe_mode_summary">SAMSUNG-ANVÄNDARE HÅLL DETTA På SÅVIDA DU INTE HAR EN AOSP ROM!</string>
@@ -288,6 +289,7 @@
     <string name="qs_info_marshmallow">Hold down on an icon to remove it.</string>
     <string name="remove_custom_blacklist_item_desc">Are you sure you want to remove the %s toggle?</string>
     <string name="force_enable_adb_desc">Certain devices automatically turn ADB off after a period of inactivity. Enable this to force ADB to stay enabled indefinitely.</string>
+    <string name="global_dark_mode_desc">Make supported applications use their dark themes (eg: Google Play Store, Instagram, etc). May require a reboot.</string>
     <!--Messages-->
     <string name="sorry_explain">Något gick fel när du ändrade denna inställning.</string>
     <string name="sorry_option">Prova att köra följande kommando från en dator (det är en rad):</string>
