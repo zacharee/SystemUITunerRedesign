@@ -247,6 +247,7 @@
     <string name="middle">Uprostřed</string>
     <string name="right">Vpravo</string>
     <string name="force_enable_adb">Vynuceně povolit ADB</string>
+    <string name="global_dark_mode">Global Dark Mode</string>
     <!--Descriptions-->
     <string name="fancy_pulldown_notice">Přepnutí této volby může způsobit problémy po restartování. Přepněte manuálně tuto možnost po restartu nebo zapněte bezpečný režim.</string>
     <string name="safe_mode_summary">UŽIVATELÉ SAMSUNG UCHOVEJTE TOTO ZAPNUTO, POKUD NEJSTE NA AOSP ROM!</string>
@@ -292,6 +293,7 @@ Dalšími položkami jsou časy odložení, které můžete vybrat.
     <string name="qs_info_marshmallow">Podržte stisknutou ikonu a odstraňte ji.</string>
     <string name="remove_custom_blacklist_item_desc">Opravdu chcete odstranit přepínač %s?</string>
     <string name="force_enable_adb_desc">Některá zařízení automaticky vypnou po určité době nečinnosti ADB. Povolením tohoto vynutíte, aby ADB zůstalo povoleno na neurčito.</string>
+    <string name="global_dark_mode_desc">Make supported applications use their dark themes (eg: Google Play Store, Instagram, etc). May require a reboot.</string>
     <!--Messages-->
     <string name="sorry_explain">Při nastavování tohoto přepínače se něco pokazilo.</string>
     <string name="sorry_option">Zkuste spustit následující příkaz z počítače (je to jeden řádek):</string>
