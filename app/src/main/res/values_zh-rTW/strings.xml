@@ -247,6 +247,7 @@
     <string name="middle">Middle</string>
     <string name="right">Right</string>
     <string name="force_enable_adb">Force-Enable ADB</string>
+    <string name="global_dark_mode">Global Dark Mode</string>
     <!--Descriptions-->
     <string name="fancy_pulldown_notice">關閉本功能可能導致重啟後發生問題。請於重啟後手動開啟再關閉，或啟用安全模式。</string>
     <string name="safe_mode_summary">三星用戶應保持本設定啟用，除非你有 AOSP ROM！</string>
@@ -288,6 +289,7 @@
     <string name="qs_info_marshmallow">按住圖示以移除。</string>
     <string name="remove_custom_blacklist_item_desc">Are you sure you want to remove the %s toggle?</string>
     <string name="force_enable_adb_desc">Certain devices automatically turn ADB off after a period of inactivity. Enable this to force ADB to stay enabled indefinitely.</string>
+    <string name="global_dark_mode_desc">Make supported applications use their dark themes (eg: Google Play Store, Instagram, etc). May require a reboot.</string>
     <!--Messages-->
     <string name="sorry_explain">設定時發生未知錯誤</string>
     <string name="sorry_option">試著從電腦執行下列指定（單行指令）：</string>
