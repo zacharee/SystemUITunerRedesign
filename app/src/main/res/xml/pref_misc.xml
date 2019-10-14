@@ -6,32 +6,47 @@
         android:key="misc_general"
         android:title="@string/general">
 
-        <SwitchPreference
+        <com.zacharee1.systemuituner.prefs.SettingsWriteSwitchPreference
             android:key="sysui_show_full_zen"
             android:title="@string/dnd_switch_in_vol_slider"
+            app:enabled_value="1"
+            app:disabled_value="0"
+            app:type="secure"
             />
 
-        <SwitchPreference
+        <com.zacharee1.systemuituner.prefs.SettingsWriteSwitchPreference
             android:key="heads_up_notifications_enabled"
             android:title="@string/heads_up_notifications"
             android:defaultValue="true"
+            app:enabled_value="1"
+            app:disabled_value="0"
+            app:type="global"
             />
 
-        <SwitchPreference
+        <com.zacharee1.systemuituner.prefs.SettingsWriteSwitchPreference
             android:key="audio_safe_volume_state"
             android:title="@string/headphone_volume_warning"
             android:defaultValue="true"
+            app:enabled_value="3"
+            app:disabled_value="2"
+            app:type="global"
             />
 
-        <SwitchPreference
+        <com.zacharee1.systemuituner.prefs.SettingsWriteSwitchPreference
             android:key="status_bar_show_battery_percent"
             android:title="@string/battery_percentage"
             android:summary="@string/reboot_required"
+            app:enabled_value="1"
+            app:disabled_value="0"
+            app:type="system"
             />
 
-        <SwitchPreference
+        <com.zacharee1.systemuituner.prefs.SettingsWriteSwitchPreference
             android:key="clock_seconds"
             android:title="@string/show_clock_seconds"
+            app:enabled_value="1"
+            app:disabled_value="0"
+            app:type="secure"
             />
 
         <SwitchPreference
@@ -40,10 +55,13 @@
             android:summary="@string/force_enable_adb_desc"
             />
 
-        <SwitchPreference
+        <com.zacharee1.systemuituner.prefs.SettingsWriteSwitchPreference
             android:key="ui_night_mode"
             android:title="@string/global_dark_mode"
             android:summary="@string/global_dark_mode_desc"
+            app:enabled_value="2"
+            app:disabled_value="1"
+            app:type="global"
             />
 
     </tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory>
@@ -146,9 +164,12 @@
         android:title="@string/power_notification_controls"
         android:key="power_notification_controls">
 
-        <SwitchPreference
+        <com.zacharee1.systemuituner.prefs.SettingsWriteSwitchPreference
             android:key="show_importance_slider"
             android:title="@string/enabled"
+            app:enabled_value="1"
+            app:disabled_value="0"
+            app:type="secure"
             />
 
         <Preference

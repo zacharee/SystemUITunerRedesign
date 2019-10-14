@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="CustomInputPreference">
-        <attr name="type" format="enum|reference">
-            <enum name="global" value="0" />
-            <enum name="secure" value="1" />
-            <enum name="system" value="2" />
-        </attr>
+        <attr name="type" />
     </declare-styleable>
+
+    <declare-styleable name="SettingsWriteSwitchPreference">
+        <attr name="type" />
+        <attr name="enabled_value" format="string|reference" />
+        <attr name="disabled_value" format="string|reference" />
+    </declare-styleable>
+
+    <attr name="type" format="enum|reference">
+        <enum name="global" value="0" />
+        <enum name="secure" value="1" />
+        <enum name="system" value="2" />
+    </attr>
 </resources>

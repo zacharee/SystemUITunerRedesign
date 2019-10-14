@@ -13,7 +13,6 @@ import androidx.preference.PreferenceCategory
 import androidx.preference.SwitchPreference
 import com.zacharee1.systemuituner.R
 import com.zacharee1.systemuituner.util.*
-import com.zacharee1.systemuituner.util.PrefManager.Companion.AUDIO_SAFE
 import com.zacharee1.systemuituner.util.PrefManager.Companion.GLOBAL_DARK_MODE
 import com.zacharee1.systemuituner.util.PrefManager.Companion.NOTIFICATION_SNOOZE_OPTIONS
 import tk.zwander.seekbarpreference.SeekBarPreference
@@ -31,7 +30,6 @@ class MiscFragment : AnimFragment() {
 
         setGlobalSwitchStates()
         setSecureSwitchStates()
-        setSystemSwitchStates()
         setNightModeSwitchStates()
         setUpAnimationScales()
         setUpSnoozeStuff()
@@ -53,29 +51,13 @@ class MiscFragment : AnimFragment() {
     }
 
     private fun setGlobalSwitchStates() {
-        val hudEnabled = findPreference<SwitchPreference>(HUD_ENABLED)!!
-        val audioSafe = findPreference<SwitchPreference>(AUDIO_SAFE)!!
         val globalDark = findPreference<SwitchPreference>(GLOBAL_DARK_MODE)!!
 
-        hudEnabled.isChecked = Settings.Global.getInt(context?.contentResolver, hudEnabled.key, 0) == 1
-        hudEnabled.setOnPreferenceChangeListener { p, newValue ->
-            context?.writeGlobal(p.key, if (newValue.toString().toBoolean()) 1 else 0)
-            true
-        }
-
-        audioSafe.isChecked = Settings.Global.getInt(context?.contentResolver, audioSafe.key, 2) == 3
-        audioSafe.setOnPreferenceChangeListener { p, newValue ->
-            context?.writeGlobal(p.key, if (newValue.toString().toBoolean()) 3 else 2)
-            true
-        }
-
-        globalDark.isChecked = Settings.Global.getInt(context?.contentResolver, globalDark.key, 1) == 2
         globalDark.setOnPreferenceChangeListener { p, newValue ->
             val enabled = newValue.toString().toBoolean()
             val value = if (enabled) UiModeManager.MODE_NIGHT_YES else UiModeManager.MODE_NIGHT_NO
 
             (context?.getSystemService(Context.UI_MODE_SERVICE) as UiModeManager?)?.nightMode = value
-            context?.writeGlobal(p.key, value)
             true
         }
     }
@@ -88,14 +70,6 @@ class MiscFragment : AnimFragment() {
             val preference = findPreference<SwitchPreference>(SHOW_IMPORTANCE_SLIDER)!!
             preference.isChecked = false
             preference.setSummary(if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.M) R.string.requires_nougat else R.string.safe_mode_android_o)
-        }
-
-        val preferences = object : ArrayList<SwitchPreference>() {
-            init {
-                if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M) add(findPreference(SHOW_ZEN)!!)
-                if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M) add(findPreference(CLOCK_SECONDS)!!)
-                if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M) add(findPreference(SHOW_IMPORTANCE_SLIDER)!!)
-            }
         }
 
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.N) {
@@ -126,32 +100,6 @@ class MiscFragment : AnimFragment() {
                     isEnabled = false
                     setSummary(R.string.setting_not_on_touchwiz_pie)
                 }
-            }
-        }
-
-        for (preference in preferences) {
-            val key = preference.key
-            preference.isChecked = Settings.Secure.getInt(context?.contentResolver, key, 0) == 1
-            preference.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { _, o ->
-                context?.writeSecure(key, if (o.toString().toBoolean()) 1 else 0)
-                true
-            }
-        }
-    }
-
-    private fun setSystemSwitchStates() {
-        val preferences = object : ArrayList<SwitchPreference>() {
-            init {
-                add(findPreference(STATUS_BAR_BATTERY)!!)
-            }
-        }
-
-        for (preference in preferences) {
-            val key = preference.key
-            preference.isChecked = Settings.System.getInt(context?.contentResolver, key, 0) == 1
-            preference.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { _, o ->
-                context?.writeSystem(key, if (o.toString().toBoolean()) 1 else 0)
-                true
             }
         }
     }

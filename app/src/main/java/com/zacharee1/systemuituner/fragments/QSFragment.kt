@@ -26,7 +26,6 @@ class QSFragment : AnimFragment() {
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
         super.onCreatePreferences(savedInstanceState, rootKey)
 
-        setSwitchStates()
         setSwitchListeners()
         setSliderState()
         setEditorListener()
@@ -54,25 +53,8 @@ class QSFragment : AnimFragment() {
         }
     }
 
-    private fun setSwitchStates() {
-        preferenceScreen.forEachPreference {
-            if (it is SwitchPreference) {
-                it.isChecked = Settings.Secure.getInt(context?.contentResolver, it.key, 1) == 1
-            }
-        }
-    }
-
     private fun setSwitchListeners() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            preferenceScreen.forEachPreference {
-                if (it is SwitchPreference) {
-                    it.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { preference, o ->
-                        context?.writeSecure(preference.key, if (o.toString().toBoolean()) 1 else 0)
-                        true
-                    }
-                }
-            }
-        } else {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.N) {
             val category = findPreference<PreferenceCategory>(GENERAL_QS)!!
             category.isEnabled = false
 

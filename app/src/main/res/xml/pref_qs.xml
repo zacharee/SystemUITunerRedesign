@@ -20,15 +20,21 @@
         android:title="@string/general"
         android:key="general_qs">
 
-        <SwitchPreference
+        <com.zacharee1.systemuituner.prefs.SettingsWriteSwitchPreference
             android:key="sysui_qs_fancy_anim"
             android:title="@string/fancy_pulldown_animation"
             android:summary="@string/fancy_pulldown_notice"
+            app:enabled_value="1"
+            app:disabled_value="0"
+            app:type="secure"
             />
 
-        <SwitchPreference
+        <com.zacharee1.systemuituner.prefs.SettingsWriteSwitchPreference
             android:key="sysui_qs_move_whole_rows"
             android:title="@string/move_full_rows"
+            app:enabled_value="1"
+            app:disabled_value="0"
+            app:type="secure"
             />
 
     </tk.zwander.collapsiblepreferencecategory.CollapsiblePreferenceCategory>
