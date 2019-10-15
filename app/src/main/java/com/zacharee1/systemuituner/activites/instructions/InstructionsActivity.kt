@@ -320,10 +320,10 @@ class InstructionsActivity : AppIntro2() {
         override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
             super.onViewCreated(view, savedInstanceState)
 
-            val commands = arguments!!.getStringArrayList(ARG_COMMANDS)
+            val commands = arguments?.getStringArrayList(ARG_COMMANDS) ?: return
             val holder = view.findViewById<LinearLayout>(R.id.custom_layout_holder)
 
-            for (command in commands!!) {
+            for (command in commands) {
                 val commandBox = layoutInflater.inflate(R.layout.command_box, holder, false)
 
                 commandBox.command.text = "adb shell pm grant ${view.context.packageName} $command"

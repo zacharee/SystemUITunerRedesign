@@ -42,7 +42,7 @@ class ImmersiveSelectActivity : BaseAnimActivity() {
                             info.packageName,
                             null,
                             info.loadIcon(packageManager))
-                    runOnUiThread { app_load_progress.progress = (it.indexOf(info) + 1f) / it.size }
+                    runOnUiThread { app_load_progress?.progress = (it.indexOf(info) + 1f) / it.size }
                 }
             }
 
