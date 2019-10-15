@@ -247,7 +247,7 @@
     <string name="middle">Mitte</string>
     <string name="right">Rechts</string>
     <string name="force_enable_adb">Aktivierung von ADB erzwingen</string>
-    <string name="global_dark_mode">Global Dark Mode</string>
+    <string name="global_dark_mode">Systemweiter Dunkelmodus</string>
     <!--Descriptions-->
     <string name="fancy_pulldown_notice">Wenn Sie diese Option deaktivieren, kann es nach einem Neustart zu Problemen kommen. Schalten Sie diese Option nach einem Neustart manuell ein und aus oder aktivieren Sie den abgesicherten Modus.</string>
     <string name="safe_mode_summary">SAMSUNG-BENUTZER: LASST DIES AN, SOFERN IHR KEINE AOSP ROM HABT!</string>
@@ -289,7 +289,7 @@ Verwenden Sie die folgenden Optionen, um die verschiedenen Zeiten für das Zurü
     <string name="qs_info_marshmallow">Halten Sie ein Symbol gedrückt, um es zu entfernen.</string>
     <string name="remove_custom_blacklist_item_desc">Möchten Sie den Umschalter %s wirklich entfernen?</string>
     <string name="force_enable_adb_desc">Einige Geräte deaktivieren ADB automatisch nach einer gewissen Zeit der Inaktivität. Aktivieren Sie diese Funktion, um zu erzwingen, dass ADB auf unbestimmte Zeit aktiviert bleibt.</string>
-    <string name="global_dark_mode_desc">Make supported applications use their dark themes (eg: Google Play Store, Instagram, etc). May require a reboot.</string>
+    <string name="global_dark_mode_desc">Ermöglichen Sie, dass unterstützte Anwendungen ihre dunklen Themen verwenden können (z.B. Google Play Store, Instagram, usw.). Möglicherweise ist ein Neustart erforderlich.</string>
     <!--Messages-->
     <string name="sorry_explain">Irgendetwas ist beim Setzen dieses Schalters schiefgelaufen.</string>
     <string name="sorry_option">Versuche den folgenden Befehl von einem Computer aus auszuführen (es ist eine Zeile):</string>
