@@ -12,10 +12,10 @@ With SystemUI Tuner you can, among other things:
 # User Support
 I make no guarantee with this app that:
  - it will work on your particular device
- - it will not not cause your device to malfunction
+ - it will not cause your device to malfunction
  - every feature will work on your device
 
-SystemUI has no warranty. If you choose to use this app, I am not responsible for anything that goes wrong.
+SystemUI Tuner has no warranty. If you choose to use this app, I am not responsible for anything that goes wrong.
 I will do my best to help you provided that:
  - I can
  - you have read this document and its warnings
