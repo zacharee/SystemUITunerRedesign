@@ -70,7 +70,7 @@
     <string name="heads_up_notifications">Pemberitahuan Heads-Up</string>
     <string name="headphone_volume_warning">Peringatan Volume Headphone</string>
     <string name="custom_settings_input">Nilai Pengaturan Khusus</string>
-    <string name="custom_settings_read">Read Custom Value</string>
+    <string name="custom_settings_read">Baca Nilai Khusus</string>
     <string name="global">Global</string>
     <string name="secure">Aman</string>
     <string name="system">Sistem</string>
@@ -78,7 +78,7 @@
     <string name="power_notification_controls">Kontrol Pemberitahuan Daya</string>
     <string name="danger_zone">Zona Bahaya</string>
     <string name="safe_mode">Mode Aman</string>
-    <string name="enable_custom_settings_input">Enable Custom Settings</string>
+    <string name="enable_custom_settings_input">Aktifkan Pengaturan Kustom</string>
     <string name="enable">Aktif</string>
     <string name="knox_icon">Ikon KNOX</string>
     <string name="smart_network_icon">Ikon Jaringan Pintar</string>
@@ -134,7 +134,7 @@
     <string name="battery">Baterai</string>
     <string name="back_up_blacklist">Kembali ke Daftar Hitam</string>
     <string name="restore_blacklist">Mengembalikan Daftar Hitam</string>
-    <string name="backup_and_restore">Backup &amp; Restore</string>
+    <string name="backup_and_restore">Pencadangan &amp; Pemulihan</string>
     <string name="quick_settings">Pengaturan Cepat</string>
     <string name="demo_mode">Mode Demo</string>
     <string name="auto_detect">Deteksi Otomatis</string>
@@ -150,7 +150,7 @@
     <string name="none">Tak Satupun</string>
     <string name="full">Penuh</string>
     <string name="navigation_bar">Bilah Navigasi</string>
-    <string name="navigation_bar_color">Navigation Bar Color</string>
+    <string name="navigation_bar_color">Warna Bilah Navigasi</string>
     <string name="pre_confirms">Pra-Konfirmasi</string>
     <string name="config_qs">Konfigurasi Cepat Ubin</string>
     <string name="mode">Moda</string>
