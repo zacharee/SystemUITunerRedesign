@@ -37,7 +37,7 @@
     <string name="nfc_icon">Ícone de NFC</string>
     <string name="location_icon">Ícone de Localização</string>
     <string name="su_icon">Ícone SU</string>
-    <string name="network">Network</string>
+    <string name="network">Rede</string>
     <string name="bluetooth_icon">Ícone Bluetooth</string>
     <string name="data_saver_icon">Ícone de economia de dados</string>
     <string name="ethernet_icon">Ícone de Ethernet</string>
@@ -58,8 +58,8 @@
     <string name="zen_icon">Ícone Zen</string>
     <string name="do_not_disturb">Ícone Não perturbe</string>
     <string name="dnd">Não Perturbe</string>
-    <string name="privacy_policy">Privacy Policy</string>
-    <string name="terms_of_service">Terms of Service</string>
+    <string name="privacy_policy">Política de privacidade</string>
+    <string name="terms_of_service">Termos de Serviço</string>
     <string name="donate">Doar</string>
     <string name="reset_blacklist">Redefinir a Lista Negra</string>
     <string name="animator_duration_scale">Escala de Duração da animação</string>
