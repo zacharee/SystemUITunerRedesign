@@ -28,11 +28,11 @@
     <string name="status_bar_style">Estilo da barra de status</string>
     <string name="setup">Configuração</string>
     <string name="dnd_switch_in_vol_slider">DND Switch in Vol Slider</string>
-    <string name="dark_mode">Dark Mode</string>
-    <string name="managed_profile_icon">Managed Profile Icon</string>
-    <string name="battery_icon">Battery Icon</string>
+    <string name="dark_mode">Modo Escuro</string>
+    <string name="managed_profile_icon">Ícone de Perfil gerenciado</string>
+    <string name="battery_icon">Ícone da bateria</string>
     <string name="battery_percentage">Porcentagem da bateria</string>
-    <string name="cast_icon">Cast Icon</string>
+    <string name="cast_icon">Ícone de espelhamento</string>
     <string name="rotation_lock_icon">Rotation lock Icon</string>
     <string name="nfc_icon">NFC Icon</string>
     <string name="location_icon">Location Icon</string>
