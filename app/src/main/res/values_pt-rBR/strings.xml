@@ -157,11 +157,11 @@
     <string name="qs_column_count">Número de Colunas</string>
     <string name="qs_row_count">Contagem de linhas QS</string>
     <string name="qs_column_count_landscape">Contagem de linhas de QS (Paisagem)</string>
-    <string name="qs_row_count_landscape">QS Row Count (Landscape)</string>
-    <string name="lockscreen">Lock Screen</string>
-    <string name="choose_left">Choose Left Shortcut</string>
-    <string name="choose_right">Choose Right Shortcut</string>
-    <string name="unlock_device">Unlock Device</string>
+    <string name="qs_row_count_landscape">Contagem de linhas de QS (Paisagem)</string>
+    <string name="lockscreen">Tela de Bloqueio</string>
+    <string name="choose_left">Escolha o atalho esquerdo</string>
+    <string name="choose_right">Escolha o atalho direito</string>
+    <string name="unlock_device">Desbloquear dispositivo</string>
     <string name="shortcuts">Atalhos</string>
     <string name="welcome">Bem-vindo!</string>
     <string name="some_things">Exemplos</string>
