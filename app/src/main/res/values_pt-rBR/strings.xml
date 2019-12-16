@@ -98,8 +98,8 @@
     <string name="toddler_icon">Ícone de Toddler</string>
     <string name="wearable_icon">Ícone de wearable</string>
     <string name="wifi_ap_icon">Ícone de WiFi AP</string>
-    <string name="wifi_oxygen_icon">WiFi Oxygen Icon</string>
-    <string name="wifi_p2p_icon">WiFi P2P Icon</string>
+    <string name="wifi_oxygen_icon">Ícone Oxigen WiFi</string>
+    <string name="wifi_p2p_icon">Ícone WiFi P2P</string>
     <string name="wimax_icon">WiMax Icon</string>
     <string name="remote_call_icon">Remote Call Icon</string>
     <string name="tty_icon">TTY Icon</string>
