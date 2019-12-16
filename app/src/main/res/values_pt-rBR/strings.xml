@@ -182,8 +182,8 @@
     <string name="select_apps">Selecionar aplicativo</string>
     <string name="not_set">Não definido</string>
     <string name="choose_your_weapon">Escolha sua arma</string>
-    <string name="initial_setup">Initial Setup</string>
-    <string name="windows_setup">Windows Setup</string>
+    <string name="initial_setup">Configuração inicial</string>
+    <string name="windows_setup">Instalação do Windows</string>
     <string name="mac_setup">macOS Setup</string>
     <string name="ubuntu_setup">Ubuntu Setup</string>
     <string name="fedora_setup">Fedora Setup</string>
