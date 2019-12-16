@@ -110,8 +110,8 @@
     <string name="phone_signal_icon">Ícone de sinal do telefone</string>
     <string name="volte">VoLTE</string>
     <string name="vowifi">VoWiFi</string>
-    <string name="wifi_calling_icon">WiFi Calling Icon</string>
-    <string name="answering_memo_icon">Answering Memo Icon</string>
+    <string name="wifi_calling_icon">Ícone de chamada WiFi</string>
+    <string name="answering_memo_icon">Ícone Answering Memo</string>
     <string name="felica_lock_icon">Felica Lock Icon</string>
     <string name="ime_icon">IME Icon</string>
     <string name="nfc_lock_icon">NFC Lock Icon</string>
