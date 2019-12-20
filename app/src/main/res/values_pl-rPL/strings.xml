@@ -3,7 +3,7 @@
 <resources>
     <!--Titles-->
     <string name="app_name">SystemUI Tuner</string>
-    <string name="to_the_tweaks">To The Tweaks!</string>
+    <string name="to_the_tweaks">Do ulepszeń!</string>
     <string name="more">Więcej</string>
     <string name="notice">Uwaga</string>
     <string name="hide_welcome_screen">Pokaż ekran powitalny</string>
@@ -21,15 +21,15 @@
     <string name="select_battery_level">Wybierz poziom baterii</string>
     <string name="wifi_strength">Siła WiFi</string>
     <string name="battery_charging">Ładowanie baterii</string>
-    <string name="mobile_strength">Mobile Strength</string>
-    <string name="mobile_type">Mobile Type</string>
+    <string name="mobile_strength">Do poprawek</string>
+    <string name="mobile_type">Mobile Daten Netz</string>
     <string name="show_airplane_mode">Pokaż tryb samolotowy</string>
     <string name="show_notifications">Pokaż powiadomienia</string>
     <string name="status_bar_style">Wygląd paska stanu</string>
     <string name="setup">Konfiguracja</string>
-    <string name="dnd_switch_in_vol_slider">DND Switch in Vol Slider</string>
+    <string name="dnd_switch_in_vol_slider">\'Nie przeszkadzać\' w suwaku głośności</string>
     <string name="dark_mode">Tryb ciemny</string>
-    <string name="managed_profile_icon">Managed Profile Icon</string>
+    <string name="managed_profile_icon">Ikona profilu zarządzonego</string>
     <string name="battery_icon">Ikona baterii</string>
     <string name="battery_percentage">Procent baterii</string>
     <string name="cast_icon">Cast Icon</string>
