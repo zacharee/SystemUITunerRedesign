@@ -232,7 +232,7 @@
     <string name="safe_mode_row_col_tw">QS Row/Column Count</string>
     <string name="safe_mode_snooze_options">Snooze Options</string>
     <string name="fix_rotation_icon_dialog_title">Uninstalling?</string>
-    <string name="done">Done!</string>
+    <string name="done">Concluído!</string>
     <string name="high_brightness_warning">High Brightness Warning</string>
     <string name="grant">Grant</string>
     <string name="attention">Attention!</string>
@@ -241,7 +241,7 @@
     <string name="key">Chave</string>
     <string name="add_item">Adicionar item</string>
     <string name="are_you_sure">Você tem certeza?</string>
-    <string name="style">Style</string>
+    <string name="style">Estilo</string>
     <string name="clock_position">Clock Position</string>
     <string name="left">Left</string>
     <string name="middle">Middle</string>
