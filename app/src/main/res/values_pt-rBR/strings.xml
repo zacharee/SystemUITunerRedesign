@@ -228,29 +228,29 @@
     <string name="remove_from_blacklist">Remover da lista negra?</string>
     <string name="safe_mode_status_bar">Barra de Status</string>
     <string name="safe_mode_fancy_anim">Animações Bonitas</string>
-    <string name="safe_mode_header_count">QS Header Count</string>
-    <string name="safe_mode_row_col_tw">QS Row/Column Count</string>
-    <string name="safe_mode_snooze_options">Snooze Options</string>
-    <string name="fix_rotation_icon_dialog_title">Uninstalling?</string>
+    <string name="safe_mode_header_count">Número de botões na grade de configurações rápidas</string>
+    <string name="safe_mode_row_col_tw">Número de linha/coluna em configurações rápidas,</string>
+    <string name="safe_mode_snooze_options">Opções de soneca</string>
+    <string name="fix_rotation_icon_dialog_title">Desinstalando?</string>
     <string name="done">Concluído!</string>
-    <string name="high_brightness_warning">High Brightness Warning</string>
-    <string name="grant">Grant</string>
-    <string name="attention">Attention!</string>
+    <string name="high_brightness_warning">Aviso de brilho alto</string>
+    <string name="grant">Conceder</string>
+    <string name="attention">Atenção!</string>
     <string name="options">Opções</string>
     <string name="name">Nome</string>
     <string name="key">Chave</string>
     <string name="add_item">Adicionar item</string>
     <string name="are_you_sure">Você tem certeza?</string>
     <string name="style">Estilo</string>
-    <string name="clock_position">Clock Position</string>
-    <string name="left">Left</string>
-    <string name="middle">Middle</string>
-    <string name="right">Right</string>
-    <string name="force_enable_adb">Force-Enable ADB</string>
+    <string name="clock_position">Posição do relógio</string>
+    <string name="left">Esquerda</string>
+    <string name="middle">Meio</string>
+    <string name="right">Direita</string>
+    <string name="force_enable_adb">Forcar ativação ADB</string>
     <!--Descriptions-->
-    <string name="fancy_pulldown_notice">Toggling this option off can cause issues after a reboot. Manually toggle this option on and off after a reboot, or enable Safe Mode.</string>
-    <string name="safe_mode_summary">SAMSUNG USERS KEEP THIS TURNED ON UNLESS YOU HAVE AN AOSP ROM!</string>
-    <string name="safe_mode_summary_1">Clears any status bar customizations on reboot and restores them after boot completes.</string>
+    <string name="fancy_pulldown_notice">Desativar essa opção pode causar problemas após a reinicialização. Ative e desative manualmente essa opção, após uma reinicialização ou ative o Modo de Segurança.</string>
+    <string name="safe_mode_summary">OS USUÁRIOS DA SAMSUNG DEVEM MANTÊ-LO LIGADO, A MENOS QUE VOCÊ TENHA UMA ROM AOSP!</string>
+    <string name="safe_mode_summary_1">Remove todas as personalizações da barra de status na reinicialização e restaura-as após a conclusão da inicialização.</string>
     <string name="safe_mode_summary_2">Toggles the QS Fancy Animation on boot.</string>
     <string name="safe_mode_summary_3">Restores custom QS header count value on boot (Nougat+).</string>
     <string name="safe_mode_summary_4">Restores custom QS row/column count on boot (TouchWiz, Nougat+).</string>
@@ -291,7 +291,7 @@
     <!--Messages-->
     <string name="sorry_explain">Something went wrong while setting this toggle.</string>
     <string name="sorry_option">Try executing the following command from a computer (it\'s one line):</string>
-    <string name="grant_dump_perm">You need to grant the permission \"android.permission.DUMP\" to use this feature.</string>
+    <string name="grant_dump_perm">Você precisa conceder a permissão \"android.permission.DUMP\", para usar este recurso.</string>
     <string name="safe_mode_auto_enabled">Samsung device detected! Safe Mode has been automatically enabled for your safety. Be warned that modifying any status bar icons has the potential to BREAK SYSTEM UI! Please follow the link in the Play Store description for more information.</string>
     <string name="requires_nougat">Requires Nougat or later.</string>
     <string name="requires_oreo">Requires Oreo or later.</string>
@@ -308,23 +308,23 @@
     <string name="feature_not_supported">It seems your device doesn\'t support this feature :/</string>
     <string name="miui_warning">It seems that you\'re using a MIUI device. Please take note that few, if any, features of this app will work for you. It is NOT fixable!</string>
     <string name="warn_message">Please read the Terms of Service before continuing.</string>
-    <string name="safe_mode_notif_desc">It is recommended that you keep this active, and hide the notification instead. Turning it off may cause Safe Mode to no longer function.</string>
-    <string name="invalid_blacklist_backup">Invalid blacklist backup</string>
-    <string name="backup_restored">Successfully restored backup</string>
-    <string name="nothing_to_back_up">Nothing to back up</string>
-    <string name="grant_usage">Please grant SystemUI Tuner access to Usage.</string>
-    <string name="setting_not_on_pie">This setting doesn\'t work on Pie or later.</string>
-    <string name="setting_not_on_touchwiz_pie">This setting doesn\'t work on TouchWiz Pie or later.</string>
-    <string name="setting_not_on_touchwiz">This setting doesn\'t work on TouchWiz.</string>
+    <string name="safe_mode_notif_desc">É recomendável que você mantenha isso ativo e oculte a notificação. Desligá-lo pode fazer com que o modo de segurança não funcione mais.</string>
+    <string name="invalid_blacklist_backup">Backup da lista negra inválido</string>
+    <string name="backup_restored">Backup restaurado com sucesso</string>
+    <string name="nothing_to_back_up">Nada para fazer backup</string>
+    <string name="grant_usage">Por favor, conceda acesso ao SystemUI tuner para uso.</string>
+    <string name="setting_not_on_pie">Esta configuração não funciona no Pie ou posterior.</string>
+    <string name="setting_not_on_touchwiz_pie">Esta configuração não funciona no TouchWiz Pie ou posterior.</string>
+    <string name="setting_not_on_touchwiz">Esta configuração não funciona no TouchWiz.</string>
     <!--Instructions-->
-    <string name="enable_debug"><![CDATA[1. Go to Settings >> Developer Options and make sure USB Debugging is enabled.]]></string>
-    <string name="accept_auth">2. Plug your device into your computer and accept the authorization request on it.</string>
-    <string name="enable_devops"><![CDATA[- Enable Developer Options by going to Settings >> About, finding \"Build Number\" and tapping it 7 times.]]></string>
-    <string name="download_drivers">- Windows users may need to install device drivers, which are available from the manufacturer\'s website.</string>
-    <string name="download_adb_windows"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-windows.zip">Download the ADB ZIP for Windows.</a>]]></string>
-    <string name="extract_zip">2. Extract the ZIP to an easily-accessible location (ie Desktop).</string>
-    <string name="open_cmd">3. Open CMD.</string>
-    <string name="cd_windows"><![CDATA[4. Enter <b>cd C:\\path\\to\\extracted\\folder\\</b> to get to the folder where you extracted ADB. For instance, <b>cd C:\\Users\\Zachary\\Desktop\\platform-tools\\</b>.]]></string>
+    <string name="enable_debug"><![CDATA[1. vá para configurações >> opções do desenvolvedor e tenha certeza que a depuração USB está habilitada.]]></string>
+    <string name="accept_auth">2. Ligue o seu dispositivo no seu computador e aceite o pedido de autorização nele.</string>
+    <string name="enable_devops"><![CDATA[- Ative as opções do desenvolvedor indo em Ajustes >> Sobre, encontre \"Número de compilação\" e toque-o 7 vezes.]]></string>
+    <string name="download_drivers">-Usuários do Windows podem precisar instalar os drivers de dispositivo, que estão disponíveis a partir do site do fabricante.</string>
+    <string name="download_adb_windows"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-windows.zip">baixar o ZIP ADB para Windows.</a>]]></string>
+    <string name="extract_zip">2. Extraia o ZIP para um local de fácil acesso (ou seja Desktop/área de trabalho).</string>
+    <string name="open_cmd">3. Abra CMD.</string>
+    <string name="cd_windows"><![CDATA[4. digite <b>cd C:\\path\\to\\extracted\\folder\\</b> para chegar até a pasta onde você extraiu o ADB. Por exemplo, <b>cd C:\\Users\\Zachary\\Desktop\\platform-tools\\</b>.]]></string>
     <string name="cd_further"><![CDATA[- Make sure that the folder you <b>cd</b> into contains the ADB executable. If not, <b>cd</b> one level further.]]></string>
     <string name="download_adb_mac"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-darwin.zip">Download the ADB ZIP for macOS.</a>]]></string>
     <string name="open_terminal">3. Open Terminal.</string>
