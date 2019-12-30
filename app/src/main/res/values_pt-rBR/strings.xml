@@ -262,10 +262,10 @@
     <string name="app_specific_desc">Selecione os aplicativos a serem incluídos em ou excluídos do modo imersivo. O Modo imersivo deve ser desabilitado para alterar essas configurações.</string>
     <string name="blacklist_desc">Quando selecionados, os aplicativos não usaram o modo Imersivo</string>
     <string name="imm_warn">Esse recurso apenas permite que você ative o modo imersivo. Ele não faz nada além disso. Quaisquer problemas que você sofrer são culpa do fabricante do seu dispositivo. NÃO CONSIGO CORRIGIR!</string>
-    <string name="statbar_rotation_lock_notif">On certain devices, modifying the status bar icons can cause an icon that looks like a phone to appear. This is the rotation lock icon. Tap here to fix it.</string>
-    <string name="pnc_desc">Power Notification Controls allow you to set the level of importance for notifications on a per-app basis. Simply turn the feature on and hold down on a notification to get started. You may need to tap the A to enable the slider.</string>
-    <string name="pnc_warn">This feature is known to be unreliable on certain devices, especially on TouchWiz! It is impossible to fix, but the best workaround seems to be to tap repeatedly on the desired level. Again, I CANNOT fix it!</string>
-    <string name="notif_desc">Tap to change settings</string>
+    <string name="statbar_rotation_lock_notif">Em certos dispositivos, modificando os ícones da barra de status pode aparecer um ícone que parece um telefone. Este é o ícone de bloqueio de rotação. Toque aqui para corrigi-lo.</string>
+    <string name="pnc_desc">Controles de notificação de energia permitem que você defina o nível de importância para as notificações em uma base por aplicativo. Basta ativar o recurso e mantenha pressionada em uma notificação para começar. Você pode precisar tocar o A para ativar o controle deslizante.</string>
+    <string name="pnc_warn">Esse recurso é conhecido por ser instável em certos dispositivos, especialmente sobre o TouchWiz (Samsung)! É impossível de corrigir, mas a melhor solução parece ser tocar repetidamente no nível desejado. Novamente, não posso CORRIGI-LO!</string>
+    <string name="notif_desc">Toque para alterar as configurações</string>
     <string name="notifs_snooze_desc">    In Android 8.1 and later, you can set custom times for notification snoozing. These values reset on reboot, so make sure to enable Safe Mode if you would like them to persist across power cycles.\n\n
     Use the options below to set the different snooze times. \"Default\" sets the time Android will use by default. The other items will be the snooze times available for you to select.
     </string>
