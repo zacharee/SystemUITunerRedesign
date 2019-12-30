@@ -251,17 +251,17 @@
     <string name="fancy_pulldown_notice">Desativar essa opção pode causar problemas após a reinicialização. Ative e desative manualmente essa opção, após uma reinicialização ou ative o Modo de Segurança.</string>
     <string name="safe_mode_summary">OS USUÁRIOS DA SAMSUNG DEVEM MANTÊ-LO LIGADO, A MENOS QUE VOCÊ TENHA UMA ROM AOSP!</string>
     <string name="safe_mode_summary_1">Remove todas as personalizações da barra de status na reinicialização e restaura-as após a conclusão da inicialização.</string>
-    <string name="safe_mode_summary_2">Toggles the QS Fancy Animation on boot.</string>
-    <string name="safe_mode_summary_3">Restores custom QS header count value on boot (Nougat+).</string>
-    <string name="safe_mode_summary_4">Restores custom QS row/column count on boot (TouchWiz, Nougat+).</string>
-    <string name="safe_mode_summary_5">Keeps custom snooze options set (8.1+).</string>
-    <string name="enable_in_settings">Enable in Settings.</string>
-    <string name="reboot_required">(Reboot Required)</string>
-    <string name="auto_detect_summary">Attempts to automatically detect which status bar icons can be hidden. Does not work on all devices!</string>
-    <string name="night_display_not_avail">Night Display is not available on this device.</string>
-    <string name="app_specific_desc">Select apps to be included in or excluded from Immersive Mode. Immersive Mode must be disabled to change these settings.</string>
-    <string name="blacklist_desc">When on, selected apps will not use Immersive Mode</string>
-    <string name="imm_warn">This feature merely allows you to enable Immersive Mode. It DOES NOT do anything beyond that. Any issues you experience are the fault of your device\'s manufacturer. I CANNOT FIX IT!</string>
+    <string name="safe_mode_summary_2">Ativa/desativa a animação elegante em configurações rápidas, na inicialização.</string>
+    <string name="safe_mode_summary_3">Restaura os valores da grade personalizada das configurações rápidas, na inicialização (Nougat +).</string>
+    <string name="safe_mode_summary_4">Restaura o número de linha/coluna personalizada das configurações rápidas, na inicialização (TouchWiz, Nougat +).</string>
+    <string name="safe_mode_summary_5">Manter opções personalizadas de soneca definidas (8.1+).</string>
+    <string name="enable_in_settings">Ativar em configurações.</string>
+    <string name="reboot_required">(Reinicialização Obrigatória)</string>
+    <string name="auto_detect_summary">Tentativas de detectar automaticamente quais ícones da barra de status podem ser ocultados. Não funciona em todos os dispositivos!</string>
+    <string name="night_display_not_avail">Display noturno não está disponível neste dispositivo.</string>
+    <string name="app_specific_desc">Selecione os aplicativos a serem incluídos em ou excluídos do modo imersivo. O Modo imersivo deve ser desabilitado para alterar essas configurações.</string>
+    <string name="blacklist_desc">Quando selecionados, os aplicativos não usaram o modo Imersivo</string>
+    <string name="imm_warn">Esse recurso apenas permite que você ative o modo imersivo. Ele não faz nada além disso. Quaisquer problemas que você sofrer são culpa do fabricante do seu dispositivo. NÃO CONSIGO CORRIGIR!</string>
     <string name="statbar_rotation_lock_notif">On certain devices, modifying the status bar icons can cause an icon that looks like a phone to appear. This is the rotation lock icon. Tap here to fix it.</string>
     <string name="pnc_desc">Power Notification Controls allow you to set the level of importance for notifications on a per-app basis. Simply turn the feature on and hold down on a notification to get started. You may need to tap the A to enable the slider.</string>
     <string name="pnc_warn">This feature is known to be unreliable on certain devices, especially on TouchWiz! It is impossible to fix, but the best workaround seems to be to tap repeatedly on the desired level. Again, I CANNOT fix it!</string>
@@ -325,22 +325,22 @@
     <string name="extract_zip">2. Extraia o ZIP para um local de fácil acesso (ou seja Desktop/área de trabalho).</string>
     <string name="open_cmd">3. Abra CMD.</string>
     <string name="cd_windows"><![CDATA[4. digite <b>cd C:\\path\\to\\extracted\\folder\\</b> para chegar até a pasta onde você extraiu o ADB. Por exemplo, <b>cd C:\\Users\\Zachary\\Desktop\\platform-tools\\</b>.]]></string>
-    <string name="cd_further"><![CDATA[- Make sure that the folder you <b>cd</b> into contains the ADB executable. If not, <b>cd</b> one level further.]]></string>
-    <string name="download_adb_mac"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-darwin.zip">Download the ADB ZIP for macOS.</a>]]></string>
-    <string name="open_terminal">3. Open Terminal.</string>
-    <string name="cd_mac"><![CDATA[4. Enter <b>cd /path/to/extracted/folder/</b> to get to the folder you extracted ADB into. For instance, <b>cd /Users/Zachary/Desktop/platform-tools/</b>.]]></string>
-    <string name="make_sure_adb_installed">1. Make sure ADB is installed:</string>
-    <string name="download_adb_linux"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-linux.zip">Download the ADB ZIP for Linux.</a>]]></string>
-    <string name="cd_linux"><![CDATA[4. Enter <b>cd /path/to/extracted/folder/</b> to get to the folder you extracted ADB into. For instance, <b>cd /home/Zachary/Desktop/platform-tools/</b>.]]></string>
+    <string name="cd_further"><![CDATA[- Certifique-se de que a pasta que você <b>cd</b> contém dentro o executável do ADB. Se não, <b>cd</b> mais um nível.]]></string>
+    <string name="download_adb_mac"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-darwin.zip">baixar o ZIP ADB para macOS.</a>]]></string>
+    <string name="open_terminal">3. Abra o Terminal.</string>
+    <string name="cd_mac"><![CDATA[4. digite <b></b> para chegar até a pasta que ADB você extraiu. Por exemplo, /Users/Zachary/Desktop/platform-tools de cd de <b>/</b>.]]></string>
+    <string name="make_sure_adb_installed">1. tenha certeza que o ADB está instalado:</string>
+    <string name="download_adb_linux"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-linux.zip">baixar o ZIP ADB para Linux.</a>]]></string>
+    <string name="cd_linux"><![CDATA[4. digite <b>cd C:\\path\\to\\extracted\\folder\\</b> para chegar até a pasta onde você extraiu o ADB. Por exemplo, <b>cd C:\\Users\\Zachary\\Desktop\\platform-tools\\</b>.]]></string>
     <!--Misc-->
-    <string name="created_by">App created by <a href="https://forum.xda-developers.com/member.php?u=7055541">Zacharee1</a></string>
-    <string name="lang_credit">Translations by volunteers on <a href="https://crowdin.com/project/systemui-tuner">Crowdin</a></string>
-    <string name="home_desc">For Devices without this Activity</string>
-    <string name="home_joke">Or for devices with it, I\'m not your boss.</string>
-    <string name="home_extra">(If you do have the stock SystemUI Tuner, this one provides some extra goodies.)</string>
-    <string name="donate_hook">Hey, I see you\'re using my app.</string>
-    <string name="donate_joke">How, you ask? Magic.</string>
-    <string name="donate_request">If you\'re enjoying your time here, it\'d be absolutely amazing if you could spare a dollar or two.</string>
-    <string name="donate_dont_worry">There\'s absolutely no obligation. This app is free and always will be.</string>
-    <string name="select_os">Please select an operating system.</string>
+    <string name="created_by">Aplicativo criado por <a href="https://forum.xda-developers.com/member.php?u=7055541">Zacharee1</a></string>
+    <string name="lang_credit">Traduzido por voluntários no <a href="https://crowdin.com/project/systemui-tuner">Crowdin</a></string>
+    <string name="home_desc">Para dispositivos sem esta atividade</string>
+    <string name="home_joke">Ou para dispositivos com ele, eu não sou seu chefe.</string>
+    <string name="home_extra">(Se você tem o padrão SystemUI Tuner, este fornece algum bônus extra)</string>
+    <string name="donate_hook">Ei, vejo que você está usando meu app.</string>
+    <string name="donate_joke">Como vai? Mágica.</string>
+    <string name="donate_request">Se você está aproveitando seu tempo aqui, seria absolutamente incrível se você pudesse me ajuda com um dólar ou dois.</string>
+    <string name="donate_dont_worry">Não há absolutamente nenhuma obrigação. Este app é grátis e sempre será.</string>
+    <string name="select_os">Por favor, selecione um sistema operacional.</string>
 </resources>
