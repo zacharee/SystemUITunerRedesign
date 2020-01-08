@@ -5,13 +5,13 @@
     <string name="app_name">Настройка системного интерфейса</string>
     <string name="to_the_tweaks">К настройкам!</string>
     <string name="more">Больше</string>
-    <string name="notice">УВЕДОМЛЕНИЕ</string>
-    <string name="hide_welcome_screen">Скрыть экран приветствия</string>
+    <string name="notice">ВНМАНИЕ</string>
+    <string name="hide_welcome_screen">Скрыть стартовый экран</string>
     <string name="instructions">Инструкции</string>
     <string name="need_help">Нужна помощь?</string>
     <string name="about">О программе</string>
     <string name="miscellaneous">Прочее</string>
-    <string name="custom">Настройки пользователя</string>
+    <string name="custom">Пользовательские настройки</string>
     <string name="settings">Настройки</string>
     <string name="status_bar">Строка состояния</string>
     <string name="sorry">Извините…</string>
@@ -22,7 +22,7 @@
     <string name="wifi_strength">Уровень сигнала WiFi</string>
     <string name="battery_charging">Зарядка аккумулятора</string>
     <string name="mobile_strength">Уровень сигнала сети</string>
-    <string name="mobile_type">Тип мобильного</string>
+    <string name="mobile_type">Тип связи</string>
     <string name="show_airplane_mode">Показать режим полёта</string>
     <string name="show_notifications">Показать уведомления</string>
     <string name="status_bar_style">Стиль строки состояния</string>
