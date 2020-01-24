@@ -37,7 +37,7 @@
     <string name="nfc_icon">Ikona NFC</string>
     <string name="location_icon">Ikona lokalizacji</string>
     <string name="su_icon">Ikona SU (SuperUser)</string>
-    <string name="network">Network</string>
+    <string name="network">Ustawienia i konfiguracja sieci</string>
     <string name="bluetooth_icon">Ikona Bluetooth</string>
     <string name="data_saver_icon">Ikona trybu oszczędzania danych</string>
     <string name="ethernet_icon">Ikona Ethernet</string>
@@ -69,8 +69,8 @@
     <string name="general">Ogólne</string>
     <string name="heads_up_notifications">Wyskakujące powiadomienia</string>
     <string name="headphone_volume_warning">Ostrzeżenie o głośności na słuchawkach</string>
-    <string name="custom_settings_input">Custom Settings Input</string>
-    <string name="custom_settings_read">Read Custom Value</string>
+    <string name="custom_settings_input">Własne ustawienia</string>
+    <string name="custom_settings_read">Przeczytaj wartość niestandardową</string>
     <string name="global">Ogólne</string>
     <string name="secure">Bezpieczeństwo</string>
     <string name="system">System</string>
