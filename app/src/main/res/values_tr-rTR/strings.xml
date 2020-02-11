@@ -220,7 +220,7 @@
     <string name="twelve_nosec">12-Hour, No Seconds</string>
     <string name="military">24-Hour</string>
     <string name="military_nosec">24-Hour, No Seconds</string>
-    <string name="show_notif">Show Notification</string>
+    <string name="show_notif">Bildirimleri göster</string>
     <string name="carrier_on_home">Carrier Label on Home Screen</string>
     <string name="carrier_on_lock">Carrier Label on Lock Screen</string>
     <string name="key_plaintext">Key</string>
