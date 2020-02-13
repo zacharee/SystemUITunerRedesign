@@ -150,7 +150,7 @@
     <string name="none">無</string>
     <string name="full">完整</string>
     <string name="navigation_bar">導覽列</string>
-    <string name="navigation_bar_color">Navigation Bar Color</string>
+    <string name="navigation_bar_color">導覽列顔色</string>
     <string name="pre_confirms">Pre-Confirms</string>
     <string name="config_qs">Configure Quick Tile</string>
     <string name="mode">Mode</string>
@@ -158,7 +158,7 @@
     <string name="qs_row_count">QS Row Count</string>
     <string name="qs_column_count_landscape">QS Column Count (Landscape)</string>
     <string name="qs_row_count_landscape">QS Row Count (Landscape)</string>
-    <string name="lockscreen">Lock Screen</string>
+    <string name="lockscreen">鎖定螢幕</string>
     <string name="choose_left">Choose Left Shortcut</string>
     <string name="choose_right">Choose Right Shortcut</string>
     <string name="unlock_device">Unlock Device</string>
@@ -240,7 +240,7 @@
     <string name="name">Name</string>
     <string name="key">Key</string>
     <string name="add_item">Add Item</string>
-    <string name="are_you_sure">Are you sure?</string>
+    <string name="are_you_sure">你確定嗎？</string>
     <string name="style">Style</string>
     <string name="clock_position">Clock Position</string>
     <string name="left">Left</string>
