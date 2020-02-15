@@ -5,12 +5,12 @@
     <string name="to_the_tweaks">К настройкам!</string>
     <string name="more">Больше</string>
     <string name="notice">ВНМАНИЕ</string>
-    <string name="hide_welcome_screen">Скрыть приветственный экран</string>
+    <string name="hide_welcome_screen">Скрыть стартовый экран</string>
     <string name="instructions">Инструкции</string>
     <string name="need_help">Нужна помощь?</string>
     <string name="about">О программе</string>
-    <string name="miscellaneous">Прочие вопросы</string>
-    <string name="custom">Свой</string>
+    <string name="miscellaneous">Прочее</string>
+    <string name="custom">Пользовательские настройки</string>
     <string name="settings">Настройки</string>
     <string name="status_bar">Строка состояния</string>
     <string name="sorry">Извините…</string>
