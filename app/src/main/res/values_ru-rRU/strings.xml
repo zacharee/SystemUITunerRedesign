@@ -16,7 +16,7 @@
     <string name="sorry">Извините…</string>
     <string name="enabled">Включено</string>
     <string name="show">Показать</string>
-    <string name="select_time">Выберите время</string>
+    <string name="select_time">Выбрать время</string>
     <string name="select_battery_level">Выбрать уровень заряда</string>
     <string name="wifi_strength">Уровень Wi-Fi сигнала</string>
     <string name="battery_charging">Зарядка аккумулятора</string>
