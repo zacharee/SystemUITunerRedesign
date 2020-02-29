@@ -245,8 +245,8 @@
     <string name="left">왼쪽</string>
     <string name="middle">중간</string>
     <string name="right">오른쪽</string>
-    <string name="force_enable_adb">Force-Enable ADB</string>
-    <string name="global_dark_mode">Global Dark Mode</string>
+    <string name="force_enable_adb">ADB 강제 활성화</string>
+    <string name="global_dark_mode">전역 다크 모드</string>
     <!--Descriptions-->
     <string name="fancy_pulldown_notice">이 옵션을 끄면 재부팅 후 발생하는 문제의 원인이 될 수 있습니다. 재부팅 후 이 옵션을 수동으로 켰다 껐다 하거나, 안전 모드를 활성화하십시오.</string>
     <string name="safe_mode_summary">삼성 사용자라면 AOSP 롬이 아닌 경우 이것을 켜세요!</string>
@@ -286,7 +286,7 @@
     <string name="safe_mode_needed_qs_row_col">Safe Mode must be turned on, with the Row/Column option activated, for landscape values to work.</string>
     <string name="safe_mode_inactive_on_current_page">Safe Mode is inactive on this screen! Go back to the main menu to save changes!</string>
     <string name="qs_info_marshmallow">Hold down on an icon to remove it.</string>
-    <string name="remove_custom_blacklist_item_desc">Are you sure you want to remove the %s toggle?</string>
+    <string name="remove_custom_blacklist_item_desc">정말로 %s 토글을 제거하시겠습니까?</string>
     <string name="force_enable_adb_desc">Certain devices automatically turn ADB off after a period of inactivity. Enable this to force ADB to stay enabled indefinitely.</string>
     <string name="global_dark_mode_desc">Make supported applications use their dark themes (eg: Google Play Store, Instagram, etc). May require a reboot.</string>
     <!--Messages-->
@@ -296,7 +296,7 @@
     <string name="safe_mode_auto_enabled">삼성 장치가 감지됨! 안전을 위해 안전 모드가 자동으로 활성화되었습니다. 상태 표시줄 아이콘을 수정할 경우 시스템 UI를 망가트릴 가능성이 있다는 점을 주의하십시오. 추가 정보는 플레이 스토어 설명의 링크를 방문하십시오.</string>
     <string name="requires_nougat">누가 이상 필요.</string>
     <string name="requires_oreo">오레오 이상 필요.</string>
-    <string name="requires_pie">Requires Pie or later.</string>
+    <string name="requires_pie">파이 이상 필요.</string>
     <string name="requires_8_1">오레오 8.1 이상 필요.</string>
     <string name="safe_mode_android_o">안드로이드 O에 추가된 제한으로 인해, 이 기능은 장치에서 작동하지 않습니다.</string>
     <string name="intro_1">제 앱을 다운로드 해주셔서 감사합니다! SystemUI 튜너는 내장된 System UI 튜너를 대체/보완하는 것이 목적입니다. 이 앱은 System UI 튜너 유무와 상관없이 모든 사용자들에게 혜택을 제공합니다.</string>
@@ -343,5 +343,5 @@
     <string name="donate_joke">어떻게 아냐고요? 마술입니다.</string>
     <string name="donate_request">이 앱이 유익하셨다면, 소액이나마 기부해주신다면 정말 감사하겠습니다.</string>
     <string name="donate_dont_worry">절대 의무사항은 아닙니다. 이 앱은 무료이며 언제나 무료일테니까요.</string>
-    <string name="select_os">Please select an operating system.</string>
+    <string name="select_os">운영체제를 선택해주십시오.</string>
 </resources>
