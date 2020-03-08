@@ -127,7 +127,7 @@
     <string name="night_display_auto">Automatyczny ekran nocny</string>
     <string name="night_display_activated">Ekran nocny włączony</string>
     <string name="night_display">Ekran nocny</string>
-    <string name="qs_header_tile_count">QS Header Tile Count</string>
+    <string name="qs_header_tile_count">Liczba kafelków szybkich ustawień</string>
     <string name="fancy_pulldown_animation">Fancy Pulldown Animation</string>
     <string name="move_full_rows">Przenieś całe wiersze</string>
     <string name="battery">Bateria</string>
