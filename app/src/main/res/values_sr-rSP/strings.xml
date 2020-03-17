@@ -47,10 +47,10 @@
     <string name="vpn_icon">Икона VPN-а</string>
     <string name="sounds_alerts"><![CDATA[Звуци & Упозорења]]></string>
     <string name="volume">Икона јачине звука</string>
-    <string name="headset_icon">Headset Icon</string>
-    <string name="speakerphone_icon">Speakerphone Icon</string>
-    <string name="time_such"><![CDATA[Time & Such]]></string>
-    <string name="clock">Clock Icon</string>
+    <string name="headset_icon">Икона слушалице</string>
+    <string name="speakerphone_icon">Икона звучника</string>
+    <string name="time_such"><![CDATA[Време & Слично]]></string>
+    <string name="clock">Икона сата</string>
     <string name="clock_tile">Clock</string>
     <string name="show_clock_seconds">Show Clock Seconds</string>
     <string name="alarm_clock_icon">Alarm Clock Icon</string>
