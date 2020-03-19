@@ -247,7 +247,7 @@
     <string name="right">Rechts</string>
     <string name="force_enable_adb">ADB gedwongen inschakelen</string>
     <!--Descriptions-->
-    <string name="fancy_pulldown_notice">Toggling this option off can cause issues after a reboot. Manually toggle this option on and off after a reboot, or enable Safe Mode.</string>
+    <string name="fancy_pulldown_notice">Als je deze functie uitschakelt, dan kan dit problemen veroorzaken na het opnieuw opstarten. Schakel deze handmatig in en vervolgens weer uit, of schakel \'Veilige modus\' in.</string>
     <string name="safe_mode_summary">SAMSUNG USERS KEEP THIS TURNED ON UNLESS YOU HAVE AN AOSP ROM!</string>
     <string name="safe_mode_summary_1">Clears any status bar customizations on reboot and restores them after boot completes.</string>
     <string name="safe_mode_summary_2">Toggles the QS Fancy Animation on boot.</string>
