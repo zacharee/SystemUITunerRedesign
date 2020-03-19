@@ -248,10 +248,10 @@
     <string name="force_enable_adb">ADB gedwongen inschakelen</string>
     <!--Descriptions-->
     <string name="fancy_pulldown_notice">Als je deze functie uitschakelt, dan kan dit problemen veroorzaken na het opnieuw opstarten. Schakel deze handmatig in en vervolgens weer uit, of schakel \'Veilige modus\' in.</string>
-    <string name="safe_mode_summary">SAMSUNG USERS KEEP THIS TURNED ON UNLESS YOU HAVE AN AOSP ROM!</string>
-    <string name="safe_mode_summary_1">Clears any status bar customizations on reboot and restores them after boot completes.</string>
-    <string name="safe_mode_summary_2">Toggles the QS Fancy Animation on boot.</string>
-    <string name="safe_mode_summary_3">Restores custom QS header count value on boot (Nougat+).</string>
+    <string name="safe_mode_summary">SAMSUNG-GEBRUIKERS, SCHAKEL DIT NIET UIT, TENZIJ JE EEN AOSP-ROM GEBRUIKT!</string>
+    <string name="safe_mode_summary_1">Verwijdert alle aanpassingen aan de statusbalk bij het herstarten en herstelt ze nadat het opstarten is voltooid.</string>
+    <string name="safe_mode_summary_2">Schakelt de leuke animatie van de snelle instellingen in/uit bij het opstarten.</string>
+    <string name="safe_mode_summary_3">Herstelt het aantal aangepaste tegels in de snelle instellingen bij opstarten (Nougat+).</string>
     <string name="safe_mode_summary_4">Restores custom QS row/column count on boot (TouchWiz, Nougat+).</string>
     <string name="safe_mode_summary_5">Keeps custom snooze options set (8.1+).</string>
     <string name="enable_in_settings">Enable in Settings.</string>
@@ -305,27 +305,27 @@
     <string name="adb_setup">The permissions above must be granted to continue. You\'ll need to use ADB. Please note: PACKAGE_USAGE_STATS and DUMP are optional for most features. SystemUI Tuner will prompt you if either or both is needed.</string>
     <string name="target_not_found">Unable to launch app.</string>
     <string name="feature_not_supported">It seems your device doesn\'t support this feature :/</string>
-    <string name="miui_warning">It seems that you\'re using a MIUI device. Please take note that few, if any, features of this app will work for you. It is NOT fixable!</string>
-    <string name="warn_message">Please read the Terms of Service before continuing.</string>
-    <string name="safe_mode_notif_desc">It is recommended that you keep this active, and hide the notification instead. Turning it off may cause Safe Mode to no longer function.</string>
-    <string name="invalid_blacklist_backup">Invalid blacklist backup</string>
-    <string name="backup_restored">Successfully restored backup</string>
-    <string name="nothing_to_back_up">Nothing to back up</string>
-    <string name="grant_usage">Please grant SystemUI Tuner access to Usage.</string>
-    <string name="setting_not_on_pie">This setting doesn\'t work on Pie or later.</string>
-    <string name="setting_not_on_touchwiz_pie">This setting doesn\'t work on TouchWiz Pie or later.</string>
-    <string name="setting_not_on_touchwiz">This setting doesn\'t work on TouchWiz.</string>
+    <string name="miui_warning">Het lijkt erop dat je een MIUI-apparaat gebruikt. Houd er rekening mee dat slechts enkele van de functies (indien beschikbaar) van deze app gaan werken. Dit is NIET oplosbaar!</string>
+    <string name="warn_message">Lees de algemene voorwaarden om verder te gaan.</string>
+    <string name="safe_mode_notif_desc">Het wordt aanbevolen om dit actief te houden en de melding in plaats daarvan te verbergen. Als je dit uitschakelt, dan kan het voorkomen dat de veilige modus niet meer functioneert.</string>
+    <string name="invalid_blacklist_backup">Ongeldige zwartelijstback-up</string>
+    <string name="backup_restored">De back-up is hersteld</string>
+    <string name="nothing_to_back_up">Er valt niks te back-uppen</string>
+    <string name="grant_usage">Verleen SystemUI Tuner toegang tot \'Gebruik\'.</string>
+    <string name="setting_not_on_pie">Deze instelling werkt niet op Pie of nieuwer.</string>
+    <string name="setting_not_on_touchwiz_pie">Deze instelling werkt niet op TouchWiz Pie of nieuwer.</string>
+    <string name="setting_not_on_touchwiz">Deze instelling werkt niet op TouchWiz.</string>
     <!--Instructions-->
-    <string name="enable_debug"><![CDATA[1. Go to Settings >> Developer Options and make sure USB Debugging is enabled.]]></string>
-    <string name="accept_auth">2. Plug your device into your computer and accept the authorization request on it.</string>
-    <string name="enable_devops"><![CDATA[- Enable Developer Options by going to Settings >> About, finding \"Build Number\" and tapping it 7 times.]]></string>
-    <string name="download_drivers">- Windows users may need to install device drivers, which are available from the manufacturer\'s website.</string>
-    <string name="download_adb_windows"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-windows.zip">Download the ADB ZIP for Windows.</a>]]></string>
-    <string name="extract_zip">2. Extract the ZIP to an easily-accessible location (ie Desktop).</string>
-    <string name="open_cmd">3. Open CMD.</string>
-    <string name="cd_windows"><![CDATA[4. Enter <b>cd C:\\path\\to\\extracted\\folder\\</b> to get to the folder where you extracted ADB. For instance, <b>cd C:\\Users\\Zachary\\Desktop\\platform-tools\\</b>.]]></string>
-    <string name="cd_further"><![CDATA[- Make sure that the folder you <b>cd</b> into contains the ADB executable. If not, <b>cd</b> one level further.]]></string>
-    <string name="download_adb_mac"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-darwin.zip">Download the ADB ZIP for macOS.</a>]]></string>
+    <string name="enable_debug"><![CDATA[1. Ga naar Instellingen --> Systeem --> Geavanceerd --> Ontwikkelaarsopties en zorg ervoor dat USB-foutopsporing is ingeschakeld.]]></string>
+    <string name="accept_auth">2. Sluit je apparaat aan op je computer en accepteer het autorisatieverzoek.</string>
+    <string name="enable_devops"><![CDATA[- Schakel Ontwikkelaarsopties in door te gaan naar Instellingen --> Systeem --> Geavanceerd --> Over de telefoon en 7 keer te drukken op \'Build-nummer\'.]]></string>
+    <string name="download_drivers">- Windows-gebruikers moeten mogelijk apparaatstuurprogramma\'s installeren, beschikbaar op de website van de fabrikant.</string>
+    <string name="download_adb_windows"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-windows.zip">Download het ADB-zipbestand voor Windows.</a>]]></string>
+    <string name="extract_zip">2. Pak de zip uit naar een gemakkelijk toegankelijke locatie (bijv. Bureaublad).</string>
+    <string name="open_cmd">3. Open een opdrachtregelvenster.</string>
+    <string name="cd_windows"><![CDATA[4. Voer het volgende in: <b>cd C:\\pad\\naar\\uitgepakte\\map\\</b> om naar de map te gaan waar je ADB in hebt uitgepakt. Voorbeeld: <b>cd C:\\Users\\Jan\\Bureaublad\\platform-tools\\</b>.]]></string>
+    <string name="cd_further"><![CDATA[- Zorg ervoor dat de map waarnaar je '<b>cd</b>'t' het uitvoerbare ADB-bestand bevat. Zo niet, <b>cd</b> dan een niveau verder.]]></string>
+    <string name="download_adb_mac"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-darwin.zip">Download het ADB-zipbestand voor macOS.</a>]]></string>
     <string name="open_terminal">3. Open Terminal.</string>
     <string name="cd_mac"><![CDATA[4. Enter <b>cd /path/to/extracted/folder/</b> to get to the folder you extracted ADB into. For instance, <b>cd /Users/Zachary/Desktop/platform-tools/</b>.]]></string>
     <string name="make_sure_adb_installed">1. Make sure ADB is installed:</string>
