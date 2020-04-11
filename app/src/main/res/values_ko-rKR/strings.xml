@@ -253,7 +253,7 @@
     <string name="safe_mode_summary_2">부팅 시 빠른 설정에 멋진 애니메이션을 토글합니다.</string>
     <string name="safe_mode_summary_3">부팅 시 빠른 설정 헤더의 아이콘 갯수에 대한 사용자 지정 값을 복원합니다(누가+).</string>
     <string name="safe_mode_summary_4">부팅 시 빠른 설정 열/행 갯수에 대한 사용자 지정 값을 복원합니다(터치위즈, 누가+).</string>
-    <string name="safe_mode_summary_5">Keeps custom snooze options set (8.1+).</string>
+    <string name="safe_mode_summary_5">사용자 다시 알림 설정 유지 (8.1+).</string>
     <string name="enable_in_settings">설정에서 활성화됨.</string>
     <string name="reboot_required">(재부팅 필요)</string>
     <string name="auto_detect_summary">상태 표시줄 아이콘을 자동으로 감지하는 시도를 숨길 수 있습니다. 모든 장치에서 작동하지 않습니다!</string>
@@ -271,9 +271,9 @@
     <string name="custom_settings_input_desc">아래 필드를 이용해 사용자 설정을 입력할 수 있습니다.</string>
     <string name="custom_settings_read_desc">아래 필드를 이용해 특정 키의 값을 확인할 수 있습니다.</string>
     <string name="custom_settings_warning">잘못된 값을 입력하게 되면 무한 재부팅 이상의 문제가 발생할 수 있으니 주의하시기 바랍니다.</string>
-    <string name="hide_welcome_hint">Hint: You can hide this screen, and the donation message, by going to Settings and toggling on \"Hide Welcome Screen\".</string>
+    <string name="hide_welcome_hint">힌트: 이 화면과 기부 부탁 문구를 숨기려면, 설정에서 \"환영 화면 숨기기\"를 선택하세요.</string>
     <string name="safe_mode_notif_desc_not_supported">이 설정은 오레오에서 반드시 활성화되어야 합니다.</string>
-    <string name="fix_rotation_icon_dialog_desc">Are you planning to uninstall SystemUI Tuner after this?</string>
+    <string name="fix_rotation_icon_dialog_desc">이 다음에 SystemUI Tuner 앱을 삭제할 계획이신가요?</string>
     <string name="yes_im_uninstalling">예, 제거하려고 합니다.</string>
     <string name="no_im_staying">아뇨, 유지할겁니다.</string>
     <string name="fix_rotation_done_uninstall">회전 아이콘을 삭제했습니다! 재부팅하기 전까지는 효과가 나타나지 않습니다.</string>
@@ -282,11 +282,11 @@
     <string name="ws_needed_desc">이 설정을 변경하려면 WRITE_SETTINGS 권한이 필요합니다. 위의 버튼을 눌러 허용해주세요.\n (다만 권한 부여 기능이 동작할 것이라고 보증되지는 않습니다.)</string>
     <string name="safe_mode_high_brightness_warning_desc">부팅 시 현재 지정된 높은 밝기 경고 설정을 복원합니다. TouchWiz 디바이스 전용이며 루트 권한 없이 동작하지 않습니다.</string>
     <string name="safe_mode_volume_warning_desc">부팅 시 현재 지정된 높은 음량 경고 설정을 복원합니다.</string>
-    <string name="safe_mode_needed_qs_row_col">Safe Mode must be turned on, with the Row/Column option activated, for landscape values to work.</string>
-    <string name="safe_mode_inactive_on_current_page">Safe Mode is inactive on this screen! Go back to the main menu to save changes!</string>
-    <string name="qs_info_marshmallow">Hold down on an icon to remove it.</string>
+    <string name="safe_mode_needed_qs_row_col">행/열 설정이 활성화되어 있는 상태에서, 가로보기일 때의 값이 올바르게 적용되려면 안전 모드를 반드시 켜셔야 합니다.</string>
+    <string name="safe_mode_inactive_on_current_page">이 화면에서는 안전 모드가 동작하지 않습니다! 변경 사항을 저장하려면 메인 메뉴로 돌아가세요!</string>
+    <string name="qs_info_marshmallow">아이콘을 길게 눌러 제거하세요.</string>
     <string name="remove_custom_blacklist_item_desc">정말로 %s 토글을 제거하시겠습니까?</string>
-    <string name="force_enable_adb_desc">Certain devices automatically turn ADB off after a period of inactivity. Enable this to force ADB to stay enabled indefinitely.</string>
+    <string name="force_enable_adb_desc">어떤 기기는 일정 기간동안 사용하지 않으면 알아서 ADB를 끕니다. 이 기능을 활성화하면 ADB를 활성화 상태로 강제할 수 있습니다.</string>
     <!--Messages-->
     <string name="sorry_explain">이 토글을 설정하는 도중 문제가 발생했습니다.</string>
     <string name="sorry_option">컴퓨터에서 다음 명령어를 실행해보십시오(한 줄):</string>
@@ -302,7 +302,7 @@
     <string name="intro_3">상태 표시줄에 사전 정의 옵션이 과다하지만, 숨기길 원하는 아이콘이 없을 경우, 자동 감지 기능으로 숨길 수 있는 아이콘에 대한 감지를 시도할 수 있습니다.</string>
     <string name="intro_4">이 앱의 가장 좋은 점은? 바로 루팅이 필요없다는 것입니다! 루트 권한을 얻으려는 시도는 하지만, 할 수 없다면 ADB를 사용해야 합니다. ADB 사용은 루팅이 아닙니다!</string>
     <string name="intro_5">마침 버튼을 누르면, SystemUI 튜너는 루트 접근을 시도합니다. 이것이 가능하다면 모든 필수 권한을 알아서 부여합니다. 그렇지 않으면, 안내를 위한 사용법이 나타납니다.</string>
-    <string name="adb_setup">The permissions above must be granted to continue. You\'ll need to use ADB. Please note: PACKAGE_USAGE_STATS and DUMP are optional for most features. SystemUI Tuner will prompt you if either or both is needed.</string>
+    <string name="adb_setup">계속하려면 반드시 위의 권한이 부여되어야 합니다. ADB를 사용하셔야 할 겁니다. 참고해주세요: PACKAGE_USAGE_STATS와 DUMP 권한은 필수가 아닙니다. SystemUI Tuner는 앞의 두 권한이 필요할 때 알려드릴 겁니다.</string>
     <string name="target_not_found">앱을 시작할 수 없습니다.</string>
     <string name="feature_not_supported">장치가 이 기능을 지원 하지 않는 것 같습니다. :/</string>
     <string name="miui_warning">MIUI 장치를 사용하시는 것 같습니다. 이 앱의 기능들이 아예 작동하지 않거나 극히 일부 기능만 작동할 것입니다. 문제 해결이 불가능합니다!</string>
@@ -311,10 +311,10 @@
     <string name="invalid_blacklist_backup">유효하지 않은 제외 목록 백업</string>
     <string name="backup_restored">백업이 성공적으로 복원됨</string>
     <string name="nothing_to_back_up">백업할 항목 없음</string>
-    <string name="grant_usage">Please grant SystemUI Tuner access to Usage.</string>
-    <string name="setting_not_on_pie">This setting doesn\'t work on Pie or later.</string>
-    <string name="setting_not_on_touchwiz_pie">This setting doesn\'t work on TouchWiz Pie or later.</string>
-    <string name="setting_not_on_touchwiz">This setting doesn\'t work on TouchWiz.</string>
+    <string name="grant_usage">SystemUI Tuner가 사용 기록에 접근하도록 허용해주세요.</string>
+    <string name="setting_not_on_pie">이 설정은 TouchWiz Pie 또는 이후 버전에서 동작하지 않습니다.</string>
+    <string name="setting_not_on_touchwiz_pie">이 설정은 Pie 또는 이후 버전에서 동작하지 않습니다.</string>
+    <string name="setting_not_on_touchwiz">이 설정은 TouchWiz에서 동작하지 않습니다.</string>
     <!--Instructions-->
     <string name="enable_debug"><![CDATA[1. 설정 >> 개발자 옵션으로 이동하여 USB 디버깅이 활성화되었는지 확인하십시오.]]></string>
     <string name="accept_auth">2. 장치를 컴퓨터와 연결하여 인증 요청을 승인하십시오.</string>
