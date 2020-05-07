@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!--Titles-->
-    <string name="app_name">Настройка системного интерфейса</string>
+    <string name="app_name">SystemUI Tuner</string>
     <string name="to_the_tweaks">К настройкам!</string>
     <string name="more">Больше</string>
     <string name="notice">ВНМАНИЕ</string>
