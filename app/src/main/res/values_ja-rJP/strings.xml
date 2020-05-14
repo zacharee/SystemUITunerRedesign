@@ -3,8 +3,8 @@
     <!--Titles-->
     <string name="app_name">SystemUI Tuner</string>
     <string name="to_the_tweaks">To The Tweaks!</string>
-    <string name="more">More</string>
-    <string name="notice">NOTICE</string>
+    <string name="more">その他</string>
+    <string name="notice">注意</string>
     <string name="hide_welcome_screen">Hide Welcome Screen</string>
     <string name="instructions">Instructions</string>
     <string name="need_help">Need Help?</string>
