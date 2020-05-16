@@ -313,8 +313,8 @@
     <string name="invalid_blacklist_backup">無效的黑名單備份</string>
     <string name="backup_restored">成功還原備份</string>
     <string name="nothing_to_back_up">沒什麼能備份的</string>
-    <string name="grant_usage">Please grant SystemUI Tuner access to Usage.</string>
-    <string name="setting_not_on_pie">This setting doesn\'t work on Pie or later.</string>
+    <string name="grant_usage">請授予 系統界面調整器 (SystemUI Tuner) 權限以繼續使用。</string>
+    <string name="setting_not_on_pie">這些設定在安卓9或以上版本不支援。</string>
     <string name="setting_not_on_touchwiz_pie">This setting doesn\'t work on TouchWiz Pie or later.</string>
     <string name="setting_not_on_touchwiz">This setting doesn\'t work on TouchWiz.</string>
     <!--Instructions-->
