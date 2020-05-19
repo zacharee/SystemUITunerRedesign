@@ -36,7 +36,7 @@
     <string name="nfc_icon">NFC</string>
     <string name="location_icon">Ubicación</string>
     <string name="su_icon">Super SU</string>
-    <string name="network">Network</string>
+    <string name="network">Red</string>
     <string name="bluetooth_icon">Bluetooth</string>
     <string name="data_saver_icon">Ahorro de Datos</string>
     <string name="ethernet_icon">Ethernet</string>
@@ -133,7 +133,7 @@
     <string name="battery">Batería</string>
     <string name="back_up_blacklist">Copia de Seguridad de Lista Negra</string>
     <string name="restore_blacklist">Restaurar la Lista Negra</string>
-    <string name="backup_and_restore">Backup &amp; Restore</string>
+    <string name="backup_and_restore">Copia de seguridad &amp; Restaurar</string>
     <string name="quick_settings">Configuración Rápida</string>
     <string name="demo_mode">Modo Demo</string>
     <string name="auto_detect">Detección Automática</string>
@@ -149,7 +149,7 @@
     <string name="none">Ninguno</string>
     <string name="full">Completo</string>
     <string name="navigation_bar">Barra de Navegación</string>
-    <string name="navigation_bar_color">Navigation Bar Color</string>
+    <string name="navigation_bar_color">Barra de Navegación</string>
     <string name="pre_confirms">Predeterminado</string>
     <string name="config_qs">Configuración de Ajustes Rápidos</string>
     <string name="mode">Modo</string>
