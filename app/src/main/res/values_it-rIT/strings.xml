@@ -262,30 +262,29 @@
     <string name="blacklist_desc">Quando attiva, le app selezionate non useranno la modalità immersiva</string>
     <string name="imm_warn">Questa funzione consente semplicemente di abilitare la modalità immersiva. NON FA nulla al di là di questo. Qualsiasi problema che tu possa riscontrare è imputabile al produttore del tuo dispositivo. IO NON POSSO EVITARLO!</string>
     <string name="statbar_rotation_lock_notif">Su alcuni dispositivi, la modifica delle icone della barra di stato può causare la comparsa di un\'icona simile a un telefono. Questa è l\'icona del blocco di rotazione. Tocca qui per aggiustarla.</string>
-    <string name="pnc_desc">Power Notification Controls allow you to set the level of importance for notifications on a per-app basis. Simply turn the feature on and hold down on a notification to get started. You may need to tap the A to enable the slider.</string>
-    <string name="pnc_warn">This feature is known to be unreliable on certain devices, especially on TouchWiz! It is impossible to fix, but the best workaround seems to be to tap repeatedly on the desired level. Again, I CANNOT fix it!</string>
-    <string name="notif_desc">Tap to change settings</string>
-    <string name="notifs_snooze_desc">    In Android 8.1 and later, you can set custom times for notification snoozing. These values reset on reboot, so make sure to enable Safe Mode if you would like them to persist across power cycles.\n\n
-    Use the options below to set the different snooze times. \"Default\" sets the time Android will use by default. The other items will be the snooze times available for you to select.
-    </string>
-    <string name="custom_settings_input_desc">These fields allow you to enter your own custom settings.</string>
-    <string name="custom_settings_read_desc">These fields allow you to read the value of a specified key.</string>
-    <string name="custom_settings_warning">Be careful what you do here! If you input an incorrect value, you could cause a crash loop, bootloop or worse!</string>
-    <string name="hide_welcome_hint">Hint: You can hide this screen, and the donation message, by going to Settings and toggling on \"Hide Welcome Screen\".</string>
-    <string name="safe_mode_notif_desc_not_supported">This setting must remain enabled on Oreo.</string>
-    <string name="fix_rotation_icon_dialog_desc">Are you planning to uninstall SystemUI Tuner after this?</string>
-    <string name="yes_im_uninstalling">Yes, I\'m Uninstalling</string>
-    <string name="no_im_staying">No, I\'m Staying</string>
-    <string name="fix_rotation_done_uninstall">Rotation icon removed! This won\'t take effect until you reboot.</string>
-    <string name="fix_rotation_done_stay">Rotation icon removed! If it still appears, reboot your device.</string>
-    <string name="missing_not_required_perms_desc">Are you sure you want to continue? At least one optional permission wasn\'t granted, which means you will need a computer again to grant them later.</string>
-    <string name="ws_needed_desc">WRITE_SETTINGS is needed to change this setting. Tap the button above to grant it.\n (This unfortunately doesn\'t guarantee that the toggle will work.)</string>
-    <string name="safe_mode_high_brightness_warning_desc">Attempt to restore the currently set High Brightness Warning status on boot. This is only for TouchWiz devices and won\'t work without root.</string>
-    <string name="safe_mode_volume_warning_desc">Restores current High Volume Warning state on boot.</string>
-    <string name="safe_mode_needed_qs_row_col">Safe Mode must be turned on, with the Row/Column option activated, for landscape values to work.</string>
-    <string name="safe_mode_inactive_on_current_page">Safe Mode is inactive on this screen! Go back to the main menu to save changes!</string>
-    <string name="qs_info_marshmallow">Hold down on an icon to remove it.</string>
-    <string name="remove_custom_blacklist_item_desc">Are you sure you want to remove the %s toggle?</string>
+    <string name="pnc_desc">Il controllo delle Power Notification consente di impostare il livello di importanza delle notifiche per app. Basta attivare la funzione e tenere premuto su una notifica per iniziare. Potrebbe essere necessario toccare la A per abilitare il cursore.</string>
+    <string name="pnc_warn">Questa funzione è nota per essere inaffidabile su alcuni dispositivi, in particolare su TouchWiz! È impossibile da risolvere, ma la soluzione migliore sembra essere di toccare ripetutamente sul livello desiderato. Ancora una volta, non posso risolverlo!</string>
+    <string name="notif_desc">Tocca per modificare le impostazioni</string>
+    <string name="notifs_snooze_desc">In Android 8.1 e versioni successive, puoi impostare tempi personalizzati per il posticipo della notifica. Questi valori vengono reimpostati al riavvio, quindi assicurati di abilitare la Modalità provvisoria se desideri che persistano tra i cicli di avvio.\n\n
+Utilizza le opzioni seguenti per impostare i diversi tempi di posticipo. \"Default\" imposta il tempo che Android utilizzerà per impostazione predefinita. Gli altri oggetti saranno i tempi di posticipo disponibili da poter selezionare.    </string>
+    <string name="custom_settings_input_desc">Questi campi consentono di inserire le tue impostazioni personalizzate.</string>
+    <string name="custom_settings_read_desc">Questi campi ti permettono di leggere il valore di una chiave specificata.</string>
+    <string name="custom_settings_warning">Fai attenzione a cosa fai qui! Se inserisci un valore errato, potresti causare un loop di crash, bootloop o peggio!</string>
+    <string name="hide_welcome_hint">Suggerimento: Puoi nascondere questa schermata e il messaggio di donazione, andando su Impostazioni e attivando \"Nascondi schermata di benvenuto\".</string>
+    <string name="safe_mode_notif_desc_not_supported">Questa impostazione deve rimanere attiva su Oreo.</string>
+    <string name="fix_rotation_icon_dialog_desc">Hai intenzione di disinstallare SystemUI Tuner dopo questo?</string>
+    <string name="yes_im_uninstalling">Sì, disinstallerò</string>
+    <string name="no_im_staying">No, resto così</string>
+    <string name="fix_rotation_done_uninstall">Icona di rotazione rimossa! Ciò non avrà effetto fino al riavvio.</string>
+    <string name="fix_rotation_done_stay">Icona di rotazione rimossa! Se appare ancora, riavvia il dispositivo.</string>
+    <string name="missing_not_required_perms_desc">Sei sicuro di voler continuare? Almeno un permesso opzionale non è stato concesso, il che significa che sarà necessario usare nuovamente un computer per concederli più tardi.</string>
+    <string name="ws_needed_desc">WRITE_SETTINGS è necessario per cambiare questa impostazione. Tocca il pulsante qui sopra per concederlo.\n (purtroppo questo non garantisce che l\'interruttore funzionerà.)</string>
+    <string name="safe_mode_high_brightness_warning_desc">Tentativo di ripristinare lo stato di allarme Alta luminosità attualmente impostato all\'avvio. Questo vale solo per i dispositivi TouchWiz e non funzionerà senza root.</string>
+    <string name="safe_mode_volume_warning_desc">Ripristina l\'attuale stato di avviso ad alto volume all\'avvio.</string>
+    <string name="safe_mode_needed_qs_row_col">La modalità provvisoria deve essere attivata, con l\'opzione Riga/Colonna attivata, affinché i valori in modalità orizzontale funzionino.</string>
+    <string name="safe_mode_inactive_on_current_page">La modalità sicura è inattiva in questa schermata! Torna al menu principale per salvare le modifiche!</string>
+    <string name="qs_info_marshmallow">Tieni premuto su un\'icona per rimuoverla.</string>
+    <string name="remove_custom_blacklist_item_desc">Sei sicuro di voler rimuovere il toggle %s?</string>
     <string name="force_enable_adb_desc">Certain devices automatically turn ADB off after a period of inactivity. Enable this to force ADB to stay enabled indefinitely.</string>
     <!--Messages-->
     <string name="sorry_explain">Something went wrong while setting this toggle.</string>
