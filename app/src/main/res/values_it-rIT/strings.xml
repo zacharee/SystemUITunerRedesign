@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!--Titles-->
-    <string name="app_name">Sintetizzatore di interfaccia utente</string>
-    <string name="to_the_tweaks">Vai alle modifiche!</string>
+    <string name="app_name">Tuner SystemUI</string>
+    <string name="to_the_tweaks">Ai Tweaks!</string>
     <string name="more">Altro</string>
     <string name="notice">AVVISO</string>
     <string name="hide_welcome_screen">Nascondi la schermata di benvenuto</string>
@@ -10,15 +10,15 @@
     <string name="need_help">Hai bisogno di Aiuto?</string>
     <string name="about">Informazioni</string>
     <string name="miscellaneous">Varie</string>
-    <string name="custom">Personalizza</string>
+    <string name="custom">Personalizzato</string>
     <string name="settings">Impostazioni</string>
     <string name="status_bar">Barra di stato</string>
-    <string name="sorry">Scusa…</string>
+    <string name="sorry">Spiacente…</string>
     <string name="enabled">Abilitato</string>
     <string name="show">Mostra</string>
-    <string name="select_time">Seleziona ora</string>
+    <string name="select_time">Seleziona orario</string>
     <string name="select_battery_level">Seleziona livello della batteria</string>
-    <string name="wifi_strength">Seleziona intensità del WiFi</string>
+    <string name="wifi_strength">Intensità Segnale WiFi</string>
     <string name="battery_charging">Batteria in carica</string>
     <string name="mobile_strength">Intensità della rete mobile</string>
     <string name="mobile_type">Tipo di rete mobile</string>
@@ -28,15 +28,15 @@
     <string name="setup">Setup</string>
     <string name="dnd_switch_in_vol_slider">Cambio DND con il cursore volume</string>
     <string name="dark_mode">Modalità scura</string>
-    <string name="managed_profile_icon">Gestisci icone profilo</string>
+    <string name="managed_profile_icon">Icona Profilo Gestito</string>
     <string name="battery_icon">Icona della batteria</string>
     <string name="battery_percentage">Percentuale della batteria</string>
     <string name="cast_icon">Icona trasmetti</string>
     <string name="rotation_lock_icon">Icona di blocco della rotazione</string>
     <string name="nfc_icon">Icona NFC</string>
-    <string name="location_icon">Icona Geolocalizzazione</string>
+    <string name="location_icon">Icona Posizione</string>
     <string name="su_icon">Icona Super User</string>
-    <string name="network">Network</string>
+    <string name="network">Rete</string>
     <string name="bluetooth_icon">Icona Bluetooth</string>
     <string name="data_saver_icon">Icona risparmio dati</string>
     <string name="ethernet_icon">Icona ethernet</string>
@@ -45,10 +45,10 @@
     <string name="airplane_icon">Icona modalità aereo</string>
     <string name="wifi_icon">Icona WiFi</string>
     <string name="vpn_icon">Icona VPN</string>
-    <string name="sounds_alerts"><![CDATA[Suono & notifiche]]></string>
+    <string name="sounds_alerts"><![CDATA[Suoni E Avvisi]]></string>
     <string name="volume">Icona volume</string>
     <string name="headset_icon">Icona cuffie</string>
-    <string name="speakerphone_icon">Icona del vivavoce</string>
+    <string name="speakerphone_icon">Icona Altoparlante</string>
     <string name="time_such"><![CDATA[Tempo e simili]]></string>
     <string name="clock">Icona orologio</string>
     <string name="clock_tile">Orologio</string>
@@ -60,7 +60,7 @@
     <string name="privacy_policy">Informativa sulla privacy</string>
     <string name="terms_of_service">Termini di Servizio</string>
     <string name="donate">Dona</string>
-    <string name="reset_blacklist">Reimposta la blacklist</string>
+    <string name="reset_blacklist">Ripristina lista nera</string>
     <string name="animator_duration_scale">Scala durata animatore</string>
     <string name="transition_animation_scale">Scala animazione transizione</string>
     <string name="window_animation_scale">Scala animazione finestra</string>
@@ -133,7 +133,7 @@
     <string name="battery">Batteria</string>
     <string name="back_up_blacklist">Back Up della Blacklist</string>
     <string name="restore_blacklist">Ripristina Blacklist</string>
-    <string name="backup_and_restore">Backup &amp; Restore</string>
+    <string name="backup_and_restore">Backup &amp; Ripristino</string>
     <string name="quick_settings">Impostazioni rapide</string>
     <string name="demo_mode">Modalità Demo</string>
     <string name="auto_detect">Rilevamento automatico</string>
@@ -149,7 +149,7 @@
     <string name="none">Niente</string>
     <string name="full">Completo</string>
     <string name="navigation_bar">Barra di navigazione</string>
-    <string name="navigation_bar_color">Navigation Bar Color</string>
+    <string name="navigation_bar_color">Colore della barra di navigazione</string>
     <string name="pre_confirms">Pre-Conferma</string>
     <string name="config_qs">Configurazione Quick Tile</string>
     <string name="mode">Modalità</string>
@@ -235,18 +235,18 @@
     <string name="high_brightness_warning">Avviso Alta luminosità</string>
     <string name="grant">Consenti</string>
     <string name="attention">Attenzione!</string>
-    <string name="options">Options</string>
-    <string name="name">Name</string>
-    <string name="key">Key</string>
-    <string name="add_item">Add Item</string>
-    <string name="are_you_sure">Are you sure?</string>
-    <string name="style">Style</string>
-    <string name="clock_position">Clock Position</string>
-    <string name="left">Left</string>
-    <string name="middle">Middle</string>
-    <string name="right">Right</string>
-    <string name="force_enable_adb">Force-Enable ADB</string>
-    <string name="global_dark_mode">Global Dark Mode</string>
+    <string name="options">Opzioni</string>
+    <string name="name">Nome</string>
+    <string name="key">Chiave</string>
+    <string name="add_item">Aggiungi Elemento</string>
+    <string name="are_you_sure">Sei sicuro?</string>
+    <string name="style">Stile</string>
+    <string name="clock_position">Posizione Orologio</string>
+    <string name="left">Sinistra</string>
+    <string name="middle">Centrale</string>
+    <string name="right">Destra</string>
+    <string name="force_enable_adb">Forza l\'abilitazione di ADB</string>
+    <string name="global_dark_mode">Modalità Scura globale</string>
     <!--Descriptions-->
     <string name="fancy_pulldown_notice">Abilitare/Disabilitare questa opzione potrebbe causare problemi dopo un riavvio. Abilita/disabilita manualmente questa opzione dopo il riavvio, oppure usa il SafeMode.</string>
     <string name="safe_mode_summary">Utenti Samsung, lasciare attivato almeno che abbiate una ROM AOSP!</string>
@@ -254,7 +254,7 @@
     <string name="safe_mode_summary_2">Attiva l\'animazione Fancy QS all\'avvio.</string>
     <string name="safe_mode_summary_3">Ripristina il valore di conteggio personalizzato QS all\'avvio (Nougat+).</string>
     <string name="safe_mode_summary_4">Ripristina il conteggio personalizzato QS riga/colonna all\'avvio (TouchWiz, Nougat+).</string>
-    <string name="safe_mode_summary_5">Keeps custom snooze options set (8.1+).</string>
+    <string name="safe_mode_summary_5">Mantieni le opzioni personalizzate di posticipazione (8.1+).</string>
     <string name="enable_in_settings">Attivalo nelle impostazioni.</string>
     <string name="reboot_required">(Riavvio necessario)</string>
     <string name="auto_detect_summary">Tenta di rilevare automaticamente quali icone della barra di stato possono essere nascoste. Non funziona su tutti i dispositivi!</string>
@@ -266,9 +266,8 @@
     <string name="pnc_desc">I controlli di notifica consentono di impostare il livello di importanza per le notifiche su base per-app. Semplicemente attiva la funzione e tieni premuto su una notifica per iniziare. Potresti dover toccare la A per abilitare lo slider.</string>
     <string name="pnc_warn">Questa funzione è inaffidabile su alcuni dispositivi, sopratutto su TouchWiz! È impossibile da sistemare, la soluzione migliore è quella di premere continuamente fino al livello desiderato. Ancora una volta, NON POSSO SISTEMARLO!</string>
     <string name="notif_desc">Tocca per modificare le impostazioni</string>
-    <string name="notifs_snooze_desc">    In Android 8.1 and later, you can set custom times for notification snoozing. These values reset on reboot, so make sure to enable Safe Mode if you would like them to persist across power cycles.\n\n
-    Use the options below to set the different snooze times. \"Default\" sets the time Android will use by default. The other items will be the snooze times available for you to select.
-    </string>
+    <string name="notifs_snooze_desc">In Android 8.1 e versioni successive, puoi impostare tempi personalizzati per il posticipo della notifica. Questi valori vengono reimpostati al riavvio, quindi assicurati di abilitare la Modalità provvisoria se desideri che persistano tra i cicli di avvio.\n\n
+Utilizza le opzioni seguenti per impostare i diversi tempi di posticipo. \"Default\" imposta il tempo che Android utilizzerà per impostazione predefinita. Gli altri oggetti saranno i tempi di posticipo disponibili da poter selezionare.    </string>
     <string name="custom_settings_input_desc">Questi campi consentono di inserire le tue impostazioni personalizzate.</string>
     <string name="custom_settings_read_desc">Questi campi ti permettono di leggere il valore di una chiave specificata.</string>
     <string name="custom_settings_warning">Fai attenzione a cosa fai qui! Se inserisci un valore errato, potresti causare un loop di crash, bootloop o peggio!</string>
@@ -286,9 +285,9 @@
     <string name="safe_mode_needed_qs_row_col">La modalità sicura deve essere attivata, con l\'opzione Riga/Colonna attivata, per il funzionamento dei valori landscape.</string>
     <string name="safe_mode_inactive_on_current_page">La modalità sicura è inattiva su questa schermata! Torna al menu principale per salvare le modifiche!</string>
     <string name="qs_info_marshmallow">Tieni premuto su un\'icona per rimuoverla.</string>
-    <string name="remove_custom_blacklist_item_desc">Are you sure you want to remove the %s toggle?</string>
-    <string name="force_enable_adb_desc">Certain devices automatically turn ADB off after a period of inactivity. Enable this to force ADB to stay enabled indefinitely.</string>
-    <string name="global_dark_mode_desc">Make supported applications use their dark themes (eg: Google Play Store, Instagram, etc). May require a reboot.</string>
+    <string name="remove_custom_blacklist_item_desc">Sei sicuro di voler rimuovere il toggle %s?</string>
+    <string name="force_enable_adb_desc">Alcuni dispositivi disattivano automaticamente ADB dopo un periodo di inattività. Abilita questa opzione per forzare ADB a rimanere abilitato a tempo indeterminato.</string>
+    <string name="global_dark_mode_desc">Fare sì che le applicazioni supportate utilizzino i propri temi scuri (ad esempio: Google Play Store, Instagram, ecc). Può richiedere un riavvio.</string>
     <!--Messages-->
     <string name="sorry_explain">Qualcosa è andato storto mentre selezionavi questa impostazione.</string>
     <string name="sorry_option">Prova ad eseguire questo comando da un pc (è solo una linea):</string>
@@ -296,7 +295,7 @@
     <string name="safe_mode_auto_enabled">Dispositivo Samsung rilevato! La modalità provvisoria è stata abilitata automaticamente per la sicurezza del sistema. State attenti, modificare una qualsiasi icona nella status bar potrebbe CORROMPERE LA UI DI SISTEMA! Segui il link nella descrizione del Play Store per maggiori informazioni.</string>
     <string name="requires_nougat">Richiede Nougat o successivo.</string>
     <string name="requires_oreo">Richiede Oreo o successivo.</string>
-    <string name="requires_pie">Requires Pie or later.</string>
+    <string name="requires_pie">Richiede Pie o successivi.</string>
     <string name="requires_8_1">Richiede Oreo 8.1 o successivi.</string>
     <string name="safe_mode_android_o">A causa delle limitazioni aggiunte in Android O, questa funzionalità non funzionarà sul tuo dispositivo.</string>
     <string name="intro_1">Grazie per aver scaricato la mia app! SystemUI Tuner vuole rimpiazzare/integrare il sintetizzatore di interfaccia utente visto nelle rom AOSP. Entrambi gli utenti con e senza sintetizzatore di interfaccia utente possono beneficiare di questa app.</string>
@@ -314,9 +313,9 @@
     <string name="backup_restored">Backup ripristinato con successo</string>
     <string name="nothing_to_back_up">Niente da recuperare</string>
     <string name="grant_usage">Si prega di concedere a SystemUI Tuner l\'accesso all\'utilizzo.</string>
-    <string name="setting_not_on_pie">This setting doesn\'t work on Pie or later.</string>
-    <string name="setting_not_on_touchwiz_pie">This setting doesn\'t work on TouchWiz Pie or later.</string>
-    <string name="setting_not_on_touchwiz">This setting doesn\'t work on TouchWiz.</string>
+    <string name="setting_not_on_pie">Questa impostazione non funziona su Pie o versioni successive.</string>
+    <string name="setting_not_on_touchwiz_pie">Questa impostazione non funziona su TouchWiz Pie o versioni successive.</string>
+    <string name="setting_not_on_touchwiz">Questa impostazione non funziona su TouchWiz.</string>
     <!--Instructions-->
     <string name="enable_debug"><![CDATA[1. Vai nelle impostazioni >> Opzioni sviluppatore e assicurati che Debug Android sia attivo.]]></string>
     <string name="accept_auth">2. Collega il tuo telefono al tuo pc e accetta l\'autorizzazione che comparirà su di esso.</string>
@@ -343,5 +342,5 @@
     <string name="donate_joke">Come, mi chiedi? Magia.</string>
     <string name="donate_request">Se ti stai divertendo, sarebbe assolutamente fantastico se potessi donare un euro o due.</string>
     <string name="donate_dont_worry">Non c\'è nessun obbligo. Quest\'app è gratis e lo sarà sempre.</string>
-    <string name="select_os">Please select an operating system.</string>
+    <string name="select_os">Seleziona un sistema operativo.</string>
 </resources>
