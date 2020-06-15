@@ -94,10 +94,10 @@
     <string name="safezone_icon">Icona Zona sicura</string>
     <string name="smart_bonding_icon">Icona Smart Bonding</string>
     <string name="smart_scroll_icon">Icona SmarScroll</string>
-    <string name="toddler_icon">Icona Toddler</string>
+    <string name="toddler_icon">Icona bimbi</string>
     <string name="wearable_icon">Icona indossabile</string>
     <string name="wifi_ap_icon">Icona WiFi AP</string>
-    <string name="wifi_oxygen_icon">Icona WiFI Oxygen</string>
+    <string name="wifi_oxygen_icon">Icona Oxygen WiFi</string>
     <string name="wifi_p2p_icon">Icona WiFI P2P</string>
     <string name="wimax_icon">Icona WiMax</string>
     <string name="remote_call_icon">Icona di chiamata remota</string>
