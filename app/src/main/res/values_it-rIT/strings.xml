@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!--Titles-->
-    <string name="app_name">Personalizzatore dell\'Interfaccia Utente</string>
+    <string name="app_name">Tuner SystemUI</string>
     <string name="to_the_tweaks">Vai alle modifiche!</string>
     <string name="more">Altro</string>
     <string name="notice">NOTA</string>
@@ -306,39 +306,39 @@ Utilizza le opzioni seguenti per impostare i diversi tempi di posticipo. \"Defau
     <string name="feature_not_supported">Sembra che il tuo dispositivo non supporti questa funzione :/</string>
     <string name="miui_warning">Sembra che tu stia usando un dispositivo MIUI. Si prega di notare che poche, se non nessuna, funzionalità di questa app funzioneranno per te. Questo NON è riparabile!</string>
     <string name="warn_message">Per favore leggi i Termini di Servizio prima di continuare.</string>
-    <string name="safe_mode_notif_desc">It is recommended that you keep this active, and hide the notification instead. Turning it off may cause Safe Mode to no longer function.</string>
-    <string name="invalid_blacklist_backup">Invalid blacklist backup</string>
-    <string name="backup_restored">Successfully restored backup</string>
-    <string name="nothing_to_back_up">Nothing to back up</string>
-    <string name="grant_usage">Please grant SystemUI Tuner access to Usage.</string>
-    <string name="setting_not_on_pie">This setting doesn\'t work on Pie or later.</string>
-    <string name="setting_not_on_touchwiz_pie">This setting doesn\'t work on TouchWiz Pie or later.</string>
-    <string name="setting_not_on_touchwiz">This setting doesn\'t work on TouchWiz.</string>
+    <string name="safe_mode_notif_desc">Si raccomanda di mantenere attiva questa funzione e di nascondere invece la notifica. Disattivarla potrebbe causare il mancato funzionamento della modalità provvisoria.</string>
+    <string name="invalid_blacklist_backup">Backup lista nera non valido</string>
+    <string name="backup_restored">Backup ripristinato con successo</string>
+    <string name="nothing_to_back_up">Niente di cui eseguire il backup</string>
+    <string name="grant_usage">Si prega di concedere a SystemUI Tuner l\'accesso all\'utilizzo.</string>
+    <string name="setting_not_on_pie">Questa impostazione non funziona su Pie o versioni successive.</string>
+    <string name="setting_not_on_touchwiz_pie">Questa impostazione non funziona su TouchWiz Pie o versioni successive.</string>
+    <string name="setting_not_on_touchwiz">Questa impostazione non funziona su TouchWiz.</string>
     <!--Instructions-->
-    <string name="enable_debug"><![CDATA[1. Go to Settings >> Developer Options and make sure USB Debugging is enabled.]]></string>
-    <string name="accept_auth">2. Plug your device into your computer and accept the authorization request on it.</string>
-    <string name="enable_devops"><![CDATA[- Enable Developer Options by going to Settings >> About, finding \"Build Number\" and tapping it 7 times.]]></string>
-    <string name="download_drivers">- Windows users may need to install device drivers, which are available from the manufacturer\'s website.</string>
-    <string name="download_adb_windows"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-windows.zip">Download the ADB ZIP for Windows.</a>]]></string>
-    <string name="extract_zip">2. Extract the ZIP to an easily-accessible location (ie Desktop).</string>
-    <string name="open_cmd">3. Open CMD.</string>
-    <string name="cd_windows"><![CDATA[4. Enter <b>cd C:\\path\\to\\extracted\\folder\\</b> to get to the folder where you extracted ADB. For instance, <b>cd C:\\Users\\Zachary\\Desktop\\platform-tools\\</b>.]]></string>
-    <string name="cd_further"><![CDATA[- Make sure that the folder you <b>cd</b> into contains the ADB executable. If not, <b>cd</b> one level further.]]></string>
-    <string name="download_adb_mac"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-darwin.zip">Download the ADB ZIP for macOS.</a>]]></string>
-    <string name="open_terminal">3. Open Terminal.</string>
-    <string name="cd_mac"><![CDATA[4. Enter <b>cd /path/to/extracted/folder/</b> to get to the folder you extracted ADB into. For instance, <b>cd /Users/Zachary/Desktop/platform-tools/</b>.]]></string>
-    <string name="make_sure_adb_installed">1. Make sure ADB is installed:</string>
-    <string name="download_adb_linux"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-linux.zip">Download the ADB ZIP for Linux.</a>]]></string>
-    <string name="cd_linux"><![CDATA[4. Enter <b>cd /path/to/extracted/folder/</b> to get to the folder you extracted ADB into. For instance, <b>cd /home/Zachary/Desktop/platform-tools/</b>.]]></string>
+    <string name="enable_debug"><![CDATA[1. Vai a Impostazioni >> Opzioni sviluppatore e assicurati che il debug USB sia abilitato.]]></string>
+    <string name="accept_auth">2. Collega il tuo telefono al tuo pc e accetta l\'autorizzazione che comparirà su di esso.</string>
+    <string name="enable_devops"><![CDATA[- Abilita le opzioni sviluppatore andando su Impostazioni >> Stato telefono, trova \"Numero build\" e premilo 7 volte.]]></string>
+    <string name="download_drivers">- Gli utenti windows dovranno installare i driver del proprio dispositivo, che sono disponibili sul sito del suo produttore.</string>
+    <string name="download_adb_windows"><![CDATA[<a href="https://dl.google.com/android/repository/platform-tools-latest-windows.zip">Scarica lo ZIP ADB per Windows.</a>]]></string>
+    <string name="extract_zip">2. Estrai lo ZIP in una posizione comoda (es: Desktop).</string>
+    <string name="open_cmd">3. Apri il CMD.</string>
+    <string name="cd_windows"><![CDATA[4. Digita <b>cd C:\\percorso\\a\\cartella\\estratta\\</b> per entrare nella cartella dove hai estratto ADB. Per esempio, <b>cd C:\\Users\\Zachary\\Desktop\\platform-tools\\</b>.]]></string>
+    <string name="cd_further"><![CDATA[- Assicurati che la cartella nella quale entrerai con <b>cd</b> contenga l'eseguibile ADB. Se non c'è, esegui <b>cd</b> di un livello ulteriore.]]></string>
+    <string name="download_adb_mac"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-darwin.zip">Scarica lo ZIP ADB per macOS.</a>]]></string>
+    <string name="open_terminal">3. Apri un terminale.</string>
+    <string name="cd_mac"><![CDATA[4. Digita <b>cd /percorso/alla/cartella/estratta/</b> per entrare nella cartella dove hai estratto ADB. Per esempio, <b>cd /Users/Zachary/Desktop/platform-tools/</b>.]]></string>
+    <string name="make_sure_adb_installed">1. Assicurati che ADB sia installato:</string>
+    <string name="download_adb_linux"><![CDATA[1. <a href="https://dl.google.com/android/repository/platform-tools-latest-linux.zip">Scarica lo ZIP ADB per Linux.</a>]]></string>
+    <string name="cd_linux"><![CDATA[4. Digita <b>cd /percorso/della/cartella/estratta/</b> per entrare nella cartella dove hai estratto ADB. Per esempio, <b>cd /Users/Zachary/Desktop/platform-tools/</b>.]]></string>
     <!--Misc-->
-    <string name="created_by">App created by <a href="https://forum.xda-developers.com/member.php?u=7055541">Zacharee1</a></string>
-    <string name="lang_credit">Translations by volunteers on <a href="https://crowdin.com/project/systemui-tuner">Crowdin</a></string>
-    <string name="home_desc">For Devices without this Activity</string>
-    <string name="home_joke">Or for devices with it, I\'m not your boss.</string>
-    <string name="home_extra">(If you do have the stock SystemUI Tuner, this one provides some extra goodies.)</string>
-    <string name="donate_hook">Hey, I see you\'re using my app.</string>
-    <string name="donate_joke">How, you ask? Magic.</string>
-    <string name="donate_request">If you\'re enjoying your time here, it\'d be absolutely amazing if you could spare a dollar or two.</string>
-    <string name="donate_dont_worry">There\'s absolutely no obligation. This app is free and always will be.</string>
-    <string name="select_os">Please select an operating system.</string>
+    <string name="created_by">App creata da <a href="https://forum.xda-developers.com/member.php?u=7055541">Zacharee1</a></string>
+    <string name="lang_credit">Traduzioni da volontari su <a href="https://crowdin.com/project/systemui-tuner">Crowdin</a></string>
+    <string name="home_desc">Per i dispositivi senza questa Activity</string>
+    <string name="home_joke">O per i devices con l\'activity, Non sono il tuo capo.</string>
+    <string name="home_extra">(Se hai il SystemUI Tuner stock, questo fornisce alcune chicche in più.)</string>
+    <string name="donate_hook">Ehi, vedo che stai usando la mia app.</string>
+    <string name="donate_joke">Come, mi chiedi? Magia.</string>
+    <string name="donate_request">Se ti stai divertendo, sarebbe assolutamente fantastico se potessi donare un euro o due.</string>
+    <string name="donate_dont_worry">Non c\'è nessun obbligo. Quest\'app è gratis e lo sarà sempre.</string>
+    <string name="select_os">Seleziona un sistema operativo.</string>
 </resources>
