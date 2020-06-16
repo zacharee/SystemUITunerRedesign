@@ -1,3 +1,6 @@
+# This project is no longer maintained!
+The app itself is, though, just in a new repository. Check it out here: https://github.com/zacharee/Tweaker.
+
 # SystemUI Tuner
 Replacement/extension for the stock Android System UI Tuner.
 
