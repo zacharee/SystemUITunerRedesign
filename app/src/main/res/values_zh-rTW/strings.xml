@@ -237,7 +237,7 @@
     <string name="attention">注意！</string>
     <string name="options">選項</string>
     <string name="name">名稱</string>
-    <string name="key">Key</string>
+    <string name="key">按鍵</string>
     <string name="add_item">新增項目</string>
     <string name="are_you_sure">你確定嗎？</string>
     <string name="style">風格</string>
@@ -282,13 +282,13 @@
     <string name="missing_not_required_perms_desc">你確定要繼續嗎？至少有一個非必要權限未被授權，之後你可能需要用電腦再度授權一次。</string>
     <string name="ws_needed_desc">WRITE_SETTINGS is needed to change this setting. Tap the button above to grant it.\n (This unfortunately doesn\'t guarantee that the toggle will work.)</string>
     <string name="safe_mode_high_brightness_warning_desc">Attempt to restore the currently set High Brightness Warning status on boot. This is only for TouchWiz devices and won\'t work without root.</string>
-    <string name="safe_mode_volume_warning_desc">Restores current High Volume Warning state on boot.</string>
+    <string name="safe_mode_volume_warning_desc">開機時還原目前的高音量警告狀態。</string>
     <string name="safe_mode_needed_qs_row_col">Safe Mode must be turned on, with the Row/Column option activated, for landscape values to work.</string>
     <string name="safe_mode_inactive_on_current_page">Safe Mode is inactive on this screen! Go back to the main menu to save changes!</string>
     <string name="qs_info_marshmallow">按住圖示以移除。</string>
     <string name="remove_custom_blacklist_item_desc">Are you sure you want to remove the %s toggle?</string>
     <string name="force_enable_adb_desc">Certain devices automatically turn ADB off after a period of inactivity. Enable this to force ADB to stay enabled indefinitely.</string>
-    <string name="global_dark_mode_desc">Make supported applications use their dark themes (eg: Google Play Store, Instagram, etc). May require a reboot.</string>
+    <string name="global_dark_mode_desc">讓支援的 app 使用他們的深色主題（如：Google Play Store 及 Instagram 等），可能需要重啟裝置。</string>
     <!--Messages-->
     <string name="sorry_explain">設定時發生未知錯誤</string>
     <string name="sorry_option">試著從電腦執行下列指定（單行指令）：</string>
@@ -296,7 +296,7 @@
     <string name="safe_mode_auto_enabled">偵測到 Samsung 裝置！保險起見安全模式已自動開啟。請注意更動任何狀態列圖示可能導致系統損毀！詳細資訊請見 Play 商店中的敘述。</string>
     <string name="requires_nougat">需要 Android Nougat 以上的版本</string>
     <string name="requires_oreo">需要 Android Oreo 以上的版本</string>
-    <string name="requires_pie">Requires Pie or later.</string>
+    <string name="requires_pie">需要 Pie 或更新的版本。</string>
     <string name="requires_8_1">需要 Oreo 8.1 以上的版本。</string>
     <string name="safe_mode_android_o">由於 Android O 的限制，此功能無法在本裝置使用</string>
     <string name="intro_1">感謝下載我的 app！SystemUI Tuner 是款系統原生 System UI Tuner 的替代品，不論你的裝置有無 System UI Tuner ，這個 app 都能帶來全新感受。</string>
@@ -315,8 +315,8 @@
     <string name="nothing_to_back_up">沒什麼能備份的</string>
     <string name="grant_usage">請授予 系統界面調整器 (SystemUI Tuner) 權限以繼續使用。</string>
     <string name="setting_not_on_pie">這些設定在安卓9或以上版本不支援。</string>
-    <string name="setting_not_on_touchwiz_pie">This setting doesn\'t work on TouchWiz Pie or later.</string>
-    <string name="setting_not_on_touchwiz">This setting doesn\'t work on TouchWiz.</string>
+    <string name="setting_not_on_touchwiz_pie">此設定不支援  TouchWiz Pie 以上的版本。</string>
+    <string name="setting_not_on_touchwiz">此設定不支援 TouchWiz。</string>
     <!--Instructions-->
     <string name="enable_debug"><![CDATA[1. 前往 "設定" 中的 "開發者選項"，確保 USB Debugging 是啟用的。]]></string>
     <string name="accept_auth">2. 將裝置連接至電腦，並接受授權要求。</string>
