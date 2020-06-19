@@ -343,5 +343,5 @@
     <string name="donate_joke">你問我怎麼知道的？厲害吧</string>
     <string name="donate_request">如果你用得開心，來點贊助是再好不過了</string>
     <string name="donate_dont_worry">這當然沒有強制，App 永遠都是免費用到飽！</string>
-    <string name="select_os">Please select an operating system.</string>
+    <string name="select_os">請選擇一個操作系統。</string>
 </resources>
