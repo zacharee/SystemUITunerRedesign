@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!--Titles-->
-    <string name="app_name">SystemUI Tuner</string>
+    <string name="app_name">System Ui tuner</string>
     <string name="to_the_tweaks">To The Tweaks!</string>
     <string name="more">More</string>
     <string name="notice">NOTICE</string>
