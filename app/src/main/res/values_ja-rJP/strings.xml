@@ -7,10 +7,10 @@
     <string name="notice">注意</string>
     <string name="hide_welcome_screen">チュートリアルを隠す</string>
     <string name="instructions">手順</string>
-    <string name="need_help">Need Help?</string>
+    <string name="need_help">助けが必要ですか？</string>
     <string name="about">アプリ情報</string>
     <string name="miscellaneous">その他</string>
-    <string name="custom">Custom</string>
+    <string name="custom">カスタム</string>
     <string name="settings">設定</string>
     <string name="status_bar">ステータスバー</string>
     <string name="sorry">申し訳ございません</string>
@@ -36,7 +36,7 @@
     <string name="nfc_icon">NFCアイコン</string>
     <string name="location_icon">位置情報アイコン</string>
     <string name="su_icon">SUアイコン</string>
-    <string name="network">Network</string>
+    <string name="network">ネットワーク</string>
     <string name="bluetooth_icon">Bluetooth</string>
     <string name="data_saver_icon">データセーバー</string>
     <string name="ethernet_icon">イーサネット</string>
@@ -51,10 +51,10 @@
     <string name="speakerphone_icon">スピーカー</string>
     <string name="time_such"><![CDATA[時刻]]></string>
     <string name="clock">時計</string>
-    <string name="clock_tile">Clock</string>
-    <string name="show_clock_seconds">Show Clock Seconds</string>
-    <string name="alarm_clock_icon">Alarm Clock Icon</string>
-    <string name="zen_icon">Zen Icon</string>
+    <string name="clock_tile">時計</string>
+    <string name="show_clock_seconds">時計の秒を表示</string>
+    <string name="alarm_clock_icon">目覚まし時計アイコン</string>
+    <string name="zen_icon">Zenアイコン</string>
     <string name="do_not_disturb">Do Not Disturb Icon</string>
     <string name="dnd">Do Not Disturb</string>
     <string name="privacy_policy">Privacy Policy</string>
