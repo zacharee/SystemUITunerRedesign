@@ -4,6 +4,8 @@ The app itself is, though, just in a new repository. Check it out here: https://
 # SystemUI Tuner
 Replacement/extension for the stock Android System UI Tuner.
 
+[![Get it on Google Play](https://badgen.net/badge/Get%20it%20on/Google%20Play/689f38?icon=googleplay)](https://play.google.com/store/apps/details?id=com.zacharee1.systemuituner)
+
 Since some manufacturers disable System UI Tuner in their skins, a lot of people miss out on the options provided there.
 SystemUI Tuner (this app -- no space in SystemUI) provides a replacement for any of these people looking for advanced customization options.
 If you're one of the lucky people who still has access to the stock System UI Tuner, this app gives you a few extra things as well.
