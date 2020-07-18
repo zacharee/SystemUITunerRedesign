@@ -80,7 +80,7 @@
     <string name="enable_custom_settings_input">啟動自訂設定</string>
     <string name="enable">啟用</string>
     <string name="knox_icon">KNOX 圖示</string>
-    <string name="smart_network_icon">Smart Network Icon</string>
+    <string name="smart_network_icon">智慧網路</string>
     <string name="glove_icon">手套模式圖示</string>
     <string name="private_mode_icon">隱私模式圖示</string>
     <string name="face_icon">臉部辨識圖示</string>
@@ -88,7 +88,7 @@
     <string name="gps_icon">GPS 圖示</string>
     <string name="gesture_icon">手勢圖示</string>
     <string name="ims_volte_icon">IMS VoLTE 圖示</string>
-    <string name="keyguard_wakeup_icon">KeyGuard Wakeup Icon</string>
+    <string name="keyguard_wakeup_icon">螢幕解鎖</string>
     <string name="lbs_icon">LBS 圖示</string>
     <string name="rcs_icon">RCS 圖示</string>
     <string name="safezone_icon">安全區域圖示</string>
@@ -109,7 +109,7 @@
     <string name="phone_signal_icon">Phone Signal Icon</string>
     <string name="volte">VoLTE</string>
     <string name="vowifi">VoWiFi</string>
-    <string name="wifi_calling_icon">WiFi Calling Icon</string>
+    <string name="wifi_calling_icon">WiFi 通話</string>
     <string name="answering_memo_icon">Answering Memo Icon</string>
     <string name="felica_lock_icon">Felica Lock Icon</string>
     <string name="ime_icon">IME Icon</string>
@@ -120,7 +120,7 @@
     <string name="secure_icon">Secure Icon</string>
     <string name="sync_active_icon">Sync Active Icon</string>
     <string name="sync_failing_icon">Sync Failing Icon</string>
-    <string name="night_mode">Night Mode</string>
+    <string name="night_mode">夜間模式</string>
     <string name="night_mode_auto">Night Mode Auto</string>
     <string name="night_mode_override">Night Mode Override</string>
     <string name="night_mode_adjust_tint">Night Mode Adjust Tint</string>
@@ -160,7 +160,7 @@
     <string name="lockscreen">鎖定螢幕</string>
     <string name="choose_left">Choose Left Shortcut</string>
     <string name="choose_right">Choose Right Shortcut</string>
-    <string name="unlock_device">Unlock Device</string>
+    <string name="unlock_device">解鎖裝置</string>
     <string name="shortcuts">捷徑</string>
     <string name="welcome">歡迎！</string>
     <string name="some_things">範例</string>
